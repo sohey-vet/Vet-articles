@@ -7,14 +7,316 @@
     <meta name="description" content="動物救急に関する最新の獣医学論文をエビデンスベースでまとめたサイト。臨床に使える形で整理。">
     <title>獣医論文まとめ | VetEvidence</title>
     <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* ========================================
+           Index Page - Genre Sidebar Layout
+           ======================================== */
+
+        .index-layout {
+            display: flex;
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* --- Sidebar --- */
+        .genre-sidebar {
+            position: sticky;
+            top: 80px;
+            width: 220px;
+            min-width: 220px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            padding: var(--space-md) 0;
+            flex-shrink: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-border) transparent;
+        }
+
+        .genre-sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .genre-sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 4px;
+        }
+
+        .sidebar-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 12px;
+            padding: 0 12px;
+        }
+
+        .genre-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 10px 14px;
+            border: none;
+            background: transparent;
+            color: var(--color-text-secondary);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 500;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-align: left;
+            position: relative;
+        }
+
+        .genre-btn:hover {
+            background: rgba(56, 189, 248, 0.06);
+            color: var(--color-text-primary);
+        }
+
+        .genre-btn.active {
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--color-accent-primary);
+            font-weight: 600;
+        }
+
+        .genre-btn.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 20px;
+            background: var(--color-accent-primary);
+            border-radius: 2px;
+        }
+
+        .genre-btn .genre-icon {
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .genre-btn .genre-count {
+            margin-left: auto;
+            font-size: 0.7rem;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--color-text-muted);
+            padding: 2px 7px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        .genre-btn.active .genre-count {
+            background: rgba(56, 189, 248, 0.18);
+            color: var(--color-accent-primary);
+        }
+
+        .genre-divider {
+            height: 1px;
+            background: var(--color-border);
+            margin: 8px 12px;
+            opacity: 0.5;
+        }
+
+        /* --- Main Content Area --- */
+        .index-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* --- Article Cards Grid --- */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--gradient-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 20px 22px;
+            text-decoration: none;
+            color: var(--color-text-primary);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .article-card:hover {
+            border-color: var(--color-border-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(56, 189, 248, 0.1);
+        }
+
+        .article-card:hover::before {
+            opacity: 1;
+        }
+
+        .article-card .card-icon {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .article-card h3 {
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .article-card p {
+            font-size: 0.78rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .article-card .card-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .article-card .card-footer .tag {
+            font-size: 0.65rem;
+        }
+
+        .article-card .card-papers {
+            margin-left: auto;
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Hidden state for filtering */
+        .article-card.hidden {
+            display: none;
+        }
+
+        /* Active genre label */
+        .active-genre-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-text-primary);
+        }
+
+        .active-genre-label .count-badge {
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--color-accent-primary);
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+
+        /* --- Mobile: Horizontal pill bar --- */
+        @media (max-width: 768px) {
+            .index-layout {
+                flex-direction: column;
+                gap: 16px;
+                padding: 0 var(--space-md);
+            }
+
+            .genre-sidebar {
+                position: relative;
+                top: auto;
+                width: 100%;
+                min-width: auto;
+                max-height: none;
+                display: flex;
+                gap: 8px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding: 8px 0;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .genre-sidebar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .sidebar-title {
+                display: none;
+            }
+
+            .genre-divider {
+                display: none;
+            }
+
+            .genre-btn {
+                white-space: nowrap;
+                padding: 8px 14px;
+                border-radius: 50px;
+                border: 1px solid var(--color-border);
+                font-size: 0.75rem;
+                min-width: fit-content;
+            }
+
+            .genre-btn.active {
+                border-color: var(--color-accent-primary);
+            }
+
+            .genre-btn.active::before {
+                display: none;
+            }
+
+            .genre-btn .genre-count {
+                display: none;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- Index Header (override page-container max-width) --- */
+        .index-page .page-container {
+            max-width: 1200px;
+        }
+
+        .index-hero {
+            text-align: center;
+            padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: var(--space-xl);
+        }
+    </style>
 </head>
 
-<body>
+<body class="index-page">
 
     <div class="page-container">
 
-        <!-- Header -->
-        <header class="page-header" style="text-align: center; border-bottom: none; padding-bottom: 0;">
+        <!-- Hero Header -->
+        <header class="index-hero">
             <div style="font-size: 3.5rem; margin-bottom: 12px;">🩺</div>
             <h1 style="font-size: 2.2rem;">VetEvidence</h1>
             <p class="subtitle" style="max-width: 600px; margin: 0 auto;">
@@ -22,14 +324,13 @@
                 <strong>最新エビデンス</strong>を、わかりやすくまとめる。
             </p>
 
-            <div class="stats-bar"
-                style="justify-content: center; margin-top: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--color-border);">
+            <div class="stats-bar" style="justify-content: center; margin-top: 24px; padding-bottom: 0;">
                 <div class="stat-item">
-                    <div class="stat-value">13</div>
+                    <div class="stat-value">35</div>
                     <div class="stat-label">テーマ</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">70+</div>
+                    <div class="stat-value">180+</div>
                     <div class="stat-label">論文</div>
                 </div>
                 <div class="stat-item">
@@ -39,171 +340,492 @@
             </div>
         </header>
 
-        <!-- Navigation: Topics -->
-        <section style="margin-top: 32px;">
-            <h2 style="font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-                <span>📋</span> テーマ別まとめ
-            </h2>
-            <div class="nav-grid">
-                <!-- 循環器 -->
-                <a href="topics/循環器/心原性肺水腫_一般病院での救命Tips.html" class="nav-card">
-                    <span class="nav-icon">🫁</span>
-                    <h3>心原性肺水腫 ─ 救命Tips</h3>
-                    <p>酸素フローバイ＋フロセミド＋ピモベンダンIV。一般病院の緊急対応フロー</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--danger">循環器</span>
-                        <span class="tag tag--warning">救急</span>
-                    </div>
-                    <span class="nav-count">📄 6論文</span>
-                </a>
+        <!-- Layout: Sidebar + Main -->
+        <div class="index-layout">
 
-                <a href="topics/循環器/僧帽弁閉鎖不全症_ステージ別治療.html" class="nav-card">
-                    <span class="nav-icon">❤️</span>
-                    <h3>僧帽弁閉鎖不全症 ─ ステージ別治療</h3>
-                    <p>ACVIM分類とEPIC試験。B2からのピモベンダン開始基準</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--danger">循環器</span>
-                        <span class="tag tag--primary">MMVD</span>
-                    </div>
-                    <span class="nav-count">📄 5論文</span>
-                </a>
+            <!-- Genre Sidebar -->
+            <nav class="genre-sidebar" id="genre-sidebar">
+                <div class="sidebar-title">📂 ジャンル</div>
+                <button class="genre-btn active" data-genre="all">
+                    <span class="genre-icon">📋</span>
+                    <span>すべて</span>
+                    <span class="genre-count" id="count-all">35</span>
+                </button>
+                <div class="genre-divider"></div>
+                <button class="genre-btn" data-genre="救急">
+                    <span class="genre-icon">🚑</span>
+                    <span>救急</span>
+                    <span class="genre-count">7</span>
+                </button>
+                <button class="genre-btn" data-genre="循環器">
+                    <span class="genre-icon">❤️</span>
+                    <span>循環器</span>
+                    <span class="genre-count">5</span>
+                </button>
+                <button class="genre-btn" data-genre="輸液">
+                    <span class="genre-icon">💧</span>
+                    <span>輸液</span>
+                    <span class="genre-count">3</span>
+                </button>
+                <button class="genre-btn" data-genre="腎泌尿器">
+                    <span class="genre-icon">🫘</span>
+                    <span>腎泌尿器</span>
+                    <span class="genre-count">3</span>
+                </button>
+                <button class="genre-btn" data-genre="猫">
+                    <span class="genre-icon">🐱</span>
+                    <span>猫</span>
+                    <span class="genre-count">3</span>
+                </button>
+                <button class="genre-btn" data-genre="皮膚">
+                    <span class="genre-icon">🐾</span>
+                    <span>皮膚</span>
+                    <span class="genre-count">2</span>
+                </button>
+                <button class="genre-btn" data-genre="免疫">
+                    <span class="genre-icon">🛡️</span>
+                    <span>免疫</span>
+                    <span class="genre-count">2</span>
+                </button>
+                <button class="genre-btn" data-genre="消化器・肝臓">
+                    <span class="genre-icon">🍽️</span>
+                    <span>消化器・肝臓</span>
+                    <span class="genre-count">2</span>
+                </button>
+                <button class="genre-btn" data-genre="腫瘍">
+                    <span class="genre-icon">🔬</span>
+                    <span>腫瘍</span>
+                    <span class="genre-count">1</span>
+                </button>
+                <button class="genre-btn" data-genre="神経">
+                    <span class="genre-icon">🧠</span>
+                    <span>神経</span>
+                    <span class="genre-count">1</span>
+                </button>
+                <button class="genre-btn" data-genre="内分泌">
+                    <span class="genre-icon">⚖️</span>
+                    <span>内分泌</span>
+                    <span class="genre-count">1</span>
+                </button>
+                <button class="genre-btn" data-genre="その他">
+                    <span class="genre-icon">📦</span>
+                    <span>その他</span>
+                    <span class="genre-count">5</span>
+                </button>
+            </nav>
 
-                <!-- 消化器 -->
-                <a href="topics/下痢/犬の急性下痢_最新エビデンス.html" class="nav-card">
-                    <span class="nav-icon">🐕</span>
-                    <h3>犬の急性下痢 ─ 最新エビデンス</h3>
-                    <p>メトロニダゾールの再考、プロバイオティクス、AHDSの治療プロトコル</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--primary">消化器</span>
-                        <span class="tag tag--warning">抗菌薬</span>
-                    </div>
-                    <span class="nav-count">📄 5論文</span>
-                </a>
+            <!-- Articles Main -->
+            <main class="index-main">
+                <div class="active-genre-label" id="active-genre-label">
+                    <span>📋 すべての記事</span>
+                    <span class="count-badge" id="visible-count">35件</span>
+                </div>
 
-                <!-- 抗菌薬 -->
-                <a href="topics/抗菌薬/抗菌薬選択の基本原則.html" class="nav-card">
-                    <span class="nav-icon">💊</span>
-                    <h3>抗菌薬選択の基本原則</h3>
-                    <p>ISCAID/AAHAガイドライン。臓器別アプローチと耐性菌対策</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--warning">抗菌薬</span>
-                        <span class="tag tag--success">ガイドライン</span>
-                    </div>
-                    <span class="nav-count">📄 6論文</span>
-                </a>
+                <div class="articles-grid" id="articles-grid">
 
-                <!-- 麻酔 -->
-                <a href="topics/麻酔/麻酔モニタリング_ACVAA2025.html" class="nav-card">
-                    <span class="nav-icon">😴</span>
-                    <h3>麻酔モニタリング ─ ACVAA 2025</h3>
-                    <p>最新ガイドラインの3段階モニタリング。一般病院でできる最低限</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--primary">麻酔</span>
-                        <span class="tag tag--success">ACVAA</span>
-                    </div>
-                    <span class="nav-count">📄 5論文</span>
-                </a>
+                    <!-- ===== 救急 ===== -->
+                    <a href="topics/救急/GDV_安定化と手術判断.html" class="article-card" data-category="救急">
+                        <span class="card-icon">🐕</span>
+                        <h3>GDV ─ 安定化と手術判断</h3>
+                        <p>胃拡張-捻転症候群の初期安定化から緊急手術決定まで。胃減圧・輸液蘇生・トロカール法</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">救急</span>
+                            <span class="tag tag--warning">外科</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
 
-                <!-- 輸液 -->
-                <a href="topics/輸液/輸液の基本_晶質液vs膠質液.html" class="nav-card">
-                    <span class="nav-icon">💧</span>
-                    <h3>輸液の基本 ─ 晶質液 vs 膠質液</h3>
-                    <p>AAHA輸液ガイドライン。ショック時の輸液選択と灌流指標</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--primary">輸液</span>
-                        <span class="tag tag--danger">救急</span>
-                    </div>
-                    <span class="nav-count">📄 5論文</span>
-                </a>
+                    <a href="topics/救急/猫の尿道閉塞_救急対応フロー.html" class="article-card" data-category="救急">
+                        <span class="card-icon">🐱</span>
+                        <h3>猫の尿道閉塞 ─ 救急対応フロー</h3>
+                        <p>高カリウム血症の緊急治療、尿道カテーテル挿入の手技、閉塞解除後の管理</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">救急</span>
+                            <span class="tag tag--warning">泌尿器</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
 
-                <!-- 血液ガス -->
-                <a href="topics/血液ガス/血液ガス分析の基本.html" class="nav-card">
-                    <span class="nav-icon">🧪</span>
-                    <h3>血液ガス分析の基本</h3>
-                    <p>pH・PCO2・HCO3の3ステップ解釈法。アニオンギャップの活用</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--primary">検査</span>
-                        <span class="tag tag--warning">血液ガス</span>
-                    </div>
-                    <span class="nav-count">📄 4論文</span>
-                </a>
+                    <a href="topics/救急/CPR_RECOVER最新アップデート.html" class="article-card" data-category="救急">
+                        <span class="card-icon">💓</span>
+                        <h3>CPR ─ RECOVER最新アップデート</h3>
+                        <p>犬猫の心肺蘇生ガイドライン。BLS/ALS、アドレナリン投与間隔、チームシミュレーション</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">救急</span>
+                            <span class="tag tag--success">RECOVER</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
 
-                <!-- 皮膚 -->
-                <a href="topics/皮膚/犬のアトピー性皮膚炎_最新治療薬比較.html" class="nav-card">
-                    <span class="nav-icon">🐾</span>
-                    <h3>犬のアトピー性皮膚炎 ─ 治療薬比較</h3>
-                    <p>アポキル・サイトポイント・シクロスポリンの比較。ステロイドからの脱却</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--primary">皮膚</span>
-                        <span class="tag tag--success">最新薬</span>
-                    </div>
-                    <span class="nav-count">📄 6論文</span>
-                </a>
+                    <a href="topics/救急/ショック管理_最新プロトコル.html" class="article-card" data-category="救急">
+                        <span class="card-icon">⚡</span>
+                        <h3>ショック管理 ─ 最新プロトコル</h3>
+                        <p>分布性・循環血液量減少性・心原性ショックの鑑別と初期蘇生</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">救急</span>
+                            <span class="tag tag--primary">輸液</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
 
-                <!-- 腎泌尿器 -->
-                <a href="topics/腎泌尿器/猫のCKD_IRISステージ別管理.html" class="nav-card">
-                    <span class="nav-icon">🫘</span>
-                    <h3>猫のCKD ─ IRISステージ別管理</h3>
-                    <p>SDMAによる早期発見。食事療法・リン制限・合併症管理</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--warning">腎泌尿器</span>
-                        <span class="tag tag--success">IRIS</span>
-                    </div>
-                    <span class="nav-count">📄 6論文</span>
-                </a>
+                    <a href="topics/救急/敗血症_早期認識と初期蘇生.html" class="article-card" data-category="救急">
+                        <span class="card-icon">🦠</span>
+                        <h3>敗血症 ─ 早期認識と初期蘇生</h3>
+                        <p>SIRS criteria、乳酸値の評価、抗菌薬の1時間ルールと輸液蘇生</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">救急</span>
+                            <span class="tag tag--warning">感染症</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
 
-                <!-- 腫瘍 -->
-                <a href="topics/腫瘍/リンパ腫_犬と猫の違い.html" class="nav-card">
-                    <span class="nav-icon">🔬</span>
-                    <h3>リンパ腫 ─ 犬と猫の違い</h3>
-                    <p>CHOPプロトコル。犬の多中心型 vs 猫の消化器型の治療戦略</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--danger">腫瘍</span>
-                        <span class="tag tag--warning">CHOP</span>
-                    </div>
-                    <span class="nav-count">📄 7論文</span>
-                </a>
+                    <a href="topics/救急/急性膵炎_犬猫の違いと管理.html" class="article-card" data-category="救急">
+                        <span class="card-icon">🔥</span>
+                        <h3>急性膵炎 ─ 犬猫の違いと管理</h3>
+                        <p>cPLI/fPLI、早期経腸栄養、鎮痛管理。犬と猫の病態差</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">救急</span>
+                            <span class="tag tag--primary">消化器</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
 
-                <!-- 神経 -->
-                <a href="topics/神経/椎間板ヘルニア_頚部胸腰部統合版.html" class="nav-card">
-                    <span class="nav-icon">🧠</span>
-                    <h3>椎間板ヘルニア ─ 頚部＆胸腰部</h3>
-                    <p>Grade分類と手術適応。ヘミラミネクトミー vs ベントラルスロット、DPP消失時の予後</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--primary">神経</span>
-                        <span class="tag tag--danger">外科</span>
-                    </div>
-                    <span class="nav-count">📄 6論文</span>
-                </a>
+                    <a href="topics/救急/犬猫の中毒_原因物質と対処法.html" class="article-card" data-category="救急">
+                        <span class="card-icon">☠️</span>
+                        <h3>犬猫の中毒 ─ 原因物質と対処法</h3>
+                        <p>チョコレート、キシリトール、NSAID、ユリ科植物。催吐法と活性炭投与</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">救急</span>
+                            <span class="tag tag--warning">中毒</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
 
-                <!-- 内分泌 -->
-                <a href="topics/内分泌/犬のクッシング症候群_診断の落とし穴.html" class="nav-card">
-                    <span class="nav-icon">⚖️</span>
-                    <h3>犬のクッシング症候群 ─ 診断の落とし穴</h3>
-                    <p>LDDST vs ACTH刺激試験。過剰診断を避けるためのポイント</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--primary">内分泌</span>
-                        <span class="tag tag--warning">診断</span>
-                    </div>
-                    <span class="nav-count">📄 5論文</span>
-                </a>
+                    <!-- ===== 循環器 ===== -->
+                    <a href="topics/循環器/心原性肺水腫_一般病院での救命Tips.html" class="article-card" data-category="循環器">
+                        <span class="card-icon">🫁</span>
+                        <h3>心原性肺水腫 ─ 救命Tips</h3>
+                        <p>酸素フローバイ＋フロセミド＋ピモベンダンIV。一般病院の緊急対応フロー</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">循環器</span>
+                            <span class="tag tag--warning">救急</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
 
-                <!-- 免疫 -->
-                <a href="topics/免疫/IMHA_診断と初期治療.html" class="nav-card">
-                    <span class="nav-icon">🛡️</span>
-                    <h3>IMHA ─ 診断と初期治療</h3>
-                    <p>ACVIMコンセンサス2019。免疫抑制・抗血栓・輸血の戦略</p>
-                    <div class="tags" style="margin-top: 8px;">
-                        <span class="tag tag--danger">免疫</span>
-                        <span class="tag tag--warning">救急</span>
-                    </div>
-                    <span class="nav-count">📄 6論文</span>
-                </a>
-            </div>
-        </section>
+                    <a href="topics/循環器/僧帽弁閉鎖不全症_ステージ別治療.html" class="article-card" data-category="循環器">
+                        <span class="card-icon">❤️</span>
+                        <h3>僧帽弁閉鎖不全症 ─ ステージ別治療</h3>
+                        <p>ACVIM分類とEPIC試験。B2からのピモベンダン開始基準</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">循環器</span>
+                            <span class="tag tag--primary">MMVD</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/循環器/ピモベンダンの使い方と最新エビデンス.html" class="article-card" data-category="循環器">
+                        <span class="card-icon">💊</span>
+                        <h3>ピモベンダンの使い方と最新エビデンス</h3>
+                        <p>EPIC試験、猫HCMでの適応、注射薬の使用上の注意点</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">循環器</span>
+                            <span class="tag tag--success">薬剤</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/循環器/不整脈の救急対応_心電図の読み方.html" class="article-card" data-category="循環器">
+                        <span class="card-icon">📈</span>
+                        <h3>不整脈の救急対応 ─ 心電図の読み方</h3>
+                        <p>VT・SVT・房室ブロックの鑑別と初期治療。リドカインの使い方</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">循環器</span>
+                            <span class="tag tag--warning">救急</span>
+                            <span class="card-papers">📄 7論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/循環器/猫のHCM_早期発見と管理.html" class="article-card" data-category="循環器">
+                        <span class="card-icon">🐱</span>
+                        <h3>猫のHCM ─ 早期発見と管理</h3>
+                        <p>肥大型心筋症のスクリーニング、エコー指標、血栓予防</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">循環器</span>
+                            <span class="tag tag--primary">猫</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 輸液 ===== -->
+                    <a href="topics/輸液/輸液の基本_晶質液vs膠質液.html" class="article-card" data-category="輸液">
+                        <span class="card-icon">💧</span>
+                        <h3>輸液の基本 ─ 晶質液 vs 膠質液</h3>
+                        <p>AAHAガイドライン。ショック時の輸液選択と灌流指標</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">輸液</span>
+                            <span class="tag tag--danger">救急</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/輸液/ショック時の輸液戦略_ボーラス投与の実際.html" class="article-card" data-category="輸液">
+                        <span class="card-icon">⚡</span>
+                        <h3>ショック時の輸液戦略 ─ ボーラス投与</h3>
+                        <p>AAHA 2024準拠のボーラスプロトコル。犬猫別・昇圧薬への移行基準</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">輸液</span>
+                            <span class="tag tag--success">2024 AAHA</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/輸液/維持輸液の考え方_過剰輸液のリスク.html" class="article-card" data-category="輸液">
+                        <span class="card-icon">🚨</span>
+                        <h3>維持輸液の考え方 ─ 過剰輸液のリスク</h3>
+                        <p>維持輸液速度の根拠、猫への配慮。"less is more"の時代</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">輸液</span>
+                            <span class="tag tag--warning">基礎</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 腎泌尿器 ===== -->
+                    <a href="topics/腎泌尿器/猫のCKD_IRISステージ別管理.html" class="article-card" data-category="腎泌尿器">
+                        <span class="card-icon">🫘</span>
+                        <h3>猫のCKD ─ IRISステージ別管理</h3>
+                        <p>SDMAによる早期発見。食事療法・リン制限・合併症管理</p>
+                        <div class="card-footer">
+                            <span class="tag tag--warning">腎泌尿器</span>
+                            <span class="tag tag--success">IRIS</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/腎泌尿器/蛋白尿の評価と治療介入のタイミング.html" class="article-card" data-category="腎泌尿器">
+                        <span class="card-icon">🔬</span>
+                        <h3>蛋白尿の評価と治療介入のタイミング</h3>
+                        <p>UPC測定の解釈、糸球体疾患の鑑別、ACE阻害薬・ARBによる抗蛋白尿療法</p>
+                        <div class="card-footer">
+                            <span class="tag tag--warning">腎泌尿器</span>
+                            <span class="tag tag--success">IRIS</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/腎泌尿器/犬猫の膀胱炎_ISCAIDガイドライン.html" class="article-card" data-category="腎泌尿器">
+                        <span class="card-icon">💊</span>
+                        <h3>犬猫の膀胱炎 ─ ISCAIDガイドライン</h3>
+                        <p>単純性vs複雑性UTI、培養感受性試験、不必要な抗菌薬を減らす</p>
+                        <div class="card-footer">
+                            <span class="tag tag--warning">腎泌尿器</span>
+                            <span class="tag tag--success">ISCAID</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 猫 ===== -->
+                    <a href="topics/猫/FIP_抗ウイルス薬時代の治療.html" class="article-card" data-category="猫">
+                        <span class="card-icon">🐱</span>
+                        <h3>FIP ─ 抗ウイルス薬時代の治療</h3>
+                        <p>GS-441524、モルヌピラビル。ウェット型・ドライ型の治療プロトコル</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">猫</span>
+                            <span class="tag tag--success">最新治療</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/猫/FLUTD_閉塞vs非閉塞の対応.html" class="article-card" data-category="猫">
+                        <span class="card-icon">🐱</span>
+                        <h3>FLUTD ─ 閉塞vs非閉塞の対応</h3>
+                        <p>猫の下部尿路疾患の鑑別。FIC、尿石症、閉塞・非閉塞の管理</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">猫</span>
+                            <span class="tag tag--warning">泌尿器</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/猫/猫の胸水_原因鑑別と胸腔穿刺.html" class="article-card" data-category="猫">
+                        <span class="card-icon">🐱</span>
+                        <h3>猫の胸水 ─ 原因鑑別と胸腔穿刺</h3>
+                        <p>漏出液vs滲出液、FIP・リンパ腫・心不全の鑑別、胸腔穿刺の手技</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">猫</span>
+                            <span class="tag tag--danger">救急</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 皮膚 ===== -->
+                    <a href="topics/皮膚/犬のアトピー性皮膚炎_最新治療薬比較.html" class="article-card" data-category="皮膚">
+                        <span class="card-icon">🐾</span>
+                        <h3>犬のアトピー性皮膚炎 ─ 治療薬比較</h3>
+                        <p>アポキル・サイトポイント・シクロスポリンの比較。ステロイドからの脱却</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">皮膚</span>
+                            <span class="tag tag--success">最新薬</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/皮膚/外耳炎の原因別治療アプローチ.html" class="article-card" data-category="皮膚">
+                        <span class="card-icon">👂</span>
+                        <h3>外耳炎の原因別治療アプローチ</h3>
+                        <p>PPSP分析、原因の階層化、細胞診に基づく局所治療選択</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">皮膚</span>
+                            <span class="tag tag--warning">耳</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 免疫 ===== -->
+                    <a href="topics/免疫/IMHA_診断と初期治療.html" class="article-card" data-category="免疫">
+                        <span class="card-icon">🛡️</span>
+                        <h3>IMHA ─ 診断と初期治療</h3>
+                        <p>ACVIMコンセンサス2019。免疫抑制・抗血栓・輸血の戦略</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">免疫</span>
+                            <span class="tag tag--warning">救急</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/免疫/ITP_診断と治療.html" class="article-card" data-category="免疫">
+                        <span class="card-icon">🩸</span>
+                        <h3>ITP ─ 診断と治療</h3>
+                        <p>免疫介在性血小板減少症。ステロイド・ビンクリスチン・hIVIG</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">免疫</span>
+                            <span class="tag tag--primary">血液</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 消化器・肝臓 ===== -->
+                    <a href="topics/下痢/犬の急性下痢_最新エビデンス.html" class="article-card" data-category="消化器・肝臓">
+                        <span class="card-icon">🐕</span>
+                        <h3>犬の急性下痢 ─ 最新エビデンス</h3>
+                        <p>メトロニダゾールの再考、プロバイオティクス、AHDSの治療プロトコル</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">消化器</span>
+                            <span class="tag tag--warning">抗菌薬</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/肝臓/猫の脂肪肝_強制給餌と栄養管理.html" class="article-card" data-category="消化器・肝臓">
+                        <span class="card-icon">🐱</span>
+                        <h3>猫の脂肪肝 ─ 強制給餌と栄養管理</h3>
+                        <p>肝リピドーシスの診断と治療。経食道チューブ、栄養計算、再給餌症候群</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">肝臓</span>
+                            <span class="tag tag--warning">栄養</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 腫瘍 ===== -->
+                    <a href="topics/腫瘍/リンパ腫_犬と猫の違い.html" class="article-card" data-category="腫瘍">
+                        <span class="card-icon">🔬</span>
+                        <h3>リンパ腫 ─ 犬と猫の違い</h3>
+                        <p>CHOPプロトコル。犬の多中心型 vs 猫の消化器型の治療戦略</p>
+                        <div class="card-footer">
+                            <span class="tag tag--danger">腫瘍</span>
+                            <span class="tag tag--warning">CHOP</span>
+                            <span class="card-papers">📄 7論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 神経 ===== -->
+                    <a href="topics/神経/椎間板ヘルニア_頚部胸腰部統合版.html" class="article-card" data-category="神経">
+                        <span class="card-icon">🧠</span>
+                        <h3>椎間板ヘルニア ─ 頚部＆胸腰部</h3>
+                        <p>Grade分類と手術適応。ヘミラミネクトミー vs ベントラルスロット</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">神経</span>
+                            <span class="tag tag--danger">外科</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== 内分泌 ===== -->
+                    <a href="topics/内分泌/犬のクッシング症候群_診断の落とし穴.html" class="article-card" data-category="内分泌">
+                        <span class="card-icon">⚖️</span>
+                        <h3>犬のクッシング症候群 ─ 診断の落とし穴</h3>
+                        <p>LDDST vs ACTH刺激試験。過剰診断を避けるためのポイント</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">内分泌</span>
+                            <span class="tag tag--warning">診断</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <!-- ===== その他 ===== -->
+                    <a href="topics/抗菌薬/抗菌薬選択の基本原則.html" class="article-card" data-category="その他">
+                        <span class="card-icon">💊</span>
+                        <h3>抗菌薬選択の基本原則</h3>
+                        <p>ISCAID/AAHAガイドライン。臓器別アプローチと耐性菌対策</p>
+                        <div class="card-footer">
+                            <span class="tag tag--warning">抗菌薬</span>
+                            <span class="tag tag--success">ガイドライン</span>
+                            <span class="card-papers">📄 6論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/麻酔/麻酔モニタリング_ACVAA2025.html" class="article-card" data-category="その他">
+                        <span class="card-icon">😴</span>
+                        <h3>麻酔モニタリング ─ ACVAA 2025</h3>
+                        <p>最新ガイドラインの3段階モニタリング。一般病院でできる最低限</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">麻酔</span>
+                            <span class="tag tag--success">ACVAA</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/血液ガス/血液ガス分析の基本.html" class="article-card" data-category="その他">
+                        <span class="card-icon">🧪</span>
+                        <h3>血液ガス分析の基本</h3>
+                        <p>pH・PCO2・HCO3の3ステップ解釈法。アニオンギャップの活用</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">検査</span>
+                            <span class="tag tag--warning">血液ガス</span>
+                            <span class="card-papers">📄 4論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/栄養/療法食の選び方_疾患別フードガイド.html" class="article-card" data-category="その他">
+                        <span class="card-icon">🍽️</span>
+                        <h3>療法食の選び方 ─ 疾患別フードガイド</h3>
+                        <p>CKD・心疾患・消化器・尿石症の療法食。フード選択のフローチャート</p>
+                        <div class="card-footer">
+                            <span class="tag tag--primary">栄養</span>
+                            <span class="tag tag--success">療法食</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                    <a href="topics/泌尿器/尿石症_種類別の治療食事療法.html" class="article-card" data-category="その他">
+                        <span class="card-icon">💎</span>
+                        <h3>尿石症 ─ 種類別の治療・食事療法</h3>
+                        <p>ストルバイト vs シュウ酸カルシウム。溶解プロトコルと予防食</p>
+                        <div class="card-footer">
+                            <span class="tag tag--warning">泌尿器</span>
+                            <span class="tag tag--primary">食事療法</span>
+                            <span class="card-papers">📄 5論文</span>
+                        </div>
+                    </a>
+
+                </div>
+            </main>
+        </div>
 
         <!-- Quick Links -->
-        <section style="margin-top: 48px;">
+        <section style="max-width: 1200px; margin: 48px auto 0; padding: 0 var(--space-lg);">
             <h2 style="font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
                 <span>🔗</span> 論文検索リンク
             </h2>
@@ -249,7 +871,8 @@
         </section>
 
         <!-- Footer -->
-        <footer class="page-footer">
+        <footer class="page-footer"
+            style="max-width: 1200px; margin: 48px auto 0; padding: 0 var(--space-lg) var(--space-xl);">
             <p style="font-size: 0.85rem; color: var(--color-text-secondary);">VetEvidence 🩺 動物救急論文まとめ</p>
             <p style="margin-top: 4px;">
                 ※本サイトは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。
@@ -257,6 +880,64 @@
         </footer>
 
     </div>
+
+    <script>
+        // Genre Filter Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('genre-sidebar');
+            const grid = document.getElementById('articles-grid');
+            const label = document.getElementById('active-genre-label');
+            const countBadge = document.getElementById('visible-count');
+            const cards = grid.querySelectorAll('.article-card');
+            const buttons = sidebar.querySelectorAll('.genre-btn');
+
+            const genreLabels = {
+                'all': '📋 すべての記事',
+                '救急': '🚑 救急',
+                '循環器': '❤️ 循環器',
+                '輸液': '💧 輸液',
+                '腎泌尿器': '🫘 腎泌尿器',
+                '猫': '🐱 猫',
+                '皮膚': '🐾 皮膚',
+                '免疫': '🛡️ 免疫',
+                '消化器・肝臓': '🍽️ 消化器・肝臓',
+                '腫瘍': '🔬 腫瘍',
+                '神経': '🧠 神経',
+                '内分泌': '⚖️ 内分泌',
+                'その他': '📦 その他'
+            };
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const genre = btn.dataset.genre;
+
+                    // Update active state
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Filter cards
+                    let visibleCount = 0;
+                    cards.forEach(card => {
+                        if (genre === 'all' || card.dataset.category === genre) {
+                            card.classList.remove('hidden');
+                            visibleCount++;
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+
+                    // Update label
+                    label.querySelector('span:first-child').textContent = genreLabels[genre] || genre;
+                    countBadge.textContent = visibleCount + '件';
+
+                    // Smooth scroll to top of grid on mobile
+                    if (window.innerWidth <= 768) {
+                        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
 
     <script src="assets/script.js"></script>
 </body>
