@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="犬のクッシング症候群（副腎皮質機能亢進症）の診断の落とし穴。LDDS・ACTH刺激・UCCRの解釈と偽陽性の回避。">
+    <title>クッシング症候群 ─ 診断の落とし穴 | VetEvidence</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+
+<body class="mode-premium">
+
+    <nav class="mobile-nav">
+        <span class="nav-brand">🩺 VetEvidence</span>
+        <button class="hamburger-btn" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="slide-menu-overlay"></div>
+    <aside class="slide-menu">
+        <h4>ナビゲーション</h4>
+        <a href="../../index.html">🏠 トップ</a>
+        <a href="#conclusion">🎯 結論</a>
+        <a href="#action-table">🗺️ 検査比較</a>
+        <a href="#when-to-test">🔍 検査のタイミング</a>
+        <a href="#tests">🧪 各検査の解釈</a>
+        <a href="#pdh-vs-at">⚖️ PDH vs AT鑑別</a>
+        <a href="#treatment">💊 治療と管理</a>
+        <a href="#owner-tips">🗣️ 飼い主説明</a>
+        <a href="#refs">📚 参照論文</a>
+    </aside>
+
+    <div class="page-container">
+
+        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+            <div class="tags" style="margin-bottom: 8px;">
+                <span class="tag tag--primary">内分泌</span>
+                <span class="tag tag--danger">診断</span>
+                <span class="tag tag--success">犬</span>
+            </div>
+            <h1 style="font-size: 1.3rem;">🔬 クッシング症候群 ─ 診断の落とし穴</h1>
+            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                「検査値が陽性だからクッシング」は最大の間違い。
+                臨床所見なしに検査すべきではなく、<strong>非副腎性疾患（NAI）による偽陽性</strong>が最大の落とし穴。
+                「臨床症状が先、検査は後」の原則を徹底する。
+            </p>
+            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+                <div class="meta-item"><span class="icon">📄</span><span>参照論文 7本</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+            </div>
+        </header>
+
+        <div class="content-mode-bar">
+            <span>📋</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="content-mode-toggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label">👑 すべて表示</span>
+        </div>
+
+        <div class="free-content" id="conclusion">
+            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <p style="font-size:0.88rem;">
+                    クッシング症候群（HAC）の最大の落とし穴は<strong>「偽陽性」</strong>。
+                    併発疾患（DM、CKD、肝疾患、ストレス）があると<strong>LDDS・ACTH刺激のどちらも偽陽性</strong>になりうる。
+                    原則: <strong>臨床症状が合致しなければ検査しない</strong>。
+                    典型的な症状（多飲多尿・腹部膨満・脱毛・皮膚菲薄化・肝腫大）が複数揃って初めて検査を行う。
+                    <strong>PDH（85%）</strong>とAT（15%）の鑑別にはLDDS 4時間・8時間値の評価と<strong>腹部超音波</strong>が有用。
+                    治療はトリロスタン。日本での承認薬名は<strong>アドレスタン®</strong>（共立製薬）など。海外先発薬名は<strong>ベトリル®（Vetoryl）</strong>。
+                </p>
+            </div>
+        </div>
+
+        <div class="free-content" id="action-table">
+            <div class="card">
+                <h3 style="font-size: 0.95rem;">⚡ スクリーニング検査の比較</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:12px 0 0;">
+                        <thead>
+                            <tr>
+                                <th>検査</th>
+                                <th>感度</th>
+                                <th>特異度</th>
+                                <th>メリット</th>
+                                <th>デメリット</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>LDDS</strong></td>
+                                <td>85〜100%</td>
+                                <td>40〜73%</td>
+                                <td>感度が高い。4/8h値でPDH/AT鑑別の手がかり</td>
+                                <td><strong>偽陽性が多い</strong>。8時間の入院が必要</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ACTH刺激試験</strong></td>
+                                <td>57〜95%</td>
+                                <td>59〜93%</td>
+                                <td>短時間（1〜2h）。医原性HACを検出</td>
+                                <td>AT由来HACの<strong>感度が低い</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>UCCR</strong></td>
+                                <td>≒100%</td>
+                                <td>20〜30%</td>
+                                <td>最も感度が高い。自宅採尿で簡便</td>
+                                <td><strong>特異度が極めて低い</strong>。ルールアウト目的のみ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:0.8rem;margin-top:8px;color:var(--color-text-muted);">
+                    ⚠️ <strong>UCCRが正常 → HACをほぼ除外できる</strong>（感度≒100%）。ただし陽性ならHACとは限らない（特異度が低い）。
+                </p>
+            </div>
+        </div>
+
+        <!-- PREMIUM -->
+
+        <div id="when-to-test">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🔍</span><span>いつ検査すべきか ─
+                            臨床所見ファースト</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>検査を実施すべき臨床像</h4>
+                        <ul>
+                            <li><strong>多飲多尿</strong>（PU/PD）: 最も一般的な初期症状。USG ＜1.020</li>
+                            <li><strong>腹部膨満</strong>（ポットベリー）: 肝腫大＋腹筋弱化</li>
+                            <li><strong>左右対称性脱毛</strong>: 体幹〜尾部、痒みなし</li>
+                            <li><strong>皮膚菲薄化</strong>: 菲薄な皮膚、面皰（comedones）、石灰沈着症（calcinosis cutis）</li>
+                            <li><strong>パンティング</strong>: 安静時の持続的な喘ぎ</li>
+                            <li>血液検査: <strong>ALP著増</strong>（ステロイド誘導性ALP）、ストレス白血球像、高コレステロール</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <h4>⚠️ 検査してはいけないタイミング</h4>
+                            <ul>
+                                <li><strong>併発疾患の急性期</strong>（DM、膵炎、腎臓病の活動期）→ 偽陽性リスク大</li>
+                                <li><strong>臨床症状がない</strong>のに「ALPが高いから」検査 → 偽陽性のワナ</li>
+                                <li><strong>1〜2個の非特異的症状</strong>だけの場合（多飲だけ、脱毛だけ）→ 他の原因を先に除外</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>検査タイミングの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tests">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🧪</span><span>各検査の解釈 ─ 落とし穴を避ける</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>LDDS（低用量デキサメタゾン抑制試験）</h4>
+                        <ul>
+                            <li>デキサメタゾン 0.01 mg/kg IV → 4時間後・8時間後に採血</li>
+                            <li><strong>8時間値で抑制なし</strong>（＞基準値）→ HAC疑い</li>
+                            <li>4時間値で抑制あり→8時間で再上昇 = <strong>PDHを強く示唆</strong>（約60%のPDHで見られる）</li>
+                            <li>⚠️ <strong>NAI（非副腎性疾患）</strong>: 糖尿病、腎臓病、肝疾患、重度感染、ストレス →
+                                <strong>すべてLDDSを偽陽性</strong>にしうる
+                            </li>
+                        </ul>
+                        <h4 style="margin-top:12px;">ACTH刺激試験</h4>
+                        <ul>
+                            <li>合成ACTH（テトラコサクチド、コートロシン® 5 μg/kg IV）→ 1時間後に採血</li>
+                            <li>刺激後コルチゾール ＞基準上限 → HAC疑い</li>
+                            <li>⚠️ AT由来HACの<strong>感度が低い</strong>（57〜63%程度）→ ACTH正常でもATは除外できない</li>
+                            <li>主な用途:
+                                <strong>医原性HAC</strong>の診断（ステロイド長期投与後の副腎萎縮を評価）、非副腎性疾患（NAI）併発時の鑑別、および<strong>トリロスタン治療中のモニタリング</strong>
+                            </li>
+                        </ul>
+                        <h4 style="margin-top:12px;">UCCR（尿中コルチゾール:クレアチニン比）</h4>
+                        <ul>
+                            <li>自宅で朝一番の尿を2〜3日採取 → 平均値を算出</li>
+                            <li><strong>正常 → HACをほぼ除外</strong>（感度≒100%）。最良の「除外検査」</li>
+                            <li>高値 → 確定ではない（ストレスや他の疾患でも上昇）。<strong>スクリーニングの第一段階として有用</strong></li>
+                        </ul>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>検査解釈の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pdh-vs-at">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">⚖️</span><span>PDH vs AT ─
+                            タイプの鑑別</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>特徴</th>
+                                    <th>PDH（下垂体性）</th>
+                                    <th>AT（副腎腫瘍）</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>頻度</td>
+                                    <td><strong>約85%</strong></td>
+                                    <td>約15%</td>
+                                </tr>
+                                <tr>
+                                    <td>LDDS 4h値</td>
+                                    <td>一部で一時的抑制あり</td>
+                                    <td>抑制なし</td>
+                                </tr>
+                                <tr>
+                                    <td>HDDS</td>
+                                    <td>約75%で抑制される</td>
+                                    <td>抑制なし</td>
+                                </tr>
+                                <tr>
+                                    <td>腹部超音波</td>
+                                    <td><strong>両側副腎の対称性腫大</strong></td>
+                                    <td><strong>片側副腎の腫瘤</strong>＋対側の萎縮</td>
+                                </tr>
+                                <tr>
+                                    <td>治療</td>
+                                    <td>トリロスタン（or 下垂体放射線治療）</td>
+                                    <td>副腎摘出術 or トリロスタン</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clinical-tip">
+                            <h4>💊 腹部超音波が最も実用的な鑑別ツール</h4>
+                            <ul>
+                                <li><strong>副腎の幅</strong>: 犬の正常値は尾側極で ≤7.4 mm。PDHでは両側が均等に7〜10 mm程度に腫大</li>
+                                <li>片側のみ著しく腫大（＞2 cm）＋対側萎縮 → <strong>ATを強く示唆</strong></li>
+                                <li>AT ＞4 cm → <strong>血管浸潤（後大静脈へのthrombus）</strong>の評価が必須</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>PDH vs ATの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="treatment">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">💊</span><span>治療と管理 ─ トリロスタンの実際</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>トリロスタン（アドレスタン® / 海外: Vetoryl®）─ 日本での第一選択</h4>
+                        <ul>
+                            <li>開始用量: <strong>1〜2 mg/kg PO SID</strong>（食事と一緒に投与で吸収↑）</li>
+                            <li>投与4〜6時間後にACTH刺激試験でモニタリング</li>
+                            <li>目標: 刺激後コルチゾール <strong>1.45〜5.4 μg/dL</strong> (40〜150 nmol/L)</li>
+                            <li>開始後<strong>2週、4週、8週</strong>でモニタリング → 以後3ヶ月ごと</li>
+                        </ul>
+                        <h4 style="margin-top:12px;">⚠️ 副腎壊死のリスク</h4>
+                        <ul>
+                            <li>トリロスタンは稀に<strong>副腎壊死</strong>を引き起こし、急性アジソン症候群を発症</li>
+                            <li>初期症状: 元気消失、食欲不振、嘔吐、下痢、虚脱</li>
+                            <li>対応: <strong>トリロスタン中止</strong>＋デキサメタゾン IV 0.1 mg/kg＋輸液蘇生。一部は不可逆的</li>
+                            <li>飼い主に「<strong>元気がない、食べない場合はすぐ中止して来院</strong>」と必ず伝える</li>
+                        </ul>
+                        <h4 style="margin-top:12px;">ミトタン（o,p-DDD）</h4>
+                        <ul>
+                            <li>副作用が多く、日本では<strong>トリロスタンが主流</strong>。限られた施設でのみ使用</li>
+                            <li>副腎層を破壊する薬剤 → アジソン化のリスクが高く、慎重なモニタリングが必要</li>
+                        </ul>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>治療の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="owner-tips">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <div class="owner-tip" style="margin-top:0;">
+                            <h4>クッシング症候群とは何ですか？</h4>
+                            <div class="speech-bubble">
+                                体の中で<strong>「コルチゾール」というストレスホルモンが出すぎてしまう</strong>病気です。
+                                お水をたくさん飲む、お腹が出っ張る、毛が抜ける、息が荒いなどの症状が出ます。
+                                多くは脳の下垂体にできた<strong>小さな腫瘍</strong>（良性のことが多い）が原因です。
+                            </div>
+                        </div>
+                        <div class="owner-tip">
+                            <h4>治療は一生続けなければいけませんか？</h4>
+                            <div class="speech-bubble">
+                                はい、<strong>基本的には一生涯の内服治療</strong>が必要です。
+                                お薬（トリロスタン）を毎日飲ませて、定期的に血液検査で効果を確認します。
+                                お薬でホルモンを適正にコントロールすれば、<strong>症状は大幅に改善し、普通の生活を送れる</strong>ことが多いです。
+                                ただし、お薬が効きすぎることもあるので、<strong>元気がない・食べない時はすぐに教えてください</strong>。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="refs">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                            <li>Behrend EN et al. Diagnosis of spontaneous canine hyperadrenocorticism:
+                                2012 ACVIM consensus statement (small animal).
+                                <em>J Vet Intern Med</em> 2013;27(6):1292-1304.
+                            </li>
+                            <li>Ramsey IK. Trilostane in dogs.
+                                <em>Vet Clin North Am Small Anim Pract</em> 2010;40(2):269-283.
+                            </li>
+                            <li>Feldman EC, Nelson RW. Canine hyperadrenocorticism (Cushing's syndrome).
+                                In: <em>Canine and Feline Endocrinology</em>, 4th ed, 2015.</li>
+                            <li>Galac S et al. Urinary corticoid:creatinine ratios in the differentiation
+                                between pituitary-dependent hyperadrenocorticism and
+                                hyperadrenocorticism due to adrenocortical tumour in the dog.
+                                <em>Vet Q</em> 1997;19(1):17-20.
+                            </li>
+                            <li>Arenas C et al. Long-term survival of dogs with adrenal-dependent
+                                hyperadrenocorticism: a comparison between mitotane and twice daily
+                                trilostane. <em>J Vet Intern Med</em> 2014;28(2):473-480.</li>
+                            <li>Macfarlane L, Parkin T, Ramsey I. Pre-trilostane and three-hour post-trilostane
+                                cortisol to monitor trilostane therapy in dogs.
+                                <em>Vet Rec</em> 2016;179(23):597.
+                            </li>
+                            <li>Kaplan AJ et al. Effects of disease on the results of diagnostic tests
+                                for use in detecting hyperadrenocorticism in dogs.
+                                <em>JAVMA</em> 1995;207(4):445-451.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer" style="margin-top: var(--space-xl);">
+            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+        </footer>
+    </div>
+    <script src="../../assets/script.js"></script>
+</body>
+
+</html>

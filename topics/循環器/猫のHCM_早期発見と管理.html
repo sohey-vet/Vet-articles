@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="猫の肥大型心筋症（HCM）の早期発見と管理。ACVIM 2020ステージ分類、NT-proBNP/cTnIスクリーニング、ATE予防。">
+    <title>猫のHCM ─ 早期発見と管理 | VetEvidence</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+
+<body class="mode-premium">
+
+    <nav class="mobile-nav">
+        <span class="nav-brand">🩺 VetEvidence</span>
+        <button class="hamburger-btn" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="slide-menu-overlay"></div>
+    <aside class="slide-menu">
+        <h4>ナビゲーション</h4>
+        <a href="../../index.html">🏠 トップ</a>
+        <a href="#conclusion">🎯 結論</a>
+        <a href="#action-table">🗺️ ステージ分類</a>
+        <a href="#screening">🔍 スクリーニング</a>
+        <a href="#echo">📐 心エコー診断基準</a>
+        <a href="#treatment">💊 治療</a>
+        <a href="#ate-prevention">🩸 ATE予防</a>
+        <a href="#monitoring">📊 モニタリング</a>
+        <a href="#owner-tips">🗣️ 飼い主説明</a>
+        <a href="#refs">📚 参照論文</a>
+        <h4>情報ソース</h4>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+    </aside>
+
+    <div class="page-container">
+
+        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+            <div class="tags" style="margin-bottom: 8px;">
+                <span class="tag tag--primary">循環器</span>
+                <span class="tag tag--warning">猫</span>
+                <span class="tag tag--success">スクリーニング</span>
+            </div>
+            <h1 style="font-size: 1.3rem;">🐱 猫の肥大型心筋症（HCM）─ 早期発見と管理</h1>
+            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                猫の心臓病の約2/3を占めるHCM。無症状のうちに見つけてATE（動脈血栓塞栓症）を防ぐ。
+            </p>
+            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+                <div class="meta-item"><span class="icon">📄</span><span>参照論文 7本</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+            </div>
+        </header>
+
+        <div class="content-mode-bar">
+            <span>📋</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="content-mode-toggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label">👑 すべて表示</span>
+        </div>
+
+        <!-- ===== FREE ZONE ===== -->
+
+        <div class="free-content" id="conclusion">
+            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <p style="font-size:0.88rem;">
+                    HCMは<strong>猫の約7頭に1頭（14〜15%）</strong>に認められる最も一般的な心臓病（Payne et al. 2015）。
+                    メインクーンやラグドールではMYBPC3遺伝子変異が同定されているが、大部分の猫では原因遺伝子不明。
+                    診断のゴールドスタンダードは<strong>心エコー（左室壁厚≥6mm）</strong>。
+                    ACVIM 2020コンセンサスではステージA〜Dに分類し、<strong>ステージB2（左房拡大あり）以上でクロピドグレルによるATE予防</strong>を推奨。
+                    NT-proBNP>100pmol/Lは心疾患の可能性を示唆、>265pmol/Lはうっ血性心不全を強く示唆する。
+                    <strong>聴診で心雑音がなくてもHCMは否定できない</strong> ─ 無症状で突然死やATEが初発症状となりうる。
+                </p>
+            </div>
+        </div>
+
+        <div class="free-content" id="action-table">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ACVIM 2020 ─ 猫の心筋症ステージ分類と管理</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:0;min-width:650px;">
+                        <thead>
+                            <tr>
+                                <th>ステージ</th>
+                                <th>定義</th>
+                                <th>心エコー所見</th>
+                                <th>治療</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>A</strong></td>
+                                <td>リスク猫（品種・家族歴）<br>心エコー正常</td>
+                                <td>左室壁厚 ＜6mm<br>LA正常</td>
+                                <td>年1回スクリーニング心エコー<br>投薬不要</td>
+                            </tr>
+                            <tr>
+                                <td><strong>B1</strong></td>
+                                <td>軽度HCM<br>症状なし・合併症リスク低</td>
+                                <td>LV壁厚 ≥6mm<br>LA/Ao ＜1.5<br>LA正常〜軽度拡大</td>
+                                <td>6〜12ヶ月ごとの心エコー<br>アテノロール検討<br>（LVOTO閉塞ある場合）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>B2</strong></td>
+                                <td>中等度〜重度HCM<br>症状なし・ATE高リスク</td>
+                                <td>LA/Ao ≥1.5<br>中等度〜重度LA拡大<br>±心房内smoke/血栓</td>
+                                <td><strong>クロピドグレル 18.75mg/日</strong><br>3〜6ヶ月ごと心エコー<br>安静時呼吸数の自宅モニタリング</td>
+                            </tr>
+                            <tr>
+                                <td><strong>C</strong></td>
+                                <td>うっ血性心不全(CHF)<br>またはATE発症</td>
+                                <td>重度LA拡大<br>肺水腫/胸水</td>
+                                <td>フロセミド + ACEi<br>クロピドグレル<br>ピモベンダン（収縮不全時）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>D</strong></td>
+                                <td>標準治療に抵抗性の<br>末期心不全</td>
+                                <td>重度拡大<br>収縮能著明低下</td>
+                                <td>利尿薬増量・胸腔穿刺<br>QOL評価</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
+                    LA/Ao = 左房径/大動脈径比。LVOTO = 左室流出路閉塞。ACEi = ACE阻害薬（ベナゼプリル等）。
+                </p>
+            </div>
+        </div>
+
+        <div class="free-content">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+                <table class="comparison-table" style="margin:0;">
+                    <thead>
+                        <tr>
+                            <th>❌ 旧来</th>
+                            <th>✅ 最新</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>心雑音がなければ心臓病はない</td>
+                            <td>HCM猫の<strong>50%以上は聴診で心雑音なし</strong>。無症状でATEや突然死が初発症状になり得る</td>
+                        </tr>
+                        <tr>
+                            <td>全てのHCM猫にアテノロールを投与</td>
+                            <td>LVOTO（左室流出路閉塞）がない場合のアテノロールの有効性は<strong>エビデンス不十分</strong>。ACVIM
+                                2020は閉塞のないB1には積極的治療を推奨していない</td>
+                        </tr>
+                        <tr>
+                            <td>ATE予防はアスピリン</td>
+                            <td>FAT CAT study（Hogan 2015）: <strong>クロピドグレルはアスピリンより再発を有意に低下</strong>。クロピドグレルが第一選択</td>
+                        </tr>
+                        <tr>
+                            <td>HCM猫にピモベンダンは禁忌</td>
+                            <td>LVOTO閉塞がなく心不全を伴う場合は<strong>ピモベンダンの使用を検討</strong>（ACVIM 2020）。閉塞のある場合は注意が必要</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ===== PREMIUM ZONE ===== -->
+
+        <div id="screening">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🔍</span><span>バイオマーカーによるスクリーニング</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>NT-proBNP（院内検査可能）</h4>
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>NT-proBNP値</th>
+                                    <th>解釈</th>
+                                    <th>次のアクション</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>＜100 pmol/L</td>
+                                    <td>心疾患の可能性は低い</td>
+                                    <td>定期的な再検</td>
+                                </tr>
+                                <tr>
+                                    <td>100〜265 pmol/L</td>
+                                    <td>心疾患の可能性あり<br>（グレーゾーン）</td>
+                                    <td><strong>心エコー推奨</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>＞265 pmol/L</td>
+                                    <td>心疾患の可能性が高い<br>呼吸困難ありならCHF示唆</td>
+                                    <td><strong>心エコー必須</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>心臓トロポニンI（cTnI）</h4>
+                        <ul>
+                            <li>cTnI ＞0.7 ng/mLは心臓死のリスク上昇と独立した関連（左房拡大やCHFの有無によらない）</li>
+                            <li>HCMの重症度と相関し、経時的な上昇は疾患進行を示唆</li>
+                            <li>NT-proBNPとの組み合わせでスクリーニング精度が向上</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <h4>💊 臨床Tips</h4>
+                            <ul>
+                                <li>NT-proBNPは<strong>軽度〜中等度HCMの検出力は限定的</strong> → 正常値でもリスク猫種は心エコーが推奨</li>
+                                <li>腎臓病のある猫ではNT-proBNPが偽陽性に上昇するため注意</li>
+                                <li>日本ではIDEXX社のSNAP Feline proBNPが院内検査として利用可能</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>バイオマーカーの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="echo">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📐</span><span>心エコー診断基準 ─
+                            何を測って何をもってHCMとするか</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>HCM診断の心エコー基準</h4>
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>パラメータ</th>
+                                    <th>正常</th>
+                                    <th>HCM基準</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>左室自由壁（拡張末期）</td>
+                                    <td>3.0〜5.5 mm</td>
+                                    <td><strong>≥6.0 mm</strong>（3kg未満は≥5.0mm）</td>
+                                </tr>
+                                <tr>
+                                    <td>心室中隔（拡張末期）</td>
+                                    <td>3.0〜5.5 mm</td>
+                                    <td><strong>≥6.0 mm</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>LA/Ao比</td>
+                                    <td>1.0〜1.5</td>
+                                    <td>≥1.5（左房拡大 → B2への分類指標）</td>
+                                </tr>
+                                <tr>
+                                    <td>SAM（僧帽弁前尖の収縮期前方運動）</td>
+                                    <td>なし</td>
+                                    <td>LVOTO閉塞の指標</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clinical-tip">
+                            <h4>💊 鑑別診断</h4>
+                            <ul>
+                                <li><strong>甲状腺機能亢進症</strong>: 高齢猫では必ずT4を確認。甲状腺由来の左室肥大はHCMではない</li>
+                                <li><strong>全身性高血圧</strong>: 収縮期血圧>160mmHgでは高血圧による二次性肥大を除外</li>
+                                <li><strong>大動脈弁狭窄症</strong>: 先天性で若齢猫。ドプラで大動脈流速を確認</li>
+                                <li><strong>脱水</strong>: 重度脱水では見かけ上の壁厚↑ → 補液後に再評価</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>心エコー診断基準の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="treatment">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">💊</span><span>ステージ別治療 ─
+                            何をいつ始めるか</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>ステージB1（軽度・低リスク）</h4>
+                        <ul>
+                            <li>投薬の有効性を示すエビデンスは限定的 → <strong>基本的に経過観察</strong></li>
+                            <li>LVOTOがあり臨床症状（労作時呼吸促迫等）がある場合：アテノロール 6.25〜12.5mg PO BID を検討</li>
+                            <li>6〜12ヶ月ごとの心エコーで壁厚・LA径の推移をフォロー</li>
+                        </ul>
+                        <h4>ステージB2（中等度以上・高リスク）</h4>
+                        <ul>
+                            <li><strong>クロピドグレル 18.75mg PO SID</strong> → ATE予防（FAT CAT study準拠）</li>
+                            <li>LA内にsmokeや血栓がある場合は抗凝固薬の追加を検討（低分子ヘパリン等）</li>
+                            <li>安静時呼吸数（SRR）>36回/分 → CHFへの移行を疑い受診指示</li>
+                            <li>3〜6ヶ月ごとの心エコー</li>
+                        </ul>
+                        <h4>ステージC（うっ血性心不全）</h4>
+                        <ul>
+                            <li><strong>フロセミド 1〜2mg/kg IV → 安定後 1〜2mg/kg PO BID</strong></li>
+                            <li>ベナゼプリル 0.5mg/kg PO SID or エナラプリル 0.5mg/kg PO SID〜BID</li>
+                            <li>胸水がある場合 → 胸腔穿刺</li>
+                            <li>収縮能低下 → ピモベンダン 0.1〜0.3mg/kg PO BID（LVOTOがない場合に限る）</li>
+                            <li>クロピドグレル継続</li>
+                        </ul>
+                        <p style="font-size:0.85rem;margin-top:8px;">
+                            ⚠️ 日本の注意: クロピドグレルは人用のプラビックス®（75mg錠）を1/4に割って使用。粉砕すると苦味が強く猫には飲ませにくい →
+                            半錠に割ってカプセルに充填する方法が推奨。コンプライアンスの問題を飼い主とよく相談する。
+                        </p>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>ステージ別治療の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ate-prevention">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span
+                            class="trigger-icon">🩸</span><span>ATE（動脈血栓塞栓症）の予防と急性期管理</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>ATEのリスク因子</h4>
+                        <ul>
+                            <li>中等度〜重度の左房拡大（LA/Ao ≥1.5〜2.0）</li>
+                            <li>左房内のsmokeエコー（自発性エコーコントラスト）</li>
+                            <li>既往のATE（再発率が高い）</li>
+                            <li>心房細動</li>
+                        </ul>
+                        <h4>ATE発症時の急性期管理</h4>
+                        <ul>
+                            <li>第一優先: <strong>疼痛管理</strong>（猛烈な痛みを伴う）
+                                <ul>
+                                    <li>メタドン 0.1〜0.3mg/kg IV/IM</li>
+                                    <li>フェンタニル 1〜5μg/kg/h CRI（持続的な鎮痛）</li>
+                                    <li>NSAIDsは腎血流低下のため<strong>禁忌</strong></li>
+                                </ul>
+                            </li>
+                            <li>クロピドグレル 75mg（負荷量）→ 18.75mg/日 維持開始</li>
+                            <li>CHFの治療（並存する場合）</li>
+                            <li>体温管理（後肢の低体温 → 全身加温は避け、毛布で保温程度に）</li>
+                            <li>再灌流障害に注意: 血栓溶解後にK↑・アシドーシスが悪化する可能性</li>
+                        </ul>
+                        <h4>予後</h4>
+                        <ul>
+                            <li>初回ATEの生存退院率: 約40〜50%</li>
+                            <li><strong>予後不良因子</strong>: 両後肢麻痺、低体温（＜37℃）、高K血症、CHF合併</li>
+                            <li>再発率: クロピドグレル投与でも年間約24%（FAT CAT study）</li>
+                        </ul>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>ATE管理の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="monitoring">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📊</span><span>自宅モニタリング ─
+                            安静時呼吸数（SRR）</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>安静時呼吸数（Sleeping Respiratory Rate: SRR）</h4>
+                        <ul>
+                            <li>猫が寝ている or 完全にリラックスしている時に15秒間の胸郭拍動を数えて×4</li>
+                            <li><strong>正常: ＜30回/分（理想は＜24回/分）</strong></li>
+                            <li><strong>＞36回/分が持続 → CHF進行の可能性 → 受診指示</strong></li>
+                            <li>数日間のベースラインを記録してもらい、トレンドで判断する</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <h4>💊 飼い主への指導方法</h4>
+                            <ul>
+                                <li>スマートフォンアプリ「Cardalis」（無料）でSRRの記録・グラフ化が可能</li>
+                                <li>毎日同じ時間帯・安静時に測定する（興奮後は不正確）</li>
+                                <li>「いつもと違う」と感じたら翌日再測定 → 2日連続＞36なら連絡</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>モニタリングの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="owner-tips">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <div class="owner-tip" style="margin-top:0;">
+                            <h4>HCMと診断されました。治りますか？</h4>
+                            <div class="speech-bubble">
+                                HCMは残念ながら完治する病気ではありません。ただし、<strong>早期に発見して適切に管理することで、何年も普通に暮らせる猫ちゃんはたくさんいます</strong>。一番怖いのは血栓ができて足に詰まること（ATE）ですが、お薬でリスクを下げることができます。
+                            </div>
+                        </div>
+                        <div class="owner-tip">
+                            <h4>どんな症状に気をつけたらいいですか？</h4>
+                            <div class="speech-bubble">
+                                <strong>寝ている時の呼吸が速くなった</strong>（1分間に36回以上）場合は心不全が進行しているサインです。また、<strong>突然後ろ足が動かなくなって痛がっている</strong>場合は血栓の緊急事態ですので、すぐにご連絡ください。
+                            </div>
+                        </div>
+                        <div class="owner-tip">
+                            <h4>うちの猫は元気に見えるのですが、本当に心臓が悪いのですか？</h4>
+                            <div class="speech-bubble">
+                                猫ちゃんは心臓に問題があっても<strong>症状を隠すのが上手</strong>で、元気に見えていても心臓の壁が分厚くなっていることがあります。今回の心エコーで壁が通常より厚いことが確認されました。症状が出る前に見つけられたのは良いことです。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="refs">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                            <li>Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification,
+                                diagnosis, and management of cardiomyopathies in cats (2020). <em>J Vet Intern Med</em>
+                                2020;34(3):1062-1077.</li>
+                            <li>Payne JR et al. Prevalence of cardiomyopathy in 780 apparently healthy cats (2015).
+                                <em>J Vet Cardiol</em> 2015;17 Suppl 1:S244-S257.
+                            </li>
+                            <li>Hogan DF et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat:
+                                The FAT CAT trial (2015). <em>J Vet Cardiol</em> 2015;17 Suppl 1:S306-S317.</li>
+                            <li>Fox PR et al. International collaborative study to assess cardiovascular risk and
+                                evaluate long-term health in cats with preclinical hypertrophic cardiomyopathy and
+                                apparently healthy cats: the REVEAL Study (2018). <em>J Vet Intern Med</em>
+                                2018;32(3):930-943.</li>
+                            <li>Meurs KM et al. A cardiac myosin binding protein C mutation in the Maine Coon cat with
+                                familial hypertrophic cardiomyopathy (2005). <em>Hum Mol Genet</em>
+                                2005;14(23):3587-3593.</li>
+                            <li>Borgeat K et al. Cardiac troponin I concentration, cardiac death and
+                                holter-detected ventricular arrhythmias in cats with hypertrophic cardiomyopathy
+                                (2014). <em>J Vet Intern Med</em> 2014;28(5):1522-1529.</li>
+                            <li>Fox PR. Hypertrophic cardiomyopathy. Clinical and pathologic correlates (2003). <em>J
+                                    Vet Cardiol</em> 2003;5(2):39-45.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer" style="margin-top: var(--space-xl);">
+            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+        </footer>
+    </div>
+    <script src="../../assets/script.js"></script>
+</body>
+
+</html>

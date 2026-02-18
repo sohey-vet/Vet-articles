@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="犬の免疫介在性血小板減少症（ITP）の診断と治療。ACVIM 2024ガイドライン準拠。ビンクリスチン・MMFの使い分け。">
+    <title>犬のITP ─ 診断と治療 | VetEvidence</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+
+<body class="mode-premium">
+
+    <nav class="mobile-nav">
+        <span class="nav-brand">🩺 VetEvidence</span>
+        <button class="hamburger-btn" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="slide-menu-overlay"></div>
+    <aside class="slide-menu">
+        <h4>ナビゲーション</h4>
+        <a href="../../index.html">🏠 トップ</a>
+        <a href="#conclusion">🎯 結論</a>
+        <a href="#action-table">🗺️ 診断基準</a>
+        <a href="#workup">🔬 鑑別診断</a>
+        <a href="#treatment">💊 治療プロトコル</a>
+        <a href="#secondary-agents">💉 第2免疫抑制薬</a>
+        <a href="#transfusion">🩸 輸血</a>
+        <a href="#tapering">📉 減薬</a>
+        <a href="#owner-tips">🗣️ 飼い主説明</a>
+        <a href="#refs">📚 参照論文</a>
+    </aside>
+
+    <div class="page-container">
+
+        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+            <div class="tags" style="margin-bottom: 8px;">
+                <span class="tag tag--primary">免疫</span>
+                <span class="tag tag--warning">血液</span>
+                <span class="tag tag--success">犬</span>
+            </div>
+            <h1 style="font-size: 1.3rem;">🩸 犬の免疫介在性血小板減少症（ITP）─ 診断と治療</h1>
+            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                ACVIM 2024コンセンサスに基づく診断基準と治療戦略。出血している犬にまず何をするか。
+            </p>
+            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+                <div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+            </div>
+        </header>
+
+        <div class="content-mode-bar">
+            <span>📋</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="content-mode-toggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label">👑 すべて表示</span>
+        </div>
+
+        <!-- ===== FREE ZONE ===== -->
+
+        <div class="free-content" id="conclusion">
+            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <p style="font-size:0.88rem;">
+                    ITPは犬で最も多い後天性出血障害。<strong>血小板数＜20,000/μLはITPを強く支持</strong>（＞50,000では他疾患の検討を）。
+                    ACVIM 2024ガイドラインでは、<strong>免疫抑制量のプレドニゾロンが第一選択</strong>。
+                    臨床的に有意な出血がある場合は<strong>ビンクリスチン0.02mg/kg IV単回</strong>を初日から併用 → 血小板回復を加速し入院日数を短縮。
+                    プレドニゾロンに5〜7日で反応しない、副作用が重い、減薬中に再発する場合は<strong>ミコフェノール酸モフェチル（MMF）</strong>の追加を検討。
+                    治療のゴールは<strong>血小板≥100,000/μLで出血なし</strong>。
+                    ABCB1（MDR1）変異犬種にはビンクリスチン禁忌 → 事前に品種を確認。
+                </p>
+            </div>
+        </div>
+
+        <div class="free-content" id="action-table">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ITP診断の要点（ACVIM 2024）</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:0;min-width:600px;">
+                        <thead>
+                            <tr>
+                                <th>血小板数</th>
+                                <th>解釈</th>
+                                <th>次のアクション</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>＜20,000/μL</strong></td>
+                                <td>ITPを強く支持（偽性血小板減少を塗抹で除外後）</td>
+                                <td><strong>治療開始</strong> + 原因疾患の検索を並行</td>
+                            </tr>
+                            <tr>
+                                <td><strong>20,000〜50,000/μL</strong></td>
+                                <td>ITPの可能性あるが、他の原因も十分に検討</td>
+                                <td>骨髄検査・感染症検査・画像を検討</td>
+                            </tr>
+                            <tr>
+                                <td><strong>50,000〜100,000/μL</strong></td>
+                                <td>原発性ITP単独での低下としてはやや高い、二次性の検索を</td>
+                                <td>DIC・感染・腫瘍・薬剤性を積極的に除外</td>
+                            </tr>
+                            <tr>
+                                <td><strong>＞100,000/μL</strong></td>
+                                <td>初発診断では<strong>原発性ITPをほぼ除外</strong></td>
+                                <td>他の血小板消費性疾患を検索</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
+                    ⚠️ 重要: 自動血球計算器による血小板数は<strong>必ず塗抹で確認</strong>する。EDTA依存性偽性血小板減少（猫で特に多い）や血小板凝集で偽低値になることがある。
+                </p>
+            </div>
+        </div>
+
+        <div class="free-content">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+                <table class="comparison-table" style="margin:0;">
+                    <thead>
+                        <tr>
+                            <th>❌ 旧来</th>
+                            <th>✅ 最新</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ITPの診断にはまず骨髄検査</td>
+                            <td>血小板＜20,000/μL + 塗抹で確認 → <strong>骨髄検査は必須ではない</strong>（治療反応不良時や非典型例で検討）</td>
+                        </tr>
+                        <tr>
+                            <td>ビンクリスチンは最終手段</td>
+                            <td><strong>出血がある場合は初日からビンクリスチンを推奨</strong>（ACVIM 2024）。血小板回復を加速する</td>
+                        </tr>
+                        <tr>
+                            <td>第2免疫抑制薬は反応不良時のみ</td>
+                            <td>25kg以上の大型犬では<strong>早期MMF追加でステロイド減量を早める</strong>戦略が推奨</td>
+                        </tr>
+                        <tr>
+                            <td>血小板数が低ければ予後不良</td>
+                            <td><strong>初期の血小板数は予後予測因子にならない</strong>（ACVIM 2024）。治療反応を見て判断</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ===== PREMIUM ZONE ===== -->
+
+        <div id="workup">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🔬</span><span>一次性 vs 二次性 ITP ─
+                            鑑別のワークアップ</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>二次性ITPの原因疾患の検索</h4>
+                        <ul>
+                            <li><strong>感染症</strong>: バベシア、エーリキア、アナプラズマ、レプトスピラ（地域差あり）</li>
+                            <li><strong>腫瘍</strong>: リンパ腫、血管肉腫、その他（腹部エコー + 胸部X線）</li>
+                            <li><strong>薬剤性</strong>: NSAIDs、サルファ剤、セファロスポリン系等（投薬歴の詳細な聴取）</li>
+                            <li><strong>ワクチン関連</strong>: 接種後2〜4週間での発症 → 相関の報告あり</li>
+                            <li><strong>DIC</strong>: PT/aPTT延長、FDP/D-dimer上昇、フィブリノゲン低下</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <h4>💊 最低限のワークアップ</h4>
+                            <ul>
+                                <li>CBC（塗抹評価必須）+ 網状赤血球数</li>
+                                <li>生化学 + 尿検査</li>
+                                <li>凝固スクリーニング（PT/aPTT）</li>
+                                <li>ダニ媒介性感染症の検査（エーリキア・アナプラズマ抗体、バベシアPCR ─ 地域に応じて）</li>
+                                <li>胸部X線 + 腹部超音波</li>
+                                <li>直接クームス試験（IMHA合併のEvans症候群の除外）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>鑑別診断の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="treatment">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">💊</span><span>治療プロトコル ─ プレドニゾロン +
+                            ビンクリスチン</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>第一選択: プレドニゾロン</h4>
+                        <ul>
+                            <li><strong>用量: 2mg/kg/日 PO</strong>（分1〜2）</li>
+                            <li>作用機序: マクロファージによる抗体結合血小板の貪食を抑制 + 抗血小板抗体産生を抑制</li>
+                            <li>効果発現: 通常3〜7日で血小板数の上昇が見られる</li>
+                            <li>消化器保護: 食欲亢進・多尿多飲は頻度が高い。消化管出血がある場合はオメプラゾール1mg/kg PO BID併用を検討</li>
+                        </ul>
+                        <h4>出血がある場合: ビンクリスチン併用</h4>
+                        <ul>
+                            <li><strong>用量: 0.02mg/kg IV 単回</strong>（slow push or 短時間CRI）</li>
+                            <li>作用機序: 骨髄巨核球からの血小板放出を促進（血小板生産を直接刺激）+ 免疫抑制作用</li>
+                            <li>効果: 投与48〜72時間後から血小板数上昇。入院日数の<strong>有意な短縮</strong></li>
+                            <li>⚠️ <strong>ABCB1（MDR1）変異犬種には禁忌</strong>: コリー・シェルティ・ボーダーコリー・オーストラリアンシェパード等</li>
+                            <li>血管外漏出は重篤な組織壊死を起こす → 確実に静脈内投与</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <h4>💊 臨床Tips</h4>
+                            <ul>
+                                <li>出血がない高度血小板減少（PLT＜10,000だが点状出血のみ）→ プレドニゾロン単独で開始し経過観察</li>
+                                <li>消化管出血・血尿・眼底出血など臨床的に有意な出血 → <strong>ビンクリスチンを遅らせる理由はない</strong></li>
+                                <li>日本ではビンクリスチン（オンコビン®）は人の抗がん剤として流通 → 獣医師の裁量で使用</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>治療プロトコルの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="secondary-agents">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">💉</span><span>第2免疫抑制薬 ─
+                            MMF・シクロスポリン・アザチオプリン</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>ミコフェノール酸モフェチル（MMF）の追加適応</h4>
+                        <ul>
+                            <li>プレドニゾロンに5〜7日で反応なし</li>
+                            <li>ステロイドの副作用が重篤（医原性クッシング・筋萎縮・感染症）</li>
+                            <li>減薬中の再発</li>
+                            <li><strong>25kg以上の大型犬 → 早期併用でステロイド減量を加速</strong>（ACVIM 2024推奨）</li>
+                        </ul>
+                        <table class="comparison-table" style="margin:12px 0;">
+                            <thead>
+                                <tr>
+                                    <th>薬剤</th>
+                                    <th>用量</th>
+                                    <th>効果発現</th>
+                                    <th>主な副作用</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>MMF</strong></td>
+                                    <td>10〜20mg/kg PO BID</td>
+                                    <td>5〜14日</td>
+                                    <td>下痢（用量依存性）、骨髄抑制</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>アザチオプリン</strong></td>
+                                    <td>2mg/kg PO SID（隔日維持）</td>
+                                    <td>2〜4週間</td>
+                                    <td>骨髄抑制、肝毒性、膵炎<br>⚠️猫には禁忌</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>シクロスポリン</strong></td>
+                                    <td>5〜10mg/kg PO BID</td>
+                                    <td>2〜4週間</td>
+                                    <td>消化器症状、歯肉増殖</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size:0.85rem;margin-top:8px;">
+                            ⚠️ 日本の注意: MMF（セルセプト®）は人の臓器移植用として流通。獣医師の裁量で使用。後発品も利用可能で費用を抑えられる。
+                        </p>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>第2免疫抑制薬の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="transfusion">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🩸</span><span>血小板輸血 ─ 適応と限界</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>ITPにおける血小板輸血の位置づけ</h4>
+                        <ul>
+                            <li>ITPでは輸注された血小板も即座に破壊される → <strong>効果は一過性</strong></li>
+                            <li><strong>適応</strong>: 致命的な出血（脳出血、大量消化管出血）で緊急止血が必要な場合のみ</li>
+                            <li>犬の血小板製剤（濃厚血小板: PC）は入手が困難 → 新鮮全血（FWB）で代用が現実的</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <h4>💊 臨床Tips</h4>
+                            <ul>
+                                <li>出血による貧血 → pRBC輸血は有効（赤血球は免疫破壊の対象ではないため）</li>
+                                <li>Evans症候群（ITP + IMHA合併）ではpRBCも破壊される可能性 → クロスマッチ必須</li>
+                                <li>トラネキサム酸 15〜20mg/kg IV q8h → 抗線維素溶解薬として出血管理の補助に</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>輸血の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tapering">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📉</span><span>ステロイド減薬プロトコルと再発管理</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>減薬の原則</h4>
+                        <ul>
+                            <li>治療目標: <strong>血小板≥100,000/μLが2〜4週間安定</strong>してから減薬開始</li>
+                            <li>減薬速度: <strong>2〜4週間ごとに25%ずつ</strong>漸減（急な減量は再発のリスク）</li>
+                            <li>減薬のたびに1〜2週間後にCBCを再検（血小板モニタリング）</li>
+                            <li>完全離脱までに<strong>通常3〜6ヶ月</strong>を要する</li>
+                        </ul>
+                        <h4>減薬中のモニタリングスケジュール</h4>
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>段階</th>
+                                    <th>CBC頻度</th>
+                                    <th>注意点</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>治療開始〜PLT安定</td>
+                                    <td>2〜3日ごと</td>
+                                    <td>5〜7日で反応なければ第2薬追加を検討</td>
+                                </tr>
+                                <tr>
+                                    <td>減薬開始〜維持量到達</td>
+                                    <td>減薬ごとに1〜2週後</td>
+                                    <td>PLT＜100,000に低下 → 前の用量に戻す</td>
+                                </tr>
+                                <tr>
+                                    <td>離脱後</td>
+                                    <td>月1回 × 3ヶ月 → 3ヶ月ごと × 1年</td>
+                                    <td>再発率は約20〜30%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clinical-tip">
+                            <h4>💊 再発時の対応</h4>
+                            <ul>
+                                <li>再発時は初回と同じプロトコルで治療（プレドニゾロン2mg/kg ± ビンクリスチン）</li>
+                                <li>再発を繰り返す → <strong>低用量ステロイド + MMFの長期維持</strong>を検討</li>
+                                <li>脾臓摘出は犬のITPでは人ほど有効性のエビデンスがなく、推奨されない</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>減薬プロトコルの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="owner-tips">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <div class="owner-tip" style="margin-top:0;">
+                            <h4>ITPとは何ですか？</h4>
+                            <div class="speech-bubble">
+                                ITPは、免疫の仕組みが誤って自分の血小板を壊してしまう病気です。血小板は出血を止めるために必要な細胞なので、減ると<strong>皮膚の点状出血や歯ぐきからの出血、血便</strong>が出ます。お薬で免疫の暴走を抑えることが治療の柱です。
+                            </div>
+                        </div>
+                        <div class="owner-tip">
+                            <h4>副作用が心配です。ステロイドは大丈夫ですか？</h4>
+                            <div class="speech-bubble">
+                                ステロイドは高用量で使うと、<strong>食欲亢進・水をたくさん飲む・おしっこが増える</strong>などの副作用が出ます。これらは減薬すると軽くなります。長期間使うと筋肉が痩せたり感染しやすくなるため、<strong>なるべく早く減らしていく</strong>ことを目指します。
+                            </div>
+                        </div>
+                        <div class="owner-tip">
+                            <h4>お薬はいつまで飲み続ける必要がありますか？</h4>
+                            <div class="speech-bubble">
+                                血小板の数が安定したら、<strong>3〜6ヶ月かけてゆっくり減らしていきます</strong>。約7割のわんちゃんは最終的にお薬をやめられますが、<strong>再発することもある（約2〜3割）</strong>ので、やめた後も定期的な血液検査が大切です。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="refs">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                            <li>LeVine DN et al. ACVIM consensus statement on the treatment of
+                                immune-mediated thrombocytopenia in dogs (2024).
+                                <em>J Vet Intern Med</em> 2024;38(4):1997-2037.
+                            </li>
+                            <li>Kidd L et al. ACVIM consensus statement on the diagnosis of
+                                immune-mediated thrombocytopenia in dogs (2024).
+                                <em>J Vet Intern Med</em> 2024.
+                            </li>
+                            <li>Balog K et al. A prospective randomized clinical trial of vincristine versus
+                                human intravenous immunoglobulin for acute adjunctive management of presumptive
+                                primary immune-mediated thrombocytopenia in dogs (2013). <em>J Vet Intern Med</em>
+                                2013;27(3):536-541.</li>
+                            <li>Rozanski EA et al. The effect of vincristine on time to platelet recovery in dogs with
+                                immune-mediated thrombocytopenia (2002). <em>J Vet Intern Med</em> 2002;16(3):276-280.
+                            </li>
+                            <li>Whitley NT, Day MJ. Immunomodulatory drugs and their application to the management of
+                                canine immune-mediated disease (2011). <em>J Small Anim Pract</em> 2011;52(2):70-85.
+                            </li>
+
+                            <li>Yau VK, Bianco D. Treatment of five haemodynamically stable dogs with immune-mediated
+                                thrombocytopenia using mycophenolate mofetil as single agent (2014). <em>J Small Anim
+                                    Pract</em> 2014;55(6):330-333.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer" style="margin-top: var(--space-xl);">
+            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+        </footer>
+    </div>
+    <script src="../../assets/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="【ここに論文の一行説明】">
+    <title>【論文タイトル】 | 獣医論文まとめ</title>
+    <!-- ★ assets/style.css への相対パスは配置場所に応じて変更 -->
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <header class="page-header">
+            <span class="category-badge">📄 単品レポート</span>
+            <h1>【論文タイトル（日本語）】</h1>
+            <p class="subtitle">
+                【一行で論文の臨床的意義を説明】
+            </p>
+            <div class="meta-bar">
+                <div class="meta-item">
+                    <span class="icon">📅</span>
+                    <span>レポート作成: 20XX年X月X日</span>
+                </div>
+                <div class="meta-item">
+                    <span class="icon">📰</span>
+                    <span>掲載: 【ジャーナル名, 年】</span>
+                </div>
+                <div class="meta-item">
+                    <span class="icon">✍️</span>
+                    <span>著者: 【筆頭著者 et al.】</span>
+                </div>
+            </div>
+            <div class="tags" style="margin-top: 12px;">
+                <span class="tag tag--primary">【タグ1】</span>
+                <span class="tag">【タグ2】</span>
+            </div>
+        </header>
+
+        <!-- ===== 結論（Clinical Bottom Line） ===== -->
+        <div class="bottom-line" style="margin-top: 0;">
+            <h3>🎯 Clinical Bottom Line</h3>
+            <p>
+                【3〜5行で、この論文の臨床的な結論とインパクトを記載】
+            </p>
+        </div>
+
+        <!-- ===== 背景 ===== -->
+        <div class="card fade-in-up">
+            <div class="card-header">
+                <span class="card-icon">📖</span>
+                <h2>背景・目的</h2>
+            </div>
+            <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+                【研究の背景、なぜこの研究が行われたのか、臨床的な疑問は何か】
+            </p>
+
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left">
+                        <span class="trigger-icon">🔍</span>
+                        <span>詳細な背景（先行研究など）</span>
+                    </span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p>【より詳しい背景情報。先行研究のサマリーなど】</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 方法 ===== -->
+        <div class="card fade-in-up">
+            <div class="card-header">
+                <span class="card-icon">🔬</span>
+                <h2>研究方法</h2>
+            </div>
+
+            <div class="key-findings">
+                <h4>研究デザイン</h4>
+                <ul>
+                    <li><strong>デザイン:</strong> 【RCT / 後ろ向きコホート / 症例集積 など】</li>
+                    <li><strong>対象:</strong> 【犬XX頭 / 猫XX頭、品種、年齢など】</li>
+                    <li><strong>介入:</strong> 【治療群 vs 対照群の内容】</li>
+                    <li><strong>主要アウトカム:</strong> 【何を測定したか】</li>
+                </ul>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left">
+                        <span class="trigger-icon">📊</span>
+                        <span>詳細なプロトコル</span>
+                    </span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p>【組入基準、除外基準、統計手法、盲検化の有無など詳細】</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- エビデンスレベル -->
+            <div style="margin-top: 12px;">
+                <span class="evidence-level evidence-level--high">エビデンスレベル: 高</span>
+                <!-- evidence-level--moderate / evidence-level--low に変更可能 -->
+            </div>
+        </div>
+
+        <!-- ===== 結果 ===== -->
+        <div class="card fade-in-up">
+            <div class="card-header">
+                <span class="card-icon">📈</span>
+                <h2>主要な結果</h2>
+            </div>
+
+            <div class="key-findings">
+                <h4>Key Findings</h4>
+                <ul>
+                    <li>【結果1: 一番重要なポイント】</li>
+                    <li>【結果2】</li>
+                    <li>【結果3】</li>
+                </ul>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left">
+                        <span class="trigger-icon">📊</span>
+                        <span>統計データの詳細</span>
+                    </span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p>【p値、信頼区間、効果量、グラフの説明など】</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 限界・批判的吟味 ===== -->
+        <div class="card fade-in-up">
+            <div class="card-header">
+                <span class="card-icon">⚖️</span>
+                <h2>限界・批判的吟味</h2>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left">
+                        <span class="trigger-icon">⚠️</span>
+                        <span>この研究の限界点</span>
+                    </span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li>【限界1: サンプルサイズ、バイアスなど】</li>
+                            <li>【限界2】</li>
+                            <li>【限界3】</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 臨床への適用 ===== -->
+        <div class="clinical-tip">
+            <h4>明日からの臨床で</h4>
+            <p>
+                【この論文の結果を受けて、救急現場で具体的にどう行動を変えるべきか】
+            </p>
+        </div>
+
+        <!-- ===== 参照 ===== -->
+        <div class="card fade-in-up">
+            <div class="card-header">
+                <span class="card-icon">📚</span>
+                <h2>引用・リンク</h2>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.8;">
+                <strong>原著:</strong> 【著者名. タイトル. ジャーナル名. 年;巻(号):ページ.】<br>
+                <strong>DOI:</strong> <a href="https://doi.org/XXXXXXX" target="_blank">https://doi.org/XXXXXXX</a><br>
+                <strong>PubMed:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/XXXXXXX/" target="_blank">PMID:
+                    XXXXXXX</a>
+            </p>
+        </div>
+
+        <footer class="page-footer">
+            <p>獣医論文まとめ | <a href="../index.html">← トップに戻る</a></p>
+        </footer>
+
+    </div>
+
+    <script src="../assets/script.js"></script>
+</body>
+
+</html>

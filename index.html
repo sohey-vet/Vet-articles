@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="動物救急に関する最新の獣医学論文をエビデンスベースでまとめたサイト。臨床に使える形で整理。">
+    <title>獣医論文まとめ | VetEvidence</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- Header -->
+        <header class="page-header" style="text-align: center; border-bottom: none; padding-bottom: 0;">
+            <div style="font-size: 3.5rem; margin-bottom: 12px;">🩺</div>
+            <h1 style="font-size: 2.2rem;">VetEvidence</h1>
+            <p class="subtitle" style="max-width: 600px; margin: 0 auto;">
+                動物救急の最前線で使える<br>
+                <strong>最新エビデンス</strong>を、わかりやすくまとめる。
+            </p>
+
+            <div class="stats-bar"
+                style="justify-content: center; margin-top: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--color-border);">
+                <div class="stat-item">
+                    <div class="stat-value">13</div>
+                    <div class="stat-label">テーマ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">70+</div>
+                    <div class="stat-label">論文</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2026.2</div>
+                    <div class="stat-label">最終更新</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation: Topics -->
+        <section style="margin-top: 32px;">
+            <h2 style="font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                <span>📋</span> テーマ別まとめ
+            </h2>
+            <div class="nav-grid">
+                <!-- 循環器 -->
+                <a href="topics/循環器/心原性肺水腫_一般病院での救命Tips.html" class="nav-card">
+                    <span class="nav-icon">🫁</span>
+                    <h3>心原性肺水腫 ─ 救命Tips</h3>
+                    <p>酸素フローバイ＋フロセミド＋ピモベンダンIV。一般病院の緊急対応フロー</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--danger">循環器</span>
+                        <span class="tag tag--warning">救急</span>
+                    </div>
+                    <span class="nav-count">📄 6論文</span>
+                </a>
+
+                <a href="topics/循環器/僧帽弁閉鎖不全症_ステージ別治療.html" class="nav-card">
+                    <span class="nav-icon">❤️</span>
+                    <h3>僧帽弁閉鎖不全症 ─ ステージ別治療</h3>
+                    <p>ACVIM分類とEPIC試験。B2からのピモベンダン開始基準</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--danger">循環器</span>
+                        <span class="tag tag--primary">MMVD</span>
+                    </div>
+                    <span class="nav-count">📄 5論文</span>
+                </a>
+
+                <!-- 消化器 -->
+                <a href="topics/下痢/犬の急性下痢_最新エビデンス.html" class="nav-card">
+                    <span class="nav-icon">🐕</span>
+                    <h3>犬の急性下痢 ─ 最新エビデンス</h3>
+                    <p>メトロニダゾールの再考、プロバイオティクス、AHDSの治療プロトコル</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--primary">消化器</span>
+                        <span class="tag tag--warning">抗菌薬</span>
+                    </div>
+                    <span class="nav-count">📄 5論文</span>
+                </a>
+
+                <!-- 抗菌薬 -->
+                <a href="topics/抗菌薬/抗菌薬選択の基本原則.html" class="nav-card">
+                    <span class="nav-icon">💊</span>
+                    <h3>抗菌薬選択の基本原則</h3>
+                    <p>ISCAID/AAHAガイドライン。臓器別アプローチと耐性菌対策</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--warning">抗菌薬</span>
+                        <span class="tag tag--success">ガイドライン</span>
+                    </div>
+                    <span class="nav-count">📄 6論文</span>
+                </a>
+
+                <!-- 麻酔 -->
+                <a href="topics/麻酔/麻酔モニタリング_ACVAA2025.html" class="nav-card">
+                    <span class="nav-icon">😴</span>
+                    <h3>麻酔モニタリング ─ ACVAA 2025</h3>
+                    <p>最新ガイドラインの3段階モニタリング。一般病院でできる最低限</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--primary">麻酔</span>
+                        <span class="tag tag--success">ACVAA</span>
+                    </div>
+                    <span class="nav-count">📄 5論文</span>
+                </a>
+
+                <!-- 輸液 -->
+                <a href="topics/輸液/輸液の基本_晶質液vs膠質液.html" class="nav-card">
+                    <span class="nav-icon">💧</span>
+                    <h3>輸液の基本 ─ 晶質液 vs 膠質液</h3>
+                    <p>AAHA輸液ガイドライン。ショック時の輸液選択と灌流指標</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--primary">輸液</span>
+                        <span class="tag tag--danger">救急</span>
+                    </div>
+                    <span class="nav-count">📄 5論文</span>
+                </a>
+
+                <!-- 血液ガス -->
+                <a href="topics/血液ガス/血液ガス分析の基本.html" class="nav-card">
+                    <span class="nav-icon">🧪</span>
+                    <h3>血液ガス分析の基本</h3>
+                    <p>pH・PCO2・HCO3の3ステップ解釈法。アニオンギャップの活用</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--primary">検査</span>
+                        <span class="tag tag--warning">血液ガス</span>
+                    </div>
+                    <span class="nav-count">📄 4論文</span>
+                </a>
+
+                <!-- 皮膚 -->
+                <a href="topics/皮膚/犬のアトピー性皮膚炎_最新治療薬比較.html" class="nav-card">
+                    <span class="nav-icon">🐾</span>
+                    <h3>犬のアトピー性皮膚炎 ─ 治療薬比較</h3>
+                    <p>アポキル・サイトポイント・シクロスポリンの比較。ステロイドからの脱却</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--primary">皮膚</span>
+                        <span class="tag tag--success">最新薬</span>
+                    </div>
+                    <span class="nav-count">📄 6論文</span>
+                </a>
+
+                <!-- 腎泌尿器 -->
+                <a href="topics/腎泌尿器/猫のCKD_IRISステージ別管理.html" class="nav-card">
+                    <span class="nav-icon">🫘</span>
+                    <h3>猫のCKD ─ IRISステージ別管理</h3>
+                    <p>SDMAによる早期発見。食事療法・リン制限・合併症管理</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--warning">腎泌尿器</span>
+                        <span class="tag tag--success">IRIS</span>
+                    </div>
+                    <span class="nav-count">📄 6論文</span>
+                </a>
+
+                <!-- 腫瘍 -->
+                <a href="topics/腫瘍/リンパ腫_犬と猫の違い.html" class="nav-card">
+                    <span class="nav-icon">🔬</span>
+                    <h3>リンパ腫 ─ 犬と猫の違い</h3>
+                    <p>CHOPプロトコル。犬の多中心型 vs 猫の消化器型の治療戦略</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--danger">腫瘍</span>
+                        <span class="tag tag--warning">CHOP</span>
+                    </div>
+                    <span class="nav-count">📄 7論文</span>
+                </a>
+
+                <!-- 神経 -->
+                <a href="topics/神経/椎間板ヘルニア_頚部胸腰部統合版.html" class="nav-card">
+                    <span class="nav-icon">🧠</span>
+                    <h3>椎間板ヘルニア ─ 頚部＆胸腰部</h3>
+                    <p>Grade分類と手術適応。ヘミラミネクトミー vs ベントラルスロット、DPP消失時の予後</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--primary">神経</span>
+                        <span class="tag tag--danger">外科</span>
+                    </div>
+                    <span class="nav-count">📄 6論文</span>
+                </a>
+
+                <!-- 内分泌 -->
+                <a href="topics/内分泌/犬のクッシング症候群_診断の落とし穴.html" class="nav-card">
+                    <span class="nav-icon">⚖️</span>
+                    <h3>犬のクッシング症候群 ─ 診断の落とし穴</h3>
+                    <p>LDDST vs ACTH刺激試験。過剰診断を避けるためのポイント</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--primary">内分泌</span>
+                        <span class="tag tag--warning">診断</span>
+                    </div>
+                    <span class="nav-count">📄 5論文</span>
+                </a>
+
+                <!-- 免疫 -->
+                <a href="topics/免疫/IMHA_診断と初期治療.html" class="nav-card">
+                    <span class="nav-icon">🛡️</span>
+                    <h3>IMHA ─ 診断と初期治療</h3>
+                    <p>ACVIMコンセンサス2019。免疫抑制・抗血栓・輸血の戦略</p>
+                    <div class="tags" style="margin-top: 8px;">
+                        <span class="tag tag--danger">免疫</span>
+                        <span class="tag tag--warning">救急</span>
+                    </div>
+                    <span class="nav-count">📄 6論文</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section style="margin-top: 48px;">
+            <h2 style="font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                <span>🔗</span> 論文検索リンク
+            </h2>
+            <div class="card">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>情報源</th>
+                            <th>特徴</th>
+                            <th>アクセス</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>VetLit.org</strong></td>
+                            <td>60+ジャーナルの新着論文を分野別に整理。救急カテゴリあり。</td>
+                            <td><a href="https://vetlit.org" target="_blank">🔗 開く</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PubMed</strong></td>
+                            <td>世界最大の医学文献DB。Free PMC articleで無料全文あり。</td>
+                            <td><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔗 開く</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Scholar</strong></td>
+                            <td>PDFリンク直接表示。関連論文・被引用論文が辿りやすい。</td>
+                            <td><a href="https://scholar.google.com/" target="_blank">🔗 開く</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Frontiers in Vet Science</strong></td>
+                            <td>完全オープンアクセス。ECC（救急集中治療）セクションあり。</td>
+                            <td><a href="https://www.frontiersin.org/journals/veterinary-science" target="_blank">🔗
+                                    開く</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IVIS</strong></td>
+                            <td>登録無料。学会proceedings、CE資料。</td>
+                            <td><a href="https://www.ivis.org/" target="_blank">🔗 開く</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p style="font-size: 0.85rem; color: var(--color-text-secondary);">VetEvidence 🩺 動物救急論文まとめ</p>
+            <p style="margin-top: 4px;">
+                ※本サイトは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

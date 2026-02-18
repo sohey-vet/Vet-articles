@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="犬猫の急性膵炎の診断と治療。犬猫の違い、Spec cPL/fPLの解釈、Fuzapladib、早期栄養介入のエビデンス。">
+    <title>急性膵炎 ─ 犬猫の違いと管理 | VetEvidence</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+
+<body class="mode-premium">
+
+    <nav class="mobile-nav">
+        <span class="nav-brand">🩺 VetEvidence</span>
+        <button class="hamburger-btn" aria-label="メニュー">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="slide-menu-overlay"></div>
+    <aside class="slide-menu">
+        <h4>ナビゲーション</h4>
+        <a href="../../index.html">🏠 トップ</a>
+        <a href="#conclusion">🎯 結論</a>
+        <a href="#action-table">🗺️ 犬猫の違い</a>
+        <a href="#diagnosis">🔬 診断</a>
+        <a href="#treatment-dog">🐕 犬の治療</a>
+        <a href="#treatment-cat">🐱 猫の治療</a>
+        <a href="#nutrition">🍽️ 栄養管理</a>
+        <a href="#owner-tips">🗣️ 飼い主説明</a>
+        <a href="#refs">📚 参照論文</a>
+        <h4>情報ソース</h4>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+    </aside>
+
+    <div class="page-container">
+
+        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+            <div class="tags" style="margin-bottom: 8px;">
+                <span class="tag tag--primary">消化器</span>
+                <span class="tag tag--danger">救急</span>
+                <span class="tag tag--success">犬猫共通</span>
+            </div>
+            <h1 style="font-size: 1.3rem;">🚨 急性膵炎 ─ 犬猫の違いと管理</h1>
+            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                犬と猫で病態・診断・治療が大きく異なる疾患。犬ではSIRSへの進展リスク、猫では三臓器炎との関連が重要。
+                支持療法が治療の柱であることは変わらないが、近年新薬（fuzapladib）や早期栄養介入に関するエビデンスが蓄積されている。
+            </p>
+            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+                <div class="meta-item"><span class="icon">📄</span><span>参照論文 7本</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+            </div>
+        </header>
+
+        <div class="content-mode-bar">
+            <span>📋</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="content-mode-toggle" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label">👑 すべて表示</span>
+        </div>
+
+        <!-- FREE ZONE -->
+
+        <div class="free-content" id="conclusion">
+            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <p style="font-size:0.88rem;">
+                    急性膵炎の治療は<strong>積極的な支持療法（輸液・鎮痛・制吐・早期栄養介入）</strong>が柱。
+                    犬では<strong>fuzapladib（Panoquell-CA1）</strong>がFDA条件付き承認を取得し、好中球浸潤を抑制する新しい治療選択肢が加わった（日本では未承認）。
+                    猫の膵炎は<strong>三臓器炎（胆管炎・膵炎・IBD）</strong>として発症することが多く、診断が困難。
+                    Spec cPL/fPLは有用だが、<strong>偽陽性・偽陰性がある</strong>ことを理解して使う。
+                    かつての「絶食管理」は<strong>否定された</strong> ─ 嘔吐があっても<strong>早期の経腸栄養が予後を改善</strong>する。
+                </p>
+            </div>
+        </div>
+
+        <div class="free-content" id="action-table">
+            <div class="card">
+                <h3 style="font-size: 0.95rem;">⚡ 昔の常識 vs 今のエビデンス</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:12px 0 0;">
+                        <thead>
+                            <tr>
+                                <th>❌ 旧来の常識</th>
+                                <th>✅ 最新のエビデンス</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>まず絶食で「膵臓を休ませる」</td>
+                                <td><strong>早期の経腸栄養が推奨</strong>。絶食は腸管バリア機能を低下させ、バクテリアルトランスロケーションのリスクを高める</td>
+                            </tr>
+                            <tr>
+                                <td>大量輸液で積極的に灌流する</td>
+                                <td><strong>目標指向的輸液管理</strong>。過剰輸液は組織浮腫・合併症増加のリスク（ヒト分野からのエビデンス）</td>
+                            </tr>
+                            <tr>
+                                <td>ステロイドは膵炎を悪化させる</td>
+                                <td><strong>猫</strong>では抗炎症効果が有益な可能性（膵炎を誘発するエビデンスは猫では乏しい）</td>
+                            </tr>
+                            <tr>
+                                <td>抗菌薬をルーチンで投与</td>
+                                <td>膵炎は基本的に<strong>無菌性炎症</strong>。感染の証拠がない限り抗菌薬は<strong>不要</strong></td>
+                            </tr>
+                            <tr>
+                                <td>リパーゼだけで診断</td>
+                                <td>リパーゼは非特異的。<strong>Spec cPL/fPL（膵特異的リパーゼ）＋腹部エコー</strong>の組み合わせが標準</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PREMIUM ZONE -->
+
+        <!-- 診断 -->
+        <div id="diagnosis">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🔬</span><span>診断 ─ Spec
+                            cPL/fPLとエコー</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>犬猫の膵炎 ─ 臨床所見の違い</h4>
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>項目</th>
+                                    <th>🐕 犬</th>
+                                    <th>🐱 猫</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>典型的症状</td>
+                                    <td>嘔吐、腹痛（祈りの姿勢）、食欲不振、下痢</td>
+                                    <td>食欲不振、元気消失が<strong>主訴</strong>。嘔吐は50%前後、腹痛は顕在化しにくい</td>
+                                </tr>
+                                <tr>
+                                    <td>リスク因子</td>
+                                    <td>高脂肪食の摂取、肥満、ミニチュアシュナウザー等</td>
+                                    <td>明確なリスク因子は不明。三臓器炎との併発が多い</td>
+                                </tr>
+                                <tr>
+                                    <td>重症度スペクトラム</td>
+                                    <td>軽度〜重度（壊死性膵炎はSIRS/DICリスク）</td>
+                                    <td>急性は比較的稀。慢性膵炎の急性増悪が多い</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>診断検査</h4>
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>検査</th>
+                                    <th>感度</th>
+                                    <th>特異度</th>
+                                    <th>コメント</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Spec cPL（犬）</strong></td>
+                                    <td>72〜82%</td>
+                                    <td>86〜98%</td>
+                                    <td>＞400 μg/Lで「膵炎と矛盾しない」。200〜400は灰色ゾーン</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Spec fPL（猫）</strong></td>
+                                    <td>67〜79%</td>
+                                    <td>75〜92%</td>
+                                    <td>＞5.4 μg/Lで異常。猫の膵炎診断は依然として困難</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SNAP cPL/fPL</strong></td>
+                                    <td>高い（陰性的中率が重要）</td>
+                                    <td>中程度</td>
+                                    <td>陰性なら膵炎をほぼ除外。陽性はSpec PLで確認</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>腹部エコー</strong></td>
+                                    <td>犬 68%、猫 24〜67%</td>
+                                    <td>高い</td>
+                                    <td>膵臓の低エコー・周囲脂肪の高エコー・腹水が所見</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clinical-tip">
+                            <h4>💊 日本での検査事情</h4>
+                            <ul>
+                                <li><strong>SNAP cPL/fPL</strong>（IDEXX）: 院内キットで15分。日本の一般病院でも広く普及</li>
+                                <li><strong>Spec cPL/fPL</strong>: 外注検査（IDEXX）。結果まで1〜2日</li>
+                                <li>院内でSNAPが陰性 → 膵炎の可能性は低い。<strong>陽性の場合はSpecで定量</strong>し、エコーと組み合わせて総合判断</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>診断の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 犬の治療 -->
+        <div id="treatment-dog">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🐕</span><span>犬の急性膵炎 ─ 治療プロトコル</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>支持療法の4本柱</h4>
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>治療の柱</th>
+                                    <th>具体的プロトコル</th>
+                                    <th>備考</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>① 輸液</strong></td>
+                                    <td>等張晶質液（乳酸リンゲル等）で脱水補正 + 維持。目標指向的に調整</td>
+                                    <td>過剰輸液を避ける。尿量・皮膚ツルゴール・血圧で評価</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>② 鎮痛</strong></td>
+                                    <td>メサドン 0.1〜0.3 mg/kg IV/IM q4-6h<br>ブプレノルフィン 0.01〜0.02 mg/kg IV q6-8h<br>フェンタニルCRI
+                                        2〜5 μg/kg/h</td>
+                                    <td><strong>膵炎の痛みは過小評価されがち</strong>。積極的な鎮痛が回復を早める</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>③ 制吐</strong></td>
+                                    <td>マロピタント（セレニア®）1 mg/kg SC/IV SID<br>オンダンセトロン 0.1〜0.5 mg/kg IV q8-12h</td>
+                                    <td>マロピタントは制吐＋内臓鎮痛効果あり</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>④ 早期栄養</strong></td>
+                                    <td>入院後12〜24時間以内に経腸栄養を開始。低脂肪消化器食を少量から</td>
+                                    <td>嘔吐制御後にまず経口を試みる。不可なら経鼻食道チューブを検討</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4 style="margin-top:12px;">Fuzapladib（Panoquell-CA1）─ 新しい選択肢</h4>
+                        <ul>
+                            <li>好中球のLFA-1を阻害し、組織への好中球浸潤を抑制する<strong>世界初の犬用急性膵炎治療薬</strong></li>
+                            <li>用法: IV投与、3日間連続</li>
+                            <li>支持療法との併用で使用（単独療法ではない）</li>
+                            <li>⚠️ <strong>日本では未承認</strong>（2024年にFDAが米国で条件付き承認）。今後の日本での承認動向に注目</li>
+                        </ul>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>犬の治療の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 猫の治療 -->
+        <div id="treatment-cat">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🐱</span><span>猫の急性膵炎 ─
+                            犬との違いと三臓器炎</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>猫の膵炎 ─ ACVIM コンセンサスステートメント（2021年）の要点</h4>
+                        <ul>
+                            <li>猫の膵炎の確定診断は<strong>困難</strong>（臨床所見が非特異的、画像検査の感度が低い）</li>
+                            <li>病理組織学的には<strong>慢性膵炎の方が急性より多い</strong></li>
+                            <li><strong>三臓器炎（triaditis）</strong>: 胆管炎・膵炎・IBDの併発が猫に特徴的。肝酵素上昇も同時に認められることが多い</li>
+                        </ul>
+                        <h4 style="margin-top:12px;">治療</h4>
+                        <ul>
+                            <li><strong>輸液</strong>: 等張晶質液で脱水補正。猫は犬より過剰輸液に敏感 → 慎重に投与</li>
+                            <li><strong>鎮痛</strong>: ブプレノルフィン 0.01〜0.02 mg/kg IV/IM q6-8h（猫で使いやすい）。メサドンも使用可能</li>
+                            <li><strong>制吐</strong>: マロピタント 1 mg/kg SC/IV SID</li>
+                            <li><strong>栄養</strong>:
+                                <strong>猫は脂肪肝（肝リピドーシス）のリスクが高い</strong>ため、3日以上の食欲不振は危険。経鼻食道チューブや食道チューブでの栄養を積極的に行う</li>
+                            <li><strong>ステロイド</strong>:
+                                猫の膵炎でのステロイド使用は議論あるが、<strong>猫でステロイドが膵炎を誘発するエビデンスは乏しい</strong>。三臓器炎のIBD/胆管炎コンポーネントに対して有用な場合がある（プレドニゾロン
+                                1〜2 mg/kg/day → 漸減）</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <h4>💊 臨床Tips ─ 猫で見落としやすいポイント</h4>
+                            <ul>
+                                <li>猫の膵炎は<strong>「食欲がない」だけ</strong>で来院することが多い。嘔吐や腹痛がなくても膵炎を鑑別に挙げる</li>
+                                <li>肝酵素上昇（特にGGT）＋高ビリルビン → 三臓器炎を疑い、エコーで胆管・膵臓・腸管壁を系統的に評価</li>
+                                <li>食欲不振が3日以上続いたら<strong>脂肪肝移行リスク</strong>を飼い主に説明し、積極的栄養サポートのプランを提示</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>猫の治療の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 栄養管理 -->
+        <div id="nutrition">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🍽️</span><span>栄養管理 ─
+                            「絶食」から「早期栄養」へ</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>エビデンスの変遷</h4>
+                        <ul>
+                            <li><strong>旧来</strong>: 膵臓の「安静」のため24〜72時間の絶食が推奨されていた</li>
+                            <li><strong>現在</strong>:
+                                ヒト・動物ともに<strong>早期経腸栄養（入院後12〜48時間以内）</strong>が腸管バリアを維持し、予後を改善するエビデンスが蓄積</li>
+                        </ul>
+                        <h4 style="margin-top:12px;">実践的フロー</h4>
+                        <ol>
+                            <li>制吐薬（マロピタント）で嘔吐をコントロール</li>
+                            <li>嘔吐が止まったら（通常12〜24時間以内）、<strong>低脂肪の消化器食を少量</strong>ずつ経口で開始</li>
+                            <li>経口摂取が困難 → <strong>経鼻食道チューブ</strong>（特に猫で重要）を留置し、流動食を投与</li>
+                            <li>3日以上食欲不振が続く猫では<strong>食道チューブ（Eチューブ）</strong>の留置も検討</li>
+                        </ol>
+                        <div class="clinical-tip">
+                            <h4>💊 日本で使いやすい療法食</h4>
+                            <ul>
+                                <li><strong>犬</strong>: ヒルズ i/d Low Fat、ロイヤルカナン 消化器サポート（低脂肪）</li>
+                                <li><strong>猫</strong>: ヒルズ i/d、ロイヤルカナン 消化器サポート。加水分解食（z/d、アミノペプチドフォーミュラ）も選択肢</li>
+                                <li>流動食: <strong>クリニケア®</strong>（日本で入手可能な動物用流動栄養食）が経鼻食道チューブに通しやすい</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>栄養管理の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 飼い主説明 -->
+        <div id="owner-tips">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <div class="owner-tip" style="margin-top:0;">
+                            <h4>膵炎って何ですか？</h4>
+                            <div class="speech-bubble">
+                                膵臓（すいぞう）は、食べ物を消化する酵素を出す臓器です。膵炎は、この酵素が膵臓自体を攻撃してしまう
+                                炎症です。<strong>お腹がとても痛くなり、吐いたり食べられなくなったり</strong>します。
+                                犬では高脂肪のものを食べた後になることが多く、猫では原因がはっきりしないこともあります。
+                            </div>
+                        </div>
+                        <div class="owner-tip">
+                            <h4>治りますか？どのくらい入院が必要ですか？</h4>
+                            <div class="speech-bubble">
+                                多くの場合、<strong>点滴・痛み止め・吐き止めなどの治療で回復</strong>します。
+                                軽い場合は2〜3日、重い場合は5〜7日以上の入院が必要になることもあります。
+                                ただし重症の場合は全身に炎症が波及して命に関わることもあるため、慎重に経過を見ていきます。
+                            </div>
+                        </div>
+                        <div class="owner-tip">
+                            <h4>退院後は何に気をつければいいですか？</h4>
+                            <div class="speech-bubble">
+                                <strong>食事管理がとても重要</strong>です。犬は<strong>低脂肪の療法食</strong>を勧めます。
+                                人間の食べ物や脂っこいおやつは再発のきっかけになるので避けてください。
+                                猫の場合は決まった再発予防法はありませんが、食欲が3日以上落ちたら早めに受診してください。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 参照論文 -->
+        <div id="refs">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                            <li>Mansfield C et al. Acute pancreatitis in dogs: advances in understanding,
+                                diagnostics, and treatment. <em>J Vet Intern Med</em> 2024;38(1):1-14.</li>
+                            <li>Forman MA et al. ACVIM consensus statement on pancreatitis in cats.
+                                <em>J Vet Intern Med</em> 2021;35(2):703-723.
+                            </li>
+                            <li>Xenoulis PG. Diagnosis of pancreatitis in dogs and cats.
+                                <em>J Small Anim Pract</em> 2015;56(1):13-26.
+                            </li>
+                            <li>Harris JP et al. Fuzapladib sodium for acute pancreatitis in dogs: a
+                                randomized controlled trial. <em>J Vet Intern Med</em> 2023;37(6):2180-2191.</li>
+                            <li>Jensen KB, Chan DL. Nutritional management of acute pancreatitis in dogs
+                                and cats. <em>J Vet Emerg Crit Care</em> 2014;24(3):240-250.</li>
+                            <li>Bazelle J, Watson P. Pancreatitis in cats: is it acute, is it chronic,
+                                is it significant? <em>J Feline Med Surg</em> 2014;16(5):395-406.</li>
+                            <li>Steiner JM. Exocrine pancreatic insufficiency in the cat.
+                                <em>Top Companion Anim Med</em> 2012;27(3):113-116.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer" style="margin-top: var(--space-xl);">
+            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+        </footer>
+    </div>
+    <script src="../../assets/script.js"></script>
+</body>
+
+</html>
