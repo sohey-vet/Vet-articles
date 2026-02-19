@@ -326,7 +326,7 @@
 
             <div class="stats-bar" style="justify-content: center; margin-top: 24px; padding-bottom: 0;">
                 <div class="stat-item">
-                    <div class="stat-value">43</div>
+                    <div class="stat-value" id="stat-theme-count">──</div>
                     <div class="stat-label">テーマ</div>
                 </div>
                 <div class="stat-item">
@@ -349,7 +349,7 @@
                 <button class="genre-btn active" data-genre="all">
                     <span class="genre-icon">📋</span>
                     <span>すべて</span>
-                    <span class="genre-count" id="count-all">48</span>
+                    <span class="genre-count" id="count-all">──</span>
                 </button>
                 <div class="genre-divider"></div>
                 <button class="genre-btn" data-genre="救急">
@@ -1085,8 +1085,22 @@
                 });
             });
 
-            // 初期件数を動的にセット
-            countBadge.textContent = cards.length + '件';
+            // 初期カウントを全て動的にセット
+            const totalCount = cards.length;
+            countBadge.textContent = totalCount + '件';
+            document.getElementById('count-all').textContent = totalCount;
+            const statTheme = document.getElementById('stat-theme-count');
+            if (statTheme) statTheme.textContent = totalCount;
+
+            // 各ジャンルのカウントも動的に更新
+            buttons.forEach(btn => {
+                const genre = btn.dataset.genre;
+                if (genre === 'all') return;
+                const countEl = btn.querySelector('.genre-count');
+                if (!countEl) return;
+                const genreCount = [...cards].filter(c => c.dataset.category === genre).length;
+                countEl.textContent = genreCount;
+            });
         });
     </script>
 
