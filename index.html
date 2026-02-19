@@ -418,7 +418,7 @@
             <main class="index-main">
                 <div class="active-genre-label" id="active-genre-label">
                     <span>📋 すべての記事</span>
-                    <span class="count-badge" id="visible-count">48件</span>
+                    <span class="count-badge" id="visible-count">──</span>
                 </div>
 
                 <div class="articles-grid" id="articles-grid">
@@ -1084,6 +1084,9 @@
                     }
                 });
             });
+
+            // 初期件数を動的にセット
+            countBadge.textContent = cards.length + '件';
         });
     </script>
 
