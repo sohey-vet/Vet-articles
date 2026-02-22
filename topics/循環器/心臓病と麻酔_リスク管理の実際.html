@@ -148,6 +148,43 @@
         <hr class="section-divider">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
             <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[麻酔中 MAP 60mmHg以下] --> B{まず確認};
+    B --> C[過深麻酔?];
+    B --> D[心拍数異常?];
+    B --> E[出血?];
+
+    C --> F[吸入麻酔薬減量];
+    D --> G[心拍数調整];
+    E --> H[止血 輸液];
+
+    F --> I[オピオイドCRI増];
+    I --> J[輸液ボーラス];
+
+    J --> K{低血圧持続?};
+    K -- Yes --> L{バソプレッサー選択};
+
+    L -- DCM --> M[ドブタミン];
+    L -- MMVD --> N[ドパミン];
+    L -- HCM猫 --> O[フェニレフリン 輸液調整];
+    L -- その他 --> P[エフェドリン];
+    L -- その他 --> Q[ドパミン];
+
+    M --> R{MAP改善?};
+    N --> R;
+    O --> R;
+    P --> R;
+    Q --> R;
+
+    R -- No 徐脈あり --> S[グリコピロレート];
+    R -- Yes --> T[モニタ継続];
+    S --> T;
+</pre>
+
+
             <div><button onclick="toggleAllAccordions(true)"
                     style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button
                     onclick="toggleAllAccordions(false)"
@@ -269,6 +306,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

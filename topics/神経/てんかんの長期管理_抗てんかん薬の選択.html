@@ -15,7 +15,25 @@
             aria-label="メニュー"><span></span><span></span><span></span></button></nav>
     <div class="slide-menu-overlay"></div>
     <aside class="slide-menu">
-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#drug-table">💊
+        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[てんかん発作] --> B{6ヶ月に2回以上発作?};
+    B -- Yes --> F[抗てんかん薬治療を開始];
+    B -- No --> C{重積発作/群発発作の既往?};
+    C -- Yes --> F;
+    C -- No --> D{発作後徴候が重度/24h以上?};
+    D -- Yes --> F;
+    D -- No --> E{構造的てんかんの診断?};
+    E -- Yes --> F;
+    E -- No --> G{飼い主が管理困難を訴える?};
+    G -- Yes --> F;
+    G -- No --> H[経過観察];
+</pre>
+
+</a><a href="#drug-table">💊
             薬剤比較</a><a href="#refs">📚 論文</a>
     </aside>
     <div class="page-container">
@@ -38,7 +56,25 @@
         <!-- 結論 -->
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[てんかん発作] --> B{6ヶ月に2回以上発作?};
+    B -- Yes --> F[抗てんかん薬治療を開始];
+    B -- No --> C{重積発作/群発発作の既往?};
+    C -- Yes --> F;
+    C -- No --> D{発作後徴候が重度/24h以上?};
+    D -- Yes --> F;
+    D -- No --> E{構造的てんかんの診断?};
+    E -- Yes --> F;
+    E -- No --> G{飼い主が管理困難を訴える?};
+    G -- Yes --> F;
+    G -- No --> H[経過観察];
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     抗てんかん薬（AED）の開始基準は、<strong>6ヶ月間に2回以上の発作</strong>、重積/群発発作の既往、発作後徴候が重度/24時間以上持続、または構造的てんかんの診断。犬猫の第一選択薬は<strong>Phenobarbital
                         2.5-3.0 mg/kg PO q12h</strong>（目標血中濃度 <strong>15-35
@@ -290,6 +326,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

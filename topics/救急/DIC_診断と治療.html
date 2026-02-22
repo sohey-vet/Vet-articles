@@ -112,7 +112,34 @@
                             <td>ヘパリン投与</td>
                             <td>未分画ヘパリン: 150-300 IU/kg SC q8h<br>
                                 LMWH（ダルテパリン）: 犬 150-175 IU/kg SC q8h、猫 75-150 IU/kg SC q6-8h<br>
-                                ⚠️ AT活性 < 30%ではヘパリンの効果が低下 → FFP先行</td>
+                                ⚠️ AT活性 < 30%ではヘパリンの効果が低下 → FFP先行
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[DICと診断 (スコアリング ≥ 3点)] --> B[基礎疾患の治療 (最優先)];
+
+    B --> C{出血傾向は顕著か？};
+
+    C -- No (血栓傾向優位/Overt前DIC) --> D{AT活性は十分か？};
+    C -- Yes (Overt DIC) --> G[FFP投与による凝固因子・AT補充];
+
+    D -- Yes (AT活性 ≥ 30%) --> E[ヘパリン投与 (UFH/LMWH)];
+    D -- No (AT活性 < 30%) --> F[FFP投与によるAT補充];
+
+    F --> E;
+    G --> H{出血が制御されたか？};
+    H -- Yes --> I[ヘパリン投与を検討];
+
+    style A fill:#e0f2f7,stroke:#2a859e,stroke-width:2px;
+    style B fill:#fff3cd,stroke:#a68e36,stroke-width:2px;
+    style E fill:#d4edda,stroke:#2d6a4a,stroke-width:2px;
+    style F fill:#d4edda,stroke:#2d6a4a,stroke-width:2px;
+    style G fill:#f8d7da,stroke:#721c24,stroke-width:2px;
+    style I fill:#d4edda,stroke:#2d6a4a,stroke-width:2px;
+</pre>
+
+</td>
                         </tr>
                         <tr>
                             <td><strong>③ 凝固因子補充</strong></td>
@@ -257,6 +284,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

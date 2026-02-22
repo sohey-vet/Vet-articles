@@ -397,6 +397,43 @@
                 <div class="accordion-content">
                     <div class="accordion-body premium-content">
                         <h4>催吐の適応と禁忌</h4>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[来院: 何を・いつ・どれだけ摂取？] --> B{重篤な症状 (意識障害/痙攣/呼吸困難)<br>または腐食性/石油系物質の摂取？};
+    B -- Yes --> C(緊急安定化処置: 輸液・酸素・抗痙攣薬など);
+    B -- No --> D{摂取後1〜2時間以内？};
+    D -- No (時間が経過) --> E(催吐は推奨せず); 
+    D -- Yes --> F{意識清明で咽頭反射あり？};
+    F -- No --> G(催吐は禁忌・誤嚥リスク増大);
+    F -- Yes --> H(催吐を検討);
+
+    H --> I{催吐薬の選択};
+    I -- 犬 --> J(クレボル®点眼薬 / アポモルヒネ);
+    I -- 猫 --> K(デクスメデトミジン / キシラジン);
+
+    J --> L{嘔吐物回収確認};
+    K --> L;
+
+    L -- 回収済み/嘔吐終了 --> M{活性炭の投与は適応？<br>(キシリトールには無効)};
+    M -- No --> N(継続的なモニタリング・支持療法);
+    M -- Yes --> O(活性炭 1-2g/kg PO<br>（腸肝循環物質は反復投与検討）);
+    O --> N;
+
+    C --> N;
+    E --> N;
+    G --> N;
+
+    subgraph 留意事項
+        style 注意1 fill:#fff,stroke:#333,stroke-width:2px
+        style 注意2 fill:#fff,stroke:#333,stroke-width:2px
+        注意1["⛔️ 自宅での塩水催吐は絶対禁忌"]
+        注意2["⛔️ 3%過酸化水素水は犬猫ともに推奨しない"]
+    end
+</pre>
+
+
                         <table class="comparison-table" style="margin:0 0 12px;">
                             <thead>
                                 <tr>
@@ -524,6 +561,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

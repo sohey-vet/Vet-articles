@@ -52,6 +52,22 @@
         <div class="free-content" id="emergency">
             <div class="card" style="margin-top:var(--space-md);">
                 <h3 style="font-size:0.95rem;margin-bottom:8px;">🚨 低血糖の緊急プロトコル</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[低血糖疑い 臨床徴候] --> B{血糖値測定}
+    B -- 60mg/dL以下 --> C[D50ボーラス 0.5-1.0mL/kg IV]
+    C -- 希釈必須 12.5-25% --> D{臨床徴候改善?}
+    D -- Yes --> E[2.5-5% Dextrose CRI]
+    D -- No --> C
+    E --> F[血糖モニタリング 1-2H毎]
+    F -- 血糖維持困難 --> G[Glucagon CRI検討]
+    F -- 血糖維持可能 --> H[原因検索 長期管理へ]
+    B -- 60mg/dL超 --> I[他病態を考慮]
+</pre>
+
+
                 <div style="overflow-x:auto;">
                     <table class="comparison-table" style="margin:0;min-width:600px;">
                         <thead>
@@ -275,6 +291,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

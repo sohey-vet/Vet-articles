@@ -86,6 +86,39 @@
                             <td><strong>5</strong></td>
                             <td>気道確保（改善なし時）</td>
                             <td><strong>Propofol 2-4 mg/kg IV → 挿管</strong>、または緊急気管切開</td>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[来院: ストライダー/チアノーゼ] --> B{高体温の有無? (体温測定)};
+
+    B -- Yes (&gt;39.5℃) --> C[体表冷却 (目標39.5℃で中止)];
+    B -- No (&lt;39.5℃) --> D[酸素投与 (Flow-by/マスク)];
+
+    C --> E[鎮静: Acepromazine + Butorphanol IV];
+    D --> E;
+
+    E --> F[ステロイド: Dexamethasone SP IV];
+
+    F --> G{呼吸状態・SpO2評価}; 
+
+    G -- 改善あり (SpO2 &gt; 90%) --> H[モニタリング・対症療法];
+    G -- 改善なし (SpO2 &lt; 90%持続 / 努力性呼吸増悪 / チアノーゼ・意識低下) --> I{緊急気道確保};
+
+    I --> J[Propofol IV 導入 &amp; 挿管試行];
+
+    J --> K{挿管可能?};
+
+    K -- Yes --> L[挿管 &amp; 酸素換気];
+    K -- No (声門見えず/挿管不可) --> M[緊急気管切開];
+
+    L --> N[回復期管理];
+    M --> N;
+
+    H --> N;
+</pre>
+
+
                         </tr>
                     </tbody>
                 </table>
@@ -237,6 +270,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

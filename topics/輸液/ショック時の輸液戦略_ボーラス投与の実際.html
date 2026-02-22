@@ -79,7 +79,30 @@
 
         <div class="free-content" id="action-table">
             <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ショック輸液ボーラス ─ クイックリファレンス</h3>
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ショック輸液ボーラス ─ クイックリファレンス
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+    graph TD
+        A[ショック状態の患者] --> B{輸液蘇生の適応判断};
+
+        B -- 適応なし 心原性 閉塞性ショック --> C[原因除去または特定治療];
+        B -- 適応あり 循環血液量減少性 分布異常性 --> D[初回輸液ボーラス投与];
+
+        D -- 犬の場合 --> D1[犬 LRS 15-20mL/kgを15-20分];
+        D -- 猫の場合 --> D2[猫 LRS 10-15mL/kgを15-20分];
+
+        D1 --> E{効果を再評価};
+        D2 --> E;
+
+        E -- 改善あり --> F[維持輸液へ移行];
+        E -- 部分改善 --> G[追加ボーラス投与 最大2-3回まで];
+        E -- 改善なし --> H[輸液不応性 昇圧薬検討];
+
+        G --> E;
+    </pre>
+
+</h3>
                 <div style="overflow-x:auto;">
                     <table class="comparison-table" style="margin:0;min-width:600px;">
                         <thead>
@@ -486,6 +509,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

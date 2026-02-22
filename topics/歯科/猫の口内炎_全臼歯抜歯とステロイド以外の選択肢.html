@@ -96,6 +96,32 @@
                             </tr>
                         </tbody>
                     </table>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[FCGSと診断] --> B{第一選択治療}; 
+    B --> C[全臼歯抜歯 (FME)];
+    C --> D{術後評価: 症状改善?};
+    D -- はい (60-80%治癒/改善) --> E[経過観察];
+    D -- いいえ (20-40%難治性残存) --> F[難治性FCGSの内科療法];
+
+    F --> G[Cyclosporine A (2.5-3.0 mg/kg PO q12h)];
+    G -- 著効 (50-70%) --> E;
+    G -- 効果不十分/副作用 --> H[代替内科療法検討];
+
+    H --> I[猫インターフェロンオメガ (10万 IU/day PO)];
+    H --> J[間葉系幹細胞療法 (MSC)];
+    
+    subgraph 避けるべき治療
+        K[長期ステロイド];
+        K -- 重大なリスク: 糖尿病、免疫不全 --> L[非推奨];
+    end
+    
+    F -- 避ける --> K;
+</pre>
+
+
                 </div>
             </div>
         </div>
@@ -126,6 +152,32 @@
                         </tr>
                     </tbody>
                 </table>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[FCGSと診断] --> B{第一選択治療}; 
+    B --> C[全臼歯抜歯 (FME)];
+    C --> D{術後評価: 症状改善?};
+    D -- はい (60-80%治癒/改善) --> E[経過観察];
+    D -- いいえ (20-40%難治性残存) --> F[難治性FCGSの内科療法];
+
+    F --> G[Cyclosporine A (2.5-3.0 mg/kg PO q12h)];
+    G -- 著効 (50-70%) --> E;
+    G -- 効果不十分/副作用 --> H[代替内科療法検討];
+
+    H --> I[猫インターフェロンオメガ (10万 IU/day PO)];
+    H --> J[間葉系幹細胞療法 (MSC)];
+    
+    subgraph 避けるべき治療
+        K[長期ステロイド];
+        K -- 重大なリスク: 糖尿病、免疫不全 --> L[非推奨];
+    end
+    
+    F -- 避ける --> K;
+</pre>
+
+
             </div>
         </div>
 
@@ -181,6 +233,32 @@
                             </tr>
                         </tbody>
                     </table>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[FCGSと診断] --> B{第一選択治療}; 
+    B --> C[全臼歯抜歯 (FME)];
+    C --> D{術後評価: 症状改善?};
+    D -- はい (60-80%治癒/改善) --> E[経過観察];
+    D -- いいえ (20-40%難治性残存) --> F[難治性FCGSの内科療法];
+
+    F --> G[Cyclosporine A (2.5-3.0 mg/kg PO q12h)];
+    G -- 著効 (50-70%) --> E;
+    G -- 効果不十分/副作用 --> H[代替内科療法検討];
+
+    H --> I[猫インターフェロンオメガ (10万 IU/day PO)];
+    H --> J[間葉系幹細胞療法 (MSC)];
+    
+    subgraph 避けるべき治療
+        K[長期ステロイド];
+        K -- 重大なリスク: 糖尿病、免疫不全 --> L[非推奨];
+    end
+    
+    F -- 避ける --> K;
+</pre>
+
+
                     <div class="clinical-tip">
                         <h4>💡 臨床Tips</h4>
                         <ul>
@@ -277,6 +355,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

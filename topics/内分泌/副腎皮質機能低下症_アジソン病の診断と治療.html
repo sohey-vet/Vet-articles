@@ -47,7 +47,22 @@
 
         <div class="free-content" id="acth-test">
             <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">🔬 ACTH刺激試験 ─ 判定フローチャート</h3>
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">🔬 ACTH刺激試験 ─ 判定フローチャート
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[アジソン病を疑う] --> B(ベースラインコルチゾール測定)
+    B --> C{ベースラインコルチゾール > 2μg/dL ?}
+    C -- Yes --> D[アジソン病を除外]
+    C -- No --> E(合成ACTH投与 5μg/kg IV)
+    E --> F(1時間後コルチゾール測定)
+    F --> G{刺激後コルチゾール < 2μg/dL ?}
+    G -- Yes --> H[アジソン病を確定]
+    G -- No --> I[アジソン病を除外]
+</pre>
+
+</h3>
                 <table class="comparison-table" style="margin:0;">
                     <thead>
                         <tr>
@@ -314,6 +329,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

@@ -139,6 +139,35 @@
             <div class="accordion-content">
                 <div class="accordion-body premium-content">
                     <h4>Occult DCM（無症状期）の発見</h4>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[ドーベルマン犬のDCM管理フロー] --> B{症状はありますか？};
+
+    B -- いいえ(無症状) --> C[年1回定期スクリーニング<br>(24hホルター + 心エコー)];
+    B -- はい(心不全徴候) --> I[Stage C 心不全治療<br>(利尿薬、Pimobendan、ACE阻害薬、Spironolactone)];
+
+    C --> D{24hホルター心電図結果};
+    D -- VPCs &lt; 100/24h &<br>複雑なVPCsなし --> C;
+    D -- VPCs &gt;= 100/24h<br>または複雑なVPCs検出 --> E{心エコー所見};
+
+    E -- LVIDd/LVIDs, FS等 正常 --> C;
+    E -- LVIDd/LVIDs, FS等 病的拡大 --> F[Occult DCM診断];
+
+    F --> G[Pimobendan 0.25-0.3mg/kg PO q12h 開始<br>(PROTECT Studyに基づき)];
+    G --> H{VPCs/VTが顕著か？};
+    H -- はい --> J[Sotalol / Mexiletine 併用検討];
+    H -- いいえ --> K[定期モニタリング継続<br>(症状確認、ホルター、エコー)];
+    J --> K;
+    K --> L{心不全徴候の出現?};
+    L -- はい --> I;
+    L -- いいえ --> K;
+
+    I --> M[適切な対症療法と管理];
+</pre>
+
+
                     <ul>
                         <li>ドーベルマンのDCMは<strong>無症状の段階が長く</strong>、飼い主が異変に気づいたときには高度な心筋障害が進行していることが多い</li>
                         <li>スクリーニングは<strong>年1回の24時間ホルター心電図 + 心エコー</strong>が推奨される</li>
@@ -282,6 +311,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

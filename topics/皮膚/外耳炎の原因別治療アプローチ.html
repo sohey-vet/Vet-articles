@@ -19,7 +19,46 @@
     <aside class="slide-menu">
         <h4>ナビゲーション</h4>
         <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
+        <a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[外耳炎症状] --> B[初期検査 耳鏡 細胞診 鼓膜確認];
+
+    B --> C{二次因子 S の治療}; 
+    C --> C1[細胞診結果に基づき点耳薬選択];
+    C1 --> C2{桿菌陽性?};
+    C2 -- Yes --> C2A[培養 感受性試験];
+    C2A --> D;
+    C2 -- No --> D;
+
+    D{原発因子 P の特定と是正}; 
+    D --> D1{アレルギー疑い?};
+    D1 -- Yes --> D1A[アトピー 食物アレルギー検査 全身療法];
+    D1 -- No --> D2{耳ダニ 異物 腫瘍?};
+    D2 -- Yes --> D2A[除去 治療];
+    D2 -- No --> E;
+
+    E{持続因子 P への対処}; 
+    E --> E1{耳道肥厚 石灰化 中耳炎?};
+    E1 -- Yes --> E1A[CT検査 TECA LBO検討];
+    E1 -- No --> E2{バイオフィルム疑い?};
+    E2 -- Yes --> E2A[トリスEDTA 洗浄];
+    E2 -- No --> F;
+
+    F{素因 P の改善}; 
+    F --> F1[耳毛処理 環境改善 定期洗浄];
+
+    F1 --> G[治療効果判定 定期モニタリング];
+
+    D1A --> G;
+    D2A --> G;
+    E1A --> G;
+    E2A --> G;
+</pre>
+
+</a>
         <a href="#action-table">🗺️ PPSP分類</a>
         <a href="#primary">🔍 原発因子の特定</a>
         <a href="#treatment">💊 治療プロトコル</a>
@@ -60,7 +99,46 @@
 
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[外耳炎症状] --> B[初期検査 耳鏡 細胞診 鼓膜確認];
+
+    B --> C{二次因子 S の治療}; 
+    C --> C1[細胞診結果に基づき点耳薬選択];
+    C1 --> C2{桿菌陽性?};
+    C2 -- Yes --> C2A[培養 感受性試験];
+    C2A --> D;
+    C2 -- No --> D;
+
+    D{原発因子 P の特定と是正}; 
+    D --> D1{アレルギー疑い?};
+    D1 -- Yes --> D1A[アトピー 食物アレルギー検査 全身療法];
+    D1 -- No --> D2{耳ダニ 異物 腫瘍?};
+    D2 -- Yes --> D2A[除去 治療];
+    D2 -- No --> E;
+
+    E{持続因子 P への対処}; 
+    E --> E1{耳道肥厚 石灰化 中耳炎?};
+    E1 -- Yes --> E1A[CT検査 TECA LBO検討];
+    E1 -- No --> E2{バイオフィルム疑い?};
+    E2 -- Yes --> E2A[トリスEDTA 洗浄];
+    E2 -- No --> F;
+
+    F{素因 P の改善}; 
+    F --> F1[耳毛処理 環境改善 定期洗浄];
+
+    F1 --> G[治療効果判定 定期モニタリング];
+
+    D1A --> G;
+    D2A --> G;
+    E1A --> G;
+    E2A --> G;
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     犬の外耳炎の<strong>最多の原発因子はアトピー性皮膚炎（43〜55%）</strong>。
                     外耳炎を繰り返す犬の多くは<strong>未診断のアトピー</strong>であり、点耳薬だけでは解決しない。
@@ -351,6 +429,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

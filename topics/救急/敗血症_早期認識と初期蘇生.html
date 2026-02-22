@@ -62,6 +62,41 @@
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
                 <h3 style="font-size:0.95rem;">🎯 結論</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[感染源の疑いあり] --> B{SIRS基準に合致}; 
+    B -- No --> C[経過観察 感染治療];
+    B -- Yes --> D{臓器障害あり 例:乳酸高値 乏尿}; 
+    D -- No --> E[全身性炎症反応症候群 SIRS];
+    D -- Yes --> F[敗血症を疑う];
+
+    F --> G[ゴールデンアワー 最初の1時間で];
+    G --> H[1 輸液蘇生];
+    G --> I[2 広域抗菌薬投与 培養後];
+    G --> J[3 ソースコントロール 感染源除去];
+
+    H --> K{灌流パラメータ改善? HR CRT 脈 血圧 乳酸}; 
+    K -- Yes --> L[維持輸液 状態安定化];
+    K -- No --> M[輸液ボーラス追加 または昇圧薬検討];
+
+    M --> N{低血圧持続?}; 
+    N -- Yes --> O[ノルエピネフリン 第一選択];
+    N -- No --> L;
+
+    O --> P{目標MAP達成?}; 
+    P -- No --> Q[他昇圧薬追加 バソプレシン ドブタミン];
+    P -- Yes --> L;
+
+    J --> R[可能な限り早期に実施];
+
+    style A fill:#DDF,stroke:#333,stroke-width:2px;
+    style F fill:#FEE,stroke:#C00,stroke-width:2px;
+    style G fill:#EFE,stroke:#090,stroke-width:2px;
+</pre>
+
+
                 <p style="font-size:0.88rem;">
                     敗血症は<strong>感染に対する宿主の調節異常な反応による臓器障害</strong>（Sepsis-3定義の獣医適用）。
                     犬はSIRS基準<strong>4項目中2項目以上</strong>で疑い、猫は<strong>3項目以上</strong>を要求する（感度を補うため）。
@@ -395,6 +430,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

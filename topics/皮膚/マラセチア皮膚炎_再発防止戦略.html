@@ -36,6 +36,31 @@
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
                 <h3 style="font-size:0.95rem;">🎯 結論</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[マラセチア皮膚炎 症状] --> B{細胞診 陽性?};
+    B -- Yes --> C[診断 マラセチア皮膚炎];
+    C --> D[急性期治療 3-4週];
+    D -- 局所療法 --> D1[抗真菌シャンプー/ローション];
+    D -- 全身療法 必要に応じて --> D2[内服薬 KTZ ITZ];
+    D --> E{治療効果評価 3-4週後};
+    E -- 改善あり --> F[維持 再発予防];
+    F --> F1[維持シャンプー];
+    F --> F2[基礎疾患 管理];
+    E -- 改善乏しい または 再発 --> G[再評価と原因究明];
+    G --> H[基礎疾患の再検討];
+    H --> H1[アトピー性皮膚炎];
+    H --> H2[甲状腺機能低下症];
+    H --> H3[食物アレルギー クッシング];
+    H --> H4[原発性脂漏症];
+    G --> I[治療プロトコル見直し];
+    I --> I1[シャンプー接触時間 用量];
+    I --> I2[薬剤選択 再確認];
+</pre>
+
+
                 <p style="font-size:0.88rem;">
                     <strong>Malassezia
                         pachydermatis</strong>は犬の皮膚の常在真菌であり、マラセチア皮膚炎は<strong>「マラセチアが増えた」こと自体が原因ではなく、増えやすい環境を作った基礎疾患が真の原因</strong>。治療は<strong>①急性期の抗真菌療法（局所＋全身）②基礎疾患（アトピー・甲状腺機能低下症・食物アレルギー・脂漏症）の特定と管理
@@ -269,6 +294,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

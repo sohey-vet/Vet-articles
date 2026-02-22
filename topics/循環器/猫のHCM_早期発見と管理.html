@@ -19,7 +19,39 @@
     <aside class="slide-menu">
         <h4>ナビゲーション</h4>
         <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
+        <a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[猫の心臓スクリーニング] --> B{心エコー}; 
+    B --> C{LV壁厚 6mm以上}; 
+    C --No--> D[HCMなし 定期]; 
+    C --Yes--> E{左房拡大 LA/Ao 1.5以上}; 
+
+    E --No--> F[ステージB1 軽度HCM]; 
+    E --Yes--> G[ステージB2 中度重度HCM]; 
+
+    F --> H[B1管理 経過観察 アテノロール検討 LVOTO]; 
+    G --> I[B2管理 クロピドグレル 18.75mg日]; 
+
+    F --> J{呼吸困難 ATE発症}; 
+    G --> J; 
+
+    J --Yes--> K[ステージC CHF ATE]; 
+    K --> L[C管理 フロセミド ACEi クロピドグレル ピモベンダン]; 
+
+    L --> M{治療抵抗性}; 
+    M --Yes--> N[ステージD 末期心不全]; 
+    N --> O[D管理 利尿薬増量 QOL評価]; 
+
+    H --> P[モニタリング 心エコー 自宅SRR]; 
+    I --> P; 
+    L --> P; 
+    O --> P;
+</pre>
+
+</a>
         <a href="#action-table">🗺️ ステージ分類</a>
         <a href="#screening">🔍 スクリーニング</a>
         <a href="#echo">📐 心エコー診断基準</a>
@@ -63,7 +95,39 @@
 
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[猫の心臓スクリーニング] --> B{心エコー}; 
+    B --> C{LV壁厚 6mm以上}; 
+    C --No--> D[HCMなし 定期]; 
+    C --Yes--> E{左房拡大 LA/Ao 1.5以上}; 
+
+    E --No--> F[ステージB1 軽度HCM]; 
+    E --Yes--> G[ステージB2 中度重度HCM]; 
+
+    F --> H[B1管理 経過観察 アテノロール検討 LVOTO]; 
+    G --> I[B2管理 クロピドグレル 18.75mg日]; 
+
+    F --> J{呼吸困難 ATE発症}; 
+    G --> J; 
+
+    J --Yes--> K[ステージC CHF ATE]; 
+    K --> L[C管理 フロセミド ACEi クロピドグレル ピモベンダン]; 
+
+    L --> M{治療抵抗性}; 
+    M --Yes--> N[ステージD 末期心不全]; 
+    N --> O[D管理 利尿薬増量 QOL評価]; 
+
+    H --> P[モニタリング 心エコー 自宅SRR]; 
+    I --> P; 
+    L --> P; 
+    O --> P;
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     HCMは<strong>猫の約7頭に1頭（14〜15%）</strong>に認められる最も一般的な心臓病（Payne et al. 2015）。
                     メインクーンやラグドールではMYBPC3遺伝子変異が同定されているが、大部分の猫では原因遺伝子不明。
@@ -460,6 +524,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

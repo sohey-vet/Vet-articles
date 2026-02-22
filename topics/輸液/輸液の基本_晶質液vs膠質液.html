@@ -40,6 +40,24 @@
                     蘇生には<strong>等張晶質液のボーラス投与</strong>が第一選択（犬15〜20mL/kg、猫10〜15mL/kg）。「ショック量を一気に入れる」時代は終わり、<strong>少量ボーラス→再評価→追加を繰り返す</strong>のが現在の標準。晶質液
                     vs 膠質液のどちらが優れるかのエビデンスは未確立。生理食塩水の大量投与は高クロール性代謝性アシドーシスのリスク →
                     <strong>緩衝晶質液（乳酸リンゲル等）が推奨</strong>。猫は犬より過剰輸液に弱い。
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[ショック兆候あり] --> B[等張晶質液ボーラス投与];
+    B -- 犬 --> C[15-20 mL/kg 15-30分];
+    B -- 猫 --> D[10-15 mL/kg 15-30分];
+    C --> E[灌流指標を再評価];
+    D --> E;
+    E --> F{灌流改善あり}; 
+    F -- はい --> G[維持輸液へ移行];
+    F -- いいえ --> H{過剰輸液兆候あり}; 
+    H -- いいえ --> I[追加ボーラス投与 同量];
+    H -- はい 肺水腫等 --> J[昇圧剤検討];
+    I --> E;
+</pre>
+
+
                 </p>
             </div>
         </div>
@@ -228,6 +246,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

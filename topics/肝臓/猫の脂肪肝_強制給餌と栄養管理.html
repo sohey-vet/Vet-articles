@@ -21,7 +21,37 @@
     <aside class="slide-menu">
         <h4>ナビゲーション</h4>
         <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
+        <a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[食欲不振 3-7日 HL疑い] --> B[入院評価]
+    B --> B1[輸液 電解質補正]
+    B --> B2[血液検査 K P Mg]
+    B2 --> C{低K P Mg あり？}
+    C -- Yes --> C1[電解質補正]
+    C -- No --> D{嘔吐あり？}
+    D -- Yes --> D1[嘔吐制御]
+    D -- No --> E[E-tube設置]
+    C1 --> E
+    D1 --> E
+    E --> F[栄養開始 Day1]
+    F --> F1[RER 1/3給餌]
+    F1 --> G[栄養増量 Day2]
+    G --> G1[RER 2/3給餌]
+    G1 --> H[栄養維持 Day3]
+    H --> H1[RER 100%給餌]
+    H1 --> I{電解質 嘔吐Moni}
+    I -- 安定 --> J[退院 E-tube指導]
+    J --> K[在宅経管栄養 4-8W]
+    K --> L{3日自力摂食？}
+    L -- Yes --> M[E-tube抜去]
+    B --> N[原疾患検索 治療]
+    N --> K
+</pre>
+
+</a>
         <a href="#action-table">🗺️ 治療フロー</a>
         <a href="#diagnosis">🔬 診断</a>
         <a href="#feeding-tube">🍽️ 経食道チューブ</a>
@@ -64,7 +94,37 @@
 
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[食欲不振 3-7日 HL疑い] --> B[入院評価]
+    B --> B1[輸液 電解質補正]
+    B --> B2[血液検査 K P Mg]
+    B2 --> C{低K P Mg あり？}
+    C -- Yes --> C1[電解質補正]
+    C -- No --> D{嘔吐あり？}
+    D -- Yes --> D1[嘔吐制御]
+    D -- No --> E[E-tube設置]
+    C1 --> E
+    D1 --> E
+    E --> F[栄養開始 Day1]
+    F --> F1[RER 1/3給餌]
+    F1 --> G[栄養増量 Day2]
+    G --> G1[RER 2/3給餌]
+    G1 --> H[栄養維持 Day3]
+    H --> H1[RER 100%給餌]
+    H1 --> I{電解質 嘔吐Moni}
+    I -- 安定 --> J[退院 E-tube指導]
+    J --> K[在宅経管栄養 4-8W]
+    K --> L{3日自力摂食？}
+    L -- Yes --> M[E-tube抜去]
+    B --> N[原疾患検索 治療]
+    N --> K
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     猫の肝リピドーシス（HL: Hepatic
                     Lipidosis）は<strong>食欲不振が3〜7日以上続くことで発症</strong>し、特に肥満猫でリスクが高い。猫特有の脂質代謝（VLDL生合成のボトルネック）により、絶食時に肝臓に中性脂肪が蓄積し肝機能障害を引き起こす。治療の柱は<strong>十分なカロリーの栄養補給</strong>であり、最も確実な方法は<strong>経食道チューブ（E-tube）</strong>の設置。適切な栄養支持を行えば<strong>生存率は約60〜80%</strong>。ただし原発性HLは<strong>約20〜40%</strong>で、残りは<strong>二次性（膵炎・IBD・リンパ腫・糖尿病などが原疾患）</strong>であるため、基礎疾患の検索と治療が同時に必要。栄養回復には<strong>4〜8週間</strong>を要することが多い。
@@ -471,6 +531,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

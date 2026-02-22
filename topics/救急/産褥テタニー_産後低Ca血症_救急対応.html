@@ -30,6 +30,38 @@
                 <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
             </div>
         </header>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[産褥テタニー疑い 臨床徴候]
+    A --> B{血清Ca測定};
+    B -- 総Ca &lt; 7.0 or iCa &lt; 0.7-0.8 --> C[診断確定 低Ca血症];
+    C --> D{低血糖併発確認?};
+    D -- はい --> E[50% Dextrose IV];
+    E --> F[10% Ca Gluconate IV slow];
+    D -- いいえ --> F;
+    F --> G[ECGモニタリング 連続];
+    G -- 徐脈 or VPC出現 --> H[Ca投与 中断または減速];
+    H --> I{不整脈改善?};
+    I -- はい --> F[Ca投与再開 速度調整];
+    I -- いいえ --> J[他治療検討 獣医師判断];
+    G -- 臨床徴候改善 痙攣停止 --> K[急性期安定];
+    K --> L{経口摂取可能?};
+    L -- いいえ --> M[10% Ca Gluconate CRI];
+    L -- はい --> N[炭酸カルシウム PO 25-50 mg/kg/day 分割];
+    M --> N;
+    N --> O{経口Caのみで維持可能?};
+    O -- いいえ --> P[カルシトリオール PO 追加 負荷→維持];
+    O -- はい --> Q[子犬への授乳 直ちに中止];
+    P --> Q;
+    Q --> R[人工哺乳 離乳指導];
+    R --> S[血清Ca再検 退院後2-3日おき];
+    S --> T[再発予防指導 妊娠中Caサプリ禁止];
+    T --> U[END];
+</pre>
+
+
         <div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input type="checkbox"
                     id="content-mode-toggle" checked><span class="toggle-slider"></span></label><span
                 class="mode-label">👑 すべて表示</span></div>
@@ -256,6 +288,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

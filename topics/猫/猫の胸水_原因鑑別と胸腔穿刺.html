@@ -186,6 +186,84 @@
                             </tbody>
                         </table>
                         <div class="clinical-tip">
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[呼吸困難の猫に胸水貯留を確認] --> B{胸腔穿刺と胸水分析}
+
+    B --> C[TP測定 (g/dL)]
+
+    C --> C1{TP &lt; 2.5}
+    C1 -- Yes --> D[純漏出液]
+    D --> D1[原因: 低アルブミン血症 (肝不全, PLE, 腎不全)]
+    C1 -- No --> C2{TP 2.5-5.0}
+
+    C2 -- Yes --> E[変性漏出液]
+    E --> E1{NT-proBNP (血清 or 胸水中)}
+    E1 -- 高値 (&gt;220 pmol/L) --> E2[原因: うっ血性心不全]
+    E1 -- 低値 --> E3[原因: 腫瘍, 肝硬変]
+    C2 -- No --> C3{TP &gt; 3.0}
+
+    C3 -- Yes --> F[滲出液 または その他]
+    F --> F1{胸水の外観とTG/コレステロール比}
+
+    F1 -- 乳白色 &amp; TG &gt; 血清TG --> G[乳び胸]
+    G --> G1[原因: 特発性, 心臓病, 腫瘍 (リンパ管閉塞)]
+
+    F1 -- 赤色 &amp; Hct高値 --> H[出血性胸水]
+    H --> H1[原因: 外傷, 凝固異常, 腫瘍破裂]
+
+    F1 -- その他 (黄色, 混濁など) --> I[細胞数 &amp; 細胞診 &amp; グラム染色]
+
+    I --> I1{高蛋白 (&gt;3.5), 低細胞数, 粘稠, A/G比 &lt;0.4}
+    I1 -- Yes --> J[FIP (猫伝染性腹膜炎)]
+    J --> J1[原因: FCoV感染]
+
+    I1 -- No --> I2{高細胞数 (&gt;10000), 好中球優位, グラム染色陽性}
+    I2 -- Yes --> K[膿胸]
+    K --> K1[原因: 外傷, 異物, 播種性感染]
+
+    I2 -- No --> L[細胞診で悪性細胞検出]
+    L -- Yes --> M[腫瘍性胸水]
+    M --> M1[原因: リンパ腫, 癌腫など]
+
+    I2 -- No &amp; L -- No --> N[その他/非特異的]
+    N --> N1[更なる精査 (生検, 培養, 特定ウイルス検査など)]
+
+    style A fill:#DCE7EE,stroke:#333,stroke-width:2px,color:#333
+    style B fill:#C3E6CB,stroke:#28A745,stroke-width:2px,color:#28A745
+    style C fill:#FFE0B2,stroke:#FF9800,stroke-width:2px,color:#333
+    style C1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style C2 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style C3 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style D fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style D1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style E fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style E1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style E2 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style E3 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style F fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style F1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style G fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style G1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style H fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style H1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style I fill:#FFE0B2,stroke:#FF9800,stroke-width:2px,color:#333
+    style I1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style I2 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style J fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style J1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style K fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style K1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style L fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style M fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style M1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style N fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style N1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+</pre>
+
+
                             <h4>💊 鑑別のキーポイント</h4>
                             <ul>
                                 <li><strong>乳びの確定</strong>: 胸水中TG ＞ 血清TG であれば乳び。コレステロール/TG比 ＜1 も参考</li>
@@ -368,6 +446,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

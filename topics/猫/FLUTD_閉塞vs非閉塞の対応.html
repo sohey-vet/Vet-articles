@@ -19,7 +19,26 @@
     <aside class="slide-menu">
         <h4>ナビゲーション</h4>
         <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
+        <a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[FLUTD疑い 雄猫] --> B{尿道閉塞の可能性}
+    B --> C[Step1 トリアージ 安定化]
+    C --> D{徐脈 高K血症所見ありか}
+    D -- Yes --> E[Step2 高K血症 緊急是正]
+    E --> F[Step3 尿道カテーテル挿入]
+    D -- No --> F
+    F --> G{閉塞解除成功したか}
+    G -- Yes --> H[カテーテル留置 モニタリング]
+    G -- No --> I[再試行 困難なら外科相談]
+    H --> J[カテーテル抜去]
+    J --> K[自力排尿確認]
+    K --> L[退院可能]
+</pre>
+
+</a>
         <a href="#action-table">🗺️ 閉塞vs非閉塞</a>
         <a href="#obstruction">🚨 閉塞の救急対応</a>
         <a href="#fic">🧠 特発性膀胱炎(FIC)</a>
@@ -60,7 +79,26 @@
         <!-- FREE ZONE -->
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[FLUTD疑い 雄猫] --> B{尿道閉塞の可能性}
+    B --> C[Step1 トリアージ 安定化]
+    C --> D{徐脈 高K血症所見ありか}
+    D -- Yes --> E[Step2 高K血症 緊急是正]
+    E --> F[Step3 尿道カテーテル挿入]
+    D -- No --> F
+    F --> G{閉塞解除成功したか}
+    G -- Yes --> H[カテーテル留置 モニタリング]
+    G -- No --> I[再試行 困難なら外科相談]
+    H --> J[カテーテル抜去]
+    J --> K[自力排尿確認]
+    K --> L[退院可能]
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     FLUTDの原因は<strong>特発性膀胱炎（FIC）55〜69%、尿石症15〜21%、尿路感染症1〜8%</strong>（若齢猫）。
                     <strong>尿道閉塞は雄猫の緊急疾患</strong>で、高K血症による致死的不整脈（徐脈→心停止）を引き起こす。
@@ -339,6 +377,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

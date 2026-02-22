@@ -46,6 +46,34 @@
                         1.5-2.0倍）</strong>。退院後の再発予防には<strong>Clopidogrel 18.75 mg/cat PO
                         q24h</strong>が標準。<strong>Rivaroxaban 2.5 mg/cat PO q24h</strong>との併用（Dual
                     therapy）で生存期間延長の報告がある。予後: 生存退院率<strong>30-40%</strong>。直腸温 &lt; 37.0℃、徐脈、両後肢完全麻痺は悪い予後因子。
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[ATE疑い来院: 後肢麻痺/疼痛] --> B{診断: The 5 Ps}
+    B -- Pain, Paresis/Paralysis, Pulselessness, Pallor, Poikilothermy --> C[ATE確定診断]
+
+    C --> D[最優先: 鎮痛 (激痛緩和)]
+    D -- Fentanyl 2-5 mcg/kg IV/CRI --> E[急性期: 抗血栓療法]
+
+    E -- UFH 250-300 IU/kg IV then SC q6-8h --> F{モニタリング: APTT 1.5-2.0x目標}
+
+    F --> G{予後因子評価}
+    G -- 悪い予後因子 (-) <br> (例: 直腸温 > 37℃, 脈拍正常, 片後肢麻痺) --> H[積極的治療継続]
+    G -- 悪い予後因子 (+) <br> (例: 直腸温 < 37℃, 徐脈, 両後肢完全麻痺) --> I[飼い主との相談: 治療継続/安楽死]
+
+    H --> J[状態安定化 &rarr; 退院へ]
+    I -- 治療継続を選択 --> J
+
+    J --> K[慢性期: 再発予防]
+    K -- Clopidogrel 18.75 mg/cat PO q24h --> L[Rivaroxaban 2.5 mg/cat PO q24h (+/-併用検討)]
+
+    L --> M[退院後の経過観察]
+    M --> N[運動機能回復 (1-2ヶ月で多くが回復)]
+    M --> O[再塞栓リスク (25-50%)]
+</pre>
+
+
                 </p>
             </div>
         </div>
@@ -335,6 +363,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

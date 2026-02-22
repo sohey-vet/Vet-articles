@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
  * Accordion
  */
 function initAccordions() {
+  const accordions = document.querySelectorAll('.accordion');
+
+  // 初期状態ですべてのアコーディオンを開く
+  accordions.forEach(accordion => {
+    accordion.classList.add('open');
+    const content = accordion.querySelector('.accordion-content');
+    content.style.maxHeight = 'none'; // 最初から全開
+  });
+
   const triggers = document.querySelectorAll('.accordion-trigger');
   triggers.forEach(trigger => {
     trigger.addEventListener('click', () => {

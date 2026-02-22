@@ -148,6 +148,24 @@
                 <div class="accordion-body premium-content">
                     <div class="key-findings" style="margin-top:0;">
                         <h4>低血圧の段階的対応（Goal-Directed Approach）</h4>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[開始: MAP &lt; 60mmHg または収縮期血圧 &lt; 80mmHg] --> B{Step 1: 麻酔深度の確認};
+    B --> C[吸入麻酔薬 25-50%減量 + オピオイドCRI増量];
+    C --> D{血圧改善?};
+    D -- Yes --> E[モニタリング継続];
+    D -- No --> F{Step 2: 輸液ボーラス (Fluid Responsiveness評価)};
+    F --> G[犬: 5-10mL/kg / 猫: 1-3mL/kg (短時間投与, 5-10分で評価)];
+    G --> H{血圧改善? (Fluid Responder?)};
+    H -- Yes --> E;
+    H -- No (Fluid Refractory) --> I{Step 3: 昇圧薬の選択と投与};
+    I --> J[エフェドリン / ドパミンCRI / ドブタミンCRI / ノルエピネフリンCRI];
+    J --> K[継続的なモニタリングと調整];
+</pre>
+
+
                         <ul>
                             <li><strong>MAP &lt; 60mmHg</strong>（または収縮期血圧 &lt; 80mmHg）が介入のトリガー</li>
                             <li><strong>Step 1: 麻酔深度の確認</strong>
@@ -306,6 +324,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

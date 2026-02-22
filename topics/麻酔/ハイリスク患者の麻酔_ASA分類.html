@@ -14,7 +14,51 @@
             aria-label="メニュー"><span></span><span></span><span></span></button></nav>
     <div class="slide-menu-overlay"></div>
     <aside class="slide-menu">
-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#asa">📊
+        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[麻酔前患者評価] --> B{ASA分類？};
+    B -- ASA I-II --> C[標準プロトコル];
+    B -- ASA III-V --> D[ハイリスク患者];
+
+    D --> E[術前評価強化];
+    E --> E1[血液検査 心エコー 血圧];
+
+    D --> F[麻酔計画立案];
+    F --> F1[心血管抑制少ない薬剤選択];
+    F --> F2[個別リスク対応方針];
+
+    F2 --> G1{心疾患}; 
+    G1 -- あり --> H1[アセプロマジン回避 オピオイド中心];
+    G1 -- あり --> H2[エトミデート等検討];
+
+    F2 --> G2{腎疾患}; 
+    G2 -- あり --> H3[術前輸液 MAP 65維持];
+    G2 -- あり --> H4[NSAIDs回避];
+
+    F2 --> G3{短頭種}; 
+    G3 -- あり --> H5[プロポ導入 早期挿管];
+    G3 -- あり --> H6[抜管は完全覚醒まで待機];
+
+    F2 --> G4{高齢動物}; 
+    G4 -- あり --> H7[全薬剤25-50%減量];
+    G4 -- あり --> H8[積極的保温];
+
+    F --> I[術中モニタリング強化];
+    I --> J[MAP 60-65mmHg維持];
+    I --> K[低血圧対応 バソプレッサー準備];
+
+    I --> L[術後回復管理];
+    L --> M[短頭種:抜管判断 再挿管準備];
+    L --> N[保温継続 疼痛管理];
+
+    C --> L;
+    H1 --> I; H2 --> I; H3 --> I; H4 --> I; H5 --> I; H6 --> I; H7 --> I; H8 --> I;
+</pre>
+
+</a><a href="#asa">📊
             ASA分類</a><a href="#refs">📚 論文</a>
     </aside>
     <div class="page-container">
@@ -35,7 +79,51 @@
 
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[麻酔前患者評価] --> B{ASA分類？};
+    B -- ASA I-II --> C[標準プロトコル];
+    B -- ASA III-V --> D[ハイリスク患者];
+
+    D --> E[術前評価強化];
+    E --> E1[血液検査 心エコー 血圧];
+
+    D --> F[麻酔計画立案];
+    F --> F1[心血管抑制少ない薬剤選択];
+    F --> F2[個別リスク対応方針];
+
+    F2 --> G1{心疾患}; 
+    G1 -- あり --> H1[アセプロマジン回避 オピオイド中心];
+    G1 -- あり --> H2[エトミデート等検討];
+
+    F2 --> G2{腎疾患}; 
+    G2 -- あり --> H3[術前輸液 MAP 65維持];
+    G2 -- あり --> H4[NSAIDs回避];
+
+    F2 --> G3{短頭種}; 
+    G3 -- あり --> H5[プロポ導入 早期挿管];
+    G3 -- あり --> H6[抜管は完全覚醒まで待機];
+
+    F2 --> G4{高齢動物}; 
+    G4 -- あり --> H7[全薬剤25-50%減量];
+    G4 -- あり --> H8[積極的保温];
+
+    F --> I[術中モニタリング強化];
+    I --> J[MAP 60-65mmHg維持];
+    I --> K[低血圧対応 バソプレッサー準備];
+
+    I --> L[術後回復管理];
+    L --> M[短頭種:抜管判断 再挿管準備];
+    L --> N[保温継続 疼痛管理];
+
+    C --> L;
+    H1 --> I; H2 --> I; H3 --> I; H4 --> I; H5 --> I; H6 --> I; H7 --> I; H8 --> I;
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     「この子は麻酔が危険」という判断だけで止まっていないか？<strong>ASA分類（米国麻酔科学会の身体状態分類）</strong>はヒト医療由来だが、獣医療でも麻酔リスクの客観的評価に広く使われている。<strong>ASA
                         III以上</strong>の患者では麻酔関連死亡率が有意に上昇するが、適切なプロトコル選択とモニタリング強化で多くの症例は安全に管理できる。ハイリスク患者の麻酔で最も重要なのは<strong>①術前の全身評価（血液検査・心エコー・血圧）②心血管抑制の少ない薬剤選択③積極的なモニタリングと早期介入</strong>の3本柱。特に<strong>低血圧（MAP
@@ -332,6 +420,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

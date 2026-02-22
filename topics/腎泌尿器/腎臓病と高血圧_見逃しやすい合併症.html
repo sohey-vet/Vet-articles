@@ -42,6 +42,49 @@
                         ≥ 160 mmHg</strong>で治療介入を推奨。猫の第一選択薬は<strong>アムロジピン 0.625-1.25 mg/cat PO
                         q24h</strong>、犬ではACE阻害薬/ARBが第一選択で、不十分な場合に<strong>アムロジピン 0.1-0.2 mg/kg PO
                         q12-24h</strong>を追加する。血圧測定は静かな環境で5-7回測定し、カフ幅は四肢周囲径の30-40%を使用する。
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[来院] --> B[静かな環境で血圧測定]
+    B --> C[5-7回測定 外れ値除外]
+    C --> D{TOD 標的臓器障害 存在?}
+
+    D -- Yes --> E[SBP 140-159 mmHg]
+    D -- No --> F{SBP 160 mmHg以上?}
+
+    F -- No --> G{SBP 140-159 mmHg?}
+    F -- Yes --> H[治療開始 IRIS III IV]
+
+    G -- No --> I[経過観察 定期再評価]
+    G -- Yes --> H
+
+    E -- Yes --> H
+    E -- No --> I
+
+    H --> J{動物種?}
+    J -- 猫 --> K[猫の治療プロトコル]
+    J -- 犬 --> L[犬の治療プロトコル]
+
+    K --> M[第一選択 アムロジピン]
+    M --> N[用量 0.625-1.25 mg per cat]
+
+    L --> O[第一選択 ACE阻害薬 ARB]
+    O --> P{効果不十分か?}
+    P -- Yes --> Q[アムロジピンを追加]
+    Q --> R[用量 0.1-0.2 mg per kg]
+    P -- No --> S[ACE阻害薬 ARB単独継続]
+
+    N --> T[血圧再評価 3-5日-1-2週後]
+    R --> T
+    S --> T
+
+    T --> U{目標SBP達成か?}
+    U -- Yes --> V[維持療法]
+    U -- No --> W[増量 または 併用検討]
+</pre>
+
+
                 </p>
             </div>
         </div>
@@ -349,6 +392,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

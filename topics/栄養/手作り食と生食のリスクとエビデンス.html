@@ -158,7 +158,44 @@
             <div class="accordion-content">
                 <div class="accordion-body premium-content">
                     <ul>
-                        <li>必ず<strong>獣医栄養学専門医（DACVN/ECVCN）</strong>の処方した完全なレシピに従うこと</li>
+                        <li>必ず<strong>獣医栄養学専門医（DACVN/ECVCN）</strong>の処方した完全なレシピに従うこと
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[飼い主の要望: 手作り食・生食の検討] --> B{獣医栄養学専門医に相談したか？};
+
+    B -- Yes --> C[専門医の完全なレシピに従う];
+    C --> D[サプリメントを正確に計量・添加];
+    D --> E[定期的な栄養状態の評価];
+    E --> F[生肉ではなく加熱調理を強く推奨];
+    F --> G((安全性が大幅に向上))
+
+    B -- No --> H{信頼できるオンラインツール利用は可能か？};
+    H -- Yes --> I[オンラインツールで栄養計算・管理];
+    I --> D; 
+
+    H -- No --> J[日本の実情: 専門医・ツール利用が困難];
+    J --> K[AAFCO基準の総合栄養食を基本とする];
+    K --> L[手作りはトッピング程度に留める];
+    L --> M((安全性が最も高い選択));
+
+    style A fill:#e0f7fa,stroke:#00796b,stroke-width:2px,color:#333;
+    style B fill:#bbdefb,stroke:#1976d2,stroke-width:2px,color:#333;
+    style C fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333;
+    style D fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333;
+    style E fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333;
+    style F fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333;
+    style G fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#333;
+    style H fill:#bbdefb,stroke:#1976d2,stroke-width:2px,color:#333;
+    style I fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333;
+    style J fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#333;
+    style K fill:#ffecb3,stroke:#ffa000,stroke-width:2px,color:#333;
+    style L fill:#ffecb3,stroke:#ffa000,stroke-width:2px,color:#333;
+    style M fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#333;
+</pre>
+
+</li>
                         <li>サプリメント（Ca、ビタミンD、微量元素等）を正確に計量して添加</li>
                         <li>定期的な栄養状態の評価（血液検査含む）</li>
                         <li>生肉ではなく<strong>加熱調理</strong>を推奨（栄養学的に問題なく、感染リスクを大幅に低減）</li>
@@ -223,6 +260,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

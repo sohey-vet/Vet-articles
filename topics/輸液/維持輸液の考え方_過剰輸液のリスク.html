@@ -371,6 +371,38 @@
                             <li>呼吸数と呼吸パターン</li>
                         </ul>
                         <h4>速度調整の判断</h4>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[維持輸液管理のプロセス] --> B(4-6時間ごとの再評価);
+
+    B --> C[臨床徴候モニタリング<br>(呼吸数, 体重, 尿量, 浮腫, CRTなど)];
+
+    C --> D{体液過剰の徴候あり?}; 
+    D -- Yes --> E[<b>🚨 即座に輸液減速/中止</b>];
+    E --> F[フロセミド投与検討 & 呼吸状態厳重モニタリング];
+    F --> G(→ 次回再評価へ);
+
+    D -- No --> H{脱水所見は継続?}; 
+    H -- Yes --> I[<b>⬆️ 輸液速度を25-50%増加</b>];
+    I --> G;
+
+    H -- No --> J{脱水所見改善 & 飲水可能?}; 
+    J -- Yes --> K[<b>⬇️ 輸液速度を減速 → 中止検討</b>];
+    K --> G;
+
+    J -- No --> L{持続的な体液喪失あり? <br>(嘔吐・下痢など)}; 
+    L -- Yes --> M[<b>➕ 維持量＋推定喪失量を加算</b>];
+    M --> G;
+
+    L -- No --> N[<b>🔄 現在の輸液速度を継続</b>];
+    N --> G;
+
+    G --> B;
+</pre>
+
+
                         <table class="comparison-table" style="margin:0 0 12px;">
                             <thead>
                                 <tr>
@@ -475,6 +507,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

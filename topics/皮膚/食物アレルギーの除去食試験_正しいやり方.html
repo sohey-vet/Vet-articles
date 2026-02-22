@@ -49,7 +49,24 @@
         <!-- プロトコル -->
         <div class="free-content" id="protocol">
             <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">📋 除去食試験フローチャート</h3>
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">📋 除去食試験フローチャート
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[皮膚 消化器症状] --> B{除去食試験開始};
+    B --> C[適切な除去食の選択];
+    C --> D[除去食給与 最低8週間];
+    D --> E{症状50%以上改善};
+    E -- はい --> F[負荷試験実施];
+    E -- いいえ --> G[試験不成立 他疾患検討];
+    F --> H{負荷試験で症状再発};
+    H -- はい --> I[食物アレルギー確定];
+    H -- いいえ --> J[食物アレルギーではない];
+    I --> K[除去食に戻し症状消失を確認];
+</pre>
+
+</h3>
                 <div style="overflow-x:auto;">
                     <table class="comparison-table" style="margin:0;min-width:500px;">
                         <thead>
@@ -290,6 +307,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

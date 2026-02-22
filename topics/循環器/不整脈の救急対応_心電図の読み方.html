@@ -76,6 +76,37 @@
         <div class="free-content" id="action-table">
             <div class="card" style="margin-top:var(--space-md);">
                 <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ 救急不整脈 ─ 迅速鑑別フロー</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[心電図所見から不整脈を鑑別] --> B{心拍数は？};
+
+    B -- 頻脈 (犬&gt;160 / 猫&gt;220 bpm) --> C{QRS幅は？};
+    C -- 幅広い (&gt;0.06秒) --> D{リズムは？};
+    D -- 規則的 --> E[心室頻拍 (VT)];
+    E --> F[初期治療: リドカイン 2mg/kg IV];
+    C -- 狭い (&lt;0.06秒) --> G{リズムは？};
+    G -- 規則的 --> H[上室性頻拍 (SVT)];
+    H --> I[初期治療: 迷走神経刺激 → ジルチアゼム];
+    G -- 不整 --> J[心房細動 (AF)];
+    J --> I; % AFもジルチアゼムでレートコントロール
+
+    B -- 徐脈 (犬&lt;60 / 猫&lt;140 bpm) --> K{QRS幅は？};
+    K -- 正常 --> L{リズムは？};
+    L -- 規則的 --> M[洞徐脈 / 洞不全症候群];
+    M --> N[初期治療: アトロピン反応試験];
+    K -- 正常〜幅広 --> O{リズムは？};
+    O -- 不整 --> P[2度〜3度房室ブロック];
+    P --> Q[初期治療: アトロピン反応試験 → ペースメーカー検討];
+
+    F --> R[(治療方針の検討)];
+    I --> R;
+    N --> R;
+    Q --> R;
+</pre>
+
+
                 <div style="overflow-x:auto;">
                     <table class="comparison-table" style="margin:0;min-width:600px;">
                         <thead>
@@ -465,6 +496,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

@@ -49,6 +49,33 @@
         <div class="free-content" id="action-table">
             <div class="card" style="margin-top:var(--space-md);">
                 <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ACVIMステージ別治療</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[犬の僧帽弁閉鎖不全症 (MMVD) 診断・治療フローチャート] --> B{心雑音の聴取};
+
+    B -- なし --> C(ステージA: リスク犬種);
+    C --> D[対応: 治療不要、定期的な健康チェック];
+
+    B -- あり --> E{心臓の評価<br>(心エコー/胸部レントゲン)};
+
+    E -- 心拡大なし<br>(B2基準未満) --> F(ステージB1: 無症状);
+    F --> G[対応: 治療不要、6-12ヶ月毎再評価];
+
+    E -- 心拡大あり<br>(B2基準以上: LA:Ao≥1.6, LVIDdN≥1.7, VHS>10.5) --> H{心不全症状の有無<br>(咳、呼吸困難、失神など)};
+
+    H -- なし --> I(ステージB2: 無症状);
+    I --> J[治療: ピモベンダン0.25-0.3mg/kg BID開始];
+
+    H -- あり --> K(ステージC: 心不全症状あり);
+    K --> L[治療: フロセミド + ピモベンダン + ACEi + スピロノラクトン];
+
+    K -- 治療抵抗性<br>(標準治療で管理困難) --> M(ステージD: 治療抵抗性末期);
+    M --> N[治療: フロセミド増量 + ピモベンダンTID + 追加薬、集中管理];
+</pre>
+
+
                 <table class="comparison-table" style="margin:0;">
                     <thead>
                         <tr>
@@ -216,6 +243,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

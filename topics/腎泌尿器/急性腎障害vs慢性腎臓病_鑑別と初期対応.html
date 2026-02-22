@@ -55,6 +55,39 @@
         <div class="free-content" id="diff-table">
             <div class="card" style="margin-top:var(--space-md);">
                 <h3 style="font-size:0.95rem;margin-bottom:8px;">📊 AKI vs CKD ─ 鑑別ポイント一覧</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+flowchart TD
+    A[BUN/Cre高値を認める] --> B{第一ステップ：腎臓サイズ(US)は？};
+
+    B -- 正常～腫大 --> C[AKIを強く疑う];
+    B -- 萎縮 --> D[CKDを強く疑う];
+
+    C --> E{Htは？}; 
+    C --> F{血清Kは？}; 
+    E -- 正常Ht --> G[AKIの可能性↑];
+    E -- 貧血 --> H[CKD急性増悪またはAKI合併を考慮];
+    F -- 高値 --> G;
+    F -- 正常～低値 --> H;
+
+    D --> I{Htは？}; 
+    D --> J{血清Kは？}; 
+    I -- 貧血 --> K[CKDの可能性↑];
+    I -- 正常Ht --> L[AKI合併も考慮];
+    J -- 正常～低値 --> K;
+    J -- 高値 --> L;
+
+    G --> M[AKI治療へ];
+    H --> M;
+    K --> N[CKD治療へ];
+    L --> N;
+
+    M[AKI治療へ] --> O[詳細検査・治療計画];
+    N[CKD治療へ] --> O;
+</pre>
+
+
                 <div style="overflow-x:auto;">
                     <table class="comparison-table" style="margin:0;min-width:600px;">
                         <thead>
@@ -282,6 +315,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

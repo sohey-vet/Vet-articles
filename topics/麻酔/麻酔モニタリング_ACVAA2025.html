@@ -38,6 +38,24 @@
                 <h3 style="font-size:0.95rem;">🎯 結論</h3>
                 <p style="font-size:0.88rem;">
                     2025年ACVAA（米国獣医麻酔鎮痛学会）新ガイドラインの最大のメッセージは<strong>「覚醒期の監視を手抜きするな」</strong>。麻酔関連死の約50%は術後3時間以内に発生。3段階の推奨レベル（最低限/代替/高度）で施設規模に関わらず実践可能。健康な犬の麻酔死亡率は0.05%、健康な猫は0.11%、病気の犬は1.33%、病気の猫は1.40%（CEPSAF研究）。
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[麻酔覚醒期 抜管] --> B(死亡リスクの約50%は術後3時間以内)
+    B --> C[覚醒期モニタリングは最重要]
+    C --> D[抜管後 最低1時間専任スタッフ監視]
+    D -- 項目1 --> E[SpO2 継続測定]
+    D -- 項目2 --> F[体温管理]
+    F -- 低体温時 --> G[積極的保温]
+    F -- 正常体温時 --> H[保温継続検討]
+    E --> I[安定した覚醒状態まで]
+    G --> I
+    H --> I
+    I --> J[監視終了]
+</pre>
+
+
                 </p>
             </div>
         </div>
@@ -239,6 +257,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

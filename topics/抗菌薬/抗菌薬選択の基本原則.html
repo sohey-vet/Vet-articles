@@ -60,6 +60,41 @@
                     抗菌薬は<strong>「臓器 × 起因菌 × 第一選択」</strong>の3軸で選ぶ。
                     まず第一選択薬（アモキシシリン、第一世代セフェム、ST合剤）を検討し、<strong>フルオロキノロン・第三世代セフェムは最終手段</strong>として温存する。
                     → 培養検査なしでの経験的治療は「単純症例 × 初回」に限る。
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[感染症を疑う] --> B{抗菌薬必要か};
+    B -- いいえ --> C[対症療法 経過観察];
+    B -- はい --> D{感染種類 重症度};
+
+    D -- 単純 初回 --> E[経験的治療];
+    D -- 複雑 再発 重症 --> F[培養検査推奨];
+
+    E --> G[Tier 1 抗菌薬];
+    F --> H[培養結果待ち Tier 1/2];
+
+    G --> I{臨床改善 3-5日};
+    H --> J{培養結果判明};
+
+    I -- 改善あり --> K[治療継続 期間遵守];
+    I -- 改善なし --> F;
+
+    J -- 感受性あり --> K;
+    J -- 感受性なし --> L[Tier 3 検討];
+
+    L --> M[感受性確認後 慎重使用];
+
+    K --> N[治療完了];
+    M --> N;
+
+    subgraph 抗菌薬グループ
+        G -- 例: アモキシシリン ST合剤 セファレキシン --> I;
+        L -- 例: フルオロキノロン 第3世代セフェム --> M;
+    end
+</pre>
+
+
                 </p>
             </div>
         </div>
@@ -292,6 +327,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

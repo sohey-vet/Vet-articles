@@ -62,13 +62,44 @@
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
                 <h3 style="font-size:0.95rem;">🎯 結論</h3>
+
+
                 <p style="font-size:0.88rem;">
-                    ITPは犬で最も多い後天性出血障害。<strong>血小板数＜20,000/μLはITPを強く支持</strong>（＞50,000では他疾患の検討を）。
+                    ITPは犬で最も多い後天性出血障害。
+
+<strong>血小板数＜20,000/μLはITPを強く支持</strong>（＞50,000では他疾患の検討を）。
                     ACVIM 2024ガイドラインでは、<strong>免疫抑制量のプレドニゾロンが第一選択</strong>。
                     臨床的に有意な出血がある場合は<strong>ビンクリスチン0.02mg/kg IV単回</strong>を初日から併用 → 血小板回復を加速し入院日数を短縮。
                     プレドニゾロンに5〜7日で反応しない、副作用が重い、減薬中に再発する場合は<strong>ミコフェノール酸モフェチル（MMF）</strong>の追加を検討。
                     治療のゴールは<strong>血小板≥100,000/μLで出血なし</strong>。
                     ABCB1（MDR1）変異犬種にはビンクリスチン禁忌 → 事前に品種を確認。
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[ITPと診断] --> B{臨床的出血の有無};
+    B -- あり --> C[プレドニゾロン + ビンクリスチン];
+    B -- なし --> D[プレドニゾロン単独];
+
+    C --- E[注意 ABCB1変異犬種はビンクリスチン禁忌];
+
+    C --> F{5-7日後 血小板再評価};
+    D --> F;
+
+    F -- 上昇あり --> G[治療目標達成 PLT 10万以上];
+    F -- 反応不良 副作用重篤 --> H[MMF追加を検討];
+
+    G --> I[減薬プロトコル開始];
+    I --> J{減薬中の再発};
+    J -- あり --> H;
+    J -- なし --> K[治療終了または低用量維持];
+
+    H --> G;
+</pre>
+
+
+
+
                 </p>
             </div>
         </div>
@@ -205,7 +236,9 @@
                             <li>作用機序: 骨髄巨核球からの血小板放出を促進（血小板生産を直接刺激）+ 免疫抑制作用</li>
                             <li>効果: 投与48〜72時間後から血小板数上昇。入院日数の<strong>有意な短縮</strong></li>
                             <li>⚠️ <strong>ABCB1（MDR1）変異犬種には禁忌</strong>: コリー・シェルティ・ボーダーコリー・オーストラリアンシェパード等</li>
-                            <li>血管外漏出は重篤な組織壊死を起こす → 確実に静脈内投与</li>
+                            <li>血管外漏出は重篤な組織壊死を起こす → 確実に静脈内投与
+
+</li>
                         </ul>
                         <div class="clinical-tip">
                             <h4>💊 臨床Tips</h4>
@@ -436,6 +469,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

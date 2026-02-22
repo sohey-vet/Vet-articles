@@ -14,7 +14,42 @@
             aria-label="メニュー"><span></span><span></span><span></span></button></nav>
     <div class="slide-menu-overlay"></div>
     <aside class="slide-menu">
-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#triad">📊
+        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[臨床症状 複数] --> B{初期検査};
+
+    B -- 血液検査 --> C[生化学 fPLI コバラミン];
+    B -- 画像検査 --> D[腹部エコー];
+
+    C -- fPLI高値 肝酵素 ビリルビン高値 --> E{三臓器炎の可能性};
+    C -- コバラミン低値 --> F[IBD示唆 VB12補充検討];
+    D -- 胆嚢 膵臓 腸管の異常 --> E;
+
+    E -- 高い --> G{確定診断へ};
+    E -- 低い --> H[他疾患の検討];
+
+    G -- 組織生検を推奨 --> I{胆管炎タイプ判定};
+    G -- 臨床症状 検査値から判断 --> J{臨床判断で治療開始};
+
+    I -- 好中球性 --> K[抗菌薬];
+    I -- リンパ球性 --> L[免疫抑制剤 ウルソ];
+
+    J -- 好中球性疑い --> K;
+    J -- リンパ球性疑い --> L;
+
+    subgraph 治療管理
+        K --> M[IBD治療 プレドニゾロン等];
+        L --> M;
+        M --> N[膵炎支持療法 輸液 制吐 鎮痛];
+        N --> O[栄養管理 経管栄養 VB12補充];
+        O --> P[継続モニタリング 治療調整];
+    end
+</pre>
+
+</a><a href="#triad">📊
             三臓器の関係</a><a href="#refs">📚 論文</a>
     </aside>
     <div class="page-container">
@@ -35,7 +70,42 @@
 
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[臨床症状 複数] --> B{初期検査};
+
+    B -- 血液検査 --> C[生化学 fPLI コバラミン];
+    B -- 画像検査 --> D[腹部エコー];
+
+    C -- fPLI高値 肝酵素 ビリルビン高値 --> E{三臓器炎の可能性};
+    C -- コバラミン低値 --> F[IBD示唆 VB12補充検討];
+    D -- 胆嚢 膵臓 腸管の異常 --> E;
+
+    E -- 高い --> G{確定診断へ};
+    E -- 低い --> H[他疾患の検討];
+
+    G -- 組織生検を推奨 --> I{胆管炎タイプ判定};
+    G -- 臨床症状 検査値から判断 --> J{臨床判断で治療開始};
+
+    I -- 好中球性 --> K[抗菌薬];
+    I -- リンパ球性 --> L[免疫抑制剤 ウルソ];
+
+    J -- 好中球性疑い --> K;
+    J -- リンパ球性疑い --> L;
+
+    subgraph 治療管理
+        K --> M[IBD治療 プレドニゾロン等];
+        L --> M;
+        M --> N[膵炎支持療法 輸液 制吐 鎮痛];
+        N --> O[栄養管理 経管栄養 VB12補充];
+        O --> P[継続モニタリング 治療調整];
+    end
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     猫の三臓器炎（triaditis）は<strong>胆管炎（cholangitis）・膵炎（pancreatitis）・炎症性腸疾患（IBD）</strong>が併発する猫特有の疾患複合体。猫では解剖学的に<strong>総胆管と膵管が合流して十二指腸に開口</strong>するため、一つの臓器の炎症が隣接臓器に波及しやすい。臨床症状は<strong>非特異的</strong>（食欲不振・嘔吐・体重減少・黄疸・下痢）で、単一疾患との鑑別が困難。診断は<strong>①生化学（肝酵素・fPLI・GGT・ビリルビン）②腹部エコー
                         ③可能な限り組織生検</strong>の組み合わせ。治療は<strong>①抗菌薬（胆管炎に対して）②免疫抑制（IBDに対して）③膵炎の支持療法
@@ -261,6 +331,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

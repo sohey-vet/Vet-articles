@@ -15,7 +15,25 @@
             aria-label="メニュー"><span></span><span></span><span></span></button></nav>
     <div class="slide-menu-overlay"></div>
     <aside class="slide-menu">
-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#emergency">🚨
+        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[緑内障診断 高眼圧] --> B{緊急降圧}; 
+    B --> C[マンニトール 20% IV];
+    C --> D{Latanoprost点眼は？};
+    D -- 動物種:犬 --> E{原因は？};
+    D -- 動物種:猫 --> F[Latanoprost 禁忌];
+    E -- 原発性PACG --> G[Latanoprost 適用];
+    E -- ぶどう膜炎続発 --> F;
+    G --> H[維持薬 Dorzolamide Timolol];
+    F --> H;
+    H --> I[健側眼 予防点眼];
+    I --> J[専門医へ紹介];
+</pre>
+
+</a><a href="#emergency">🚨
             緊急降圧</a><a href="#refs">📚 論文</a>
     </aside>
     <div class="page-container">
@@ -37,7 +55,25 @@
         <!-- 結論 -->
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[緑内障診断 高眼圧] --> B{緊急降圧}; 
+    B --> C[マンニトール 20% IV];
+    C --> D{Latanoprost点眼は？};
+    D -- 動物種:犬 --> E{原因は？};
+    D -- 動物種:猫 --> F[Latanoprost 禁忌];
+    E -- 原発性PACG --> G[Latanoprost 適用];
+    E -- ぶどう膜炎続発 --> F;
+    G --> H[維持薬 Dorzolamide Timolol];
+    F --> H;
+    H --> I[健側眼 予防点眼];
+    I --> J[専門医へ紹介];
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     緑内障は<strong>眼圧（IOP）の異常上昇</strong>により網膜神経節細胞が死滅する疾患。正常IOP 15-25 mmHgに対し、発作時は40-70
                     mmHg以上に達する。<strong>眼圧 &gt;40-50 mmHgが48-72時間以上持続すると非可逆的な視覚喪失</strong>を来す。緊急降圧として<strong>マンニトール
@@ -248,6 +284,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

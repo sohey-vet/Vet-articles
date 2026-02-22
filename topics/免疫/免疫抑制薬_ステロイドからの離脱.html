@@ -177,6 +177,26 @@
             <div class="accordion-content">
                 <div class="accordion-body premium-content">
                     <h4>基本原則</h4>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[治療寛解の確認] --> B{寛解後2-4週間<br>現用量を維持};
+    B --> C[減量開始];
+    C --> D[25-50%ずつ用量を減らす];
+    D --> E[3-4週間おきに評価/次のステップへ];
+    E --> F{どの薬剤を先に減量？};
+    F -- ステロイド優先 --> G[ステロイドを先行して減量・離脱];
+    F -- 第二選択薬は最後 --> H[第二選択薬は最後に減量・離脱<br>または生涯維持];
+    G --> I{減量中に再発？};
+    H --> I;
+    I -- Yes --> J[直前の有効用量に戻す];
+    J --> C;
+    I -- No --> K[減量継続 or 治療完了];
+    K --> E;
+</pre>
+
+
                     <ol>
                         <li>寛解（Remission）達成確認</li>
                         <li>寛解後、<strong>2-4週間はその用量を維持</strong>（再発の有無を確認）</li>
@@ -251,6 +271,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

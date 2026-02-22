@@ -159,7 +159,26 @@
                         </ul>
                     </div>
                     <div class="clinical-tip">
-                        <h4>💡 乏尿への対応（利尿薬の使い方）</h4>
+                        <h4>💡 乏尿への対応（利尿薬の使い方）
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[AKIによる乏尿 (尿量 &lt; 1mL/kg/h)]
+    A --> B{まず脱水が完全に補正されているか確認？};
+    B -- いいえ --> C[脱水補正を最優先];
+    B -- はい --> D[フロセミド 2-4mg/kg IV 投与];
+    D --> E{30分後の尿量反応};
+    E -- 増加あり --> F[フロセミドCRI 0.5-1mg/kg/h 検討];
+    E -- 増加なし --> G{無尿が確定しているか？ (尿量 &lt; 0.5mL/kg/h)};
+    G -- はい --> H[マンニトール禁忌; 体液過剰悪化リスク; 透析施設へ紹介];
+    G -- いいえ --> I[マンニトール 0.5-1g/kg IV (20分かけて)];
+    I --> J{マンニトール投与後の尿量反応};
+    J -- 増加あり --> K[継続観察, 原因精査];
+    J -- 増加なし --> L[本質的な乏尿/無尿 (intrinsic AKI); 透析施設へ紹介];
+</pre>
+
+</h4>
                         <ol>
                             <li><strong>まず脱水が完全に補正されていることを確認</strong>（これが最も重要！）</li>
                             <li>フロセミド 2-4mg/kg IV → 30分で反応を見る</li>
@@ -256,6 +275,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

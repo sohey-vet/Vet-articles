@@ -21,7 +21,23 @@
     <aside class="slide-menu">
         <h4>ナビゲーション</h4>
         <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
+        <a href="#conclusion">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[臨床症状 嘔吐 食欲不振 腹痛] --> B{膵炎を強く疑うか}; 
+    B -- Yes --> C{SNAP cPL/fPL実施}; 
+    C -- 陰性 --> D[膵炎の可能性は低い 他疾患検討]; 
+    C -- 陽性 --> E[Spec cPL/fPLと腹部エコー実施]; 
+    E -- Spec高値 エコー所見あり --> F[急性膵炎と診断]; 
+    E -- Spec正常範囲 or エコー所見なし --> D; 
+    F --> G[積極的な支持療法を開始]; 
+    G --> H[重症度評価と治療調整]; 
+    B -- No --> I[他疾患を検討];
+</pre>
+
+</a>
         <a href="#action-table">🗺️ 犬猫の違い</a>
         <a href="#diagnosis">🔬 診断</a>
         <a href="#treatment-dog">🐕 犬の治療</a>
@@ -65,7 +81,23 @@
 
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <h3 style="font-size:0.95rem;">🎯 結論
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[臨床症状 嘔吐 食欲不振 腹痛] --> B{膵炎を強く疑うか}; 
+    B -- Yes --> C{SNAP cPL/fPL実施}; 
+    C -- 陰性 --> D[膵炎の可能性は低い 他疾患検討]; 
+    C -- 陽性 --> E[Spec cPL/fPLと腹部エコー実施]; 
+    E -- Spec高値 エコー所見あり --> F[急性膵炎と診断]; 
+    E -- Spec正常範囲 or エコー所見なし --> D; 
+    F --> G[積極的な支持療法を開始]; 
+    G --> H[重症度評価と治療調整]; 
+    B -- No --> I[他疾患を検討];
+</pre>
+
+</h3>
                 <p style="font-size:0.88rem;">
                     急性膵炎の治療は<strong>積極的な支持療法（輸液・鎮痛・制吐・早期栄養介入）</strong>が柱。
                     犬では<strong>fuzapladib（Panoquell-CA1）</strong>がFDA条件付き承認を取得し、好中球浸潤を抑制する新しい治療選択肢が加わった（日本では未承認）。
@@ -416,6 +448,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>

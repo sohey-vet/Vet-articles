@@ -45,6 +45,56 @@
         <div class="free-content" id="action-table">
             <div class="card" style="margin-top:var(--space-md);">
                 <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ 3ステップ判読フロー</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[血液ガス分析 開始] --> S1{Step 1: pHを評価};  
+
+    S1 -- pH &lt; 7.35 --> A1[アシドーシス];
+    S1 -- pH &gt; 7.45 --> A2[アルカローシス];
+    S1 -- pH 7.35-7.45 --> A3[正常範囲 (混合性も考慮)];
+
+    A1 --> S2_A{Step 2: 主要な原因を特定}; 
+    S2_A -- PCO2 ↑ --> R_Acid[呼吸性アシドーシス];
+    S2_A -- HCO3 ↓ --> M_Acid[代謝性アシドーシス];
+
+    A2 --> S2_B{Step 2: 主要な原因を特定}; 
+    S2_B -- PCO2 ↓ --> R_Alk[呼吸性アルカローシス];
+    S2_B -- HCO3 ↑ --> M_Alk[代謝性アルカローシス];
+
+    R_Acid --> S3_RA{Step 3: 代償を確認: HCO3 ↑ (同方向)?}; 
+    S3_RA -- Yes --> R_Acid_C[慢性 (代償あり)];
+    S3_RA -- No (変化なし) --> R_Acid_A[急性 (代償なし)];
+
+    M_Acid --> S3_MA{Step 3: 代償を確認: PCO2 ↓ (同方向)?}; 
+    S3_MA -- Yes --> M_Acid_C[慢性 (代償あり)];
+    S3_MA -- No (変化なし) --> M_Acid_A[急性 (代償なし)];
+
+    R_Alk --> S3_RAK{Step 3: 代償を確認: HCO3 ↓ (同方向)?}; 
+    S3_RAK -- Yes --> R_Alk_C[慢性 (代償あり)];
+    S3_RAK -- No (変化なし) --> R_Alk_A[急性 (代償なし)];
+
+    M_Alk --> S3_MAK{Step 3: 代償を確認: PCO2 ↑ (同方向)?}; 
+    S3_MAK -- Yes --> M_Alk_C[慢性 (代償あり)];
+    S3_MAK -- No (変化なし) --> M_Alk_A[急性 (代償なし)];
+
+    subgraph 血液ガス分析：3ステップ判読フロー
+        S1
+        S2_A
+        S2_B
+        S3_RA
+        S3_MA
+        S3_RAK
+        S3_MAK
+    end
+
+    subgraph 最終診断
+        R_Acid_C, R_Acid_A, M_Acid_C, M_Acid_A, R_Alk_C, R_Alk_A, M_Alk_C, M_Alk_A, A3
+    end
+</pre>
+
+
                 <table class="comparison-table" style="margin:0;">
                     <thead>
                         <tr>
@@ -277,6 +327,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
 
 </html>

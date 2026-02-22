@@ -38,6 +38,24 @@
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
                 <h3 style="font-size:0.95rem;">🎯 結論</h3>
+
+<!-- 個別生成図表 -->
+<pre class="mermaid">
+graph TD
+    A[開始 猫の鎮静プロトコル選択] --> B{来院前の不安}; 
+    B -- あり --> C[Gabapentin 事前経口投与];
+    B -- なし --> D{心疾患の有無};
+    C --> D;
+    D -- あり --> E[心疾患猫: Alfaxalone Butorphanol IM];
+    D -- なし --> F{処置レベル};
+    E --> G[処置へ移行];
+    F -- 軽度 X線 採血 --> H[Butorphanol単独 IM];
+    F -- 中等度から深い処置 --> I[Kitty Magic Dex Ket But IM];
+    H --> G;
+    I --> G;
+</pre>
+
+
                 <p style="font-size:0.88rem;">
                     鎮静プロトコルは「処置の痛みレベル」「所要時間」「患者のリスク」で選択する。犬の軽度鎮静（画像検査等）には<strong>Butorphanol 0.2-0.4 mg/kg +
                         Acepromazine 0.01-0.03 mg/kg IV/IM</strong>。中等度以上の処置には<strong>Dexmedetomidine 3-5 mcg/kg
@@ -240,6 +258,8 @@
         </footer>
     </div>
     <script src="../../assets/script.js"></script>
+
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 
 </html>
