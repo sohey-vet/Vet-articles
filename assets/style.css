@@ -1485,6 +1485,10 @@ body.mode-free .premium-lock {
 .mermaid {
   overflow-x: auto;
   overflow-y: hidden;
+  /* Prevent large child SVGs from expanding table cell widths */
+  width: 0;
+  min-width: 100%;
+
   -webkit-overflow-scrolling: touch;
   margin: var(--space-xl) 0;
   padding: var(--space-md);
