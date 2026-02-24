@@ -1472,3 +1472,44 @@ body.mode-free .premium-lock {
 .breadcrumb-nav a:hover .back-arrow {
   transform: translateX(-3px);
 }
+
+/* --- Mermaid Diagram Readability (Mobile & PC) --- */
+.mermaid {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--space-xl) 0;
+  padding: var(--space-md);
+  background: rgba(15, 25, 35, 0.4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+/* Force minimum width to prevent microscopic font scaling on mobile screens */
+.mermaid svg {
+  min-width: 650px;
+  max-width: none;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Custom Scrollbar for Mermaid Container to hint horizontal scrollability */
+.mermaid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.mermaid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.mermaid::-webkit-scrollbar-thumb {
+  background: var(--color-border-accent);
+  border-radius: 4px;
+}
+
+.mermaid::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
