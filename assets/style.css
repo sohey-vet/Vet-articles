@@ -1014,8 +1014,9 @@ body.mode-free .premium-lock {
 
   .comparison-table thead th,
   .comparison-table tbody td {
-    padding: var(--space-sm);
-    white-space: nowrap;
+    padding: var(--space-sm) var(--space-xs);
+    /* Allow text to wrap natively instead of forcing a horizontal scroll on text paragraphs */
+    white-space: normal;
   }
 }
 
@@ -1486,8 +1487,9 @@ body.mode-free .premium-lock {
   overflow-x: auto;
   overflow-y: hidden;
   /* Prevent large child SVGs from expanding table cell widths */
-  width: 0;
-  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
   -webkit-overflow-scrolling: touch;
   margin: var(--space-xl) 0;
