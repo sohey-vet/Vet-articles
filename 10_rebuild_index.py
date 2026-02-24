@@ -97,8 +97,22 @@ def rebuild_index_cards():
             new_card.append(desc_p)
             
             footer_div = soup.new_tag('div', **{'class': 'card-footer'})
-            # keep first two tags for visual cleanliness
-            for t in tags_list[:2]:
+            priority_tags = ['猫', '犬']
+            display_tags = []
+            
+            # First, add priority tags if they exist
+            for t in tags_list:
+                if t['text'] in priority_tags:
+                    display_tags.append(t)
+            
+            # Then add other tags until we have 3
+            for t in tags_list:
+                if t not in display_tags:
+                    display_tags.append(t)
+                if len(display_tags) >= 3:
+                    break
+            
+            for t in display_tags:
                 t_span = soup.new_tag('span', **{'class': t['class']})
                 t_span.string = t['text']
                 footer_div.append(t_span)
