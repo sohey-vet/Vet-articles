@@ -770,6 +770,9 @@ a.tag:hover {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  /* Prevent columns from crushing to 1 character wide when tables contain wide Mermaid SVGs */
+  white-space: nowrap;
+  min-width: 7.5em;
 }
 
 .comparison-table tbody td {
@@ -992,9 +995,6 @@ body.mode-free .premium-lock {
 }
 
 /* Free content always visible */
-.free-content {
-  /* always visible regardless of mode */
-}
 
 /* --- Section Divider --- */
 .section-divider {
