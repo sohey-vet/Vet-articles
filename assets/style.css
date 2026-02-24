@@ -547,6 +547,14 @@ h4 {
   border-color: rgba(56, 189, 248, 0.2);
 }
 
+a.tag {
+  text-decoration: none;
+}
+
+a.tag:hover {
+  text-decoration: none;
+}
+
 .tag--primary {
   background: rgba(56, 189, 248, 0.12);
   color: var(--color-accent-primary);

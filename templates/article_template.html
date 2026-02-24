@@ -1,289 +1,267 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{META_DESCRIPTION}}">
-    <title>{{TITLE}} | VetEvidence</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="{{META_DESCRIPTION}}" name="description"/>
+<title>{{TITLE}} | VetEvidence</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-
-    <!-- ===== Mobile Navigation ===== -->
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button class="hamburger-btn" aria-label="メニュー">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
-        <a href="#action-table">🗺️ 治療フロー</a>
-        <!-- 📌 セクションに応じてリンクを追加 -->
+<!-- ===== Mobile Navigation ===== -->
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#conclusion">🎯 結論</a>
+<a href="#action-table">🗺️ 治療フロー</a>
+<!-- 📌 セクションに応じてリンクを追加 -->
         {{NAV_LINKS}}
         <a href="#refs">📚 参照論文</a>
-        <h4>情報ソース</h4>
-        <a href="https://vetlit.org" target="_blank">📖 VetLit.org</a>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-    </aside>
-
-    <div class="page-container">
-
-        <!-- ===== HEADER ===== -->
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <!-- 📌 タグを入れる（2〜4個推奨） -->
-                <span class="tag tag--primary">{{TAG_1}}</span>
-                <span class="tag tag--warning">{{TAG_2}}</span>
-                <span class="tag tag--success">{{TAG_3}}</span>
-            </div>
-            <h1 style="font-size: 1.3rem;">{{EMOJI}} {{TITLE}}</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+<h4>情報ソース</h4>
+<a href="https://vetlit.org" target="_blank">📖 VetLit.org</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<!-- ===== HEADER ===== -->
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<!-- 📌 タグを入れる（2〜4個推奨） -->
+<a class="tag tag--primary" href="../index.html?tag=%7B%7BTAG_1%7D%7D">{{TAG_1}}</a>
+<a class="tag tag--warning" href="../index.html?tag=%7B%7BTAG_2%7D%7D">{{TAG_2}}</a>
+<a class="tag tag--success" href="../index.html?tag=%7B%7BTAG_3%7D%7D">{{TAG_3}}</a>
+</div>
+<h1 style="font-size: 1.3rem;">{{EMOJI}} {{TITLE}}</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
                 {{SUBTITLE}}
             </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文 {{NUM_PAPERS}}本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>{{UPDATE_DATE}}更新</span></div>
-            </div>
-        </header>
-
-        <!-- ===== 表示モード切替 ===== -->
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="content-mode-toggle" checked>
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-
-        <!-- ============================================
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文 {{NUM_PAPERS}}本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>{{UPDATE_DATE}}更新</span></div>
+</div>
+</header>
+<!-- ===== 表示モード切替 ===== -->
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- ============================================
        FREE ZONE: 結論 + 治療フロー
        ─ 無料会員でもここまでは必ず見える
        ─ スクロール最小で結論がわかる構造
        ============================================ -->
-
-        <!-- 🎯 結論 -->
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top: 0; padding: var(--space-md) var(--space-lg);">
-                <h3 style="font-size: 0.95rem;">🎯 結論</h3>
-                <p style="font-size: 0.88rem;">
+<!-- 🎯 結論 -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top: 0; padding: var(--space-md) var(--space-lg);">
+<h3 style="font-size: 0.95rem;">🎯 結論</h3>
+<p style="font-size: 0.88rem;">
                     {{CONCLUSION}}
                 </p>
-            </div>
-        </div>
-
-        <!-- 🗺️ 治療判断フロー -->
-        <div class="free-content" id="action-table">
-            <div class="card" style="margin-top: var(--space-md);">
-                <h3 style="font-size: 0.95rem; margin-bottom: 8px;">🗺️ {{ACTION_TABLE_TITLE}}</h3>
-                <table class="comparison-table" style="margin: 0;">
-                    <thead>
-                        <tr>
-                            <!-- 📌 テーブルのヘッダーを変更 -->
+</div>
+</div>
+<!-- 🗺️ 治療判断フロー -->
+<div class="free-content" id="action-table">
+<div class="card" style="margin-top: var(--space-md);">
+<h3 style="font-size: 0.95rem; margin-bottom: 8px;">🗺️ {{ACTION_TABLE_TITLE}}</h3>
+<table class="comparison-table" style="margin: 0;">
+<thead>
+<tr>
+<!-- 📌 テーブルのヘッダーを変更 -->
                             {{TABLE_HEADERS}}
                         </tr>
-                    </thead>
-                    <tbody>
-                        <!-- 📌 テーブルの行を追加 -->
+</thead>
+<tbody>
+<!-- 📌 テーブルの行を追加 -->
                         {{TABLE_ROWS}}
                     </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ⚡ 旧来 vs 新（任意：不要なら削除可） -->
-        <div class="free-content">
-            <div class="card" style="margin-top: var(--space-md);">
-                <h3 style="font-size: 0.95rem; margin-bottom: 8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
-                <table class="comparison-table" style="margin: 0;">
-                    <thead>
-                        <tr>
-                            <th>❌ 旧来</th>
-                            <th>✅ 最新</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- 📌 比較行を追加（3〜5行推奨） -->
+</table>
+</div>
+</div>
+<!-- ⚡ 旧来 vs 新（任意：不要なら削除可） -->
+<div class="free-content">
+<div class="card" style="margin-top: var(--space-md);">
+<h3 style="font-size: 0.95rem; margin-bottom: 8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<table class="comparison-table" style="margin: 0;">
+<thead>
+<tr>
+<th>❌ 旧来</th>
+<th>✅ 最新</th>
+</tr>
+</thead>
+<tbody>
+<!-- 📌 比較行を追加（3〜5行推奨） -->
                         {{COMPARISON_ROWS}}
                     </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ============================================
+</table>
+</div>
+</div>
+<!-- ============================================
        PREMIUM ZONE: 詳細解説
        ─ タイトルは常に見える、中身だけロック
        ============================================ -->
-
-        <hr class="section-divider">
-
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
-            <h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
-            <div>
-                <button onclick="toggleAllAccordions(true)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
-                <button onclick="toggleAllAccordions(false)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
-            </div>
-        </div>
-
-        <!-- 📌 セクション1 -->
-        <div id="{{SECTION_1_ID}}">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left">
-                        <span class="trigger-icon">{{SECTION_1_ICON}}</span>
-                        <span>{{SECTION_1_TITLE}}</span>
-                    </span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="key-findings" style="margin-top:0;">
-                            <h4>要点</h4>
-                            <ul>
+<hr class="section-divider"/>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+<div>
+<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+</div>
+</div>
+<!-- 📌 セクション1 -->
+<div id="{{SECTION_1_ID}}">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left">
+<span class="trigger-icon">{{SECTION_1_ICON}}</span>
+<span>{{SECTION_1_TITLE}}</span>
+</span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>要点</h4>
+<ul>
                                 {{SECTION_1_KEY_FINDINGS}}
                             </ul>
-                        </div>
+</div>
                         {{SECTION_1_BODY}}
                         <div class="clinical-tip">
-                            <h4>臨床アクション</h4>
-                            <p>{{SECTION_1_ACTION}}</p>
-                        </div>
-                    </div>
-                    <div class="premium-lock">
-                        <span class="lock-icon">🔒</span>
+<h4>臨床アクション</h4>
+<p>{{SECTION_1_ACTION}}</p>
+</div>
+</div>
+<div class="premium-lock">
+<span class="lock-icon">🔒</span>
                         詳細は有料会員限定です
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 📌 セクション2 -->
-        <div id="{{SECTION_2_ID}}">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left">
-                        <span class="trigger-icon">{{SECTION_2_ICON}}</span>
-                        <span>{{SECTION_2_TITLE}}</span>
-                    </span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="key-findings" style="margin-top:0;">
-                            <h4>要点</h4>
-                            <ul>
+</div>
+</div>
+</div>
+<!-- 📌 セクション2 -->
+<div id="{{SECTION_2_ID}}">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left">
+<span class="trigger-icon">{{SECTION_2_ICON}}</span>
+<span>{{SECTION_2_TITLE}}</span>
+</span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>要点</h4>
+<ul>
                                 {{SECTION_2_KEY_FINDINGS}}
                             </ul>
-                        </div>
+</div>
                         {{SECTION_2_BODY}}
                         <div class="clinical-tip">
-                            <h4>臨床アクション</h4>
-                            <p>{{SECTION_2_ACTION}}</p>
-                        </div>
-                    </div>
-                    <div class="premium-lock">
-                        <span class="lock-icon">🔒</span>
+<h4>臨床アクション</h4>
+<p>{{SECTION_2_ACTION}}</p>
+</div>
+</div>
+<div class="premium-lock">
+<span class="lock-icon">🔒</span>
                         詳細は有料会員限定です
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 📌 セクション3（必要に応じてコピペで追加） -->
-        <div id="{{SECTION_3_ID}}">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left">
-                        <span class="trigger-icon">{{SECTION_3_ICON}}</span>
-                        <span>{{SECTION_3_TITLE}}</span>
-                    </span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
+</div>
+</div>
+</div>
+<!-- 📌 セクション3（必要に応じてコピペで追加） -->
+<div id="{{SECTION_3_ID}}">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left">
+<span class="trigger-icon">{{SECTION_3_ICON}}</span>
+<span>{{SECTION_3_TITLE}}</span>
+</span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
                         {{SECTION_3_BODY}}
                     </div>
-                    <div class="premium-lock">
-                        <span class="lock-icon">🔒</span>
+<div class="premium-lock">
+<span class="lock-icon">🔒</span>
                         詳細は有料会員限定です
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 🗣️ 飼い主への説明ガイド -->
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left">
-                        <span class="trigger-icon">🗣️</span>
-                        <span>飼い主への説明ガイド</span>
-                    </span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <!-- 📌 飼い主Q&Aを追加（2〜3個推奨） -->
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>{{OWNER_Q1}}</h4>
-                            <div class="speech-bubble">
+</div>
+</div>
+</div>
+<!-- 🗣️ 飼い主への説明ガイド -->
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left">
+<span class="trigger-icon">🗣️</span>
+<span>飼い主への説明ガイド</span>
+</span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<!-- 📌 飼い主Q&Aを追加（2〜3個推奨） -->
+<div class="owner-tip" style="margin-top:0;">
+<h4>{{OWNER_Q1}}</h4>
+<div class="speech-bubble">
                                 {{OWNER_A1}}
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>{{OWNER_Q2}}</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>{{OWNER_Q2}}</h4>
+<div class="speech-bubble">
                                 {{OWNER_A2}}
                             </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock">
-                        <span class="lock-icon">🔒</span>
+</div>
+</div>
+<div class="premium-lock">
+<span class="lock-icon">🔒</span>
                         飼い主説明ガイドは有料会員限定です
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 📚 参照論文 -->
-        <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left">
-                        <span class="trigger-icon">📚</span>
-                        <span>参照論文（{{NUM_PAPERS}}本）</span>
-                    </span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <!-- 📌 論文を追加 -->
+</div>
+</div>
+</div>
+<!-- 📚 参照論文 -->
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left">
+<span class="trigger-icon">📚</span>
+<span>参照論文（{{NUM_PAPERS}}本）</span>
+</span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<!-- 📌 論文を追加 -->
                             {{PAPER_LIST}}
                         </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。
             </p>
-        </footer>
-
-    </div>
-    <script src="../../assets/script.js"></script>
+</footer>
+</div>
+<script src="../../assets/script.js"></script>
 </body>
-
 </html>
