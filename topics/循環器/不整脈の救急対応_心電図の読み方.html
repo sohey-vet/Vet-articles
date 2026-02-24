@@ -71,27 +71,27 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[心電図所見から不整脈を鑑別] --&gt; B{心拍数は？};
+    A["心電図所見から不整脈を鑑別"] --&gt; B{"心拍数は？"};
 
-    B --&gt;|頻脈 (犬＞160 / 猫＞220 bpm)| C{QRS幅は？};
-    C --&gt;|幅広い (＞0.06秒)| D{リズムは？};
-    D --&gt;|規則的| E[心室頻拍 (VT)];
-    E --&gt; F[初期治療: リドカイン 2mg/kg IV];
-    C --&gt;|狭い (＜0.06秒)| G{リズムは？};
-    G --&gt;|規則的| H[上室性頻拍 (SVT)];
-    H --&gt; I[初期治療: 迷走神経刺激 → ジルチアゼム];
-    G --&gt;|不整| J[心房細動 (AF)];
+    B --&gt;|"頻脈 (犬＞160 / 猫＞220 bpm)"| C{"QRS幅は？"};
+    C --&gt;|"幅広い (＞0.06秒)"| D{"リズムは？"};
+    D --&gt;|"規則的"| E["心室頻拍 (VT)"];
+    E --&gt; F["初期治療: リドカイン 2mg/kg IV"];
+    C --&gt;|"狭い (＜0.06秒)"| G{"リズムは？"};
+    G --&gt;|"規則的"| H["上室性頻拍 (SVT)"];
+    H --&gt; I["初期治療: 迷走神経刺激 → ジルチアゼム"];
+    G --&gt;|"不整"| J["心房細動 (AF)"];
     J --&gt; I; % AFもジルチアゼムでレートコントロール
 
-    B --&gt;|徐脈 (犬＜60 / 猫＜140 bpm)| K{QRS幅は？};
-    K --&gt;|正常| L{リズムは？};
-    L --&gt;|規則的| M[洞徐脈 / 洞不全症候群];
-    M --&gt; N[初期治療: アトロピン反応試験];
-    K --&gt;|正常〜幅広| O{リズムは？};
-    O --&gt;|不整| P[2度〜3度房室ブロック];
-    P --&gt; Q[初期治療: アトロピン反応試験 → ペースメーカー検討];
+    B --&gt;|"徐脈 (犬＜60 / 猫＜140 bpm)"| K{"QRS幅は？"};
+    K --&gt;|"正常"| L{"リズムは？"};
+    L --&gt;|"規則的"| M["洞徐脈 / 洞不全症候群"];
+    M --&gt; N["初期治療: アトロピン反応試験"];
+    K --&gt;|"正常〜幅広"| O{"リズムは？"};
+    O --&gt;|"不整"| P["2度〜3度房室ブロック"];
+    P --&gt; Q["初期治療: アトロピン反応試験 → ペースメーカー検討"];
 
-    F --&gt; R[(治療方針の検討)];
+    F --&gt; R["(治療方針の検討)"];
     I --&gt; R;
     N --&gt; R;
     Q --&gt; R;
@@ -473,6 +473,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

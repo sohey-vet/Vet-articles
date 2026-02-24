@@ -139,21 +139,21 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[尿検査・X線でストルバイト結石を疑う] --&gt; B{動物種？};
+    A["尿検査・X線でストルバイト結石を疑う"] --&gt; B{"動物種？"};
 
-    B --&gt;|犬の場合| C[尿培養・感受性試験を実施];
-    C --&gt;|ウレアーゼ産生菌陽性| D1[適切な抗菌薬 + 溶解食];
-    C --&gt;|尿培養陰性| D2[結石核内細菌を考慮、抗菌薬 + 溶解食を検討];
-    D1 &amp; D2 --&gt; E[4週ごとにX線で結石サイズを確認];
-    E --&gt;|溶解を確認| F[溶解後、さらに1ヶ月抗菌薬継続];
-    E --&gt;|4-6週で縮小傾向なし| G[外科的除去を検討（混合結石の可能性）];
-    F &amp; G --&gt; H[再発予防へ移行（水分摂取量増加、食事管理）];
+    B --&gt;|"犬の場合"| C["尿培養・感受性試験を実施"];
+    C --&gt;|"ウレアーゼ産生菌陽性"| D1["適切な抗菌薬 + 溶解食"];
+    C --&gt;|"尿培養陰性"| D2["結石核内細菌を考慮、抗菌薬 + 溶解食を検討"];
+    D1 &amp; D2 --&gt; E["4週ごとにX線で結石サイズを確認"];
+    E --&gt;|"溶解を確認"| F["溶解後、さらに1ヶ月抗菌薬継続"];
+    E --&gt;|"4-6週で縮小傾向なし"| G["外科的除去を検討（混合結石の可能性）"];
+    F &amp; G --&gt; H["再発予防へ移行（水分摂取量増加、食事管理）"];
 
-    B --&gt;|猫の場合| I[原則、抗菌薬は不要（95%以上が無菌性）];
-    I --&gt; J[溶解食（尿酸性化、Mg/P制限）のみ];
-    J --&gt; K[2〜5週間で溶解を確認];
-    K --&gt;|溶解を確認| L[再発予防へ移行（水分摂取量増加、酸性化フード）];
-    K --&gt;|4-6週で縮小傾向なし| M[外科的除去を検討（混合結石の可能性）];
+    B --&gt;|"猫の場合"| I["原則、抗菌薬は不要（95%以上が無菌性）"];
+    I --&gt; J["溶解食（尿酸性化、Mg/P制限）のみ"];
+    J --&gt; K["2〜5週間で溶解を確認"];
+    K --&gt;|"溶解を確認"| L["再発予防へ移行（水分摂取量増加、酸性化フード）"];
+    K --&gt;|"4-6週で縮小傾向なし"| M["外科的除去を検討（混合結石の可能性）"];
     L &amp; M --&gt; H;
 </pre>
 </li>
@@ -382,6 +382,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

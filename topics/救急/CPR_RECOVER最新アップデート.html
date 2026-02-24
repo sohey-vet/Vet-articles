@@ -83,37 +83,37 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[CPA発生確認] --&gt; B(応援要請 &amp; BLS開始);
+    A["CPA発生確認"] --&gt; B("応援要請 &amp; BLS開始");
 
     subgraph BLSサイクル (2分)
-        B --&gt; C[胸骨圧迫: 100-120回/分];
-        C --&gt;|深さ: 胸幅1/3-1/2 (広胸種1/4), 完全リコイル| D[換気: 10-12回/分];
-        D --&gt;|挿管済:非同期, 非挿管:30:2 or MT-N| E[ETCO2モニタリング: 目標 ＞=18 mmHg];
-        E --&gt; F(圧迫者交代);
+        B --&gt; C["胸骨圧迫: 100-120回/分"];
+        C --&gt;|"深さ: 胸幅1/3-1/2 (広胸種1/4), 完全リコイル"| D["換気: 10-12回/分"];
+        D --&gt;|"挿管済:非同期, 非挿管:30:2 or MT-N"| E["ETCO2モニタリング: 目標 ＞=18 mmHg"];
+        E --&gt; F("圧迫者交代");
     end
 
-    F --&gt; G{2分間のCPRサイクル終了};
+    F --&gt; G{"2分間のCPRサイクル終了"};
 
-    G --&gt;|YES| H[リズムチェック (ECG)];
-    H --&gt;|CPR中断は10秒以内| I{リズム判定};
+    G --&gt;|"YES"| H["リズムチェック (ECG)"];
+    H --&gt;|"CPR中断は10秒以内"| I{"リズム判定"};
 
-    I --&gt;|ショック適応リズム| J[VF / 無脈性VT];
-    J --&gt; K[⚡除細動 (2-4 J/kg)];
-    K --&gt;|即座に胸骨圧迫再開 (2分)| L[薬剤投与 (ショック適応)];
-    L --&gt;|3-5分ごと| M{バソプレシン 0.8U/kg IV};
-    M --&gt; N{または エピネフリン 0.01mg/kg IV};
-    N --&gt; P{ROSC確認?};
+    I --&gt;|"ショック適応リズム"| J["VF / 無脈性VT"];
+    J --&gt; K["⚡除細動 (2-4 J/kg)"];
+    K --&gt;|"即座に胸骨圧迫再開 (2分)"| L["薬剤投与 (ショック適応)"];
+    L --&gt;|"3-5分ごと"| M{"バソプレシン 0.8U/kg IV"};
+    M --&gt; N{"または エピネフリン 0.01mg/kg IV"};
+    N --&gt; P{"ROSC確認?"};
 
-    I --&gt;|非ショック適応リズム| Q[心静止 / PEA];
-    Q --&gt; R[薬剤投与 (非ショック適応)];
-    R --&gt;|3-5分ごと| S{エピネフリン 0.01mg/kg IV};
-    S --&gt; T{アトロピン 0.04mg/kg IV (単回)};
+    I --&gt;|"非ショック適応リズム"| Q["心静止 / PEA"];
+    Q --&gt; R["薬剤投与 (非ショック適応)"];
+    R --&gt;|"3-5分ごと"| S{"エピネフリン 0.01mg/kg IV"};
+    S --&gt; T{"アトロピン 0.04mg/kg IV (単回)"};
     T --&gt; P;
 
-    P --&gt;|NO| G;
-    P --&gt;|YES| U[✅ ROSC確認 (ETCO2急上昇)];
-    U --&gt; V[ROSC後ケア (PCA) 開始];
-    V --&gt;|血圧, 呼吸, 神経, 血糖管理| W(集中モニタリング &amp; 転帰評価);
+    P --&gt;|"NO"| G;
+    P --&gt;|"YES"| U["✅ ROSC確認 (ETCO2急上昇)"];
+    U --&gt; V["ROSC後ケア (PCA) 開始"];
+    V --&gt;|"血圧, 呼吸, 神経, 血糖管理"| W("集中モニタリング &amp; 転帰評価");
 </pre>
 </h3>
 <div style="overflow-x:auto;">
@@ -538,6 +538,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

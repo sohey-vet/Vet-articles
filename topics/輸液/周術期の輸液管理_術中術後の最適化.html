@@ -136,17 +136,17 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[開始: MAP ＜ 60mmHg または収縮期血圧 ＜ 80mmHg] --&gt; B{Step 1: 麻酔深度の確認};
-    B --&gt; C[吸入麻酔薬 25-50%減量 + オピオイドCRI増量];
-    C --&gt; D{血圧改善?};
-    D --&gt;|Yes| E[モニタリング継続];
-    D --&gt;|No| F{Step 2: 輸液ボーラス (Fluid Responsiveness評価)};
-    F --&gt; G[犬: 5-10mL/kg / 猫: 1-3mL/kg (短時間投与, 5-10分で評価)];
-    G --&gt; H{血圧改善? (Fluid Responder?)};
-    H --&gt;|Yes| E;
-    H --&gt;|No (Fluid Refractory)| I{Step 3: 昇圧薬の選択と投与};
-    I --&gt; J[エフェドリン / ドパミンCRI / ドブタミンCRI / ノルエピネフリンCRI];
-    J --&gt; K[継続的なモニタリングと調整];
+    A["開始: MAP ＜ 60mmHg または収縮期血圧 ＜ 80mmHg"] --&gt; B{"Step 1: 麻酔深度の確認"};
+    B --&gt; C["吸入麻酔薬 25-50%減量 + オピオイドCRI増量"];
+    C --&gt; D{"血圧改善?"};
+    D --&gt;|"Yes"| E["モニタリング継続"];
+    D --&gt;|"No"| F{"Step 2: 輸液ボーラス (Fluid Responsiveness評価)"};
+    F --&gt; G["犬: 5-10mL/kg / 猫: 1-3mL/kg (短時間投与, 5-10分で評価)"];
+    G --&gt; H{"血圧改善? (Fluid Responder?)"};
+    H --&gt;|"Yes"| E;
+    H --&gt;|"No (Fluid Refractory)"| I{"Step 3: 昇圧薬の選択と投与"};
+    I --&gt; J["エフェドリン / ドパミンCRI / ドブタミンCRI / ノルエピネフリンCRI"];
+    J --&gt; K["継続的なモニタリングと調整"];
 </pre>
 <ul>
 <li><strong>MAP &lt; 60mmHg</strong>（または収縮期血圧 &lt; 80mmHg）が介入のトリガー</li>
@@ -293,6 +293,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

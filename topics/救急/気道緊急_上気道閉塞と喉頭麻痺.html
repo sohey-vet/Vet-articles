@@ -81,29 +81,29 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[来院: ストライダー/チアノーゼ] --&gt; B{高体温の有無? (体温測定)};
+    A["来院: ストライダー/チアノーゼ"] --&gt; B{"高体温の有無? (体温測定)"};
 
-    B --&gt;|Yes (＞39.5℃)| C[体表冷却 (目標39.5℃で中止)];
-    B --&gt;|No (＜39.5℃)| D[酸素投与 (Flow-by/マスク)];
+    B --&gt;|"Yes (＞39.5℃)"| C["体表冷却 (目標39.5℃で中止)"];
+    B --&gt;|"No (＜39.5℃)"| D["酸素投与 (Flow-by/マスク)"];
 
-    C --&gt; E[鎮静: Acepromazine + Butorphanol IV];
+    C --&gt; E["鎮静: Acepromazine + Butorphanol IV"];
     D --&gt; E;
 
-    E --&gt; F[ステロイド: Dexamethasone SP IV];
+    E --&gt; F["ステロイド: Dexamethasone SP IV"];
 
-    F --&gt; G{呼吸状態・SpO2評価}; 
+    F --&gt; G{"呼吸状態・SpO2評価"}; 
 
-    G --&gt;|改善あり (SpO2 ＞ 90%)| H[モニタリング・対症療法];
-    G --&gt;|改善なし (SpO2 ＜ 90%持続 / 努力性呼吸増悪 / チアノーゼ・意識低下)| I{緊急気道確保};
+    G --&gt;|"改善あり (SpO2 ＞ 90%)"| H["モニタリング・対症療法"];
+    G --&gt;|"改善なし (SpO2 ＜ 90%持続 / 努力性呼吸増悪 / チアノーゼ・意識低下)"| I{"緊急気道確保"};
 
-    I --&gt; J[Propofol IV 導入 &amp; 挿管試行];
+    I --&gt; J["Propofol IV 導入 &amp; 挿管試行"];
 
-    J --&gt; K{挿管可能?};
+    J --&gt; K{"挿管可能?"};
 
-    K --&gt;|Yes| L[挿管 &amp; 酸素換気];
-    K --&gt;|No (声門見えず/挿管不可)| M[緊急気管切開];
+    K --&gt;|"Yes"| L["挿管 &amp; 酸素換気"];
+    K --&gt;|"No (声門見えず/挿管不可)"| M["緊急気管切開"];
 
-    L --&gt; N[回復期管理];
+    L --&gt; N["回復期管理"];
     M --&gt; N;
 
     H --&gt; N;
@@ -239,6 +239,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

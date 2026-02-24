@@ -142,35 +142,35 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[麻酔中 MAP 60mmHg以下] --&gt; B{まず確認};
-    B --&gt; C[過深麻酔?];
-    B --&gt; D[心拍数異常?];
-    B --&gt; E[出血?];
+    A["麻酔中 MAP 60mmHg以下"] --&gt; B{"まず確認"};
+    B --&gt; C["過深麻酔?"];
+    B --&gt; D["心拍数異常?"];
+    B --&gt; E["出血?"];
 
-    C --&gt; F[吸入麻酔薬減量];
-    D --&gt; G[心拍数調整];
-    E --&gt; H[止血 輸液];
+    C --&gt; F["吸入麻酔薬減量"];
+    D --&gt; G["心拍数調整"];
+    E --&gt; H["止血 輸液"];
 
-    F --&gt; I[オピオイドCRI増];
-    I --&gt; J[輸液ボーラス];
+    F --&gt; I["オピオイドCRI増"];
+    I --&gt; J["輸液ボーラス"];
 
-    J --&gt; K{低血圧持続?};
-    K --&gt;|Yes| L{バソプレッサー選択};
+    J --&gt; K{"低血圧持続?"};
+    K --&gt;|"Yes"| L{"バソプレッサー選択"};
 
-    L --&gt;|DCM| M[ドブタミン];
-    L --&gt;|MMVD| N[ドパミン];
-    L --&gt;|HCM猫| O[フェニレフリン 輸液調整];
-    L --&gt;|その他| P[エフェドリン];
-    L --&gt;|その他| Q[ドパミン];
+    L --&gt;|"DCM"| M["ドブタミン"];
+    L --&gt;|"MMVD"| N["ドパミン"];
+    L --&gt;|"HCM猫"| O["フェニレフリン 輸液調整"];
+    L --&gt;|"その他"| P["エフェドリン"];
+    L --&gt;|"その他"| Q["ドパミン"];
 
-    M --&gt; R{MAP改善?};
+    M --&gt; R{"MAP改善?"};
     N --&gt; R;
     O --&gt; R;
     P --&gt; R;
     Q --&gt; R;
 
-    R --&gt;|No 徐脈あり| S[グリコピロレート];
-    R --&gt;|Yes| T[モニタ継続];
+    R --&gt;|"No 徐脈あり"| S["グリコピロレート"];
+    R --&gt;|"Yes"| T["モニタ継続"];
     S --&gt; T;
 </pre>
 <div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>

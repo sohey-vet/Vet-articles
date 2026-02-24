@@ -322,25 +322,25 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[複数の疾患併存を診断] --&gt; B{どちらの疾患が生命予後により影響するか？};
+    A["複数の疾患併存を診断"] --&gt; B{"どちらの疾患が生命予後により影響するか？"};
 
-    B --&gt;|生命予後への影響大 (例: CKD進行度, 心不全ステージ)| C[その疾患に対応する療法食を第一選択];
-    B --&gt;|生命予後への影響小 (例: 軽度アレルギー, 尿石症リスク)| C;
+    B --&gt;|"生命予後への影響大 (例: CKD進行度, 心不全ステージ)"| C["その疾患に対応する療法食を第一選択"];
+    B --&gt;|"生命予後への影響小 (例: 軽度アレルギー, 尿石症リスク)"| C;
 
-    C --&gt; D{選択した療法食は、他の併存疾患に悪影響がないか？};
-    D --&gt;|YES (悪影響あり)| E[栄養成分衝突の調整: 療法食の組み合わせ検討 / サプリメント併用 (例: リン吸着剤)];
-    D --&gt;|NO (悪影響なし)| F[嗜好性の評価];
+    C --&gt; D{"選択した療法食は、他の併存疾患に悪影響がないか？"};
+    D --&gt;|"YES (悪影響あり)"| E["栄養成分衝突の調整: 療法食の組み合わせ検討 / サプリメント併用 (例: リン吸着剤)"];
+    D --&gt;|"NO (悪影響なし)"| F["嗜好性の評価"];
 
     E --&gt; F;
 
-    F --&gt; G{動物が療法食を食べてくれるか？};
-    G --&gt;|YES| H[決定した療法食で管理開始];
-    G --&gt;|NO| I[嗜好性を高める工夫 (温める、トッピング、ウェットフードなど)];
-    I --&gt; J{それでも食べない場合};
-    J --&gt;|YES| K[次善の療法食、または最も食いつきの良い一般食 + 必要なサプリメントで補完];
-    J --&gt;|NO| H;
+    F --&gt; G{"動物が療法食を食べてくれるか？"};
+    G --&gt;|"YES"| H["決定した療法食で管理開始"];
+    G --&gt;|"NO"| I["嗜好性を高める工夫 (温める、トッピング、ウェットフードなど)"];
+    I --&gt; J{"それでも食べない場合"};
+    J --&gt;|"YES"| K["次善の療法食、または最も食いつきの良い一般食 + 必要なサプリメントで補完"];
+    J --&gt;|"NO"| H;
 
-    K --&gt; L[定期的な経過観察と栄養状態の評価、必要に応じて調整];
+    K --&gt; L["定期的な経過観察と栄養状態の評価、必要に応じて調整"];
     H --&gt; L;
 </pre>
 </td>
@@ -435,6 +435,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

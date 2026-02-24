@@ -161,17 +161,17 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[輸液中の猫をモニタリング] --&gt; B{過剰輸液のサインを検出？};
-    B --&gt;|YES (RR↑, 結膜浮腫, 体重急増)| C[輸液速度を直ちに減量/一時中断];
-    C --&gt; D[酸素吸入の準備/開始];
-    D --&gt; E[利尿剤（例: Furosemide）の投与検討];
-    E --&gt; F{心疾患の既往・徴候は？};
-    F --&gt;|YES| G[心エコー等による心臓評価を推奨];
-    F --&gt;|NO| H[循環動態・呼吸状態の頻回モニタリング];
+    A["輸液中の猫をモニタリング"] --&gt; B{"過剰輸液のサインを検出？"};
+    B --&gt;|"YES (RR↑, 結膜浮腫, 体重急増)"| C["輸液速度を直ちに減量/一時中断"];
+    C --&gt; D["酸素吸入の準備/開始"];
+    D --&gt; E["利尿剤（例: Furosemide）の投与検討"];
+    E --&gt; F{"心疾患の既往・徴候は？"};
+    F --&gt;|"YES"| G["心エコー等による心臓評価を推奨"];
+    F --&gt;|"NO"| H["循環動態・呼吸状態の頻回モニタリング"];
     G --&gt; H;
-    H --&gt; I[獣医師による治療方針再検討];
-    B --&gt;|NO| J[現在の輸液速度を継続];
-    J --&gt; K[定期的なモニタリング継続];
+    H --&gt; I["獣医師による治療方針再検討"];
+    B --&gt;|"NO"| J["現在の輸液速度を継続"];
+    J --&gt; K["定期的なモニタリング継続"];
     K --&gt; A;
 
     subgraph 🚨 過剰輸液サイン検出時の緊急対応フロー
@@ -281,6 +281,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

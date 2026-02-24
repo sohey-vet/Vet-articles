@@ -126,23 +126,23 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[犬の突然の虚脱・腹部膨満・粘膜蒼白] --&gt; B{緊急来院}; 
-    B --&gt; C[初期評価: 身体検査, AFAST (腹腔内液体貯留)];
-    C --&gt;|液体貯留(+)| D[診断的腹腔穿刺: 血性腹水確認];
-    D --&gt; E[出血性ショック対応];
-    E --&gt; E1[輸液蘇生 (晶質液 bolus, 反応評価)];
-    E --&gt; E2[輸血/自己血輸血 (PCV ＜ 20% or 急速低下時)];
-    E1 &amp; E2 --&gt; F{状態安定化 -＞ 手術可能?};
-    F --&gt;|No (再出血/ショック持続)| E;
-    F --&gt;|Yes (状態安定化)| G[術前評価: 胸部X線 (3方向) ];
-    G --&gt;|明らかな肺転移なし| H[緊急脾臓摘出 (救命最優先)];
-    G --&gt;|広範囲の肺転移あり| I[飼い主と十分な話し合い];
-    I --&gt;|手術を選択| H;
-    I --&gt;|緩和/安楽死を選択| J[QOL重視のケア];
-    H --&gt; K[病理組織検査 (確定診断)];
-    K --&gt;|血管肉腫確定| L[術後化学療法 (ドキソルビシン) 検討];
-    K --&gt;|良性/他悪性| M[個別対応 (良好な予後期待)];
-    L --&gt; N[予後説明 &amp; 飼い主の意思決定支援];
+    A["犬の突然の虚脱・腹部膨満・粘膜蒼白"] --&gt; B{"緊急来院"}; 
+    B --&gt; C["初期評価: 身体検査, AFAST (腹腔内液体貯留)"];
+    C --&gt;|"液体貯留(+)"| D["診断的腹腔穿刺: 血性腹水確認"];
+    D --&gt; E["出血性ショック対応"];
+    E --&gt; E1["輸液蘇生 (晶質液 bolus, 反応評価)"];
+    E --&gt; E2["輸血/自己血輸血 (PCV ＜ 20% or 急速低下時)"];
+    E1 &amp; E2 --&gt; F{"状態安定化 -＞ 手術可能?"};
+    F --&gt;|"No (再出血/ショック持続)"| E;
+    F --&gt;|"Yes (状態安定化)"| G["術前評価: 胸部X線 (3方向) "];
+    G --&gt;|"明らかな肺転移なし"| H["緊急脾臓摘出 (救命最優先)"];
+    G --&gt;|"広範囲の肺転移あり"| I["飼い主と十分な話し合い"];
+    I --&gt;|"手術を選択"| H;
+    I --&gt;|"緩和/安楽死を選択"| J["QOL重視のケア"];
+    H --&gt; K["病理組織検査 (確定診断)"];
+    K --&gt;|"血管肉腫確定"| L["術後化学療法 (ドキソルビシン) 検討"];
+    K --&gt;|"良性/他悪性"| M["個別対応 (良好な予後期待)"];
+    L --&gt; N["予後説明 &amp; 飼い主の意思決定支援"];
     J --&gt; N;
 </pre>
 <ul>
@@ -299,6 +299,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

@@ -34,15 +34,15 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[開始 猫の鎮静プロトコル選択] --&gt; B{来院前の不安}; 
-    B --&gt;|あり| C[Gabapentin 事前経口投与];
-    B --&gt;|なし| D{心疾患の有無};
+    A["開始 猫の鎮静プロトコル選択"] --&gt; B{"来院前の不安"}; 
+    B --&gt;|"あり"| C["Gabapentin 事前経口投与"];
+    B --&gt;|"なし"| D{"心疾患の有無"};
     C --&gt; D;
-    D --&gt;|あり| E[心疾患猫: Alfaxalone Butorphanol IM];
-    D --&gt;|なし| F{処置レベル};
-    E --&gt; G[処置へ移行];
-    F --&gt;|軽度 X線 採血| H[Butorphanol単独 IM];
-    F --&gt;|中等度から深い処置| I[Kitty Magic Dex Ket But IM];
+    D --&gt;|"あり"| E["心疾患猫: Alfaxalone Butorphanol IM"];
+    D --&gt;|"なし"| F{"処置レベル"};
+    E --&gt; G["処置へ移行"];
+    F --&gt;|"軽度 X線 採血"| H["Butorphanol単独 IM"];
+    F --&gt;|"中等度から深い処置"| I["Kitty Magic Dex Ket But IM"];
     H --&gt; G;
     I --&gt; G;
 </pre>

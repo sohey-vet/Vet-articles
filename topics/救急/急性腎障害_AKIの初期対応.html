@@ -149,18 +149,18 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[AKIによる乏尿 (尿量 ＜ 1mL/kg/h)]
-    A --&gt; B{まず脱水が完全に補正されているか確認？};
-    B --&gt;|いいえ| C[脱水補正を最優先];
-    B --&gt;|はい| D[フロセミド 2-4mg/kg IV 投与];
-    D --&gt; E{30分後の尿量反応};
-    E --&gt;|増加あり| F[フロセミドCRI 0.5-1mg/kg/h 検討];
-    E --&gt;|増加なし| G{無尿が確定しているか？ (尿量 ＜ 0.5mL/kg/h)};
-    G --&gt;|はい| H[マンニトール禁忌; 体液過剰悪化リスク; 透析施設へ紹介];
-    G --&gt;|いいえ| I[マンニトール 0.5-1g/kg IV (20分かけて)];
-    I --&gt; J{マンニトール投与後の尿量反応};
-    J --&gt;|増加あり| K[継続観察, 原因精査];
-    J --&gt;|増加なし| L[本質的な乏尿/無尿 (intrinsic AKI); 透析施設へ紹介];
+    A["AKIによる乏尿 (尿量 ＜ 1mL/kg/h)"]
+    A --&gt; B{"まず脱水が完全に補正されているか確認？"};
+    B --&gt;|"いいえ"| C["脱水補正を最優先"];
+    B --&gt;|"はい"| D["フロセミド 2-4mg/kg IV 投与"];
+    D --&gt; E{"30分後の尿量反応"};
+    E --&gt;|"増加あり"| F["フロセミドCRI 0.5-1mg/kg/h 検討"];
+    E --&gt;|"増加なし"| G{"無尿が確定しているか？ (尿量 ＜ 0.5mL/kg/h)"};
+    G --&gt;|"はい"| H["マンニトール禁忌; 体液過剰悪化リスク; 透析施設へ紹介"];
+    G --&gt;|"いいえ"| I["マンニトール 0.5-1g/kg IV (20分かけて)"];
+    I --&gt; J{"マンニトール投与後の尿量反応"};
+    J --&gt;|"増加あり"| K["継続観察, 原因精査"];
+    J --&gt;|"増加なし"| L["本質的な乏尿/無尿 (intrinsic AKI); 透析施設へ紹介"];
 </pre>
 </h4>
 <ol>
@@ -249,6 +249,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

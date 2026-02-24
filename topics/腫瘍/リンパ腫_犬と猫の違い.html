@@ -121,29 +121,29 @@
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[猫に慢性消化器症状 / 体重減少 / 漠然とした不調] --&gt; B{リンパ腫疑い (またはIBD)};
-    B --&gt; C[診断ステップ];
-    C --&gt; C1[身体検査 / 血液検査 / 画像診断 (エコー, X線)];
-    C1 --&gt; C2{確定診断には?};
-    C2 --&gt;|組織生検 (ゴールドスタンダード)| D[FeLV検査 + リンパ腫のタイプ・グレード判定];
-    C2 --&gt;|細胞診 (補助的)| D;
+    A["猫に慢性消化器症状 / 体重減少 / 漠然とした不調"] --&gt; B{"リンパ腫疑い (またはIBD)"};
+    B --&gt; C["診断ステップ"];
+    C --&gt; C1["身体検査 / 血液検査 / 画像診断 (エコー, X線)"];
+    C1 --&gt; C2{"確定診断には?"};
+    C2 --&gt;|"組織生検 (ゴールドスタンダード)"| D["FeLV検査 + リンパ腫のタイプ・グレード判定"];
+    C2 --&gt;|"細胞診 (補助的)"| D;
 
-    D --&gt; E{消化器型リンパ腫};
-    E --&gt;|低グレード| F[治療: クロラムブシル + プレドニゾロン];
-    F --&gt; G[予後: 2〜3年以上 (良好)];
-    E --&gt;|大細胞 / 高グレード| H[治療: CHOP / COPプロトコル];
-    H --&gt; I[予後: 6〜9ヶ月 (中程度)];
+    D --&gt; E{"消化器型リンパ腫"};
+    E --&gt;|"低グレード"| F["治療: クロラムブシル + プレドニゾロン"];
+    F --&gt; G["予後: 2〜3年以上 (良好)"];
+    E --&gt;|"大細胞 / 高グレード"| H["治療: CHOP / COPプロトコル"];
+    H --&gt; I["予後: 6〜9ヶ月 (中程度)"];
 
-    D --&gt; J{鼻腔型リンパ腫};
-    J --&gt; K[治療: 放射線療法 (第一選択)];
-    K --&gt; L[予後: 約1年 (中程度)];
+    D --&gt; J{"鼻腔型リンパ腫"};
+    J --&gt; K["治療: 放射線療法 (第一選択)"];
+    K --&gt; L["予後: 約1年 (中程度)"];
 
-    D --&gt; M{腎臓型リンパ腫};
-    M --&gt; N[治療: CHOP / COP等];
-    N --&gt; O[予後: 不良 (CNS転移リスク高)];
+    D --&gt; M{"腎臓型リンパ腫"};
+    M --&gt; N["治療: CHOP / COP等"];
+    N --&gt; O["予後: 不良 (CNS転移リスク高)"];
 
-    D --&gt; P{その他解剖学的タイプ};
-    P --&gt; Q[各タイプに応じた治療戦略];
+    D --&gt; P{"その他解剖学的タイプ"};
+    P --&gt; Q["各タイプに応じた治療戦略"];
 </pre>
 </li>
 </ul>
@@ -195,6 +195,6 @@ graph TD
 </footer>
 </div>
 <script src="../../assets/script.js"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>
