@@ -113,15 +113,15 @@ graph TD
 
     B --&gt; C{出血傾向は顕著か？};
 
-    C -- No (血栓傾向優位/Overt前DIC) --&gt; D{AT活性は十分か？};
-    C -- Yes (Overt DIC) --&gt; G[FFP投与による凝固因子・AT補充];
+    C --&gt;|No (血栓傾向優位/Overt前DIC)| D{AT活性は十分か？};
+    C --&gt;|Yes (Overt DIC)| G[FFP投与による凝固因子・AT補充];
 
-    D -- Yes (AT活性 ≥ 30%) --&gt; E[ヘパリン投与 (UFH/LMWH)];
-    D -- No (AT活性 &lt; 30%) --&gt; F[FFP投与によるAT補充];
+    D --&gt;|Yes (AT活性 ≥ 30%)| E[ヘパリン投与 (UFH/LMWH)];
+    D --&gt;|No (AT活性 ＜ 30%)| F[FFP投与によるAT補充];
 
     F --&gt; E;
     G --&gt; H{出血が制御されたか？};
-    H -- Yes --&gt; I[ヘパリン投与を検討];
+    H --&gt;|Yes| I[ヘパリン投与を検討];
 
     style A fill:#e0f2f7,stroke:#2a859e,stroke-width:2px;
     style B fill:#fff3cd,stroke:#a68e36,stroke-width:2px;

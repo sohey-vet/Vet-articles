@@ -35,14 +35,14 @@
 <pre class="mermaid">
 graph TD
     A[開始 猫の鎮静プロトコル選択] --&gt; B{来院前の不安}; 
-    B -- あり --&gt; C[Gabapentin 事前経口投与];
-    B -- なし --&gt; D{心疾患の有無};
+    B --&gt;|あり| C[Gabapentin 事前経口投与];
+    B --&gt;|なし| D{心疾患の有無};
     C --&gt; D;
-    D -- あり --&gt; E[心疾患猫: Alfaxalone Butorphanol IM];
-    D -- なし --&gt; F{処置レベル};
+    D --&gt;|あり| E[心疾患猫: Alfaxalone Butorphanol IM];
+    D --&gt;|なし| F{処置レベル};
     E --&gt; G[処置へ移行];
-    F -- 軽度 X線 採血 --&gt; H[Butorphanol単独 IM];
-    F -- 中等度から深い処置 --&gt; I[Kitty Magic Dex Ket But IM];
+    F --&gt;|軽度 X線 採血| H[Butorphanol単独 IM];
+    F --&gt;|中等度から深い処置| I[Kitty Magic Dex Ket But IM];
     H --&gt; G;
     I --&gt; G;
 </pre>
@@ -222,7 +222,6 @@ graph TD
 </div>
 </div>
 </div></div>
-
 <div id="owner-tips">
 <div class="accordion">
 <button class="accordion-trigger">

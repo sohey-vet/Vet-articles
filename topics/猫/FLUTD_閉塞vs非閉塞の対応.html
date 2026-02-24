@@ -25,12 +25,12 @@ graph TD
     A[FLUTD疑い 雄猫] --&gt; B{尿道閉塞の可能性}
     B --&gt; C[Step1 トリアージ 安定化]
     C --&gt; D{徐脈 高K血症所見ありか}
-    D -- Yes --&gt; E[Step2 高K血症 緊急是正]
+    D --&gt;|Yes| E[Step2 高K血症 緊急是正]
     E --&gt; F[Step3 尿道カテーテル挿入]
-    D -- No --&gt; F
+    D --&gt;|No| F
     F --&gt; G{閉塞解除成功したか}
-    G -- Yes --&gt; H[カテーテル留置 モニタリング]
-    G -- No --&gt; I[再試行 困難なら外科相談]
+    G --&gt;|Yes| H[カテーテル留置 モニタリング]
+    G --&gt;|No| I[再試行 困難なら外科相談]
     H --&gt; J[カテーテル抜去]
     J --&gt; K[自力排尿確認]
     K --&gt; L[退院可能]
@@ -80,12 +80,12 @@ graph TD
     A[FLUTD疑い 雄猫] --&gt; B{尿道閉塞の可能性}
     B --&gt; C[Step1 トリアージ 安定化]
     C --&gt; D{徐脈 高K血症所見ありか}
-    D -- Yes --&gt; E[Step2 高K血症 緊急是正]
+    D --&gt;|Yes| E[Step2 高K血症 緊急是正]
     E --&gt; F[Step3 尿道カテーテル挿入]
-    D -- No --&gt; F
+    D --&gt;|No| F
     F --&gt; G{閉塞解除成功したか}
-    G -- Yes --&gt; H[カテーテル留置 モニタリング]
-    G -- No --&gt; I[再試行 困難なら外科相談]
+    G --&gt;|Yes| H[カテーテル留置 モニタリング]
+    G --&gt;|No| I[再試行 困難なら外科相談]
     H --&gt; J[カテーテル抜去]
     J --&gt; K[自力排尿確認]
     K --&gt; L[退院可能]

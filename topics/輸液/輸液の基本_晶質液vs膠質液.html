@@ -39,15 +39,15 @@
 <pre class="mermaid">
 graph TD
     A[ショック兆候あり] --&gt; B[等張晶質液ボーラス投与];
-    B -- 犬 --&gt; C[15-20 mL/kg 15-30分];
-    B -- 猫 --&gt; D[10-15 mL/kg 15-30分];
+    B --&gt;|犬| C[15-20 mL/kg 15-30分];
+    B --&gt;|猫| D[10-15 mL/kg 15-30分];
     C --&gt; E[灌流指標を再評価];
     D --&gt; E;
     E --&gt; F{灌流改善あり}; 
-    F -- はい --&gt; G[維持輸液へ移行];
-    F -- いいえ --&gt; H{過剰輸液兆候あり}; 
-    H -- いいえ --&gt; I[追加ボーラス投与 同量];
-    H -- はい 肺水腫等 --&gt; J[昇圧剤検討];
+    F --&gt;|はい| G[維持輸液へ移行];
+    F --&gt;|いいえ| H{過剰輸液兆候あり}; 
+    H --&gt;|いいえ| I[追加ボーラス投与 同量];
+    H --&gt;|はい 肺水腫等| J[昇圧剤検討];
     I --&gt; E;
 </pre>
 </p>
@@ -212,7 +212,6 @@ graph TD
 </div>
 </div>
 </div></div>
-
 <div id="owner-tips">
 <div class="accordion">
 <button class="accordion-trigger">

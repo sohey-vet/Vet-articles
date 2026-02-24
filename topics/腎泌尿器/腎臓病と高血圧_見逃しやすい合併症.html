@@ -43,38 +43,38 @@ graph TD
     B --&gt; C[5-7回測定 外れ値除外]
     C --&gt; D{TOD 標的臓器障害 存在?}
 
-    D -- Yes --&gt; E[SBP 140-159 mmHg]
-    D -- No --&gt; F{SBP 160 mmHg以上?}
+    D --&gt;|Yes| E[SBP 140-159 mmHg]
+    D --&gt;|No| F{SBP 160 mmHg以上?}
 
-    F -- No --&gt; G{SBP 140-159 mmHg?}
-    F -- Yes --&gt; H[治療開始 IRIS III IV]
+    F --&gt;|No| G{SBP 140-159 mmHg?}
+    F --&gt;|Yes| H[治療開始 IRIS III IV]
 
-    G -- No --&gt; I[経過観察 定期再評価]
-    G -- Yes --&gt; H
+    G --&gt;|No| I[経過観察 定期再評価]
+    G --&gt;|Yes| H
 
-    E -- Yes --&gt; H
-    E -- No --&gt; I
+    E --&gt;|Yes| H
+    E --&gt;|No| I
 
     H --&gt; J{動物種?}
-    J -- 猫 --&gt; K[猫の治療プロトコル]
-    J -- 犬 --&gt; L[犬の治療プロトコル]
+    J --&gt;|猫| K[猫の治療プロトコル]
+    J --&gt;|犬| L[犬の治療プロトコル]
 
     K --&gt; M[第一選択 アムロジピン]
     M --&gt; N[用量 0.625-1.25 mg per cat]
 
     L --&gt; O[第一選択 ACE阻害薬 ARB]
     O --&gt; P{効果不十分か?}
-    P -- Yes --&gt; Q[アムロジピンを追加]
+    P --&gt;|Yes| Q[アムロジピンを追加]
     Q --&gt; R[用量 0.1-0.2 mg per kg]
-    P -- No --&gt; S[ACE阻害薬 ARB単独継続]
+    P --&gt;|No| S[ACE阻害薬 ARB単独継続]
 
     N --&gt; T[血圧再評価 3-5日-1-2週後]
     R --&gt; T
     S --&gt; T
 
     T --&gt; U{目標SBP達成か?}
-    U -- Yes --&gt; V[維持療法]
-    U -- No --&gt; W[増量 または 併用検討]
+    U --&gt;|Yes| V[維持療法]
+    U --&gt;|No| W[増量 または 併用検討]
 </pre>
 </p>
 </div>

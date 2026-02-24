@@ -46,13 +46,13 @@
 <pre class="mermaid">
 graph TD
     A[アジソン病を疑う] --&gt; B(ベースラインコルチゾール測定)
-    B --&gt; C{ベースラインコルチゾール &gt; 2μg/dL ?}
-    C -- Yes --&gt; D[アジソン病を除外]
-    C -- No --&gt; E(合成ACTH投与 5μg/kg IV)
+    B --&gt; C{ベースラインコルチゾール ＞ 2μg/dL ?}
+    C --&gt;|Yes| D[アジソン病を除外]
+    C --&gt;|No| E(合成ACTH投与 5μg/kg IV)
     E --&gt; F(1時間後コルチゾール測定)
-    F --&gt; G{刺激後コルチゾール &lt; 2μg/dL ?}
-    G -- Yes --&gt; H[アジソン病を確定]
-    G -- No --&gt; I[アジソン病を除外]
+    F --&gt; G{刺激後コルチゾール ＜ 2μg/dL ?}
+    G --&gt;|Yes| H[アジソン病を確定]
+    G --&gt;|No| I[アジソン病を除外]
 </pre>
 </h3>
 <table class="comparison-table" style="margin:0;">

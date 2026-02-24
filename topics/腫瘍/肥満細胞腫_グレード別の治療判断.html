@@ -19,22 +19,22 @@
     graph TD
         A[皮膚腫瘤 MCT疑い] --&gt; B{診断: FNA 細胞診};
         B --&gt; C{MCT確定?};
-        C -- Yes --&gt; D[組織生検: Kiupelグレーディング];
-        C -- No --&gt; Z[他疾患鑑別へ];
+        C --&gt;|Yes| D[組織生検: Kiupelグレーディング];
+        C --&gt;|No| Z[他疾患鑑別へ];
 
         D --&gt; D1{Kiupel Low Grade};
         D --&gt; D2{Kiupel High Grade};
 
         D1 --&gt; E[治療: 外科切除];
-        E -- マージン: 側方2cm 筋膜1層 --&gt; E_margin[切除範囲];
+        E --&gt;|マージン: 側方2cm 筋膜1層| E_margin[切除範囲];
         E --&gt; F{センチネルリンパ節評価};
-        F -- 転移なし --&gt; G[術後経過観察];
-        F -- 転移あり --&gt; H[全身療法へ移行];
+        F --&gt;|転移なし| G[術後経過観察];
+        F --&gt;|転移あり| H[全身療法へ移行];
 
         D2 --&gt; I[治療: 外科切除];
         I --&gt; J[術後全身療法];
-        J -- c-kit変異陽性考慮 --&gt; K[Toceranib];
-        J -- 他の選択肢 --&gt; L[Vinblastine Prednisolone];
+        J --&gt;|c-kit変異陽性考慮| K[Toceranib];
+        J --&gt;|他の選択肢| L[Vinblastine Prednisolone];
 
         H --&gt; J;
 
@@ -43,8 +43,8 @@
         E --&gt; M;
         I --&gt; M;
 
-        M -- H1ブロッカー --&gt; M1[ジフェンヒドラミン];
-        M -- H2ブロッカー --&gt; M2[ファモチジン];
+        M --&gt;|H1ブロッカー| M1[ジフェンヒドラミン];
+        M --&gt;|H2ブロッカー| M2[ファモチジン];
 </pre>
 </a><a href="#grade-table">🔬
             グレード比較</a><a href="#refs">📚 論文</a>
@@ -72,22 +72,22 @@
     graph TD
         A[皮膚腫瘤 MCT疑い] --&gt; B{診断: FNA 細胞診};
         B --&gt; C{MCT確定?};
-        C -- Yes --&gt; D[組織生検: Kiupelグレーディング];
-        C -- No --&gt; Z[他疾患鑑別へ];
+        C --&gt;|Yes| D[組織生検: Kiupelグレーディング];
+        C --&gt;|No| Z[他疾患鑑別へ];
 
         D --&gt; D1{Kiupel Low Grade};
         D --&gt; D2{Kiupel High Grade};
 
         D1 --&gt; E[治療: 外科切除];
-        E -- マージン: 側方2cm 筋膜1層 --&gt; E_margin[切除範囲];
+        E --&gt;|マージン: 側方2cm 筋膜1層| E_margin[切除範囲];
         E --&gt; F{センチネルリンパ節評価};
-        F -- 転移なし --&gt; G[術後経過観察];
-        F -- 転移あり --&gt; H[全身療法へ移行];
+        F --&gt;|転移なし| G[術後経過観察];
+        F --&gt;|転移あり| H[全身療法へ移行];
 
         D2 --&gt; I[治療: 外科切除];
         I --&gt; J[術後全身療法];
-        J -- c-kit変異陽性考慮 --&gt; K[Toceranib];
-        J -- 他の選択肢 --&gt; L[Vinblastine Prednisolone];
+        J --&gt;|c-kit変異陽性考慮| K[Toceranib];
+        J --&gt;|他の選択肢| L[Vinblastine Prednisolone];
 
         H --&gt; J;
 
@@ -96,8 +96,8 @@
         E --&gt; M;
         I --&gt; M;
 
-        M -- H1ブロッカー --&gt; M1[ジフェンヒドラミン];
-        M -- H2ブロッカー --&gt; M2[ファモチジン];
+        M --&gt;|H1ブロッカー| M1[ジフェンヒドラミン];
+        M --&gt;|H2ブロッカー| M2[ファモチジン];
 </pre>
 </h3>
 <p style="font-size:0.88rem;">

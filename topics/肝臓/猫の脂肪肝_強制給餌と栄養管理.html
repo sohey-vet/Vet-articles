@@ -28,10 +28,10 @@ graph TD
     B --&gt; B1[輸液 電解質補正]
     B --&gt; B2[血液検査 K P Mg]
     B2 --&gt; C{低K P Mg あり？}
-    C -- Yes --&gt; C1[電解質補正]
-    C -- No --&gt; D{嘔吐あり？}
-    D -- Yes --&gt; D1[嘔吐制御]
-    D -- No --&gt; E[E-tube設置]
+    C --&gt;|Yes| C1[電解質補正]
+    C --&gt;|No| D{嘔吐あり？}
+    D --&gt;|Yes| D1[嘔吐制御]
+    D --&gt;|No| E[E-tube設置]
     C1 --&gt; E
     D1 --&gt; E
     E --&gt; F[栄養開始 Day1]
@@ -41,10 +41,10 @@ graph TD
     G1 --&gt; H[栄養維持 Day3]
     H --&gt; H1[RER 100%給餌]
     H1 --&gt; I{電解質 嘔吐Moni}
-    I -- 安定 --&gt; J[退院 E-tube指導]
+    I --&gt;|安定| J[退院 E-tube指導]
     J --&gt; K[在宅経管栄養 4-8W]
     K --&gt; L{3日自力摂食？}
-    L -- Yes --&gt; M[E-tube抜去]
+    L --&gt;|Yes| M[E-tube抜去]
     B --&gt; N[原疾患検索 治療]
     N --&gt; K
 </pre>
@@ -95,10 +95,10 @@ graph TD
     B --&gt; B1[輸液 電解質補正]
     B --&gt; B2[血液検査 K P Mg]
     B2 --&gt; C{低K P Mg あり？}
-    C -- Yes --&gt; C1[電解質補正]
-    C -- No --&gt; D{嘔吐あり？}
-    D -- Yes --&gt; D1[嘔吐制御]
-    D -- No --&gt; E[E-tube設置]
+    C --&gt;|Yes| C1[電解質補正]
+    C --&gt;|No| D{嘔吐あり？}
+    D --&gt;|Yes| D1[嘔吐制御]
+    D --&gt;|No| E[E-tube設置]
     C1 --&gt; E
     D1 --&gt; E
     E --&gt; F[栄養開始 Day1]
@@ -108,10 +108,10 @@ graph TD
     G1 --&gt; H[栄養維持 Day3]
     H --&gt; H1[RER 100%給餌]
     H1 --&gt; I{電解質 嘔吐Moni}
-    I -- 安定 --&gt; J[退院 E-tube指導]
+    I --&gt;|安定| J[退院 E-tube指導]
     J --&gt; K[在宅経管栄養 4-8W]
     K --&gt; L{3日自力摂食？}
-    L -- Yes --&gt; M[E-tube抜去]
+    L --&gt;|Yes| M[E-tube抜去]
     B --&gt; N[原疾患検索 治療]
     N --&gt; K
 </pre>

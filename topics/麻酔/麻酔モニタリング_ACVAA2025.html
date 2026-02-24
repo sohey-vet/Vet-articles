@@ -39,10 +39,10 @@ graph TD
     A[麻酔覚醒期 抜管] --&gt; B(死亡リスクの約50%は術後3時間以内)
     B --&gt; C[覚醒期モニタリングは最重要]
     C --&gt; D[抜管後 最低1時間専任スタッフ監視]
-    D -- 項目1 --&gt; E[SpO2 継続測定]
-    D -- 項目2 --&gt; F[体温管理]
-    F -- 低体温時 --&gt; G[積極的保温]
-    F -- 正常体温時 --&gt; H[保温継続検討]
+    D --&gt;|項目1| E[SpO2 継続測定]
+    D --&gt;|項目2| F[体温管理]
+    F --&gt;|低体温時| G[積極的保温]
+    F --&gt;|正常体温時| H[保温継続検討]
     E --&gt; I[安定した覚醒状態まで]
     G --&gt; I
     H --&gt; I
@@ -223,7 +223,6 @@ graph TD
 </div>
 </div>
 </div></div>
-
 <div id="owner-tips">
 <div class="accordion">
 <button class="accordion-trigger">
