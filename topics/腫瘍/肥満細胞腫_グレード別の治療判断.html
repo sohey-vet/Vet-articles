@@ -1,115 +1,106 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description"
-        content="肥満細胞腫（MCT）のグレード別治療判断。Kiupel Low Grade：側方2cm+筋膜1層で切除。High Grade：Vinblastine+Prednisolone、Toceranib 2.5-2.75mg/kg MWF。脱顆粒対策にH1/H2ブロック。">
-    <title>肥満細胞腫 ─ グレード別の治療判断 | VetEvidence</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="肥満細胞腫（MCT）のグレード別治療判断。Kiupel Low Grade：側方2cm+筋膜1層で切除。High Grade：Vinblastine+Prednisolone、Toceranib 2.5-2.75mg/kg MWF。脱顆粒対策にH1/H2ブロック。" name="description"/>
+<title>肥満細胞腫 ─ グレード別の治療判断 | VetEvidence</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-    <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button class="hamburger-btn"
-            aria-label="メニュー"><span></span><span></span><span></span></button></nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
+<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
     graph TD
-        A[皮膚腫瘤 MCT疑い] --> B{診断: FNA 細胞診};
-        B --> C{MCT確定?};
-        C -- Yes --> D[組織生検: Kiupelグレーディング];
-        C -- No --> Z[他疾患鑑別へ];
+        A[皮膚腫瘤 MCT疑い] --&gt; B{診断: FNA 細胞診};
+        B --&gt; C{MCT確定?};
+        C -- Yes --&gt; D[組織生検: Kiupelグレーディング];
+        C -- No --&gt; Z[他疾患鑑別へ];
 
-        D --> D1{Kiupel Low Grade};
-        D --> D2{Kiupel High Grade};
+        D --&gt; D1{Kiupel Low Grade};
+        D --&gt; D2{Kiupel High Grade};
 
-        D1 --> E[治療: 外科切除];
-        E -- マージン: 側方2cm 筋膜1層 --> E_margin[切除範囲];
-        E --> F{センチネルリンパ節評価};
-        F -- 転移なし --> G[術後経過観察];
-        F -- 転移あり --> H[全身療法へ移行];
+        D1 --&gt; E[治療: 外科切除];
+        E -- マージン: 側方2cm 筋膜1層 --&gt; E_margin[切除範囲];
+        E --&gt; F{センチネルリンパ節評価};
+        F -- 転移なし --&gt; G[術後経過観察];
+        F -- 転移あり --&gt; H[全身療法へ移行];
 
-        D2 --> I[治療: 外科切除];
-        I --> J[術後全身療法];
-        J -- c-kit変異陽性考慮 --> K[Toceranib];
-        J -- 他の選択肢 --> L[Vinblastine Prednisolone];
+        D2 --&gt; I[治療: 外科切除];
+        I --&gt; J[術後全身療法];
+        J -- c-kit変異陽性考慮 --&gt; K[Toceranib];
+        J -- 他の選択肢 --&gt; L[Vinblastine Prednisolone];
 
-        H --> J;
+        H --&gt; J;
 
         M[脱顆粒対策];
-        A --> M;
-        E --> M;
-        I --> M;
+        A --&gt; M;
+        E --&gt; M;
+        I --&gt; M;
 
-        M -- H1ブロッカー --> M1[ジフェンヒドラミン];
-        M -- H2ブロッカー --> M2[ファモチジン];
+        M -- H1ブロッカー --&gt; M1[ジフェンヒドラミン];
+        M -- H2ブロッカー --&gt; M2[ファモチジン];
 </pre>
-
 </a><a href="#grade-table">🔬
             グレード比較</a><a href="#refs">📚 論文</a>
-    </aside>
-    <div class="page-container">
-        <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
-            <div class="tags" style="margin-bottom:8px;"><span class="tag tag--primary">腫瘍</span><span
-                    class="tag tag--warning">外科</span></div>
-            <h1 style="font-size:1.3rem;">🔬 肥満細胞腫 ─ グレード別の治療判断</h1>
-            <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+<div class="tags" style="margin-bottom:8px;"><span class="tag tag--primary">腫瘍</span><span class="tag tag--warning">外科</span><span class="tag tag--primary">肥満細胞腫</span><span class="tag tag--primary">犬猫共通</span></div>
+<h1 style="font-size:1.3rem;">🔬 肥満細胞腫 ─ グレード別の治療判断</h1>
+<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">
                 犬の皮膚腫瘤を「たぶん脂肪腫だろう」と経過観察していたら ──
                 実はMCTだった。PatnaikからKiupelへ、マージン3cmから2cmへ、そしてToceranib（Palladia）の分子標的薬時代。グレードと犬種に応じた正しい判断を。</p>
-            <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-            </div>
-        </header>
-        <div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input type="checkbox"
-                    id="content-mode-toggle" checked><span class="toggle-slider"></span></label><span
-                class="mode-label">👑 すべて表示</span></div>
-
-        <!-- 結論 -->
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論
+<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
+<!-- 結論 -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
     graph TD
-        A[皮膚腫瘤 MCT疑い] --> B{診断: FNA 細胞診};
-        B --> C{MCT確定?};
-        C -- Yes --> D[組織生検: Kiupelグレーディング];
-        C -- No --> Z[他疾患鑑別へ];
+        A[皮膚腫瘤 MCT疑い] --&gt; B{診断: FNA 細胞診};
+        B --&gt; C{MCT確定?};
+        C -- Yes --&gt; D[組織生検: Kiupelグレーディング];
+        C -- No --&gt; Z[他疾患鑑別へ];
 
-        D --> D1{Kiupel Low Grade};
-        D --> D2{Kiupel High Grade};
+        D --&gt; D1{Kiupel Low Grade};
+        D --&gt; D2{Kiupel High Grade};
 
-        D1 --> E[治療: 外科切除];
-        E -- マージン: 側方2cm 筋膜1層 --> E_margin[切除範囲];
-        E --> F{センチネルリンパ節評価};
-        F -- 転移なし --> G[術後経過観察];
-        F -- 転移あり --> H[全身療法へ移行];
+        D1 --&gt; E[治療: 外科切除];
+        E -- マージン: 側方2cm 筋膜1層 --&gt; E_margin[切除範囲];
+        E --&gt; F{センチネルリンパ節評価};
+        F -- 転移なし --&gt; G[術後経過観察];
+        F -- 転移あり --&gt; H[全身療法へ移行];
 
-        D2 --> I[治療: 外科切除];
-        I --> J[術後全身療法];
-        J -- c-kit変異陽性考慮 --> K[Toceranib];
-        J -- 他の選択肢 --> L[Vinblastine Prednisolone];
+        D2 --&gt; I[治療: 外科切除];
+        I --&gt; J[術後全身療法];
+        J -- c-kit変異陽性考慮 --&gt; K[Toceranib];
+        J -- 他の選択肢 --&gt; L[Vinblastine Prednisolone];
 
-        H --> J;
+        H --&gt; J;
 
         M[脱顆粒対策];
-        A --> M;
-        E --> M;
-        I --> M;
+        A --&gt; M;
+        E --&gt; M;
+        I --&gt; M;
 
-        M -- H1ブロッカー --> M1[ジフェンヒドラミン];
-        M -- H2ブロッカー --> M2[ファモチジン];
+        M -- H1ブロッカー --&gt; M1[ジフェンヒドラミン];
+        M -- H2ブロッカー --&gt; M2[ファモチジン];
 </pre>
-
 </h3>
-                <p style="font-size:0.88rem;">
+<p style="font-size:0.88rem;">
                     犬の肥満細胞腫（MCT）は皮膚腫瘍の中で最も頻度が高く、グレーディングシステムの選択が予後予測と治療方針を左右する。現在は<strong>Kiupel
                         2段階分類</strong>が推奨：<strong>Low Grade</strong>（中央生存期間 &gt; 2年）と<strong>High Grade</strong>（中央生存期間
                     &lt; 4ヶ月）。外科的切除では、長径1cm以下のLow Gradeに対し<strong>側方マージン2cm +
@@ -119,247 +110,226 @@
                         Prednisolone</strong>のアジュバント化学療法。脱顆粒による消化器潰瘍・アナフィラキシー予防として<strong>H1ブロッカー（ジフェンヒドラミン 2-4 mg/kg
                         q12h）＋ H2ブロッカー（ファモチジン 0.5-1.0 mg/kg q12-24h）</strong>を周術期に開始する。
                 </p>
-            </div>
-        </div>
-
-        <!-- グレード比較テーブル -->
-        <div class="free-content" id="grade-table">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">🔬 グレーディングの比較</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:0;min-width:650px;">
-                        <thead>
-                            <tr>
-                                <th>分類</th>
-                                <th>グレード</th>
-                                <th>予後</th>
-                                <th>治療方針</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="3"><strong>Patnaik<br>(3段階)</strong></td>
-                                <td>Grade 1（高分化）</td>
-                                <td>転移率 &lt;10%</td>
-                                <td>手術のみで治癒可能</td>
-                            </tr>
-                            <tr>
-                                <td>Grade 2（中分化）</td>
-                                <td>予後のばらつき大</td>
-                                <td>→ Kiupelで再評価</td>
-                            </tr>
-                            <tr>
-                                <td>Grade 3（低分化）</td>
-                                <td>転移率高・予後不良</td>
-                                <td>手術 + 全身療法</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><strong>Kiupel<br>(2段階)</strong></td>
-                                <td><strong>Low Grade</strong></td>
-                                <td>MST &gt; 2年</td>
-                                <td>適切な切除で良好</td>
-                            </tr>
-                            <tr>
-                                <td><strong>High Grade</strong></td>
-                                <td>MST &lt; 4ヶ月</td>
-                                <td>手術 + 化学療法/TKI</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
+</div>
+</div>
+<!-- グレード比較テーブル -->
+<div class="free-content" id="grade-table">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">🔬 グレーディングの比較</h3>
+<div style="overflow-x:auto;">
+<table class="comparison-table" style="margin:0;min-width:650px;">
+<thead>
+<tr>
+<th>分類</th>
+<th>グレード</th>
+<th>予後</th>
+<th>治療方針</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="3"><strong>Patnaik<br/>(3段階)</strong></td>
+<td>Grade 1（高分化）</td>
+<td>転移率 &lt;10%</td>
+<td>手術のみで治癒可能</td>
+</tr>
+<tr>
+<td>Grade 2（中分化）</td>
+<td>予後のばらつき大</td>
+<td>→ Kiupelで再評価</td>
+</tr>
+<tr>
+<td>Grade 3（低分化）</td>
+<td>転移率高・予後不良</td>
+<td>手術 + 全身療法</td>
+</tr>
+<tr>
+<td rowspan="2"><strong>Kiupel<br/>(2段階)</strong></td>
+<td><strong>Low Grade</strong></td>
+<td>MST &gt; 2年</td>
+<td>適切な切除で良好</td>
+</tr>
+<tr>
+<td><strong>High Grade</strong></td>
+<td>MST &lt; 4ヶ月</td>
+<td>手術 + 化学療法/TKI</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
                     MST = Median Survival Time（中央生存期間）。TKI = Tyrosine Kinase Inhibitor。
                 </p>
-            </div>
-        </div>
-
-        <!-- 旧 vs 新 -->
-        <div class="free-content">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
-                <table class="comparison-table" style="margin:0;">
-                    <thead>
-                        <tr>
-                            <th>❌ 旧来</th>
-                            <th>✅ 最新</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>MCTは無条件で側方3cmマージンで切除</td>
-                            <td>Low Grade（長径1cm以下）は<strong>側方2cm + 深部筋膜1層</strong>で十分なエビデンスあり</td>
-                        </tr>
-                        <tr>
-                            <td>PatnaikのGrade 2は「様子見」で良い</td>
-                            <td><strong>Kiupelの2段階分類で再評価</strong>し、High Gradeならアジュバント療法が必要</td>
-                        </tr>
-                        <tr>
-                            <td>化学療法はMCTには効かない</td>
-                            <td>c-kit変異陽性例に<strong>Toceranib（分子標的薬）</strong>が著効。標的のある時代へ</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <hr class="section-divider">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-            <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
-            <div><button onclick="toggleAllAccordions(true)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button
-                    onclick="toggleAllAccordions(false)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
-            </div>
-        </div>
-
-        <!-- アコーディオン: 全身療法 -->
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">💊</span><span>全身療法 ─ 分子標的薬と化学療法</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <h4>分子標的薬（TKI）</h4>
-                    <table class="comparison-table" style="margin:0 0 12px;">
-                        <thead>
-                            <tr>
-                                <th>薬剤</th>
-                                <th>用量</th>
-                                <th>副作用</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Toceranib (Palladia)</strong></td>
-                                <td>2.5-2.75 mg/kg PO<br><strong>月・水・金（MWF）</strong></td>
-                                <td>下痢・血便、好中球減少、蛋白尿</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <ul>
-                        <li><strong>c-kit遺伝子変異</strong>（特にExon 11 ITD）を持つHigh Grade MCTで著効が報告されている</li>
-                        <li>投与開始後2週間ごとにCBC + 尿検査 + 体重チェック</li>
-                        <li>蛋白尿（UPC上昇）が進行する場合はACE阻害薬の追加または用量調整</li>
-                    </ul>
-                    <h4>化学療法（Vinblastine + Prednisolone）</h4>
-                    <ul>
-                        <li>High Grade例の術後アジュバント療法として</li>
-                        <li><strong>Vinblastine 2.0 mg/m² IV</strong>（1〜4週目は毎週、以後は隔週 × 4回）</li>
-                        <li>Prednisolone 2 mg/kg/day → 漸減</li>
-                        <li>骨髄抑制（好中球減少）のモニタリングが必須</li>
-                    </ul>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
-            </div>
-        </div>
-
-        <!-- アコーディオン: 脱顆粒対策 -->
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">⚠️</span><span>脱顆粒対策 ─ ヒスタミン放出を制御する</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <p>MCTはヒスタミン・ヘパリン・プロテアーゼなどを含む顆粒を大量に保持しており、<strong>触診や手術操作で脱顆粒</strong>が起きると局所の浮腫・潰瘍、消化器潰瘍、さらには低血圧ショック（ダリエ徴候）を引き起こす。
+</div>
+</div>
+<!-- 旧 vs 新 -->
+<div class="free-content">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<table class="comparison-table" style="margin:0;">
+<thead>
+<tr>
+<th>❌ 旧来</th>
+<th>✅ 最新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCTは無条件で側方3cmマージンで切除</td>
+<td>Low Grade（長径1cm以下）は<strong>側方2cm + 深部筋膜1層</strong>で十分なエビデンスあり</td>
+</tr>
+<tr>
+<td>PatnaikのGrade 2は「様子見」で良い</td>
+<td><strong>Kiupelの2段階分類で再評価</strong>し、High Gradeならアジュバント療法が必要</td>
+</tr>
+<tr>
+<td>化学療法はMCTには効かない</td>
+<td>c-kit変異陽性例に<strong>Toceranib（分子標的薬）</strong>が著効。標的のある時代へ</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="section-divider"/>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
+</div>
+</div>
+<!-- アコーディオン: 全身療法 -->
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">💊</span><span>全身療法 ─ 分子標的薬と化学療法</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>分子標的薬（TKI）</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>薬剤</th>
+<th>用量</th>
+<th>副作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Toceranib (Palladia)</strong></td>
+<td>2.5-2.75 mg/kg PO<br/><strong>月・水・金（MWF）</strong></td>
+<td>下痢・血便、好中球減少、蛋白尿</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>c-kit遺伝子変異</strong>（特にExon 11 ITD）を持つHigh Grade MCTで著効が報告されている</li>
+<li>投与開始後2週間ごとにCBC + 尿検査 + 体重チェック</li>
+<li>蛋白尿（UPC上昇）が進行する場合はACE阻害薬の追加または用量調整</li>
+</ul>
+<h4>化学療法（Vinblastine + Prednisolone）</h4>
+<ul>
+<li>High Grade例の術後アジュバント療法として</li>
+<li><strong>Vinblastine 2.0 mg/m² IV</strong>（1〜4週目は毎週、以後は隔週 × 4回）</li>
+<li>Prednisolone 2 mg/kg/day → 漸減</li>
+<li>骨髄抑制（好中球減少）のモニタリングが必須</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+<!-- アコーディオン: 脱顆粒対策 -->
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">⚠️</span><span>脱顆粒対策 ─ ヒスタミン放出を制御する</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>MCTはヒスタミン・ヘパリン・プロテアーゼなどを含む顆粒を大量に保持しており、<strong>触診や手術操作で脱顆粒</strong>が起きると局所の浮腫・潰瘍、消化器潰瘍、さらには低血圧ショック（ダリエ徴候）を引き起こす。
                     </p>
-                    <table class="comparison-table" style="margin:12px 0;">
-                        <thead>
-                            <tr>
-                                <th>薬剤</th>
-                                <th>用量</th>
-                                <th>目的</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>ジフェンヒドラミン（H1）</strong></td>
-                                <td>2-4 mg/kg PO q12h</td>
-                                <td>皮膚反応・浮腫の抑制</td>
-                            </tr>
-                            <tr>
-                                <td><strong>ファモチジン（H2）</strong></td>
-                                <td>0.5-1.0 mg/kg PO q12-24h</td>
-                                <td>胃酸分泌抑制 → 潰瘍予防</td>
-                            </tr>
-                            <tr>
-                                <td><strong>オメプラゾール（PPI）</strong></td>
-                                <td>1 mg/kg PO q12-24h</td>
-                                <td>H2ブロッカーの代替・重度例</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="clinical-tip">
-                        <h4>💡 臨床Tips</h4>
-                        <ul>
-                            <li>手術前から<strong>H1 + H2ブロッカーの併用を開始</strong>しておくことが望ましい</li>
-                            <li>MCTは「触るたびに腫れたり縮んだりする」（ダリエ徴候）── これはFNA前に飼い主に説明しておくこと</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
-            </div>
-        </div>
-
-        <!-- アコーディオン: 飼い主説明 -->
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <div class="owner-tip" style="margin-top:0;">
-                        <h4>「しこりを取ったのに、なぜもっと大きく切らないといけなかったの？」</h4>
-                        <div class="speech-bubble">
+<table class="comparison-table" style="margin:12px 0;">
+<thead>
+<tr>
+<th>薬剤</th>
+<th>用量</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ジフェンヒドラミン（H1）</strong></td>
+<td>2-4 mg/kg PO q12h</td>
+<td>皮膚反応・浮腫の抑制</td>
+</tr>
+<tr>
+<td><strong>ファモチジン（H2）</strong></td>
+<td>0.5-1.0 mg/kg PO q12-24h</td>
+<td>胃酸分泌抑制 → 潰瘍予防</td>
+</tr>
+<tr>
+<td><strong>オメプラゾール（PPI）</strong></td>
+<td>1 mg/kg PO q12-24h</td>
+<td>H2ブロッカーの代替・重度例</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💡 臨床Tips</h4>
+<ul>
+<li>手術前から<strong>H1 + H2ブロッカーの併用を開始</strong>しておくことが望ましい</li>
+<li>MCTは「触るたびに腫れたり縮んだりする」（ダリエ徴候）── これはFNA前に飼い主に説明しておくこと</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+<!-- アコーディオン: 飼い主説明 -->
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>「しこりを取ったのに、なぜもっと大きく切らないといけなかったの？」</h4>
+<div class="speech-bubble">
                             肥満細胞腫は<strong>目に見えている部分よりも広く</strong>、周りの組織に「根っこ」のように広がっていることがあります。再発を防ぐために、腫瘍の周囲を十分な余裕を持って切除する必要があるのです。
                         </div>
-                    </div>
-                    <div class="owner-tip">
-                        <h4>「抗がん剤は副作用がきついイメージがあって…」</h4>
-                        <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>「抗がん剤は副作用がきついイメージがあって…」</h4>
+<div class="speech-bubble">
                             動物の抗がん剤治療は、人間ほど強い副作用を出さないことを目標にしています。最近では<strong>分子標的薬（飲み薬）</strong>という新しいタイプのお薬があり、がん細胞を狙い撃ちにするため、従来の抗がん剤より副作用が少ない場合があります。
                         </div>
-                    </div>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-            </div>
-        </div>
-
-        <!-- 参照論文 -->
-        <div class="accordion" id="refs"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body">
-                    <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                        <li>Kiupel M et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+<!-- 参照論文 -->
+<div class="accordion" id="refs"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Kiupel M et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast
                             cell tumors to more accurately predict biological behavior. <em>Vet Pathol</em>
                             2011;48(1):147-155.</li>
-                        <li>Fulcher RP et al. Evaluation of a 2-centimeter lateral surgical margin for excision of
+<li>Fulcher RP et al. Evaluation of a 2-centimeter lateral surgical margin for excision of
                             grade I and grade II cutaneous mast cell tumors in dogs. <em>J Am Vet Med Assoc</em>
                             2006;228(2):210-215.</li>
-                        <li>London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral
+<li>London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral
                             toceranib phosphate (SU11654), a receptor tyrosine kinase inhibitor, for the treatment of
                             dogs with recurrent (either local or distant) mast cell tumor following surgical excision.
                             <em>Clin Cancer Res</em> 2009;15(11):3856-3865.
                         </li>
-                        <li>Thamm DH et al. Outcome and prognostic factors following adjuvant prednisone/vinblastine
+<li>Thamm DH et al. Outcome and prognostic factors following adjuvant prednisone/vinblastine
                             chemotherapy for high-risk canine mast cell tumour. <em>J Vet Intern Med</em>
                             2006;20(4):922-928.</li>
-                        <li>Withrow SJ, Vail DM, Page RL. Mast cell tumors. In: <em>Withrow and MacEwen's Small Animal
+<li>Withrow SJ, Vail DM, Page RL. Mast cell tumors. In: <em>Withrow and MacEwen's Small Animal
                                 Clinical Oncology</em>. 6th ed. 2020.</li>
-                        <li>Patnaik AK et al. Canine cutaneous mast cell tumor: morphologic grading and survival time
+<li>Patnaik AK et al. Canine cutaneous mast cell tumor: morphologic grading and survival time
                             in 83 dogs. <em>Vet Pathol</em> 1984;21(5):469-474.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-
-        <footer class="page-footer" style="margin-top:var(--space-xl);">
-            <p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+</ol>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top:var(--space-xl);">
+<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js"></script>
-
+</footer>
+</div>
+<script src="../../assets/script.js"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
-
 </html>

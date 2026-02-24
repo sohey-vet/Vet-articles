@@ -1,384 +1,366 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="猫のFLUTD ─ 尿道閉塞 vs 非閉塞の対応。FIC・結石・UTIの鑑別と、閉塞の緊急解除プロトコル。">
-    <title>FLUTD ─ 閉塞 vs 非閉塞の対応 | VetEvidence</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="猫のFLUTD ─ 尿道閉塞 vs 非閉塞の対応。FIC・結石・UTIの鑑別と、閉塞の緊急解除プロトコル。" name="description"/>
+<title>FLUTD ─ 閉塞 vs 非閉塞の対応 | VetEvidence</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button class="hamburger-btn" aria-label="メニュー"><span></span><span></span><span></span></button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#conclusion">🎯 結論
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[FLUTD疑い 雄猫] --> B{尿道閉塞の可能性}
-    B --> C[Step1 トリアージ 安定化]
-    C --> D{徐脈 高K血症所見ありか}
-    D -- Yes --> E[Step2 高K血症 緊急是正]
-    E --> F[Step3 尿道カテーテル挿入]
-    D -- No --> F
-    F --> G{閉塞解除成功したか}
-    G -- Yes --> H[カテーテル留置 モニタリング]
-    G -- No --> I[再試行 困難なら外科相談]
-    H --> J[カテーテル抜去]
-    J --> K[自力排尿確認]
-    K --> L[退院可能]
+    A[FLUTD疑い 雄猫] --&gt; B{尿道閉塞の可能性}
+    B --&gt; C[Step1 トリアージ 安定化]
+    C --&gt; D{徐脈 高K血症所見ありか}
+    D -- Yes --&gt; E[Step2 高K血症 緊急是正]
+    E --&gt; F[Step3 尿道カテーテル挿入]
+    D -- No --&gt; F
+    F --&gt; G{閉塞解除成功したか}
+    G -- Yes --&gt; H[カテーテル留置 モニタリング]
+    G -- No --&gt; I[再試行 困難なら外科相談]
+    H --&gt; J[カテーテル抜去]
+    J --&gt; K[自力排尿確認]
+    K --&gt; L[退院可能]
 </pre>
-
 </a>
-        <a href="#action-table">🗺️ 閉塞vs非閉塞</a>
-        <a href="#obstruction">🚨 閉塞の救急対応</a>
-        <a href="#fic">🧠 特発性膀胱炎(FIC)</a>
-        <a href="#non-obstruction">📋 非閉塞の管理</a>
-        <a href="#owner-tips">🗣️ 飼い主説明</a>
-        <a href="#refs">📚 参照論文</a>
-    </aside>
-
-    <div class="page-container">
-
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <span class="tag tag--primary">猫</span>
-                <span class="tag tag--danger">泌尿器</span>
-                <span class="tag tag--warning">FIC</span>
-            </div>
-            <h1 style="font-size: 1.3rem;">🐱 FLUTD ─ 閉塞 vs 非閉塞の対応</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+<a href="#action-table">🗺️ 閉塞vs非閉塞</a>
+<a href="#obstruction">🚨 閉塞の救急対応</a>
+<a href="#fic">🧠 特発性膀胱炎(FIC)</a>
+<a href="#non-obstruction">📋 非閉塞の管理</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<span class="tag tag--primary">猫</span>
+<span class="tag tag--danger">泌尿器</span>
+<span class="tag tag--warning">FIC</span>
+<span class="tag tag--primary">腎泌尿器</span><span class="tag tag--primary">FLUTD</span><span class="tag tag--primary">尿道閉塞</span></div>
+<h1 style="font-size: 1.3rem;">🐱 FLUTD ─ 閉塞 vs 非閉塞の対応</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
                 猫の下部尿路疾患（FLUTD）の最大の罠は「閉塞の見逃し」。
                 雄猫の頻尿は<strong>24〜48時間で致死的</strong>になりうる。
                 非閉塞の最多原因は特発性膀胱炎（FIC）─ ストレス管理が治療の核心。
             </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文 7本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-            </div>
-        </header>
-
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="content-mode-toggle" checked>
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-
-        <!-- FREE ZONE -->
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文 7本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- FREE ZONE -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[FLUTD疑い 雄猫] --> B{尿道閉塞の可能性}
-    B --> C[Step1 トリアージ 安定化]
-    C --> D{徐脈 高K血症所見ありか}
-    D -- Yes --> E[Step2 高K血症 緊急是正]
-    E --> F[Step3 尿道カテーテル挿入]
-    D -- No --> F
-    F --> G{閉塞解除成功したか}
-    G -- Yes --> H[カテーテル留置 モニタリング]
-    G -- No --> I[再試行 困難なら外科相談]
-    H --> J[カテーテル抜去]
-    J --> K[自力排尿確認]
-    K --> L[退院可能]
+    A[FLUTD疑い 雄猫] --&gt; B{尿道閉塞の可能性}
+    B --&gt; C[Step1 トリアージ 安定化]
+    C --&gt; D{徐脈 高K血症所見ありか}
+    D -- Yes --&gt; E[Step2 高K血症 緊急是正]
+    E --&gt; F[Step3 尿道カテーテル挿入]
+    D -- No --&gt; F
+    F --&gt; G{閉塞解除成功したか}
+    G -- Yes --&gt; H[カテーテル留置 モニタリング]
+    G -- No --&gt; I[再試行 困難なら外科相談]
+    H --&gt; J[カテーテル抜去]
+    J --&gt; K[自力排尿確認]
+    K --&gt; L[退院可能]
 </pre>
-
 </h3>
-                <p style="font-size:0.88rem;">
+<p style="font-size:0.88rem;">
                     FLUTDの原因は<strong>特発性膀胱炎（FIC）55〜69%、尿石症15〜21%、尿路感染症1〜8%</strong>（若齢猫）。
                     <strong>尿道閉塞は雄猫の緊急疾患</strong>で、高K血症による致死的不整脈（徐脈→心停止）を引き起こす。
                     治療の第一優先は<strong>高K血症の是正</strong>（グルコン酸Ca、レギュラーインスリン＋ブドウ糖）→ <strong>尿道カテーテルで閉塞解除</strong>。
                     非閉塞FICは<strong>環境修正（MEMO）と水分摂取量の増加</strong>が最も重要な治療。
                     薬物療法（プラゾシン等）はエビデンスが限られ、あくまで補助的。
                 </p>
-            </div>
-        </div>
-
-        <div class="free-content" id="action-table">
-            <div class="card">
-                <h3 style="font-size: 0.95rem;">⚡ 昔の常識 vs 今のエビデンス</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:12px 0 0;">
-                        <thead>
-                            <tr>
-                                <th>❌ 旧来の常識</th>
-                                <th>✅ 最新のエビデンス</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>猫の膀胱炎 = 細菌感染 → 抗菌薬</td>
-                                <td>10歳未満の猫では<strong>UTIは稀</strong>。大半はFIC（無菌性）。抗菌薬は細菌培養で証明された場合のみ</td>
-                            </tr>
-                            <tr>
-                                <td>閉塞解除後はすぐ退院OK</td>
-                                <td>閉塞解除後<strong>24〜72時間は入院</strong>でモニタリング。再閉塞率は約20〜40%</td>
-                            </tr>
-                            <tr>
-                                <td>FICはフードだけで管理</td>
-                                <td><strong>環境修正（MEMO）</strong>が最もエビデンスのある介入。フードの変更は水分摂取量増加が主目的</td>
-                            </tr>
-                            <tr>
-                                <td>GAGサプリは効果的</td>
-                                <td>RCTでの有効性は<strong>示されていない</strong>。プラセボと有意差なし</td>
-                            </tr>
-                            <tr>
-                                <td>再閉塞を繰り返したら会陰尿道瘻術</td>
-                                <td>PUは<strong>最終手段</strong>であり有効だが、術後UTIのリスクが永続的に上昇する点を説明する必要がある</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- PREMIUM ZONE -->
-
-        <div id="obstruction">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🚨</span><span>尿道閉塞の救急対応 ─
+</div>
+</div>
+<div class="free-content" id="action-table">
+<div class="card">
+<h3 style="font-size: 0.95rem;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<div style="overflow-x:auto;">
+<table class="comparison-table" style="margin:12px 0 0;">
+<thead>
+<tr>
+<th>❌ 旧来の常識</th>
+<th>✅ 最新のエビデンス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>猫の膀胱炎 = 細菌感染 → 抗菌薬</td>
+<td>10歳未満の猫では<strong>UTIは稀</strong>。大半はFIC（無菌性）。抗菌薬は細菌培養で証明された場合のみ</td>
+</tr>
+<tr>
+<td>閉塞解除後はすぐ退院OK</td>
+<td>閉塞解除後<strong>24〜72時間は入院</strong>でモニタリング。再閉塞率は約20〜40%</td>
+</tr>
+<tr>
+<td>FICはフードだけで管理</td>
+<td><strong>環境修正（MEMO）</strong>が最もエビデンスのある介入。フードの変更は水分摂取量増加が主目的</td>
+</tr>
+<tr>
+<td>GAGサプリは効果的</td>
+<td>RCTでの有効性は<strong>示されていない</strong>。プラセボと有意差なし</td>
+</tr>
+<tr>
+<td>再閉塞を繰り返したら会陰尿道瘻術</td>
+<td>PUは<strong>最終手段</strong>であり有効だが、術後UTIのリスクが永続的に上昇する点を説明する必要がある</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- PREMIUM ZONE -->
+<div id="obstruction">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🚨</span><span>尿道閉塞の救急対応 ─
                             ステップバイステップ</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>Step 1: トリアージと安定化</h4>
-                        <ul>
-                            <li><strong>バイタル評価</strong>: 徐脈（高K血症）がないか確認。HR＜120/min は危険信号</li>
-                            <li><strong>心電図</strong>: テント状T波、QRS幅拡大、P波消失 → 高K血症を示唆</li>
-                            <li>即座に<strong>IV アクセス確保</strong>＋採血（BUN、Cr、K、Ca、血糖）</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">Step 2: 高K血症の緊急是正</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>治療</th>
-                                    <th>用量</th>
-                                    <th>作用機序</th>
-                                    <th>効果発現</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>グルコン酸Ca IV</strong><br>（心筋保護）</td>
-                                    <td>10% 溶液を 0.5〜1.5 mL/kg<br>5〜10分かけてゆっくり</td>
-                                    <td>膜電位を安定化（Kは下がらない）</td>
-                                    <td>即効性（1〜5分）</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>レギュラーインスリン<br>＋ブドウ糖</strong></td>
-                                    <td>インスリン 0.1〜0.25 U/kg IV<br>＋ブドウ糖 1.5〜2 g/単位（インスリン1単位あたり1.5〜2gのブドウ糖）</td>
-                                    <td>Kを細胞内に移動</td>
-                                    <td>15〜30分</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>生理食塩水（0.9% NaCl）</strong></td>
-                                    <td>10〜20 mL/kg/h で開始</td>
-                                    <td>Kの希釈＋排泄促進</td>
-                                    <td>数時間</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <h4 style="margin-top:12px;">Step 3: 尿道カテーテル挿入</h4>
-                        <ul>
-                            <li>鎮静: <strong>ブトルファノール 0.2 mg/kg + アルファキサロン 1〜2 mg/kg IV</strong> など</li>
-                            <li>硬いポリプロピレン製（トムキャットカテーテル等）で閉塞を解除し、その後に柔らかいカテーテル（赤ゴムやシリコン製スリッパリーサム等）を留置する</li>
-                            <li>無菌的に挿入。生理食塩水で<strong>逆行性洗浄</strong>しながら閉塞を解除</li>
-                            <li>無理な力での押し込みは<strong>尿道損傷のリスク</strong> → 抵抗があれば洗浄を繰り返す</li>
-                            <li>閉塞解除後はカテーテルを留置（<strong>最低24時間</strong>）。閉鎖式回収システムに接続</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">閉塞解除後のモニタリング</h4>
-                        <ul>
-                            <li><strong>ポスト閉塞利尿</strong>: 解除後数時間は大量の尿が出る → 輸液速度を調整して脱水に注意</li>
-                            <li>BUN/Cr/Kを閉塞解除後6〜12時間で再検査</li>
-                            <li>カテーテル抜去後6〜12時間の間に<strong>自力排尿を確認</strong>してから退院</li>
-                        </ul>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>閉塞対応の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <div id="fic">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🧠</span><span>特発性膀胱炎（FIC）─
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>Step 1: トリアージと安定化</h4>
+<ul>
+<li><strong>バイタル評価</strong>: 徐脈（高K血症）がないか確認。HR＜120/min は危険信号</li>
+<li><strong>心電図</strong>: テント状T波、QRS幅拡大、P波消失 → 高K血症を示唆</li>
+<li>即座に<strong>IV アクセス確保</strong>＋採血（BUN、Cr、K、Ca、血糖）</li>
+</ul>
+<h4 style="margin-top:12px;">Step 2: 高K血症の緊急是正</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>治療</th>
+<th>用量</th>
+<th>作用機序</th>
+<th>効果発現</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>グルコン酸Ca IV</strong><br/>（心筋保護）</td>
+<td>10% 溶液を 0.5〜1.5 mL/kg<br/>5〜10分かけてゆっくり</td>
+<td>膜電位を安定化（Kは下がらない）</td>
+<td>即効性（1〜5分）</td>
+</tr>
+<tr>
+<td><strong>レギュラーインスリン<br/>＋ブドウ糖</strong></td>
+<td>インスリン 0.1〜0.25 U/kg IV<br/>＋ブドウ糖 1.5〜2 g/単位（インスリン1単位あたり1.5〜2gのブドウ糖）</td>
+<td>Kを細胞内に移動</td>
+<td>15〜30分</td>
+</tr>
+<tr>
+<td><strong>生理食塩水（0.9% NaCl）</strong></td>
+<td>10〜20 mL/kg/h で開始</td>
+<td>Kの希釈＋排泄促進</td>
+<td>数時間</td>
+</tr>
+</tbody>
+</table>
+<h4 style="margin-top:12px;">Step 3: 尿道カテーテル挿入</h4>
+<ul>
+<li>鎮静: <strong>ブトルファノール 0.2 mg/kg + アルファキサロン 1〜2 mg/kg IV</strong> など</li>
+<li>硬いポリプロピレン製（トムキャットカテーテル等）で閉塞を解除し、その後に柔らかいカテーテル（赤ゴムやシリコン製スリッパリーサム等）を留置する</li>
+<li>無菌的に挿入。生理食塩水で<strong>逆行性洗浄</strong>しながら閉塞を解除</li>
+<li>無理な力での押し込みは<strong>尿道損傷のリスク</strong> → 抵抗があれば洗浄を繰り返す</li>
+<li>閉塞解除後はカテーテルを留置（<strong>最低24時間</strong>）。閉鎖式回収システムに接続</li>
+</ul>
+<h4 style="margin-top:12px;">閉塞解除後のモニタリング</h4>
+<ul>
+<li><strong>ポスト閉塞利尿</strong>: 解除後数時間は大量の尿が出る → 輸液速度を調整して脱水に注意</li>
+<li>BUN/Cr/Kを閉塞解除後6〜12時間で再検査</li>
+<li>カテーテル抜去後6〜12時間の間に<strong>自力排尿を確認</strong>してから退院</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>閉塞対応の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="fic">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🧠</span><span>特発性膀胱炎（FIC）─
                             環境修正(MEMO)がエビデンス</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>FICの病態 ─ ストレス関連疾患</h4>
-                        <ul>
-                            <li>FICは<strong>膀胱だけの病気ではない</strong> ─ 視床下部-下垂体-副腎軸の異常（ヒトの間質性膀胱炎と類似）</li>
-                            <li>GAG層の脆弱化 → 尿中刺激物質が膀胱壁を刺激 → 神経性炎症</li>
-                            <li>ストレス（環境変化、多頭飼育、トイレ環境の不備）が増悪因子</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">MEMO（多面的環境修正）─ 最優先の治療</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>カテゴリ</th>
-                                    <th>具体的推奨</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>トイレ</strong></td>
-                                    <td>猫の数＋1個以上。十分な大きさ。毎日の清掃。カバーなしが望ましい。猫砂はサラサラした鉱物系を好む猫が多い</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>水分</strong></td>
-                                    <td><strong>ウェットフードを主食にする</strong>（最も確実に水分摂取量を増やせる）。流れる水飲み器、複数箇所に設置</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>隠れ場所</strong></td>
-                                    <td>高い場所（キャットタワー）、段ボール箱、各猫に1つ以上の安全な場所</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>遊び</strong></td>
-                                    <td>毎日15分以上のインタラクティブな遊び。猫のハンティング行動を満たす</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>フェロモン</strong></td>
-                                    <td>Feliway® Classic（合成フェリニンF3）。RCTでのエビデンスは限定的だが有害性はなく試す価値あり</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips ─ 薬物療法の位置づけ</h4>
-                            <ul>
-                                <li><strong>プラゾシン</strong>（ミニプレス®）: 近年のエビデンスおよびISFM
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>FICの病態 ─ ストレス関連疾患</h4>
+<ul>
+<li>FICは<strong>膀胱だけの病気ではない</strong> ─ 視床下部-下垂体-副腎軸の異常（ヒトの間質性膀胱炎と類似）</li>
+<li>GAG層の脆弱化 → 尿中刺激物質が膀胱壁を刺激 → 神経性炎症</li>
+<li>ストレス（環境変化、多頭飼育、トイレ環境の不備）が増悪因子</li>
+</ul>
+<h4 style="margin-top:12px;">MEMO（多面的環境修正）─ 最優先の治療</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>カテゴリ</th>
+<th>具体的推奨</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>トイレ</strong></td>
+<td>猫の数＋1個以上。十分な大きさ。毎日の清掃。カバーなしが望ましい。猫砂はサラサラした鉱物系を好む猫が多い</td>
+</tr>
+<tr>
+<td><strong>水分</strong></td>
+<td><strong>ウェットフードを主食にする</strong>（最も確実に水分摂取量を増やせる）。流れる水飲み器、複数箇所に設置</td>
+</tr>
+<tr>
+<td><strong>隠れ場所</strong></td>
+<td>高い場所（キャットタワー）、段ボール箱、各猫に1つ以上の安全な場所</td>
+</tr>
+<tr>
+<td><strong>遊び</strong></td>
+<td>毎日15分以上のインタラクティブな遊び。猫のハンティング行動を満たす</td>
+</tr>
+<tr>
+<td><strong>フェロモン</strong></td>
+<td>Feliway® Classic（合成フェリニンF3）。RCTでのエビデンスは限定的だが有害性はなく試す価値あり</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💊 臨床Tips ─ 薬物療法の位置づけ</h4>
+<ul>
+<li><strong>プラゾシン</strong>（ミニプレス®）: 近年のエビデンスおよびISFM
                                     2025ガイドライン等において、再閉塞予防には<strong>有効ではなく</strong>（プラセボと同等）、副作用のリスクから<strong>現在は推奨されない</strong>
-                                </li>
-                                <li><strong>アミトリプチリン</strong>: RCTで有効性が示されていない。重症再発例のみ検討</li>
-                                <li><strong>鎮痛</strong>: ブプレノルフィンOTM 0.01〜0.02 mg/kg q8-12h。急性期の疼痛管理に</li>
-                                <li><strong>GAGサプリ</strong>: RCTでプラセボと有意差なし。飼い主の希望があれば使用してもよいが、過大な期待は持たせない</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>FICの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <div id="non-obstruction">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📋</span><span>非閉塞FLUTD ─ 原因別の管理</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>尿石症</h4>
-                        <ul>
-                            <li><strong>ストルバイト</strong>: 食事療法（尿酸性化＋Mg制限）で溶解可能。猫では約1ヶ月で溶解</li>
-                            <li><strong>シュウ酸Ca</strong>: 食事で溶解<strong>不可</strong>。外科的除去が必要</li>
-                            <li>結石分析には<strong>Minnesota Urolith Center</strong>（無料解析）が利用可能</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">細菌性UTI</h4>
-                        <ul>
-                            <li>若齢猫では稀（＜5%）。<strong>10歳以上、CKD、DM、ステロイド使用猫</strong>で頻度上昇</li>
-                            <li>尿培養＋感受性試験が必須（経験的抗菌薬はISCAIDガイドラインに準拠）</li>
-                            <li>単純性UTI: 抗菌薬3〜5日間（従来の7〜14日より短縮傾向）</li>
-                        </ul>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>非閉塞管理の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>何度もトイレに行くのにほとんど出ません…</h4>
-                            <div class="speech-bubble">
+</li>
+<li><strong>アミトリプチリン</strong>: RCTで有効性が示されていない。重症再発例のみ検討</li>
+<li><strong>鎮痛</strong>: ブプレノルフィンOTM 0.01〜0.02 mg/kg q8-12h。急性期の疼痛管理に</li>
+<li><strong>GAGサプリ</strong>: RCTでプラセボと有意差なし。飼い主の希望があれば使用してもよいが、過大な期待は持たせない</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>FICの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="non-obstruction">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>非閉塞FLUTD ─ 原因別の管理</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>尿石症</h4>
+<ul>
+<li><strong>ストルバイト</strong>: 食事療法（尿酸性化＋Mg制限）で溶解可能。猫では約1ヶ月で溶解</li>
+<li><strong>シュウ酸Ca</strong>: 食事で溶解<strong>不可</strong>。外科的除去が必要</li>
+<li>結石分析には<strong>Minnesota Urolith Center</strong>（無料解析）が利用可能</li>
+</ul>
+<h4 style="margin-top:12px;">細菌性UTI</h4>
+<ul>
+<li>若齢猫では稀（＜5%）。<strong>10歳以上、CKD、DM、ステロイド使用猫</strong>で頻度上昇</li>
+<li>尿培養＋感受性試験が必須（経験的抗菌薬はISCAIDガイドラインに準拠）</li>
+<li>単純性UTI: 抗菌薬3〜5日間（従来の7〜14日より短縮傾向）</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>非閉塞管理の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>何度もトイレに行くのにほとんど出ません…</h4>
+<div class="speech-bubble">
                                 これが<strong>雄猫であれば緊急です</strong>。尿が出せなくなると、老廃物やカリウムが体内に蓄積して
                                 24〜48時間以内に命に関わります。すぐに病院に来てください。
                                 雌猫でも膀胱炎の可能性がありますので受診をお勧めします。
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>何度も繰り返すのですが…</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>何度も繰り返すのですが…</h4>
+<div class="speech-bubble">
                                 猫の膀胱炎の多くは<strong>ストレスが関係する特発性膀胱炎</strong>です。
                                 お薬だけではなく、<strong>お家の環境を見直す</strong>ことが一番大切です。
                                 トイレの数や場所、ウェットフードへの切り替え、遊びの時間の確保など、
                                 具体的にアドバイスさせてください。
                             </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <li>Buffington CAT et al. Clinical evaluation of multimodal environmental
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Buffington CAT et al. Clinical evaluation of multimodal environmental
                                 modification (MEMO) in the management of cats with idiopathic cystitis.
                                 <em>J Feline Med Surg</em> 2006;8(4):261-268.
                             </li>
-                            <li>Defauw PAM et al. Risk factors and clinical presentation of cats with
+<li>Defauw PAM et al. Risk factors and clinical presentation of cats with
                                 feline idiopathic cystitis. <em>J Feline Med Surg</em> 2011;13(12):967-975.</li>
-                            <li>Gerber B et al. Evaluation of clinical signs and causes of lower urinary
+<li>Gerber B et al. Evaluation of clinical signs and causes of lower urinary
                                 tract disease in European cats. <em>J Small Anim Pract</em> 2005;46(12):571-577.</li>
-                            <li>Cooper ES et al. A protocol for managing urethral obstruction in male
+<li>Cooper ES et al. A protocol for managing urethral obstruction in male
                                 cats without urethral catheterization. <em>JAVMA</em> 2010;237(11):1261-1266.</li>
-                            <li>Westropp JL et al. Chronic Lower Urinary Tract Signs in Cats: Current
+<li>Westropp JL et al. Chronic Lower Urinary Tract Signs in Cats: Current
                                 Understanding of Pathophysiology and Management.
                                 <em>Vet Clin North Am Small Anim Pract</em> 2019;49(2):187-209.
                             </li>
-                            <li>Hetrick PF, Davidow EB. Initial treatment factors associated with feline
+<li>Hetrick PF, Davidow EB. Initial treatment factors associated with feline
                                 urethral obstruction recurrence rate. <em>JAVMA</em> 2013;243(4):512-519.</li>
-                            <li>Taylor S et al. ISFM Consensus Guidelines on the Diagnosis and Management
+<li>Taylor S et al. ISFM Consensus Guidelines on the Diagnosis and Management
                                 of Feline Lower Urinary Tract Disease.
                                 <em>J Feline Med Surg</em> 2025 (online ahead of print).
                             </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+</ol>
+</div>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js"></script>
-
+</footer>
+</div>
+<script src="../../assets/script.js"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
-
 </html>

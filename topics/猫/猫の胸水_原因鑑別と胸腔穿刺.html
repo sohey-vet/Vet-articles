@@ -1,74 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="猫の胸水の原因鑑別と胸腔穿刺の実際。漏出液・変性漏出液・滲出液・乳び・FIPの鑑別フローと、安全な穿刺手技。">
-    <title>猫の胸水 ─ 原因鑑別と胸腔穿刺 | VetEvidence</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="猫の胸水の原因鑑別と胸腔穿刺の実際。漏出液・変性漏出液・滲出液・乳び・FIPの鑑別フローと、安全な穿刺手技。" name="description"/>
+<title>猫の胸水 ─ 原因鑑別と胸腔穿刺 | VetEvidence</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-
-    <!-- ===== Mobile Navigation ===== -->
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button class="hamburger-btn" aria-label="メニュー">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
-        <a href="#action-table">🗺️ 鑑別フロー</a>
-        <a href="#classification">🔬 胸水の分類</a>
-        <a href="#thoracocentesis">💉 胸腔穿刺の実際</a>
-        <a href="#causes">📋 原因別アプローチ</a>
-        <a href="#owner-tips">🗣️ 飼い主説明</a>
-        <a href="#refs">📚 参照論文</a>
-        <h4>情報ソース</h4>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-    </aside>
-
-    <div class="page-container">
-
-        <!-- ===== HEADER ===== -->
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <span class="tag tag--primary">猫</span>
-                <span class="tag tag--danger">呼吸器</span>
-                <span class="tag tag--warning">救急</span>
-            </div>
-            <h1 style="font-size: 1.3rem;">🐱 猫の胸水 ─ 原因鑑別と胸腔穿刺</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+<!-- ===== Mobile Navigation ===== -->
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#conclusion">🎯 結論</a>
+<a href="#action-table">🗺️ 鑑別フロー</a>
+<a href="#classification">🔬 胸水の分類</a>
+<a href="#thoracocentesis">💉 胸腔穿刺の実際</a>
+<a href="#causes">📋 原因別アプローチ</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<!-- ===== HEADER ===== -->
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<span class="tag tag--primary">猫</span>
+<span class="tag tag--danger">呼吸器</span>
+<span class="tag tag--warning">救急</span>
+<span class="tag tag--primary">胸水</span><span class="tag tag--primary">FIP</span><span class="tag tag--primary">FHV</span></div>
+<h1 style="font-size: 1.3rem;">🐱 猫の胸水 ─ 原因鑑別と胸腔穿刺</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
                 猫の呼吸困難の鑑別で最も多い原因の一つ。「まず抜く、同時に調べる」が鉄則。
                 胸水の性状分析が原因鑑別の最大の武器となる。
             </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文 7本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-            </div>
-        </header>
-
-        <!-- ===== 表示モード切替 ===== -->
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="content-mode-toggle" checked>
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-
-        <!-- ===== FREE ZONE ===== -->
-
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
-                <p style="font-size:0.88rem;">
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文 7本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<!-- ===== 表示モード切替 ===== -->
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- ===== FREE ZONE ===== -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<p style="font-size:0.88rem;">
                     猫の胸水は<strong>心臓病、悪性腫瘍（リンパ腫等）、FIP、膿胸、乳び胸</strong>が5大原因。
                     呼吸困難を呈する猫には<strong>まず胸腔穿刺で減圧</strong>し、採取した胸水を分析する。
                     X線より先にエコーで胸水の有無を確認するのが安全かつ迅速。
@@ -76,160 +69,156 @@
                     （カットオフ: 血清中＞220 pmol/L で心原性を示唆）。
                     胸水検査は<strong>TP・細胞数・比重・トリグリセリド・細胞診</strong>の5項目が基本セット。
                 </p>
-            </div>
-        </div>
-
-        <!-- 昔vs今 -->
-        <div class="free-content" id="action-table">
-            <div class="card">
-                <h3 style="font-size: 0.95rem;">⚡ 昔の常識 vs 今のエビデンス</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:12px 0 0;">
-                        <thead>
-                            <tr>
-                                <th>❌ 旧来の常識</th>
-                                <th>✅ 最新のエビデンス</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>まずX線で精査</td>
-                                <td><strong>呼吸困難の猫にX線は危険</strong>。まずFAST(TFAST)エコーで胸水確認 → 穿刺 → X線は安定後</td>
-                            </tr>
-                            <tr>
-                                <td>胸水は色で大まかに判断</td>
-                                <td><strong>性状分析（TP・細胞数・TG・細胞診）</strong>を体系的に行う。色だけでは鑑別できない</td>
-                            </tr>
-                            <tr>
-                                <td>心原性かどうかは心エコー必須</td>
-                                <td><strong>NT-proBNP</strong>（血清 or 胸水中）で心原性を高精度に除外可能。一般病院での初期鑑別に有用</td>
-                            </tr>
-                            <tr>
-                                <td>FIPの胸水は予後不良で治療困難</td>
-                                <td><strong>GS-441524等の抗ウイルス薬</strong>で寛解が期待できる時代に。早期診断の意義が増大</td>
-                            </tr>
-                            <tr>
-                                <td>乳び胸は内科管理で経過観察</td>
-                                <td>特発性乳び胸では<strong>胸管結紮＋心膜切除</strong>が標準。タルク胸膜癒着術の報告もある</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== PREMIUM ZONE ===== -->
-
-        <!-- 胸水の分類 -->
-        <div id="classification">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🔬</span><span>胸水の分類と鑑別</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>胸水の分類（性状別）</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>分類</th>
-                                    <th>TP (g/dL)</th>
-                                    <th>細胞数 (/μL)</th>
-                                    <th>比重</th>
-                                    <th>代表的原因</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>純漏出液</strong></td>
-                                    <td>＜2.5</td>
-                                    <td>＜1,500</td>
-                                    <td>＜1.018</td>
-                                    <td>低アルブミン血症（肝不全、PLE、腎不全）</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>変性漏出液</strong></td>
-                                    <td>2.5〜5.0</td>
-                                    <td>1,000〜7,000</td>
-                                    <td>1.018〜1.030</td>
-                                    <td><strong>うっ血性心不全</strong>、腫瘍、肝硬変</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>滲出液<br>（非化膿性）</strong></td>
-                                    <td>＞3.0</td>
-                                    <td>＞5,000</td>
-                                    <td>＞1.025</td>
-                                    <td><strong>FIP</strong>（高蛋白・低細胞が特徴）、腫瘍</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>滲出液<br>（化膿性）</strong></td>
-                                    <td>＞3.0</td>
-                                    <td>＞10,000<br>（好中球優位）</td>
-                                    <td>＞1.025</td>
-                                    <td><strong>膿胸</strong>（外傷、異物、播種性感染）</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>乳び</strong></td>
-                                    <td>＞2.5</td>
-                                    <td>1,000〜10,000<br>（リンパ球 or 好中球）</td>
-                                    <td>変動</td>
-                                    <td><strong>特発性乳び胸</strong>、心臓病、腫瘍（リンパ管閉塞）</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>出血性</strong></td>
-                                    <td>＞3.0</td>
-                                    <td>血液に準ずる</td>
-                                    <td>変動</td>
-                                    <td>外傷、凝固異常、腫瘍破裂</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-
+</div>
+</div>
+<!-- 昔vs今 -->
+<div class="free-content" id="action-table">
+<div class="card">
+<h3 style="font-size: 0.95rem;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<div style="overflow-x:auto;">
+<table class="comparison-table" style="margin:12px 0 0;">
+<thead>
+<tr>
+<th>❌ 旧来の常識</th>
+<th>✅ 最新のエビデンス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>まずX線で精査</td>
+<td><strong>呼吸困難の猫にX線は危険</strong>。まずFAST(TFAST)エコーで胸水確認 → 穿刺 → X線は安定後</td>
+</tr>
+<tr>
+<td>胸水は色で大まかに判断</td>
+<td><strong>性状分析（TP・細胞数・TG・細胞診）</strong>を体系的に行う。色だけでは鑑別できない</td>
+</tr>
+<tr>
+<td>心原性かどうかは心エコー必須</td>
+<td><strong>NT-proBNP</strong>（血清 or 胸水中）で心原性を高精度に除外可能。一般病院での初期鑑別に有用</td>
+</tr>
+<tr>
+<td>FIPの胸水は予後不良で治療困難</td>
+<td><strong>GS-441524等の抗ウイルス薬</strong>で寛解が期待できる時代に。早期診断の意義が増大</td>
+</tr>
+<tr>
+<td>乳び胸は内科管理で経過観察</td>
+<td>特発性乳び胸では<strong>胸管結紮＋心膜切除</strong>が標準。タルク胸膜癒着術の報告もある</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- ===== PREMIUM ZONE ===== -->
+<!-- 胸水の分類 -->
+<div id="classification">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🔬</span><span>胸水の分類と鑑別</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>胸水の分類（性状別）</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>分類</th>
+<th>TP (g/dL)</th>
+<th>細胞数 (/μL)</th>
+<th>比重</th>
+<th>代表的原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>純漏出液</strong></td>
+<td>＜2.5</td>
+<td>＜1,500</td>
+<td>＜1.018</td>
+<td>低アルブミン血症（肝不全、PLE、腎不全）</td>
+</tr>
+<tr>
+<td><strong>変性漏出液</strong></td>
+<td>2.5〜5.0</td>
+<td>1,000〜7,000</td>
+<td>1.018〜1.030</td>
+<td><strong>うっ血性心不全</strong>、腫瘍、肝硬変</td>
+</tr>
+<tr>
+<td><strong>滲出液<br/>（非化膿性）</strong></td>
+<td>＞3.0</td>
+<td>＞5,000</td>
+<td>＞1.025</td>
+<td><strong>FIP</strong>（高蛋白・低細胞が特徴）、腫瘍</td>
+</tr>
+<tr>
+<td><strong>滲出液<br/>（化膿性）</strong></td>
+<td>＞3.0</td>
+<td>＞10,000<br/>（好中球優位）</td>
+<td>＞1.025</td>
+<td><strong>膿胸</strong>（外傷、異物、播種性感染）</td>
+</tr>
+<tr>
+<td><strong>乳び</strong></td>
+<td>＞2.5</td>
+<td>1,000〜10,000<br/>（リンパ球 or 好中球）</td>
+<td>変動</td>
+<td><strong>特発性乳び胸</strong>、心臓病、腫瘍（リンパ管閉塞）</td>
+</tr>
+<tr>
+<td><strong>出血性</strong></td>
+<td>＞3.0</td>
+<td>血液に準ずる</td>
+<td>変動</td>
+<td>外傷、凝固異常、腫瘍破裂</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[呼吸困難の猫に胸水貯留を確認] --> B{胸腔穿刺と胸水分析}
+    A[呼吸困難の猫に胸水貯留を確認] --&gt; B{胸腔穿刺と胸水分析}
 
-    B --> C[TP測定 (g/dL)]
+    B --&gt; C[TP測定 (g/dL)]
 
-    C --> C1{TP &lt; 2.5}
-    C1 -- Yes --> D[純漏出液]
-    D --> D1[原因: 低アルブミン血症 (肝不全, PLE, 腎不全)]
-    C1 -- No --> C2{TP 2.5-5.0}
+    C --&gt; C1{TP &lt; 2.5}
+    C1 -- Yes --&gt; D[純漏出液]
+    D --&gt; D1[原因: 低アルブミン血症 (肝不全, PLE, 腎不全)]
+    C1 -- No --&gt; C2{TP 2.5-5.0}
 
-    C2 -- Yes --> E[変性漏出液]
-    E --> E1{NT-proBNP (血清 or 胸水中)}
-    E1 -- 高値 (&gt;220 pmol/L) --> E2[原因: うっ血性心不全]
-    E1 -- 低値 --> E3[原因: 腫瘍, 肝硬変]
-    C2 -- No --> C3{TP &gt; 3.0}
+    C2 -- Yes --&gt; E[変性漏出液]
+    E --&gt; E1{NT-proBNP (血清 or 胸水中)}
+    E1 -- 高値 (&gt;220 pmol/L) --&gt; E2[原因: うっ血性心不全]
+    E1 -- 低値 --&gt; E3[原因: 腫瘍, 肝硬変]
+    C2 -- No --&gt; C3{TP &gt; 3.0}
 
-    C3 -- Yes --> F[滲出液 または その他]
-    F --> F1{胸水の外観とTG/コレステロール比}
+    C3 -- Yes --&gt; F[滲出液 または その他]
+    F --&gt; F1{胸水の外観とTG/コレステロール比}
 
-    F1 -- 乳白色 &amp; TG &gt; 血清TG --> G[乳び胸]
-    G --> G1[原因: 特発性, 心臓病, 腫瘍 (リンパ管閉塞)]
+    F1 -- 乳白色 &amp; TG &gt; 血清TG --&gt; G[乳び胸]
+    G --&gt; G1[原因: 特発性, 心臓病, 腫瘍 (リンパ管閉塞)]
 
-    F1 -- 赤色 &amp; Hct高値 --> H[出血性胸水]
-    H --> H1[原因: 外傷, 凝固異常, 腫瘍破裂]
+    F1 -- 赤色 &amp; Hct高値 --&gt; H[出血性胸水]
+    H --&gt; H1[原因: 外傷, 凝固異常, 腫瘍破裂]
 
-    F1 -- その他 (黄色, 混濁など) --> I[細胞数 &amp; 細胞診 &amp; グラム染色]
+    F1 -- その他 (黄色, 混濁など) --&gt; I[細胞数 &amp; 細胞診 &amp; グラム染色]
 
-    I --> I1{高蛋白 (&gt;3.5), 低細胞数, 粘稠, A/G比 &lt;0.4}
-    I1 -- Yes --> J[FIP (猫伝染性腹膜炎)]
-    J --> J1[原因: FCoV感染]
+    I --&gt; I1{高蛋白 (&gt;3.5), 低細胞数, 粘稠, A/G比 &lt;0.4}
+    I1 -- Yes --&gt; J[FIP (猫伝染性腹膜炎)]
+    J --&gt; J1[原因: FCoV感染]
 
-    I1 -- No --> I2{高細胞数 (&gt;10000), 好中球優位, グラム染色陽性}
-    I2 -- Yes --> K[膿胸]
-    K --> K1[原因: 外傷, 異物, 播種性感染]
+    I1 -- No --&gt; I2{高細胞数 (&gt;10000), 好中球優位, グラム染色陽性}
+    I2 -- Yes --&gt; K[膿胸]
+    K --&gt; K1[原因: 外傷, 異物, 播種性感染]
 
-    I2 -- No --> L[細胞診で悪性細胞検出]
-    L -- Yes --> M[腫瘍性胸水]
-    M --> M1[原因: リンパ腫, 癌腫など]
+    I2 -- No --&gt; L[細胞診で悪性細胞検出]
+    L -- Yes --&gt; M[腫瘍性胸水]
+    M --&gt; M1[原因: リンパ腫, 癌腫など]
 
-    I2 -- No &amp; L -- No --> N[その他/非特異的]
-    N --> N1[更なる精査 (生検, 培養, 特定ウイルス検査など)]
+    I2 -- No &amp; L -- No --&gt; N[その他/非特異的]
+    N --&gt; N1[更なる精査 (生検, 培養, 特定ウイルス検査など)]
 
     style A fill:#DCE7EE,stroke:#333,stroke-width:2px,color:#333
     style B fill:#C3E6CB,stroke:#28A745,stroke-width:2px,color:#28A745
@@ -262,192 +251,183 @@ graph TD
     style N fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
     style N1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
 </pre>
-
-
-                            <h4>💊 鑑別のキーポイント</h4>
-                            <ul>
-                                <li><strong>乳びの確定</strong>: 胸水中TG ＞ 血清TG であれば乳び。コレステロール/TG比 ＜1 も参考</li>
-                                <li><strong>FIPの特徴</strong>: 高蛋白（≥3.5 g/dL）なのに細胞数が少ない粘稠な黄色液。A/G比 ＜0.4 でFIPを強く疑う</li>
-                                <li><strong>膿胸のグラム染色</strong>: バクテリアの種類と感受性を同定。嫌気性菌培養も必須</li>
-                                <li><strong>腫瘍性胸水</strong>: 細胞診でリンパ芽球やクラスター状の上皮細胞を検出</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>胸水分類の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 胸腔穿刺 -->
-        <div id="thoracocentesis">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💉</span><span>胸腔穿刺の実際 ─
+<h4>💊 鑑別のキーポイント</h4>
+<ul>
+<li><strong>乳びの確定</strong>: 胸水中TG ＞ 血清TG であれば乳び。コレステロール/TG比 ＜1 も参考</li>
+<li><strong>FIPの特徴</strong>: 高蛋白（≥3.5 g/dL）なのに細胞数が少ない粘稠な黄色液。A/G比 ＜0.4 でFIPを強く疑う</li>
+<li><strong>膿胸のグラム染色</strong>: バクテリアの種類と感受性を同定。嫌気性菌培養も必須</li>
+<li><strong>腫瘍性胸水</strong>: 細胞診でリンパ芽球やクラスター状の上皮細胞を検出</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>胸水分類の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 胸腔穿刺 -->
+<div id="thoracocentesis">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💉</span><span>胸腔穿刺の実際 ─
                             手技とコツ</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>準備と体位</h4>
-                        <ul>
-                            <li><strong>体位</strong>: 胸骨臥位（sternal recumbency）が最も安全。無理に保定しない</li>
-                            <li><strong>穿刺部位</strong>: 7〜9肋間、肋軟骨接合部の背側。肋骨の<strong>頭側縁を沿って</strong>穿刺（尾側には肋間動静脈が走行）</li>
-                            <li><strong>針のサイズ</strong>: 21G 翼状針（バタフライ針）＋延長チューブ＋三方活栓＋シリンジ（20〜60mL）</li>
-                            <li>局所麻酔（リドカイン 2% 少量 SC/IM）を行うとより安全</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">手技のステップ</h4>
-                        <ol>
-                            <li>TFASTエコーで胸水貯留を確認し、最適な穿刺部位をマーク</li>
-                            <li>穿刺部位を毛刈り・消毒</li>
-                            <li>針を肋骨頭側に沿ってゆっくり進める（陰圧を維持しながら）</li>
-                            <li>液体が引けたら<strong>ゆっくり</strong>吸引（急速な吸引は再膨張性肺水腫のリスク）</li>
-                            <li>検査用サンプル（EDTA管、プレーン管、培養用）を確保した上で、可能な限り胸水を除去</li>
-                            <li>抜針後はエコーで残存胸水量を評価</li>
-                        </ol>
-                        <div class="clinical-tip">
-                            <h4>⚠️ 注意点</h4>
-                            <ul>
-                                <li><strong>緊急時</strong>はエコーなしで穿刺してもよい（胸部の打診で濁音界を確認）</li>
-                                <li>猫では<strong>両側穿刺</strong>が必要なことが多い（縦隔が不完全なため一側から十分に排液できないことがある）</li>
-                                <li>酸素投与を並行して行う（ストレスを最小限にするため、フローバイが望ましい）</li>
-                                <li>鎮静: ブトルファノール 0.2〜0.4 mg/kg IM は穏やかな鎮静と鎮痛を提供し、呼吸抑制が少ない</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>胸腔穿刺の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 原因別アプローチ -->
-        <div id="causes">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📋</span><span>原因別アプローチ ─
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>準備と体位</h4>
+<ul>
+<li><strong>体位</strong>: 胸骨臥位（sternal recumbency）が最も安全。無理に保定しない</li>
+<li><strong>穿刺部位</strong>: 7〜9肋間、肋軟骨接合部の背側。肋骨の<strong>頭側縁を沿って</strong>穿刺（尾側には肋間動静脈が走行）</li>
+<li><strong>針のサイズ</strong>: 21G 翼状針（バタフライ針）＋延長チューブ＋三方活栓＋シリンジ（20〜60mL）</li>
+<li>局所麻酔（リドカイン 2% 少量 SC/IM）を行うとより安全</li>
+</ul>
+<h4 style="margin-top:12px;">手技のステップ</h4>
+<ol>
+<li>TFASTエコーで胸水貯留を確認し、最適な穿刺部位をマーク</li>
+<li>穿刺部位を毛刈り・消毒</li>
+<li>針を肋骨頭側に沿ってゆっくり進める（陰圧を維持しながら）</li>
+<li>液体が引けたら<strong>ゆっくり</strong>吸引（急速な吸引は再膨張性肺水腫のリスク）</li>
+<li>検査用サンプル（EDTA管、プレーン管、培養用）を確保した上で、可能な限り胸水を除去</li>
+<li>抜針後はエコーで残存胸水量を評価</li>
+</ol>
+<div class="clinical-tip">
+<h4>⚠️ 注意点</h4>
+<ul>
+<li><strong>緊急時</strong>はエコーなしで穿刺してもよい（胸部の打診で濁音界を確認）</li>
+<li>猫では<strong>両側穿刺</strong>が必要なことが多い（縦隔が不完全なため一側から十分に排液できないことがある）</li>
+<li>酸素投与を並行して行う（ストレスを最小限にするため、フローバイが望ましい）</li>
+<li>鎮静: ブトルファノール 0.2〜0.4 mg/kg IM は穏やかな鎮静と鎮痛を提供し、呼吸抑制が少ない</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>胸腔穿刺の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 原因別アプローチ -->
+<div id="causes">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>原因別アプローチ ─
                             5大原因の治療</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>1. うっ血性心不全（最多）</h4>
-                        <ul>
-                            <li>フロセミド 1〜4 mg/kg IV（急性期）→ 経口で維持</li>
-                            <li>HCMが基礎疾患なら：心原性肺水腫の記事を参照 → ピモベンダンの適応は慎重に判断</li>
-                            <li>動脈血栓塞栓症（ATE）の合併に注意</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">2. 悪性腫瘍（リンパ腫が最多）</h4>
-                        <ul>
-                            <li>胸水中の細胞診 → リンパ芽球が検出されればリンパ腫を強く疑う</li>
-                            <li>縦隔型リンパ腫は若齢FeLV陽性猫に多い</li>
-                            <li>化学療法が奏効する可能性あり → 腫瘍専門医への紹介を検討</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">3. FIP</h4>
-                        <ul>
-                            <li>胸水A/G比＜0.4、Rivaltaテスト陽性、FCoV抗体価高値で臨床的に診断</li>
-                            <li><strong>GS-441524</strong>（日本では承認されていないが、個人輸入で使用されるケースが増加）やモルヌピラビルによる抗ウイルス療法で寛解例が報告されている
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>1. うっ血性心不全（最多）</h4>
+<ul>
+<li>フロセミド 1〜4 mg/kg IV（急性期）→ 経口で維持</li>
+<li>HCMが基礎疾患なら：心原性肺水腫の記事を参照 → ピモベンダンの適応は慎重に判断</li>
+<li>動脈血栓塞栓症（ATE）の合併に注意</li>
+</ul>
+<h4 style="margin-top:12px;">2. 悪性腫瘍（リンパ腫が最多）</h4>
+<ul>
+<li>胸水中の細胞診 → リンパ芽球が検出されればリンパ腫を強く疑う</li>
+<li>縦隔型リンパ腫は若齢FeLV陽性猫に多い</li>
+<li>化学療法が奏効する可能性あり → 腫瘍専門医への紹介を検討</li>
+</ul>
+<h4 style="margin-top:12px;">3. FIP</h4>
+<ul>
+<li>胸水A/G比＜0.4、Rivaltaテスト陽性、FCoV抗体価高値で臨床的に診断</li>
+<li><strong>GS-441524</strong>（日本では承認されていないが、個人輸入で使用されるケースが増加）やモルヌピラビルによる抗ウイルス療法で寛解例が報告されている
                             </li>
-                            <li>⚠️ 日本では<strong>GS-441524は動物用医薬品として未承認</strong>。使用する場合は飼い主へのインフォームドコンセントが不可欠</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">4. 膿胸</h4>
-                        <ul>
-                            <li>胸腔チューブ留置＋洗浄（生理食塩水 10〜20 mL/kg を1日2〜3回）</li>
-                            <li>広域スペクトル抗菌薬を培養結果が出るまで開始（アンピシリン/スルバクタム＋メトロニダゾールなど）</li>
-                            <li>内科管理に反応が悪い場合（3〜5日以内）は外科的胸腔ドレナージ・デブリードマンを検討</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">5. 乳び胸</h4>
-                        <ul>
-                            <li>特発性が最も多い。基礎疾患（心臓病、縦隔腫瘍）の除外が必要</li>
-                            <li>内科管理: 低脂肪食、ルチン（50 mg/kg PO BID ─ 猫でのエビデンスは限定的だが使用されることがある）</li>
-                            <li>内科で改善しない場合: <strong>胸管結紮＋心膜部分切除</strong>が現在の標準術式</li>
-                        </ul>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>原因別治療の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 飼い主説明 -->
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>胸に水が溜まっていると言われましたが…</h4>
-                            <div class="speech-bubble">
+<li>⚠️ 日本では<strong>GS-441524は動物用医薬品として未承認</strong>。使用する場合は飼い主へのインフォームドコンセントが不可欠</li>
+</ul>
+<h4 style="margin-top:12px;">4. 膿胸</h4>
+<ul>
+<li>胸腔チューブ留置＋洗浄（生理食塩水 10〜20 mL/kg を1日2〜3回）</li>
+<li>広域スペクトル抗菌薬を培養結果が出るまで開始（アンピシリン/スルバクタム＋メトロニダゾールなど）</li>
+<li>内科管理に反応が悪い場合（3〜5日以内）は外科的胸腔ドレナージ・デブリードマンを検討</li>
+</ul>
+<h4 style="margin-top:12px;">5. 乳び胸</h4>
+<ul>
+<li>特発性が最も多い。基礎疾患（心臓病、縦隔腫瘍）の除外が必要</li>
+<li>内科管理: 低脂肪食、ルチン（50 mg/kg PO BID ─ 猫でのエビデンスは限定的だが使用されることがある）</li>
+<li>内科で改善しない場合: <strong>胸管結紮＋心膜部分切除</strong>が現在の標準術式</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>原因別治療の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 飼い主説明 -->
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>胸に水が溜まっていると言われましたが…</h4>
+<div class="speech-bubble">
                                 猫ちゃんの胸（肺の周り）に液体が溜まっていて、それが肺を圧迫して息苦しくなっています。
                                 <strong>まずこの液体を抜いて呼吸を楽にする処置</strong>を行います。
                                 同時に、その液体の成分を調べることで、なぜ溜まったのかの原因を探ります。
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>何が原因で水が溜まるのですか？</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>何が原因で水が溜まるのですか？</h4>
+<div class="speech-bubble">
                                 代表的な原因は<strong>心臓病、腫瘍（がん）、感染症（FIPなど）、膿胸</strong>です。
                                 原因によって治療法が大きく異なりますので、抜いた液体の検査をしっかり行います。
                                 原因がわかれば、的確な治療に結びつけることができます。
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>液体を抜く処置は猫にとって痛くないですか？</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>液体を抜く処置は猫にとって痛くないですか？</h4>
+<div class="speech-bubble">
                                 細い針を使って行いますので、大きな痛みはありません。
                                 必要に応じて軽い鎮静剤を使って、ストレスを最小限にします。
                                 多くの猫ちゃんは<strong>液体を抜いた直後から目に見えて呼吸が楽になります</strong>。
                             </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 参照論文 -->
-        <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <li>Beatty J, Barrs V. Pleural effusion in the cat. <em>J Feline Med Surg</em>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 参照論文 -->
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Beatty J, Barrs V. Pleural effusion in the cat. <em>J Feline Med Surg</em>
                                 2010;12(9):693-707.</li>
-                            <li>Ruiz MD et al. Characterization of and factors associated with causes of
+<li>Ruiz MD et al. Characterization of and factors associated with causes of
                                 pleural effusion in cats. <em>JAVMA</em> 2018;253(2):181-187.</li>
-                            <li>Humm K et al. Diagnostic utility of NT-proBNP and cardiac troponin I
+<li>Humm K et al. Diagnostic utility of NT-proBNP and cardiac troponin I
                                 in cats with pleural effusion. <em>J Feline Med Surg</em> 2013;15(12):1049-1056.</li>
-                            <li>Davies C, Forrester SD. Pleural effusion in cats: 82 cases (1987-1995).
+<li>Davies C, Forrester SD. Pleural effusion in cats: 82 cases (1987-1995).
                                 <em>J Small Anim Pract</em> 1996;37(5):217-224.
                             </li>
-                            <li>Pedersen NC et al. Efficacy and safety of the nucleoside analog GS-441524
+<li>Pedersen NC et al. Efficacy and safety of the nucleoside analog GS-441524
                                 for treatment of cats with naturally occurring feline infectious peritonitis.
                                 <em>J Feline Med Surg</em> 2019;21(4):271-281.
                             </li>
-                            <li>Waddell LS et al. Triage of the emergency small animal patient. <em>Vet Clin
+<li>Waddell LS et al. Triage of the emergency small animal patient. <em>Vet Clin
                                     North Am Small Anim Pract</em> 2005;35(2):421-444.</li>
-                            <li>Singh A et al. Long-term outcome of dogs and cats with chylothorax treated
+<li>Singh A et al. Long-term outcome of dogs and cats with chylothorax treated
                                 by thoracic duct ligation and pericardiectomy. <em>Vet Surg</em> 2012;41(7):885-890.
                             </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+</ol>
+</div>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js"></script>
-
+</footer>
+</div>
+<script src="../../assets/script.js"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
-
 </html>

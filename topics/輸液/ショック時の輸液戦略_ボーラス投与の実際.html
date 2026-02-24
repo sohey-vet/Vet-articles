@@ -1,516 +1,492 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ショック時の輸液戦略。2024 AAHAガイドライン準拠のボーラス投与プロトコル、犬猫別用量、輸液反応性の評価、昇圧薬への移行判断。">
-    <title>ショック時の輸液戦略 ─ ボーラス投与の実際 | VetEvidence</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ショック時の輸液戦略。2024 AAHAガイドライン準拠のボーラス投与プロトコル、犬猫別用量、輸液反応性の評価、昇圧薬への移行判断。" name="description"/>
+<title>ショック時の輸液戦略 ─ ボーラス投与の実際 | VetEvidence</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-
-    <!-- ===== Mobile Navigation ===== -->
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button class="hamburger-btn" aria-label="メニュー">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
-        <a href="#action-table">🗺️ ボーラス投与フロー</a>
-        <a href="#bolus-protocol">💧 ボーラスプロトコル</a>
-        <a href="#assessment">📊 輸液反応性の評価</a>
-        <a href="#vasopressors">💉 昇圧薬への移行</a>
-        <a href="#pitfalls">⚠️ 過剰輸液の回避</a>
-        <a href="#owner-tips">🗣️ 飼い主説明</a>
-        <a href="#refs">📚 参照論文</a>
-        <h4>情報ソース</h4>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-    </aside>
-
-    <div class="page-container">
-
-        <!-- ===== HEADER ===== -->
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <span class="tag tag--primary">輸液</span>
-                <span class="tag tag--warning">救急</span>
-                <span class="tag tag--success">2024 AAHA</span>
-            </div>
-            <h1 style="font-size: 1.3rem;">💧 ショック時の輸液戦略 ─ ボーラス投与の実際</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+<!-- ===== Mobile Navigation ===== -->
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#conclusion">🎯 結論</a>
+<a href="#action-table">🗺️ ボーラス投与フロー</a>
+<a href="#bolus-protocol">💧 ボーラスプロトコル</a>
+<a href="#assessment">📊 輸液反応性の評価</a>
+<a href="#vasopressors">💉 昇圧薬への移行</a>
+<a href="#pitfalls">⚠️ 過剰輸液の回避</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<!-- ===== HEADER ===== -->
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<span class="tag tag--primary">輸液</span>
+<span class="tag tag--warning">救急</span>
+<span class="tag tag--success">2024 AAHA</span>
+<span class="tag tag--primary">ショック</span><span class="tag tag--primary">犬猫共通</span></div>
+<h1 style="font-size: 1.3rem;">💧 ショック時の輸液戦略 ─ ボーラス投与の実際</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
                 「90mL/kgを全量投与」の時代は終わった。少量ボーラス→再評価→追加のサイクルが現在の標準。2024 AAHAガイドラインに基づく実践的プロトコル。
             </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-            </div>
-        </header>
-
-        <!-- ===== 表示モード切替 ===== -->
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="content-mode-toggle" checked>
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-
-        <!-- ============================================
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<!-- ===== 表示モード切替 ===== -->
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- ============================================
            FREE ZONE: 結論 + 治療フロー
            ============================================ -->
-
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
-                <p style="font-size:0.88rem;">
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<p style="font-size:0.88rem;">
                     ショック時の輸液蘇生は<strong>「少量ボーラス → 再評価 → 追加」のサイクル</strong>が2024
                     AAHAガイドラインの標準。犬は<strong>15〜20mL/kgを15〜20分</strong>で投与し、猫は<strong>10〜15mL/kgを15〜20分</strong>で投与して再評価。旧来の「経験的ショック量（犬90mL/kg、猫50mL/kg）を一括投与」は<strong>廃止</strong>された。<strong>等張緩衝晶質液（乳酸リンゲル液）</strong>が第一選択。生理食塩水の大量投与は高クロール性代謝性アシドーシスのリスクがあり非推奨。輸液蘇生に反応不良（2〜3回のボーラスで改善なし）の場合は<strong>昇圧薬</strong>への移行を検討する。
                 </p>
-            </div>
-        </div>
-
-        <div class="free-content" id="action-table">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ショック輸液ボーラス ─ クイックリファレンス
+</div>
+</div>
+<div class="free-content" id="action-table">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ショック輸液ボーラス ─ クイックリファレンス
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
     graph TD
-        A[ショック状態の患者] --> B{輸液蘇生の適応判断};
+        A[ショック状態の患者] --&gt; B{輸液蘇生の適応判断};
 
-        B -- 適応なし 心原性 閉塞性ショック --> C[原因除去または特定治療];
-        B -- 適応あり 循環血液量減少性 分布異常性 --> D[初回輸液ボーラス投与];
+        B -- 適応なし 心原性 閉塞性ショック --&gt; C[原因除去または特定治療];
+        B -- 適応あり 循環血液量減少性 分布異常性 --&gt; D[初回輸液ボーラス投与];
 
-        D -- 犬の場合 --> D1[犬 LRS 15-20mL/kgを15-20分];
-        D -- 猫の場合 --> D2[猫 LRS 10-15mL/kgを15-20分];
+        D -- 犬の場合 --&gt; D1[犬 LRS 15-20mL/kgを15-20分];
+        D -- 猫の場合 --&gt; D2[猫 LRS 10-15mL/kgを15-20分];
 
-        D1 --> E{効果を再評価};
-        D2 --> E;
+        D1 --&gt; E{効果を再評価};
+        D2 --&gt; E;
 
-        E -- 改善あり --> F[維持輸液へ移行];
-        E -- 部分改善 --> G[追加ボーラス投与 最大2-3回まで];
-        E -- 改善なし --> H[輸液不応性 昇圧薬検討];
+        E -- 改善あり --&gt; F[維持輸液へ移行];
+        E -- 部分改善 --&gt; G[追加ボーラス投与 最大2-3回まで];
+        E -- 改善なし --&gt; H[輸液不応性 昇圧薬検討];
 
-        G --> E;
+        G --&gt; E;
     </pre>
-
 </h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:0;min-width:600px;">
-                        <thead>
-                            <tr>
-                                <th>項目</th>
-                                <th>🐶 犬</th>
-                                <th>🐱 猫</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>ボーラス量</strong></td>
-                                <td>15〜20 mL/kg</td>
-                                <td>10〜15 mL/kg</td>
-                            </tr>
-                            <tr>
-                                <td><strong>投与速度</strong></td>
-                                <td>15〜20分で投与</td>
-                                <td>15〜20分で投与</td>
-                            </tr>
-                            <tr>
-                                <td><strong>第一選択液</strong></td>
-                                <td>乳酸リンゲル液（LRS）</td>
-                                <td>乳酸リンゲル液（LRS）</td>
-                            </tr>
-                            <tr>
-                                <td><strong>再評価の指標</strong></td>
-                                <td>HR↓ CRT改善 MAP≥65mmHg 乳酸↓</td>
-                                <td>HR↓ 四肢温↑ MAP≥65mmHg 乳酸↓</td>
-                            </tr>
-                            <tr>
-                                <td><strong>最大回数目安</strong></td>
-                                <td>2〜3回（合計40〜60mL/kgまで）</td>
-                                <td>2〜3回（合計20〜30mL/kgまで）</td>
-                            </tr>
-                            <tr>
-                                <td><strong>輸液不応時</strong></td>
-                                <td colspan="2">昇圧薬（ノルエピネフリン 0.1〜2μg/kg/min）へ移行</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
+<div style="overflow-x:auto;">
+<table class="comparison-table" style="margin:0;min-width:600px;">
+<thead>
+<tr>
+<th>項目</th>
+<th>🐶 犬</th>
+<th>🐱 猫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ボーラス量</strong></td>
+<td>15〜20 mL/kg</td>
+<td>10〜15 mL/kg</td>
+</tr>
+<tr>
+<td><strong>投与速度</strong></td>
+<td>15〜20分で投与</td>
+<td>15〜20分で投与</td>
+</tr>
+<tr>
+<td><strong>第一選択液</strong></td>
+<td>乳酸リンゲル液（LRS）</td>
+<td>乳酸リンゲル液（LRS）</td>
+</tr>
+<tr>
+<td><strong>再評価の指標</strong></td>
+<td>HR↓ CRT改善 MAP≥65mmHg 乳酸↓</td>
+<td>HR↓ 四肢温↑ MAP≥65mmHg 乳酸↓</td>
+</tr>
+<tr>
+<td><strong>最大回数目安</strong></td>
+<td>2〜3回（合計40〜60mL/kgまで）</td>
+<td>2〜3回（合計20〜30mL/kgまで）</td>
+</tr>
+<tr>
+<td><strong>輸液不応時</strong></td>
+<td colspan="2">昇圧薬（ノルエピネフリン 0.1〜2μg/kg/min）へ移行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
                     ⚠️ 心原性ショックでは輸液ボーラスは禁忌。利尿薬＋強心薬が第一選択。閉塞性ショックでは原因除去（心嚢穿刺・胃減圧等）が最優先。
                 </p>
-            </div>
-        </div>
-
-        <!-- ===== 昔vs今 ===== -->
-        <div class="free-content">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
-                <table class="comparison-table" style="margin:0;">
-                    <thead>
-                        <tr>
-                            <th>❌ 旧来</th>
-                            <th>✅ 最新</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>経験的ショック量（犬90mL/kg）を全量投与</td>
-                            <td>15〜20mL/kgの少量ボーラスを繰り返し投与。全量一括投与は過剰輸液・肺水腫のリスク（2024 AAHA）</td>
-                        </tr>
-                        <tr>
-                            <td>生理食塩水が蘇生輸液の標準</td>
-                            <td>乳酸リンゲル液など<strong>緩衝等張晶質液</strong>が推奨。生食の大量投与は高クロール性代謝性アシドーシスを引き起こす</td>
-                        </tr>
-                        <tr>
-                            <td>HES（人工膠質液）で膠質浸透圧を維持</td>
-                            <td>HESは<strong>AKIリスク上昇</strong>が報告され、ヒト医療では使用制限。獣医領域でも晶質液が第一選択（AAHA 2024）</td>
-                        </tr>
-                        <tr>
-                            <td>輸液をたくさん入れれば血圧は上がる</td>
-                            <td>等張晶質液はIV投与後<strong>1時間以内に75%以上が血管外へ移動</strong>。輸液不応なら早期に昇圧薬を考慮</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ===== PREMIUM ZONE ===== -->
-
-        <hr class="section-divider">
-
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
-            <h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
-            <div>
-                <button onclick="toggleAllAccordions(true)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
-                <button onclick="toggleAllAccordions(false)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
-            </div>
-        </div>
-
-        <!-- ボーラスプロトコル -->
-        <div id="bolus-protocol">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💧</span><span>ボーラス投与プロトコル ─
+</div>
+</div>
+<!-- ===== 昔vs今 ===== -->
+<div class="free-content">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<table class="comparison-table" style="margin:0;">
+<thead>
+<tr>
+<th>❌ 旧来</th>
+<th>✅ 最新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>経験的ショック量（犬90mL/kg）を全量投与</td>
+<td>15〜20mL/kgの少量ボーラスを繰り返し投与。全量一括投与は過剰輸液・肺水腫のリスク（2024 AAHA）</td>
+</tr>
+<tr>
+<td>生理食塩水が蘇生輸液の標準</td>
+<td>乳酸リンゲル液など<strong>緩衝等張晶質液</strong>が推奨。生食の大量投与は高クロール性代謝性アシドーシスを引き起こす</td>
+</tr>
+<tr>
+<td>HES（人工膠質液）で膠質浸透圧を維持</td>
+<td>HESは<strong>AKIリスク上昇</strong>が報告され、ヒト医療では使用制限。獣医領域でも晶質液が第一選択（AAHA 2024）</td>
+</tr>
+<tr>
+<td>輸液をたくさん入れれば血圧は上がる</td>
+<td>等張晶質液はIV投与後<strong>1時間以内に75%以上が血管外へ移動</strong>。輸液不応なら早期に昇圧薬を考慮</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ===== PREMIUM ZONE ===== -->
+<hr class="section-divider"/>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+<div>
+<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+</div>
+</div>
+<!-- ボーラスプロトコル -->
+<div id="bolus-protocol">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💧</span><span>ボーラス投与プロトコル ─
                             ステップバイステップ</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>Step 1: ショックの類型を判断する</h4>
-                        <ul>
-                            <li><strong>循環血液量減少性</strong>（出血・脱水・消化管喪失）→ 輸液蘇生が第一選択</li>
-                            <li><strong>分布異常性</strong>（敗血症・アナフィラキシー）→ 輸液＋昇圧薬/エピネフリン</li>
-                            <li><strong>心原性</strong>（心不全・心タンポナーデ）→ <strong>輸液ボーラス禁忌</strong>。強心薬＋利尿薬</li>
-                            <li><strong>閉塞性</strong>（GDV・心嚢液・肺塞栓）→ 原因除去が最優先</li>
-                        </ul>
-                        <h4>Step 2: 初回ボーラスを投与</h4>
-                        <ul>
-                            <li>犬: <strong>等張緩衝晶質液 15〜20mL/kgを15〜20分</strong>で投与</li>
-                            <li>猫: <strong>等張緩衝晶質液 10〜15mL/kgを15〜20分</strong>で投与</li>
-                            <li>推奨液: <strong>乳酸リンゲル液（LRS）</strong>または酢酸リンゲル液</li>
-                            <li>生理食塩水は大量投与による高クロール性アシドーシスのリスクがあるため、可能であれば避ける</li>
-                        </ul>
-                        <h4>Step 3: 再評価（投与終了直後）</h4>
-                        <ul>
-                            <li>心拍数の変化（頻脈が改善しているか）</li>
-                            <li>CRT（毛細血管再充満時間）の改善</li>
-                            <li>MAP（平均動脈圧）≥65mmHg を目標</li>
-                            <li>乳酸値の低下傾向（可能であれば測定）</li>
-                            <li>意識レベルの改善</li>
-                            <li>尿量の確認（≥1mL/kg/hが目標）</li>
-                        </ul>
-                        <h4>Step 4: 追加ボーラスまたは次のステップ</h4>
-                        <ul>
-                            <li><strong>改善あり</strong> → 維持輸液に移行。過剰輸液を避ける</li>
-                            <li><strong>部分改善</strong> → 2回目のボーラスを同量で投与 → 再評価</li>
-                            <li><strong>改善なし（2〜3回で不応）</strong> → <strong>輸液不応性ショック</strong>として昇圧薬を検討</li>
-                        </ul>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips</h4>
-                            <ul>
-                                <li>5kgの犬なら1回のボーラスは50〜100mL。シリンジで急速投与するか、加圧バッグを使用</li>
-                                <li>3kgの猫なら1回のボーラスは15〜30mL。過剰輸液に極めて脆弱なため慎重に</li>
-                                <li>出血性ショックでHt＜25%（犬）/ ＜20%（猫）なら輸血の適応も並行検討</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>ボーラスプロトコルの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 輸液反応性の評価 -->
-        <div id="assessment">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📊</span><span>輸液反応性の評価 ─
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>Step 1: ショックの類型を判断する</h4>
+<ul>
+<li><strong>循環血液量減少性</strong>（出血・脱水・消化管喪失）→ 輸液蘇生が第一選択</li>
+<li><strong>分布異常性</strong>（敗血症・アナフィラキシー）→ 輸液＋昇圧薬/エピネフリン</li>
+<li><strong>心原性</strong>（心不全・心タンポナーデ）→ <strong>輸液ボーラス禁忌</strong>。強心薬＋利尿薬</li>
+<li><strong>閉塞性</strong>（GDV・心嚢液・肺塞栓）→ 原因除去が最優先</li>
+</ul>
+<h4>Step 2: 初回ボーラスを投与</h4>
+<ul>
+<li>犬: <strong>等張緩衝晶質液 15〜20mL/kgを15〜20分</strong>で投与</li>
+<li>猫: <strong>等張緩衝晶質液 10〜15mL/kgを15〜20分</strong>で投与</li>
+<li>推奨液: <strong>乳酸リンゲル液（LRS）</strong>または酢酸リンゲル液</li>
+<li>生理食塩水は大量投与による高クロール性アシドーシスのリスクがあるため、可能であれば避ける</li>
+</ul>
+<h4>Step 3: 再評価（投与終了直後）</h4>
+<ul>
+<li>心拍数の変化（頻脈が改善しているか）</li>
+<li>CRT（毛細血管再充満時間）の改善</li>
+<li>MAP（平均動脈圧）≥65mmHg を目標</li>
+<li>乳酸値の低下傾向（可能であれば測定）</li>
+<li>意識レベルの改善</li>
+<li>尿量の確認（≥1mL/kg/hが目標）</li>
+</ul>
+<h4>Step 4: 追加ボーラスまたは次のステップ</h4>
+<ul>
+<li><strong>改善あり</strong> → 維持輸液に移行。過剰輸液を避ける</li>
+<li><strong>部分改善</strong> → 2回目のボーラスを同量で投与 → 再評価</li>
+<li><strong>改善なし（2〜3回で不応）</strong> → <strong>輸液不応性ショック</strong>として昇圧薬を検討</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>5kgの犬なら1回のボーラスは50〜100mL。シリンジで急速投与するか、加圧バッグを使用</li>
+<li>3kgの猫なら1回のボーラスは15〜30mL。過剰輸液に極めて脆弱なため慎重に</li>
+<li>出血性ショックでHt＜25%（犬）/ ＜20%（猫）なら輸血の適応も並行検討</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>ボーラスプロトコルの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 輸液反応性の評価 -->
+<div id="assessment">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📊</span><span>輸液反応性の評価 ─
                             何をモニターするか</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>身体検査によるベッドサイド評価</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>パラメータ</th>
-                                    <th>正常/目標</th>
-                                    <th>ショック時</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>HR（犬）</td>
-                                    <td>60〜120 bpm</td>
-                                    <td>＞160 bpm（代償性）</td>
-                                </tr>
-                                <tr>
-                                    <td>HR（猫）</td>
-                                    <td>140〜220 bpm</td>
-                                    <td>＜140 bpm（非代償性・徐脈に注意）</td>
-                                </tr>
-                                <tr>
-                                    <td>CRT</td>
-                                    <td>＜2秒</td>
-                                    <td>＞2秒</td>
-                                </tr>
-                                <tr>
-                                    <td>MAP</td>
-                                    <td>≥65mmHg</td>
-                                    <td>＜60mmHg</td>
-                                </tr>
-                                <tr>
-                                    <td>乳酸</td>
-                                    <td>犬＜2.5 / 猫＜2.0 mmol/L</td>
-                                    <td>＞4.0 mmol/L で組織低灌流</td>
-                                </tr>
-                                <tr>
-                                    <td>尿量</td>
-                                    <td>≥1 mL/kg/h</td>
-                                    <td>＜0.5 mL/kg/hで乏尿</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <h4>ショックインデックス（SI）</h4>
-                        <ul>
-                            <li>SI = HR（bpm）÷ 収縮期血圧（mmHg）</li>
-                            <li>犬で<strong>SI＞1.0</strong>は有意な低灌流を示唆</li>
-                            <li>トリアージでの迅速な重症度判定に有用</li>
-                        </ul>
-                        <h4>乳酸クリアランス</h4>
-                        <ul>
-                            <li>初期乳酸値と2〜6時間後の値を比較</li>
-                            <li><strong>乳酸クリアランス≥50%/6時間</strong>は良好な予後と相関</li>
-                            <li>乳酸が上昇し続ける場合、蘇生が不十分または原因の未解決を示唆</li>
-                        </ul>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips</h4>
-                            <ul>
-                                <li>猫はショック時に<strong>徐脈</strong>を示すことがある（犬と異なり必ずしも頻脈にならない）→ 猫の徐脈＋低体温＝非代償性ショック</li>
-                                <li>i-STATやエポックがあれば乳酸を測定。なければ身体検査所見（CRT・四肢温・意識レベル）で代用</li>
-                                <li>ドップラー血圧計が最も手軽で正確な非侵襲的血圧測定法</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>輸液反応性評価の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 昇圧薬への移行 -->
-        <div id="vasopressors">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💉</span><span>昇圧薬への移行 ─
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>身体検査によるベッドサイド評価</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>パラメータ</th>
+<th>正常/目標</th>
+<th>ショック時</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR（犬）</td>
+<td>60〜120 bpm</td>
+<td>＞160 bpm（代償性）</td>
+</tr>
+<tr>
+<td>HR（猫）</td>
+<td>140〜220 bpm</td>
+<td>＜140 bpm（非代償性・徐脈に注意）</td>
+</tr>
+<tr>
+<td>CRT</td>
+<td>＜2秒</td>
+<td>＞2秒</td>
+</tr>
+<tr>
+<td>MAP</td>
+<td>≥65mmHg</td>
+<td>＜60mmHg</td>
+</tr>
+<tr>
+<td>乳酸</td>
+<td>犬＜2.5 / 猫＜2.0 mmol/L</td>
+<td>＞4.0 mmol/L で組織低灌流</td>
+</tr>
+<tr>
+<td>尿量</td>
+<td>≥1 mL/kg/h</td>
+<td>＜0.5 mL/kg/hで乏尿</td>
+</tr>
+</tbody>
+</table>
+<h4>ショックインデックス（SI）</h4>
+<ul>
+<li>SI = HR（bpm）÷ 収縮期血圧（mmHg）</li>
+<li>犬で<strong>SI＞1.0</strong>は有意な低灌流を示唆</li>
+<li>トリアージでの迅速な重症度判定に有用</li>
+</ul>
+<h4>乳酸クリアランス</h4>
+<ul>
+<li>初期乳酸値と2〜6時間後の値を比較</li>
+<li><strong>乳酸クリアランス≥50%/6時間</strong>は良好な予後と相関</li>
+<li>乳酸が上昇し続ける場合、蘇生が不十分または原因の未解決を示唆</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>猫はショック時に<strong>徐脈</strong>を示すことがある（犬と異なり必ずしも頻脈にならない）→ 猫の徐脈＋低体温＝非代償性ショック</li>
+<li>i-STATやエポックがあれば乳酸を測定。なければ身体検査所見（CRT・四肢温・意識レベル）で代用</li>
+<li>ドップラー血圧計が最も手軽で正確な非侵襲的血圧測定法</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>輸液反応性評価の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 昇圧薬への移行 -->
+<div id="vasopressors">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💉</span><span>昇圧薬への移行 ─
                             いつ・何を使うか</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>輸液不応性ショックの定義</h4>
-                        <ul>
-                            <li>2〜3回のボーラス投与（犬40〜60mL/kg、猫20〜30mL/kg相当）で灌流指標が改善しない</li>
-                            <li>MAP＜65mmHgが持続</li>
-                            <li>乳酸値が改善しない、または上昇し続ける</li>
-                        </ul>
-                        <h4>昇圧薬の選択</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>薬剤</th>
-                                    <th>用量（CRI）</th>
-                                    <th>主な適応</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>ノルエピネフリン</strong></td>
-                                    <td>0.1〜2 μg/kg/min</td>
-                                    <td>敗血症性ショックの<strong>第一選択</strong>。α1＋β1作用で血管収縮＋心拍出量維持</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>ドパミン</strong></td>
-                                    <td>5〜15 μg/kg/min</td>
-                                    <td>ノルエピネフリンが使用できない場合の代替</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>バソプレシン</strong></td>
-                                    <td>0.5〜5 mU/kg/min</td>
-                                    <td>カテコラミン抵抗性ショックへの追加</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>ドブタミン</strong></td>
-                                    <td>2〜20 μg/kg/min</td>
-                                    <td>心原性ショック（低心拍出量）の<strong>第一選択</strong>。β1選択的</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>エピネフリン</strong></td>
-                                    <td>0.01〜0.1 μg/kg/min CRI<br>又はボーラス 0.01mg/kg IV</td>
-                                    <td>アナフィラキシー。心停止時（CPR）</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips</h4>
-                            <ul>
-                                <li>昇圧薬はシリンジポンプによるCRIが理想。<strong>末梢静脈からの投与も短時間なら許容される</strong>が、血管外漏出には注意</li>
-                                <li>ノルエピネフリンは希釈して使用。4mg/250mL 5%ブドウ糖液 = 16μg/mL</li>
-                                <li>日本の一般病院ではシリンジポンプが1台しかないことも多い → まずノルエピネフリン単剤で開始</li>
-                            </ul>
-                        </div>
-                        <p style="font-size:0.85rem;margin-top:8px;">
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>輸液不応性ショックの定義</h4>
+<ul>
+<li>2〜3回のボーラス投与（犬40〜60mL/kg、猫20〜30mL/kg相当）で灌流指標が改善しない</li>
+<li>MAP＜65mmHgが持続</li>
+<li>乳酸値が改善しない、または上昇し続ける</li>
+</ul>
+<h4>昇圧薬の選択</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>薬剤</th>
+<th>用量（CRI）</th>
+<th>主な適応</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ノルエピネフリン</strong></td>
+<td>0.1〜2 μg/kg/min</td>
+<td>敗血症性ショックの<strong>第一選択</strong>。α1＋β1作用で血管収縮＋心拍出量維持</td>
+</tr>
+<tr>
+<td><strong>ドパミン</strong></td>
+<td>5〜15 μg/kg/min</td>
+<td>ノルエピネフリンが使用できない場合の代替</td>
+</tr>
+<tr>
+<td><strong>バソプレシン</strong></td>
+<td>0.5〜5 mU/kg/min</td>
+<td>カテコラミン抵抗性ショックへの追加</td>
+</tr>
+<tr>
+<td><strong>ドブタミン</strong></td>
+<td>2〜20 μg/kg/min</td>
+<td>心原性ショック（低心拍出量）の<strong>第一選択</strong>。β1選択的</td>
+</tr>
+<tr>
+<td><strong>エピネフリン</strong></td>
+<td>0.01〜0.1 μg/kg/min CRI<br/>又はボーラス 0.01mg/kg IV</td>
+<td>アナフィラキシー。心停止時（CPR）</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>昇圧薬はシリンジポンプによるCRIが理想。<strong>末梢静脈からの投与も短時間なら許容される</strong>が、血管外漏出には注意</li>
+<li>ノルエピネフリンは希釈して使用。4mg/250mL 5%ブドウ糖液 = 16μg/mL</li>
+<li>日本の一般病院ではシリンジポンプが1台しかないことも多い → まずノルエピネフリン単剤で開始</li>
+</ul>
+</div>
+<p style="font-size:0.85rem;margin-top:8px;">
                             ⚠️ 日本の臨床実情:
                             ノルエピネフリン・ドブタミン・バソプレシンはヒト用医薬品を転用。シリンジポンプの台数が限られる一般病院では、昇圧薬が必要な症例は<strong>速やかに救急病院への転院を検討</strong>する判断も重要。
                         </p>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>昇圧薬の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 過剰輸液の回避 -->
-        <div id="pitfalls">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">⚠️</span><span>過剰輸液の回避 ─ いつ止めるか</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>過剰輸液の徴候</h4>
-                        <ul>
-                            <li>頻呼吸の出現・悪化（RR＞40回/分）</li>
-                            <li>鼻汁（漿液性〜泡沫状）→ 肺水腫の初期徴候</li>
-                            <li>SpO2の低下</li>
-                            <li>結膜浮腫（ケモーシス）、四肢末端の浮腫</li>
-                            <li>体重増加＞10%</li>
-                        </ul>
-                        <h4>猫は特に注意</h4>
-                        <ul>
-                            <li>猫は犬よりも過剰輸液に脆弱（循環血液量が少なく、左室コンプライアンスが低い）</li>
-                            <li>猫の循環血液量は約55〜60mL/kg（犬の約80〜90mL/kgに比べ少ない）</li>
-                            <li>未診断のHCM（心筋症）が潜んでいることがある → 輸液で一気に肺水腫に</li>
-                            <li>猫への輸液蘇生は<strong>「少なめ・ゆっくり・こまめに評価」</strong>が鉄則</li>
-                        </ul>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips</h4>
-                            <ul>
-                                <li>蘇生輸液の目標は「正常化」ではなく「<strong>許容範囲への改善</strong>」。MAP≥65mmHg、乳酸の低下傾向が確認できれば追加投与は不要</li>
-                                <li>出血性ショックでは晶質液の大量投与は希釈性凝固障害のリスク → 輸血を早期に検討</li>
-                                <li>胸部聴診で湿性ラ音が聞こえたら輸液を減速/中止</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>過剰輸液回避の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 飼い主説明 -->
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>なぜ点滴をたくさんするのですか？</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>昇圧薬の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 過剰輸液の回避 -->
+<div id="pitfalls">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">⚠️</span><span>過剰輸液の回避 ─ いつ止めるか</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>過剰輸液の徴候</h4>
+<ul>
+<li>頻呼吸の出現・悪化（RR＞40回/分）</li>
+<li>鼻汁（漿液性〜泡沫状）→ 肺水腫の初期徴候</li>
+<li>SpO2の低下</li>
+<li>結膜浮腫（ケモーシス）、四肢末端の浮腫</li>
+<li>体重増加＞10%</li>
+</ul>
+<h4>猫は特に注意</h4>
+<ul>
+<li>猫は犬よりも過剰輸液に脆弱（循環血液量が少なく、左室コンプライアンスが低い）</li>
+<li>猫の循環血液量は約55〜60mL/kg（犬の約80〜90mL/kgに比べ少ない）</li>
+<li>未診断のHCM（心筋症）が潜んでいることがある → 輸液で一気に肺水腫に</li>
+<li>猫への輸液蘇生は<strong>「少なめ・ゆっくり・こまめに評価」</strong>が鉄則</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>蘇生輸液の目標は「正常化」ではなく「<strong>許容範囲への改善</strong>」。MAP≥65mmHg、乳酸の低下傾向が確認できれば追加投与は不要</li>
+<li>出血性ショックでは晶質液の大量投与は希釈性凝固障害のリスク → 輸血を早期に検討</li>
+<li>胸部聴診で湿性ラ音が聞こえたら輸液を減速/中止</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>過剰輸液回避の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 飼い主説明 -->
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>なぜ点滴をたくさんするのですか？</h4>
+<div class="speech-bubble">
                                 今、〇〇ちゃんの体の中では血液が十分に回っていない「ショック」という危険な状態です。血圧を上げて、全身に酸素を届けるために、まずは点滴で水分を補給します。少しずつ投与して反応を見ながら進めますので、安心してください。
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>点滴だけで治りますか？</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>点滴だけで治りますか？</h4>
+<div class="speech-bubble">
                                 点滴はショックから脱出するための最初の一歩です。ショックの原因（出血、感染、アレルギーなど）を見つけて治療することが同時に必要です。原因によっては手術や輸血、追加のお薬が必要になることもあります。
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>どれくらいで安定しますか？</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>どれくらいで安定しますか？</h4>
+<div class="speech-bubble">
                                 点滴の効果は通常15〜30分で現れ始めます。心拍数や血圧を見ながら追加の点滴をするかどうか判断します。軽度のショックなら数時間で安定しますが、重度の場合は24〜48時間の集中治療が必要になることもあります。
                             </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 参照論文 -->
-        <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <li>Byers CG. Fluid therapy — current trends. In: <em>Small Animal Critical Care
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 参照論文 -->
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Byers CG. Fluid therapy — current trends. In: <em>Small Animal Critical Care
                                     Medicine</em>, 3rd ed. Silverstein DC, Hopper K, eds. Elsevier, 2023:373-380.</li>
-                            <li>Pardo M et al. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. <em>J Am Anim Hosp
+<li>Pardo M et al. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. <em>J Am Anim Hosp
                                     Assoc</em>
                                 2024;60(4):131-163.</li>
-                            <li>Mazzaferro EM. Fluid therapy for the emergent small animal patient (2020). <em>Vet Clin
+<li>Mazzaferro EM. Fluid therapy for the emergent small animal patient (2020). <em>Vet Clin
                                     North Am Small Anim Pract</em> 2020;50(6):1217-1235.</li>
-                            <li>Silverstein DC et al. Assessment of fluid balance status. In: <em>Small Animal Critical
+<li>Silverstein DC et al. Assessment of fluid balance status. In: <em>Small Animal Critical
                                     Care Medicine</em>, 3rd ed. Elsevier, 2023.</li>
-                            <li>Hamzaoui O et al. Norepinephrine in septic shock: when and how much? (2017). <em>Curr
+<li>Hamzaoui O et al. Norepinephrine in septic shock: when and how much? (2017). <em>Curr
                                     Opin Crit Care</em> 2017;23(4):342-347.</li>
-                            <li>Davis H et al. 2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. <em>J Am Anim
+<li>Davis H et al. 2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. <em>J Am Anim
                                     Hosp Assoc</em> 2013;49(3):149-159.</li>
-                            <li>Porter AE et al. Lactate and shock index as predictors of outcome in dogs presented to
+<li>Porter AE et al. Lactate and shock index as predictors of outcome in dogs presented to
                                 an emergency service (2013). <em>J Vet Emerg Crit Care</em> 2013;23(6):653-659.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+</ol>
+</div>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js"></script>
-
+</footer>
+</div>
+<script src="../../assets/script.js"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
-
 </html>

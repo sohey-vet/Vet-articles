@@ -1,427 +1,392 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="ハイリスク患者（心疾患・腎不全・高齢・短頭種）の麻酔管理。ASA分類に基づくリスク評価と実践的な麻酔プロトコル選択。">
-    <title>ハイリスク患者の麻酔 ─ ASA分類と実践的アプローチ | VetEvidence</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="ハイリスク患者（心疾患・腎不全・高齢・短頭種）の麻酔管理。ASA分類に基づくリスク評価と実践的な麻酔プロトコル選択。" name="description"/>
+<title>ハイリスク患者の麻酔 ─ ASA分類と実践的アプローチ | VetEvidence</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-    <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button class="hamburger-btn"
-            aria-label="メニュー"><span></span><span></span><span></span></button></nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
+<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[麻酔前患者評価] --> B{ASA分類？};
-    B -- ASA I-II --> C[標準プロトコル];
-    B -- ASA III-V --> D[ハイリスク患者];
+    A[麻酔前患者評価] --&gt; B{ASA分類？};
+    B -- ASA I-II --&gt; C[標準プロトコル];
+    B -- ASA III-V --&gt; D[ハイリスク患者];
 
-    D --> E[術前評価強化];
-    E --> E1[血液検査 心エコー 血圧];
+    D --&gt; E[術前評価強化];
+    E --&gt; E1[血液検査 心エコー 血圧];
 
-    D --> F[麻酔計画立案];
-    F --> F1[心血管抑制少ない薬剤選択];
-    F --> F2[個別リスク対応方針];
+    D --&gt; F[麻酔計画立案];
+    F --&gt; F1[心血管抑制少ない薬剤選択];
+    F --&gt; F2[個別リスク対応方針];
 
-    F2 --> G1{心疾患}; 
-    G1 -- あり --> H1[アセプロマジン回避 オピオイド中心];
-    G1 -- あり --> H2[エトミデート等検討];
+    F2 --&gt; G1{心疾患}; 
+    G1 -- あり --&gt; H1[アセプロマジン回避 オピオイド中心];
+    G1 -- あり --&gt; H2[エトミデート等検討];
 
-    F2 --> G2{腎疾患}; 
-    G2 -- あり --> H3[術前輸液 MAP 65維持];
-    G2 -- あり --> H4[NSAIDs回避];
+    F2 --&gt; G2{腎疾患}; 
+    G2 -- あり --&gt; H3[術前輸液 MAP 65維持];
+    G2 -- あり --&gt; H4[NSAIDs回避];
 
-    F2 --> G3{短頭種}; 
-    G3 -- あり --> H5[プロポ導入 早期挿管];
-    G3 -- あり --> H6[抜管は完全覚醒まで待機];
+    F2 --&gt; G3{短頭種}; 
+    G3 -- あり --&gt; H5[プロポ導入 早期挿管];
+    G3 -- あり --&gt; H6[抜管は完全覚醒まで待機];
 
-    F2 --> G4{高齢動物}; 
-    G4 -- あり --> H7[全薬剤25-50%減量];
-    G4 -- あり --> H8[積極的保温];
+    F2 --&gt; G4{高齢動物}; 
+    G4 -- あり --&gt; H7[全薬剤25-50%減量];
+    G4 -- あり --&gt; H8[積極的保温];
 
-    F --> I[術中モニタリング強化];
-    I --> J[MAP 60-65mmHg維持];
-    I --> K[低血圧対応 バソプレッサー準備];
+    F --&gt; I[術中モニタリング強化];
+    I --&gt; J[MAP 60-65mmHg維持];
+    I --&gt; K[低血圧対応 バソプレッサー準備];
 
-    I --> L[術後回復管理];
-    L --> M[短頭種:抜管判断 再挿管準備];
-    L --> N[保温継続 疼痛管理];
+    I --&gt; L[術後回復管理];
+    L --&gt; M[短頭種:抜管判断 再挿管準備];
+    L --&gt; N[保温継続 疼痛管理];
 
-    C --> L;
-    H1 --> I; H2 --> I; H3 --> I; H4 --> I; H5 --> I; H6 --> I; H7 --> I; H8 --> I;
+    C --&gt; L;
+    H1 --&gt; I; H2 --&gt; I; H3 --&gt; I; H4 --&gt; I; H5 --&gt; I; H6 --&gt; I; H7 --&gt; I; H8 --&gt; I;
 </pre>
-
 </a><a href="#asa">📊
             ASA分類</a><a href="#refs">📚 論文</a>
-    </aside>
-    <div class="page-container">
-        <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
-            <div class="tags" style="margin-bottom:8px;"><span class="tag tag--primary">麻酔</span><span
-                    class="tag tag--danger">救急</span><span class="tag tag--warning">ハイリスク</span></div>
-            <h1 style="font-size:1.3rem;">😴 ハイリスク患者の麻酔 ─ ASA分類と実践的アプローチ</h1>
-            <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+<div class="tags" style="margin-bottom:8px;"><span class="tag tag--primary">麻酔</span><span class="tag tag--danger">救急</span><span class="tag tag--warning">ハイリスク</span><span class="tag tag--primary">犬猫共通</span></div>
+<h1 style="font-size:1.3rem;">😴 ハイリスク患者の麻酔 ─ ASA分類と実践的アプローチ</h1>
+<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">
                 心疾患・腎不全・高齢・短頭種 ─ 「麻酔が怖い」症例にどう向き合うか。ASA分類をベースにしたプロトコル選択の考え方。</p>
-            <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-            </div>
-        </header>
-        <div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input type="checkbox"
-                    id="content-mode-toggle" checked><span class="toggle-slider"></span></label><span
-                class="mode-label">👑 すべて表示</span></div>
-
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論
+<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[麻酔前患者評価] --> B{ASA分類？};
-    B -- ASA I-II --> C[標準プロトコル];
-    B -- ASA III-V --> D[ハイリスク患者];
+    A[麻酔前患者評価] --&gt; B{ASA分類？};
+    B -- ASA I-II --&gt; C[標準プロトコル];
+    B -- ASA III-V --&gt; D[ハイリスク患者];
 
-    D --> E[術前評価強化];
-    E --> E1[血液検査 心エコー 血圧];
+    D --&gt; E[術前評価強化];
+    E --&gt; E1[血液検査 心エコー 血圧];
 
-    D --> F[麻酔計画立案];
-    F --> F1[心血管抑制少ない薬剤選択];
-    F --> F2[個別リスク対応方針];
+    D --&gt; F[麻酔計画立案];
+    F --&gt; F1[心血管抑制少ない薬剤選択];
+    F --&gt; F2[個別リスク対応方針];
 
-    F2 --> G1{心疾患}; 
-    G1 -- あり --> H1[アセプロマジン回避 オピオイド中心];
-    G1 -- あり --> H2[エトミデート等検討];
+    F2 --&gt; G1{心疾患}; 
+    G1 -- あり --&gt; H1[アセプロマジン回避 オピオイド中心];
+    G1 -- あり --&gt; H2[エトミデート等検討];
 
-    F2 --> G2{腎疾患}; 
-    G2 -- あり --> H3[術前輸液 MAP 65維持];
-    G2 -- あり --> H4[NSAIDs回避];
+    F2 --&gt; G2{腎疾患}; 
+    G2 -- あり --&gt; H3[術前輸液 MAP 65維持];
+    G2 -- あり --&gt; H4[NSAIDs回避];
 
-    F2 --> G3{短頭種}; 
-    G3 -- あり --> H5[プロポ導入 早期挿管];
-    G3 -- あり --> H6[抜管は完全覚醒まで待機];
+    F2 --&gt; G3{短頭種}; 
+    G3 -- あり --&gt; H5[プロポ導入 早期挿管];
+    G3 -- あり --&gt; H6[抜管は完全覚醒まで待機];
 
-    F2 --> G4{高齢動物}; 
-    G4 -- あり --> H7[全薬剤25-50%減量];
-    G4 -- あり --> H8[積極的保温];
+    F2 --&gt; G4{高齢動物}; 
+    G4 -- あり --&gt; H7[全薬剤25-50%減量];
+    G4 -- あり --&gt; H8[積極的保温];
 
-    F --> I[術中モニタリング強化];
-    I --> J[MAP 60-65mmHg維持];
-    I --> K[低血圧対応 バソプレッサー準備];
+    F --&gt; I[術中モニタリング強化];
+    I --&gt; J[MAP 60-65mmHg維持];
+    I --&gt; K[低血圧対応 バソプレッサー準備];
 
-    I --> L[術後回復管理];
-    L --> M[短頭種:抜管判断 再挿管準備];
-    L --> N[保温継続 疼痛管理];
+    I --&gt; L[術後回復管理];
+    L --&gt; M[短頭種:抜管判断 再挿管準備];
+    L --&gt; N[保温継続 疼痛管理];
 
-    C --> L;
-    H1 --> I; H2 --> I; H3 --> I; H4 --> I; H5 --> I; H6 --> I; H7 --> I; H8 --> I;
+    C --&gt; L;
+    H1 --&gt; I; H2 --&gt; I; H3 --&gt; I; H4 --&gt; I; H5 --&gt; I; H6 --&gt; I; H7 --&gt; I; H8 --&gt; I;
 </pre>
-
 </h3>
-                <p style="font-size:0.88rem;">
+<p style="font-size:0.88rem;">
                     「この子は麻酔が危険」という判断だけで止まっていないか？<strong>ASA分類（米国麻酔科学会の身体状態分類）</strong>はヒト医療由来だが、獣医療でも麻酔リスクの客観的評価に広く使われている。<strong>ASA
                         III以上</strong>の患者では麻酔関連死亡率が有意に上昇するが、適切なプロトコル選択とモニタリング強化で多くの症例は安全に管理できる。ハイリスク患者の麻酔で最も重要なのは<strong>①術前の全身評価（血液検査・心エコー・血圧）②心血管抑制の少ない薬剤選択③積極的なモニタリングと早期介入</strong>の3本柱。特に<strong>低血圧（MAP
-                        < 60mmHg）は最も一般的かつ危険な合併症</strong>
+                        &lt; 60mmHg）は最も一般的かつ危険な合併症</strong>
                             であり、輸液速度調整とバソプレッサー（エフェドリン・ドパミン等）の準備が必須。短頭種では覚醒時の上気道閉塞が最大のリスクで、<strong>抜管は完全覚醒まで遅らせる</strong>のが原則。
                 </p>
-                <p style="font-size:0.82rem;color:var(--color-text-secondary);margin-top:6px;">
+<p style="font-size:0.82rem;color:var(--color-text-secondary);margin-top:6px;">
                     ⚠️ <strong>日本の臨床実情</strong>:
                     フレンチブルドッグ・パグ等の短頭種人気が続いており、BOAS（短頭種気道症候群）合併の麻酔症例が増加傾向。また高齢猫のCKD合併症例や、心雑音のある小型犬の避妊・歯科処置は日本のホームドクターが日常的に直面する課題。
                 </p>
-            </div>
-        </div>
-
-        <div class="free-content" id="asa">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">📊 ASA身体状態分類（獣医版）</h3>
-                <table class="comparison-table" style="margin:0;">
-                    <thead>
-                        <tr>
-                            <th>ASA</th>
-                            <th>定義</th>
-                            <th>例</th>
-                            <th>死亡率目安</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>I</strong></td>
-                            <td>健康な動物</td>
-                            <td>若齢の避妊・去勢</td>
-                            <td rowspan="2">健康な犬猫（ASA I-II）:<br>犬 0.05% / 猫 0.11%</td>
-                        </tr>
-                        <tr>
-                            <td><strong>II</strong></td>
-                            <td>軽度の全身疾患</td>
-                            <td>肥満、軽度心雑音、高齢だが安定</td>
-                        </tr>
-                        <tr>
-                            <td><strong>III</strong></td>
-                            <td>重度の全身疾患</td>
-                            <td>代償性心不全、中等度CKD、貧血（PCV 20-30%）</td>
-                            <td rowspan="3">病気の犬猫（ASA III-V）:<br>犬 1.33% / 猫 1.40%</td>
-                        </tr>
-                        <tr>
-                            <td><strong>IV</strong></td>
-                            <td>生命を脅かす重度疾患</td>
-                            <td>非代償性心不全、敗血症、重度出血</td>
-                        </tr>
-                        <tr>
-                            <td><strong>V</strong></td>
-                            <td>手術なしでは生存不能</td>
-                            <td>GDV、大量血胸、心タンポナーデ</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:8px;">
+</div>
+</div>
+<div class="free-content" id="asa">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">📊 ASA身体状態分類（獣医版）</h3>
+<table class="comparison-table" style="margin:0;">
+<thead>
+<tr>
+<th>ASA</th>
+<th>定義</th>
+<th>例</th>
+<th>死亡率目安</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I</strong></td>
+<td>健康な動物</td>
+<td>若齢の避妊・去勢</td>
+<td rowspan="2">健康な犬猫（ASA I-II）:<br/>犬 0.05% / 猫 0.11%</td>
+</tr>
+<tr>
+<td><strong>II</strong></td>
+<td>軽度の全身疾患</td>
+<td>肥満、軽度心雑音、高齢だが安定</td>
+</tr>
+<tr>
+<td><strong>III</strong></td>
+<td>重度の全身疾患</td>
+<td>代償性心不全、中等度CKD、貧血（PCV 20-30%）</td>
+<td rowspan="3">病気の犬猫（ASA III-V）:<br/>犬 1.33% / 猫 1.40%</td>
+</tr>
+<tr>
+<td><strong>IV</strong></td>
+<td>生命を脅かす重度疾患</td>
+<td>非代償性心不全、敗血症、重度出血</td>
+</tr>
+<tr>
+<td><strong>V</strong></td>
+<td>手術なしでは生存不能</td>
+<td>GDV、大量血胸、心タンポナーデ</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:8px;">
                     ※死亡率は Brodbelt et al. 2008 (CEPSAF study, 英国98,036症例) に基づく概算。緊急手術は "E" を付記（例: ASA III-E）
                 </p>
-            </div>
-        </div>
-
-        <div class="free-content">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 疾患別 麻酔プロトコルの基本方針</h3>
-                <table class="comparison-table" style="margin:0;">
-                    <thead>
-                        <tr>
-                            <th>疾患</th>
-                            <th>最大のリスク</th>
-                            <th>プロトコル選択のポイント</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>心疾患（MMVD・DCM）</strong></td>
-                            <td>低血圧・不整脈</td>
-                            <td>アセプロマジン回避 or 極低用量。オピオイド（メサドン・フェンタニル）中心で鎮静。α2作動薬は禁忌</td>
-                        </tr>
-                        <tr>
-                            <td><strong>CKD（猫に多い）</strong></td>
-                            <td>腎灌流低下 → AKI</td>
-                            <td>術前輸液（2-3mL/kg/h）。NSAIDs禁忌。MAP > 65mmHg維持</td>
-                        </tr>
-                        <tr>
-                            <td><strong>短頭種（BOAS）</strong></td>
-                            <td>覚醒時の上気道閉塞</td>
-                            <td>プロポフォール導入 → 早期挿管。抜管は完全覚醒まで待つ。デキサメサゾン0.1mg/kg IV予防的投与を検討</td>
-                        </tr>
-                        <tr>
-                            <td><strong>高齢動物（> 10歳）</strong></td>
-                            <td>薬剤感受性亢進・低体温</td>
-                            <td>全薬剤25-50%減量。積極的な保温。「低用量で開始、効果を見て追加」</td>
-                        </tr>
-                        <tr>
-                            <td><strong>肝疾患</strong></td>
-                            <td>薬物代謝遅延・凝固異常</td>
-                            <td>プロポフォール単回は安全。CRI維持は回避。ベンゾジアゼピンは肝性脳症リスクあり注意</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <hr class="section-divider">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-            <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
-            <div><button onclick="toggleAllAccordions(true)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button
-                    onclick="toggleAllAccordions(false)"
-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
-            </div>
-        </div>
-
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">🫀</span><span>心疾患患者の麻酔 ─ MMVD・DCM・HCM</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <div class="key-findings" style="margin-top:0;">
-                        <h4>心疾患別の麻酔戦略</h4>
-                        <ul>
-                            <li><strong>MMVD（僧帽弁閉鎖不全症）</strong>: 後負荷減少が有利 →
+</div>
+</div>
+<div class="free-content">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 疾患別 麻酔プロトコルの基本方針</h3>
+<table class="comparison-table" style="margin:0;">
+<thead>
+<tr>
+<th>疾患</th>
+<th>最大のリスク</th>
+<th>プロトコル選択のポイント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>心疾患（MMVD・DCM）</strong></td>
+<td>低血圧・不整脈</td>
+<td>アセプロマジン回避 or 極低用量。オピオイド（メサドン・フェンタニル）中心で鎮静。α2作動薬は禁忌</td>
+</tr>
+<tr>
+<td><strong>CKD（猫に多い）</strong></td>
+<td>腎灌流低下 → AKI</td>
+<td>術前輸液（2-3mL/kg/h）。NSAIDs禁忌。MAP &gt; 65mmHg維持</td>
+</tr>
+<tr>
+<td><strong>短頭種（BOAS）</strong></td>
+<td>覚醒時の上気道閉塞</td>
+<td>プロポフォール導入 → 早期挿管。抜管は完全覚醒まで待つ。デキサメサゾン0.1mg/kg IV予防的投与を検討</td>
+</tr>
+<tr>
+<td><strong>高齢動物（&gt; 10歳）</strong></td>
+<td>薬剤感受性亢進・低体温</td>
+<td>全薬剤25-50%減量。積極的な保温。「低用量で開始、効果を見て追加」</td>
+</tr>
+<tr>
+<td><strong>肝疾患</strong></td>
+<td>薬物代謝遅延・凝固異常</td>
+<td>プロポフォール単回は安全。CRI維持は回避。ベンゾジアゼピンは肝性脳症リスクあり注意</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="section-divider"/>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
+</div>
+</div>
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🫀</span><span>心疾患患者の麻酔 ─ MMVD・DCM・HCM</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>心疾患別の麻酔戦略</h4>
+<ul>
+<li><strong>MMVD（僧帽弁閉鎖不全症）</strong>: 後負荷減少が有利 →
                                 軽度の血管拡張は許容。ただし過度の低血圧はNG。アセプロマジン低用量（0.005-0.01mg/kg）は穏やかな血管拡張で実は有用との報告あり</li>
-                            <li><strong>DCM（拡張型心筋症）</strong>:
+<li><strong>DCM（拡張型心筋症）</strong>:
                                 心収縮力が低下しているため、<strong>陰性変力作用のある薬剤（プロポフォール高用量、α2作動薬）を回避</strong>。エトミデート（0.5-2mg/kg
                                 IV）は心血管安定性が最も高い導入薬</li>
-                            <li><strong>HCM（肥大型心筋症・猫）</strong>:
+<li><strong>HCM（肥大型心筋症・猫）</strong>:
                                 頻脈と脱水を回避。ケタミン単独は頻脈誘発で<strong>禁忌</strong>。アルファキサロンは比較的安全な導入薬として近年注目</li>
-                            <li>α2作動薬（メデトミジン・デクスメデトミジン）:
+<li>α2作動薬（メデトミジン・デクスメデトミジン）:
                                 MMVD・DCMでは<strong>原則回避</strong>（徐脈＋末梢血管収縮＋後負荷増大）。ただし<strong>HCMで左室流出路閉塞（LVOTO）がある場合には、心拍数を下げて拡張期を確保する目的で低用量使用が推奨されるケースがある</strong>ため、「全心疾患で禁忌」ではない
                             </li>
-                            <li>モニタリング: 直接血圧が理想。最低でも非観血的血圧を5分毎に測定</li>
-                        </ul>
-                    </div>
-                    <div class="clinical-tip">
-                        <h4>💡 実践プロトコル例（MMVD犬の歯科処置）</h4>
-                        <ol>
-                            <li>前投薬: メサドン 0.2-0.3mg/kg IM + ミダゾラム 0.2mg/kg IM</li>
-                            <li>導入: プロポフォール 2-4mg/kg IV（効果量まで緩徐に）</li>
-                            <li>維持: セボフルラン（MAC 1.0-1.3を目標）+ フェンタニルCRI 2-5μg/kg/h</li>
-                            <li>局所麻酔ブロック併用で吸入麻酔薬を最小化（= 心血管抑制を軽減）</li>
-                            <li>術中: MAP > 65mmHg維持。低血圧時はドパミン 5〜15μg/kg/min CRI（昇圧目的）</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
-            </div>
-        </div>
-
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">🫘</span><span>腎疾患患者の麻酔 ─ CKD・術後AKI予防</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <div class="key-findings" style="margin-top:0;">
-                        <h4>腎保護を意識した麻酔管理</h4>
-                        <ul>
-                            <li>CKD猫の麻酔で最も重要なのは<strong>腎灌流圧の維持</strong>（MAP > 65mmHg）</li>
-                            <li><strong>NSAIDs（メロキシカム・カルプロフェン等）は禁忌</strong> ─ 腎血流を低下させAKIを誘発</li>
-                            <li>術前輸液: 2-3mL/kg/h の乳酸リンゲルを術前1-2時間から開始</li>
-                            <li>術中輸液: 5mL/kg/h（猫は3mL/kg/h）。ただし心疾患合併例では過剰輸液に注意</li>
-                            <li>鎮痛: オピオイド（ブプレノルフィン 0.02mg/kg IV q6-8h）が安全。代替としてケタミンCRI 2-5μg/kg/min</li>
-                            <li>術後: 尿量モニタリング（正常 1-2mL/kg/h）。術後12-24時間は輸液を継続</li>
-                        </ul>
-                    </div>
-                    <div class="warning-box">
-                        <h4>CKD猫でよくある落とし穴</h4>
-                        <ul>
-                            <li>「BUN/Creが軽度上昇だから大丈夫」→ 猫のCKD IRIS Stage IIでも麻酔によるAKI誘発リスクはある</li>
-                            <li>低アルブミン（< 2.0g/dL）→ 薬物の遊離型増加で効果増強。用量を減らす</li>
-                            <li>高カリウム（> 6.0mEq/L）→ 麻酔前に補正必須。不整脈リスク</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
-            </div>
-        </div>
-
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">🐶</span><span>短頭種の麻酔 ─ BOAS管理の実際</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <div class="key-findings" style="margin-top:0;">
-                        <h4>短頭種特有の麻酔リスク</h4>
-                        <ul>
-                            <li>短頭種は非短頭種と比較して<strong>麻酔関連死亡率が約2倍</strong>（Brodbelt 2008）</li>
-                            <li>リスクの本質: 過長軟口蓋・狭窄性外鼻孔・喉頭虚脱による<strong>覚醒・回復時の上気道閉塞</strong></li>
-                            <li>前酸素化（preoxygenation）: <strong>最低3分間</strong>のフローバイ酸素 → SpO2低下までの安全マージン確保</li>
-                            <li>導入: プロポフォールで迅速導入 → <strong>速やかに挿管</strong>。小さめのチューブを複数サイズ準備</li>
-                            <li>維持: セボフルランは覚醒が速く短頭種に有利</li>
-                            <li><strong>抜管は完全覚醒・嚥下反射確認まで遅らせる</strong>。抜管直前にデキサメサゾン0.1mg/kg IV投与で喉頭浮腫予防</li>
-                        </ul>
-                    </div>
-                    <div class="clinical-tip">
-                        <h4>💡 短頭種の覚醒管理チェックリスト</h4>
-                        <ul>
-                            <li>✅ 気管チューブは可能な限り長く留置</li>
-                            <li>✅ 覚醒中は胸骨臥位（腹臥位に近い姿勢）で回復</li>
-                            <li>✅ 酸素を流しながら覚醒を待つ</li>
-                            <li>✅ 吸引器を手元に準備（分泌物による閉塞に備える）</li>
-                            <li>✅ 再挿管セットを覚醒完了まで片付けない</li>
-                            <li>✅ 覚醒後も最低2時間は密にモニタリング</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
-            </div>
-        </div>
-
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">🧓</span><span>高齢動物の麻酔 ─ 加齢による薬理変化</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <div class="key-findings" style="margin-top:0;">
-                        <h4>加齢が麻酔に与える影響</h4>
-                        <ul>
-                            <li>心拍出量の低下 → <strong>薬物の臓器到達が遅い</strong>（「まだ効かない」と追加投薬しがち）</li>
-                            <li>体脂肪率増加 → 脂溶性薬物（プロポフォール等）の分布容積が増大 → 覚醒遅延</li>
-                            <li>肝・腎のクリアランス低下 → 薬物の作用時間延長</li>
-                            <li>体温調節能力低下 → <strong>低体温は最も一般的な合併症</strong>（35℃以下で覚醒遅延・凝固障害）</li>
-                            <li>原則: <strong>全薬剤を25-50%減量</strong>し、効果を見ながら追加する「titrate to effect」</li>
-                        </ul>
-                    </div>
-                    <div class="clinical-tip">
-                        <h4>💡 高齢動物の保温戦略</h4>
-                        <p>体温35℃以下で覚醒が著しく遅延し、凝固異常リスクも上昇。</p>
-                        <ul>
-                            <li><strong>強制温風式マット（Bair Hugger等）</strong>が最も効果的</li>
-                            <li>温水循環マットは次善策（低温やけどに注意）</li>
-                            <li>術中の輸液加温（37-38℃）</li>
-                            <li>四肢のアルミホイル巻き ─ 簡易だが効果あり</li>
-                            <li>術野の消毒液を温めて使用</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
-            </div>
-        </div>
-
-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body premium-content">
-                    <div class="owner-tip" style="margin-top:0;">
-                        <h4>麻酔のリスクが高いって、どのくらい危険なの？</h4>
-                        <div class="speech-bubble">
+<li>モニタリング: 直接血圧が理想。最低でも非観血的血圧を5分毎に測定</li>
+</ul>
+</div>
+<div class="clinical-tip">
+<h4>💡 実践プロトコル例（MMVD犬の歯科処置）</h4>
+<ol>
+<li>前投薬: メサドン 0.2-0.3mg/kg IM + ミダゾラム 0.2mg/kg IM</li>
+<li>導入: プロポフォール 2-4mg/kg IV（効果量まで緩徐に）</li>
+<li>維持: セボフルラン（MAC 1.0-1.3を目標）+ フェンタニルCRI 2-5μg/kg/h</li>
+<li>局所麻酔ブロック併用で吸入麻酔薬を最小化（= 心血管抑制を軽減）</li>
+<li>術中: MAP &gt; 65mmHg維持。低血圧時はドパミン 5〜15μg/kg/min CRI（昇圧目的）</li>
+</ol>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🫘</span><span>腎疾患患者の麻酔 ─ CKD・術後AKI予防</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>腎保護を意識した麻酔管理</h4>
+<ul>
+<li>CKD猫の麻酔で最も重要なのは<strong>腎灌流圧の維持</strong>（MAP &gt; 65mmHg）</li>
+<li><strong>NSAIDs（メロキシカム・カルプロフェン等）は禁忌</strong> ─ 腎血流を低下させAKIを誘発</li>
+<li>術前輸液: 2-3mL/kg/h の乳酸リンゲルを術前1-2時間から開始</li>
+<li>術中輸液: 5mL/kg/h（猫は3mL/kg/h）。ただし心疾患合併例では過剰輸液に注意</li>
+<li>鎮痛: オピオイド（ブプレノルフィン 0.02mg/kg IV q6-8h）が安全。代替としてケタミンCRI 2-5μg/kg/min</li>
+<li>術後: 尿量モニタリング（正常 1-2mL/kg/h）。術後12-24時間は輸液を継続</li>
+</ul>
+</div>
+<div class="warning-box">
+<h4>CKD猫でよくある落とし穴</h4>
+<ul>
+<li>「BUN/Creが軽度上昇だから大丈夫」→ 猫のCKD IRIS Stage IIでも麻酔によるAKI誘発リスクはある</li>
+<li>低アルブミン（&lt; 2.0g/dL）→ 薬物の遊離型増加で効果増強。用量を減らす</li>
+<li>高カリウム（&gt; 6.0mEq/L）→ 麻酔前に補正必須。不整脈リスク</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🐶</span><span>短頭種の麻酔 ─ BOAS管理の実際</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>短頭種特有の麻酔リスク</h4>
+<ul>
+<li>短頭種は非短頭種と比較して<strong>麻酔関連死亡率が約2倍</strong>（Brodbelt 2008）</li>
+<li>リスクの本質: 過長軟口蓋・狭窄性外鼻孔・喉頭虚脱による<strong>覚醒・回復時の上気道閉塞</strong></li>
+<li>前酸素化（preoxygenation）: <strong>最低3分間</strong>のフローバイ酸素 → SpO2低下までの安全マージン確保</li>
+<li>導入: プロポフォールで迅速導入 → <strong>速やかに挿管</strong>。小さめのチューブを複数サイズ準備</li>
+<li>維持: セボフルランは覚醒が速く短頭種に有利</li>
+<li><strong>抜管は完全覚醒・嚥下反射確認まで遅らせる</strong>。抜管直前にデキサメサゾン0.1mg/kg IV投与で喉頭浮腫予防</li>
+</ul>
+</div>
+<div class="clinical-tip">
+<h4>💡 短頭種の覚醒管理チェックリスト</h4>
+<ul>
+<li>✅ 気管チューブは可能な限り長く留置</li>
+<li>✅ 覚醒中は胸骨臥位（腹臥位に近い姿勢）で回復</li>
+<li>✅ 酸素を流しながら覚醒を待つ</li>
+<li>✅ 吸引器を手元に準備（分泌物による閉塞に備える）</li>
+<li>✅ 再挿管セットを覚醒完了まで片付けない</li>
+<li>✅ 覚醒後も最低2時間は密にモニタリング</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🧓</span><span>高齢動物の麻酔 ─ 加齢による薬理変化</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>加齢が麻酔に与える影響</h4>
+<ul>
+<li>心拍出量の低下 → <strong>薬物の臓器到達が遅い</strong>（「まだ効かない」と追加投薬しがち）</li>
+<li>体脂肪率増加 → 脂溶性薬物（プロポフォール等）の分布容積が増大 → 覚醒遅延</li>
+<li>肝・腎のクリアランス低下 → 薬物の作用時間延長</li>
+<li>体温調節能力低下 → <strong>低体温は最も一般的な合併症</strong>（35℃以下で覚醒遅延・凝固障害）</li>
+<li>原則: <strong>全薬剤を25-50%減量</strong>し、効果を見ながら追加する「titrate to effect」</li>
+</ul>
+</div>
+<div class="clinical-tip">
+<h4>💡 高齢動物の保温戦略</h4>
+<p>体温35℃以下で覚醒が著しく遅延し、凝固異常リスクも上昇。</p>
+<ul>
+<li><strong>強制温風式マット（Bair Hugger等）</strong>が最も効果的</li>
+<li>温水循環マットは次善策（低温やけどに注意）</li>
+<li>術中の輸液加温（37-38℃）</li>
+<li>四肢のアルミホイル巻き ─ 簡易だが効果あり</li>
+<li>術野の消毒液を温めて使用</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>麻酔のリスクが高いって、どのくらい危険なの？</h4>
+<div class="speech-bubble">
                             ○○ちゃんは心臓に持病があるので、健康な子と比べると麻酔のリスクは少し高くなります。ただし、事前にしっかり検査を行い、心臓への負担が少ないお薬を選び、術中も血圧や心電図を細かくモニタリングしますので、リスクを最小限にできます。処置をしないことで病気が悪化するリスクと天秤にかけて、一緒に判断しましょう。
                         </div>
-                    </div>
-                    <div class="owner-tip">
-                        <h4>高齢でも麻酔は大丈夫？</h4>
-                        <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>高齢でも麻酔は大丈夫？</h4>
+<div class="speech-bubble">
                             年齢だけで麻酔のリスクが決まるわけではありません。大切なのは内臓の状態です。血液検査やエコーの結果から判断して、お薬の量を調整します。高齢の子は若い子より少しゆっくり目が覚めることがありますが、それは想定内ですのでご安心ください。
                         </div>
-                    </div>
-                </div>
-                <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-            </div>
-        </div>
-
-        <div class="accordion" id="refs"><button class="accordion-trigger"><span class="trigger-left"><span
-                        class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span
-                    class="chevron">▼</span></button>
-            <div class="accordion-content">
-                <div class="accordion-body">
-                    <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                        <li>Brodbelt DC et al. The risk of death: the Confidential Enquiry into Perioperative Small
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+<div class="accordion" id="refs"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
+<div class="accordion-content">
+<div class="accordion-body">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Brodbelt DC et al. The risk of death: the Confidential Enquiry into Perioperative Small
                             Animal Fatalities (CEPSAF). <em>Vet Anaesth Analg</em> 2008;35(5):365-373.</li>
-                        <li>Brodbelt DC et al. Results of the Confidential Enquiry into Perioperative Small Animal
+<li>Brodbelt DC et al. Results of the Confidential Enquiry into Perioperative Small Animal
                             Fatalities regarding risk factors for anesthetic-related death in dogs. <em>J Am Vet Med
                                 Assoc</em> 2008;233(7):1096-1104.</li>
-                        <li>Grubb T et al. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. <em>J Am
+<li>Grubb T et al. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. <em>J Am
                                 Anim Hosp Assoc</em> 2020;56(2):59-82.</li>
-                        <li>Kennedy MJ, Smith LJ. A comparison of cardiopulmonary function, recovery quality, and total
+<li>Kennedy MJ, Smith LJ. A comparison of cardiopulmonary function, recovery quality, and total
                             dosages required for induction and total intravenous anesthesia with propofol versus a
                             propofol-ketamine combination in healthy Beagle dogs. <em>Vet Anaesth Analg</em>
                             2015;42(4):350-359.</li>
-                        <li>Duke-Novakovski T et al, eds. <em>BSAVA Manual of Canine and Feline Anaesthesia and
+<li>Duke-Novakovski T et al, eds. <em>BSAVA Manual of Canine and Feline Anaesthesia and
                                 Analgesia</em>, 3rd ed. BSAVA, 2016.</li>
-                        <li>Bednarski R et al. AAHA Anesthesia Guidelines for Dogs and Cats. <em>J Am Anim Hosp
+<li>Bednarski R et al. AAHA Anesthesia Guidelines for Dogs and Cats. <em>J Am Anim Hosp
                                 Assoc</em> 2011;47(6):377-385.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-
-        <footer class="page-footer" style="margin-top:var(--space-xl);">
-            <p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+</ol>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top:var(--space-xl);">
+<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js"></script>
-
+</footer>
+</div>
+<script src="../../assets/script.js"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
-
 </html>

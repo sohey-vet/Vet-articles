@@ -1,77 +1,70 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="犬猫のショック管理最新プロトコル。4類型の鑑別、輸液ボーラス用量（2024 AAHA GL準拠）、昇圧薬の使い方。">
-    <title>ショック管理の最新プロトコル | VetEvidence</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="犬猫のショック管理最新プロトコル。4類型の鑑別、輸液ボーラス用量（2024 AAHA GL準拠）、昇圧薬の使い方。" name="description"/>
+<title>ショック管理の最新プロトコル | VetEvidence</title>
+<link href="../../assets/style.css" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-
-    <!-- ===== Mobile Navigation ===== -->
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button class="hamburger-btn" aria-label="メニュー">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
-        <a href="#action-table">🗺️ 4類型の鑑別</a>
-        <a href="#hypovolemic">💧 循環血液量減少性</a>
-        <a href="#distributive">🔥 血液分布異常性</a>
-        <a href="#cardiogenic">❤️ 心原性</a>
-        <a href="#obstructive">🚧 閉塞性</a>
-        <a href="#vasopressor">💉 昇圧薬</a>
-        <a href="#monitoring">📊 モニタリング</a>
-        <a href="#owner-tips">🗣️ 飼い主説明</a>
-        <a href="#refs">📚 参照論文</a>
-        <h4>情報ソース</h4>
-        <a href="https://www.aaha.org/" target="_blank">📖 AAHA 2024 GL</a>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-    </aside>
-
-    <div class="page-container">
-
-        <!-- ===== HEADER ===== -->
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <span class="tag tag--primary">救急</span>
-                <span class="tag tag--warning">輸液</span>
-                <span class="tag tag--success">昇圧薬</span>
-            </div>
-            <h1 style="font-size: 1.3rem;">🚨 ショック管理の最新プロトコル ─ 犬猫</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+<!-- ===== Mobile Navigation ===== -->
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#conclusion">🎯 結論</a>
+<a href="#action-table">🗺️ 4類型の鑑別</a>
+<a href="#hypovolemic">💧 循環血液量減少性</a>
+<a href="#distributive">🔥 血液分布異常性</a>
+<a href="#cardiogenic">❤️ 心原性</a>
+<a href="#obstructive">🚧 閉塞性</a>
+<a href="#vasopressor">💉 昇圧薬</a>
+<a href="#monitoring">📊 モニタリング</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://www.aaha.org/" target="_blank">📖 AAHA 2024 GL</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<!-- ===== HEADER ===== -->
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<span class="tag tag--primary">救急</span>
+<span class="tag tag--warning">輸液</span>
+<span class="tag tag--success">昇圧薬</span>
+<span class="tag tag--primary">猫</span><span class="tag tag--primary">犬</span><span class="tag tag--primary">循環器</span></div>
+<h1 style="font-size: 1.3rem;">🚨 ショック管理の最新プロトコル ─ 犬猫</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
                 4つのショック類型を正しく鑑別し、最初の1時間で勝負を決める。2024 AAHA輸液ガイドライン準拠。
             </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-            </div>
-        </header>
-
-        <!-- ===== 表示モード切替 ===== -->
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input type="checkbox" id="content-mode-toggle" checked>
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-
-        <!-- ===== FREE ZONE ===== -->
-
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
-                <p style="font-size:0.88rem;">
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文 6本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<!-- ===== 表示モード切替 ===== -->
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- ===== FREE ZONE ===== -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<p style="font-size:0.88rem;">
                     ショックは<strong>4類型（循環血液量減少性・血液分布異常性・心原性・閉塞性）</strong>に分類され、治療アプローチが根本的に異なる。
                     <strong>最初の1時間（Golden Hour）</strong>の対応が生死を分ける。
                     2024
@@ -79,518 +72,503 @@
                     心原性ショックでは<strong>輸液は禁忌に近い</strong> ─ 間違えれば肺水腫を悪化させる。
                     輸液蘇生に反応しない低血圧には<strong>ノルエピネフリンが第一選択の昇圧薬</strong>（DACVECC専門医の87.9%が犬で第一選択として使用）。
                 </p>
-            </div>
-        </div>
-
-        <div class="free-content" id="action-table">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ショック4類型 ─ 鑑別と初期対応の早見表</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:0;min-width:700px;">
-                        <thead>
-                            <tr>
-                                <th>類型</th>
-                                <th>主な原因</th>
-                                <th>代表的な身体所見（犬）</th>
-                                <th>⚠️ 猫の違い</th>
-                                <th>初期対応</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>💧 循環血液量<br>減少性</strong></td>
-                                <td>出血・脱水・消化器喪失（嘔吐/下痢）・第三空間貯留</td>
-                                <td>頻脈、CRT延長、粘膜蒼白、脈圧低下、四肢冷感</td>
-                                <td>犬と異なり<strong>徐脈・低体温</strong>で来ることが多い</td>
-                                <td>等張晶質液ボーラス<br>犬: 15-20mL/kg<br>猫: 5-10mL/kg</td>
-                            </tr>
-                            <tr>
-                                <td><strong>🔥 血液分布<br>異常性</strong></td>
-                                <td>敗血症・SIRS・アナフィラキシー・重度膵炎</td>
-                                <td>初期: 粘膜紅潮、バウンディングパルス、CRT短縮<br>後期: 低血圧、蒼白</td>
-                                <td>初期の代償性反応が犬より不明瞭なことが多い</td>
-                                <td>輸液蘇生 + 原因治療<br><strong>昇圧薬が高頻度で必要</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>❤️ 心原性</strong></td>
-                                <td>DCM・重度弁膜症・不整脈・猫HCM</td>
-                                <td>頻脈（時に徐脈）、肺クラックル、頸静脈怒張、心雑音</td>
-                                <td>HCMでは心雑音がないこともある</td>
-                                <td>⚠️ <strong>輸液は基本禁忌</strong><br>酸素 + 利尿薬 + 強心薬</td>
-                            </tr>
-                            <tr>
-                                <td><strong>🚧 閉塞性</strong></td>
-                                <td>心タンポナーデ・肺血栓塞栓症・猫のATE</td>
-                                <td>頸静脈怒張、奇脈（心タンポナーデ）、急性後肢麻痺（ATE）</td>
-                                <td>ATEでは後肢の5Pが特徴的<br>(Pain, Pulselessness, Pallor, Paralysis, Poikilothermia)</td>
-                                <td>閉塞の解除が最優先<br>心嚢穿刺など</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
+</div>
+</div>
+<div class="free-content" id="action-table">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ ショック4類型 ─ 鑑別と初期対応の早見表</h3>
+<div style="overflow-x:auto;">
+<table class="comparison-table" style="margin:0;min-width:700px;">
+<thead>
+<tr>
+<th>類型</th>
+<th>主な原因</th>
+<th>代表的な身体所見（犬）</th>
+<th>⚠️ 猫の違い</th>
+<th>初期対応</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>💧 循環血液量<br/>減少性</strong></td>
+<td>出血・脱水・消化器喪失（嘔吐/下痢）・第三空間貯留</td>
+<td>頻脈、CRT延長、粘膜蒼白、脈圧低下、四肢冷感</td>
+<td>犬と異なり<strong>徐脈・低体温</strong>で来ることが多い</td>
+<td>等張晶質液ボーラス<br/>犬: 15-20mL/kg<br/>猫: 5-10mL/kg</td>
+</tr>
+<tr>
+<td><strong>🔥 血液分布<br/>異常性</strong></td>
+<td>敗血症・SIRS・アナフィラキシー・重度膵炎</td>
+<td>初期: 粘膜紅潮、バウンディングパルス、CRT短縮<br/>後期: 低血圧、蒼白</td>
+<td>初期の代償性反応が犬より不明瞭なことが多い</td>
+<td>輸液蘇生 + 原因治療<br/><strong>昇圧薬が高頻度で必要</strong></td>
+</tr>
+<tr>
+<td><strong>❤️ 心原性</strong></td>
+<td>DCM・重度弁膜症・不整脈・猫HCM</td>
+<td>頻脈（時に徐脈）、肺クラックル、頸静脈怒張、心雑音</td>
+<td>HCMでは心雑音がないこともある</td>
+<td>⚠️ <strong>輸液は基本禁忌</strong><br/>酸素 + 利尿薬 + 強心薬</td>
+</tr>
+<tr>
+<td><strong>🚧 閉塞性</strong></td>
+<td>心タンポナーデ・肺血栓塞栓症・猫のATE</td>
+<td>頸静脈怒張、奇脈（心タンポナーデ）、急性後肢麻痺（ATE）</td>
+<td>ATEでは後肢の5Pが特徴的<br/>(Pain, Pulselessness, Pallor, Paralysis, Poikilothermia)</td>
+<td>閉塞の解除が最優先<br/>心嚢穿刺など</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
                     ⚠️ 臨床的注意: 複合型ショック（例: 出血性ショック + 敗血症）は珍しくない。常に複数の類型の併存を考慮する。
                 </p>
-            </div>
-        </div>
-
-        <!-- ===== 昔vs今 ===== -->
-        <div class="free-content">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
-                <table class="comparison-table" style="margin:0;">
-                    <thead>
-                        <tr>
-                            <th>❌ 旧来</th>
-                            <th>✅ 最新</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>犬のショック用量は90mL/kgを1時間で全量投与</td>
-                            <td><strong>15〜20mL/kgを15〜30分でボーラス → 再評価 → 追加判断</strong>。全量一括投与は過剰輸液と組織浮腫のリスク（2024 AAHA GL）
+</div>
+</div>
+<!-- ===== 昔vs今 ===== -->
+<div class="free-content">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<table class="comparison-table" style="margin:0;">
+<thead>
+<tr>
+<th>❌ 旧来</th>
+<th>✅ 最新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>犬のショック用量は90mL/kgを1時間で全量投与</td>
+<td><strong>15〜20mL/kgを15〜30分でボーラス → 再評価 → 追加判断</strong>。全量一括投与は過剰輸液と組織浮腫のリスク（2024 AAHA GL）
                             </td>
-                        </tr>
-                        <tr>
-                            <td>猫も犬と同じショック用量で輸液</td>
-                            <td>猫は容量負荷に弱く、<strong>5〜10mL/kgから開始</strong>。犬と同量では肺水腫のリスクが高い</td>
-                        </tr>
-                        <tr>
-                            <td>昇圧薬はドパミンが第一選択</td>
-                            <td><strong>ノルエピネフリンが第一選択</strong>。ドパミンは頻脈・不整脈のリスクが高く、ヒト医療の敗血症ガイドライン（SSC 2021）でも推奨度が下がっている
+</tr>
+<tr>
+<td>猫も犬と同じショック用量で輸液</td>
+<td>猫は容量負荷に弱く、<strong>5〜10mL/kgから開始</strong>。犬と同量では肺水腫のリスクが高い</td>
+</tr>
+<tr>
+<td>昇圧薬はドパミンが第一選択</td>
+<td><strong>ノルエピネフリンが第一選択</strong>。ドパミンは頻脈・不整脈のリスクが高く、ヒト医療の敗血症ガイドライン（SSC 2021）でも推奨度が下がっている
                             </td>
-                        </tr>
-                        <tr>
-                            <td>ショックならまず輸液</td>
-                            <td>心原性ショックでは輸液は<strong>禁忌</strong>。心タンポナーデでは<strong>心嚢穿刺</strong>が先。類型の鑑別が最初のステップ</td>
-                        </tr>
-                        <tr>
-                            <td>乳酸値はあまり測らない</td>
-                            <td>ショックの重症度評価と治療反応の指標として<strong>ラクテートモニタリングは必須</strong>。4mmol/L以上は重度ショックを示唆
+</tr>
+<tr>
+<td>ショックならまず輸液</td>
+<td>心原性ショックでは輸液は<strong>禁忌</strong>。心タンポナーデでは<strong>心嚢穿刺</strong>が先。類型の鑑別が最初のステップ</td>
+</tr>
+<tr>
+<td>乳酸値はあまり測らない</td>
+<td>ショックの重症度評価と治療反応の指標として<strong>ラクテートモニタリングは必須</strong>。4mmol/L以上は重度ショックを示唆
 
 <!-- 個別生成図表 -->
 <pre class="mermaid">
 graph TD
-    A[ショック兆候のある動物 (低血圧, CRT異常, 粘膜蒼白/紅潮など)] --> B{初期評価: ABCs + POCUS / 身体検査}
+    A[ショック兆候のある動物 (低血圧, CRT異常, 粘膜蒼白/紅潮など)] --&gt; B{初期評価: ABCs + POCUS / 身体検査}
 
-    B --> C{心原性/閉塞性ショックの可能性は？<br> (肺水腫, 頸静脈怒張, 心音異常, 心嚢液, ATE症状, POCUS所見)}
-    C -- Yes --> D{心原性/閉塞性の鑑別と治療}
-    D -- 心タンポナーデが原因 --> D1[心嚢穿刺が最優先]
-    D -- 心不全が原因 --> D2[酸素 + 利尿薬 + 強心薬 (⚠️輸液基本禁忌)]
-    D -- ATEが原因 --> D3[疼痛管理 + 抗血栓薬]
+    B --&gt; C{心原性/閉塞性ショックの可能性は？<br/> (肺水腫, 頸静脈怒張, 心音異常, 心嚢液, ATE症状, POCUS所見)}
+    C -- Yes --&gt; D{心原性/閉塞性の鑑別と治療}
+    D -- 心タンポナーデが原因 --&gt; D1[心嚢穿刺が最優先]
+    D -- 心不全が原因 --&gt; D2[酸素 + 利尿薬 + 強心薬 (⚠️輸液基本禁忌)]
+    D -- ATEが原因 --&gt; D3[疼痛管理 + 抗血栓薬]
 
-    C -- No --> E{循環血液量減少性/血液分布異常性の可能性は？}
-    E -- 出血/脱水/消化器喪失の徴候あり --> F[💧 循環血液量減少性ショック]
-    E -- 敗血症/SIRS/アナフィラキシー徴候あり --> G[🔥 血液分布異常性ショック]
+    C -- No --&gt; E{循環血液量減少性/血液分布異常性の可能性は？}
+    E -- 出血/脱水/消化器喪失の徴候あり --&gt; F[💧 循環血液量減少性ショック]
+    E -- 敗血症/SIRS/アナフィラキシー徴候あり --&gt; G[🔥 血液分布異常性ショック]
 
-    F --> H{等張晶質液ボーラス<br> (犬: 15-20mL/kg, 猫: 5-10mL/kg を 15-30分で)}
-    G --> H
+    F --&gt; H{等張晶質液ボーラス<br/> (犬: 15-20mL/kg, 猫: 5-10mL/kg を 15-30分で)}
+    G --&gt; H
 
-    H --> I{ボーラス後の灌流パラメータ再評価<br> (CRT, 粘膜色, 心拍, 血圧, 意識, ラクテート)}
-    I -- 改善あり --> J[モニタリング & 維持輸液 & 原因治療]
-    I -- 改善なし (1-2回追加ボーラス後) --> K{輸液抵抗性の低血圧は？}
-    K -- Yes --> L[💉 昇圧薬開始: ノルエピネフリンCRIが第一選択]
-    K -- No --> H
+    H --&gt; I{ボーラス後の灌流パラメータ再評価<br/> (CRT, 粘膜色, 心拍, 血圧, 意識, ラクテート)}
+    I -- 改善あり --&gt; J[モニタリング &amp; 維持輸液 &amp; 原因治療]
+    I -- 改善なし (1-2回追加ボーラス後) --&gt; K{輸液抵抗性の低血圧は？}
+    K -- Yes --&gt; L[💉 昇圧薬開始: ノルエピネフリンCRIが第一選択]
+    K -- No --&gt; H
     
-    L --> J
-    D1 --> J
-    D2 --> J
-    D3 --> J
+    L --&gt; J
+    D1 --&gt; J
+    D2 --&gt; J
+    D3 --&gt; J
 </pre>
-
 </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ===== PREMIUM ZONE ===== -->
-
-        <!-- 循環血液量減少性ショック詳細 -->
-        <div id="hypovolemic">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💧</span><span>循環血液量減少性ショック ─
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ===== PREMIUM ZONE ===== -->
+<!-- 循環血液量減少性ショック詳細 -->
+<div id="hypovolemic">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💧</span><span>循環血液量減少性ショック ─
                             輸液蘇生の実際</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>原因と病態生理</h4>
-                        <ul>
-                            <li><strong>出血性</strong>: 外傷、脾臓破裂、消化管出血、凝固異常、術後出血</li>
-                            <li><strong>非出血性</strong>: 重度の嘔吐/下痢、多尿（糖尿病・腎不全）、熱傷、第三空間貯留（腹水・胸水）</li>
-                            <li>病態: 前負荷↓ → 心拍出量↓ → 組織灌流↓ → 代償性頻脈・末梢血管収縮</li>
-                        </ul>
-                        <h4>輸液蘇生プロトコル（2024 AAHA GL準拠）</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>項目</th>
-                                    <th>犬</th>
-                                    <th>猫</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>初回ボーラス</td>
-                                    <td>15〜20 mL/kg</td>
-                                    <td>5〜10 mL/kg</td>
-                                </tr>
-                                <tr>
-                                    <td>投与速度</td>
-                                    <td colspan="2">15〜30分で投与</td>
-                                </tr>
-                                <tr>
-                                    <td>輸液の種類</td>
-                                    <td colspan="2">等張平衡晶質液（乳酸リンゲル推奨。生食は高Cl性代謝性アシドーシスのリスク）</td>
-                                </tr>
-                                <tr>
-                                    <td>再評価</td>
-                                    <td colspan="2">ボーラス後に灌流パラメータ再評価 → 改善なければ追加ボーラス</td>
-                                </tr>
-                                <tr>
-                                    <td>最大投与量の目安</td>
-                                    <td>60〜90 mL/kg/h<br>（ただし一括投与はしない）</td>
-                                    <td>40〜60 mL/kg/h</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips</h4>
-                            <ul>
-                                <li>出血性ショックで2〜3回のボーラスに反応しない場合 → pRBC（濃厚赤血球）の準備を開始</li>
-                                <li>閉鎖腔出血（血胸・血腹）: 大量輸液は出血を加速させるリスクあり → 小容量蘇生（permissive hypotension）を考慮</li>
-                                <li>低蛋白血症が並存する場合: コロイド（HES 3〜5mL/kg ゆっくり投与）の併用を検討。ただしAKIのリスクを考慮</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>循環血液量減少性ショックの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 血液分布異常性ショック -->
-        <div id="distributive">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🔥</span><span>血液分布異常性ショック ─
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>原因と病態生理</h4>
+<ul>
+<li><strong>出血性</strong>: 外傷、脾臓破裂、消化管出血、凝固異常、術後出血</li>
+<li><strong>非出血性</strong>: 重度の嘔吐/下痢、多尿（糖尿病・腎不全）、熱傷、第三空間貯留（腹水・胸水）</li>
+<li>病態: 前負荷↓ → 心拍出量↓ → 組織灌流↓ → 代償性頻脈・末梢血管収縮</li>
+</ul>
+<h4>輸液蘇生プロトコル（2024 AAHA GL準拠）</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>項目</th>
+<th>犬</th>
+<th>猫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初回ボーラス</td>
+<td>15〜20 mL/kg</td>
+<td>5〜10 mL/kg</td>
+</tr>
+<tr>
+<td>投与速度</td>
+<td colspan="2">15〜30分で投与</td>
+</tr>
+<tr>
+<td>輸液の種類</td>
+<td colspan="2">等張平衡晶質液（乳酸リンゲル推奨。生食は高Cl性代謝性アシドーシスのリスク）</td>
+</tr>
+<tr>
+<td>再評価</td>
+<td colspan="2">ボーラス後に灌流パラメータ再評価 → 改善なければ追加ボーラス</td>
+</tr>
+<tr>
+<td>最大投与量の目安</td>
+<td>60〜90 mL/kg/h<br/>（ただし一括投与はしない）</td>
+<td>40〜60 mL/kg/h</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>出血性ショックで2〜3回のボーラスに反応しない場合 → pRBC（濃厚赤血球）の準備を開始</li>
+<li>閉鎖腔出血（血胸・血腹）: 大量輸液は出血を加速させるリスクあり → 小容量蘇生（permissive hypotension）を考慮</li>
+<li>低蛋白血症が並存する場合: コロイド（HES 3〜5mL/kg ゆっくり投与）の併用を検討。ただしAKIのリスクを考慮</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>循環血液量減少性ショックの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 血液分布異常性ショック -->
+<div id="distributive">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🔥</span><span>血液分布異常性ショック ─
                             敗血症・アナフィラキシー</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>敗血症性ショック</h4>
-                        <ul>
-                            <li>全身性炎症反応による血管拡張 + 毛細血管透過性亢進 → 「相対的な」循環血液量不足</li>
-                            <li>初期（暖かいショック）: 粘膜紅潮・バウンディングパルス・CRT短縮・発熱</li>
-                            <li>後期（冷たいショック）: 血管収縮・粘膜蒼白・低体温 → 区別が循環血液量減少性と困難に</li>
-                        </ul>
-                        <div class="clinical-tip">
-                            <h4>💊 治療の3本柱</h4>
-                            <ol>
-                                <li><strong>輸液蘇生</strong>: まず晶質液ボーラスで前負荷を確保（犬15-20mL/kg、猫5-10mL/kg）</li>
-                                <li><strong>原因感染の治療</strong>: 広域抗菌薬を診断後1時間以内に投与（SSC 2021の推奨をヒトから外挿）</li>
-                                <li><strong>昇圧薬</strong>: 2〜3回のボーラスでMAP 65mmHg（犬）を達成できなければノルエピネフリンCRI開始</li>
-                            </ol>
-                        </div>
-                        <h4 style="margin-top:12px;">アナフィラキシーショック</h4>
-                        <ul>
-                            <li>犬のアナフィラキシーの標的臓器は<strong>肝臓（門脈のうっ血）</strong> → 嘔吐・下痢・血便が主症状（ヒトの気道浮腫とは異なる）</li>
-                            <li>猫のアナフィラキシーは<strong>呼吸器症状</strong>（気管支攣縮・呼吸困難）が主体</li>
-                            <li>第一選択: <strong>エピネフリン 0.01mg/kg IM</strong>（1:1000 製剤）。IV投与は不整脈のリスクがあるため慎重に</li>
-                            <li>輸液蘇生 + デキサメタゾン 0.1〜0.2mg/kg IV + ジフェンヒドラミン 1〜2mg/kg IM</li>
-                        </ul>
-                        <p style="font-size:0.85rem;margin-top:8px;">
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>敗血症性ショック</h4>
+<ul>
+<li>全身性炎症反応による血管拡張 + 毛細血管透過性亢進 → 「相対的な」循環血液量不足</li>
+<li>初期（暖かいショック）: 粘膜紅潮・バウンディングパルス・CRT短縮・発熱</li>
+<li>後期（冷たいショック）: 血管収縮・粘膜蒼白・低体温 → 区別が循環血液量減少性と困難に</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 治療の3本柱</h4>
+<ol>
+<li><strong>輸液蘇生</strong>: まず晶質液ボーラスで前負荷を確保（犬15-20mL/kg、猫5-10mL/kg）</li>
+<li><strong>原因感染の治療</strong>: 広域抗菌薬を診断後1時間以内に投与（SSC 2021の推奨をヒトから外挿）</li>
+<li><strong>昇圧薬</strong>: 2〜3回のボーラスでMAP 65mmHg（犬）を達成できなければノルエピネフリンCRI開始</li>
+</ol>
+</div>
+<h4 style="margin-top:12px;">アナフィラキシーショック</h4>
+<ul>
+<li>犬のアナフィラキシーの標的臓器は<strong>肝臓（門脈のうっ血）</strong> → 嘔吐・下痢・血便が主症状（ヒトの気道浮腫とは異なる）</li>
+<li>猫のアナフィラキシーは<strong>呼吸器症状</strong>（気管支攣縮・呼吸困難）が主体</li>
+<li>第一選択: <strong>エピネフリン 0.01mg/kg IM</strong>（1:1000 製剤）。IV投与は不整脈のリスクがあるため慎重に</li>
+<li>輸液蘇生 + デキサメタゾン 0.1〜0.2mg/kg IV + ジフェンヒドラミン 1〜2mg/kg IM</li>
+</ul>
+<p style="font-size:0.85rem;margin-top:8px;">
                             ⚠️ 日本の注意: ジフェンヒドラミン注射液は日本では動物用として流通していないため、レスタミン錠の粉砕 PO や、クロルフェニラミン0.2〜0.5mg/kg IV/IM
                             で代用することが多い。
                         </p>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>血液分布異常性ショックの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 心原性ショック -->
-        <div id="cardiogenic">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">❤️</span><span>心原性ショック ─
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>血液分布異常性ショックの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 心原性ショック -->
+<div id="cardiogenic">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">❤️</span><span>心原性ショック ─
                             輸液禁忌、強心薬が主役</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>なぜ輸液が禁忌なのか</h4>
-                        <ul>
-                            <li>心原性ショック = ポンプ不全 → すでに前負荷が過剰（Frank-Starlingカーブの右端）</li>
-                            <li>輸液を追加 → うっ血悪化 → 肺水腫 → 呼吸不全で状況がさらに悪化</li>
-                            <li>「低血圧だから輸液」という反射的な対応は心原性を見逃すと致命的</li>
-                        </ul>
-                        <div class="clinical-tip">
-                            <h4>💊 鑑別のポイント</h4>
-                            <ul>
-                                <li>聴診: ギャロップリズム・心雑音の有無</li>
-                                <li>胸部X線: 心拡大・肺静脈怒張・肺水腫像</li>
-                                <li>POCUS（ポイントオブケア超音波）: LA/Ao比、心嚢液の有無 → <strong>数分で鑑別可能</strong></li>
-                                <li>⚠️ ショック状態の動物にX線撮影は負荷が大きい → POCUSが使えれば優先</li>
-                            </ul>
-                        </div>
-                        <h4 style="margin-top:12px;">治療</h4>
-                        <ul>
-                            <li><strong>酸素投与</strong>: フローバイ or 酸素ケージ</li>
-                            <li><strong>フロセミド</strong>: 肺水腫を伴う場合 1〜2mg/kg IV（利尿開始まで20〜30分）</li>
-                            <li><strong>ドブタミン</strong>: 2.5〜10μg/kg/min CRI（正のイノトロープ。心拍出量を改善）</li>
-                            <li><strong>ピモベンダン</strong>: 0.15〜0.3mg/kg PO BID（ベトメディン注がある場合はIV 0.15mg/kg）</li>
-                            <li>不整脈が原因の場合 → 抗不整脈薬（リドカイン for VT、アトロピン for AV block等）</li>
-                        </ul>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>心原性ショックの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 閉塞性ショック -->
-        <div id="obstructive">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🚧</span><span>閉塞性ショック ─
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>なぜ輸液が禁忌なのか</h4>
+<ul>
+<li>心原性ショック = ポンプ不全 → すでに前負荷が過剰（Frank-Starlingカーブの右端）</li>
+<li>輸液を追加 → うっ血悪化 → 肺水腫 → 呼吸不全で状況がさらに悪化</li>
+<li>「低血圧だから輸液」という反射的な対応は心原性を見逃すと致命的</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 鑑別のポイント</h4>
+<ul>
+<li>聴診: ギャロップリズム・心雑音の有無</li>
+<li>胸部X線: 心拡大・肺静脈怒張・肺水腫像</li>
+<li>POCUS（ポイントオブケア超音波）: LA/Ao比、心嚢液の有無 → <strong>数分で鑑別可能</strong></li>
+<li>⚠️ ショック状態の動物にX線撮影は負荷が大きい → POCUSが使えれば優先</li>
+</ul>
+</div>
+<h4 style="margin-top:12px;">治療</h4>
+<ul>
+<li><strong>酸素投与</strong>: フローバイ or 酸素ケージ</li>
+<li><strong>フロセミド</strong>: 肺水腫を伴う場合 1〜2mg/kg IV（利尿開始まで20〜30分）</li>
+<li><strong>ドブタミン</strong>: 2.5〜10μg/kg/min CRI（正のイノトロープ。心拍出量を改善）</li>
+<li><strong>ピモベンダン</strong>: 0.15〜0.3mg/kg PO BID（ベトメディン注がある場合はIV 0.15mg/kg）</li>
+<li>不整脈が原因の場合 → 抗不整脈薬（リドカイン for VT、アトロピン for AV block等）</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>心原性ショックの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 閉塞性ショック -->
+<div id="obstructive">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🚧</span><span>閉塞性ショック ─
                             心タンポナーデ・ATE</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>心タンポナーデ</h4>
-                        <ul>
-                            <li>心嚢内の液体貯留により心室拡張が制限 → 心拍出量↓</li>
-                            <li>身体所見: 心音減弱、頸静脈怒張、奇脈（吸気時に収縮期血圧が10mmHg以上低下）</li>
-                            <li>POCUS: 心嚢液の確認は超音波で数秒。心エコーで右房・右室の虚脱を確認</li>
-                            <li><strong>心嚢穿刺</strong>（pericardiocentesis）が救命処置 → 少量の排液でも劇的に改善</li>
-                        </ul>
-                        <h4 style="margin-top:12px;">猫の動脈血栓塞栓症（ATE）</h4>
-                        <ul>
-                            <li>主にHCMに続発。左心耳内血栓が腹部大動脈分岐部に塞栓</li>
-                            <li>5P: Pain, Pulselessness, Pallor, Paralysis, Poikilothermia（患肢の冷感）</li>
-                            <li>疼痛管理が最優先（メタドン 0.1〜0.3mg/kg IV/IM or フェンタニル CRI）</li>
-                            <li>クロピドグレル 18.75mg PO 初回負荷 → 18.75mg/日 維持（FAT CAT study: クロピドグレルはアスピリンより再発率を有意に低下）</li>
-                            <li>予後: 初回発症の生存退院率は約40〜50%。両後肢麻痺 + 低体温 + 高K血症は予後不良因子</li>
-                        </ul>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>閉塞性ショックの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 昇圧薬 -->
-        <div id="vasopressor">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💉</span><span>昇圧薬の選択 ─ ノルエピネフリン vs ドパミン vs
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>心タンポナーデ</h4>
+<ul>
+<li>心嚢内の液体貯留により心室拡張が制限 → 心拍出量↓</li>
+<li>身体所見: 心音減弱、頸静脈怒張、奇脈（吸気時に収縮期血圧が10mmHg以上低下）</li>
+<li>POCUS: 心嚢液の確認は超音波で数秒。心エコーで右房・右室の虚脱を確認</li>
+<li><strong>心嚢穿刺</strong>（pericardiocentesis）が救命処置 → 少量の排液でも劇的に改善</li>
+</ul>
+<h4 style="margin-top:12px;">猫の動脈血栓塞栓症（ATE）</h4>
+<ul>
+<li>主にHCMに続発。左心耳内血栓が腹部大動脈分岐部に塞栓</li>
+<li>5P: Pain, Pulselessness, Pallor, Paralysis, Poikilothermia（患肢の冷感）</li>
+<li>疼痛管理が最優先（メタドン 0.1〜0.3mg/kg IV/IM or フェンタニル CRI）</li>
+<li>クロピドグレル 18.75mg PO 初回負荷 → 18.75mg/日 維持（FAT CAT study: クロピドグレルはアスピリンより再発率を有意に低下）</li>
+<li>予後: 初回発症の生存退院率は約40〜50%。両後肢麻痺 + 低体温 + 高K血症は予後不良因子</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>閉塞性ショックの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 昇圧薬 -->
+<div id="vasopressor">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💉</span><span>昇圧薬の選択 ─ ノルエピネフリン vs ドパミン vs
                             バソプレシン</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>昇圧薬の適応</h4>
-                        <p>輸液蘇生（晶質液ボーラス2〜3回）でMAP≥65mmHg（犬）を達成できない場合に開始。</p>
-                        <table class="comparison-table" style="margin:12px 0;">
-                            <thead>
-                                <tr>
-                                    <th>薬剤</th>
-                                    <th>用量（CRI）</th>
-                                    <th>主な作用</th>
-                                    <th>備考</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>ノルエピネフリン</strong><br>（第一選択）</td>
-                                    <td>0.1〜2.0 μg/kg/min<br>（最大5.0まで）</td>
-                                    <td>α1優位 → 血管収縮<br>β1軽度 → 心収縮力↑</td>
-                                    <td>DACVECC専門医の87.9%（犬）・83.1%（猫）が第一選択。ドパミンより不整脈リスクが低い</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>ドパミン</strong></td>
-                                    <td>5〜20 μg/kg/min</td>
-                                    <td>用量依存性<br>低用量: 腎血管拡張<br>高用量: 血管収縮</td>
-                                    <td>頻脈・不整脈のリスクがNEより高い。現在は第一選択ではない</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>バソプレシン</strong></td>
-                                    <td>0.5〜5.0 mU/kg/min</td>
-                                    <td>V1受容体 → 血管収縮<br>カテコラミン非依存性</td>
-                                    <td>NE抵抗性の重症ショックで追加。単独では使わない</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>ドブタミン</strong></td>
-                                    <td>2.5〜10 μg/kg/min</td>
-                                    <td>β1優位 → 心収縮力↑<br>血管収縮作用は弱い</td>
-                                    <td>心原性ショック用の強心薬。昇圧目的ではなく心拍出量改善目的</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips</h4>
-                            <ul>
-                                <li>昇圧薬は必ず<strong>中心静脈カテーテルまたは専用の末梢ラインから投与</strong>。血管外漏出は組織壊死を起こす</li>
-                                <li>日本の一般病院ではノルエピネフリンの在庫がないことも → <strong>ドパミンで開始し、可能なら早期にNEに切替</strong>が現実的</li>
-                                <li>血圧モニタリング: ドップラー or オシロメトリック → MAPをリアルタイムで追跡</li>
-                                <li>ラクテートのトレンドが輸液蘇生の有効性の最良指標。2時間ごとの再測定を推奨</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>昇圧薬の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- モニタリング -->
-        <div id="monitoring">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📊</span><span>ショック管理のモニタリング指標</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>蘇生のエンドポイント</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>指標</th>
-                                    <th>目標値</th>
-                                    <th>モニタリング頻度</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>心拍数（犬）</td>
-                                    <td>80〜120 bpm</td>
-                                    <td>持続</td>
-                                </tr>
-                                <tr>
-                                    <td>心拍数（猫）</td>
-                                    <td>160〜220 bpm</td>
-                                    <td>持続</td>
-                                </tr>
-                                <tr>
-                                    <td>MAP</td>
-                                    <td>≥65 mmHg（犬）</td>
-                                    <td>15分ごと（蘇生中）</td>
-                                </tr>
-                                <tr>
-                                    <td>CRT</td>
-                                    <td>＜2秒</td>
-                                    <td>15〜30分ごと</td>
-                                </tr>
-                                <tr>
-                                    <td>血中乳酸値</td>
-                                    <td>＜2.5 mmol/L</td>
-                                    <td>2時間ごと</td>
-                                </tr>
-                                <tr>
-                                    <td>尿量</td>
-                                    <td>≥1 mL/kg/h</td>
-                                    <td>1時間ごと</td>
-                                </tr>
-                                <tr>
-                                    <td>意識レベル</td>
-                                    <td>正常な反応性</td>
-                                    <td>持続的観察</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 乳酸値の読み方</h4>
-                            <ul>
-                                <li>＜2.5 mmol/L: 正常範囲</li>
-                                <li>2.5〜4.0 mmol/L: 軽度〜中等度の組織低灌流</li>
-                                <li>＞4.0 mmol/L: 重度ショック → 積極的蘇生が必要</li>
-                                <li>＞8.0 mmol/L: 予後不良因子</li>
-                                <li>トレンドが重要: 治療開始後2〜6時間で30%以上の低下がなければ治療効果不十分</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>モニタリングの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 飼い主説明 -->
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>ショック状態とは何ですか？</h4>
-                            <div class="speech-bubble">
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>昇圧薬の適応</h4>
+<p>輸液蘇生（晶質液ボーラス2〜3回）でMAP≥65mmHg（犬）を達成できない場合に開始。</p>
+<table class="comparison-table" style="margin:12px 0;">
+<thead>
+<tr>
+<th>薬剤</th>
+<th>用量（CRI）</th>
+<th>主な作用</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ノルエピネフリン</strong><br/>（第一選択）</td>
+<td>0.1〜2.0 μg/kg/min<br/>（最大5.0まで）</td>
+<td>α1優位 → 血管収縮<br/>β1軽度 → 心収縮力↑</td>
+<td>DACVECC専門医の87.9%（犬）・83.1%（猫）が第一選択。ドパミンより不整脈リスクが低い</td>
+</tr>
+<tr>
+<td><strong>ドパミン</strong></td>
+<td>5〜20 μg/kg/min</td>
+<td>用量依存性<br/>低用量: 腎血管拡張<br/>高用量: 血管収縮</td>
+<td>頻脈・不整脈のリスクがNEより高い。現在は第一選択ではない</td>
+</tr>
+<tr>
+<td><strong>バソプレシン</strong></td>
+<td>0.5〜5.0 mU/kg/min</td>
+<td>V1受容体 → 血管収縮<br/>カテコラミン非依存性</td>
+<td>NE抵抗性の重症ショックで追加。単独では使わない</td>
+</tr>
+<tr>
+<td><strong>ドブタミン</strong></td>
+<td>2.5〜10 μg/kg/min</td>
+<td>β1優位 → 心収縮力↑<br/>血管収縮作用は弱い</td>
+<td>心原性ショック用の強心薬。昇圧目的ではなく心拍出量改善目的</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>昇圧薬は必ず<strong>中心静脈カテーテルまたは専用の末梢ラインから投与</strong>。血管外漏出は組織壊死を起こす</li>
+<li>日本の一般病院ではノルエピネフリンの在庫がないことも → <strong>ドパミンで開始し、可能なら早期にNEに切替</strong>が現実的</li>
+<li>血圧モニタリング: ドップラー or オシロメトリック → MAPをリアルタイムで追跡</li>
+<li>ラクテートのトレンドが輸液蘇生の有効性の最良指標。2時間ごとの再測定を推奨</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>昇圧薬の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- モニタリング -->
+<div id="monitoring">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📊</span><span>ショック管理のモニタリング指標</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>蘇生のエンドポイント</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>指標</th>
+<th>目標値</th>
+<th>モニタリング頻度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>心拍数（犬）</td>
+<td>80〜120 bpm</td>
+<td>持続</td>
+</tr>
+<tr>
+<td>心拍数（猫）</td>
+<td>160〜220 bpm</td>
+<td>持続</td>
+</tr>
+<tr>
+<td>MAP</td>
+<td>≥65 mmHg（犬）</td>
+<td>15分ごと（蘇生中）</td>
+</tr>
+<tr>
+<td>CRT</td>
+<td>＜2秒</td>
+<td>15〜30分ごと</td>
+</tr>
+<tr>
+<td>血中乳酸値</td>
+<td>＜2.5 mmol/L</td>
+<td>2時間ごと</td>
+</tr>
+<tr>
+<td>尿量</td>
+<td>≥1 mL/kg/h</td>
+<td>1時間ごと</td>
+</tr>
+<tr>
+<td>意識レベル</td>
+<td>正常な反応性</td>
+<td>持続的観察</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💊 乳酸値の読み方</h4>
+<ul>
+<li>＜2.5 mmol/L: 正常範囲</li>
+<li>2.5〜4.0 mmol/L: 軽度〜中等度の組織低灌流</li>
+<li>＞4.0 mmol/L: 重度ショック → 積極的蘇生が必要</li>
+<li>＞8.0 mmol/L: 予後不良因子</li>
+<li>トレンドが重要: 治療開始後2〜6時間で30%以上の低下がなければ治療効果不十分</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>モニタリングの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 飼い主説明 -->
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>ショック状態とは何ですか？</h4>
+<div class="speech-bubble">
                                 ショックとは、体中の臓器に十分な血液が行き渡らなくなっている状態です。出血・感染症・心臓の問題など、原因はさまざまです。放置すると臓器が傷ついてしまうため、<strong>できるだけ早く治療を開始する</strong>ことが大切です。
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>治療費はどのくらいかかりますか？</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>治療費はどのくらいかかりますか？</h4>
+<div class="speech-bubble">
                                 ショックの治療は集中治療が必要なため、一般的に入院費・検査費・薬剤費を含めて<strong>5万〜20万円/日</strong>程度かかることが多いです。昇圧薬の持続投与が必要な場合はさらに費用がかかります。事前にお見積もりをお出しいたします。
                             </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>生存率はどのくらいですか？</h4>
-                            <div class="speech-bubble">
+</div>
+<div class="owner-tip">
+<h4>生存率はどのくらいですか？</h4>
+<div class="speech-bubble">
                                 原因と重症度によって大きく異なります。外傷性の出血ショックで早期に治療を開始できた場合は回復が見込めますが、敗血症性ショックやDICを合併した場合は予後が厳しくなります。治療開始後数時間の反応を見て、改めてお話しいたします。
                             </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 参照論文 -->
-        <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <li>Cazzolli D et al. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. <em>J Am Anim
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 参照論文 -->
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Cazzolli D et al. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. <em>J Am Anim
                                     Hosp Assoc</em> 2024;60(2):1-30.</li>
-                            <li>McMichael M et al. Reassessment Campaign on Veterinary Resuscitation (RECOVER): Part 7 ─
+<li>McMichael M et al. Reassessment Campaign on Veterinary Resuscitation (RECOVER): Part 7 ─
                                 Clinical Guidelines for Advanced Life Support. <em>Front Vet Sci</em> 2024;11:1380034.
                             </li>
-                            <li>Silverstein DC, Hopper K. Small Animal Critical Care Medicine. 3rd ed. St. Louis:
+<li>Silverstein DC, Hopper K. Small Animal Critical Care Medicine. 3rd ed. St. Louis:
                                 Elsevier; 2022. Chapter 26: Shock.</li>
-                            <li>Yagi K, Buriko Y. Survey of vasopressor use by Diplomates of the American College of
+<li>Yagi K, Buriko Y. Survey of vasopressor use by Diplomates of the American College of
                                 Veterinary Emergency and Critical Care (2023). <em>Animals (Basel)</em>
                                 2023;13(18):2874.</li>
-                            <li>Evans L et al. Surviving Sepsis Campaign: International Guidelines for Management of
+<li>Evans L et al. Surviving Sepsis Campaign: International Guidelines for Management of
                                 Sepsis and Septic Shock 2021. <em>Intensive Care Med</em> 2021;47(11):1181-1247.</li>
-                            <li>Hogan DF et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat:
+<li>Hogan DF et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat:
                                 The double-blind, randomized, positive-controlled feline arterial thromboembolism;
                                 clopidogrel vs. aspirin trial (FAT CAT). <em>J Vet Intern Med</em> 2015;29(5):1354-1361.
                             </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+</ol>
+</div>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js"></script>
-
+</footer>
+</div>
+<script src="../../assets/script.js"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
 </body>
-
 </html>
