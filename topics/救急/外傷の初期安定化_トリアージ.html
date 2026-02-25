@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <meta content="外傷の初期安定化（トリアージ）。A CRASH PLANによるプライマリサーベイ。晶質液 犬10-20mL/kg、猫10mL/kg。鎮痛はMethadone 0.1-0.3mg/kg。ショック時NSAIDs禁忌。TBIにステロイドは推奨されない。" name="description"/>
 <title>外傷の初期安定化 ─ トリアージ | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v3" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
@@ -125,9 +125,9 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A[&lt;b>外傷患者到着</b>] --> B{&lt;b>初期トリアージ &amp; プライマリサーベイ開始</b>};
+    A[&lt;b>外傷患者到着</b>] --> B{&lt;b>初期トリアージ & プライマリサーベイ開始</b>};
 
-    subgraph A CRASH PLAN (緊急度順)
+    subgraph "A CRASH PLAN (緊急度順)"
         B --> C(<b>A</b&gt;irway: 気道開通性評価);
         C -- 気道閉塞/呼吸停止 --> C1[&lt;b>即時介入:</b&gt; 気道確保, 挿管/気管切開];
         C1 --> D;
@@ -171,7 +171,7 @@ graph TD
     end
 
     L -- 神経学的異常なし/対応済 --> M{&lt;b>全身状態の安定化確認</b>};
-    M -- 安定化後 --> N[&lt;b>セカンダリサーベイ &amp; 詳細検査へ</b>];
+    M -- 安定化後 --> N[&lt;b>セカンダリサーベイ & 詳細検査へ</b>];
     N --> O[&lt;b>疼痛管理:</b&gt; フルオピオイド&lt;br/>&lt;b>⚠️ショック時NSAIDs完全禁忌</b>];
     O --> P(&lt;b>最終治療へ</b>);
 
@@ -330,7 +330,7 @@ graph TD
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v3"></script>
+<script src="../../assets/script.js?v=20250225v4"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

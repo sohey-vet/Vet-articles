@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="猫の尿道閉塞の救急対応フロー。閉塞解除手技、高カリウム血症の緊急治療、術後管理、再閉塞予防。" name="description"/>
 <title>猫の尿道閉塞 ─ 救急対応フロー | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v3" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -73,17 +73,18 @@
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
     A[&lt;b>猫の尿道閉塞</b>&lt;br/>来院] --> B{意識・活気 / 膀胱触診};;
-    B --> C[心電図モニター &amp; 静脈確保 &amp; 血液ガス測定&lt;br/>(K, BUN, Cre)];
+    B --> C[心電図モニター & 静脈確保 & 血液ガス測定&lt;br/>(K, BUN, Cre)];
     C --> D{<b>K &gt; 7-8mEq/L</b&gt; かつ 心電図異常&lt;br/>(テント状T波, P波消失, QRS幅拡大) ?};
     D -- Yes --> E[&lt;b>高K緊急治療</b><br/>1. グルコン酸Ca IV (心筋安定化)<br/>2. インスリン+ブドウ糖 IV (K細胞内シフト)];
     D -- No --> F[鎮静 (K値考慮したプロトコル)];
     E --> F;
-    F --> G[無菌的 尿道カテーテル挿入&lt;br/>&amp; 閉塞解除 (逆行性フラッシュ)];
-    G --> H[膀胱洗浄 &amp; 柔らかいカテーテル留置&lt;br/>&amp; 閉鎖式尿収集 (24-48h)];
-    H --> I[&lt;b>術後管理</b>&lt;br/>利尿モニタリング &amp; 電解質管理 (低K, 低P注意)];
+    F --> G[無菌的 尿道カテーテル挿入&lt;br/>& 閉塞解除 (逆行性フラッシュ)];
+    G --> H[膀胱洗浄 & 柔らかいカテーテル留置&lt;br/>& 閉鎖式尿収集 (24-48h)];
+    H --> I[&lt;b>術後管理</b>&lt;br/>利尿モニタリング & 電解質管理 (低K, 低P注意)];
     I --> J{カテーテル抜去後&lt;br/>自力排尿確認?};
     J -- Yes --> K[退院指導:&lt;br/>食事療法・環境改善&lt;br/>再閉塞の早期発見];
-    J -- No --> L[再閉塞対応:&lt;br/>カテーテル再留置 or 再挑戦<br/>PU術検討];
+    J -- No --> L[再閉塞対応:&lt;br/>カテーテル再留置 or 再挑戦
+PU術検討];
     K --> M[長期予防管理];
 </pre></div>
 <div style="overflow-x:auto;">
@@ -434,7 +435,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v3"></script>
+<script src="../../assets/script.js?v=20250225v4"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>
