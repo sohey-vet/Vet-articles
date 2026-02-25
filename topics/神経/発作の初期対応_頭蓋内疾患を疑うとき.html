@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <meta content="犬猫の発作（てんかん重積を含む）の初期対応。頭蓋内疾患を疑う所見、ジアゼパムの投与法、抗てんかん薬の開始基準。" name="description"/>
 <title>発作の初期対応 ─ 頭蓋内疾患を疑うとき | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v7" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v8" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
@@ -47,52 +47,27 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["発作発生/SE疑い"] --> B{"SE定義満たす?<br/>(>5分持続 or 意識回復なく2回以上)"}
-    B -- Yes --> C["ジアゼパム 0.5-1mg/kg IV/直腸内"]
-    B -- No --> Z["SEではない/経過観察"]
-
-    C --同時並行--> F["血糖チェック & iCa/NH3"]
-    F -- 低血糖あり (<60mg/dL) --> G["デキストロース 0.5g/kg IV"]
+    A["発作発生/SE疑い"] --> B{"SE定義満たす? (5分超持続 or 意識回復なく2回以上)"}
+    B -->|"Yes"| C["ジアゼパム 0.5-1mg/kg IV/直腸内"]
+    B -->|"No"| Z["SEではない/経過観察"]
+    C -->|"同時並行"| F["血糖チェック iCa/NH3"]
+    F -->|"低血糖あり (<60mg/dL)"| G["デキストロース 0.5g/kg IV"]
     G --> D{"発作停止?"}
-    F -- 低血糖なし --> D
-
-    C --同時並行--> E["ABC確認 & O2フローバイ"]
-
-    D -- Yes --> H("(SE停止: 安定化 & 基礎疾患検索/維持療法"))
-    D -- No (ジアゼパム1回目後) --> I["ジアゼパム 2回目"]
-
+    F -->|"低血糖なし"| D
+    C -->|"同時並行"| E["ABC確認 O2フローバイ"]
+    D -->|"Yes"| H["SE停止: 安定化 基礎疾患検索/維持療法"]
+    D -->|"No (1回目後)"| I["ジアゼパム 2回目"]
     I --> J{"発作停止?"}
-    J -- Yes --> H
-    J -- No (ジアゼパム2回目後) --> K["ジアゼパム 3回目"]
-
+    J -->|"Yes"| H
+    J -->|"No (2回目後)"| K["ジアゼパム 3回目"]
     K --> L{"発作停止?"}
-    L -- Yes --> H
-    L -- No (ジアゼパム3回目後) --> M["レベチラセタム 30-60mg/kg IV over 5min"]
-
+    L -->|"Yes"| H
+    L -->|"No (3回目後)"| M["レベチラセタム 30-60mg/kg IV over 5min"]
     M --> N{"発作停止?"}
-    N -- Yes --> H
-    N -- No (難治性SE) --> O["プロポフォールCRI 0.1-0.6mg/kg/min"]
-    O -- 準備 --> P["挿管・人工換気準備"]
-    O --> Q("(SE停止: 安定化 & 基礎疾患検索/維持療法"))
-
-    style A fill:#FFEFD5,stroke:#333,stroke-width:2px
-    style B fill:#B0E0E6,stroke:#333,stroke-width:2px
-    style C fill:#90EE90,stroke:#333,stroke-width:2px
-    style D fill:#B0E0E6,stroke:#333,stroke-width:2px
-    style E fill:#ADD8E6,stroke:#333,stroke-width:1px
-    style F fill:#ADD8E6,stroke:#333,stroke-width:1px
-    style G fill:#FFDAB9,stroke:#333,stroke-width:2px
-    style H fill:#D3D3D3,stroke:#333,stroke-width:2px
-    style I fill:#90EE90,stroke:#333,stroke-width:2px
-    style J fill:#B0E0E6,stroke:#333,stroke-width:2px
-    style K fill:#90EE90,stroke:#333,stroke-width:2px
-    style L fill:#B0E0E6,stroke:#333,stroke-width:2px
-    style M fill:#FFA07A,stroke:#333,stroke-width:2px
-    style N fill:#B0E0E6,stroke:#333,stroke-width:2px
-    style O fill:#FF6347,stroke:#333,stroke-width:2px
-    style P fill:#F0E68C,stroke:#333,stroke-width:1px
-    style Q fill:#D3D3D3,stroke:#333,stroke-width:2px
-    style Z fill:#D3D3D3,stroke:#333,stroke-width:2px
+    N -->|"Yes"| H
+    N -->|"No (難治性SE)"| O["プロポフォールCRI 0.1-0.6mg/kg/min"]
+    O --> P["挿管・人工換気準備"]
+    O --> Q["SE停止: 安定化 基礎疾患検索/維持療法"]
 </pre></div>
 </h3>
 <table class="comparison-table" style="margin:0;">
@@ -276,7 +251,7 @@ graph TD
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v7"></script>
+<script src="../../assets/script.js?v=20250225v8"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

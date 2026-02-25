@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>GDV Full Test</title>
+</head>
+
+<body style="background:#1a1a2e;color:white;padding:20px">
+    <h2>GDV Full - No Semicolons</h2>
+    <pre class="mermaid">
+graph TD
+    start(("来院: GDV疑い")) --> triage{"ショック徴候あり？"}
+    triage -->|"Yes"| IV_resuscitation["① 輸液蘇生: 2ルート確保、急速輸液"]
+    triage -->|"No"| IV_resuscitation
+    IV_resuscitation --> diagnosis["② 診断: 右側臥位X線"]
+    diagnosis --> confirmed_gdv{"GDVと確定診断？"}
+    confirmed_gdv -->|"No"| other_dx["他疾患の評価"]
+    confirmed_gdv -->|"Yes"| decompression_method["③ 胃減圧: 経口胃チューブ試行"]
+    decompression_method --> oral_tube_success{"経口チューブ挿入可？"}
+    oral_tube_success -->|"Yes"| gastric_wash["ガス排出 + 温生食で胃洗浄"]
+    oral_tube_success -->|"No"| percutaneous_decompression["経皮的胃穿刺による減圧"]
+    percutaneous_decompression --> retry_oral_tube{"減圧後、チューブ挿入可？"}
+    retry_oral_tube -->|"Yes"| gastric_wash
+    retry_oral_tube -->|"No"| proceed_surgery_path
+    gastric_wash --> hemodynamic_eval["血行動態評価"]
+    hemodynamic_eval --> stabilization_achieved{"初期安定化達成？"}
+    stabilization_achieved -->|"No"| IV_resuscitation
+    stabilization_achieved -->|"Yes"| surgery_prep["④ 手術準備: 血液検査, 心電図"]
+    surgery_prep --> proceed_surgery_path["⑤ 緊急手術"]
+    proceed_surgery_path --> stomach_eval{"術中の胃壁評価: 壊死組織あり？"}
+    stomach_eval -->|"Yes"| partial_gastrectomy["胃部分切除"]
+    stomach_eval -->|"No"| spleen_eval{"脾臓評価: 巻き込み/損傷あり？"}
+    partial_gastrectomy --> spleen_eval
+    spleen_eval -->|"Yes"| splenectomy["脾臓摘出"]
+    spleen_eval -->|"No"| surgery_complete["手術完了"]
+    splenectomy --> surgery_complete
+    surgery_complete --> post_op_care["⑥ 術後管理: 心電図モニタリング"]
+    post_op_care --> arrhythmia{"術後心室性不整脈あり？"}
+    arrhythmia -->|"Yes"| sustained_vt{"持続性心室頻拍？"}
+    sustained_vt -->|"Yes"| lidocaine_tx["リドカイン投与"]
+    sustained_vt -->|"No"| observe_arrhythmia["経過観察"]
+    arrhythmia -->|"No"| discharge_criteria["退院基準満たすまで入院"]
+    lidocaine_tx --> discharge_criteria
+    observe_arrhythmia --> discharge_criteria
+    discharge_criteria --> endNode(("退院 + 飼い主説明"))
+</pre>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
+</body>
+
+</html>

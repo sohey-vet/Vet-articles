@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬のクッシング症候群（副腎皮質機能亢進症）の診断の落とし穴。LDDS・ACTH刺激・UCCRの解釈と偽陽性の回避。" name="description"/>
 <title>クッシング症候群 ─ 診断の落とし穴 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v7" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v8" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -110,45 +110,27 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    subgraph 診断のステップ
-        A[臨床症状あり？
-(多飲多尿, 腹部膨満, 脱毛, 皮膚菲薄化,
-パンティング, ALP著増など)] --> B{"複数の典型症状が合致？"}
-        B -->|"No"| C("HAC検査は時期尚早。他の疾患を検討")
-
-        B -->|"Yes"| D{併発疾患の急性期や重度ストレスはないか？
-(DM, CKD, 肝疾患, 重度感染など)}
-        D -->|"Yes"| E(併発疾患治療/安定化を優先。
-HAC検査は偽陽性リスク大)
-        D -->|"No"| F[一次スクリーニング: UCCR
-(尿中コルチゾール:クレアチニン比)]
-
-        F -->|"正常(感度≒100%)"| C
-        F -->|"高値"| G["HAC疑い。確定診断へ"]
-
-        G --> H[確定診断検査: LDDS
-(低用量デキサメタゾン抑制試験)]
-        G --> I["確定診断検査: ACTH刺激試験"]
-
-        H -->|"8時間値で抑制なし"| J["HACと診断"]
-        H -->|"4時間値で抑制あり + 8時間値で抑制なし"| K[PDHを強く示唆
-(約60%のPDHで見られる)]
-        H -. ⚠️偽陽性注意: NAI("非副腎性疾患")により -.-＞ H
-
-        I -->|"刺激後コルチゾール ＞基準上限"| J
-        I -. ⚠️AT由来HACの感度は低い(57-63%程度) -.-＞ I
-        I -. 医原性HAC診断, トリロスタン治療モニタリングに有用 -.-＞ I
-
-        J & K --> L["HACタイプ鑑別"]
-        L --> M["腹部超音波検査"]
-
-        M -->|"両側副腎の対称性腫大(7-10mm)"| N("PDH: 下垂体性")
-        M -->|"片側副腎の腫瘤(＞2cm) + 対側萎縮"| O("AT: 副腎腫瘍")
-        M -. AT ＞4cm: 血管浸潤評価必須 -.-＞ O
-
-        N --> P["治療: トリロスタン"]
-        O --> Q["治療: 副腎摘出術 or トリロスタン"]
-    end
+    A["臨床症状あり? (多飲多尿, 腹部膨満, 脱毛, 皮膚菲薄化, パンティング, ALP著増など)"] --> B{"複数の典型症状が合致？"}
+    B -->|"No"| C["HAC検査は時期尚早。他の疾患を検討"]
+    B -->|"Yes"| D{"併発疾患の急性期や重度ストレスはないか?"}
+    D -->|"Yes"| E["偽陽性リスク高。安定化後に再検査"]
+    D -->|"No"| F["スクリーニング検査実施"]
+    F --> G["LDDST 実施"]
+    F --> H["UCCR 実施"]
+    G --> I{"LDDST結果"}
+    I -->|"コルチゾール抑制"| J["HACは否定的"]
+    I -->|"コルチゾール非抑制"| K["HACの疑い強い"]
+    H --> L{"UCCR結果"}
+    L -->|"正常"| J
+    L -->|"上昇"| K
+    K --> M["鑑別検査: HDDST or 内因性ACTH"]
+    M --> N{"HDDST: 4h/8hで抑制あり? or ACTH高値?"}
+    N -->|"Yes"| O["PDH: 下垂体性"]
+    N -->|"No"| P["AT: 副腎腫瘍"]
+    O --> Q["治療: トリロスタン (PDH第一選択)"]
+    P --> R["腹部エコー: 副腎サイズ評価"]
+    R --> S["AT 4cm超: 血管浸潤評価必須"]
+    S --> T["治療: 副腎摘出術 or トリロスタン"]
 </pre></div>
 </p>
 </div>
@@ -387,7 +369,7 @@ HAC検査は偽陽性リスク大)
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v7"></script>
+<script src="../../assets/script.js?v=20250225v8"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

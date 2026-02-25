@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="不整脈の救急対応と心電図の読み方。洞性頻脈・心室頻拍・房室ブロック・心房細動の鑑別と初期治療。犬猫の違いを解説。" name="description"/>
 <title>不整脈の救急対応 ─ 心電図の読み方 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v7" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v8" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -72,27 +72,24 @@
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
     A["心電図所見から不整脈を鑑別"] --> B{"心拍数は？"}
-
-    B -->|"頻脈 (犬＞160 / 猫＞220 bpm)"| C{"QRS幅は？"}
-    C -->|"幅広い (＞0.06秒)"| D{"リズムは？"}
+    B -->|"頻脈 (犬>160 / 猫>220 bpm)"| C{"QRS幅は？"}
+    C -->|"幅広い (>0.06秒)"| D{"リズムは？"}
     D -->|"規則的"| E["心室頻拍 (VT)"]
     E --> F["初期治療: リドカイン 2mg/kg IV"]
-    C -->|"狭い (＜0.06秒)"| G{"リズムは？"}
+    C -->|"狭い (<0.06秒)"| G{"リズムは？"}
     G -->|"規則的"| H["上室性頻拍 (SVT)"]
-    H --> I["初期治療: 迷走神経刺激 → ジルチアゼム"]
-    G -->|"不整"| J["心房細動 (AF)"]
-    J --> I; % AFもジルチアゼムでレートコントロール
-
-    B -->|"徐脈 (犬＜60 / 猫＜140 bpm)"| K{"QRS幅は？"}
-    K -->|"正常"| L{"リズムは？"}
-    L -->|"規則的"| M["洞徐脈 / 洞不全症候群"]
-    M --> N["初期治療: アトロピン反応試験"]
-    K -->|"正常〜幅広"| O{"リズムは？"}
-    O -->|"不整"| P["2度〜3度房室ブロック"]
-    P --> Q["初期治療: アトロピン反応試験 → ペースメーカー検討"]
-
-    F --> R["(治療方針の検討)"]
+    H --> I["初期治療: 迷走神経刺激"]
+    G -->|"不規則"| J["心房細動 (AF)"]
+    J --> K["初期治療: ジルチアゼム"]
+    B -->|"徐脈 (犬<60 / 猫<120 bpm)"| L{"P波とQRSの関係は？"}
+    L -->|"P-QRS解離"| M["3度房室ブロック"]
+    M --> N["アトロピン反応試験"]
+    L -->|"PR延長"| O["1度/2度房室ブロック"]
+    B -->|"正常心拍"| P{"不規則なリズム？"}
+    P -->|"散発性幅広QRS"| Q["心室期外収縮 (VPC)"]
+    F --> R["治療効果評価と基礎疾患検索"]
     I --> R
+    K --> R
     N --> R
     Q --> R
 </pre></div>
@@ -472,7 +469,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v7"></script>
+<script src="../../assets/script.js?v=20250225v8"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

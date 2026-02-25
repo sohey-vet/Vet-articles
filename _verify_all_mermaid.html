@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>All Mermaid Verification</title>
+<style>
+body { background: #1a1a2e; color: white; padding: 20px; font-family: sans-serif; }
+.test-block { margin: 20px 0; padding: 15px; border: 1px solid #333; border-radius: 8px; }
+.test-block h3 { color: #38bdf8; margin: 0 0 10px 0; font-size: 0.85rem; }
+.pass { border-color: #22c55e; }
+.fail { border-color: #ef4444; }
+</style>
+</head><body>
+<h1>Mermaid Rendering Verification - All Articles</h1>
+<p id="status">Loading...</p>
+
+
+<div class="test-block" id="block_0" data-file="下痢/犬の急性下痢_最新エビデンス">
+<h3>下痢/犬の急性下痢_最新エビデンス</h3>
+<pre class="mermaid">
+
+graph TD
+    A["犬の急性下痢で来院"] --> B{"初診時の評価"}
+    B -->|"食欲あり, 元気, 軽度脱水なし"| C["軽度"]
+    B -->|"嘔吐, 中等度脱水"| D["中等度"]
+    B -->|"ショック, 重度脱水, 発熱, 全身倦怠"| E["重度"]
+
+    C --> C1["治療: 支持療法"]
+    C1_1["消化器食 + プロバイオティクス"]
+    C1_2(("抗菌薬は不要"))
+    C1 --> C1_1
+    C1_1 --> C1_2
+    C1_2 --> F["早期栄養介入 (嘔吐制御後12-24h)"]
+    F --> G{"改善"}
+    G -->|"YES"| H["退院/自宅管理"]
+    G -->|"NO"| I["再評価・原因検索"]
+
+    D --> D1["治療: 支持療法"]
+    D1_1["輸液 + 制吐薬 + 消化器食 + プロバイオティクス"]
+    D1_2(("抗菌薬は通常不要"))
+    D1 --> D1_1
+    D1_1 --> D1_2
+    D1_2 --> F
+
+    E --> E1["治療: 緊急治療・集中管理"]
+    E1_1["積極的輸液 + 制吐 + 鎮痛"]
+    E1_2{"敗血症の徴候?"}
+    E1_2 -->|"YES (持続的頻脈, 発熱, 白血球異常)"| E1_3["広域抗菌薬適応: アモキシシリン-クラブラン酸等"]
+    E1_2 -->|"NO"| E1_4(("抗菌薬は不要"))
+    E1_3 --> F
+    E1_4 --> F
+
+    style A fill:#D2B4DE,stroke:#800080,stroke-width:2px,color:#333
+    style C fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#333
+    style D fill:#FFF3CD,stroke:#FFC107,stroke-width:2px,color:#333
+    style E fill:#F8D7DA,stroke:#DC3545,stroke-width:2px,color:#333
+    style C1_2 fill:#CFF4FC,stroke:#0D6EFD,stroke-width:2px,color:#333
+    style D1_2 fill:#CFF4FC,stroke:#0D6EFD,stroke-width:2px,color:#333
+    style E1_3 fill:#E0BBE4,stroke:#957DAD,stroke-width:2px,color:#333
+    style E1_4 fill:#CFF4FC,stroke:#0D6EFD,stroke-width:2px,color:#333
+    style F fill:#CDE3F7,stroke:#0B5ED7,stroke-width:1px,color:#333
+
+    classDef decision fill:#F0F0F0,stroke:#6C757D,stroke-width:1px,color:#333
+    class B,G,E1_2 decision
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_1" data-file="免疫/IMHA_診断と初期治療">
+<h3>免疫/IMHA_診断と初期治療</h3>
+<pre class="mermaid">
+
+graph TD
+    A["IMHA診断"] --> B["1. 安定化処置<br/>(輸血: PCV<15%目安, 酸素化, 輸液)"]
+    B --> C{"重症度評価?"}
+    C -- "重症<br/>(自己凝集, 血管内溶血など)" --> D["2. 免疫抑制: プレドニゾロン 2mg/kg/日 + 第2免疫抑制薬 (Day1から)"]
+    C -- "非重症" --> E["2. 免疫抑制: プレドニゾロン 2mg/kg/日 単独"]
+    D --> F["3. 抗血栓療法<br/>(低分子ヘパリン or クロピドグレル)"]
+    E --> F
+    F --> G{"4. 再評価<br/>(48-72時間でPCV上昇傾向?)"}
+    G -- "No<br/>(反応不良)" --> H["第2免疫抑制薬 追加/変更を検討"]
+    G -- "Yes<br/>(反応良好)" --> I["現行治療継続"]
+    H --> J["PCV安定後"]
+    I --> J
+    J --> K["5. 免疫抑制薬漸減<br/>(3-6ヶ月かけて)"]
+    K --> L["治療完了/維持"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_2" data-file="免疫/ITP_診断と治療">
+<h3>免疫/ITP_診断と治療</h3>
+<pre class="mermaid">
+
+graph TD
+    A["ITPと診断"] --> B{"臨床的出血の有無"}
+    B -->|"あり"| C["プレドニゾロン + ビンクリスチン"]
+    B -->|"なし"| D["プレドニゾロン単独"]
+
+    C --- E["注意 ABCB1変異犬種はビンクリスチン禁忌"]
+
+    C --> F{"5-7日後 血小板再評価"}
+    D --> F
+
+    F -->|"上昇あり"| G["治療目標達成 PLT 10万以上"]
+    F -->|"反応不良 副作用重篤"| H["MMF追加を検討"]
+
+    G --> I["減薬プロトコル開始"]
+    I --> J{"減薬中の再発"}
+    J -->|"あり"| H
+    J -->|"なし"| K["治療終了または低用量維持"]
+
+    H --> G
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_3" data-file="免疫/多発性関節炎_感染性vs免疫介在性の鑑別">
+<h3>免疫/多発性関節炎_感染性vs免疫介在性の鑑別</h3>
+<pre class="mermaid">
+
+graph TD
+    A["臨床症状: 跛行 発熱 多関節腫脹"] --> B{"関節液採取 3関節以上"}
+    B --> C["関節液分析: スメア 細胞数 蛋白"]
+    B --> D["細菌培養 提出"]
+
+    C --> E{"好中球の特徴"}
+    E -->|"変性好中球 細胞内細菌"| F["感染性関節炎 高度疑い"]
+    E -->|"非変性好中球優位"| G["IMPA 疑い"]
+
+    D --> H{"細菌培養結果"}
+    H -->|"陽性"| F
+    H -->|"陰性"| I["培養陰性でも感染性を除外不可"]
+
+    F --> J["治療: 抗菌薬 6-8週 関節洗浄"]
+    I --> K{"最終的な鑑別判断 臨床像全体"}
+    K -->|"感染性の可能性が高い"| J
+    K -->|"IMPAの可能性が高い"| L["治療: 免疫抑制 ステロイド"]
+
+    J -->|"注意点"| M["感染性に関節液培養陰性でステロイド投与は致命的"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_4" data-file="内分泌/クッシング症候群_診断の落とし穴">
+<h3>内分泌/クッシング症候群_診断の落とし穴</h3>
+<pre class="mermaid">
+
+graph TD
+    A["臨床症状あり? (多飲多尿, 腹部膨満, 脱毛, 皮膚菲薄化, パンティング, ALP著増など)"] --> B{"複数の典型症状が合致？"}
+    B -->|"No"| C["HAC検査は時期尚早。他の疾患を検討"]
+    B -->|"Yes"| D{"併発疾患の急性期や重度ストレスはないか?"}
+    D -->|"Yes"| E["偽陽性リスク高。安定化後に再検査"]
+    D -->|"No"| F["スクリーニング検査実施"]
+    F --> G["LDDST 実施"]
+    F --> H["UCCR 実施"]
+    G --> I{"LDDST結果"}
+    I -->|"コルチゾール抑制"| J["HACは否定的"]
+    I -->|"コルチゾール非抑制"| K["HACの疑い強い"]
+    H --> L{"UCCR結果"}
+    L -->|"正常"| J
+    L -->|"上昇"| K
+    K --> M["鑑別検査: HDDST or 内因性ACTH"]
+    M --> N{"HDDST: 4h/8hで抑制あり? or ACTH高値?"}
+    N -->|"Yes"| O["PDH: 下垂体性"]
+    N -->|"No"| P["AT: 副腎腫瘍"]
+    O --> Q["治療: トリロスタン (PDH第一選択)"]
+    P --> R["腹部エコー: 副腎サイズ評価"]
+    R --> S["AT 4cm超: 血管浸潤評価必須"]
+    S --> T["治療: 副腎摘出術 or トリロスタン"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_5" data-file="内分泌/副腎皮質機能低下症_アジソン病の診断と治療">
+<h3>内分泌/副腎皮質機能低下症_アジソン病の診断と治療</h3>
+<pre class="mermaid">
+
+graph TD
+    A["アジソン病を疑う"] --> B("ベースラインコルチゾール測定")
+    B --> C{"ベースラインコルチゾール ＞ 2μg/dL ?"}
+    C -->|"Yes"| D["アジソン病を除外"]
+    C -->|"No"| E("合成ACTH投与 5μg/kg IV")
+    E --> F("1時間後コルチゾール測定")
+    F --> G{"刺激後コルチゾール ＜ 2μg/dL ?"}
+    G -->|"Yes"| H["アジソン病を確定"]
+    G -->|"No"| I["アジソン病を除外"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_6" data-file="内分泌/犬猫の糖尿病_インスリン管理の実際">
+<h3>内分泌/犬猫の糖尿病_インスリン管理の実際</h3>
+<pre class="mermaid">
+
+graph TD
+    A["猫の糖尿病 診断"] --> B{"持続的高血糖 (＞250mg/dL) + 尿糖"}
+    B -->|"鑑別"| C{"ストレス性高血糖 or 糖尿病?"}
+    C -->|"糖尿病の可能性大"| C1("フルクトサミン ＞400µmol/L")
+    C1 -->|"Yes"| D["治療開始: 早急な介入が寛解率向上に直結"]
+    
+    D --> E{"薬物療法選択"}
+    E -->|"インスリン未治療猫の新第一選択"| E1["SGLT2阻害薬 (経口): Velagliflozin等"]
+    E -->|"インスリン療法が必要な場合"| E2["Glargine (ランタス) 1-2U/cat SC q12h"]
+    
+    D --> F["食事療法: 高蛋白・低炭水化物食 (＜12% ME)"]
+    
+    E1 & E2 & F --> G["厳格な血糖モニタリング (CGM/BGC/フルクトサミン)"]
+    
+    G --> H{"血糖値と臨床症状評価"}
+    H -->|"血糖安定・インスリン要求量減少"| I["インスリン漸減を検討 (慎重に)"]
+    H -->|"低血糖症状出現 or BGCで＜80mg/dL"| J["直ちにブドウ糖補給 & インスリン用量減量"]
+    H -->|"血糖 ＜60mg/dL (持続)"| K["インスリン一時中止 & 再評価"]
+    
+    I --> G
+    J --> G
+    K --> L{"インスリンなしで4週間以上血糖値正常?"}
+    L -->|"Yes"| M["Diabetic Remission (寛解) 達成"]
+    L -->|"No"| I
+    
+    M --> N["食事・体重管理継続 & 定期モニタリング"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_7" data-file="循環器/ピモベンダンの使い方と最新エビデンス">
+<h3>循環器/ピモベンダンの使い方と最新エビデンス</h3>
+<pre class="mermaid">
+
+graph TD
+    A["猫のHCM診断"] --> B{"LVOTOの有無<br/>(心エコーによる評価)"}
+    B -- LVOTOあり --> C["ピモベンダンは**禁忌**"]
+    C --> C1["病態悪化リスク (流出路圧較差増大)"]
+    C --> C2["β遮断薬、ACE阻害薬など検討"]
+
+    B -- LVOTOなし --> D{"収縮能低下の有無<br/>(FS低下, LVIDs増大)"}
+    D -- 収縮能低下あり --> E["ピモベンダン**慎重に検討**"]
+    E --> E1["推奨用量: 0.1-0.3mg/kg PO BID"]
+    E --> E2["定期的な心エコーで効果と安全性再評価"]
+
+    D -- 収縮能低下なし --> F["ピモベンダン**適応なし**"]
+    F --> F1["定期的な経過観察、他治療を検討"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_8" data-file="循環器/不整脈の救急対応_心電図の読み方">
+<h3>循環器/不整脈の救急対応_心電図の読み方</h3>
+<pre class="mermaid">
+
+graph TD
+    A["心電図所見から不整脈を鑑別"] --> B{"心拍数は？"}
+    B -->|"頻脈 (犬>160 / 猫>220 bpm)"| C{"QRS幅は？"}
+    C -->|"幅広い (>0.06秒)"| D{"リズムは？"}
+    D -->|"規則的"| E["心室頻拍 (VT)"]
+    E --> F["初期治療: リドカイン 2mg/kg IV"]
+    C -->|"狭い (<0.06秒)"| G{"リズムは？"}
+    G -->|"規則的"| H["上室性頻拍 (SVT)"]
+    H --> I["初期治療: 迷走神経刺激"]
+    G -->|"不規則"| J["心房細動 (AF)"]
+    J --> K["初期治療: ジルチアゼム"]
+    B -->|"徐脈 (犬<60 / 猫<120 bpm)"| L{"P波とQRSの関係は？"}
+    L -->|"P-QRS解離"| M["3度房室ブロック"]
+    M --> N["アトロピン反応試験"]
+    L -->|"PR延長"| O["1度/2度房室ブロック"]
+    B -->|"正常心拍"| P{"不規則なリズム？"}
+    P -->|"散発性幅広QRS"| Q["心室期外収縮 (VPC)"]
+    F --> R["治療効果評価と基礎疾患検索"]
+    I --> R
+    K --> R
+    N --> R
+    Q --> R
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_9" data-file="循環器/僧帽弁閉鎖不全症_ステージ別治療">
+<h3>循環器/僧帽弁閉鎖不全症_ステージ別治療</h3>
+<pre class="mermaid">
+
+graph TD
+    A["犬の僧帽弁閉鎖不全症 (MMVD) 診断・治療フローチャート"] --> B{"心雑音の聴取"}
+
+    B -- なし --> C("ステージA: リスク犬種")
+    C --> D["対応: 治療不要、定期的な健康チェック"]
+
+    B -- あり --> E{"心臓の評価<br/>(心エコー/胸部レントゲン)"}
+
+    E -- 心拡大なし<br/>(B2基準未満) --> F("ステージB1: 無症状")
+    F --> G["対応: 治療不要、6-12ヶ月毎再評価"]
+
+    E -- 心拡大あり<br/>(B2基準以上: LA:Ao≥1.6, LVIDdN≥1.7, VHS>10.5) --> H{"心不全症状の有無<br/>(咳、呼吸困難、失神など)"}
+
+    H -- なし --> I("ステージB2: 無症状")
+    I --> J["治療: ピモベンダン0.25-0.3mg/kg BID開始"]
+
+    H -- あり --> K("ステージC: 心不全症状あり")
+    K --> L["治療: フロセミド + ピモベンダン + ACEi + スピロノラクトン"]
+
+    K -- 治療抵抗性<br/>(標準治療で管理困難) --> M("ステージD: 治療抵抗性末期")
+    M --> N["治療: フロセミド増量 + ピモベンダンTID + 追加薬、集中管理"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_10" data-file="循環器/心原性肺水腫_一般病院での救命Tips (block 1)">
+<h3>循環器/心原性肺水腫_一般病院での救命Tips (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["来院: 呼吸困難の犬"] --> B{"第一優先: ストレス最小化"}
+    B --> C["酸素フローバイ即開始"]
+
+    C --> D{"鎮静なしで安全に留置確保は可能か？"}
+    D -->|"はい"| E["フロセミド IV (2-4mg/kg) + ブトルファノール IV/IM"]
+    D -->|"いいえ (無理せずストレス回避)"| F["フロセミド IM (2-4mg/kg) + ブトルファノール IM"]
+
+    E --> G{"留置確保済み"}
+    F --> H["鎮静が効いてから留置確保を試みる"]
+    H --> G
+
+    G --> I["ピモベンダン IV (0.15mg/kg 5分以上かけて緩徐に)"]
+    I --> J["最小限モニタリング (SpO2, RR, HR)"]
+
+    J --> K{"呼吸状態改善なし/SpO2 ＜ 85%？"}
+    K -->|"はい (重度の場合)"| L["一時的挿管+用手換気 or CPAPヘルメット導入検討"]
+    K -->|"いいえ (安定傾向)"| M["酸素ケージ管理 + 必要に応じて追加フロセミドIV"]
+
+    L --> N["安定化後、継続治療/転院"]
+    M --> N
+
+    N["安定化後、継続治療/転院"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_11" data-file="循環器/心原性肺水腫_一般病院での救命Tips (block 2)">
+<h3>循環器/心原性肺水腫_一般病院での救命Tips (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["来院: 呼吸困難の犬"] --> B{"第一優先: ストレス最小化"}
+    B --> C["酸素フローバイ即開始"]
+
+    C --> D{"鎮静なしで安全に留置確保は可能か？"}
+    D -->|"はい"| E["フロセミド IV (2-4mg/kg) + ブトルファノール IV/IM"]
+    D -->|"いいえ (無理せずストレス回避)"| F["フロセミド IM (2-4mg/kg) + ブトルファノール IM"]
+
+    E --> G{"留置確保済み"}
+    F --> H["鎮静が効いてから留置確保を試みる"]
+    H --> G
+
+    G --> I["ピモベンダン IV (0.15mg/kg 5分以上かけて緩徐に)"]
+    I --> J["最小限モニタリング (SpO2, RR, HR)"]
+
+    J --> K{"呼吸状態改善なし/SpO2 ＜ 85%？"}
+    K -->|"はい (重度の場合)"| L["一時的挿管+用手換気 or CPAPヘルメット導入検討"]
+    K -->|"いいえ (安定傾向)"| M["酸素ケージ管理 + 必要に応じて追加フロセミドIV"]
+
+    L --> N["安定化後、継続治療/転院"]
+    M --> N
+
+    N["安定化後、継続治療/転院"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_12" data-file="循環器/心原性肺水腫_一般病院での救命Tips (block 3)">
+<h3>循環器/心原性肺水腫_一般病院での救命Tips (block 3)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["来院: 呼吸困難の犬"] --> B{"第一優先: ストレス最小化"}
+    B --> C["酸素フローバイ即開始"]
+
+    C --> D{"鎮静なしで安全に留置確保は可能か？"}
+    D -->|"はい"| E["フロセミド IV (2-4mg/kg) + ブトルファノール IV/IM"]
+    D -->|"いいえ (無理せずストレス回避)"| F["フロセミド IM (2-4mg/kg) + ブトルファノール IM"]
+
+    E --> G{"留置確保済み"}
+    F --> H["鎮静が効いてから留置確保を試みる"]
+    H --> G
+
+    G --> I["ピモベンダン IV (0.15mg/kg 5分以上かけて緩徐に)"]
+    I --> J["最小限モニタリング (SpO2, RR, HR)"]
+
+    J --> K{"呼吸状態改善なし/SpO2 ＜ 85%？"}
+    K -->|"はい (重度の場合)"| L["一時的挿管+用手換気 or CPAPヘルメット導入検討"]
+    K -->|"いいえ (安定傾向)"| M["酸素ケージ管理 + 必要に応じて追加フロセミドIV"]
+
+    L --> N["安定化後、継続治療/転院"]
+    M --> N
+
+    N["安定化後、継続治療/転院"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_13" data-file="循環器/心臓病と麻酔_リスク管理の実際">
+<h3>循環器/心臓病と麻酔_リスク管理の実際</h3>
+<pre class="mermaid">
+
+graph TD
+    A["麻酔中 MAP 60mmHg以下"] --> B{"まず確認"}
+    B --> C["過深麻酔?"]
+    B --> D["心拍数異常?"]
+    B --> E["出血?"]
+
+    C --> F["吸入麻酔薬減量"]
+    D --> G["心拍数調整"]
+    E --> H["止血 輸液"]
+
+    F --> I["オピオイドCRI増"]
+    I --> J["輸液ボーラス"]
+
+    J --> K{"低血圧持続?"}
+    K -->|"Yes"| L{"バソプレッサー選択"}
+
+    L -->|"DCM"| M["ドブタミン"]
+    L -->|"MMVD"| N["ドパミン"]
+    L -->|"HCM猫"| O["フェニレフリン 輸液調整"]
+    L -->|"その他"| P["エフェドリン"]
+    L -->|"その他"| Q["ドパミン"]
+
+    M --> R{"MAP改善?"}
+    N --> R
+    O --> R
+    P --> R
+    Q --> R
+
+    R -->|"No 徐脈あり"| S["グリコピロレート"]
+    R -->|"Yes"| T["モニタ継続"]
+    S --> T
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_14" data-file="循環器/犬のDCM_犬種別アプローチ">
+<h3>循環器/犬のDCM_犬種別アプローチ</h3>
+<pre class="mermaid">
+
+graph TD
+    A["ドーベルマン犬のDCM管理フロー"] --> B{"症状はありますか？"}
+
+    B -- いいえ(無症状) --> C["年1回定期スクリーニング<br/>(24hホルター + 心エコー)"]
+    B -- はい(心不全徴候) --> I["Stage C 心不全治療<br/>(利尿薬、Pimobendan、ACE阻害薬、Spironolactone)"]
+
+    C --> D{"24hホルター心電図結果"}
+    D -- VPCs < 100/24h &
+複雑なVPCsなし --> C
+    D -- VPCs >= 100/24h<br/>または複雑なVPCs検出 --> E{"心エコー所見"}
+
+    E -- LVIDd/LVIDs, FS等 正常 --> C
+    E -- LVIDd/LVIDs, FS等 病的拡大 --> F["Occult DCM診断"]
+
+    F --> G["Pimobendan 0.25-0.3mg/kg PO q12h 開始<br/>(PROTECT Studyに基づき)"]
+    G --> H{"VPCs/VTが顕著か？"}
+    H -- はい --> J["Sotalol / Mexiletine 併用検討"]
+    H -- いいえ --> K["定期モニタリング継続<br/>(症状確認、ホルター、エコー)"]
+    J --> K
+    K --> L{"心不全徴候の出現?"}
+    L -- はい --> I
+    L -- いいえ --> K
+
+    I --> M["適切な対症療法と管理"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_15" data-file="循環器/猫のHCM_早期発見と管理 (block 1)">
+<h3>循環器/猫のHCM_早期発見と管理 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["猫の心臓スクリーニング"] --> B{"心エコー"}
+    B --> C{"LV壁厚 6mm以上"}
+    C --No--> D["HCMなし 定期"]
+    C --Yes--> E{"左房拡大 LA/Ao 1.5以上"}
+
+    E --No--> F["ステージB1 軽度HCM"]
+    E --Yes--> G["ステージB2 中度重度HCM"]
+
+    F --> H["B1管理 経過観察 アテノロール検討 LVOTO"]
+    G --> I["B2管理 クロピドグレル 18.75mg日"]
+
+    F --> J{"呼吸困難 ATE発症"}
+    G --> J
+
+    J --Yes--> K["ステージC CHF ATE"]
+    K --> L["C管理 フロセミド ACEi クロピドグレル ピモベンダン"]
+
+    L --> M{"治療抵抗性"}
+    M --Yes--> N["ステージD 末期心不全"]
+    N --> O["D管理 利尿薬増量 QOL評価"]
+
+    H --> P["モニタリング 心エコー 自宅SRR"]
+    I --> P
+    L --> P
+    O --> P
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_16" data-file="循環器/猫のHCM_早期発見と管理 (block 2)">
+<h3>循環器/猫のHCM_早期発見と管理 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["猫の心臓スクリーニング"] --> B{"心エコー"}
+    B --> C{"LV壁厚 6mm以上"}
+    C --No--> D["HCMなし 定期"]
+    C --Yes--> E{"左房拡大 LA/Ao 1.5以上"}
+
+    E --No--> F["ステージB1 軽度HCM"]
+    E --Yes--> G["ステージB2 中度重度HCM"]
+
+    F --> H["B1管理 経過観察 アテノロール検討 LVOTO"]
+    G --> I["B2管理 クロピドグレル 18.75mg日"]
+
+    F --> J{"呼吸困難 ATE発症"}
+    G --> J
+
+    J --Yes--> K["ステージC CHF ATE"]
+    K --> L["C管理 フロセミド ACEi クロピドグレル ピモベンダン"]
+
+    L --> M{"治療抵抗性"}
+    M --Yes--> N["ステージD 末期心不全"]
+    N --> O["D管理 利尿薬増量 QOL評価"]
+
+    H --> P["モニタリング 心エコー 自宅SRR"]
+    I --> P
+    L --> P
+    O --> P
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_17" data-file="循環器/猫の動脈血栓塞栓症ATE_救急対応">
+<h3>循環器/猫の動脈血栓塞栓症ATE_救急対応</h3>
+<pre class="mermaid">
+
+graph TD
+    A["ATE疑い来院: 後肢麻痺/疼痛"] --> B{"診断: The 5 Ps"}
+    B -- Pain, Paresis/Paralysis, Pulselessness, Pallor, Poikilothermy --> C["ATE確定診断"]
+
+    C --> D["最優先: 鎮痛 (激痛緩和)"]
+    D -- Fentanyl 2-5 mcg/kg IV/CRI --> E["急性期: 抗血栓療法"]
+
+    E -- UFH 250-300 IU/kg IV then SC q6-8h --> F{"モニタリング: APTT 1.5-2.0x目標"}
+
+    F --> G{"予後因子評価"}
+    G -- 悪い予後因子 (-) <br/> (例: 直腸温 > 37℃, 脈拍正常, 片後肢麻痺) --> H["積極的治療継続"]
+    G -- 悪い予後因子 (+) <br/> (例: 直腸温 < 37℃, 徐脈, 両後肢完全麻痺) --> I["飼い主との相談: 治療継続/安楽死"]
+
+    H --> J["状態安定化 → 退院へ"]
+    I -- 治療継続を選択 --> J
+
+    J --> K["慢性期: 再発予防"]
+    K -- Clopidogrel 18.75 mg/cat PO q24h --> L["Rivaroxaban 2.5 mg/cat PO q24h (+/-併用検討)"]
+
+    L --> M["退院後の経過観察"]
+    M --> N["運動機能回復 (1-2ヶ月で多くが回復)"]
+    M --> O["再塞栓リスク (25-50%)"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_18" data-file="抗菌薬/周術期の抗菌薬_予防投与のタイミング">
+<h3>抗菌薬/周術期の抗菌薬_予防投与のタイミング</h3>
+<pre class="mermaid">
+graph TD
+    A["手術開始"] --> B["執刀 30-60分前"]
+    B --> C["初回投与 Cefazolin"]
+    C --> D["術中"]
+    D -->|"90-120分ごと"| E["追加投与"]
+    D -->|"出血量 ＞ 1500mL"| E
+    E --> D
+    D --> F["閉創時"]
+    F --> G["投与中止 原則"]
+    G --> H["術後24時間以内に中止"]
+    H --> I["完了"]
+</pre>
+</div>
+
+
+<div class="test-block" id="block_19" data-file="抗菌薬/抗菌薬選択の基本原則">
+<h3>抗菌薬/抗菌薬選択の基本原則</h3>
+<pre class="mermaid">
+
+graph TD
+    A["感染症を疑う"] --> B{"抗菌薬必要か"}
+    B -->|"いいえ"| C["対症療法 経過観察"]
+    B -->|"はい"| D{"感染種類 重症度"}
+
+    D -->|"単純 初回"| E["経験的治療"]
+    D -->|"複雑 再発 重症"| F["培養検査推奨"]
+
+    E --> G["Tier 1 抗菌薬"]
+    F --> H["培養結果待ち Tier 1/2"]
+
+    G --> I{"臨床改善 3-5日"}
+    H --> J{"培養結果判明"}
+
+    I -->|"改善あり"| K["治療継続 期間遵守"]
+    I -->|"改善なし"| F
+
+    J -->|"感受性あり"| K
+    J -->|"感受性なし"| L["Tier 3 検討"]
+
+    L --> M["感受性確認後 慎重使用"]
+
+    K --> N["治療完了"]
+    M --> N
+
+    subgraph 抗菌薬グループ
+        G -->|"例: アモキシシリン ST合剤 セファレキシン"| I
+        L -->|"例: フルオロキノロン 第3世代セフェム"| M
+    end
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_20" data-file="救急/CPR_RECOVER最新アップデート">
+<h3>救急/CPR_RECOVER最新アップデート</h3>
+<pre class="mermaid">
+
+graph TD
+    A["CPA発生確認"] --> B("応援要請 & BLS開始")
+
+    subgraph "BLSサイクル (2分)"
+        B --> C["胸骨圧迫: 100-120回/分"]
+        C -->|"深さ: 胸幅1/3-1/2 (広胸種1/4), 完全リコイル"| D["換気: 10-12回/分"]
+        D -->|"挿管済:非同期, 非挿管:30:2 or MT-N"| E["ETCO2モニタリング: 目標 >=18 mmHg"]
+        E --> F("圧迫者交代")
+    end
+
+    F --> G{"2分間のCPRサイクル終了"}
+
+    G -->|"YES"| H["リズムチェック (ECG)"]
+    H -->|"CPR中断は10秒以内"| I{"リズム判定"}
+
+    I -->|"ショック適応リズム"| J["VF / 無脈性VT"]
+    J --> K["⚡除細動 (2-4 J/kg)"]
+    K -->|"即座に胸骨圧迫再開 (2分)"| L["薬剤投与 (ショック適応)"]
+    L -->|"3-5分ごと"| M{"バソプレシン 0.8U/kg IV"}
+    M --> N{"または エピネフリン 0.01mg/kg IV"}
+    N --> P{"ROSC確認?"}
+
+    I -->|"非ショック適応リズム"| Q["心静止 / PEA"]
+    Q --> R["薬剤投与 (非ショック適応)"]
+    R -->|"3-5分ごと"| S{"エピネフリン 0.01mg/kg IV"}
+    S --> T{"アトロピン 0.04mg/kg IV (単回)"}
+    T --> P
+
+    P -->|"NO"| G
+    P -->|"YES"| U["✅ ROSC確認 (ETCO2急上昇)"]
+    U --> V["ROSC後ケア (PCA) 開始"]
+    V -->|"血圧, 呼吸, 神経, 血糖管理"| W("集中モニタリング & 転帰評価")
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_21" data-file="救急/DIC_診断と治療">
+<h3>救急/DIC_診断と治療</h3>
+<pre class="mermaid">
+
+graph TD
+    A["DICと診断 (スコアリング ≥ 3点)"] --> B["基礎疾患の治療 (最優先)"]
+
+    B --> C{"出血傾向は顕著か？"}
+
+    C -->|"No (血栓傾向優位/Overt前DIC)"| D{"AT活性は十分か？"}
+    C -->|"Yes (Overt DIC)"| G["FFP投与による凝固因子・AT補充"]
+
+    D -->|"Yes (AT活性 ≥ 30%)"| E["ヘパリン投与 (UFH/LMWH)"]
+    D -->|"No (AT活性 ＜ 30%)"| F["FFP投与によるAT補充"]
+
+    F --> E
+    G --> H{"出血が制御されたか？"}
+    H -->|"Yes"| I["ヘパリン投与を検討"]
+
+    style A fill:#e0f2f7,stroke:#2a859e,stroke-width:2px
+    style B fill:#fff3cd,stroke:#a68e36,stroke-width:2px
+    style E fill:#d4edda,stroke:#2d6a4a,stroke-width:2px
+    style F fill:#d4edda,stroke:#2d6a4a,stroke-width:2px
+    style G fill:#f8d7da,stroke:#721c24,stroke-width:2px
+    style I fill:#d4edda,stroke:#2d6a4a,stroke-width:2px
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_22" data-file="救急/GDV_安定化と手術判断">
+<h3>救急/GDV_安定化と手術判断</h3>
+<pre class="mermaid">
+
+graph TD
+    start(("来院: GDV疑い")) --> triage{"ショック徴候あり？"}
+    triage -->|"Yes"| IV_resuscitation["① 輸液蘇生: 2ルート確保、急速輸液 (LRS 10-20mL/kgボーラス)"]
+    triage -->|"No"| IV_resuscitation
+    IV_resuscitation --> diagnosis["② 診断: 右側臥位X線 (ダブルバブル, 脾臓変位)"]
+    diagnosis --> confirmed_gdv{"GDVと確定診断？"}
+    confirmed_gdv -->|"No"| other_dx["他疾患の評価"]
+    confirmed_gdv -->|"Yes"| decompression_method["③ 胃減圧: 経口胃チューブ試行"]
+    decompression_method --> oral_tube_success{"経口チューブ挿入可？"}
+    oral_tube_success -->|"Yes"| gastric_wash["ガス/内容物排出 + 温生食で胃洗浄"]
+    oral_tube_success -->|"No"| percutaneous_decompression["経皮的胃穿刺による減圧"]
+    percutaneous_decompression --> retry_oral_tube{"減圧後、経口チューブ挿入可？"}
+    retry_oral_tube -->|"Yes"| gastric_wash
+    retry_oral_tube -->|"No"| proceed_surgery_path
+
+    gastric_wash --> hemodynamic_eval["血行動態評価 (MAP≥65, CRT＜2, 心拍安定化)"]
+    hemodynamic_eval --> stabilization_achieved{"初期安定化達成？"}
+    stabilization_achieved -->|"No"| IV_resuscitation
+    stabilization_achieved -->|"Yes"| surgery_prep["④ 手術準備: 血液検査, 心電図"]
+    surgery_prep --> proceed_surgery_path["⑤ 緊急手術 (捻転整復 + 胃固定術)"]
+
+    proceed_surgery_path --> stomach_eval{"術中の胃壁評価: 壊死組織あり？"}
+    stomach_eval -->|"Yes"| partial_gastrectomy["胃部分切除"]
+    stomach_eval -->|"No"| spleen_eval{"脾臓評価: 巻き込み/損傷あり？"}
+    partial_gastrectomy --> spleen_eval
+    spleen_eval -->|"Yes"| splenectomy["脾臓摘出"]
+    spleen_eval -->|"No"| surgery_complete["手術完了"]
+    splenectomy --> surgery_complete
+
+    surgery_complete --> post_op_care["⑥ 術後管理: 心電図モニタリング (48-72h)"]
+    post_op_care --> arrhythmia{"術後心室性不整脈あり？"}
+    arrhythmia -->|"Yes"| sustained_vt{"持続性心室頻拍 (HR＞180bpm, 灌流低下)？"}
+    sustained_vt -->|"Yes"| lidocaine_tx["リドカイン投与 (ボーラス→CRI)"]
+    sustained_vt -->|"No"| observe_arrhythmia["経過観察 (散発性VPC)"]
+    arrhythmia -->|"No"| discharge_criteria["退院基準満たすまで入院"]
+    lidocaine_tx --> discharge_criteria
+    observe_arrhythmia --> discharge_criteria
+
+    discharge_criteria --> endNode(("退院 + 飼い主説明"))
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_23" data-file="救急/ショック管理_最新プロトコル">
+<h3>救急/ショック管理_最新プロトコル</h3>
+<pre class="mermaid">
+
+graph TD
+    A["ショック兆候のある動物 (低血圧, CRT異常, 粘膜蒼白/紅潮など)"] --> B{"初期評価: ABCs + POCUS / 身体検査"}
+
+    B --> C{"心原性/閉塞性ショックの可能性は？<br/> (肺水腫, 頸静脈怒張, 心音異常, 心嚢液, ATE症状, POCUS所見)"}
+    C -- Yes --> D{"心原性/閉塞性の鑑別と治療"}
+    D -- 心タンポナーデが原因 --> D1["心嚢穿刺が最優先"]
+    D -- 心不全が原因 --> D2["酸素 + 利尿薬 + 強心薬 (⚠️輸液基本禁忌)"]
+    D -- ATEが原因 --> D3["疼痛管理 + 抗血栓薬"]
+
+    C -- No --> E{"循環血液量減少性/血液分布異常性の可能性は？"}
+    E -- 出血/脱水/消化器喪失の徴候あり --> F["💧 循環血液量減少性ショック"]
+    E -- 敗血症/SIRS/アナフィラキシー徴候あり --> G["🔥 血液分布異常性ショック"]
+
+    F --> H{"等張晶質液ボーラス<br/> (犬: 15-20mL/kg, 猫: 5-10mL/kg を 15-30分で)"}
+    G --> H
+
+    H --> I{"ボーラス後の灌流パラメータ再評価<br/> (CRT, 粘膜色, 心拍, 血圧, 意識, ラクテート)"}
+    I -- 改善あり --> J["モニタリング & 維持輸液 & 原因治療"]
+    I -- 改善なし (1-2回追加ボーラス後) --> K{"輸液抵抗性の低血圧は？"}
+    K -- Yes --> L["💉 昇圧薬開始: ノルエピネフリンCRIが第一選択"]
+    K -- No --> H
+    
+    L --> J
+    D1 --> J
+    D2 --> J
+    D3 --> J
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_24" data-file="救急/外傷の初期安定化_トリアージ">
+<h3>救急/外傷の初期安定化_トリアージ</h3>
+<pre class="mermaid">
+
+graph TD
+    A["<b>外傷患者到着</b>"] --> B{"<b>初期トリアージ & プライマリサーベイ開始</b>"}
+
+    subgraph "A CRASH PLAN (緊急度順)"
+        B --> C("<b>A</b>irway: 気道開通性評価")
+        C -- 気道閉塞/呼吸停止 --> C1["<b>即時介入:</b> 気道確保, 挿管/気管切開"]
+        C1 --> D
+
+        C -- 気道確保OK --> D("<b>C</b>ardiovascular: HR, CRT, 脈質, 血圧評価")
+        D -- ショック徴候(CRT延長, 脈微弱, 低血圧) --> D1["<b>即時介入:</b> 輸液蘇生 (晶質液ボーラス<br/>犬 10-20mL/kg, 猫 10mL/kg)"]
+        D -- TBI疑い/ICP亢進徴候 --> D2["<b>即時介入:</b> 高張食塩水 (7.2-7.5% NaCl 4-5mL/kg)"]
+        D1 --> E; D2 --> E
+
+        D -- 循環安定/対応済 --> E("<b>R</b>espiratory: RR, 呼吸パターン, SpO₂評価")
+        E -- 呼吸困難/低酸素(SpO₂<95%) --> E1["<b>即時介入:</b> 酸素化, 胸腔穿刺/ドレーン"]
+        E1 --> F
+
+        E -- 呼吸安定/対応済 --> F("<b>A</b>bdomen: 膨満, 圧痛, FAST評価")
+        F -- 腹腔内出血/臓器損傷疑い --> F1["<b>即時介入:</b> 腹腔穿刺/FAST陽性確認, 手術準備"]
+        F1 --> G
+
+        F -- 腹部異常なし/対応済 --> G("<b>S</b>pine: 脊椎痛, 姿勢評価")
+        G -- 脊椎損傷疑い --> G1["<b>即時介入:</b> 厳重な脊椎固定, 安静"]
+        G1 --> H
+
+        G -- 脊椎異常なし/対応済 --> H("<b>H</b>ead: 意識レベル, 瞳孔, PLR評価")
+        H -- TBI徴候(意識障害, 瞳孔異常) --> H1["<b>即時介入:</b> 頭部30度挙上, マンニトール考慮<br/><b>⛔ステロイド禁忌</b>"]
+        H1 --> I
+
+        H -- 頭部異常なし/対応済 --> I("<b>P</b>elvis: 骨盤圧迫痛評価")
+        I -- 骨盤骨折疑い --> I1["<b>即時介入:</b> 安静, X線検査"]
+        I1 --> J
+
+        I -- 骨盤異常なし/対応済 --> J("<b>L</b>imbs: 開放骨折, 腫脹評価")
+        J -- 四肢損傷(開放骨折) --> J1["<b>即時介入:</b> 創傷処置, 固定(スプリント)"]
+        J1 --> K
+
+        J -- 四肢異常なし/対応済 --> K("<b>A</b>rteries/Veins: 出血, 血管損傷評価")
+        K -- 活動性出血 --> K1["<b>即時介入:</b> 圧迫止血, リガチャー"]
+        K1 --> L
+
+        K -- 血管異常なし/対応済 --> L("<b>N</b>erves: 四肢の知覚・運動評価")
+        L -- 神経学的異常 --> L1["<b>即時介入:</b> 神経学的検査"]
+        L1 --> M
+    end
+
+    L -- 神経学的異常なし/対応済 --> M{"<b>全身状態の安定化確認</b>"}
+    M -- 安定化後 --> N["<b>セカンダリサーベイ & 詳細検査へ</b>"]
+    N --> O["<b>疼痛管理:</b> フルオピオイド<br/><b>⚠️ショック時NSAIDs完全禁忌</b>"]
+    O --> P("<b>最終治療へ</b>")
+
+    style A fill:#DCE775,stroke:#333,stroke-width:2px
+    style B fill:#AED581,stroke:#333,stroke-width:2px
+    style M fill:#81C784,stroke:#333,stroke-width:2px
+    style N fill:#4CAF50,stroke:#333,stroke-width:2px
+    style O fill:#FFEB3B,stroke:#333,stroke-width:2px
+    style P fill:#FFC107,stroke:#333,stroke-width:2px
+    classDef surveyNode fill:#BBDEFB,stroke:#333
+    class C,D,E,F,G,H,I,J,K,L surveyNode
+    classDef interventionNode fill:#FFCDD2,stroke:#333,font-weight:bold
+    class C1,D1,D2,E1,F1,G1,H1,I1,J1,K1,L1 interventionNode
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_25" data-file="救急/急性腎障害_AKIの初期対応">
+<h3>救急/急性腎障害_AKIの初期対応</h3>
+<pre class="mermaid">
+
+graph TD
+    A["AKIによる乏尿 (尿量 ＜ 1mL/kg/h)"]
+    A --> B{"まず脱水が完全に補正されているか確認？"}
+    B -->|"いいえ"| C["脱水補正を最優先"]
+    B -->|"はい"| D["フロセミド 2-4mg/kg IV 投与"]
+    D --> E{"30分後の尿量反応"}
+    E -->|"増加あり"| F["フロセミドCRI 0.5-1mg/kg/h 検討"]
+    E -->|"増加なし"| G{"無尿が確定しているか？ (尿量 ＜ 0.5mL/kg/h)"}
+    G -->|"はい"| H["マンニトール禁忌; 体液過剰悪化リスク; 透析施設へ紹介"]
+    G -->|"いいえ"| I["マンニトール 0.5-1g/kg IV (20分かけて)"]
+    I --> J{"マンニトール投与後の尿量反応"}
+    J -->|"増加あり"| K["継続観察, 原因精査"]
+    J -->|"増加なし"| L["本質的な乏尿/無尿 (intrinsic AKI); 透析施設へ紹介"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_26" data-file="救急/急性膵炎_犬猫の違いと管理 (block 1)">
+<h3>救急/急性膵炎_犬猫の違いと管理 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["臨床症状 嘔吐 食欲不振 腹痛"] --> B{"膵炎を強く疑うか"}
+    B -->|"Yes"| C{"SNAP cPL/fPL実施"}
+    C -->|"陰性"| D["膵炎の可能性は低い 他疾患検討"]
+    C -->|"陽性"| E["Spec cPL/fPLと腹部エコー実施"]
+    E -->|"Spec高値 エコー所見あり"| F["急性膵炎と診断"]
+    E -->|"Spec正常範囲 or エコー所見なし"| D
+    F --> G["積極的な支持療法を開始"]
+    G --> H["重症度評価と治療調整"]
+    B -->|"No"| I["他疾患を検討"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_27" data-file="救急/急性膵炎_犬猫の違いと管理 (block 2)">
+<h3>救急/急性膵炎_犬猫の違いと管理 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["臨床症状 嘔吐 食欲不振 腹痛"] --> B{"膵炎を強く疑うか"}
+    B -->|"Yes"| C{"SNAP cPL/fPL実施"}
+    C -->|"陰性"| D["膵炎の可能性は低い 他疾患検討"]
+    C -->|"陽性"| E["Spec cPL/fPLと腹部エコー実施"]
+    E -->|"Spec高値 エコー所見あり"| F["急性膵炎と診断"]
+    E -->|"Spec正常範囲 or エコー所見なし"| D
+    F --> G["積極的な支持療法を開始"]
+    G --> H["重症度評価と治療調整"]
+    B -->|"No"| I["他疾患を検討"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_28" data-file="救急/敗血症_早期認識と初期蘇生">
+<h3>救急/敗血症_早期認識と初期蘇生</h3>
+<pre class="mermaid">
+
+graph TD
+    A["感染源の疑いあり"] --> B{"SIRS基準に合致"}
+    B -->|"No"| C["経過観察 感染治療"]
+    B -->|"Yes"| D{"臓器障害あり 例:乳酸高値 乏尿"}
+    D -->|"No"| E["全身性炎症反応症候群 SIRS"]
+    D -->|"Yes"| F["敗血症を疑う"]
+
+    F --> G["ゴールデンアワー 最初の1時間で"]
+    G --> H["1 輸液蘇生"]
+    G --> I["2 広域抗菌薬投与 培養後"]
+    G --> J["3 ソースコントロール 感染源除去"]
+
+    H --> K{"灌流パラメータ改善? HR CRT 脈 血圧 乳酸"}
+    K -->|"Yes"| L["維持輸液 状態安定化"]
+    K -->|"No"| M["輸液ボーラス追加 または昇圧薬検討"]
+
+    M --> N{"低血圧持続?"}
+    N -->|"Yes"| O["ノルエピネフリン 第一選択"]
+    N -->|"No"| L
+
+    O --> P{"目標MAP達成?"}
+    P -->|"No"| Q["他昇圧薬追加 バソプレシン ドブタミン"]
+    P -->|"Yes"| L
+
+    J --> R["可能な限り早期に実施"]
+
+    style A fill:#DDF,stroke:#333,stroke-width:2px
+    style F fill:#FEE,stroke:#C00,stroke-width:2px
+    style G fill:#EFE,stroke:#090,stroke-width:2px
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_29" data-file="救急/気道緊急_上気道閉塞と喉頭麻痺">
+<h3>救急/気道緊急_上気道閉塞と喉頭麻痺</h3>
+<pre class="mermaid">
+
+graph TD
+    A["来院: ストライダー/チアノーゼ"] --> B{"高体温の有無? (体温測定)"}
+
+    B -->|"Yes (＞39.5℃)"| C["体表冷却 (目標39.5℃で中止)"]
+    B -->|"No (＜39.5℃)"| D["酸素投与 (Flow-by/マスク)"]
+
+    C --> E["鎮静: Acepromazine + Butorphanol IV"]
+    D --> E
+
+    E --> F["ステロイド: Dexamethasone SP IV"]
+
+    F --> G{"呼吸状態・SpO2評価"}
+
+    G -->|"改善あり (SpO2 ＞ 90%)"| H["モニタリング・対症療法"]
+    G -->|"改善なし (SpO2 ＜ 90%持続 / 努力性呼吸増悪 / チアノーゼ・意識低下)"| I{"緊急気道確保"}
+
+    I --> J["Propofol IV 導入 & 挿管試行"]
+
+    J --> K{"挿管可能?"}
+
+    K -->|"Yes"| L["挿管 & 酸素換気"]
+    K -->|"No (声門見えず/挿管不可)"| M["緊急気管切開"]
+
+    L --> N["回復期管理"]
+    M --> N
+
+    H --> N
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_30" data-file="救急/犬猫の中毒_原因物質と対処法">
+<h3>救急/犬猫の中毒_原因物質と対処法</h3>
+<pre class="mermaid">
+
+graph TD
+    A["来院: 何を・いつ・どれだけ摂取？"] --> B{"重篤な症状 (意識障害/痙攣/呼吸困難)<br/>または腐食性/石油系物質の摂取？"}
+    B -- Yes --> C("緊急安定化処置: 輸液・酸素・抗痙攣薬など")
+    B -- No --> D{"摂取後1〜2時間以内？"}
+    D -- No (時間が経過) --> E("催吐は推奨せず")
+    D -- Yes --> F{"意識清明で咽頭反射あり？"}
+    F -- No --> G("催吐は禁忌・誤嚥リスク増大")
+    F -- Yes --> H("催吐を検討")
+
+    H --> I{"催吐薬の選択"}
+    I -- 犬 --> J("クレボル®点眼薬 / アポモルヒネ")
+    I -- 猫 --> K("デクスメデトミジン / キシラジン")
+
+    J --> L{"嘔吐物回収確認"}
+    K --> L
+
+    L -- 回収済み/嘔吐終了 --> M{"活性炭の投与は適応？<br/>(キシリトールには無効)"}
+    M -- No --> N("継続的なモニタリング・支持療法")
+    M -- Yes --> O("活性炭 1-2g/kg PO<br/>（腸肝循環物質は反復投与検討）")
+    O --> N
+
+    C --> N
+    E --> N
+    G --> N
+
+    subgraph 留意事項
+        style 注意1 fill:#fff,stroke:#333,stroke-width:2px
+        style 注意2 fill:#fff,stroke:#333,stroke-width:2px
+        注意1["⛔️ 自宅での塩水催吐は絶対禁忌"]
+        注意2["⛔️ 3%過酸化水素水は犬猫ともに推奨しない"]
+    end
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_31" data-file="救急/猫の尿道閉塞_救急対応フロー">
+<h3>救急/猫の尿道閉塞_救急対応フロー</h3>
+<pre class="mermaid">
+
+graph TD
+    A["<b>猫の尿道閉塞</b><br/>来院"] --> B{"意識・活気 / 膀胱触診"};
+    B --> C["心電図モニター & 静脈確保 & 血液ガス測定<br/>(K, BUN, Cre)"]
+    C --> D{"<b>K > 7-8mEq/L</b> かつ 心電図異常<br/>(テント状T波, P波消失, QRS幅拡大) ?"}
+    D -- Yes --> E["<b>高K緊急治療</b><br/>1. グルコン酸Ca IV (心筋安定化)<br/>2. インスリン+ブドウ糖 IV (K細胞内シフト)"]
+    D -- No --> F["鎮静 (K値考慮したプロトコル)"]
+    E --> F
+    F --> G["無菌的 尿道カテーテル挿入<br/>& 閉塞解除 (逆行性フラッシュ)"]
+    G --> H["膀胱洗浄 & 柔らかいカテーテル留置<br/>& 閉鎖式尿収集 (24-48h)"]
+    H --> I["<b>術後管理</b><br/>利尿モニタリング & 電解質管理 (低K, 低P注意)"]
+    I --> J{"カテーテル抜去後<br/>自力排尿確認?"}
+    J -- Yes --> K["退院指導:<br/>食事療法・環境改善<br/>再閉塞の早期発見"]
+    J -- No --> L[再閉塞対応:<br/>カテーテル再留置 or 再挑戦
+PU術検討]
+    K --> M["長期予防管理"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_32" data-file="救急/産褥テタニー_産後低Ca血症_救急対応">
+<h3>救急/産褥テタニー_産後低Ca血症_救急対応</h3>
+<pre class="mermaid">
+
+graph TD
+    A["産褥テタニー疑い 臨床徴候"]
+    A --> B{"血清Ca測定"}
+    B -->|"総Ca ＜ 7.0 or iCa ＜ 0.7-0.8"| C["診断確定 低Ca血症"]
+    C --> D{"低血糖併発確認?"}
+    D -->|"はい"| E["50% Dextrose IV"]
+    E --> F["10% Ca Gluconate IV slow"]
+    D -->|"いいえ"| F
+    F --> G["ECGモニタリング 連続"]
+    G -->|"徐脈 or VPC出現"| H["Ca投与 中断または減速"]
+    H --> I{"不整脈改善?"}
+    I -->|"はい"| F["Ca投与再開 速度調整"]
+    I -->|"いいえ"| J["他治療検討 獣医師判断"]
+    G -->|"臨床徴候改善 痙攣停止"| K["急性期安定"]
+    K --> L{"経口摂取可能?"}
+    L -->|"いいえ"| M["10% Ca Gluconate CRI"]
+    L -->|"はい"| N["炭酸カルシウム PO 25-50 mg/kg/day 分割"]
+    M --> N
+    N --> O{"経口Caのみで維持可能?"}
+    O -->|"いいえ"| P["カルシトリオール PO 追加 負荷→維持"]
+    O -->|"はい"| Q["子犬への授乳 直ちに中止"]
+    P --> Q
+    Q --> R["人工哺乳 離乳指導"]
+    R --> S["血清Ca再検 退院後2-3日おき"]
+    S --> T["再発予防指導 妊娠中Caサプリ禁止"]
+    T --> U["END"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_33" data-file="栄養/手作り食と生食のリスクとエビデンス">
+<h3>栄養/手作り食と生食のリスクとエビデンス</h3>
+<pre class="mermaid">
+
+graph TD
+    A["飼い主の要望: 手作り食・生食の検討"] --> B{"獣医栄養学専門医に相談したか？"}
+
+    B -->|"Yes"| C["専門医の完全なレシピに従う"]
+    C --> D["サプリメントを正確に計量・添加"]
+    D --> E["定期的な栄養状態の評価"]
+    E --> F["生肉ではなく加熱調理を強く推奨"]
+    F --> G(("安全性が大幅に向上"))
+
+    B -->|"No"| H{"信頼できるオンラインツール利用は可能か？"}
+    H -->|"Yes"| I["オンラインツールで栄養計算・管理"]
+    I --> D
+
+    H -->|"No"| J["日本の実情: 専門医・ツール利用が困難"]
+    J --> K["AAFCO基準の総合栄養食を基本とする"]
+    K --> L["手作りはトッピング程度に留める"]
+    L --> M(("安全性が最も高い選択"))
+
+    style A fill:#e0f7fa,stroke:#00796b,stroke-width:2px,color:#333
+    style B fill:#bbdefb,stroke:#1976d2,stroke-width:2px,color:#333
+    style C fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333
+    style D fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333
+    style E fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333
+    style F fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333
+    style G fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#333
+    style H fill:#bbdefb,stroke:#1976d2,stroke-width:2px,color:#333
+    style I fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#333
+    style J fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#333
+    style K fill:#ffecb3,stroke:#ffa000,stroke-width:2px,color:#333
+    style L fill:#ffecb3,stroke:#ffa000,stroke-width:2px,color:#333
+    style M fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#333
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_34" data-file="栄養/療法食の選び方_疾患別フードガイド">
+<h3>栄養/療法食の選び方_疾患別フードガイド</h3>
+<pre class="mermaid">
+
+graph TD
+    A["複数の疾患併存を診断"] --> B{"どちらの疾患が生命予後により影響するか？"}
+
+    B -->|"生命予後への影響大 (例: CKD進行度, 心不全ステージ)"| C["その疾患に対応する療法食を第一選択"]
+    B -->|"生命予後への影響小 (例: 軽度アレルギー, 尿石症リスク)"| C
+
+    C --> D{"選択した療法食は、他の併存疾患に悪影響がないか？"}
+    D -->|"YES (悪影響あり)"| E["栄養成分衝突の調整: 療法食の組み合わせ検討 / サプリメント併用 (例: リン吸着剤)"]
+    D -->|"NO (悪影響なし)"| F["嗜好性の評価"]
+
+    E --> F
+
+    F --> G{"動物が療法食を食べてくれるか？"}
+    G -->|"YES"| H["決定した療法食で管理開始"]
+    G -->|"NO"| I["嗜好性を高める工夫 (温める、トッピング、ウェットフードなど)"]
+    I --> J{"それでも食べない場合"}
+    J -->|"YES"| K["次善の療法食、または最も食いつきの良い一般食 + 必要なサプリメントで補完"]
+    J -->|"NO"| H
+
+    K --> L["定期的な経過観察と栄養状態の評価、必要に応じて調整"]
+    H --> L
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_35" data-file="歯科/猫の口内炎_全臼歯抜歯とステロイド以外の選択肢 (block 1)">
+<h3>歯科/猫の口内炎_全臼歯抜歯とステロイド以外の選択肢 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["FCGSと診断"] --> B{"第一選択治療"}
+    B --> C["全臼歯抜歯 (FME)"]
+    C --> D{"術後評価: 症状改善?"}
+    D -->|"はい (60-80%治癒/改善)"| E["経過観察"]
+    D -->|"いいえ (20-40%難治性残存)"| F["難治性FCGSの内科療法"]
+
+    F --> G["Cyclosporine A (2.5-3.0 mg/kg PO q12h)"]
+    G -->|"著効 (50-70%)"| E
+    G -->|"効果不十分/副作用"| H["代替内科療法検討"]
+
+    H --> I["猫インターフェロンオメガ (10万 IU/day PO)"]
+    H --> J["間葉系幹細胞療法 (MSC)"]
+    
+    subgraph 避けるべき治療
+        K["長期ステロイド"]
+        K -->|"重大なリスク: 糖尿病、免疫不全"| L["非推奨"]
+    end
+    
+    F -->|"避ける"| K
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_36" data-file="歯科/猫の口内炎_全臼歯抜歯とステロイド以外の選択肢 (block 2)">
+<h3>歯科/猫の口内炎_全臼歯抜歯とステロイド以外の選択肢 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["FCGSと診断"] --> B{"第一選択治療"}
+    B --> C["全臼歯抜歯 (FME)"]
+    C --> D{"術後評価: 症状改善?"}
+    D -->|"はい (60-80%治癒/改善)"| E["経過観察"]
+    D -->|"いいえ (20-40%難治性残存)"| F["難治性FCGSの内科療法"]
+
+    F --> G["Cyclosporine A (2.5-3.0 mg/kg PO q12h)"]
+    G -->|"著効 (50-70%)"| E
+    G -->|"効果不十分/副作用"| H["代替内科療法検討"]
+
+    H --> I["猫インターフェロンオメガ (10万 IU/day PO)"]
+    H --> J["間葉系幹細胞療法 (MSC)"]
+    
+    subgraph 避けるべき治療
+        K["長期ステロイド"]
+        K -->|"重大なリスク: 糖尿病、免疫不全"| L["非推奨"]
+    end
+    
+    F -->|"避ける"| K
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_37" data-file="歯科/猫の口内炎_全臼歯抜歯とステロイド以外の選択肢 (block 3)">
+<h3>歯科/猫の口内炎_全臼歯抜歯とステロイド以外の選択肢 (block 3)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["FCGSと診断"] --> B{"第一選択治療"}
+    B --> C["全臼歯抜歯 (FME)"]
+    C --> D{"術後評価: 症状改善?"}
+    D -->|"はい (60-80%治癒/改善)"| E["経過観察"]
+    D -->|"いいえ (20-40%難治性残存)"| F["難治性FCGSの内科療法"]
+
+    F --> G["Cyclosporine A (2.5-3.0 mg/kg PO q12h)"]
+    G -->|"著効 (50-70%)"| E
+    G -->|"効果不十分/副作用"| H["代替内科療法検討"]
+
+    H --> I["猫インターフェロンオメガ (10万 IU/day PO)"]
+    H --> J["間葉系幹細胞療法 (MSC)"]
+    
+    subgraph 避けるべき治療
+        K["長期ステロイド"]
+        K -->|"重大なリスク: 糖尿病、免疫不全"| L["非推奨"]
+    end
+    
+    F -->|"避ける"| K
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_38" data-file="泌尿器/尿石症_種類別の治療食事療法">
+<h3>泌尿器/尿石症_種類別の治療食事療法</h3>
+<pre class="mermaid">
+
+graph TD
+    A["尿検査・X線でストルバイト結石を疑う"] --> B{"動物種？"}
+
+    B -->|"犬の場合"| C["尿培養・感受性試験を実施"]
+    C -->|"ウレアーゼ産生菌陽性"| D1["適切な抗菌薬 + 溶解食"]
+    C -->|"尿培養陰性"| D2["結石核内細菌を考慮、抗菌薬 + 溶解食を検討"]
+    D1 & D2 --> E["4週ごとにX線で結石サイズを確認"]
+    E -->|"溶解を確認"| F["溶解後、さらに1ヶ月抗菌薬継続"]
+    E -->|"4-6週で縮小傾向なし"| G["外科的除去を検討（混合結石の可能性）"]
+    F & G --> H["再発予防へ移行（水分摂取量増加、食事管理）"]
+
+    B -->|"猫の場合"| I["原則、抗菌薬は不要（95%以上が無菌性）"]
+    I --> J["溶解食（尿酸性化、Mg/P制限）のみ"]
+    J --> K["2〜5週間で溶解を確認"]
+    K -->|"溶解を確認"| L["再発予防へ移行（水分摂取量増加、酸性化フード）"]
+    K -->|"4-6週で縮小傾向なし"| M["外科的除去を検討（混合結石の可能性）"]
+    L & M --> H
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_39" data-file="猫/FIP_抗ウイルス薬時代の治療 (block 1)">
+<h3>猫/FIP_抗ウイルス薬時代の治療 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["FIP診断確定 GS-441524治療開始"] --> B{"病型分類"}
+    B -->|"滲出型/非滲出型 (眼・神経症状なし)"| C1["経口用量: 15mg/kg PO SID"]
+    B -->|"眼型"| C2["経口用量: 15-20mg/kg PO SID"]
+    B -->|"神経型"| C3["経口用量: 20mg/kg/日 (10mg/kg q12h分割推奨)"]
+    C1 --> D{"経口投与可能か？"}
+    C2 --> D
+    C3 --> D
+    D -->|"Yes"| E["経口投与継続 (在宅管理が主)"]
+    D -->|"No (嘔吐,重度口内炎等)"| F["SC注射で開始"]
+    F --> G{"経口投与に切替可能？"}
+    G -->|"Yes"| E
+    G -->|"No"| F
+    E --> H["治療開始後モニタリング"]
+    H -->|"毎週"| I["体重測定 用量再計算"]
+    H -->|"1-2週で確認"| J["食欲改善, 活動性回復"]
+    H -->|"1-2週で確認"| K["腹水/胸水減少"]
+    H -->|"4週ごと検査"| L["CBC, 生化学, SAA"]
+    H -->|"4週ごと検査"| M["A/G比 (血清/滲出液)"]
+    L --> N{"SAA正常化, グロブリン低下, リンパ球上昇？"}
+    M --> O{"A/G比 0.6以上に正常化？"}
+    N -->|"Yes"| P{"総合評価 治療期間判断"}
+    O -->|"Yes"| P
+    N -->|"No"| Q["治療継続 or 用量増加 (再評価)"]
+    O -->|"No"| Q
+    Q --> H
+    P -->|"滲出型で良好な反応"| R1["治療完了: 42日間"]
+    P -->|"その他/神経型は84日以上推奨"| R2["治療完了: 84日間"]
+    R1 --> T["治療完了後3ヶ月間モニタリング"]
+    R2 --> T
+    T -->|"再発兆候なし"| U["寛解と判断"]
+    T -->|"再発兆候あり (発熱,グロブリン/SAA再上昇)"| V["再治療 (同用量or増量)"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_40" data-file="猫/FIP_抗ウイルス薬時代の治療 (block 2)">
+<h3>猫/FIP_抗ウイルス薬時代の治療 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["FIP診断確定 GS-441524治療開始"] --> B{"病型分類"}
+    B -->|"滲出型/非滲出型 (眼・神経症状なし)"| C1["経口用量: 15mg/kg PO SID"]
+    B -->|"眼型"| C2["経口用量: 15-20mg/kg PO SID"]
+    B -->|"神経型"| C3["経口用量: 20mg/kg/日 (10mg/kg q12h分割推奨)"]
+    C1 --> D{"経口投与可能か？"}
+    C2 --> D
+    C3 --> D
+    D -->|"Yes"| E["経口投与継続 (在宅管理が主)"]
+    D -->|"No (嘔吐,重度口内炎等)"| F["SC注射で開始"]
+    F --> G{"経口投与に切替可能？"}
+    G -->|"Yes"| E
+    G -->|"No"| F
+    E --> H["治療開始後モニタリング"]
+    H -->|"毎週"| I["体重測定 用量再計算"]
+    H -->|"1-2週で確認"| J["食欲改善, 活動性回復"]
+    H -->|"1-2週で確認"| K["腹水/胸水減少"]
+    H -->|"4週ごと検査"| L["CBC, 生化学, SAA"]
+    H -->|"4週ごと検査"| M["A/G比 (血清/滲出液)"]
+    L --> N{"SAA正常化, グロブリン低下, リンパ球上昇？"}
+    M --> O{"A/G比 0.6以上に正常化？"}
+    N -->|"Yes"| P{"総合評価 治療期間判断"}
+    O -->|"Yes"| P
+    N -->|"No"| Q["治療継続 or 用量増加 (再評価)"]
+    O -->|"No"| Q
+    Q --> H
+    P -->|"滲出型で良好な反応"| R1["治療完了: 42日間"]
+    P -->|"その他/神経型は84日以上推奨"| R2["治療完了: 84日間"]
+    R1 --> T["治療完了後3ヶ月間モニタリング"]
+    R2 --> T
+    T -->|"再発兆候なし"| U["寛解と判断"]
+    T -->|"再発兆候あり (発熱,グロブリン/SAA再上昇)"| V["再治療 (同用量or増量)"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_41" data-file="猫/FLUTD_閉塞vs非閉塞の対応 (block 1)">
+<h3>猫/FLUTD_閉塞vs非閉塞の対応 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["FLUTD疑い 雄猫"] --> B{"尿道閉塞の可能性"}
+    B --> C["Step1 トリアージ 安定化"]
+    C --> D{"徐脈 高K血症所見ありか"}
+    D -->|"Yes"| E["Step2 高K血症 緊急是正"]
+    E --> F["Step3 尿道カテーテル挿入"]
+    D -->|"No"| F
+    F --> G{"閉塞解除成功したか"}
+    G -->|"Yes"| H["カテーテル留置 モニタリング"]
+    G -->|"No"| I["再試行 困難なら外科相談"]
+    H --> J["カテーテル抜去"]
+    J --> K["自力排尿確認"]
+    K --> L["退院可能"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_42" data-file="猫/FLUTD_閉塞vs非閉塞の対応 (block 2)">
+<h3>猫/FLUTD_閉塞vs非閉塞の対応 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["FLUTD疑い 雄猫"] --> B{"尿道閉塞の可能性"}
+    B --> C["Step1 トリアージ 安定化"]
+    C --> D{"徐脈 高K血症所見ありか"}
+    D -->|"Yes"| E["Step2 高K血症 緊急是正"]
+    E --> F["Step3 尿道カテーテル挿入"]
+    D -->|"No"| F
+    F --> G{"閉塞解除成功したか"}
+    G -->|"Yes"| H["カテーテル留置 モニタリング"]
+    G -->|"No"| I["再試行 困難なら外科相談"]
+    H --> J["カテーテル抜去"]
+    J --> K["自力排尿確認"]
+    K --> L["退院可能"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_43" data-file="猫/猫の三臓器炎_胆管炎膵炎IBD (block 1)">
+<h3>猫/猫の三臓器炎_胆管炎膵炎IBD (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["臨床症状 複数"] --> B{"初期検査"}
+
+    B -->|"血液検査"| C["生化学 fPLI コバラミン"]
+    B -->|"画像検査"| D["腹部エコー"]
+
+    C -->|"fPLI高値 肝酵素 ビリルビン高値"| E{"三臓器炎の可能性"}
+    C -->|"コバラミン低値"| F["IBD示唆 VB12補充検討"]
+    D -->|"胆嚢 膵臓 腸管の異常"| E
+
+    E -->|"高い"| G{"確定診断へ"}
+    E -->|"低い"| H["他疾患の検討"]
+
+    G -->|"組織生検を推奨"| I{"胆管炎タイプ判定"}
+    G -->|"臨床症状 検査値から判断"| J{"臨床判断で治療開始"}
+
+    I -->|"好中球性"| K["抗菌薬"]
+    I -->|"リンパ球性"| L["免疫抑制剤 ウルソ"]
+
+    J -->|"好中球性疑い"| K
+    J -->|"リンパ球性疑い"| L
+
+    subgraph 治療管理
+        K --> M["IBD治療 プレドニゾロン等"]
+        L --> M
+        M --> N["膵炎支持療法 輸液 制吐 鎮痛"]
+        N --> O["栄養管理 経管栄養 VB12補充"]
+        O --> P["継続モニタリング 治療調整"]
+    end
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_44" data-file="猫/猫の三臓器炎_胆管炎膵炎IBD (block 2)">
+<h3>猫/猫の三臓器炎_胆管炎膵炎IBD (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["臨床症状 複数"] --> B{"初期検査"}
+
+    B -->|"血液検査"| C["生化学 fPLI コバラミン"]
+    B -->|"画像検査"| D["腹部エコー"]
+
+    C -->|"fPLI高値 肝酵素 ビリルビン高値"| E{"三臓器炎の可能性"}
+    C -->|"コバラミン低値"| F["IBD示唆 VB12補充検討"]
+    D -->|"胆嚢 膵臓 腸管の異常"| E
+
+    E -->|"高い"| G{"確定診断へ"}
+    E -->|"低い"| H["他疾患の検討"]
+
+    G -->|"組織生検を推奨"| I{"胆管炎タイプ判定"}
+    G -->|"臨床症状 検査値から判断"| J{"臨床判断で治療開始"}
+
+    I -->|"好中球性"| K["抗菌薬"]
+    I -->|"リンパ球性"| L["免疫抑制剤 ウルソ"]
+
+    J -->|"好中球性疑い"| K
+    J -->|"リンパ球性疑い"| L
+
+    subgraph 治療管理
+        K --> M["IBD治療 プレドニゾロン等"]
+        L --> M
+        M --> N["膵炎支持療法 輸液 制吐 鎮痛"]
+        N --> O["栄養管理 経管栄養 VB12補充"]
+        O --> P["継続モニタリング 治療調整"]
+    end
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_45" data-file="猫/猫の喘息_犬との違いと吸入療法">
+<h3>猫/猫の喘息_犬との違いと吸入療法</h3>
+<pre class="mermaid">
+
+graph TD
+    A["喘息発作の猫が来院"] --> B{"呼吸困難、努力呼吸"}
+    B --> C["ストレス最小限 & 酸素化"]
+
+    C --> D{"意識レベル/吸入可能か?"}
+    D -->|"吸入可能/比較的安定"| E["Albuterol吸入 (2 puffs)"]
+    D -->|"吸入困難/重症時"| F["Terbutaline (0.01 mg/kg SC/IM)"]
+
+    E --> G["Dexamethasone SP (0.1-0.2 mg/kg IV/IM)"]
+    F --> G
+
+    G --> H{"臨床症状改善?"}
+    H -->|"YES"| I["安定化、モニタリング"]
+    H -->|"NO / チアノーゼ持続"| J["⚠️ 挿管と陽圧換気の検討 (最終判断)"]
+
+    I --> K["長期管理へ移行準備"]
+    J --> L["専門医への紹介/集中治療"]
+
+    style A fill:#DDF,stroke:#333,stroke-width:2px,color:#333
+    style B fill:#FFFACD,stroke:#FFD700,stroke-width:1px,color:#333
+    style C fill:#CFF,stroke:#00AAFF,stroke-width:1px,color:#333
+    style D fill:#FFFACD,stroke:#FFD700,stroke-width:1px,color:#333
+    style E fill:#F0FFF0,stroke:#3CB371,stroke-width:1px,color:#333
+    style F fill:#FFF0F5,stroke:#DC143C,stroke-width:1px,color:#333
+    style G fill:#E0FFFF,stroke:#4682B4,stroke-width:1px,color:#333
+    style H fill:#FFFACD,stroke:#FFD700,stroke-width:1px,color:#333
+    style I fill:#F0FFF0,stroke:#3CB371,stroke-width:1px,color:#333
+    style J fill:#FFDDDD,stroke:#CC0000,stroke-width:2px,color:#333
+    style K fill:#CFF,stroke:#00AAFF,stroke-width:1px,color:#333
+    style L fill:#FFDDDD,stroke:#CC0000,stroke-width:2px,color:#333
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_46" data-file="猫/猫の胸水_原因鑑別と胸腔穿刺">
+<h3>猫/猫の胸水_原因鑑別と胸腔穿刺</h3>
+<pre class="mermaid">
+
+graph TD
+    A["呼吸困難の猫に胸水貯留を確認"] --> B{"胸腔穿刺と胸水分析"}
+
+    B --> C["TP測定 (g/dL)"]
+
+    C --> C1{"TP ＜ 2.5"}
+    C1 -->|"Yes"| D["純漏出液"]
+    D --> D1["原因: 低アルブミン血症 (肝不全, PLE, 腎不全)"]
+    C1 -->|"No"| C2{"TP 2.5-5.0"}
+
+    C2 -->|"Yes"| E["変性漏出液"]
+    E --> E1{"NT-proBNP (血清 or 胸水中)"}
+    E1 -->|"高値 (＞220 pmol/L)"| E2["原因: うっ血性心不全"]
+    E1 -->|"低値"| E3["原因: 腫瘍, 肝硬変"]
+    C2 -->|"No"| C3{"TP ＞ 3.0"}
+
+    C3 -->|"Yes"| F["滲出液 または その他"]
+    F --> F1{"胸水の外観とTG/コレステロール比"}
+
+    F1 -->|"乳白色 & TG ＞ 血清TG"| G["乳び胸"]
+    G --> G1["原因: 特発性, 心臓病, 腫瘍 (リンパ管閉塞)"]
+
+    F1 -->|"赤色 & Hct高値"| H["出血性胸水"]
+    H --> H1["原因: 外傷, 凝固異常, 腫瘍破裂"]
+
+    F1 -->|"その他 (黄色, 混濁など)"| I["細胞数 & 細胞診 & グラム染色"]
+
+    I --> I1{"高蛋白 (＞3.5), 低細胞数, 粘稠, A/G比 ＜0.4"}
+    I1 -->|"Yes"| J["FIP (猫伝染性腹膜炎)"]
+    J --> J1["原因: FCoV感染"]
+
+    I1 -->|"No"| I2{"高細胞数 (＞10000), 好中球優位, グラム染色陽性"}
+    I2 -->|"Yes"| K["膿胸"]
+    K --> K1["原因: 外傷, 異物, 播種性感染"]
+
+    I2 -->|"No"| L["細胞診で悪性細胞検出"]
+    L -->|"Yes"| M["腫瘍性胸水"]
+    M --> M1["原因: リンパ腫, 癌腫など"]
+
+    I2 -->|"No & L -- No"| N["その他/非特異的"]
+    N --> N1["更なる精査 (生検, 培養, 特定ウイルス検査など)"]
+
+    style A fill:#DCE7EE,stroke:#333,stroke-width:2px,color:#333
+    style B fill:#C3E6CB,stroke:#28A745,stroke-width:2px,color:#28A745
+    style C fill:#FFE0B2,stroke:#FF9800,stroke-width:2px,color:#333
+    style C1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style C2 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style C3 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style D fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style D1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style E fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style E1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style E2 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style E3 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style F fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style F1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style G fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style G1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style H fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style H1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style I fill:#FFE0B2,stroke:#FF9800,stroke-width:2px,color:#333
+    style I1 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style I2 fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style J fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style J1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style K fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style K1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style L fill:#FFF9C4,stroke:#FDD835,stroke-width:1px,color:#333
+    style M fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style M1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+    style N fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333
+    style N1 fill:#E0F2F1,stroke:#009688,stroke-width:1px,color:#333
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_47" data-file="猫/猫の輸液_犬との違いと注意点">
+<h3>猫/猫の輸液_犬との違いと注意点</h3>
+<pre class="mermaid">
+
+graph TD
+    A["輸液中の猫をモニタリング"] --> B{"過剰輸液のサインを検出？"}
+    B -->|"YES (RR上昇, 結膜浮腫, 体重急増)"| C["輸液速度を直ちに減量/一時中断"]
+    C --> D["酸素吸入の準備/開始"]
+    D --> E["利尿剤（例: Furosemide）の投与検討"]
+    E --> F{"心疾患の既往・徴候は？"}
+    F -->|"YES"| G["心エコー等による心臓評価を推奨"]
+    F -->|"NO"| H["循環動態・呼吸状態の頻回モニタリング"]
+    G --> H
+    H --> I["獣医師による治療方針再検討"]
+    B -->|"NO"| J["現在の輸液速度を継続"]
+    J --> K["定期的なモニタリング継続"]
+    K --> A
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_48" data-file="皮膚/マラセチア皮膚炎_再発防止戦略">
+<h3>皮膚/マラセチア皮膚炎_再発防止戦略</h3>
+<pre class="mermaid">
+
+graph TD
+    A["マラセチア皮膚炎 症状"] --> B{"細胞診 陽性?"}
+    B -->|"Yes"| C["診断 マラセチア皮膚炎"]
+    C --> D["急性期治療 3-4週"]
+    D -->|"局所療法"| D1["抗真菌シャンプー/ローション"]
+    D -->|"全身療法 必要に応じて"| D2["内服薬 KTZ ITZ"]
+    D --> E{"治療効果評価 3-4週後"}
+    E -->|"改善あり"| F["維持 再発予防"]
+    F --> F1["維持シャンプー"]
+    F --> F2["基礎疾患 管理"]
+    E -->|"改善乏しい または 再発"| G["再評価と原因究明"]
+    G --> H["基礎疾患の再検討"]
+    H --> H1["アトピー性皮膚炎"]
+    H --> H2["甲状腺機能低下症"]
+    H --> H3["食物アレルギー クッシング"]
+    H --> H4["原発性脂漏症"]
+    G --> I["治療プロトコル見直し"]
+    I --> I1["シャンプー接触時間 用量"]
+    I --> I2["薬剤選択 再確認"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_49" data-file="皮膚/外耳炎の原因別治療アプローチ (block 1)">
+<h3>皮膚/外耳炎の原因別治療アプローチ (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["外耳炎症状"] --> B["初期検査 耳鏡 細胞診 鼓膜確認"]
+
+    B --> C{"二次因子 S の治療"}
+    C --> C1["細胞診結果に基づき点耳薬選択"]
+    C1 --> C2{"桿菌陽性?"}
+    C2 -->|"Yes"| C2A["培養 感受性試験"]
+    C2A --> D
+    C2 -->|"No"| D
+
+    D{"原発因子 P の特定と是正"}
+    D --> D1{"アレルギー疑い?"}
+    D1 -->|"Yes"| D1A["アトピー 食物アレルギー検査 全身療法"]
+    D1 -->|"No"| D2{"耳ダニ 異物 腫瘍?"}
+    D2 -->|"Yes"| D2A["除去 治療"]
+    D2 -->|"No"| E
+
+    E{"持続因子 P への対処"}
+    E --> E1{"耳道肥厚 石灰化 中耳炎?"}
+    E1 -->|"Yes"| E1A["CT検査 TECA LBO検討"]
+    E1 -->|"No"| E2{"バイオフィルム疑い?"}
+    E2 -->|"Yes"| E2A["トリスEDTA 洗浄"]
+    E2 -->|"No"| F
+
+    F{"素因 P の改善"}
+    F --> F1["耳毛処理 環境改善 定期洗浄"]
+
+    F1 --> G["治療効果判定 定期モニタリング"]
+
+    D1A --> G
+    D2A --> G
+    E1A --> G
+    E2A --> G
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_50" data-file="皮膚/外耳炎の原因別治療アプローチ (block 2)">
+<h3>皮膚/外耳炎の原因別治療アプローチ (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["外耳炎症状"] --> B["初期検査 耳鏡 細胞診 鼓膜確認"]
+
+    B --> C{"二次因子 S の治療"}
+    C --> C1["細胞診結果に基づき点耳薬選択"]
+    C1 --> C2{"桿菌陽性?"}
+    C2 -->|"Yes"| C2A["培養 感受性試験"]
+    C2A --> D
+    C2 -->|"No"| D
+
+    D{"原発因子 P の特定と是正"}
+    D --> D1{"アレルギー疑い?"}
+    D1 -->|"Yes"| D1A["アトピー 食物アレルギー検査 全身療法"]
+    D1 -->|"No"| D2{"耳ダニ 異物 腫瘍?"}
+    D2 -->|"Yes"| D2A["除去 治療"]
+    D2 -->|"No"| E
+
+    E{"持続因子 P への対処"}
+    E --> E1{"耳道肥厚 石灰化 中耳炎?"}
+    E1 -->|"Yes"| E1A["CT検査 TECA LBO検討"]
+    E1 -->|"No"| E2{"バイオフィルム疑い?"}
+    E2 -->|"Yes"| E2A["トリスEDTA 洗浄"]
+    E2 -->|"No"| F
+
+    F{"素因 P の改善"}
+    F --> F1["耳毛処理 環境改善 定期洗浄"]
+
+    F1 --> G["治療効果判定 定期モニタリング"]
+
+    D1A --> G
+    D2A --> G
+    E1A --> G
+    E2A --> G
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_51" data-file="皮膚/犬のアトピー性皮膚炎_最新治療薬比較">
+<h3>皮膚/犬のアトピー性皮膚炎_最新治療薬比較</h3>
+<pre class="mermaid">
+
+graph TD
+    A["犬のアトピー性皮膚炎 <br/> 治療薬選択フロー"] --> B{"飼い主と犬の状況評価"}
+
+    B -- 最速の痒み軽減が必要か？ --> C["アポキル (経口)<br/>速効性(4-24h)<br/>導入BID→維持SID<br/>12ヶ月以上"]
+    B -- 投薬ストレスを減らしたい/副作用を懸念するか？ --> D["サイトポイント (注射)<br/>月1回投与<br/>副作用極少<br/>若齢/腎肝機能不安可"]
+    B -- 病変改善も重視/コストを抑えたいか？ --> E["シクロスポリン (経口)<br/>病変改善優位<br/>効果発現遅(4-6w)<br/>ジェネリックでコスト◎"]
+
+    C --> F("治療開始")
+    D --> F
+    E --> F
+
+    F --> G{"効果判定 (2-4週間後)"}
+    G -- 痒み・病変が許容レベル --> H["維持療法へ移行<br/>+ マルチモーダル療法"]
+    G -- 効果不十分/副作用発現 --> I["治療戦略見直し<br/>薬剤変更/併用/用量調整"]
+
+    H --> J("最終目標: 飼い主も犬も許容できる痒みレベル")
+    I --> J
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_52" data-file="眼科/緑内障の緊急対応_視覚を守る72時間 (block 1)">
+<h3>眼科/緑内障の緊急対応_視覚を守る72時間 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["緑内障診断 高眼圧"] --> B{"緊急降圧"}
+    B --> C["マンニトール 20% IV"]
+    C --> D{"Latanoprost点眼は？"}
+    D -->|"動物種:犬"| E{"原因は？"}
+    D -->|"動物種:猫"| F["Latanoprost 禁忌"]
+    E -->|"原発性PACG"| G["Latanoprost 適用"]
+    E -->|"ぶどう膜炎続発"| F
+    G --> H["維持薬 Dorzolamide Timolol"]
+    F --> H
+    H --> I["健側眼 予防点眼"]
+    I --> J["専門医へ紹介"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_53" data-file="眼科/緑内障の緊急対応_視覚を守る72時間 (block 2)">
+<h3>眼科/緑内障の緊急対応_視覚を守る72時間 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["緑内障診断 高眼圧"] --> B{"緊急降圧"}
+    B --> C["マンニトール 20% IV"]
+    C --> D{"Latanoprost点眼は？"}
+    D -->|"動物種:犬"| E{"原因は？"}
+    D -->|"動物種:猫"| F["Latanoprost 禁忌"]
+    E -->|"原発性PACG"| G["Latanoprost 適用"]
+    E -->|"ぶどう膜炎続発"| F
+    G --> H["維持薬 Dorzolamide Timolol"]
+    F --> H
+    H --> I["健側眼 予防点眼"]
+    I --> J["専門医へ紹介"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_54" data-file="神経/椎間板ヘルニア_頚部胸腰部統合版">
+<h3>神経/椎間板ヘルニア_頚部胸腰部統合版</h3>
+<pre class="mermaid">
+
+graph TD
+    A["犬の胸腰部IVDD診断"] --> B{"修正Frankelスケール評価"}
+    B -->|"Grade 1-3 (疼痛のみ～起立困難)"| D["保存療法 (厳格な安静 4-6週, 鎮痛)"]
+    B -->|"Grade 4 (対麻痺, DPP残存)"| F["手術推奨 (回復率: 86-96%)"]
+    B -->|"Grade 5 (対麻痺, DPP消失)"| G{"DPP消失から48時間以内か?"}
+    G -->|"YES"| I["緊急手術"]
+    I --> J["回復率: 50-58%"]
+    I --> K["PMMリスクについて飼い主へ説明"]
+    G -->|"NO"| L["非緊急手術"]
+    L --> M["回復率: 50%以下"]
+    L --> K
+    D --> N{"症状悪化?"}
+    N -->|"YES"| F
+    N -->|"NO"| O["経過観察"]
+    F --> P["術後リハビリテーション"]
+    J --> P
+    M --> P
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_55" data-file="神経/発作の初期対応_頭蓋内疾患を疑うとき">
+<h3>神経/発作の初期対応_頭蓋内疾患を疑うとき</h3>
+<pre class="mermaid">
+
+graph TD
+    A["発作発生/SE疑い"] --> B{"SE定義満たす? (5分超持続 or 意識回復なく2回以上)"}
+    B -->|"Yes"| C["ジアゼパム 0.5-1mg/kg IV/直腸内"]
+    B -->|"No"| Z["SEではない/経過観察"]
+    C -->|"同時並行"| F["血糖チェック iCa/NH3"]
+    F -->|"低血糖あり (<60mg/dL)"| G["デキストロース 0.5g/kg IV"]
+    G --> D{"発作停止?"}
+    F -->|"低血糖なし"| D
+    C -->|"同時並行"| E["ABC確認 O2フローバイ"]
+    D -->|"Yes"| H["SE停止: 安定化 基礎疾患検索/維持療法"]
+    D -->|"No (1回目後)"| I["ジアゼパム 2回目"]
+    I --> J{"発作停止?"}
+    J -->|"Yes"| H
+    J -->|"No (2回目後)"| K["ジアゼパム 3回目"]
+    K --> L{"発作停止?"}
+    L -->|"Yes"| H
+    L -->|"No (3回目後)"| M["レベチラセタム 30-60mg/kg IV over 5min"]
+    M --> N{"発作停止?"}
+    N -->|"Yes"| H
+    N -->|"No (難治性SE)"| O["プロポフォールCRI 0.1-0.6mg/kg/min"]
+    O --> P["挿管・人工換気準備"]
+    O --> Q["SE停止: 安定化 基礎疾患検索/維持療法"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_56" data-file="肝臓/猫の脂肪肝_強制給餌と栄養管理 (block 1)">
+<h3>肝臓/猫の脂肪肝_強制給餌と栄養管理 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["食欲不振 3-7日 HL疑い"] --> B["入院評価"]
+    B --> B1["輸液 電解質補正"]
+    B --> B2["血液検査 K P Mg"]
+    B2 --> C{"低K P Mg あり？"}
+    C -->|"Yes"| C1["電解質補正"]
+    C -->|"No"| D{"嘔吐あり？"}
+    D -->|"Yes"| D1["嘔吐制御"]
+    D -->|"No"| E["E-tube設置"]
+    C1 --> E
+    D1 --> E
+    E --> F["栄養開始 Day1"]
+    F --> F1["RER 1/3給餌"]
+    F1 --> G["栄養増量 Day2"]
+    G --> G1["RER 2/3給餌"]
+    G1 --> H["栄養維持 Day3"]
+    H --> H1["RER 100%給餌"]
+    H1 --> I{"電解質 嘔吐Moni"}
+    I -->|"安定"| J["退院 E-tube指導"]
+    J --> K["在宅経管栄養 4-8W"]
+    K --> L{"3日自力摂食？"}
+    L -->|"Yes"| M["E-tube抜去"]
+    B --> N["原疾患検索 治療"]
+    N --> K
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_57" data-file="肝臓/猫の脂肪肝_強制給餌と栄養管理 (block 2)">
+<h3>肝臓/猫の脂肪肝_強制給餌と栄養管理 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["食欲不振 3-7日 HL疑い"] --> B["入院評価"]
+    B --> B1["輸液 電解質補正"]
+    B --> B2["血液検査 K P Mg"]
+    B2 --> C{"低K P Mg あり？"}
+    C -->|"Yes"| C1["電解質補正"]
+    C -->|"No"| D{"嘔吐あり？"}
+    D -->|"Yes"| D1["嘔吐制御"]
+    D -->|"No"| E["E-tube設置"]
+    C1 --> E
+    D1 --> E
+    E --> F["栄養開始 Day1"]
+    F --> F1["RER 1/3給餌"]
+    F1 --> G["栄養増量 Day2"]
+    G --> G1["RER 2/3給餌"]
+    G1 --> H["栄養維持 Day3"]
+    H --> H1["RER 100%給餌"]
+    H1 --> I{"電解質 嘔吐Moni"}
+    I -->|"安定"| J["退院 E-tube指導"]
+    J --> K["在宅経管栄養 4-8W"]
+    K --> L{"3日自力摂食？"}
+    L -->|"Yes"| M["E-tube抜去"]
+    B --> N["原疾患検索 治療"]
+    N --> K
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_58" data-file="腎泌尿器/犬猫の膀胱炎_ISCAIDガイドライン">
+<h3>腎泌尿器/犬猫の膀胱炎_ISCAIDガイドライン</h3>
+<pre class="mermaid">
+
+graph TD
+    A["来院: 下部尿路症状"] --> B("問診・身体検査")
+    B --> C{"尿道閉塞の有無 (オス猫で特に重要)"}
+
+    C -- あり --> D["!!! 緊急処置 !!!"]
+
+    C -- なし --> E("初期尿検査: 尿比重・pH・沈渣")
+
+    E --> F{"動物種: 犬 or 猫?"}
+
+    F -- 犬 --> G["犬ルート"]
+    G --> G1["膀胱穿刺尿培養"]
+    G1 --> G2{"尿沈渣で細菌・白血球あり?"}
+    G2 -- あり --> G3{"UTIのタイプ?"}
+    G3 -- 散発性UTI --> G4["経験的抗菌薬 (Amoxicillin 3-5日)"]
+    G4 --> G5{"症状改善?"}
+    G5 -- Yes --> G6["治療終了"]
+    G5 -- No --> G7["培養結果に基づき抗菌薬調整"]
+    G3 -- 再発性/複雑性UTI --> G8["基礎疾患検索 (画像, 血液) + 培養結果に基づき抗菌薬 (7-14日) + 基礎疾患治療"]
+
+    F -- 猫 --> H["猫ルート"]
+    H --> H1{"年齢・基礎疾患の有無?"}
+    H1 -- 若〜中齢猫<br/>基礎疾患なし --> H2["FIC疑い (細菌感染稀)"]
+    H2 --> H3["膀胱穿刺尿培養 (細菌除外目的)"]
+    H3 --> H4{"培養結果"}
+    H4 -- 細菌(-) --> H5["FIC確定: MEMO療法 + 鎮痛"]
+    H4 -- 細菌(+) --> H6["細菌性UTI: 培養結果に基づき抗菌薬 + 基礎疾患検索"]
+    H1 -- 高齢猫 (>10歳)<br/>またはDM/CKDなど基礎疾患あり --> H7["細菌性UTIリスク増"]
+    H7 --> H8["膀胱穿刺尿培養"]
+    H8 --> H6
+
+    E --> I{"尿路結石/腫瘍の疑い?"}
+    I -- あり --> J["画像診断 (X線, エコー)"]
+
+    subgraph 臨床ポイント
+        K["<b>尿培養:</b> 膀胱穿刺が推奨 (≥10³ CFU/mLで有意)"]
+        L["<b>犬単純性UTI経験的ABx:</b> アモキシシリン (3-5日)"]
+        M["<b>温存すべきABx:</b> フルオロキノロン, 第3世代セファロスポリン"]
+        N["<b>無症候性細菌尿:</b> 原則治療しない"]
+    end
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_59" data-file="腎泌尿器/猫のCKD_IRISステージ別管理">
+<h3>腎泌尿器/猫のCKD_IRISステージ別管理</h3>
+<pre class="mermaid">
+
+graph TD
+    A["猫のCKD診断・管理アルゴリズム"] --> B{"猫: 7歳以上 / CKD症状 / 定期検診"}
+    B -- Yes --> C["初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定"]
+
+    subgraph IRISステージ分類
+        D{"持続的な腎疾患の存在?"}
+        D -- No --> E["非CKD: 定期再評価"]
+        D -- Yes --> F{"Cre (mg/dL) の評価"}
+
+        F -- <1.6 --> G{"SDMA (µg/dL) の評価"}
+        G -- <14 --> S1_NC["ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり"]
+        G -- 14-17 --> S1_SDMA["ステージ1: Cre正常・SDMA軽度高値"]
+        G -- >=18 (持続的) --> S2_SDMA["ステージ2: Cre正常・SDMA高値によりステージアップ"]
+
+        F -- 1.6-2.8 --> S2_Cre["ステージ2: Cre中等度高値"]
+        F -- 2.9-5.0 --> S3["ステージ3: Cre高値"]
+        F -- >5.0 --> S4["ステージ4: Cre非常に高値"]
+    end
+
+    S1_NC & S1_SDMA --> M1["ステージ1管理: モニタリング強化, 水分摂取促進"]
+    S2_SDMA & S2_Cre --> M2["ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック"]
+    S3 --> M3["ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理"]
+    S4 --> M4["ステージ4管理: 積極的補液, 対症療法, QOL重視"]
+
+    M1 & M2 & M3 & M4 --> O["合併症の評価と管理"]
+
+    subgraph 主要な合併症管理
+        O -- 高血圧 (SBP≥160mmHg) --> T_BP["アムロジピン"]
+        O -- 蛋白尿 (UPC≥0.4) --> T_Pro["テルミサルタン"]
+        O -- 貧血 --> T_Anemia["モリデュスタット/EPO"]
+        O -- 嘔気/食欲不振 --> T_GI["マロピタント/ミルタザピン"]
+        O -- 脱水 --> T_Dehyd["自宅皮下補液指導"]
+    end
+
+    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続的な管理と再評価"]
+    E --> P
+    S1_NC -- No合併症 --> P
+    S1_SDMA -- No合併症 --> P
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_60" data-file="腎泌尿器/腎臓病と高血圧_見逃しやすい合併症">
+<h3>腎泌尿器/腎臓病と高血圧_見逃しやすい合併症</h3>
+<pre class="mermaid">
+
+graph TD
+    A["来院"] --> B["静かな環境で血圧測定"]
+    B --> C["5-7回測定 外れ値除外"]
+    C --> D{"TOD 標的臓器障害 存在?"}
+
+    D -->|"Yes"| E["SBP 140-159 mmHg"]
+    D -->|"No"| F{"SBP 160 mmHg以上?"}
+
+    F -->|"No"| G{"SBP 140-159 mmHg?"}
+    F -->|"Yes"| H["治療開始 IRIS III IV"]
+
+    G -->|"No"| I["経過観察 定期再評価"]
+    G -->|"Yes"| H
+
+    E -->|"Yes"| H
+    E -->|"No"| I
+
+    H --> J{"動物種?"}
+    J -->|"猫"| K["猫の治療プロトコル"]
+    J -->|"犬"| L["犬の治療プロトコル"]
+
+    K --> M["第一選択 アムロジピン"]
+    M --> N["用量 0.625-1.25 mg per cat"]
+
+    L --> O["第一選択 ACE阻害薬 ARB"]
+    O --> P{"効果不十分か?"}
+    P -->|"Yes"| Q["アムロジピンを追加"]
+    Q --> R["用量 0.1-0.2 mg per kg"]
+    P -->|"No"| S["ACE阻害薬 ARB単独継続"]
+
+    N --> T["血圧再評価 3-5日-1-2週後"]
+    R --> T
+    S --> T
+
+    T --> U{"目標SBP達成か?"}
+    U -->|"Yes"| V["維持療法"]
+    U -->|"No"| W["増量 または 併用検討"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_61" data-file="腎泌尿器/蛋白尿の評価と治療介入のタイミング">
+<h3>腎泌尿器/蛋白尿の評価と治療介入のタイミング</h3>
+<pre class="mermaid">
+
+graph TD
+    A["開始: 尿試験紙で蛋白陽性"] --> B("UPC測定を実施")
+    B --> C{"腎前性・腎後性の除外?"}
+    C -->|"あり (UTI, 血尿, 生殖器分泌物等)"| D["原因治療後 再検"]
+    C -->|"なし"| E{"UPCの持続性確認 (2-4週後 2回以上測定)"}
+
+    E --> F{"UPC値の評価 (IRISガイドライン準拠)"}
+    F -->|"犬＜0.2 / 猫＜0.2"| G["非蛋白尿: 定期モニタリング"]
+    F -->|"犬0.2-0.5 / 猫0.2-0.4"| H["境界域蛋白尿: 2-4週後再検"]
+    F -->|"犬＞0.5 / 猫＞0.4"| I["持続的蛋白尿"]
+
+    I --> J("原因精査: 感染症, 内分泌, 腫瘍, 免疫介在性疾患など")
+    I --> K("治療介入: 抗蛋白尿療法を開始")
+
+    K --> L["第一選択: ACE阻害薬 (例: ベナゼプリル)"]
+    L --> M{"効果不十分 (UPCの50%低下 or 目標値未達)?"}
+    M -->|"Yes"| N["ARB併用 or 代替 (例: テルミサルタン)"]
+    M -->|"No"| O["安定後のモニタリングへ進む"]
+
+    N --> O
+
+    O --> P["定期モニタリング: UPC, 腎機能 (BUN/Cre/K), 血圧を1-3ヶ月ごとに確認"]
+    D --> B
+    H --> E
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_62" data-file="腫瘍/リンパ腫_犬と猫の違い">
+<h3>腫瘍/リンパ腫_犬と猫の違い</h3>
+<pre class="mermaid">
+
+graph TD
+    A["猫に慢性消化器症状 / 体重減少 / 漠然とした不調"] --> B{"リンパ腫疑い (またはIBD)"}
+    B --> C["診断ステップ"]
+    C --> C1["身体検査 / 血液検査 / 画像診断 (エコー, X線)"]
+    C1 --> C2{"確定診断には?"}
+    C2 -->|"組織生検 (ゴールドスタンダード)"| D["FeLV検査 + リンパ腫のタイプ・グレード判定"]
+    C2 -->|"細胞診 (補助的)"| D
+
+    D --> E{"消化器型リンパ腫"}
+    E -->|"低グレード"| F["治療: クロラムブシル + プレドニゾロン"]
+    F --> G["予後: 2〜3年以上 (良好)"]
+    E -->|"大細胞 / 高グレード"| H["治療: CHOP / COPプロトコル"]
+    H --> I["予後: 6〜9ヶ月 (中程度)"]
+
+    D --> J{"鼻腔型リンパ腫"}
+    J --> K["治療: 放射線療法 (第一選択)"]
+    K --> L["予後: 約1年 (中程度)"]
+
+    D --> M{"腎臓型リンパ腫"}
+    M --> N["治療: CHOP / COP等"]
+    N --> O["予後: 不良 (CNS転移リスク高)"]
+
+    D --> P{"その他解剖学的タイプ"}
+    P --> Q["各タイプに応じた治療戦略"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_63" data-file="腫瘍/肥満細胞腫_グレード別の治療判断 (block 1)">
+<h3>腫瘍/肥満細胞腫_グレード別の治療判断 (block 1)</h3>
+<pre class="mermaid">
+
+    graph TD
+        A["皮膚腫瘤 MCT疑い"] --> B{"診断: FNA 細胞診"}
+        B --> C{"MCT確定?"}
+        C -->|"Yes"| D["組織生検: Kiupelグレーディング"]
+        C -->|"No"| Z["他疾患鑑別へ"]
+
+        D --> D1{"Kiupel Low Grade"}
+        D --> D2{"Kiupel High Grade"}
+
+        D1 --> E["治療: 外科切除"]
+        E -->|"マージン: 側方2cm 筋膜1層"| E_margin["切除範囲"]
+        E --> F{"センチネルリンパ節評価"}
+        F -->|"転移なし"| G["術後経過観察"]
+        F -->|"転移あり"| H["全身療法へ移行"]
+
+        D2 --> I["治療: 外科切除"]
+        I --> J["術後全身療法"]
+        J -->|"c-kit変異陽性考慮"| K["Toceranib"]
+        J -->|"他の選択肢"| L["Vinblastine Prednisolone"]
+
+        H --> J
+
+        M["脱顆粒対策"]
+        A --> M
+        E --> M
+        I --> M
+
+        M -->|"H1ブロッカー"| M1["ジフェンヒドラミン"]
+        M -->|"H2ブロッカー"| M2["ファモチジン"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_64" data-file="腫瘍/肥満細胞腫_グレード別の治療判断 (block 2)">
+<h3>腫瘍/肥満細胞腫_グレード別の治療判断 (block 2)</h3>
+<pre class="mermaid">
+
+    graph TD
+        A["皮膚腫瘤 MCT疑い"] --> B{"診断: FNA 細胞診"}
+        B --> C{"MCT確定?"}
+        C -->|"Yes"| D["組織生検: Kiupelグレーディング"]
+        C -->|"No"| Z["他疾患鑑別へ"]
+
+        D --> D1{"Kiupel Low Grade"}
+        D --> D2{"Kiupel High Grade"}
+
+        D1 --> E["治療: 外科切除"]
+        E -->|"マージン: 側方2cm 筋膜1層"| E_margin["切除範囲"]
+        E --> F{"センチネルリンパ節評価"}
+        F -->|"転移なし"| G["術後経過観察"]
+        F -->|"転移あり"| H["全身療法へ移行"]
+
+        D2 --> I["治療: 外科切除"]
+        I --> J["術後全身療法"]
+        J -->|"c-kit変異陽性考慮"| K["Toceranib"]
+        J -->|"他の選択肢"| L["Vinblastine Prednisolone"]
+
+        H --> J
+
+        M["脱顆粒対策"]
+        A --> M
+        E --> M
+        I --> M
+
+        M -->|"H1ブロッカー"| M1["ジフェンヒドラミン"]
+        M -->|"H2ブロッカー"| M2["ファモチジン"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_65" data-file="腫瘍/血管肉腫_脾臓心臓型の管理と予後">
+<h3>腫瘍/血管肉腫_脾臓心臓型の管理と予後</h3>
+<pre class="mermaid">
+
+graph TD
+    A["犬の突然の虚脱・腹部膨満・粘膜蒼白"] --> B{"緊急来院"}
+    B --> C["初期評価: 身体検査, AFAST (腹腔内液体貯留)"]
+    C -->|"液体貯留(+)"| D["診断的腹腔穿刺: 血性腹水確認"]
+    D --> E["出血性ショック対応"]
+    E --> E1["輸液蘇生 (晶質液 bolus, 反応評価)"]
+    E --> E2["輸血/自己血輸血 (PCV ＜ 20% or 急速低下時)"]
+    E1 & E2 --> F{"状態安定化 -＞ 手術可能?"}
+    F -->|"No (再出血/ショック持続)"| E
+    F -->|"Yes (状態安定化)"| G["術前評価: 胸部X線 (3方向) "]
+    G -->|"明らかな肺転移なし"| H["緊急脾臓摘出 (救命最優先)"]
+    G -->|"広範囲の肺転移あり"| I["飼い主と十分な話し合い"]
+    I -->|"手術を選択"| H
+    I -->|"緩和/安楽死を選択"| J["QOL重視のケア"]
+    H --> K["病理組織検査 (確定診断)"]
+    K -->|"血管肉腫確定"| L["術後化学療法 (ドキソルビシン) 検討"]
+    K -->|"良性/他悪性"| M["個別対応 (良好な予後期待)"]
+    L --> N["予後説明 & 飼い主の意思決定支援"]
+    J --> N
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_66" data-file="血液ガス/血液ガス分析の基本">
+<h3>血液ガス/血液ガス分析の基本</h3>
+<pre class="mermaid">
+
+graph TD
+    A["血液ガス分析 開始"] --> S1{"Step 1: pHを評価"}
+    S1 -->|"pH < 7.35"| A1["アシドーシス"]
+    S1 -->|"pH > 7.45"| A2["アルカローシス"]
+    S1 -->|"pH 7.35-7.45"| A3["正常範囲 (混合性も考慮)"]
+    A1 --> S2A{"Step 2: 主要な原因を特定"}
+    S2A -->|"PCO2 上昇"| RA["呼吸性アシドーシス"]
+    S2A -->|"HCO3 低下"| MA["代謝性アシドーシス"]
+    A2 --> S2B{"Step 2: 主要な原因を特定"}
+    S2B -->|"PCO2 低下"| RK["呼吸性アルカローシス"]
+    S2B -->|"HCO3 上昇"| MK["代謝性アルカローシス"]
+    RA --> S3RA{"Step 3: 代償を確認: HCO3上昇(同方向)?"}
+    S3RA -->|"Yes"| RAC["慢性 (代償あり)"]
+    S3RA -->|"No"| RAA["急性 (代償なし)"]
+    MA --> S3MA{"Step 3: 代償を確認: PCO2低下(同方向)?"}
+    S3MA -->|"Yes"| MAC["慢性 (代償あり)"]
+    S3MA -->|"No"| MAA["急性 (代償なし)"]
+    RK --> S3RK{"Step 3: 代償を確認: HCO3低下(同方向)?"}
+    S3RK -->|"Yes"| RKC["慢性 (代償あり)"]
+    S3RK -->|"No"| RKA["急性 (代償なし)"]
+    MK --> S3MK{"Step 3: 代償を確認: PCO2上昇(同方向)?"}
+    S3MK -->|"Yes"| MKC["慢性 (代償あり)"]
+    S3MK -->|"No"| MKA["急性 (代償なし)"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_67" data-file="輸液/ショック時の輸液戦略_ボーラス投与の実際">
+<h3>輸液/ショック時の輸液戦略_ボーラス投与の実際</h3>
+<pre class="mermaid">
+
+    graph TD
+        A["ショック状態の患者"] --> B{"輸液蘇生の適応判断"}
+
+        B -->|"適応なし 心原性 閉塞性ショック"| C["原因除去または特定治療"]
+        B -->|"適応あり 循環血液量減少性 分布異常性"| D["初回輸液ボーラス投与"]
+
+        D -->|"犬の場合"| D1["犬 LRS 15-20mL/kgを15-20分"]
+        D -->|"猫の場合"| D2["猫 LRS 10-15mL/kgを15-20分"]
+
+        D1 --> E{"効果を再評価"}
+        D2 --> E
+
+        E -->|"改善あり"| F["維持輸液へ移行"]
+        E -->|"部分改善"| G["追加ボーラス投与 最大2-3回まで"]
+        E -->|"改善なし"| H["輸液不応性 昇圧薬検討"]
+
+        G --> E
+    
+</pre>
+</div>
+
+
+<div class="test-block" id="block_68" data-file="輸液/周術期の輸液管理_術中術後の最適化">
+<h3>輸液/周術期の輸液管理_術中術後の最適化</h3>
+<pre class="mermaid">
+
+graph TD
+    A["開始: MAP ＜ 60mmHg または収縮期血圧 ＜ 80mmHg"] --> B{"Step 1: 麻酔深度の確認"}
+    B --> C["吸入麻酔薬 25-50%減量 + オピオイドCRI増量"]
+    C --> D{"血圧改善?"}
+    D -->|"Yes"| E["モニタリング継続"]
+    D -->|"No"| F{"Step 2: 輸液ボーラス (Fluid Responsiveness評価)"}
+    F --> G["犬: 5-10mL/kg / 猫: 1-3mL/kg (短時間投与, 5-10分で評価)"]
+    G --> H{"血圧改善? (Fluid Responder?)"}
+    H -->|"Yes"| E
+    H -->|"No (Fluid Refractory)"| I{"Step 3: 昇圧薬の選択と投与"}
+    I --> J["エフェドリン / ドパミンCRI / ドブタミンCRI / ノルエピネフリンCRI"]
+    J --> K["継続的なモニタリングと調整"]
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_69" data-file="輸液/維持輸液の考え方_過剰輸液のリスク">
+<h3>輸液/維持輸液の考え方_過剰輸液のリスク</h3>
+<pre class="mermaid">
+
+graph TD
+    A["維持輸液管理のプロセス"] --> B("4-6時間ごとの再評価")
+
+    B --> C["臨床徴候モニタリング<br/>(呼吸数, 体重, 尿量, 浮腫, CRTなど)"]
+
+    C --> D{"体液過剰の徴候あり?"}
+    D -- Yes --> E["<b>🚨 即座に輸液減速/中止</b>"]
+    E --> F["フロセミド投与検討 & 呼吸状態厳重モニタリング"]
+    F --> G("→ 次回再評価へ")
+
+    D -- No --> H{"脱水所見は継続?"}
+    H -- Yes --> I["<b>⬆️ 輸液速度を25-50%増加</b>"]
+    I --> G
+
+    H -- No --> J{"脱水所見改善 & 飲水可能?"}
+    J -- Yes --> K["<b>⬇️ 輸液速度を減速 → 中止検討</b>"]
+    K --> G
+
+    J -- No --> L{"持続的な体液喪失あり? <br/>(嘔吐・下痢など)"}
+    L -- Yes --> M["<b>➕ 維持量＋推定喪失量を加算</b>"]
+    M --> G
+
+    L -- No --> N["<b>🔄 現在の輸液速度を継続</b>"]
+    N --> G
+
+    G --> B
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_70" data-file="輸液/輸液の基本_晶質液vs膠質液">
+<h3>輸液/輸液の基本_晶質液vs膠質液</h3>
+<pre class="mermaid">
+
+graph TD
+    A["ショック兆候あり"] --> B["等張晶質液ボーラス投与"]
+    B -->|"犬"| C["15-20 mL/kg 15-30分"]
+    B -->|"猫"| D["10-15 mL/kg 15-30分"]
+    C --> E["灌流指標を再評価"]
+    D --> E
+    E --> F{"灌流改善あり"}
+    F -->|"はい"| G["維持輸液へ移行"]
+    F -->|"いいえ"| H{"過剰輸液兆候あり"}
+    H -->|"いいえ"| I["追加ボーラス投与 同量"]
+    H -->|"はい 肺水腫等"| J["昇圧剤検討"]
+    I --> E
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_71" data-file="麻酔/ハイリスク患者の麻酔_ASA分類 (block 1)">
+<h3>麻酔/ハイリスク患者の麻酔_ASA分類 (block 1)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["麻酔前患者評価"] --> B{"ASA分類？"}
+    B -->|"ASA I-II"| C["標準プロトコル"]
+    B -->|"ASA III-V"| D["ハイリスク患者"]
+
+    D --> E["術前評価強化"]
+    E --> E1["血液検査 心エコー 血圧"]
+
+    D --> F["麻酔計画立案"]
+    F --> F1["心血管抑制少ない薬剤選択"]
+    F --> F2["個別リスク対応方針"]
+
+    F2 --> G1{"心疾患"}
+    G1 -->|"あり"| H1["アセプロマジン回避 オピオイド中心"]
+    G1 -->|"あり"| H2["エトミデート等検討"]
+
+    F2 --> G2{"腎疾患"}
+    G2 -->|"あり"| H3["術前輸液 MAP 65維持"]
+    G2 -->|"あり"| H4["NSAIDs回避"]
+
+    F2 --> G3{"短頭種"}
+    G3 -->|"あり"| H5["プロポ導入 早期挿管"]
+    G3 -->|"あり"| H6["抜管は完全覚醒まで待機"]
+
+    F2 --> G4{"高齢動物"}
+    G4 -->|"あり"| H7["全薬剤25-50%減量"]
+    G4 -->|"あり"| H8["積極的保温"]
+
+    F --> I["術中モニタリング強化"]
+    I --> J["MAP 60-65mmHg維持"]
+    I --> K["低血圧対応 バソプレッサー準備"]
+
+    I --> L["術後回復管理"]
+    L --> M["短頭種:抜管判断 再挿管準備"]
+    L --> N["保温継続 疼痛管理"]
+
+    C --> L
+    H1 --> I; H2 --> I; H3 --> I; H4 --> I; H5 --> I; H6 --> I; H7 --> I; H8 --> I
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_72" data-file="麻酔/ハイリスク患者の麻酔_ASA分類 (block 2)">
+<h3>麻酔/ハイリスク患者の麻酔_ASA分類 (block 2)</h3>
+<pre class="mermaid">
+
+graph TD
+    A["麻酔前患者評価"] --> B{"ASA分類？"}
+    B -->|"ASA I-II"| C["標準プロトコル"]
+    B -->|"ASA III-V"| D["ハイリスク患者"]
+
+    D --> E["術前評価強化"]
+    E --> E1["血液検査 心エコー 血圧"]
+
+    D --> F["麻酔計画立案"]
+    F --> F1["心血管抑制少ない薬剤選択"]
+    F --> F2["個別リスク対応方針"]
+
+    F2 --> G1{"心疾患"}
+    G1 -->|"あり"| H1["アセプロマジン回避 オピオイド中心"]
+    G1 -->|"あり"| H2["エトミデート等検討"]
+
+    F2 --> G2{"腎疾患"}
+    G2 -->|"あり"| H3["術前輸液 MAP 65維持"]
+    G2 -->|"あり"| H4["NSAIDs回避"]
+
+    F2 --> G3{"短頭種"}
+    G3 -->|"あり"| H5["プロポ導入 早期挿管"]
+    G3 -->|"あり"| H6["抜管は完全覚醒まで待機"]
+
+    F2 --> G4{"高齢動物"}
+    G4 -->|"あり"| H7["全薬剤25-50%減量"]
+    G4 -->|"あり"| H8["積極的保温"]
+
+    F --> I["術中モニタリング強化"]
+    I --> J["MAP 60-65mmHg維持"]
+    I --> K["低血圧対応 バソプレッサー準備"]
+
+    I --> L["術後回復管理"]
+    L --> M["短頭種:抜管判断 再挿管準備"]
+    L --> N["保温継続 疼痛管理"]
+
+    C --> L
+    H1 --> I; H2 --> I; H3 --> I; H4 --> I; H5 --> I; H6 --> I; H7 --> I; H8 --> I
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_73" data-file="麻酔/局所麻酔_神経ブロック_一般病院でできるテクニック">
+<h3>麻酔/局所麻酔_神経ブロック_一般病院でできるテクニック</h3>
+<pre class="mermaid">
+
+graph TD
+    A["局所麻酔 適用検討"] --> B{"手術の種類は?"}
+
+    subgraph 1. ブロック部位の選択
+        B -->|"歯科処置"| C["歯科ブロックから選択"]
+        C --> C1("眼窩下孔ブロック 吻側上顎歯")
+        C --> C2("上顎神経ブロック 全上顎歯 口蓋")
+        C --> C3("下歯槽神経ブロック 全下顎歯 下唇")
+        C --> C4("オトガイ神経ブロック 吻側下顎歯")
+
+        B -->|"去勢手術"| D["精巣ブロック"]
+        B -->|"避妊手術"| E["Line Block / Splash Block"]
+    end
+
+    C1 & C2 & C3 & C4 & D & E --> F["薬剤選択へ"]
+
+    subgraph 2. 薬剤の選択と用量
+        F --> G{"目的と持続時間"}
+        G -->|"速効性 短時間"| G1["Lidocaine 2パーセント"]
+        G -->|"遅効性 長時間"| G2["Bupivacaine 0.5パーセント"]
+
+        G1 --> H["用量計算 犬 猫 最大用量"]
+        G2 --> H
+        H --> H1["猫は犬の半量 CNS毒性注意"]
+    end
+
+    subgraph 3. 安全管理の必須項目
+        H1 --> I["注入前 吸引テスト必須"]
+        I --> J["禁忌部位確認 リドカイン エピネフリン"]
+        J --> K["注入後 効果発現を待つ"]
+    end
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_74" data-file="麻酔/鎮静プロトコルの比較_処置別の最適な組み合わせ">
+<h3>麻酔/鎮静プロトコルの比較_処置別の最適な組み合わせ</h3>
+<pre class="mermaid">
+
+graph TD
+    A["開始 猫の鎮静プロトコル選択"] --> B{"来院前の不安"}
+    B -->|"あり"| C["Gabapentin 事前経口投与"]
+    B -->|"なし"| D{"心疾患の有無"}
+    C --> D
+    D -->|"あり"| E["心疾患猫: Alfaxalone Butorphanol IM"]
+    D -->|"なし"| F{"処置レベル"}
+    E --> G["処置へ移行"]
+    F -->|"軽度 X線 採血"| H["Butorphanol単独 IM"]
+    F -->|"中等度から深い処置"| I["Kitty Magic Dex Ket But IM"]
+    H --> G
+    I --> G
+
+</pre>
+</div>
+
+
+<div class="test-block" id="block_75" data-file="麻酔/麻酔モニタリング_ACVAA2025">
+<h3>麻酔/麻酔モニタリング_ACVAA2025</h3>
+<pre class="mermaid">
+
+graph TD
+    A["麻酔覚醒期 抜管"] --> B("死亡リスクの約50%は術後3時間以内")
+    B --> C["覚醒期モニタリングは最重要"]
+    C --> D["抜管後 最低1時間専任スタッフ監視"]
+    D -->|"項目1"| E["SpO2 継続測定"]
+    D -->|"項目2"| F["体温管理"]
+    F -->|"低体温時"| G["積極的保温"]
+    F -->|"正常体温時"| H["保温継続検討"]
+    E --> I["安定した覚醒状態まで"]
+    G --> I
+    H --> I
+    I --> J["監視終了"]
+
+</pre>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+
+// After rendering, check which blocks have errors
+setTimeout(() => {
+  const blocks = document.querySelectorAll('.test-block');
+  let passed = 0, failed = 0;
+  const failList = [];
+  blocks.forEach(block => {
+    const svg = block.querySelector('svg');
+    const hasError = svg && (svg.querySelector('.error-text') || svg.innerHTML.includes('Syntax error'));
+    const noSvg = !svg;
+    if (hasError || noSvg) {
+      block.classList.add('fail');
+      failed++;
+      failList.push(block.dataset.file);
+    } else {
+      block.classList.add('pass');
+      passed++;
+    }
+  });
+  document.getElementById('status').innerHTML = 
+    `<span style="color:#22c55e">PASS: ${passed}</span> / <span style="color:#ef4444">FAIL: ${failed}</span><br>` +
+    (failList.length > 0 ? '<b>Failed:</b><br>' + failList.join('<br>') : '<b>All diagrams render correctly!</b>');
+}, 5000);
+</script>
+</body></html>
