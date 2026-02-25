@@ -1537,3 +1537,39 @@ body.mode-free .premium-lock {
 .mermaid::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent-primary);
 }
+/* --- Mermaid Overflow Wrapper --- */
+.mermaid-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--space-md) 0;
+  border-radius: var(--radius-md);
+  /* Make the background stand out a bit as a scrollable container */
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  /* Custom thin scrollbar */
+  scrollbar-width: thin;
+}
+
+.mermaid-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.mermaid-wrapper::-webkit-scrollbar-thumb {
+  background: var(--color-border-accent);
+  border-radius: 4px;
+}
+
+/* Ensure the SVG inside maintains PC-like width regardless of mobile screen */
+.mermaid-wrapper .mermaid {
+  min-width: 650px;
+  width: max-content;
+  display: flex !important;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  border: none;
+  margin: 0;
+}

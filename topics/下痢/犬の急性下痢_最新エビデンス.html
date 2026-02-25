@@ -78,7 +78,7 @@
 <div class="card" style="margin-top: var(--space-md);">
 <h3 style="font-size: 0.95rem; margin-bottom: 8px;">🗺️ 重症度別 治療フロー</h3>
 <!-- 個別生成図表 -->
-<pre class="mermaid">
+<div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
     A["犬の急性下痢で来院"] --&gt; B{"初診時の評価"};
     B --&gt;|"食欲あり, 元気, 軽度脱水なし"| C["軽度"];
@@ -122,7 +122,7 @@ graph TD
 
     classDef decision fill:#F0F0F0,stroke:#6C757D,stroke-width:1px,color:#333
     class B,G,E1_2 decision
-</pre>
+</pre></div>
 <table class="comparison-table" style="margin: 0;">
 <thead>
 <tr>

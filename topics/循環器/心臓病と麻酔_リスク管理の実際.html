@@ -140,7 +140,7 @@
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
 <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
 <!-- 個別生成図表 -->
-<pre class="mermaid">
+<div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
     A["麻酔中 MAP 60mmHg以下"] --&gt; B{"まず確認"};
     B --&gt; C["過深麻酔?"];
@@ -172,7 +172,7 @@ graph TD
     R --&gt;|"No 徐脈あり"| S["グリコピロレート"];
     R --&gt;|"Yes"| T["モニタ継続"];
     S --&gt; T;
-</pre>
+</pre></div>
 <div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
 </div>
 </div>

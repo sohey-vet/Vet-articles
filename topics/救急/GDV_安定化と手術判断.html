@@ -109,7 +109,7 @@
 <td>心室性不整脈が術後12〜36時間にピーク
 
 <!-- 個別生成図表 -->
-<pre class="mermaid">
+<div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
     start(("来院: GDV疑い")) --&gt; triage{"ショック徴候あり？"};
     triage --&gt;|"Yes"| IV_resuscitation["① 輸液蘇生: 2ルート確保、急速輸液 (LRS 10-20mL/kgボーラス)"];
@@ -149,7 +149,7 @@ graph TD
     observe_arrhythmia --&gt; discharge_criteria;
 
     discharge_criteria --&gt; end(("退院 + 飼い主説明"));
-</pre>
+</pre></div>
 </td>
 </tr>
 </tbody>
