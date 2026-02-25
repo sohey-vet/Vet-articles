@@ -1496,11 +1496,9 @@ body.mode-free .premium-lock {
 .mermaid {
   overflow-x: auto;
   overflow-y: hidden;
-  /* Prevent large child SVGs from expanding table cell widths */
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-
   -webkit-overflow-scrolling: touch;
   margin: var(--space-xl) 0;
   padding: var(--space-md);
@@ -1510,10 +1508,9 @@ body.mode-free .premium-lock {
   text-align: center;
 }
 
-/* Force minimum width to prevent microscopic font scaling on mobile screens */
+/* SVG must always fit inside its container. No minimum width forcing. */
 .mermaid svg {
-  min-width: 650px;
-  max-width: none;
+  max-width: 100% !important;
   height: auto !important;
   display: block;
   margin: 0 auto;
@@ -1538,9 +1535,10 @@ body.mode-free .premium-lock {
   background: var(--color-accent-primary);
 }
 
-/* --- Mermaid Diagram Container --- */
+/* --- Mermaid Diagram Container (Wrapper) --- */
 .mermaid-wrapper {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -1550,7 +1548,7 @@ body.mode-free .premium-lock {
   border: 1px solid var(--color-border);
   padding: var(--space-md);
   scrollbar-width: thin;
-  position: relative;
+  box-sizing: border-box;
 }
 
 .mermaid-wrapper::-webkit-scrollbar {
@@ -1562,11 +1560,20 @@ body.mode-free .premium-lock {
   border-radius: 4px;
 }
 
+/* SVG inside wrapper must also respect container bounds */
+.mermaid-wrapper svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
 .mermaid-wrapper .mermaid {
   background: transparent;
   padding: 0;
   border: none;
   margin: 0;
+  overflow: visible;
 }
 
 /* --- Mermaid Zoom Control Buttons --- */
