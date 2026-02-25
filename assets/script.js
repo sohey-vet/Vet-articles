@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initContentModeToggle();
   initBackToTop();
+  initCollapsibleFlowcharts();
 });
 
 /**
@@ -205,5 +206,40 @@ function initBreadcrumb() {
   nav.className = 'breadcrumb-nav';
   nav.innerHTML = '<a href="../../index.html"><span class="back-arrow">←</span> トップに戻る</a>';
   container.insertBefore(nav, container.firstChild);
+}
+
+/**
+ * Collapsible Flowcharts
+ * Mermaid diagrams are collapsed by default. Users click to expand.
+ * Uses a short delay to let Mermaid render SVGs first.
+ */
+function initCollapsibleFlowcharts() {
+  // Wait for Mermaid to finish rendering
+  setTimeout(() => {
+    const wrappers = document.querySelectorAll('.mermaid-wrapper');
+    wrappers.forEach(wrapper => {
+      // Skip if already wrapped
+      if (wrapper.parentElement.tagName === 'DETAILS') return;
+
+      const details = document.createElement('details');
+      details.className = 'flowchart-collapse';
+
+      const summary = document.createElement('summary');
+      summary.className = 'flowchart-toggle';
+      summary.innerHTML = '📊 フローチャートを表示';
+
+      // Insert details before wrapper, then move wrapper inside
+      wrapper.parentNode.insertBefore(details, wrapper);
+      details.appendChild(summary);
+      details.appendChild(wrapper);
+
+      // Update text on toggle
+      details.addEventListener('toggle', () => {
+        summary.innerHTML = details.open
+          ? '📊 フローチャートを閉じる'
+          : '📊 フローチャートを表示';
+      });
+    });
+  }, 2500);
 }
 

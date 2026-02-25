@@ -1565,3 +1565,44 @@ body.mode-free .premium-lock {
   margin: 0;
   overflow: visible;
 }
+
+/* --- Hide content mode toggle (kept in HTML for future use) --- */
+.content-mode-bar {
+  display: none !important;
+}
+
+/* --- Collapsible Flowchart Toggle --- */
+.flowchart-collapse {
+  margin: var(--space-md) 0;
+}
+
+.flowchart-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.12));
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-md);
+  color: var(--color-accent-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.flowchart-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.flowchart-toggle:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.2));
+  border-color: var(--color-accent-primary);
+}
+
+.flowchart-toggle:active {
+  transform: scale(0.97);
+}
