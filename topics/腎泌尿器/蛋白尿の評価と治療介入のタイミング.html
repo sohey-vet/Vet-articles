@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬猫の蛋白尿の評価と治療介入のタイミング。UPC測定の解釈、糸球体疾患の鑑別、ACE阻害薬・ARBによる抗蛋白尿療法。IRISガイドライン準拠。" name="description"/>
 <title>蛋白尿の評価と治療介入のタイミング | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -73,29 +73,29 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["開始: 尿試験紙で蛋白陽性"] --> B("UPC測定を実施");
-    B --> C{"腎前性・腎後性の除外?"};
-    C -->|"あり (UTI, 血尿, 生殖器分泌物等)"| D["原因治療後 再検"];
-    C -->|"なし"| E{"UPCの持続性確認 (2-4週後 2回以上測定)"};
+    A["開始: 尿試験紙で蛋白陽性"] --> B("UPC測定を実施")
+    B --> C{"腎前性・腎後性の除外?"}
+    C -->|"あり (UTI, 血尿, 生殖器分泌物等)"| D["原因治療後 再検"]
+    C -->|"なし"| E{"UPCの持続性確認 (2-4週後 2回以上測定)"}
 
-    E --> F{"UPC値の評価 (IRISガイドライン準拠)"};
-    F -->|"犬＜0.2 / 猫＜0.2"| G["非蛋白尿: 定期モニタリング"];
-    F -->|"犬0.2-0.5 / 猫0.2-0.4"| H["境界域蛋白尿: 2-4週後再検"];
-    F -->|"犬＞0.5 / 猫＞0.4"| I["持続的蛋白尿"];
+    E --> F{"UPC値の評価 (IRISガイドライン準拠)"}
+    F -->|"犬＜0.2 / 猫＜0.2"| G["非蛋白尿: 定期モニタリング"]
+    F -->|"犬0.2-0.5 / 猫0.2-0.4"| H["境界域蛋白尿: 2-4週後再検"]
+    F -->|"犬＞0.5 / 猫＞0.4"| I["持続的蛋白尿"]
 
-    I --> J("原因精査: 感染症, 内分泌, 腫瘍, 免疫介在性疾患など");
-    I --> K("治療介入: 抗蛋白尿療法を開始");
+    I --> J("原因精査: 感染症, 内分泌, 腫瘍, 免疫介在性疾患など")
+    I --> K("治療介入: 抗蛋白尿療法を開始")
 
-    K --> L["第一選択: ACE阻害薬 (例: ベナゼプリル)"];
-    L --> M{"効果不十分 (UPCの50%低下 or 目標値未達)?"};
-    M -->|"Yes"| N["ARB併用 or 代替 (例: テルミサルタン)"];
-    M -->|"No"| O["安定後のモニタリングへ進む"];
+    K --> L["第一選択: ACE阻害薬 (例: ベナゼプリル)"]
+    L --> M{"効果不十分 (UPCの50%低下 or 目標値未達)?"}
+    M -->|"Yes"| N["ARB併用 or 代替 (例: テルミサルタン)"]
+    M -->|"No"| O["安定後のモニタリングへ進む"]
 
-    N --> O;
+    N --> O
 
-    O --> P["定期モニタリング: UPC, 腎機能 (BUN/Cre/K), 血圧を1-3ヶ月ごとに確認"];
-    D --> B;
-    H --> E;
+    O --> P["定期モニタリング: UPC, 腎機能 (BUN/Cre/K), 血圧を1-3ヶ月ごとに確認"]
+    D --> B
+    H --> E
 </pre></div>
 </h3>
 <div style="overflow-x:auto;">
@@ -513,7 +513,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

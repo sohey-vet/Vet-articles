@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬の急性下痢における最新エビデンスまとめ。メトロニダゾールの再考、プロバイオティクスの有効性、治療判断フロー。" name="description"/>
 <title>犬の急性下痢 最新エビデンス | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <!-- ===== Mobile Navigation ===== -->
@@ -80,35 +80,35 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["犬の急性下痢で来院"] --> B{"初診時の評価"};
-    B -->|"食欲あり, 元気, 軽度脱水なし"| C["軽度"];
-    B -->|"嘔吐, 中等度脱水"| D["中等度"];
-    B -->|"ショック, 重度脱水, 発熱, 全身倦怠"| E["重度"];
+    A["犬の急性下痢で来院"] --> B{"初診時の評価"}
+    B -->|"食欲あり, 元気, 軽度脱水なし"| C["軽度"]
+    B -->|"嘔吐, 中等度脱水"| D["中等度"]
+    B -->|"ショック, 重度脱水, 発熱, 全身倦怠"| E["重度"]
 
-    C --> C1["治療: 支持療法"];
-    C1_1["消化器食 + プロバイオティクス"];
-    C1_2("('抗菌薬は不要'"));
-    C1 --> C1_1;
-    C1_1 --> C1_2;
-    C1_2 --> F["早期栄養介入 (嘔吐制御後12-24h)"];
-    F --> G{"改善"};
-    G -->|"YES"| H["退院/自宅管理"];
-    G -->|"NO"| I["再評価・原因検索"];
+    C --> C1["治療: 支持療法"]
+    C1_1["消化器食 + プロバイオティクス"]
+    C1_2(("抗菌薬は不要"))
+    C1 --> C1_1
+    C1_1 --> C1_2
+    C1_2 --> F["早期栄養介入 (嘔吐制御後12-24h)"]
+    F --> G{"改善"}
+    G -->|"YES"| H["退院/自宅管理"]
+    G -->|"NO"| I["再評価・原因検索"]
 
-    D --> D1["治療: 支持療法"];
-    D1_1["輸液 + 制吐薬 + 消化器食 + プロバイオティクス"];
-    D1_2("('抗菌薬は通常不要'"));
-    D1 --> D1_1;
-    D1_1 --> D1_2;
-    D1_2 --> F;
+    D --> D1["治療: 支持療法"]
+    D1_1["輸液 + 制吐薬 + 消化器食 + プロバイオティクス"]
+    D1_2(("抗菌薬は通常不要"))
+    D1 --> D1_1
+    D1_1 --> D1_2
+    D1_2 --> F
 
-    E --> E1["治療: 緊急治療・集中管理"];
-    E1_1["積極的輸液 + 制吐 + 鎮痛"];
-    E1_2{"敗血症の徴候?"}; 
-    E1_2 -->|"YES (持続的頻脈, 発熱, 白血球異常)"| E1_3["広域抗菌薬適応: アモキシシリン-クラブラン酸等"];
-    E1_2 -->|"NO"| E1_4("('抗菌薬は不要'"));
-    E1_3 --> F;
-    E1_4 --> F;
+    E --> E1["治療: 緊急治療・集中管理"]
+    E1_1["積極的輸液 + 制吐 + 鎮痛"]
+    E1_2{"敗血症の徴候?"}
+    E1_2 -->|"YES (持続的頻脈, 発熱, 白血球異常)"| E1_3["広域抗菌薬適応: アモキシシリン-クラブラン酸等"]
+    E1_2 -->|"NO"| E1_4(("抗菌薬は不要"))
+    E1_3 --> F
+    E1_4 --> F
 
     style A fill:#D2B4DE,stroke:#800080,stroke-width:2px,color:#333
     style C fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#333
@@ -453,7 +453,7 @@ graph TD
       </p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <meta content="心疾患患者の麻酔リスク管理。MMVD・DCM・HCM別のプロトコル選択、術中低血圧への対応、心臓専門医との連携。" name="description"/>
 <title>心臓病と麻酔 ─ リスク管理の実際 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
@@ -142,36 +142,36 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["麻酔中 MAP 60mmHg以下"] --> B{"まず確認"};
-    B --> C["過深麻酔?"];
-    B --> D["心拍数異常?"];
-    B --> E["出血?"];
+    A["麻酔中 MAP 60mmHg以下"] --> B{"まず確認"}
+    B --> C["過深麻酔?"]
+    B --> D["心拍数異常?"]
+    B --> E["出血?"]
 
-    C --> F["吸入麻酔薬減量"];
-    D --> G["心拍数調整"];
-    E --> H["止血 輸液"];
+    C --> F["吸入麻酔薬減量"]
+    D --> G["心拍数調整"]
+    E --> H["止血 輸液"]
 
-    F --> I["オピオイドCRI増"];
-    I --> J["輸液ボーラス"];
+    F --> I["オピオイドCRI増"]
+    I --> J["輸液ボーラス"]
 
-    J --> K{"低血圧持続?"};
-    K -->|"Yes"| L{"バソプレッサー選択"};
+    J --> K{"低血圧持続?"}
+    K -->|"Yes"| L{"バソプレッサー選択"}
 
-    L -->|"DCM"| M["ドブタミン"];
-    L -->|"MMVD"| N["ドパミン"];
-    L -->|"HCM猫"| O["フェニレフリン 輸液調整"];
-    L -->|"その他"| P["エフェドリン"];
-    L -->|"その他"| Q["ドパミン"];
+    L -->|"DCM"| M["ドブタミン"]
+    L -->|"MMVD"| N["ドパミン"]
+    L -->|"HCM猫"| O["フェニレフリン 輸液調整"]
+    L -->|"その他"| P["エフェドリン"]
+    L -->|"その他"| Q["ドパミン"]
 
-    M --> R{"MAP改善?"};
-    N --> R;
-    O --> R;
-    P --> R;
-    Q --> R;
+    M --> R{"MAP改善?"}
+    N --> R
+    O --> R
+    P --> R
+    Q --> R
 
-    R -->|"No 徐脈あり"| S["グリコピロレート"];
-    R -->|"Yes"| T["モニタ継続"];
-    S --> T;
+    R -->|"No 徐脈あり"| S["グリコピロレート"]
+    R -->|"Yes"| T["モニタ継続"]
+    S --> T
 </pre></div>
 <div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
 </div>
@@ -277,7 +277,7 @@ graph TD
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬猫の中毒における緊急対応。チョコレート・キシリトール・ブドウ・ネギ・ユリの中毒用量、症状、治療フロー。" name="description"/>
 <title>犬猫の中毒 ─ よくある原因物質と対処法 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <!-- ===== Mobile Navigation ===== -->
@@ -384,29 +384,29 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["来院: 何を・いつ・どれだけ摂取？"] --> B{"重篤な症状 (意識障害/痙攣/呼吸困難)<br/>または腐食性/石油系物質の摂取？"};
-    B -- Yes --> C("緊急安定化処置: 輸液・酸素・抗痙攣薬など");
-    B -- No --> D{"摂取後1〜2時間以内？"};
-    D -- No (時間が経過) --> E("催吐は推奨せず"); 
-    D -- Yes --> F{"意識清明で咽頭反射あり？"};
-    F -- No --> G("催吐は禁忌・誤嚥リスク増大");
-    F -- Yes --> H("催吐を検討");
+    A["来院: 何を・いつ・どれだけ摂取？"] --> B{"重篤な症状 (意識障害/痙攣/呼吸困難)<br/>または腐食性/石油系物質の摂取？"}
+    B -- Yes --> C("緊急安定化処置: 輸液・酸素・抗痙攣薬など")
+    B -- No --> D{"摂取後1〜2時間以内？"}
+    D -- No (時間が経過) --> E("催吐は推奨せず")
+    D -- Yes --> F{"意識清明で咽頭反射あり？"}
+    F -- No --> G("催吐は禁忌・誤嚥リスク増大")
+    F -- Yes --> H("催吐を検討")
 
-    H --> I{"催吐薬の選択"};
-    I -- 犬 --> J("クレボル®点眼薬 / アポモルヒネ");
-    I -- 猫 --> K("デクスメデトミジン / キシラジン");
+    H --> I{"催吐薬の選択"}
+    I -- 犬 --> J("クレボル®点眼薬 / アポモルヒネ")
+    I -- 猫 --> K("デクスメデトミジン / キシラジン")
 
-    J --> L{"嘔吐物回収確認"};
-    K --> L;
+    J --> L{"嘔吐物回収確認"}
+    K --> L
 
-    L -- 回収済み/嘔吐終了 --> M{"活性炭の投与は適応？<br/>(キシリトールには無効)"};
-    M -- No --> N("継続的なモニタリング・支持療法");
-    M -- Yes --> O("活性炭 1-2g/kg PO<br/>（腸肝循環物質は反復投与検討）");
-    O --> N;
+    L -- 回収済み/嘔吐終了 --> M{"活性炭の投与は適応？<br/>(キシリトールには無効)"}
+    M -- No --> N("継続的なモニタリング・支持療法")
+    M -- Yes --> O("活性炭 1-2g/kg PO<br/>（腸肝循環物質は反復投与検討）")
+    O --> N
 
-    C --> N;
-    E --> N;
-    G --> N;
+    C --> N
+    E --> N
+    G --> N
 
     subgraph 留意事項
         style 注意1 fill:#fff,stroke:#333,stroke-width:2px
@@ -538,7 +538,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

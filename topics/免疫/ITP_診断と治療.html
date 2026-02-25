@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬の免疫介在性血小板減少症（ITP）の診断と治療。ACVIM 2024ガイドライン準拠。ビンクリスチン・MMFの使い分け。" name="description"/>
 <title>犬のITP ─ 診断と治療 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -68,24 +68,24 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["ITPと診断"] --> B{"臨床的出血の有無"};
-    B -->|"あり"| C["プレドニゾロン + ビンクリスチン"];
-    B -->|"なし"| D["プレドニゾロン単独"];
+    A["ITPと診断"] --> B{"臨床的出血の有無"}
+    B -->|"あり"| C["プレドニゾロン + ビンクリスチン"]
+    B -->|"なし"| D["プレドニゾロン単独"]
 
-    C --- E["注意 ABCB1変異犬種はビンクリスチン禁忌"];
+    C --- E["注意 ABCB1変異犬種はビンクリスチン禁忌"]
 
-    C --> F{"5-7日後 血小板再評価"};
-    D --> F;
+    C --> F{"5-7日後 血小板再評価"}
+    D --> F
 
-    F -->|"上昇あり"| G["治療目標達成 PLT 10万以上"];
-    F -->|"反応不良 副作用重篤"| H["MMF追加を検討"];
+    F -->|"上昇あり"| G["治療目標達成 PLT 10万以上"]
+    F -->|"反応不良 副作用重篤"| H["MMF追加を検討"]
 
-    G --> I["減薬プロトコル開始"];
-    I --> J{"減薬中の再発"};
-    J -->|"あり"| H;
-    J -->|"なし"| K["治療終了または低用量維持"];
+    G --> I["減薬プロトコル開始"]
+    I --> J{"減薬中の再発"}
+    J -->|"あり"| H
+    J -->|"なし"| K["治療終了または低用量維持"]
 
-    H --> G;
+    H --> G
 </pre></div>
 </p>
 </div>
@@ -443,7 +443,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

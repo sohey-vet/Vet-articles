@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <meta content="犬猫の鎮静プロトコル比較。Dexmedetomidine 3-5mcg/kg IV、Kitty Magic（Dex+Ket+Butorphanol IM）、Alfaxalone IM、Gabapentin事前投与。処置別チートシート。" name="description"/>
 <title>鎮静プロトコルの比較 ─ 処置別の最適な組み合わせ | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
@@ -34,17 +34,17 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["開始 猫の鎮静プロトコル選択"] --> B{"来院前の不安"}; 
-    B -->|"あり"| C["Gabapentin 事前経口投与"];
-    B -->|"なし"| D{"心疾患の有無"};
-    C --> D;
-    D -->|"あり"| E["心疾患猫: Alfaxalone Butorphanol IM"];
-    D -->|"なし"| F{"処置レベル"};
-    E --> G["処置へ移行"];
-    F -->|"軽度 X線 採血"| H["Butorphanol単独 IM"];
-    F -->|"中等度から深い処置"| I["Kitty Magic Dex Ket But IM"];
-    H --> G;
-    I --> G;
+    A["開始 猫の鎮静プロトコル選択"] --> B{"来院前の不安"}
+    B -->|"あり"| C["Gabapentin 事前経口投与"]
+    B -->|"なし"| D{"心疾患の有無"}
+    C --> D
+    D -->|"あり"| E["心疾患猫: Alfaxalone Butorphanol IM"]
+    D -->|"なし"| F{"処置レベル"}
+    E --> G["処置へ移行"]
+    F -->|"軽度 X線 採血"| H["Butorphanol単独 IM"]
+    F -->|"中等度から深い処置"| I["Kitty Magic Dex Ket But IM"]
+    H --> G
+    I --> G
 </pre></div>
 <p style="font-size:0.88rem;">
                     鎮静プロトコルは「処置の痛みレベル」「所要時間」「患者のリスク」で選択する。犬の軽度鎮静（画像検査等）には<strong>Butorphanol 0.2-0.4 mg/kg +
@@ -247,7 +247,7 @@ graph TD
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

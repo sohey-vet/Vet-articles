@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <meta content="犬のDCM犬種別アプローチ。ドーベルマン：Pimobendan 0.25-0.3mg/kg PO q12h＋ホルター。アイリッシュウォルフハウンド：Afib Rate Control。タウリン欠乏性DCMの把握。" name="description"/>
 <title>犬のDCM ─ 犬種別アプローチ | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
@@ -126,29 +126,29 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["ドーベルマン犬のDCM管理フロー"] --> B{"症状はありますか？"};
+    A["ドーベルマン犬のDCM管理フロー"] --> B{"症状はありますか？"}
 
-    B -- いいえ(無症状) --> C["年1回定期スクリーニング<br/>(24hホルター + 心エコー)"];
-    B -- はい(心不全徴候) --> I["Stage C 心不全治療<br/>(利尿薬、Pimobendan、ACE阻害薬、Spironolactone)"];
+    B -- いいえ(無症状) --> C["年1回定期スクリーニング<br/>(24hホルター + 心エコー)"]
+    B -- はい(心不全徴候) --> I["Stage C 心不全治療<br/>(利尿薬、Pimobendan、ACE阻害薬、Spironolactone)"]
 
-    C --> D{"24hホルター心電図結果"};
+    C --> D{"24hホルター心電図結果"}
     D -- VPCs < 100/24h &
-複雑なVPCsなし --> C;
-    D -- VPCs >= 100/24h<br/>または複雑なVPCs検出 --> E{"心エコー所見"};
+複雑なVPCsなし --> C
+    D -- VPCs >= 100/24h<br/>または複雑なVPCs検出 --> E{"心エコー所見"}
 
-    E -- LVIDd/LVIDs, FS等 正常 --> C;
-    E -- LVIDd/LVIDs, FS等 病的拡大 --> F["Occult DCM診断"];
+    E -- LVIDd/LVIDs, FS等 正常 --> C
+    E -- LVIDd/LVIDs, FS等 病的拡大 --> F["Occult DCM診断"]
 
-    F --> G["Pimobendan 0.25-0.3mg/kg PO q12h 開始<br/>(PROTECT Studyに基づき)"];
-    G --> H{"VPCs/VTが顕著か？"};
-    H -- はい --> J["Sotalol / Mexiletine 併用検討"];
-    H -- いいえ --> K["定期モニタリング継続<br/>(症状確認、ホルター、エコー)"];
-    J --> K;
-    K --> L{"心不全徴候の出現?"};
-    L -- はい --> I;
-    L -- いいえ --> K;
+    F --> G["Pimobendan 0.25-0.3mg/kg PO q12h 開始<br/>(PROTECT Studyに基づき)"]
+    G --> H{"VPCs/VTが顕著か？"}
+    H -- はい --> J["Sotalol / Mexiletine 併用検討"]
+    H -- いいえ --> K["定期モニタリング継続<br/>(症状確認、ホルター、エコー)"]
+    J --> K
+    K --> L{"心不全徴候の出現?"}
+    L -- はい --> I
+    L -- いいえ --> K
 
-    I --> M["適切な対症療法と管理"];
+    I --> M["適切な対症療法と管理"]
 </pre></div>
 <ul>
 <li>ドーベルマンのDCMは<strong>無症状の段階が長く</strong>、飼い主が異変に気づいたときには高度な心筋障害が進行していることが多い</li>
@@ -282,7 +282,7 @@ graph TD
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

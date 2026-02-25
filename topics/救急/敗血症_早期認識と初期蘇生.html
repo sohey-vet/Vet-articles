@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬猫の敗血症の早期認識と初期蘇生。SIRS基準の犬猫差異、Sepsis Bundleの適応、ソースコントロールの原則。" name="description"/>
 <title>敗血症の早期認識と初期蘇生 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -59,34 +59,34 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["感染源の疑いあり"] --> B{"SIRS基準に合致"}; 
-    B -->|"No"| C["経過観察 感染治療"];
-    B -->|"Yes"| D{"臓器障害あり 例:乳酸高値 乏尿"}; 
-    D -->|"No"| E["全身性炎症反応症候群 SIRS"];
-    D -->|"Yes"| F["敗血症を疑う"];
+    A["感染源の疑いあり"] --> B{"SIRS基準に合致"}
+    B -->|"No"| C["経過観察 感染治療"]
+    B -->|"Yes"| D{"臓器障害あり 例:乳酸高値 乏尿"}
+    D -->|"No"| E["全身性炎症反応症候群 SIRS"]
+    D -->|"Yes"| F["敗血症を疑う"]
 
-    F --> G["ゴールデンアワー 最初の1時間で"];
-    G --> H["1 輸液蘇生"];
-    G --> I["2 広域抗菌薬投与 培養後"];
-    G --> J["3 ソースコントロール 感染源除去"];
+    F --> G["ゴールデンアワー 最初の1時間で"]
+    G --> H["1 輸液蘇生"]
+    G --> I["2 広域抗菌薬投与 培養後"]
+    G --> J["3 ソースコントロール 感染源除去"]
 
-    H --> K{"灌流パラメータ改善? HR CRT 脈 血圧 乳酸"}; 
-    K -->|"Yes"| L["維持輸液 状態安定化"];
-    K -->|"No"| M["輸液ボーラス追加 または昇圧薬検討"];
+    H --> K{"灌流パラメータ改善? HR CRT 脈 血圧 乳酸"}
+    K -->|"Yes"| L["維持輸液 状態安定化"]
+    K -->|"No"| M["輸液ボーラス追加 または昇圧薬検討"]
 
-    M --> N{"低血圧持続?"}; 
-    N -->|"Yes"| O["ノルエピネフリン 第一選択"];
-    N -->|"No"| L;
+    M --> N{"低血圧持続?"}
+    N -->|"Yes"| O["ノルエピネフリン 第一選択"]
+    N -->|"No"| L
 
-    O --> P{"目標MAP達成?"}; 
-    P -->|"No"| Q["他昇圧薬追加 バソプレシン ドブタミン"];
-    P -->|"Yes"| L;
+    O --> P{"目標MAP達成?"}
+    P -->|"No"| Q["他昇圧薬追加 バソプレシン ドブタミン"]
+    P -->|"Yes"| L
 
-    J --> R["可能な限り早期に実施"];
+    J --> R["可能な限り早期に実施"]
 
-    style A fill:#DDF,stroke:#333,stroke-width:2px;
-    style F fill:#FEE,stroke:#C00,stroke-width:2px;
-    style G fill:#EFE,stroke:#090,stroke-width:2px;
+    style A fill:#DDF,stroke:#333,stroke-width:2px
+    style F fill:#FEE,stroke:#C00,stroke-width:2px
+    style G fill:#EFE,stroke:#090,stroke-width:2px
 </pre></div>
 <p style="font-size:0.88rem;">
                     敗血症は<strong>感染に対する宿主の調節異常な反応による臓器障害</strong>（Sepsis-3定義の獣医適用）。
@@ -411,7 +411,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

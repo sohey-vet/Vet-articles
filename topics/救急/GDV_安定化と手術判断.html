@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬の胃拡張-捻転症候群（GDV）の安定化と手術判断。トリアージ、除圧、輸液蘇生、胃固定術の適応と予後。" name="description"/>
 <title>GDV ─ 安定化と手術判断 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -115,44 +115,44 @@
 </tbody>
 </table><div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    start("('来院: GDV疑い'")) --> triage{"ショック徴候あり？"};
-    triage -->|"Yes"| IV_resuscitation["① 輸液蘇生: 2ルート確保、急速輸液 (LRS 10-20mL/kgボーラス)"];
-    triage -->|"No"| IV_resuscitation;
-    IV_resuscitation --> diagnosis["② 診断: 右側臥位X線 (ダブルバブル, 脾臓変位)"];
-    diagnosis --> confirmed_gdv{"GDVと確定診断？"};
-    confirmed_gdv -->|"No"| other_dx["他疾患の評価"];
-    confirmed_gdv -->|"Yes"| decompression_method["③ 胃減圧: 経口胃チューブ試行"];
-    decompression_method --> oral_tube_success{"経口チューブ挿入可？"};
-    oral_tube_success -->|"Yes"| gastric_wash["ガス/内容物排出 + 温生食で胃洗浄"];
-    oral_tube_success -->|"No"| percutaneous_decompression["経皮的胃穿刺による減圧"];
-    percutaneous_decompression --> retry_oral_tube{"減圧後、経口チューブ挿入可？"};
-    retry_oral_tube -->|"Yes"| gastric_wash;
-    retry_oral_tube -->|"No"| proceed_surgery_path; 
+    start(("来院: GDV疑い")) --> triage{"ショック徴候あり？"}
+    triage -->|"Yes"| IV_resuscitation["① 輸液蘇生: 2ルート確保、急速輸液 (LRS 10-20mL/kgボーラス)"]
+    triage -->|"No"| IV_resuscitation
+    IV_resuscitation --> diagnosis["② 診断: 右側臥位X線 (ダブルバブル, 脾臓変位)"]
+    diagnosis --> confirmed_gdv{"GDVと確定診断？"}
+    confirmed_gdv -->|"No"| other_dx["他疾患の評価"]
+    confirmed_gdv -->|"Yes"| decompression_method["③ 胃減圧: 経口胃チューブ試行"]
+    decompression_method --> oral_tube_success{"経口チューブ挿入可？"}
+    oral_tube_success -->|"Yes"| gastric_wash["ガス/内容物排出 + 温生食で胃洗浄"]
+    oral_tube_success -->|"No"| percutaneous_decompression["経皮的胃穿刺による減圧"]
+    percutaneous_decompression --> retry_oral_tube{"減圧後、経口チューブ挿入可？"}
+    retry_oral_tube -->|"Yes"| gastric_wash
+    retry_oral_tube -->|"No"| proceed_surgery_path
 
-    gastric_wash --> hemodynamic_eval["血行動態評価 (MAP≥65, CRT＜2, 心拍安定化)"];
-    hemodynamic_eval --> stabilization_achieved{"初期安定化達成？"};
-    stabilization_achieved -->|"No"| IV_resuscitation; 
-    stabilization_achieved -->|"Yes"| surgery_prep["④ 手術準備: 血液検査, 心電図"];
-    surgery_prep --> proceed_surgery_path["⑤ 緊急手術 (捻転整復 + 胃固定術)"];
+    gastric_wash --> hemodynamic_eval["血行動態評価 (MAP≥65, CRT＜2, 心拍安定化)"]
+    hemodynamic_eval --> stabilization_achieved{"初期安定化達成？"}
+    stabilization_achieved -->|"No"| IV_resuscitation
+    stabilization_achieved -->|"Yes"| surgery_prep["④ 手術準備: 血液検査, 心電図"]
+    surgery_prep --> proceed_surgery_path["⑤ 緊急手術 (捻転整復 + 胃固定術)"]
 
-    proceed_surgery_path --> stomach_eval{"術中の胃壁評価: 壊死組織あり？"};
-    stomach_eval -->|"Yes"| partial_gastrectomy["胃部分切除"];
-    stomach_eval -->|"No"| spleen_eval{"脾臓評価: 巻き込み/損傷あり？"};
-    partial_gastrectomy --> spleen_eval;
-    spleen_eval -->|"Yes"| splenectomy["脾臓摘出"];
-    spleen_eval -->|"No"| surgery_complete["手術完了"];
-    splenectomy --> surgery_complete;
+    proceed_surgery_path --> stomach_eval{"術中の胃壁評価: 壊死組織あり？"}
+    stomach_eval -->|"Yes"| partial_gastrectomy["胃部分切除"]
+    stomach_eval -->|"No"| spleen_eval{"脾臓評価: 巻き込み/損傷あり？"}
+    partial_gastrectomy --> spleen_eval
+    spleen_eval -->|"Yes"| splenectomy["脾臓摘出"]
+    spleen_eval -->|"No"| surgery_complete["手術完了"]
+    splenectomy --> surgery_complete
 
-    surgery_complete --> post_op_care["⑥ 術後管理: 心電図モニタリング (48-72h)"];
-    post_op_care --> arrhythmia{"術後心室性不整脈あり？"};
-    arrhythmia -->|"Yes"| sustained_vt{"持続性心室頻拍 (HR＞180bpm, 灌流低下)？"};
-    sustained_vt -->|"Yes"| lidocaine_tx["リドカイン投与 (ボーラス→CRI)"];
-    sustained_vt -->|"No"| observe_arrhythmia["経過観察 (散発性VPC)"];
-    arrhythmia -->|"No"| discharge_criteria["退院基準満たすまで入院"];
-    lidocaine_tx --> discharge_criteria;
-    observe_arrhythmia --> discharge_criteria;
+    surgery_complete --> post_op_care["⑥ 術後管理: 心電図モニタリング (48-72h)"]
+    post_op_care --> arrhythmia{"術後心室性不整脈あり？"}
+    arrhythmia -->|"Yes"| sustained_vt{"持続性心室頻拍 (HR＞180bpm, 灌流低下)？"}
+    sustained_vt -->|"Yes"| lidocaine_tx["リドカイン投与 (ボーラス→CRI)"]
+    sustained_vt -->|"No"| observe_arrhythmia["経過観察 (散発性VPC)"]
+    arrhythmia -->|"No"| discharge_criteria["退院基準満たすまで入院"]
+    lidocaine_tx --> discharge_criteria
+    observe_arrhythmia --> discharge_criteria
 
-    discharge_criteria --> end("('退院 + 飼い主説明'"));
+    discharge_criteria --> endNode(("退院 + 飼い主説明"))
 </pre></div>
 </div>
 </div>
@@ -469,7 +469,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

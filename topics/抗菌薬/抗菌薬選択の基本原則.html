@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="獣医臨床における抗菌薬選択の基本原則。ISCAID/AAHAガイドラインに基づく臓器別第一選択薬と耐性菌対策。" name="description"/>
 <title>抗菌薬選択の基本原則 ─ 臓器別アプローチ | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -59,33 +59,33 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["感染症を疑う"] --> B{"抗菌薬必要か"};
-    B -->|"いいえ"| C["対症療法 経過観察"];
-    B -->|"はい"| D{"感染種類 重症度"};
+    A["感染症を疑う"] --> B{"抗菌薬必要か"}
+    B -->|"いいえ"| C["対症療法 経過観察"]
+    B -->|"はい"| D{"感染種類 重症度"}
 
-    D -->|"単純 初回"| E["経験的治療"];
-    D -->|"複雑 再発 重症"| F["培養検査推奨"];
+    D -->|"単純 初回"| E["経験的治療"]
+    D -->|"複雑 再発 重症"| F["培養検査推奨"]
 
-    E --> G["Tier 1 抗菌薬"];
-    F --> H["培養結果待ち Tier 1/2"];
+    E --> G["Tier 1 抗菌薬"]
+    F --> H["培養結果待ち Tier 1/2"]
 
-    G --> I{"臨床改善 3-5日"};
-    H --> J{"培養結果判明"};
+    G --> I{"臨床改善 3-5日"}
+    H --> J{"培養結果判明"}
 
-    I -->|"改善あり"| K["治療継続 期間遵守"];
-    I -->|"改善なし"| F;
+    I -->|"改善あり"| K["治療継続 期間遵守"]
+    I -->|"改善なし"| F
 
-    J -->|"感受性あり"| K;
-    J -->|"感受性なし"| L["Tier 3 検討"];
+    J -->|"感受性あり"| K
+    J -->|"感受性なし"| L["Tier 3 検討"]
 
-    L --> M["感受性確認後 慎重使用"];
+    L --> M["感受性確認後 慎重使用"]
 
-    K --> N["治療完了"];
-    M --> N;
+    K --> N["治療完了"]
+    M --> N
 
     subgraph 抗菌薬グループ
-        G -->|"例: アモキシシリン ST合剤 セファレキシン"| I;
-        L -->|"例: フルオロキノロン 第3世代セフェム"| M;
+        G -->|"例: アモキシシリン ST合剤 セファレキシン"| I
+        L -->|"例: フルオロキノロン 第3世代セフェム"| M
     end
 </pre></div>
 </p>
@@ -307,7 +307,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

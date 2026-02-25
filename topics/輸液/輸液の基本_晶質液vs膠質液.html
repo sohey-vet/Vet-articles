@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <meta content="犬猫の輸液療法の基本。2024年AAHAガイドライン準拠。晶質液 vs 膠質液、ショック時ボーラス投与量、猫の過剰輸液リスク。" name="description"/>
 <title>輸液の基本 ─ 晶質液 vs 膠質液 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
@@ -38,17 +38,17 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["ショック兆候あり"] --> B["等張晶質液ボーラス投与"];
-    B -->|"犬"| C["15-20 mL/kg 15-30分"];
-    B -->|"猫"| D["10-15 mL/kg 15-30分"];
-    C --> E["灌流指標を再評価"];
-    D --> E;
-    E --> F{"灌流改善あり"}; 
-    F -->|"はい"| G["維持輸液へ移行"];
-    F -->|"いいえ"| H{"過剰輸液兆候あり"}; 
-    H -->|"いいえ"| I["追加ボーラス投与 同量"];
-    H -->|"はい 肺水腫等"| J["昇圧剤検討"];
-    I --> E;
+    A["ショック兆候あり"] --> B["等張晶質液ボーラス投与"]
+    B -->|"犬"| C["15-20 mL/kg 15-30分"]
+    B -->|"猫"| D["10-15 mL/kg 15-30分"]
+    C --> E["灌流指標を再評価"]
+    D --> E
+    E --> F{"灌流改善あり"}
+    F -->|"はい"| G["維持輸液へ移行"]
+    F -->|"いいえ"| H{"過剰輸液兆候あり"}
+    H -->|"いいえ"| I["追加ボーラス投与 同量"]
+    H -->|"はい 肺水腫等"| J["昇圧剤検討"]
+    I --> E
 </pre></div>
 </p>
 </div>
@@ -237,7 +237,7 @@ graph TD
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v5"></script>
+<script src="../../assets/script.js?v=20250225v6"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>
