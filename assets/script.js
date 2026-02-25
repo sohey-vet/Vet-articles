@@ -206,3 +206,38 @@ function initBreadcrumb() {
   nav.innerHTML = '<a href="../../index.html"><span class="back-arrow">←</span> トップに戻る</a>';
   container.insertBefore(nav, container.firstChild);
 }
+
+// ==========================================
+// Pinch-to-Zoom for Mermaid Diagrams (Mobile)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Dynamically load the lightweight panzoom library
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js';
+    script.onload = () => {
+        // We must wait for Mermaid to finish rendering SVGs.
+        // Assuming Mermaid renders relatively quickly on DOMContentLoaded.
+        setTimeout(() => {
+            const wrappers = document.querySelectorAll('.mermaid-wrapper');
+            wrappers.forEach(wrapper => {
+                const svg = wrapper.querySelector('svg');
+                if (svg && window.Panzoom) {
+                    // Disable horizontal scroll since we are panzooming now
+                    wrapper.style.overflowX = 'hidden';
+                    wrapper.style.touchAction = 'none'; // prevent default scrolling inside wrapper
+                    
+                    const panzoom = Panzoom(svg, {
+                        maxScale: 5,
+                        minScale: 0.5,
+                        contain: 'outside',
+                        startScale: 1
+                    });
+                    
+                    // Enable mouse wheel zooming
+                    wrapper.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+                }
+            });
+        }, 1500); // Wait 1.5s for Mermaid to convert <pre> to <svg>
+    };
+    document.head.appendChild(script);
+});
