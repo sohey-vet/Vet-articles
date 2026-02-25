@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-===FILE: クッシング症候群_診断の落とし穴===
----BLOCK 1---
-  File "<string>", line 24, in <module>
-    print(block)
-    ~~~~~^^^^^^^
-UnicodeEncodeError: 'cp932' codec can't encode character '\u26a0' in position 639: illegal multibyte sequence
