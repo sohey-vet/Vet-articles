@@ -46,16 +46,16 @@
 <h3 style="font-size:0.95rem;margin-bottom:8px;">⏱️ 投与タイミング ─ 時系列で理解する</h3>
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">graph TD
-    A["手術開始"] --&gt; B["執刀 30-60分前"];
-    B --&gt; C["初回投与 Cefazolin"];
-    C --&gt; D["術中"];
-    D --&gt;|"90-120分ごと"| E["追加投与"];
-    D --&gt;|"出血量 ＞ 1500mL"| E;
-    E --&gt; D;
-    D --&gt; F["閉創時"];
-    F --&gt; G["投与中止 原則"];
-    G --&gt; H["術後24時間以内に中止"];
-    H --&gt; I["完了"];</pre></div>
+    A["手術開始"] --> B["執刀 30-60分前"];
+    B --> C["初回投与 Cefazolin"];
+    C --> D["術中"];
+    D -->|"90-120分ごと"| E["追加投与"];
+    D -->|"出血量 ＞ 1500mL"| E;
+    E --> D;
+    D --> F["閉創時"];
+    F --> G["投与中止 原則"];
+    G --> H["術後24時間以内に中止"];
+    H --> I["完了"];</pre></div>
 <table class="comparison-table" style="margin:0;">
 <thead>
 <tr>

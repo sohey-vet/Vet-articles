@@ -34,17 +34,17 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["開始 猫の鎮静プロトコル選択"] --&gt; B{"来院前の不安"}; 
-    B --&gt;|"あり"| C["Gabapentin 事前経口投与"];
-    B --&gt;|"なし"| D{"心疾患の有無"};
-    C --&gt; D;
-    D --&gt;|"あり"| E["心疾患猫: Alfaxalone Butorphanol IM"];
-    D --&gt;|"なし"| F{"処置レベル"};
-    E --&gt; G["処置へ移行"];
-    F --&gt;|"軽度 X線 採血"| H["Butorphanol単独 IM"];
-    F --&gt;|"中等度から深い処置"| I["Kitty Magic Dex Ket But IM"];
-    H --&gt; G;
-    I --&gt; G;
+    A["開始 猫の鎮静プロトコル選択"] --> B{"来院前の不安"}; 
+    B -->|"あり"| C["Gabapentin 事前経口投与"];
+    B -->|"なし"| D{"心疾患の有無"};
+    C --> D;
+    D -->|"あり"| E["心疾患猫: Alfaxalone Butorphanol IM"];
+    D -->|"なし"| F{"処置レベル"};
+    E --> G["処置へ移行"];
+    F -->|"軽度 X線 採血"| H["Butorphanol単独 IM"];
+    F -->|"中等度から深い処置"| I["Kitty Magic Dex Ket But IM"];
+    H --> G;
+    I --> G;
 </pre></div>
 <p style="font-size:0.88rem;">
                     鎮静プロトコルは「処置の痛みレベル」「所要時間」「患者のリスク」で選択する。犬の軽度鎮静（画像検査等）には<strong>Butorphanol 0.2-0.4 mg/kg +

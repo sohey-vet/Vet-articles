@@ -117,19 +117,19 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["DICと診断 (スコアリング ≥ 3点)"] --&gt; B["基礎疾患の治療 (最優先)"];
+    A["DICと診断 (スコアリング ≥ 3点)"] --> B["基礎疾患の治療 (最優先)"];
 
-    B --&gt; C{"出血傾向は顕著か？"};
+    B --> C{"出血傾向は顕著か？"};
 
-    C --&gt;|"No (血栓傾向優位/Overt前DIC)"| D{"AT活性は十分か？"};
-    C --&gt;|"Yes (Overt DIC)"| G["FFP投与による凝固因子・AT補充"];
+    C -->|"No (血栓傾向優位/Overt前DIC)"| D{"AT活性は十分か？"};
+    C -->|"Yes (Overt DIC)"| G["FFP投与による凝固因子・AT補充"];
 
-    D --&gt;|"Yes (AT活性 ≥ 30%)"| E["ヘパリン投与 (UFH/LMWH)"];
-    D --&gt;|"No (AT活性 ＜ 30%)"| F["FFP投与によるAT補充"];
+    D -->|"Yes (AT活性 ≥ 30%)"| E["ヘパリン投与 (UFH/LMWH)"];
+    D -->|"No (AT活性 ＜ 30%)"| F["FFP投与によるAT補充"];
 
-    F --&gt; E;
-    G --&gt; H{"出血が制御されたか？"};
-    H --&gt;|"Yes"| I["ヘパリン投与を検討"];
+    F --> E;
+    G --> H{"出血が制御されたか？"};
+    H -->|"Yes"| I["ヘパリン投与を検討"];
 
     style A fill:#e0f2f7,stroke:#2a859e,stroke-width:2px;
     style B fill:#fff3cd,stroke:#a68e36,stroke-width:2px;

@@ -47,33 +47,33 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A[発作発生/SE疑い] --&gt; B{SE定義満たす?<br/>(&gt;5分持続 or 意識回復なく2回以上)};
-    B -- Yes --&gt; C[ジアゼパム 0.5-1mg/kg IV/直腸内];
-    B -- No --&gt; Z[SEではない/経過観察];
+    A[発作発生/SE疑い] --> B{SE定義満たす?&lt;br/>(&gt;5分持続 or 意識回復なく2回以上)};
+    B -- Yes --> C[ジアゼパム 0.5-1mg/kg IV/直腸内];
+    B -- No --> Z[SEではない/経過観察];
 
-    C --同時並行--&gt; F[血糖チェック &amp; iCa/NH3];
-    F -- 低血糖あり (&lt;60mg/dL) --&gt; G[デキストロース 0.5g/kg IV];
-    G --&gt; D{発作停止?};
-    F -- 低血糖なし --&gt; D;
+    C --同時並行--> F[血糖チェック &amp; iCa/NH3];
+    F -- 低血糖あり (&lt;60mg/dL) --> G[デキストロース 0.5g/kg IV];
+    G --> D{発作停止?};
+    F -- 低血糖なし --> D;
 
-    C --同時並行--&gt; E[ABC確認 &amp; O2フローバイ];
+    C --同時並行--> E[ABC確認 &amp; O2フローバイ];
 
-    D -- Yes --&gt; H((SE停止: 安定化 &amp; 基礎疾患検索/維持療法));
-    D -- No (ジアゼパム1回目後) --&gt; I[ジアゼパム 2回目];
+    D -- Yes --> H((SE停止: 安定化 &amp; 基礎疾患検索/維持療法));
+    D -- No (ジアゼパム1回目後) --> I[ジアゼパム 2回目];
 
-    I --&gt; J{発作停止?};
-    J -- Yes --&gt; H;
-    J -- No (ジアゼパム2回目後) --&gt; K[ジアゼパム 3回目];
+    I --> J{発作停止?};
+    J -- Yes --> H;
+    J -- No (ジアゼパム2回目後) --> K[ジアゼパム 3回目];
 
-    K --&gt; L{発作停止?};
-    L -- Yes --&gt; H;
-    L -- No (ジアゼパム3回目後) --&gt; M[レベチラセタム 30-60mg/kg IV over 5min];
+    K --> L{発作停止?};
+    L -- Yes --> H;
+    L -- No (ジアゼパム3回目後) --> M[レベチラセタム 30-60mg/kg IV over 5min];
 
-    M --&gt; N{発作停止?};
-    N -- Yes --&gt; H;
-    N -- No (難治性SE) --&gt; O[プロポフォールCRI 0.1-0.6mg/kg/min];
-    O -- 準備 --&gt; P[挿管・人工換気準備];
-    O --&gt; Q((SE停止: 安定化 &amp; 基礎疾患検索/維持療法));
+    M --> N{発作停止?};
+    N -- Yes --> H;
+    N -- No (難治性SE) --> O[プロポフォールCRI 0.1-0.6mg/kg/min];
+    O -- 準備 --> P[挿管・人工換気準備];
+    O --> Q((SE停止: 安定化 &amp; 基礎疾患検索/維持療法));
 
     style A fill:#FFEFD5,stroke:#333,stroke-width:2px;
     style B fill:#B0E0E6,stroke:#333,stroke-width:2px;

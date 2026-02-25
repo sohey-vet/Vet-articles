@@ -120,22 +120,22 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A["喘息発作の猫が来院"] --&gt; B{"呼吸困難、努力呼吸"}; 
-    B --&gt; C["ストレス最小限 &amp; 酸素化"];
+    A["喘息発作の猫が来院"] --> B{"呼吸困難、努力呼吸"}; 
+    B --> C["ストレス最小限 &amp; 酸素化"];
 
-    C --&gt; D{"意識レベル/吸入可能か?"};
-    D --&gt;|"吸入可能/比較的安定"| E["Albuterol吸入 (2 puffs)"];
-    D --&gt;|"吸入困難/重症時"| F["Terbutaline (0.01 mg/kg SC/IM)"];
+    C --> D{"意識レベル/吸入可能か?"};
+    D -->|"吸入可能/比較的安定"| E["Albuterol吸入 (2 puffs)"];
+    D -->|"吸入困難/重症時"| F["Terbutaline (0.01 mg/kg SC/IM)"];
 
-    E --&gt; G["Dexamethasone SP (0.1-0.2 mg/kg IV/IM)"];
-    F --&gt; G;
+    E --> G["Dexamethasone SP (0.1-0.2 mg/kg IV/IM)"];
+    F --> G;
 
-    G --&gt; H{"臨床症状改善?"};
-    H --&gt;|"YES"| I["安定化、モニタリング"];
-    H --&gt;|"NO / チアノーゼ持続"| J["⚠️ 挿管と陽圧換気の検討 (最終判断)"];
+    G --> H{"臨床症状改善?"};
+    H -->|"YES"| I["安定化、モニタリング"];
+    H -->|"NO / チアノーゼ持続"| J["⚠️ 挿管と陽圧換気の検討 (最終判断)"];
 
-    I --&gt; K["長期管理へ移行準備"];
-    J --&gt; L["専門医への紹介/集中治療"];
+    I --> K["長期管理へ移行準備"];
+    J --> L["専門医への紹介/集中治療"];
 
     style A fill:#DDF,stroke:#333,stroke-width:2px,color:#333;
     style B fill:#FFFACD,stroke:#FFD700,stroke-width:1px,color:#333;
