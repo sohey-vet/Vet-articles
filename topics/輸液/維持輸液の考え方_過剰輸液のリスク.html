@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="維持輸液の考え方と過剰輸液のリスク。輸液速度の計算、猫への注意点、体液過剰の徴候と対応。2024 AAHAガイドライン準拠。" name="description"/>
 <title>維持輸液の考え方 ─ 過剰輸液のリスク | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -357,28 +357,28 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A[維持輸液管理のプロセス] --> B(4-6時間ごとの再評価);
+    A["維持輸液管理のプロセス"] --> B("4-6時間ごとの再評価");
 
-    B --> C[臨床徴候モニタリング&lt;br/>(呼吸数, 体重, 尿量, 浮腫, CRTなど)];
+    B --> C["臨床徴候モニタリング<br/>(呼吸数, 体重, 尿量, 浮腫, CRTなど)"];
 
-    C --> D{体液過剰の徴候あり?}; 
-    D -- Yes --> E[&lt;b>🚨 即座に輸液減速/中止</b>];
-    E --> F[フロセミド投与検討 & 呼吸状態厳重モニタリング];
-    F --> G(→ 次回再評価へ);
+    C --> D{"体液過剰の徴候あり?"}; 
+    D -- Yes --> E["<b>🚨 即座に輸液減速/中止</b>"];
+    E --> F["フロセミド投与検討 & 呼吸状態厳重モニタリング"];
+    F --> G("→ 次回再評価へ");
 
-    D -- No --> H{脱水所見は継続?}; 
-    H -- Yes --> I[&lt;b>⬆️ 輸液速度を25-50%増加</b>];
+    D -- No --> H{"脱水所見は継続?"}; 
+    H -- Yes --> I["<b>⬆️ 輸液速度を25-50%増加</b>"];
     I --> G;
 
-    H -- No --> J{脱水所見改善 & 飲水可能?}; 
-    J -- Yes --> K[&lt;b>⬇️ 輸液速度を減速 → 中止検討</b>];
+    H -- No --> J{"脱水所見改善 & 飲水可能?"}; 
+    J -- Yes --> K["<b>⬇️ 輸液速度を減速 → 中止検討</b>"];
     K --> G;
 
-    J -- No --> L{持続的な体液喪失あり? &lt;br/>(嘔吐・下痢など)}; 
-    L -- Yes --> M[&lt;b>➕ 維持量＋推定喪失量を加算</b>];
+    J -- No --> L{"持続的な体液喪失あり? <br/>(嘔吐・下痢など)"}; 
+    L -- Yes --> M["<b>➕ 維持量＋推定喪失量を加算</b>"];
     M --> G;
 
-    L -- No --> N[&lt;b>🔄 現在の輸液速度を継続</b>];
+    L -- No --> N["<b>🔄 現在の輸液速度を継続</b>"];
     N --> G;
 
     G --> B;
@@ -482,7 +482,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v4"></script>
+<script src="../../assets/script.js?v=20250225v5"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

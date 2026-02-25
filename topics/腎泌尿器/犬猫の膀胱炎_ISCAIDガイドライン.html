@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬猫の膀胱炎。ISCAIDガイドライン準拠。細菌性UTIの抗菌薬選択、尿培養の解釈、猫のFICとの鑑別。" name="description"/>
 <title>犬猫の膀胱炎 ─ ISCAIDガイドライン準拠 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
@@ -71,44 +71,44 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A[来院: 下部尿路症状] --> B(問診・身体検査);
-    B --> C{尿道閉塞の有無 (オス猫で特に重要)};
+    A["来院: 下部尿路症状"] --> B("問診・身体検査");
+    B --> C{"尿道閉塞の有無 (オス猫で特に重要)"};
 
-    C -- あり --> D[!!! 緊急処置 !!!];
+    C -- あり --> D["!!! 緊急処置 !!!"];
 
-    C -- なし --> E(初期尿検査: 尿比重・pH・沈渣);
+    C -- なし --> E("初期尿検査: 尿比重・pH・沈渣");
 
-    E --> F{動物種: 犬 or 猫?};
+    E --> F{"動物種: 犬 or 猫?"};
 
-    F -- 犬 --> G[犬ルート];
-    G --> G1[膀胱穿刺尿培養];
-    G1 --> G2{尿沈渣で細菌・白血球あり?}; 
-    G2 -- あり --> G3{UTIのタイプ?};
-    G3 -- 散発性UTI --> G4[経験的抗菌薬 (Amoxicillin 3-5日)];
-    G4 --> G5{症状改善?};
-    G5 -- Yes --> G6[治療終了];
-    G5 -- No --> G7[培養結果に基づき抗菌薬調整];
-    G3 -- 再発性/複雑性UTI --> G8[基礎疾患検索 (画像, 血液) + 培養結果に基づき抗菌薬 (7-14日) + 基礎疾患治療];
+    F -- 犬 --> G["犬ルート"];
+    G --> G1["膀胱穿刺尿培養"];
+    G1 --> G2{"尿沈渣で細菌・白血球あり?"}; 
+    G2 -- あり --> G3{"UTIのタイプ?"};
+    G3 -- 散発性UTI --> G4["経験的抗菌薬 (Amoxicillin 3-5日)"];
+    G4 --> G5{"症状改善?"};
+    G5 -- Yes --> G6["治療終了"];
+    G5 -- No --> G7["培養結果に基づき抗菌薬調整"];
+    G3 -- 再発性/複雑性UTI --> G8["基礎疾患検索 (画像, 血液) + 培養結果に基づき抗菌薬 (7-14日) + 基礎疾患治療"];
 
-    F -- 猫 --> H[猫ルート];
-    H --> H1{年齢・基礎疾患の有無?};
-    H1 -- 若〜中齢猫<br/>基礎疾患なし --> H2[FIC疑い (細菌感染稀)];
-    H2 --> H3[膀胱穿刺尿培養 (細菌除外目的)];
-    H3 --> H4{培養結果}; 
-    H4 -- 細菌(-) --> H5[FIC確定: MEMO療法 + 鎮痛];
-    H4 -- 細菌(+) --> H6[細菌性UTI: 培養結果に基づき抗菌薬 + 基礎疾患検索];
-    H1 -- 高齢猫 (&gt;10歳)<br/>またはDM/CKDなど基礎疾患あり --> H7[細菌性UTIリスク増];
-    H7 --> H8[膀胱穿刺尿培養];
+    F -- 猫 --> H["猫ルート"];
+    H --> H1{"年齢・基礎疾患の有無?"};
+    H1 -- 若〜中齢猫<br/>基礎疾患なし --> H2["FIC疑い (細菌感染稀)"];
+    H2 --> H3["膀胱穿刺尿培養 (細菌除外目的)"];
+    H3 --> H4{"培養結果"}; 
+    H4 -- 細菌(-) --> H5["FIC確定: MEMO療法 + 鎮痛"];
+    H4 -- 細菌(+) --> H6["細菌性UTI: 培養結果に基づき抗菌薬 + 基礎疾患検索"];
+    H1 -- 高齢猫 (>10歳)<br/>またはDM/CKDなど基礎疾患あり --> H7["細菌性UTIリスク増"];
+    H7 --> H8["膀胱穿刺尿培養"];
     H8 --> H6;
 
-    E --> I{尿路結石/腫瘍の疑い?};
-    I -- あり --> J[画像診断 (X線, エコー)];
+    E --> I{"尿路結石/腫瘍の疑い?"};
+    I -- あり --> J["画像診断 (X線, エコー)"];
 
     subgraph 臨床ポイント
-        K[&lt;b>尿培養:</b&gt; 膀胱穿刺が推奨 (≥10³ CFU/mLで有意)];
-        L[&lt;b>犬単純性UTI経験的ABx:</b&gt; アモキシシリン (3-5日)];
-        M[&lt;b>温存すべきABx:</b&gt; フルオロキノロン, 第3世代セファロスポリン];
-        N[&lt;b>無症候性細菌尿:</b&gt; 原則治療しない];
+        K["<b>尿培養:</b> 膀胱穿刺が推奨 (≥10³ CFU/mLで有意)"];
+        L["<b>犬単純性UTI経験的ABx:</b> アモキシシリン (3-5日)"];
+        M["<b>温存すべきABx:</b> フルオロキノロン, 第3世代セファロスポリン"];
+        N["<b>無症候性細菌尿:</b> 原則治療しない"];
     end
 </pre></div>
 </h3>
@@ -464,7 +464,7 @@ graph TD
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v4"></script>
+<script src="../../assets/script.js?v=20250225v5"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <meta content="外傷の初期安定化（トリアージ）。A CRASH PLANによるプライマリサーベイ。晶質液 犬10-20mL/kg、猫10mL/kg。鎮痛はMethadone 0.1-0.3mg/kg。ショック時NSAIDs禁忌。TBIにステロイドは推奨されない。" name="description"/>
 <title>外傷の初期安定化 ─ トリアージ | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
@@ -125,55 +125,55 @@
 <!-- 個別生成図表 -->
 <div class="mermaid-wrapper"><pre class="mermaid">
 graph TD
-    A[&lt;b>外傷患者到着</b>] --> B{&lt;b>初期トリアージ & プライマリサーベイ開始</b>};
+    A["<b>外傷患者到着</b>"] --> B{"<b>初期トリアージ & プライマリサーベイ開始</b>"};
 
     subgraph "A CRASH PLAN (緊急度順)"
-        B --> C(<b>A</b&gt;irway: 気道開通性評価);
-        C -- 気道閉塞/呼吸停止 --> C1[&lt;b>即時介入:</b&gt; 気道確保, 挿管/気管切開];
+        B --> C("<b>A</b>irway: 気道開通性評価");
+        C -- 気道閉塞/呼吸停止 --> C1["<b>即時介入:</b> 気道確保, 挿管/気管切開"];
         C1 --> D;
 
-        C -- 気道確保OK --> D(<b>C</b&gt;ardiovascular: HR, CRT, 脈質, 血圧評価);
-        D -- ショック徴候(CRT延長, 脈微弱, 低血圧) --> D1[&lt;b>即時介入:</b&gt; 輸液蘇生 (晶質液ボーラス&lt;br/>犬 10-20mL/kg, 猫 10mL/kg)];
-        D -- TBI疑い/ICP亢進徴候 --> D2[&lt;b>即時介入:</b&gt; 高張食塩水 (7.2-7.5% NaCl 4-5mL/kg)];
+        C -- 気道確保OK --> D("<b>C</b>ardiovascular: HR, CRT, 脈質, 血圧評価");
+        D -- ショック徴候(CRT延長, 脈微弱, 低血圧) --> D1["<b>即時介入:</b> 輸液蘇生 (晶質液ボーラス<br/>犬 10-20mL/kg, 猫 10mL/kg)"];
+        D -- TBI疑い/ICP亢進徴候 --> D2["<b>即時介入:</b> 高張食塩水 (7.2-7.5% NaCl 4-5mL/kg)"];
         D1 --> E; D2 --> E;
 
-        D -- 循環安定/対応済 --> E(<b>R</b&gt;espiratory: RR, 呼吸パターン, SpO₂評価);
-        E -- 呼吸困難/低酸素(SpO₂&lt;95%) --> E1[&lt;b>即時介入:</b&gt; 酸素化, 胸腔穿刺/ドレーン];
+        D -- 循環安定/対応済 --> E("<b>R</b>espiratory: RR, 呼吸パターン, SpO₂評価");
+        E -- 呼吸困難/低酸素(SpO₂<95%) --> E1["<b>即時介入:</b> 酸素化, 胸腔穿刺/ドレーン"];
         E1 --> F;
 
-        E -- 呼吸安定/対応済 --> F(<b>A</b&gt;bdomen: 膨満, 圧痛, FAST評価);
-        F -- 腹腔内出血/臓器損傷疑い --> F1[&lt;b>即時介入:</b&gt; 腹腔穿刺/FAST陽性確認, 手術準備];
+        E -- 呼吸安定/対応済 --> F("<b>A</b>bdomen: 膨満, 圧痛, FAST評価");
+        F -- 腹腔内出血/臓器損傷疑い --> F1["<b>即時介入:</b> 腹腔穿刺/FAST陽性確認, 手術準備"];
         F1 --> G;
 
-        F -- 腹部異常なし/対応済 --> G(<b>S</b&gt;pine: 脊椎痛, 姿勢評価);
-        G -- 脊椎損傷疑い --> G1[&lt;b>即時介入:</b&gt; 厳重な脊椎固定, 安静];
+        F -- 腹部異常なし/対応済 --> G("<b>S</b>pine: 脊椎痛, 姿勢評価");
+        G -- 脊椎損傷疑い --> G1["<b>即時介入:</b> 厳重な脊椎固定, 安静"];
         G1 --> H;
 
-        G -- 脊椎異常なし/対応済 --> H(<b>H</b&gt;ead: 意識レベル, 瞳孔, PLR評価);
-        H -- TBI徴候(意識障害, 瞳孔異常) --> H1[&lt;b>即時介入:</b&gt; 頭部30度挙上, マンニトール考慮&lt;br/>&lt;b>⛔ステロイド禁忌</b>];
+        G -- 脊椎異常なし/対応済 --> H("<b>H</b>ead: 意識レベル, 瞳孔, PLR評価");
+        H -- TBI徴候(意識障害, 瞳孔異常) --> H1["<b>即時介入:</b> 頭部30度挙上, マンニトール考慮<br/><b>⛔ステロイド禁忌</b>"];
         H1 --> I;
 
-        H -- 頭部異常なし/対応済 --> I(<b>P</b&gt;elvis: 骨盤圧迫痛評価);
-        I -- 骨盤骨折疑い --> I1[&lt;b>即時介入:</b&gt; 安静, X線検査];
+        H -- 頭部異常なし/対応済 --> I("<b>P</b>elvis: 骨盤圧迫痛評価");
+        I -- 骨盤骨折疑い --> I1["<b>即時介入:</b> 安静, X線検査"];
         I1 --> J;
 
-        I -- 骨盤異常なし/対応済 --> J(<b>L</b&gt;imbs: 開放骨折, 腫脹評価);
-        J -- 四肢損傷(開放骨折) --> J1[&lt;b>即時介入:</b&gt; 創傷処置, 固定(スプリント)];
+        I -- 骨盤異常なし/対応済 --> J("<b>L</b>imbs: 開放骨折, 腫脹評価");
+        J -- 四肢損傷(開放骨折) --> J1["<b>即時介入:</b> 創傷処置, 固定(スプリント)"];
         J1 --> K;
 
-        J -- 四肢異常なし/対応済 --> K(<b>A</b&gt;rteries/Veins: 出血, 血管損傷評価);
-        K -- 活動性出血 --> K1[&lt;b>即時介入:</b&gt; 圧迫止血, リガチャー];
+        J -- 四肢異常なし/対応済 --> K("<b>A</b>rteries/Veins: 出血, 血管損傷評価");
+        K -- 活動性出血 --> K1["<b>即時介入:</b> 圧迫止血, リガチャー"];
         K1 --> L;
 
-        K -- 血管異常なし/対応済 --> L(<b>N</b&gt;erves: 四肢の知覚・運動評価);
-        L -- 神経学的異常 --> L1[&lt;b>即時介入:</b&gt; 神経学的検査];
+        K -- 血管異常なし/対応済 --> L("<b>N</b>erves: 四肢の知覚・運動評価");
+        L -- 神経学的異常 --> L1["<b>即時介入:</b> 神経学的検査"];
         L1 --> M;
     end
 
-    L -- 神経学的異常なし/対応済 --> M{&lt;b>全身状態の安定化確認</b>};
-    M -- 安定化後 --> N[&lt;b>セカンダリサーベイ & 詳細検査へ</b>];
-    N --> O[&lt;b>疼痛管理:</b&gt; フルオピオイド&lt;br/>&lt;b>⚠️ショック時NSAIDs完全禁忌</b>];
-    O --> P(&lt;b>最終治療へ</b>);
+    L -- 神経学的異常なし/対応済 --> M{"<b>全身状態の安定化確認</b>"};
+    M -- 安定化後 --> N["<b>セカンダリサーベイ & 詳細検査へ</b>"];
+    N --> O["<b>疼痛管理:</b> フルオピオイド<br/><b>⚠️ショック時NSAIDs完全禁忌</b>"];
+    O --> P("<b>最終治療へ</b>");
 
     style A fill:#DCE775,stroke:#333,stroke-width:2px;
     style B fill:#AED581,stroke:#333,stroke-width:2px;
@@ -330,7 +330,7 @@ graph TD
                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v4"></script>
+<script src="../../assets/script.js?v=20250225v5"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="犬の急性下痢における最新エビデンスまとめ。メトロニダゾールの再考、プロバイオティクスの有効性、治療判断フロー。" name="description"/>
 <title>犬の急性下痢 最新エビデンス | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
+<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <!-- ===== Mobile Navigation ===== -->
@@ -87,7 +87,7 @@ graph TD
 
     C --> C1["治療: 支持療法"];
     C1_1["消化器食 + プロバイオティクス"];
-    C1_2(("抗菌薬は不要"));
+    C1_2("('抗菌薬は不要'"));
     C1 --> C1_1;
     C1_1 --> C1_2;
     C1_2 --> F["早期栄養介入 (嘔吐制御後12-24h)"];
@@ -97,7 +97,7 @@ graph TD
 
     D --> D1["治療: 支持療法"];
     D1_1["輸液 + 制吐薬 + 消化器食 + プロバイオティクス"];
-    D1_2(("抗菌薬は通常不要"));
+    D1_2("('抗菌薬は通常不要'"));
     D1 --> D1_1;
     D1_1 --> D1_2;
     D1_2 --> F;
@@ -106,7 +106,7 @@ graph TD
     E1_1["積極的輸液 + 制吐 + 鎮痛"];
     E1_2{"敗血症の徴候?"}; 
     E1_2 -->|"YES (持続的頻脈, 発熱, 白血球異常)"| E1_3["広域抗菌薬適応: アモキシシリン-クラブラン酸等"];
-    E1_2 -->|"NO"| E1_4(("抗菌薬は不要"));
+    E1_2 -->|"NO"| E1_4("('抗菌薬は不要'"));
     E1_3 --> F;
     E1_4 --> F;
 
@@ -453,7 +453,7 @@ graph TD
       </p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v4"></script>
+<script src="../../assets/script.js?v=20250225v5"></script>
 <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>
