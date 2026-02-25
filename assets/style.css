@@ -1508,8 +1508,9 @@ body.mode-free .premium-lock {
   text-align: center;
 }
 
-/* SVG must always fit inside its container. No minimum width forcing. */
+/* SVG must fill its container width completely */
 .mermaid svg {
+  width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
   display: block;
@@ -1539,29 +1540,18 @@ body.mode-free .premium-lock {
 .mermaid-wrapper {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
   margin: 0 0 var(--space-md) 0;
   border-radius: var(--radius-md);
   background: var(--color-bg-tertiary);
   border: 1px solid var(--color-border);
   padding: var(--space-md);
-  scrollbar-width: thin;
   box-sizing: border-box;
 }
 
-.mermaid-wrapper::-webkit-scrollbar {
-  height: 6px;
-}
-
-.mermaid-wrapper::-webkit-scrollbar-thumb {
-  background: var(--color-border-accent);
-  border-radius: 4px;
-}
-
-/* SVG inside wrapper must also respect container bounds */
+/* SVG inside wrapper must also fill width */
 .mermaid-wrapper svg {
+  width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
   display: block;
@@ -1574,52 +1564,4 @@ body.mode-free .premium-lock {
   border: none;
   margin: 0;
   overflow: visible;
-}
-
-/* --- Mermaid Zoom Control Buttons --- */
-.mermaid-zoom-controls {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: var(--space-sm) 0;
-  padding: 4px 8px;
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  width: fit-content;
-}
-
-.mermaid-zoom-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-bg-tertiary);
-  color: var(--color-text-primary);
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.15s;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.mermaid-zoom-btn:active {
-  background: var(--color-accent-primary);
-  color: #fff;
-}
-
-.mermaid-zoom-fit {
-  font-size: 0.9rem;
-  width: auto;
-  padding: 0 8px;
-}
-
-.mermaid-zoom-level {
-  font-size: 0.75rem;
-  color: var(--color-text-secondary);
-  min-width: 36px;
-  text-align: center;
 }
