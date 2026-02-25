@@ -208,36 +208,63 @@ function initBreadcrumb() {
 }
 
 // ==========================================
-// Pinch-to-Zoom for Mermaid Diagrams (Mobile)
+// Button-Based Zoom for Mermaid Diagrams
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Dynamically load the lightweight panzoom library
-  const script = document.createElement('script');
-  script.src = 'https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js';
-  script.onload = () => {
-    // We must wait for Mermaid to finish rendering SVGs.
-    // Assuming Mermaid renders relatively quickly on DOMContentLoaded.
-    setTimeout(() => {
-      const wrappers = document.querySelectorAll('.mermaid-wrapper');
-      wrappers.forEach(wrapper => {
-        const svg = wrapper.querySelector('svg');
-        if (svg && window.Panzoom) {
-          // Disable horizontal scroll since we are panzooming now
-          wrapper.style.overflowX = 'hidden';
-          wrapper.style.touchAction = 'none'; // prevent default scrolling inside wrapper
+  // Wait for Mermaid to finish rendering SVGs
+  setTimeout(() => {
+    const wrappers = document.querySelectorAll('.mermaid-wrapper');
+    wrappers.forEach((wrapper, index) => {
+      const svg = wrapper.querySelector('svg');
+      if (!svg) return;
 
-          const panzoom = Panzoom(svg, {
-            maxScale: 5,
-            minScale: 0.1,    // Allow generous zoom out
-            contain: 'outside',
-            startScale: 0.85  // Start slightly zoomed out so it fits better
-          });
+      // Calculate the initial scale to fit the wrapper width
+      const svgWidth = svg.getBBox ? svg.getBBox().width : svg.viewBox?.baseVal?.width || svg.clientWidth || 600;
+      const wrapperWidth = wrapper.clientWidth || 300;
+      const fitScale = Math.min(1, wrapperWidth / svgWidth);
+      let currentScale = fitScale;
 
-          // Enable mouse wheel zooming
-          wrapper.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+      // Apply initial scale using CSS transform
+      svg.style.transformOrigin = 'top left';
+      svg.style.transform = `scale(${currentScale})`;
+
+      // Adjust wrapper height to match scaled SVG
+      function updateWrapperHeight() {
+        const svgHeight = svg.getBBox ? svg.getBBox().height : svg.clientHeight || 400;
+        wrapper.style.height = (svgHeight * currentScale + 20) + 'px';
+      }
+      updateWrapperHeight();
+
+      // Create zoom control buttons
+      const controls = document.createElement('div');
+      controls.className = 'mermaid-zoom-controls';
+      controls.innerHTML = `
+        <button class="mermaid-zoom-btn" data-action="out" title="縮小">−</button>
+        <span class="mermaid-zoom-level">${Math.round(currentScale * 100)}%</span>
+        <button class="mermaid-zoom-btn" data-action="in" title="拡大">＋</button>
+        <button class="mermaid-zoom-btn mermaid-zoom-fit" data-action="fit" title="画面に合わせる">↺</button>
+      `;
+      wrapper.parentNode.insertBefore(controls, wrapper);
+
+      const levelDisplay = controls.querySelector('.mermaid-zoom-level');
+
+      controls.addEventListener('click', (e) => {
+        const btn = e.target.closest('.mermaid-zoom-btn');
+        if (!btn) return;
+        const action = btn.dataset.action;
+
+        if (action === 'in') {
+          currentScale = Math.min(currentScale * 1.3, 3);
+        } else if (action === 'out') {
+          currentScale = Math.max(currentScale * 0.7, 0.1);
+        } else if (action === 'fit') {
+          currentScale = fitScale;
         }
+
+        svg.style.transform = `scale(${currentScale})`;
+        levelDisplay.textContent = Math.round(currentScale * 100) + '%';
+        updateWrapperHeight();
       });
-    }, 1500); // Wait 1.5s for Mermaid to convert <pre> to <svg>
-  };
-  document.head.appendChild(script);
+    });
+  }, 2000); // Wait 2s for Mermaid to convert <pre> to <svg>
 });
