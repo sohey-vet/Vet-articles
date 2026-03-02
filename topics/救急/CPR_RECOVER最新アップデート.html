@@ -3,11 +3,11 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="犬猫のCPR最新ガイドライン。RECOVER 2024の主要変更点 ─ 胸骨圧迫の深さ・ETCO2目標・薬剤プロトコルの改訂。" name="description" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="犬猫のCPR最新ガイドライン。RECOVER 2024の主要変更点 ─ 胸骨圧迫の深さ・薬剤プロトコルの改訂。" name="description"/>
     <title>CPR ─ RECOVER 2024 最新アップデート | VetEvidence</title>
-    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet" />
+    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
 </head>
 
 <body class="mode-premium">
@@ -23,42 +23,37 @@
         <h4>ナビゲーション</h4>
         <a href="../../index.html">🏠 トップ</a>
         <a href="#conclusion">🎯 結論</a>
-        <a href="#action-table">🗺️ CPRアルゴリズム</a>
-        <a href="#bls">💪 BLS（基本的生命維持）</a>
-        <a href="#als">💉 ALS（二次救命処置）</a>
-        <a href="#drugs">💊 薬剤プロトコル</a>
-        <a href="#monitoring">📊 モニタリング</a>
-        <a href="#pca">🧠 心停止後ケア</a>
+        <a href="#section-0">🎯 結論（30秒で読める）</a>
+        <a href="#section-1">⚡ 昔の常識 vs 2024年の新エビデンス</a>
+        <a href="#section-2">📊 覚えるべき数値 ─ CPRの「数字」</a>
+        <a href="#section-3">💊 薬物投与プロトコル</a>
+        <a href="#section-4">🗺️ ️ 臨床アクション表 ─ RECOVER...</a>
+        <a href="#section-5">📊 生存率データ</a>
+        <a href="#section-6">💡 チーム蘇生を成功させる「認知負荷」の軽減</a>
         <a href="#owner-tips">🗣️ 飼い主説明</a>
         <a href="#refs">📚 参照論文</a>
         <h4>情報ソース</h4>
-        <a href="https://recoverinitiative.org/" target="_blank">📖 RECOVER Initiative</a>
         <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
     </aside>
     <div class="page-container">
         <!-- ===== HEADER ===== -->
         <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
             <div class="tags" style="margin-bottom: 8px;">
-                <a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
-                <a class="tag tag--danger" href="../../index.html?tag=CPR">CPR</a>
-                <a class="tag tag--success" href="../../index.html?tag=RECOVER%202024">RECOVER 2024</a>
-                <a class="tag tag--primary" href="../../index.html?tag=%E7%8A%AC%E7%8C%AB%E5%85%B1%E9%80%9A">犬猫共通</a>
-            </div>
+                <a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a><a class="tag tag--danger" href="../../index.html?tag=CPR">CPR</a><a class="tag tag--success" href="../../index.html?tag=RECOVER%202024">RECOVER 2024</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8A%AC%E7%8C%AB%E5%85%B1%E9%80%9A">犬猫共通</a></div>
             <h1 style="font-size: 1.3rem;">🚨 CPR ─ RECOVER 2024 最新アップデート</h1>
             <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-                2012年以来12年ぶりの大改訂。200名以上の専門家が1,370以上の論文をレビューし、GRADE法で作成。
-                胸骨圧迫の最適化・薬剤プロトコルの改訂・ETCO2目標値の引き上げが3大変更点。
+                2012年以来12年ぶりの大改訂。胸骨圧迫の最適化・薬剤プロトコルの改訂が主要変更点。
             </p>
             <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
                 <div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
             </div>
         </header>
         <!-- ===== 表示モード切替 ===== -->
         <div class="content-mode-bar">
             <span>📋</span>
             <label class="toggle-switch">
-                <input checked="" id="content-mode-toggle" type="checkbox" />
+                <input checked="" id="content-mode-toggle" type="checkbox"/>
                 <span class="toggle-slider"></span>
             </label>
             <span class="mode-label">👑 すべて表示</span>
@@ -67,475 +62,277 @@
         <div class="free-content" id="conclusion">
             <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
                 <h3 style="font-size:0.95rem;">🎯 結論</h3>
-                <p style="font-size:0.88rem;">
-                    RECOVER 2024ガイドラインは、<strong>胸骨圧迫の質の最適化</strong>が転帰を左右する最重要因子であることを再確認した。
-                    主な変更点は3つ：
-                    ①<strong>ETCO2の目標値を15→18 mmHgに引き上げ</strong>（より良好な血流と神経学的転帰のため）、
-                    ②<strong>高用量エピネフリン（0.1mg/kg）の削除</strong>（有害性のエビデンス）、
-                    ③<strong>非ショック適応リズムにはアトロピン単回投与</strong>を推奨。
-                    犬猫のROSC（自己心拍再開）率は約35〜45%だが、退院生存率は依然として低い（犬6〜7%、猫5〜10%）。
-                    <strong>胸骨圧迫の中断を最小限にし、2分ごとの圧迫者交代を徹底</strong>することが最大のインパクトをもたらす。
-                </p>
+                <div style="font-size:0.88rem;">
+                    <p>12年ぶりに大幅改訂された<strong>RECOVER 2024ガイドライン</strong>の最重要ポイントは以下の3点です。
+① <strong>高用量エピネフリンの廃止</strong>（標準用量のみ推奨）
+② <strong>胸骨圧迫の手法の最適化</strong>（一般的な犬猫は1/3〜1/2を維持しつつ、樽胸種・背臥位での「1/4」を明記）
+③ <strong>非挿管時の口対鼻換気の非推奨</strong>（バッグマスク換気を優先）</p>
+<hr />
+                </div>
             </div>
         </div>
-        <!-- 昔vs今 -->
-        <div class="free-content" id="action-table">
-            <div class="card">
-                <h3 style="font-size: 0.95rem;">⚡ 2012年版 vs 2024年版 ─ 主な変更点
-
-                    <!-- 個別生成図表 -->
-                    <div class="mermaid-wrapper">
-                        <pre class="mermaid">
-graph TD
-    A["CPA発生確認"] --> B("応援要請 & BLS開始")
-
-    subgraph "BLSサイクル (2分)"
-        B --> C["胸骨圧迫: 100-120回/分"]
-        C -->|"深さ: 胸幅1/3-1/2 (広胸種1/4), 完全リコイル"| D["換気: 10-12回/分"]
-        D -->|"挿管済:非同期, 非挿管:30:2 or MT-N"| E["ETCO2モニタリング: 目標 >=18 mmHg"]
-        E --> F("圧迫者交代")
-    end
-
-    F --> G{"2分間のCPRサイクル終了"}
-
-    G -->|"YES"| H["リズムチェック (ECG)"]
-    H -->|"CPR中断は10秒以内"| I{"リズム判定"}
-
-    I -->|"ショック適応リズム"| J["VF / 無脈性VT"]
-    J --> K["⚡除細動 (2-4 J/kg)"]
-    K -->|"即座に胸骨圧迫再開 (2分)"| L["薬剤投与 (ショック適応)"]
-    L -->|"3-5分ごと"| M{"バソプレシン 0.8U/kg IV"}
-    M --> N{"または エピネフリン 0.01mg/kg IV"}
-    N --> P{"ROSC確認?"}
-
-    I -->|"非ショック適応リズム"| Q["心静止 / PEA"]
-    Q --> R["薬剤投与 (非ショック適応)"]
-    R -->|"3-5分ごと"| S{"エピネフリン 0.01mg/kg IV"}
-    S --> T{"アトロピン 0.04mg/kg IV (単回)"}
-    T --> P
-
-    P -->|"NO"| G
-    P -->|"YES"| U["✅ ROSC確認 (ETCO2急上昇)"]
-    U --> V["ROSC後ケア (PCA) 開始"]
-    V -->|"血圧, 呼吸, 神経, 血糖管理"| W("集中モニタリング & 転帰評価")
-</pre>
-                    </div>
-                </h3>
+        <div class="free-content" id="section-1">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 2024年の新エビデンス</h3>
                 <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:12px 0 0;">
-                        <thead>
-                            <tr>
-                                <th>項目</th>
-                                <th>❌ 2012年版</th>
-                                <th>✅ 2024年版</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ETCO2目標値</td>
-                                <td>≥15 mmHg</td>
-                                <td><strong>≥18 mmHg</strong></td>
-                            </tr>
-                            <tr>
-                                <td>高用量エピネフリン</td>
-                                <td>遷延CPAで考慮</td>
-                                <td><strong>推奨しない</strong>（有害の可能性）</td>
-                            </tr>
-                            <tr>
-                                <td>アトロピン</td>
-                                <td>言及あるが優先度曖昧</td>
-                                <td>非ショック適応リズムに<strong>単回投与</strong>推奨</td>
-                            </tr>
-                            <tr>
-                                <td>バソプレシン</td>
-                                <td>エビネフリンの代替</td>
-                                <td><strong>ショック適応リズムで優先</strong></td>
-                            </tr>
-                            <tr>
-                                <td>除細動のタイミング</td>
-                                <td>エピネフリン後に除細動</td>
-                                <td><strong>除細動を先行</strong>（ショック適応リズム）</td>
-                            </tr>
-                            <tr>
-                                <td>背臥位の圧迫深度</td>
-                                <td>胸幅の1/3〜1/2</td>
-                                <td><strong>胸幅の1/4</strong>を推奨</td>
-                            </tr>
-                            <tr>
-                                <td>非挿管患者の換気</td>
-                                <td>気管挿管を最優先</td>
-                                <td>タイトフィットマスクや<strong>mouth-to-nose</strong>も容認</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th style="text-align: left;">❌ 2012年版（旧常識）</th>
+<th style="text-align: left;">✅ 2024年版最新エビデンス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">長引く心停止には「高用量エピネフリン（0.1mg/kg）」を使用する</td>
+<td style="text-align: left;">高用量エピネフリンは<strong>推奨廃止</strong>。<strong>標準用量（0.01mg/kg）</strong>の継続推奨のみに変更。</td>
+</tr>
+<tr>
+<td style="text-align: left;">胸骨圧迫の深さはすべて「胸郭の3分の1から2分の1」</td>
+<td style="text-align: left;">一般的な犬猫（側臥位）は従来通り<strong>「1/3〜1/2」</strong>ですが、ブルドッグ等の樽胸種（背臥位）に限り、合併症を避けるため深さが<strong>「1/4」</strong>に変更されました。</td>
+</tr>
+<tr>
+<td style="text-align: left;">挿管できない場合は、口対鼻呼吸を行う</td>
+<td style="text-align: left;"><strong>バッグバルブマスク（タイトフィットマスク）による換気</strong>が優先推奨。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+                </div>
+            </div>
+        </div><div class="free-content" id="section-2">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">📊 覚えるべき数値 ─ CPRの「数字」</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">数値</th>
+<th style="text-align: left;">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>胸骨圧迫テンポ</strong></td>
+<td style="text-align: left;"><strong>100〜120 回/分</strong></td>
+<td style="text-align: left;">メトロノームアプリの活用を推奨</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>圧迫の深さ</strong></td>
+<td style="text-align: left;">胸郭の <strong>1/3〜1/2</strong>（側臥位）/ <strong>1/4</strong>（樽胸種・背臥位）</td>
+<td style="text-align: left;">完全な胸壁の戻り（リコイル）を確認</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CPRサイクル</strong></td>
+<td style="text-align: left;"><strong>2分間</strong> 中断なしで実施</td>
+<td style="text-align: left;">サイクル後にローテーション＋リズム確認</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>換気回数</strong></td>
+<td style="text-align: left;"><strong>10 回/分</strong></td>
+<td style="text-align: left;">過換気は有害！</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>1回換気量</strong></td>
+<td style="text-align: left;"><strong>10 mL/kg</strong></td>
+<td style="text-align: left;">1回の吸気時間は <strong>1秒</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EtCO2 目標</strong></td>
+<td style="text-align: left;"><strong>&gt; 15〜20 mmHg</strong></td>
+<td style="text-align: left;">CPR中のモニタリング必須</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EtCO2 急増</strong></td>
+<td style="text-align: left;"><strong>&gt; 40 mmHg</strong></td>
+<td style="text-align: left;">ROSC（自己心拍再開）の強い兆候</td>
+</tr>
+</tbody>
+</table>
+<hr />
+                </div>
+            </div>
+        </div><div class="free-content" id="section-3">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">💊 薬物投与プロトコル</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th style="text-align: left;">薬剤</th>
+<th style="text-align: left;">用量</th>
+<th style="text-align: left;">タイミング・備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>エピネフリン（標準用量）</strong></td>
+<td style="text-align: left;"><strong>0.01 mg/kg</strong> IV</td>
+<td style="text-align: left;"><strong>1サイクルおき（4分ごと）</strong>に投与。高頻度すぎる投与は微小循環を阻害するため注意。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>~~エピネフリン（高用量）~~</strong></td>
+<td style="text-align: left;">~~0.1 mg/kg~~</td>
+<td style="text-align: left;"><strong>⛔ 廃止。使用しない。</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>アトロピン</strong></td>
+<td style="text-align: left;"><strong>0.04 mg/kg</strong> IV</td>
+<td style="text-align: left;">徐脈性PEA/アシストールに推奨。<strong>早期に単回投与</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>除細動（2回目）</strong></td>
+<td style="text-align: left;">初回の<strong>2倍</strong>のエネルギー</td>
+<td style="text-align: left;">第1回で不発時にエスカレーション。</td>
+</tr>
+</tbody>
+</table>
+<hr />
                 </div>
             </div>
         </div>
         <!-- ===== PREMIUM ZONE ===== -->
-        <!-- BLS -->
-        <div id="bls">
+        <!-- 🗺️ 臨床アクション表 ─ RECOVER 2024の重要アップデート -->
+        <div id="section-4">
             <div class="accordion">
                 <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💪</span><span>BLS（基本的生命維持）─
-                            胸骨圧迫と換気</span></span>
+                    <span class="trigger-left"><span class="trigger-icon">🗺️</span><span>🗺️ 臨床アクション表 ─ RECOVER 2024の重要アップデート</span></span>
                     <span class="chevron">▼</span>
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-body premium-content">
-                        <h4>胸骨圧迫 ─ 体型別アプローチ（2024年改訂）</h4>
                         <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>体型</th>
-                                    <th>推奨体位</th>
-                                    <th>圧迫深度</th>
-                                    <th>圧迫速度</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>小型犬・猫（＜10kg）</td>
-                                    <td><strong>側臥位</strong></td>
-                                    <td>胸幅の1/3〜1/2</td>
-                                    <td>100〜120回/分</td>
-                                </tr>
-                                <tr>
-                                    <td>中型犬（10〜25kg）</td>
-                                    <td>側臥位</td>
-                                    <td>胸幅の1/3〜1/2</td>
-                                    <td>100〜120回/分</td>
-                                </tr>
-                                <tr>
-                                    <td>大型犬・深胸種<br />（ドーベルマン、グレイハウンド等）</td>
-                                    <td>側臥位</td>
-                                    <td>胸幅の1/3〜1/2</td>
-                                    <td>100〜120回/分</td>
-                                </tr>
-                                <tr>
-                                    <td>広胸種<br />（ブルドッグ、パグ等）</td>
-                                    <td><strong>背臥位</strong></td>
-                                    <td><strong>胸幅の1/4</strong>（2024改訂）</td>
-                                    <td>100〜120回/分</td>
-                                </tr>
-                                <tr>
-                                    <td>超大型犬（＞40kg）</td>
-                                    <td>側臥位 or 背臥位（テーブルの高さに注意）</td>
-                                    <td>胸幅の1/3〜1/2</td>
-                                    <td>100〜120回/分</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips ─ 圧迫の質</h4>
-                            <ul>
-                                <li><strong>完全なリコイル</strong>が不可欠 ─ 圧迫の合間に胸壁を完全に元の位置に戻す（残留圧で静脈還流が低下）</li>
-                                <li>圧迫者は<strong>2分ごとに交代</strong>（疲労による質の低下は自覚なく起こる）</li>
-                                <li>圧迫の中断は<strong>10秒以内</strong>に抑える（リズムチェック・除細動時も含む）</li>
-                                <li>挿管されていない患者では30:2（圧迫:換気）の比率。挿管済みなら非同期で10回/分で換気</li>
-                            </ul>
-                        </div>
-                        <h4 style="margin-top:12px;">換気 ─ 2024年の更新</h4>
+<thead>
+<tr>
+<th style="text-align: left;">分野</th>
+<th style="text-align: left;">2024年の変更点・強調ポイント</th>
+<th style="text-align: left;">現場での具体的アクション</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>胸骨圧迫</strong></td>
+<td style="text-align: left;">猫・小型犬：<strong>片手掌法</strong>や<strong>片手母指・示指法</strong>の有用性を明記。大型犬（背臥位）：深さ <strong>1/4</strong>。リコイル確認。</td>
+<td style="text-align: left;">スタッフ間で圧迫手技を統一する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>薬物投与</strong>（エピネフリン）</td>
+<td style="text-align: left;"><strong>高用量（High-dose）の完全撤廃</strong>。標準用量 0.01 mg/kg を<strong>1サイクルおき（4分ごと）</strong>に投与する。</td>
+<td style="text-align: left;">救急カートから「高用量」の列を削除。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>薬物投与</strong>（アトロピン）</td>
+<td style="text-align: left;">非除細動性リズムの場合、<strong>早期に「単回投与」</strong>を推奨。</td>
+<td style="text-align: left;">エピネフリン初回投与と同タイミングで0.04 mg/kgを1回投与。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>除細動</strong></td>
+<td style="text-align: left;">第1回の不発時、<strong>第2回は「用量を2倍」</strong>に増やすことを推奨。</td>
+<td style="text-align: left;">エスカレーションプロトコルをチーム内で共有。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>🗺️ 臨床アクション表 ─ RECOVER 2024の重要アップデートの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div><!-- 📊 生存率データ -->
+        <div id="section-5">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📊</span><span>📊 生存率データ</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th style="text-align: left;">シナリオ</th>
+<th style="text-align: left;">退院生存率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">病院内での心停止（全体）</td>
+<td style="text-align: left;"><strong>6〜7%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">麻酔関連の心停止</td>
+<td style="text-align: left;"><strong>40〜50%</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>📊 生存率データの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div><!-- 💡 チーム蘇生を成功させる「認知負荷」の軽減 -->
+        <div id="section-6">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">💡</span><span>💡 チーム蘇生を成功させる「認知負荷」の軽減</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
                         <ul>
-                            <li><strong>気管挿管</strong>が依然ゴールドスタンダードだが、挿管に時間がかかる場合は圧迫を優先</li>
-                            <li>挿管できない場合:
-                                <strong>タイトフィットマスク</strong>でアンビューバッグ換気、または<strong>mouth-to-nose</strong>（鼻口を密閉して吹き込む）
-                            </li>
-                            <li>1回換気量の目安: 10 mL/kg（過膨張を避ける）</li>
-                            <li>⚠️ 過換気は胸腔内圧を上昇させ静脈還流を妨げるため<strong>厳禁</strong></li>
-                        </ul>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>BLSの詳細は有料会員限定です</div>
-                </div>
+<li><strong>投薬量チャートの壁貼り</strong>: 体重ごとの「mL」数が書かれた表を蘇生エリアの壁に貼る（計算させない）。</li>
+<li><strong>アルゴリズムチャートの可視化</strong>: フローチャート化し、リーダーが指差し確認できるようにする。</li>
+<li><strong>タイマーの活用</strong>: 2分間のサイクル管理にタイマーを必ず使用する。</li>
+</ul>
+<hr />
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>Q. 「もしもの時は、心臓マッサージ（蘇生）をしてくれますか？」</h4>
+                <div class="speech-bubble">「万が一、心臓や呼吸が止まってしまった場合、全力で心肺蘇生（CPR）を行います。ただ、病気の種類や年齢によっては、蘇生によって苦痛を長引かせてしまうケースもあります。当院では入院前に、もしもの時に『すべての蘇生処置を行う（CPR）』か『苦痛を取り除くケアのみを行う（DNR：蘇生不要）』か、ご家族の意思を事前に確認させていただいております。」</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「心臓マッサージをしたら助かる可能性はどれくらいですか？」</h4>
+                <div class="speech-bubble">「正直にお伝えすると、病気が原因で心臓が止まった場合、退院できる確率は6〜7%程度です。ただし、手術中の麻酔に関連した心停止では40〜50%と比較的高い生存率です。」</div>
             </div>
         </div>
-        <!-- ALS -->
-        <div id="als">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💉</span><span>ALS（二次救命処置）─
-                            リズム判定と除細動</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>心電図リズムの分類と対応</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>リズム分類</th>
-                                    <th>心電図所見</th>
-                                    <th>対応</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>ショック適応<br />（Shockable）</strong></td>
-                                    <td>心室細動（VF）<br />無脈性心室頻拍（pulseless VT）</td>
-                                    <td><strong>除細動 → エピネフリン</strong><br />（2024改訂: 除細動が先行）<br />バソプレシンも優先的に使用</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>非ショック適応<br />（Non-shockable）</strong></td>
-                                    <td>心静止（Asystole）<br />無脈性電気活動（PEA）</td>
-                                    <td>エピネフリン＋<strong>アトロピン単回</strong><br />（2024改訂: 単回投与が新推奨）</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 除細動のポイント</h4>
-                            <ul>
-                                <li>二相性除細動器: <strong>2〜4 J/kg</strong>（単相性: 4〜6 J/kg）</li>
-                                <li>パドルの位置: 右前胸部と左後胸部（心臓を挟む）</li>
-                                <li>除細動後は<strong>すぐに胸骨圧迫を再開</strong>（脈拍チェックで中断しない）</li>
-                                <li>2回目以降は50%ずつエネルギーを増加させる</li>
-                                <li>除細動器がない場合: <strong>precordial thump</strong>（前胸部叩打）は推奨されない</li>
-                            </ul>
-                        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+
+<hr />
                     </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>ALSの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <!-- 薬剤プロトコル -->
-        <div id="drugs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💊</span><span>薬剤プロトコル ─
-                            2024年改訂</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>CPR中の薬剤投与（2024年RECOVER推奨）</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>薬剤</th>
-                                    <th>用量</th>
-                                    <th>投与間隔</th>
-                                    <th>適応・備考</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>エピネフリン<br />（低用量）</strong></td>
-                                    <td>0.01 mg/kg IV</td>
-                                    <td>3〜5分ごと</td>
-                                    <td>全リズムに適応。<strong>高用量(0.1mg/kg)は推奨しない</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>バソプレシン</strong></td>
-                                    <td>0.8 U/kg IV</td>
-                                    <td>3〜5分ごと</td>
-                                    <td><strong>ショック適応リズムで優先</strong>。エピネフリンと交互投与も可</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>アトロピン</strong></td>
-                                    <td>0.04 mg/kg IV</td>
-                                    <td><strong>単回投与</strong></td>
-                                    <td>非ショック適応リズム（心静止・PEA）<br />2024改訂: 反復投与は推奨しない</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>アミオダロン</strong></td>
-                                    <td>犬: 2.5〜5 mg/kg IV<br />猫: データ不十分</td>
-                                    <td>必要に応じ反復</td>
-                                    <td>難治性VF/VTに。リドカインの代替</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>リドカイン</strong></td>
-                                    <td>犬: 2 mg/kg IV<br />猫: 0.25〜0.5 mg/kg IV</td>
-                                    <td>必要に応じ反復</td>
-                                    <td>アミオダロンが入手不可の場合の代替</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips ─ 日本での薬剤入手性</h4>
-                            <ul>
-                                <li><strong>エピネフリン</strong>: ボスミン®注 1mg/1mL（動物病院で常備される基本薬剤）</li>
-                                <li><strong>アトロピン</strong>: アトロピン硫酸塩注 0.5mg（広く入手可能）</li>
-                                <li><strong>バソプレシン</strong>: ピトレシン®注
-                                    20単位/1mL。<strong>日本では動物用製剤はなく、ヒト用を転用</strong>。在庫していない施設も多い → 事前に確保しておくことを推奨</li>
-                                <li><strong>アミオダロン</strong>: アンカロン®注
-                                    150mg/3mL。循環器専門薬のため<strong>一般動物病院には在庫がないことが多い</strong> → リドカイン（キシロカイン®）を代替とする</li>
-                                <li>⚠️ <strong>IV（静脈内）投与が困難な場合</strong>: 骨髄内（IO）投与ルートを確保する。IO針（EZ-IO等）を救急セットに用意しておく</li>
-                            </ul>
-                        </div>
-                        <p style="font-size:0.85rem;margin-top:8px;">
-                            ⚠️ <strong>高用量エピネフリン（0.1mg/kg）が削除された理由</strong>:
-                            ヒトでの複数のRCTで高用量エピネフリンはROSC率を改善する可能性があるものの、
-                            神経学的転帰が有意に悪化することが示された。獣医領域でもこのエビデンスを踏まえ、
-                            2024年版では高用量の使用は推奨されなくなった。
-                        </p>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>薬剤プロトコルの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <!-- モニタリング -->
-        <div id="monitoring">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📊</span><span>CPR中のモニタリング ─
-                            ETCO2の活用</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>モニタリングパラメータとその目標値</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>パラメータ</th>
-                                    <th>目標値（2024年）</th>
-                                    <th>臨床的意義</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>ETCO2<br />（呼気終末CO2）</strong></td>
-                                    <td><strong>≥18 mmHg</strong><br />（2012年版: ≥15 mmHg）</td>
-                                    <td>胸骨圧迫の質の最良の指標。ROSC時に急上昇する</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>心電図</strong></td>
-                                    <td>2分ごとにリズムチェック</td>
-                                    <td>ショック適応 vs 非ショック適応の判定</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>脈拍触知</strong></td>
-                                    <td>ROSC確認時のみ</td>
-                                    <td>CPR中の脈拍チェックは<strong>推奨しない</strong>（中断が長くなるため）</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 ETCO2の読み方</h4>
-                            <ul>
-                                <li>ETCO2 ＜15 mmHg → 圧迫の質が不十分。速度・深さ・リコイルを見直す</li>
-                                <li>ETCO2 15〜18 mmHg → 許容範囲だが改善の余地あり</li>
-                                <li>ETCO2 ≥18 mmHg → 適切な心拍出量が維持されている</li>
-                                <li><strong>ETCO2の急上昇（≥40 mmHg）→ ROSC（自己心拍再開）の兆候</strong></li>
-                                <li>CPR開始20分以上でETCO2が10 mmHg未満のまま → 予後不良、中止を検討</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>モニタリングの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <!-- 心停止後ケア -->
-        <div id="pca">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🧠</span><span>心停止後ケア（PCA）─
-                            ROSCの後が勝負</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>ROSC後の管理（RECOVER 2024暫定推奨）</h4>
-                        <p style="font-size:0.85rem;margin-bottom:8px;">
-                            ⚠️ PCAガイドラインの本格改訂は<strong>2027年に予定</strong>されている。
-                            現時点では2012年版のアルゴリズムに若干の修正を加えた暫定推奨が適用される。
-                        </p>
-                        <ul>
-                            <li><strong>循環管理</strong>: 血圧の維持（MAP ≥60〜80 mmHg）。再灌流傷害に注意。必要に応じ輸液・昇圧薬</li>
-                            <li><strong>呼吸管理</strong>: SpO2 94〜98%を目標。過酸素を避ける（フリーラジカル産生のリスク）</li>
-                            <li><strong>神経保護</strong>: 発作があれば抗てんかん薬（ジアゼパム 0.5mg/kg IV）。目標体温管理は研究段階</li>
-                            <li><strong>血糖管理</strong>: 低血糖・高血糖ともに避ける（80〜180 mg/dL を目標）</li>
-                            <li><strong>再心停止の予防</strong>: ROSC後24〜48時間は集中的なモニタリングが必要。約15〜20%の患者が再心停止を起こす</li>
-                        </ul>
-                        <div class="clinical-tip">
-                            <h4>💊 臨床Tips ─ 日本での現実</h4>
-                            <ul>
-                                <li>日本の一般動物病院でのCPR後の退院生存率のデータは限られている</li>
-                                <li>24時間体制のICU管理が困難な施設では、ROSC後に二次診療施設への転送を検討</li>
-                                <li>CPR実施の判断には<strong>飼い主へのDNR（蘇生不要）確認</strong>を入院時に行うことが望ましい（日本では文化的にDNRの事前確認が難しいケースも多い）
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>心停止後ケアの詳細は有料会員限定です</div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>💡 チーム蘇生を成功させる「認知負荷」の軽減の詳細は有料会員限定です</div>
                 </div>
             </div>
         </div>
         <!-- 飼い主説明 -->
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>心臓が止まってしまったのですが…</h4>
-                            <div class="speech-bubble">
-                                心臓と呼吸が止まっている状態です。今から心臓マッサージを含む蘇生処置を行います。
-                                処置がうまくいけば心臓が再び動き始めることがありますが、正直に申し上げて、
-                                <strong>心臓が戻る確率は約35〜45%、その後退院できる確率はさらに低く5〜10%程度</strong>です。
-                                全力を尽くしますが、厳しい状況であることをご理解ください。
-                            </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>蘇生処置をしない「DNR」という選択もありますか？</h4>
-                            <div class="speech-bubble">
-                                はい、あります。蘇生処置は身体に大きな負担がかかります。
-                                基礎疾患が重い場合や高齢の場合、たとえ心臓が再開しても長くは持たないこともあります。
-                                <strong>「最期は穏やかに」という選択</strong>も、動物のことを思えばこその判断です。
-                                どちらの選択も正しいです。ご家族で話し合っていただくことをお勧めします。
-                            </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>心臓は戻ったけどこの後どうなりますか？</h4>
-                            <div class="speech-bubble">
-                                心臓が再び動き始めたことは良いニュースです。ただし、<strong>最初の24〜48時間が非常に重要</strong>です。
-                                この間に再び心臓が止まることもあります。また、心停止中に脳に十分な酸素が届いていなかった場合、
-                                意識が戻らなかったり神経障害が残る可能性もあります。集中的な監視を続けますので、
-                                変化があれば随時ご連絡します。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-                </div>
-            </div>
-        </div>
+        
         <!-- 参照論文 -->
         <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <li>Fletcher DJ et al. RECOVER evidence and knowledge gap analysis on
-                                veterinary CPR. Part 7: Clinical guidelines (2012).
-                                <em>J Vet Emerg Crit Care</em> 2012;22(S1):S102-S131.
-                            </li>
-                            <li>RECOVER Initiative. 2024 RECOVER Guidelines Update ─ Evidence-based
-                                CPR recommendations for dogs and cats.
-                                <em>J Vet Emerg Crit Care</em> 2024 (open access special issue).
-                            </li>
-                            <li>Hoehne SN et al. Evaluation of cardiopulmonary resuscitation in dogs and
-                                cats: A multicenter study (2019). <em>J Vet Emerg Crit Care</em>
-                                2019;29(4):379-385.</li>
-                            <li>Hofmeister EH et al. Prognostic indicators for dogs and cats with
-                                cardiopulmonary arrest treated by cardiopulmonary resuscitation at a
-                                university teaching hospital (2009). <em>JAVMA</em> 2009;235(1):50-57.</li>
-                            <li>Boller M, Fletcher DJ. RECOVER evidence and knowledge gap analysis on
-                                veterinary CPR. Part 1: Evidence analysis methodology (2012).
-                                <em>J Vet Emerg Crit Care</em> 2012;22(S1):S4-S12.
-                            </li>
-                            <li>McIntyre RL et al. Outcome following cardiopulmonary resuscitation in
-                                dogs and cats at an emergency clinic: 218 cases (2012). <em>JAVMA</em>
-                                2014;244(2):188-196.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（3本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>RECOVER 2024 CPR Guidelines - Evidence and Knowledge Gap Analysis, <em>JVECC</em>, 2024.</li>
+                <li>Updates on Basic Life Support and Advanced Life Support in Dogs and Cats (RECOVER Initiative, 2024).</li>
+                <li>Hoehne SN, et al. Survival rates and outcomes of CPR in dogs and cats. <em>JVECC</em>, 2019.</li>
+            </ol>
         </div>
+    </div>
+  </div>
+</div>
         <footer class="page-footer" style="margin-top: var(--space-xl);">
             <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
             <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">

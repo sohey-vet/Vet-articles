@@ -1,544 +1,318 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="犬猫の中毒における緊急対応。チョコレート・キシリトール・ブドウ・ネギ・ユリの中毒用量、症状、治療フロー。" name="description"/>
-<title>犬猫の中毒 ─ よくある原因物質と対処法 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="犬猫の中毒の初期対応。催吐薬の用量・禁忌、活性炭の適応と限界、除染の最新エビデンス。" name="description"/>
+    <title>犬猫の中毒 ─ 初期対応と活性炭の限界 | VetEvidence</title>
+    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
 </head>
+
 <body class="mode-premium">
-<!-- ===== Mobile Navigation ===== -->
-<nav class="mobile-nav">
-<span class="nav-brand">🩺 VetEvidence</span>
-<button aria-label="メニュー" class="hamburger-btn">
-<span></span><span></span><span></span>
-</button>
-</nav>
-<div class="slide-menu-overlay"></div>
-<aside class="slide-menu">
-<h4>ナビゲーション</h4>
-<a href="../../index.html">🏠 トップ</a>
-<a href="#conclusion">🎯 結論</a>
-<a href="#action-table">🗺️ 中毒物質リスト</a>
-<a href="#chocolate">🍫 チョコレート</a>
-<a href="#xylitol">🔴 キシリトール</a>
-<a href="#grape">🍇 ブドウ・レーズン</a>
-<a href="#allium">🧅 ネギ類</a>
-<a href="#lily">🌺 ユリ（猫）</a>
-<a href="#decontamination">🧹 除染プロトコル</a>
-<a href="#owner-tips">🗣️ 飼い主説明</a>
-<a href="#refs">📚 参照論文</a>
-<h4>情報ソース</h4>
-<a href="https://www.aspca.org/pet-care/animal-poison-control" target="_blank">🔍 ASPCA Poison Control</a>
-<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-</aside>
-<div class="page-container">
-<!-- ===== HEADER ===== -->
-<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-<div class="tags" style="margin-bottom: 8px;">
-<a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
-<a class="tag tag--warning" href="../../index.html?tag=%E4%B8%AD%E6%AF%92">中毒</a>
-<a class="tag tag--success" href="../../index.html?tag=%E7%8A%AC%E7%8C%AB%E5%85%B1%E9%80%9A">犬猫共通</a>
-<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8A%AC">犬</a></div>
-<h1 style="font-size: 1.3rem;">🚨 犬猫の中毒 ─ よくある原因物質と対処法</h1>
-<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-                日本の家庭で遭遇しやすい5大中毒物質。中毒用量・症状・初期対応を臨床で即使える形にまとめた。
+    <!-- ===== Mobile Navigation ===== -->
+    <nav class="mobile-nav">
+        <span class="nav-brand">🩺 VetEvidence</span>
+        <button aria-label="メニュー" class="hamburger-btn">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="slide-menu-overlay"></div>
+    <aside class="slide-menu">
+        <h4>ナビゲーション</h4>
+        <a href="../../index.html">🏠 トップ</a>
+        <a href="#conclusion">🎯 結論</a>
+        <a href="#section-0">🎯 結論（30秒で読める）</a>
+        <a href="#section-1">⚡ 昔の常識 vs 今のエビデンス</a>
+        <a href="#section-2">🗺️ ️ 臨床アクション表 ─ 誤食時の「催吐...</a>
+        <a href="#section-3">📖 🇯🇵 日本の臨床実情</a>
+        <a href="#section-4">📖 詳細解説</a>
+        <a href="#owner-tips">🗣️ 飼い主説明</a>
+        <a href="#refs">📚 参照論文</a>
+        <h4>情報ソース</h4>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+    </aside>
+    <div class="page-container">
+        <!-- ===== HEADER ===== -->
+        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+            <div class="tags" style="margin-bottom: 8px;">
+                <a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a><a class="tag tag--danger" href="../../index.html?tag=%E4%B8%AD%E6%AF%92">中毒</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8A%AC">犬</a></div>
+            <h1 style="font-size: 1.3rem;">🚨 犬猫の中毒 ─ 初期対応と活性炭の限界</h1>
+            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                催吐薬は「飲んでから2時間」が限界、活性炭は万能ではない。中毒の初期対応を最新エビデンスで整理。
             </p>
-<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-<div class="meta-item"><span class="icon">📄</span><span>参照論文7本</span></div>
-<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-</div>
-</header>
-<!-- ===== 表示モード切替 ===== -->
-<div class="content-mode-bar">
-<span>📋</span>
-<label class="toggle-switch">
-<input checked="" id="content-mode-toggle" type="checkbox"/>
-<span class="toggle-slider"></span>
-</label>
-<span class="mode-label">👑 すべて表示</span>
-</div>
-<!-- ============================================
-           FREE ZONE: 結論 + 中毒物質一覧
-           ============================================ -->
-<div class="free-content" id="conclusion">
-<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-<h3 style="font-size:0.95rem;">🎯 結論</h3>
-<p style="font-size:0.88rem;">
-                    ASPCA Animal Poison Control
-                    Centerの2024年報告では、<strong>年間45万件以上</strong>の動物中毒相談があり、前年比約4%増。日本の臨床現場で最も遭遇するのは<strong>チョコレート・キシリトール・ブドウ/レーズン・ネギ類（犬）とユリ（猫）</strong>。
-                    除染（催吐・活性炭）は<strong>摂取後1〜2時間以内</strong>が原則。キシリトールに対する活性炭は無効。ブドウの毒性成分は<strong>酒石酸</strong>と判明（2021年JAVMA報告、2024年Merck
-                    VM改訂で確認）。
-                    <strong>「何を・いつ・どれだけ食べたか」の3点を確認</strong>し、中毒用量に達していれば迷わず来院指示。
-                </p>
-</div>
-</div>
-<div class="free-content" id="action-table">
-<div class="card" style="margin-top:var(--space-md);">
-<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ 5大中毒物質 ─ 用量・症状・対処の早見表</h3>
-<div style="overflow-x:auto;">
-<table class="comparison-table" style="margin:0;min-width:600px;">
+            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+                <div class="meta-item"><span class="icon">📄</span><span>参照論文5本</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+            </div>
+        </header>
+        <!-- ===== 表示モード切替 ===== -->
+        <div class="content-mode-bar">
+            <span>📋</span>
+            <label class="toggle-switch">
+                <input checked="" id="content-mode-toggle" type="checkbox"/>
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label">👑 すべて表示</span>
+        </div>
+        <!-- ===== FREE ZONE ===== -->
+        <div class="free-content" id="conclusion">
+            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <div style="font-size:0.88rem;">
+                    <p><strong>催吐処置は「万能」ではない。胃内容物の回収率は40〜70%に留まり、猫での成功率は犬の半分程度。</strong>
+誤飲からの時間経過や摂取物質によっては、催吐よりも<strong>「早期の活性炭投与（腸管吸着）」</strong>や<strong>「強制的な利尿・対症療法」</strong>へ迅速に切り替える判断が救命率を左右します。</p>
+<hr />
+                </div>
+            </div>
+        </div>
+        <div class="free-content" id="section-1">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>物質</th>
-<th>対象</th>
-<th>⚠️ 中毒用量（体重あたり）</th>
-<th>主な症状</th>
-<th>初期対応</th>
+<th style="text-align: left;">❌ 旧来の常識</th>
+<th style="text-align: left;">✅ 最新のエビデンス</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>🍫 チョコレート</strong></td>
-<td>犬</td>
-<td>テオブロミン 20mg/kg（軽度）<br/>40〜50mg/kg（重度）<br/>≥60mg/kg（致死域）</td>
-<td>嘔吐・下痢→興奮・多尿→頻脈・不整脈→痙攣</td>
-<td>催吐（1-2h以内）+ 活性炭 + 心電図モニター</td>
+<td style="text-align: left;">誤食したら、まずはオキシドールや塩水で無理にでも吐かせる</td>
+<td style="text-align: left;"><strong>オキシドールや塩水での催吐は禁忌</strong>。重度の胃粘膜障害や高ナトリウム血症による死のリスクが高い。</td>
 </tr>
 <tr>
-<td><strong>🔴 キシリトール</strong></td>
-<td>犬</td>
-<td>≥0.05g/kg（低血糖）<br/>≥0.5g/kg（肝不全）</td>
-<td>10〜60分で低血糖→虚脱・痙攣<br/>8〜12hで肝酵素上昇</td>
-<td>催吐（30分以内なら）<br/>ブドウ糖IV<br/>⚠️活性炭は無効</td>
+<td style="text-align: left;">催吐処置が成功し、吐瀉物に毒物があれば安心</td>
+<td style="text-align: left;">催吐が成功しても、<strong>胃内容物の40〜70%しか排出されない</strong>。残存毒素への継続的なケアが必要。</td>
 </tr>
 <tr>
-<td><strong>🍇 ブドウ / レーズン</strong></td>
-<td>犬</td>
-<td>個体差大（少量でも致死例あり）<br/>安全量は設定できない</td>
-<td>嘔吐（数時間以内）→AKI（24〜72h）</td>
-<td>催吐 + 活性炭 + 48h輸液<br/>腎マーカーを72hモニター</td>
-</tr>
-<tr>
-<td><strong>🧅 ネギ類</strong></td>
-<td>犬猫</td>
-<td>犬: ≥15〜30g/kg<br/>猫: ≥5g/kg<br/>（猫はより感受性が高い）</td>
-<td>1〜5日後にハインツ小体→溶血性貧血→褐色尿</td>
-<td>催吐（2h以内）+ 活性炭<br/>PCV/網赤血球モニター</td>
-</tr>
-<tr>
-<td><strong>🌺 ユリ（猫限定）</strong></td>
-<td>猫</td>
-<td>花弁1〜2枚・花粉を舐めただけでも致死的<br/>安全量は存在しない</td>
-<td>嘔吐→12〜24hで多飲多尿→AKI（24〜72h）</td>
-<td><strong>即座に催吐</strong> + 活性炭<br/>48〜72h持続輸液が必須</td>
+<td style="text-align: left;">中毒＝とにかく拮抗薬や解毒剤を探す</td>
+<td style="text-align: left;"><strong>特異的解毒剤が存在する中毒はごく一部</strong>。基本は「吸収阻害・排泄促進・対症療法」の徹底。</td>
 </tr>
 </tbody>
 </table>
-</div>
-<p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">
-                    ⚠️ 日本の注意点:
-                    キシリトールは日本ではガムだけでなく一部の歯磨き粉やサプリにも含まれる。ブドウは巨峰・シャインマスカットを含む全品種が対象。ユリは正月の花束や仏壇の供花で猫が接触するケースが多い。
-                </p>
-</div>
-</div>
-<!-- ===== 昔vs今 ===== -->
-<div class="free-content">
-<div class="card" style="margin-top:var(--space-md);">
-<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
-<table class="comparison-table" style="margin:0;">
+<hr />
+                </div>
+            </div>
+        </div>
+        <!-- ===== PREMIUM ZONE ===== -->
+        <!-- 🗺️ 臨床アクション表 ─ 誤食時の「催吐」の適否判断 -->
+        <div id="section-2">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🗺️</span><span>🗺️ 臨床アクション表 ─ 誤食時の「催吐」の適否判断</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>❌ 旧来</th>
-<th>✅ 最新</th>
+<th style="text-align: left;">摂取物質・状況</th>
+<th style="text-align: left;">判断</th>
+<th style="text-align: left;">具体的アクション・理由</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ブドウの毒性成分は不明</td>
-<td>酒石酸（tartaric acid）が原因と判明。犬は有機酸の排泄能が低く、近位尿細管に蓄積しAKIを起こす（Wegenast
-                                2022, JVECC）</td>
+<td style="text-align: left;"><strong>摂取後1〜2時間以内（腐食性以外）</strong></td>
+<td style="text-align: left;">⭕ 催吐適応</td>
+<td style="text-align: left;">トラネキサム酸静注、あるいはアポモルヒネ（犬）、キシラジン/デクスメデトミジン（猫）などで催吐誘発。</td>
 </tr>
 <tr>
-<td>キシリトール中毒には活性炭を投与</td>
-<td>活性炭はキシリトールに吸着しないため<strong>無効</strong>。ブドウ糖IVと肝モニタリングが主体</td>
+<td style="text-align: left;"><strong>強酸・強アルカリ・石油製品</strong></td>
+<td style="text-align: left;">❌ <strong>絶対禁忌</strong></td>
+<td style="text-align: left;">吐かせることで食道や口腔粘膜の二次損傷、誤嚥性肺炎を招く。胃内洗浄や吸着剤を検討。</td>
 </tr>
 <tr>
-<td>「少量のチョコなら大丈夫」</td>
-<td>カカオ含有率で大きく異なる。ビターチョコ（カカオ70%以上）は板チョコ半分で小型犬が痙攣域に達する</td>
+<td style="text-align: left;"><strong>神経症状（痙攣・昏睡）発現後</strong></td>
+<td style="text-align: left;">❌ <strong>絶対禁忌</strong></td>
+<td style="text-align: left;">誤嚥の危険性が極めて高いため。まずは抗痙攣薬や気道確保による安定化を優先。</td>
 </tr>
 <tr>
-<td>ユリ中毒は腎不全になってから治療</td>
-<td>接触が判明した時点で<strong>18時間以内に積極的輸液を開始</strong>すれば予後は良好（Bennett &amp; Reineke
-                                2013）</td>
+<td style="text-align: left;"><strong>鋭利なもの（骨・竹串など）</strong></td>
+<td style="text-align: left;">❌ 一般的に禁忌</td>
+<td style="text-align: left;">食道や胃粘膜を傷つける恐れ。内視鏡による摘出、または外科的摘出に移行。</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<!-- ===== PREMIUM ZONE ===== -->
-<!-- チョコレート詳細 -->
-<div id="chocolate">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🍫</span><span>チョコレート中毒 ─
-                            テオブロミン含有量の計算</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>チョコレートの種類別テオブロミン含有量</h4>
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>🗺️ 臨床アクション表 ─ 誤食時の「催吐」の適否判断の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div><!-- 🇯🇵 日本の臨床実情 -->
+        <div id="section-3">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📖</span><span>🇯🇵 日本の臨床実情</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <ul>
+<li><strong>ネギ類中毒</strong>: 日本特有の食文化（すき焼きの残り汁など）による発生が多い。加熱しても毒性（アリルプロピルジスルフィド）は消えない点に注意。</li>
+<li><strong>キシリトール</strong>: 人用のガムだけでなく、最近は歯磨きペーストやタブレット等にも高濃度で含まれる。犬での重度の低血糖と肝障害を引き起こす。</li>
+<li><strong>活性炭製剤</strong>: 国内の一般病院では動物用吸着剤が常備されていることが多いが、急性中毒への吸着効果を最大化するには、摂取直後の投与が重要。</li>
+</ul>
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>🇯🇵 日本の臨床実情の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div><!-- 📖 詳細解説 -->
+        <div id="section-4">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📖</span><span>📖 詳細解説</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h3>1️⃣ 犬猫の致命的中毒物質 ─ 正確な中毒量と臨床像</h3>
+<p>臨床現場で遭遇頻度が高く、かつ致死的な経過をたどる可能性が高い物質を、<strong>具体的な中毒量</strong>とともに整理します。</p>
+<p><strong>1. タマネギ・ネギ類（アリルプロピルジスルフィド等）</strong>
+- <strong>中毒量</strong>: 犬 <strong>15〜30 g/kg</strong>、猫 <strong>5 g/kg</strong> 以上の摂取でハインツ小体性溶血性貧血を発症。
+- <strong>機序</strong>: 赤血球の酸化ダメージ。
+- <strong>臨床的な罠</strong>: 摂取直後ではなく、<strong>数日経ってから</strong>貧血・血色素尿で来院するケースが多い。加熱調理しても毒性は残存する。</p>
+<p><strong>2. チョコレート（テオブロミン）</strong>
+- <strong>致死量</strong>: 犬の致死量 <strong>100〜200 mg/kg</strong>。
+- <strong>症状発現の目安</strong>:
+  - 軽度（頻脈、パンティング等）: <strong>20 mg/kg</strong> 以上
+  - 重度心血管症状: <strong>40〜50 mg/kg</strong> 以上
+  - 痙攣: <strong>60 mg/kg</strong> 以上
+- <strong>臨床Tips</strong>: カカオ含有量で危険度が変わる。ダークチョコ &gt; ミルクチョコ &gt; ホワイトチョコ。頻脈・不整脈が見られたら心電図モニター必須。</p>
+<p><strong>3. ブドウ・レーズン</strong>
+- <strong>中毒量</strong>: 摂取量と中毒症状に<strong>明確な用量依存性なし</strong>（数粒でも発症例あり）。主成分として<strong>酒石酸</strong>が原因物質の可能性。
+- <strong>臨床像</strong>: 急性腎障害（AKI）。「何粒なら安全」というボーダーラインが存在しないため、微量摂取でも即時対応が必要。</p>
+<p><strong>4. キシリトール（犬）</strong>
+- <strong>低血糖誘発量</strong>: <strong>0.1 g/kg</strong> で低血糖を誘発。
+- <strong>肝不全リスク</strong>: <strong>0.5 g/kg</strong> 以上で急性肝不全のリスク。
+- <strong>臨床的な罠</strong>: 摂取後<strong>30分以内</strong>で低血糖発作を起こす可能性があり、ブドウ糖の静注による管理が急務。</p>
+<p><strong>5. ユリ科植物（猫のみ）</strong>
+- <strong>中毒量</strong>: 花粉や葉を<strong>一口かじっただけ</strong>で致死的な急性腎障害（AKI）の発症リスクあり。花瓶の水を舐めただけでも危険。
+- <strong>臨床経過</strong>: 初期症状（嘔吐・流涎）は<strong>数時間以内</strong>、腎障害は<strong>24〜72時間</strong>で進行。
+- <strong>治療の鍵</strong>: 摂取後<strong>48時間の積極的静脈内輸液</strong>（尿量確保）を推奨。</p>
+<hr />
+<h3>2️⃣ 催吐薬の選択 ─ 犬と猫で異なるアプローチ</h3>
+<p><strong>💡 臨床Tips: 使い慣れた催吐薬を1〜2種類確実にストックしておく</strong></p>
 <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>種類</th>
-<th>テオブロミン（mg/g）</th>
-<th>5kgの犬で重度中毒量</th>
+<th style="text-align: left;">催吐薬</th>
+<th style="text-align: left;">対象</th>
+<th style="text-align: left;">用量</th>
+<th style="text-align: left;">備考</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ホワイトチョコ</td>
-<td>0.01</td>
-<td>実質ほぼ問題なし</td>
+<td style="text-align: left;"><strong>トラネキサム酸</strong></td>
+<td style="text-align: left;">犬</td>
+<td style="text-align: left;"><strong>50 mg/kg IV</strong></td>
+<td style="text-align: left;">近年使用頻度が上昇、催吐成功率が高い</td>
 </tr>
 <tr>
-<td>ミルクチョコ</td>
-<td>1.5〜2.2</td>
-<td>約100〜130g</td>
+<td style="text-align: left;"><strong>アポモルヒネ</strong></td>
+<td style="text-align: left;">犬</td>
+<td style="text-align: left;"><strong>0.02〜0.04 mg/kg IV</strong>（最大 0.1 mg/kg）</td>
+<td style="text-align: left;">古典的催吐薬。結膜嚢投与も可能</td>
 </tr>
 <tr>
-<td>ビターチョコ（70%）</td>
-<td>5〜8</td>
-<td>約25〜40g（板チョコ半分程度）</td>
+<td style="text-align: left;"><strong>ロピニロール点眼</strong></td>
+<td style="text-align: left;">犬</td>
+<td style="text-align: left;"><strong>3.75 mg/m²</strong></td>
+<td style="text-align: left;">非侵襲的で使いやすい</td>
 </tr>
 <tr>
-<td>ベーキングチョコ</td>
-<td>14〜16</td>
-<td>約12〜15g（1片で危険）</td>
+<td style="text-align: left;"><strong>キシラジン</strong></td>
+<td style="text-align: left;">猫</td>
+<td style="text-align: left;"><strong>0.44 mg/kg IM/IV</strong></td>
+<td style="text-align: left;">猫用の第一選択催吐薬</td>
 </tr>
 <tr>
-<td>ココアパウダー</td>
-<td>14〜26</td>
-<td>約8〜15g（大さじ1〜2杯）</td>
+<td style="text-align: left;"><strong>デクスメデトミジン</strong></td>
+<td style="text-align: left;">猫</td>
+<td style="text-align: left;"><strong>7 μg/kg IM</strong></td>
+<td style="text-align: left;">α2アゴニスト。キシラジンの代替</td>
 </tr>
 </tbody>
 </table>
-<div class="clinical-tip">
-<h4>💊 臨床Tips</h4>
-<ul>
-<li>テオブロミンの半減期は犬で約17.5時間と長い → 症状が遅れて出現・遷延しやすい</li>
-<li>催吐は摂取後1〜2時間以内が有効。チョコレートは胃内で塊になりやすく、4時間後でも催吐で回収できたケースあり</li>
-<li>活性炭は反復投与（6〜8時間ごと）が推奨される（テオブロミンの腸肝循環のため）</li>
-<li>心電図モニタリングは最低24時間。重度例では48〜72時間</li>
-</ul>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>チョコレート中毒の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<!-- キシリトール詳細 -->
-<div id="xylitol">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🔴</span><span>キシリトール中毒 ─
-                            低血糖と肝不全の2段階</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>2段階の毒性メカニズム</h4>
-<ul>
-<li><strong>第1段階（低血糖）</strong>: ≥0.05g/kg →
-                                犬ではキシリトールが強力なインスリン分泌を刺激。10〜60分で血糖値が急降下。虚脱・痙攣・昏睡のリスク</li>
-<li><strong>第2段階（肝不全）</strong>: ≥0.5g/kg →
-                                8〜12時間後から肝酵素（ALT/AST）上昇。重症例ではDIC・凝固異常に進展。肝不全の死亡率は高い</li>
-</ul>
-<div class="clinical-tip">
-<h4>💊 治療プロトコル</h4>
-<ul>
-<li>摂取30分以内: 催吐（クレボル®点眼薬が第一選択。またはアポカイン®転用によるアポモルヒネ投与）</li>
-<li>即座にブドウ糖を含む輸液（5%デキストロース加乳酸リンゲル）開始</li>
-<li>血糖値を1〜2時間ごとにモニター（最低24時間）</li>
-<li>肝酵素・凝固系を12時間ごとに48〜72時間モニター</li>
-<li>⚠️ <strong>活性炭は無効</strong>（キシリトールに吸着しない）</li>
-</ul>
-</div>
-<p style="font-size:0.85rem;margin-top:8px;">
-                            ⚠️ 日本の注意:
-                            キシリトールガム1粒に約0.5〜1.3gのキシリトール。体重5kgの犬なら<strong>ガム1〜2粒で低血糖</strong>、<strong>5〜10粒で肝不全</strong>域に達する可能性。歯磨き粉やプロテインバーにも含まれるため、製品のキシリトール含有量を確認する。
-                        </p>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>キシリトール中毒の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<!-- ブドウ詳細 -->
-<div id="grape">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🍇</span><span>ブドウ/レーズン中毒 ─
-                            酒石酸と腎障害</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>毒性メカニズム: 酒石酸（Tartaric acid）</h4>
-<ul>
-<li>2022年にWegenastがJVECCに報告: クリームオブターター（酒石酸カリウム）を摂取した犬でブドウ中毒と同一の腎病変 → 酒石酸が原因物質と提唱</li>
-<li>犬はOAT1トランスポーターにより近位尿細管に酒石酸を取り込むが、排泄に必要なOAT4の発現が低い → 蓄積して尿細管壊死</li>
-<li>酒石酸の含有量は品種・熟度・加工法で大きく変動 → <strong>安全量の設定が不可能</strong></li>
-<li>2024年Vet RecordのScoping review: ブドウ摂取犬のうちAKIを発症するのは一部であり、個体差が大きい</li>
-</ul>
-<div class="clinical-tip">
-<h4>💊 臨床Tips</h4>
-<ul>
-<li>レーズンはブドウより高リスク（乾燥で酒石酸が濃縮される）</li>
-<li>日本で人気の巨峰・シャインマスカット・デラウェアも全て対象</li>
-<li>摂取が判明したら量に関わらず催吐 + 活性炭 → 48〜72時間の静脈輸液</li>
-<li>BUN/Cre/SDMAを12時間ごとにモニター（最低72時間）</li>
-<li>乏尿になったら予後は厳しい → 透析の選択肢を早期に飼い主に提示</li>
-</ul>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>ブドウ中毒の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<!-- ネギ類 -->
-<div id="allium">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🧅</span><span>ネギ類中毒 ─
-                            タマネギ・ニラ・ニンニクの溶血性貧血</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>毒性メカニズム: 有機硫黄化合物</h4>
-<ul>
-<li>ネギ属（Allium spp.）に含まれるチオ硫酸化合物が赤血球のヘモグロビンを酸化 → ハインツ小体・偏心体形成 → 溶血</li>
-<li>犬の中毒用量: 15〜30g/kg（タマネギなら中サイズ1/4〜1/2個で3kgの犬が危険に）</li>
-<li>猫は犬より感受性が高く: 5g/kg で中毒のリスク</li>
-<li>症状発現は遅れることが多い（1〜5日後に溶血が顕在化）</li>
-<li>加熱調理しても毒性は消えない（タマネギ入りの味噌汁・ハンバーグも危険）</li>
-</ul>
-<div class="clinical-tip">
-<h4>💊 臨床Tips</h4>
-<ul>
-<li>来院時に貧血がなくても安心できない → 3〜5日間のPCV追跡が必要</li>
-<li>塗抹でハインツ小体・偏心体を確認（犬では偏心体がより鋭敏な指標）</li>
-<li>重度溶血でPCV＜15%なら輸血を検討</li>
-<li>ニンニクはタマネギの約5倍の硫黄化合物 → 少量でも注意</li>
-</ul>
-</div>
-<p style="font-size:0.85rem;margin-top:8px;">
-                            ⚠️ 日本の注意: 長ネギ・ニラ・らっきょうも全てネギ属。すき焼き・鍋料理の残り汁にも注意。「猫にかつお節」の文化があるが、ネギ入りの煮汁に漬けた残り物は危険。
-                        </p>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>ネギ中毒の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<!-- ユリ詳細 -->
-<div id="lily">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🌺</span><span>ユリ中毒（猫限定）─
-                            花粉を舐めただけでも致死的</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>なぜユリは猫にだけ致命的なのか</h4>
-<ul>
-<li>真のユリ（Lilium属: テッポウユリ・カノコユリ・オニユリ等）とワスレグサ属（Hemerocallis: ニッコウキスゲ等）が腎毒性を持つ</li>
-<li>毒性成分は完全には同定されていないが、ステロイド系糖アルコールが腎尿細管壊死を引き起こすと考えられている</li>
-<li><strong>花弁1〜2枚、花粉を舐める、花瓶の水を飲むだけで致死量</strong></li>
-<li>犬やウサギでは重篤な腎障害は報告されていない（猫特異的な毒性）</li>
-</ul>
-<div class="clinical-tip">
-<h4>💊 治療プロトコル（時間との勝負）</h4>
-<ul>
-<li>接触が判明したら<strong>即座に催吐</strong>（遅延は予後を大幅に悪化させる）</li>
-<li>活性炭投与（1〜2g/kg PO）</li>
-<li><strong>48〜72時間の積極的静脈輸液</strong>（2倍維持量以上）が最重要</li>
-<li>Bennett &amp; Reineke（2013, JVECC）: 接触後18時間以内に輸液を開始した猫の予後は良好</li>
-<li>BUN/Creを12時間ごとにモニター。尿量の確認（尿道カテーテル推奨）</li>
-<li>乏尿/無尿が48時間以上続けば予後不良 → 腹膜透析や血液透析の選択肢についても説明</li>
-</ul>
-</div>
-<p style="font-size:0.85rem;margin-top:8px;">
-                            ⚠️ 日本の注意:
-                            正月の花束（テッポウユリ）、仏壇の供花（カノコユリ）、母の日のアレンジメント等でリスクが高い時期がある。カサブランカもLilium属で腎毒性あり。<strong>猫がいる家庭にはユリ科の花を絶対に持ち込まない</strong>よう啓発が重要。
-                        </p>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>ユリ中毒の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<!-- 除染プロトコル -->
-<div id="decontamination">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🧹</span><span>除染プロトコル ─
-                            催吐・活性炭の判断フロー</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>催吐の適応と禁忌</h4>
-<!-- 個別生成図表 -->
-<div class="mermaid-wrapper"><pre class="mermaid">
-graph TD
-    A["来院: 何を・いつ・どれだけ摂取？"] --> B{"重篤な症状 (意識障害/痙攣/呼吸困難)<br/>または腐食性/石油系物質の摂取？"}
-    B -- Yes --> C("緊急安定化処置: 輸液・酸素・抗痙攣薬など")
-    B -- No --> D{"摂取後1〜2時間以内？"}
-    D -- No (時間が経過) --> E("催吐は推奨せず")
-    D -- Yes --> F{"意識清明で咽頭反射あり？"}
-    F -- No --> G("催吐は禁忌・誤嚥リスク増大")
-    F -- Yes --> H("催吐を検討")
-
-    H --> I{"催吐薬の選択"}
-    I -- 犬 --> J("クレボル®点眼薬 / アポモルヒネ")
-    I -- 猫 --> K("デクスメデトミジン / キシラジン")
-
-    J --> L{"嘔吐物回収確認"}
-    K --> L
-
-    L -- 回収済み/嘔吐終了 --> M{"活性炭の投与は適応？<br/>(キシリトールには無効)"}
-    M -- No --> N("継続的なモニタリング・支持療法")
-    M -- Yes --> O("活性炭 1-2g/kg PO<br/>（腸肝循環物質は反復投与検討）")
-    O --> N
-
-    C --> N
-    E --> N
-    G --> N
-
-    subgraph 留意事項
-        style 注意1 fill:#fff,stroke:#333,stroke-width:2px
-        style 注意2 fill:#fff,stroke:#333,stroke-width:2px
-        注意1["⛔️ 自宅での塩水催吐は絶対禁忌"]
-        注意2["⛔️ 3%過酸化水素水は犬猫ともに推奨しない"]
-    end
-</pre></div>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th>✅ 催吐が有効</th>
-<th>❌ 催吐禁忌</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>摂取後1〜2時間以内</td>
-<td>意識障害・痙攣中</td>
-</tr>
-<tr>
-<td>意識清明で咽頭反射あり</td>
-<td>腐食性物質（酸・アルカリ）</td>
-</tr>
-<tr>
-<td>非腐食性物質</td>
-<td>石油系製品の誤飲</td>
-</tr>
-<tr>
-<td>大量摂取（チョコ塊など）</td>
-<td>短頭種（誤嚥リスク高）→ 慎重に</td>
-</tr>
-</tbody>
-</table>
-<div class="clinical-tip">
-<h4>💊 催吐薬の選択（日本）</h4>
-<ul>
-<li><strong>犬（第一選択）</strong>: クレボル®（ロピニロール点眼薬）─
-                                    2024年6月に日本で動物用医薬品として正式承認。片眼に1、2滴点眼するだけで平均15分以内に催吐。約90%の犬が45分以内に嘔吐終了。注射不要でストレスが少ない
-                                </li>
-<li><strong>犬（代替）</strong>: アポモルヒネ 0.03mg/kg IV or 0.04mg/kg
-                                    IM。日本ではヒト用製剤（アポカイン®皮下注30mg）を転用している施設もある。効果発現が速く比較的確実性が高い</li>
-<li>⚠️ <strong>3%過酸化水素水は犬でも推奨しない</strong>:
-                                    出血性胃炎・食道びらん・胃粘膜壊死のリスクが高く、クレボルやアポモルヒネが使用可能な現在、あえて選択する理由はない。猫では絶対禁忌</li>
-<li><strong>猫</strong>: デクスメデトミジン 7μg/kg IM
-                                    が有効（α2作動薬の催吐作用を利用）</li>
-<li><strong>猫</strong>（代替）: キシラジン 0.44mg/kg IM（催吐率は約50%）</li>
-</ul>
-</div>
-<h4 style="margin-top:12px;">活性炭の使い方</h4>
-<ul>
-<li>用量: 1〜2g/kg PO（カオリン懸濁液として）</li>
-<li>催吐後、嘔吐が落ち着いてから投与</li>
-<li>テオブロミンなど腸肝循環する物質では6〜8時間ごとの反復投与を検討</li>
-<li><strong>キシリトールには無効</strong>（吸着されないため投与不要）</li>
-</ul>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>除染プロトコルの詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<!-- 飼い主説明 -->
+<p>⚠️ <strong>猫にアポモルヒネは禁忌</strong>: 有効性が低く、中枢興奮を起こす危険がある。</p>
+<hr />
+<h3>3️⃣ 催吐ができない・間に合わない場合の「次の一手」</h3>
+<p><strong>💡 臨床Tips: 活性炭（腸管吸着）の積極活用を</strong>
+催吐の適応外、あるいは時間が経過している場合、<strong>活性炭の経口投与（1〜4 g/kg）</strong>が非常に有効なオプションとなります。
+- 毒素を物理的に吸着し、腸管からの吸収を防ぎます。
+- <strong>腸肝循環</strong>（肝臓から胆汁排泄された毒素が腸で再吸収される）を伴う毒物（例: イブプロフェン等の一部NSAIDs）の場合、4〜6時間ごとの複数回投与（MDAC: Multi-Dose Activated Charcoal）が推奨されます。
+- <strong>下剤（ソルビトール等のカタルティクス）</strong>を併用する場合は、脱水や高ナトリウム血症を防ぐため<strong>初回のみ</strong>の投与が原則です。</p>
+<p>⚠️ <strong>注意点</strong>: 重度の脱水や高ナトリウム血症がある場合は、活性炭投与による副作用（ナトリウムの引き込みと体液シフト）のリスクに注意が必要です。</p>
+<hr />
 <div id="owner-tips">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<div class="owner-tip" style="margin-top:0;">
-<h4>チョコレートを食べてしまったのですが…</h4>
-<div class="speech-bubble">
-                                チョコレートにはテオブロミンという犬にとって有害な成分が含まれています。ビターチョコは特に濃度が高く、少量でも危険です。食べた量と種類がわかれば、検査が必要かどうか計算できますので、パッケージをお持ちください。
-                            </div>
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>Q. 「オキシドールを少し飲ませて吐かせた方がいいですか？」</h4>
+                <div class="speech-bubble">「絶対にやめてください！オキシドールや塩水は、胃や食道に重度なヤケドや炎症を起こしたり、塩水による致命的な中毒を引き起こしたりする危険があります。何時間前に、どれくらいの量を食べたかを教えていただき、すぐにそのまま病院へ連れてきてください。」</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「さっきチョコレートを食べましたが、今は元気です。様子を見てもいいですか？」</h4>
+                <div class="speech-bubble">「チョコレートの毒素（テオブロミン）は、吸収されてから心臓や神経に症状が出るまでに数時間かかることがあります。今元気であっても、体内で吸収が進むと急激に状態が悪化する恐れがあるため、すぐに処置（吐かせるなど）をして吸収を防ぐことが最も安全です。」</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「猫がユリの花瓶の水を舐めたかもしれません。大丈夫ですか？」</h4>
+                <div class="speech-bubble">「ユリは猫にとって、花粉ひとつぶ、花瓶の水一舐めで命に関わる非常に危険な植物です。たとえ舐めた量が少なくても、放っておくと24〜72時間以内に腎臓が壊れてしまいます。舐めた可能性が少しでもあるなら、できるだけ早く病院に来てください。点滴をしっかり行えば救命率は大きく上がります。」</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
 </div>
-<div class="owner-tip">
-<h4>ユリの花粉を舐めたかもしれないのですが…（猫）</h4>
-<div class="speech-bubble">
-                                ユリは猫にとって非常に危険で、花粉を舐めただけでも腎臓に大きなダメージを与えます。<strong>すぐに来院してください</strong>。早ければ早いほど治療の効果が高くなります。流水で口や体の花粉を洗い流してから連れてきてください。
-                            </div>
+
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>📖 詳細解説の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+        <!-- 飼い主説明 -->
+        
+        <!-- 参照論文 -->
+        <div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（5本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Cortinovis C, et al. Household Food Items Toxic to Dogs and Cats. <em>Front Vet Sci</em>, 2016.</li>
+                <li>Gwaltney-Brant S, et al. Toxicology of Xylitol in Dogs. <em>Vet Clin North Am Small Anim Pract</em>, 2013.</li>
+                <li>AAHA 2024 Fluid Therapy Guidelines for Dogs and Cats (Regarding fluid management for specific toxicities).</li>
+                <li>Hall JO. Lilies. In: <em>Small Animal Toxicology</em>, 3rd ed. Elsevier, 2013.</li>
+                <li>Cope RB. A screening study of xylitol binding in vitro to activated charcoal. <em>Vet Hum Toxicol</em>, 2004.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
 </div>
-<div class="owner-tip">
-<h4>家でできる応急処置はありますか？</h4>
-<div class="speech-bubble">
-                                ご自宅での催吐（塩水を飲ませるなど）は<strong>絶対にしないでください</strong>。塩中毒のリスクがあり、かえって危険です。まずは何を・いつ・どれくらい食べたかをメモして、すぐにお電話ください。
-                            </div>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-</div>
-</div>
-</div>
-<!-- 参照論文 -->
-<div id="refs">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body">
-<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-<li>ASPCA Animal Poison Control Center. Top Toxins of 2024.
-                                <em>aspca.org</em> (2025年3月発表)
-                            </li>
-<li>Wegenast CA et al. Acute kidney injury in dogs following ingestion of cream of
-                                tartar and tamarinds and the connection to tartaric acid as the proposed toxic
-                                principle in grapes and raisins (2022). <em>J Vet Emerg Crit Care</em></li>
-<li>Cortinovis C, Caloni F. Household food items toxic to dogs and cats (2016). <em>Front
-                                    Vet Sci</em></li>
-<li>Bennett AJ, Reineke EL. Outcome following gastrointestinal tract decontamination and
-                                intravenous fluid diuresis in cats with known lily ingestion: 25 cases (2001-2010)
-                                (2013). <em>JVECC</em></li>
-<li>Dunayer EK, Gwaltney-Brant SM. Acute hepatic failure and coagulopathy associated
-                                with xylitol ingestion in eight dogs (2006). <em>JAVMA</em></li>
-<li>Salgado BS et al. Allium species poisoning in dogs and cats (2011). <em>J Vet
-                                    Pharmacol Therap</em></li>
-<li>Finlay F, Guiton S. Chocolate poisoning (2005). <em>BMJ</em>; Stidworthy MF et al.
-                                Chocolate poisoning in dogs. <em>Vet Record</em></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<footer class="page-footer" style="margin-top: var(--space-xl);">
-<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+        <footer class="page-footer" style="margin-top: var(--space-xl);">
+            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-</footer>
-</div>
-<script src="../../assets/script.js?v=20250225v9"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+        </footer>
+    </div>
+    <script src="../../assets/script.js?v=20250225v9"></script>
+    <script
+        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
+
 </html>

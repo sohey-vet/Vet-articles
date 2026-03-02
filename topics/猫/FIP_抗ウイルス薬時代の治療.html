@@ -1,573 +1,363 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="猫伝染性腹膜炎（FIP）の最新治療。GS-441524による治療成功率84.6%。日本での入手方法、用量、治療期間。" name="description"/>
-<title>FIP ─ 抗ウイルス薬時代の治療 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="猫伝染性腹膜炎（FIP）の最新治療。GS-441524による治療成功率84.6%。日本での入手方法、用量、治療期間。" name="description"/>
+    <title>FIP（猫伝染性腹膜炎）─ 抗ウイルス薬時代の治療 | VetEvidence</title>
+    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
 </head>
+
 <body class="mode-premium">
-<nav class="mobile-nav">
-<span class="nav-brand">🩺 VetEvidence</span>
-<button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button>
-</nav>
-<div class="slide-menu-overlay"></div>
-<aside class="slide-menu">
-<h4>ナビゲーション</h4>
-<a href="../../index.html">🏠 トップ</a>
-<a href="#conclusion">🎯 結論</a>
-<a href="#action-table">🗺️ 3病型の鑑別</a>
-<a href="#diagnosis">🔬 診断</a>
-<a href="#gs441524">💊 GS-441524</a>
-<a href="#dosing">📋 用量・治療期間</a>
-<a href="#monitoring">📊 治療中モニタリング</a>
-<a href="#japan">🇯🇵 日本での入手と現状</a>
-<a href="#owner-tips">🗣️ 飼い主説明</a>
-<a href="#refs">📚 参照論文</a>
-</aside>
-<div class="page-container">
-<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-<div class="tags" style="margin-bottom: 8px;">
-<a class="tag tag--primary" href="../../index.html?tag=%E6%84%9F%E6%9F%93%E7%97%87">感染症</a>
-<a class="tag tag--warning" href="../../index.html?tag=%E7%8C%AB">猫</a>
-<a class="tag tag--success" href="../../index.html?tag=%E6%8A%97%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E8%96%AC">抗ウイルス薬</a>
-<a class="tag tag--primary" href="../../index.html?tag=FIP">FIP</a><a class="tag tag--primary" href="../../index.html?tag=%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9">ウイルス</a></div>
-<h1 style="font-size: 1.3rem;">🦠 FIP（猫伝染性腹膜炎）─ 抗ウイルス薬時代の治療</h1>
-<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+    <!-- ===== Mobile Navigation ===== -->
+    <nav class="mobile-nav">
+        <span class="nav-brand">🩺 VetEvidence</span>
+        <button aria-label="メニュー" class="hamburger-btn">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="slide-menu-overlay"></div>
+    <aside class="slide-menu">
+        <h4>ナビゲーション</h4>
+        <a href="../../index.html">🏠 トップ</a>
+        <a href="#conclusion">🎯 結論</a>
+        <a href="#section-0">🎯 結論（30秒で読める）</a>
+        <a href="#section-1">⚡ 昔の常識 vs 今のエビデンス</a>
+        <a href="#section-2">🔬 FIPを疑うための診断補助カットオフ値</a>
+        <a href="#section-3">📖 2大抗ウイルス薬の比較と特徴</a>
+        <a href="#section-4">🗺️ ️ 臨床アクション表 ─ FIP治療成功...</a>
+        <a href="#section-5">📖 成功率と再発率のまとめ</a>
+        <a href="#owner-tips">🗣️ 飼い主説明</a>
+        <a href="#refs">📚 参照論文</a>
+        <h4>情報ソース</h4>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+    </aside>
+    <div class="page-container">
+        <!-- ===== HEADER ===== -->
+        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+            <div class="tags" style="margin-bottom: 8px;">
+                <a class="tag tag--primary" href="../../index.html?tag=%E6%84%9F%E6%9F%93%E7%97%87">感染症</a><a class="tag tag--warning" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--success" href="../../index.html?tag=%E6%8A%97%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E8%96%AC">抗ウイルス薬</a><a class="tag tag--primary" href="../../index.html?tag=FIP">FIP</a><a class="tag tag--primary" href="../../index.html?tag=%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9">ウイルス</a></div>
+            <h1 style="font-size: 1.3rem;">🦠 FIP（猫伝染性腹膜炎）─ 抗ウイルス薬時代の治療</h1>
+            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
                 かつて不治の病とされたFIP。GS-441524の登場で治療成功率84.6%の時代へ。
             </p>
-<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-<div class="meta-item"><span class="icon">📄</span><span>参照論文7本</span></div>
-<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-</div>
-</header>
-<div class="content-mode-bar">
-<span>📋</span>
-<label class="toggle-switch">
-<input checked="" id="content-mode-toggle" type="checkbox"/>
-<span class="toggle-slider"></span>
-</label>
-<span class="mode-label">👑 すべて表示</span>
-</div>
-<!-- ===== FREE ZONE ===== -->
-<div class="free-content" id="conclusion">
-<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-<h3 style="font-size:0.95rem;">🎯 結論</h3>
-<p style="font-size:0.88rem;">
-                    FIPは猫コロナウイルス（FCoV）の変異株による致死的な全身性疾患。従来は確定診断 ≒ 死刑宣告だったが、
-                    <strong>GS-441524の登場で治療成功率は84.6%</strong>（2025年Pathogensシステマティックレビュー/11研究650症例）。
-                    2024年5月、米国FDAは調剤薬局によるGS-441524の調合を事実上容認（Guidance #256）。
-                    日本では未承認だが、<strong>英国BOVA社等の海外承認動物用医薬品を輸入して使用</strong>する動物病院が増加。
-                    標準治療期間は<strong>84日間（12週間）</strong>。2024年の前向きRCTでは滲出型に対して<strong>42日間の短縮プロトコル</strong>も同等の有効性を示した。
-                    神経型・眼型は高用量が必要（経口20mg/kg/日）。
-                </p>
-</div>
-</div>
-<div class="free-content" id="action-table">
-<div class="card" style="margin-top:var(--space-md);">
-<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ FIP 3病型の鑑別</h3>
-<div style="overflow-x:auto;">
-<table class="comparison-table" style="margin:0;min-width:650px;">
+            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+                <div class="meta-item"><span class="icon">📄</span><span>参照論文7本</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+            </div>
+        </header>
+        <!-- ===== 表示モード切替 ===== -->
+        <div class="content-mode-bar">
+            <span>📋</span>
+            <label class="toggle-switch">
+                <input checked="" id="content-mode-toggle" type="checkbox"/>
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label">👑 すべて表示</span>
+        </div>
+        <!-- ===== FREE ZONE ===== -->
+        <div class="free-content" id="conclusion">
+            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <div style="font-size:0.88rem;">
+                    <p><strong>「FIP＝不治の病」の常識は過去のものとなりました。</strong>
+現在はGS-441524やモルヌピラビル（Molnupiravir）を用いた抗ウイルス療法により、<strong>80〜90%近い猫で治癒と長期生存が可能</strong>です。治療成功の鍵は、「ウイルスの潜む場所（眼・神経）に合わせた用量設計」と「体重増加に伴う正確な投薬量の増量」です。</p>
+<hr />
+                </div>
+            </div>
+        </div>
+        <div class="free-content" id="section-1">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>病型</th>
-<th>頻度</th>
-<th>主な所見</th>
-<th>診断のポイント</th>
-<th>GS-441524<br/>治療反応</th>
+<th style="text-align: left;">❌ 旧来の常識</th>
+<th style="text-align: left;">✅ 最新のエビデンス</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>🌊 滲出型<br/>（ウェット）</strong></td>
-<td>約60〜70%</td>
-<td>腹水（黄色粘稠）<br/>±胸水<br/>発熱・体重減少</td>
-<td>滲出液: 高蛋白（＞3.5g/dL）<br/>A/G比＜0.4<br/>Rivalta test陽性</td>
-<td>良好<br/>（最も治療反応が早い）</td>
+<td style="text-align: left;">FIPと診断されたら、緩和ケアか安楽死を選ぶしかない</td>
+<td style="text-align: left;"><strong>抗ウイルス薬（GS-441524, モルヌピラビル）</strong>により、多くの猫が「治癒」を獲得できる疾患へと変化した。</td>
 </tr>
 <tr>
-<td><strong>🔬 非滲出型<br/>（ドライ）</strong></td>
-<td>約25〜30%</td>
-<td>肉芽腫性病変<br/>眼・腎・肝・腸間膜リンパ節<br/>慢性の発熱・体重減少</td>
-<td>画像で肉芽腫検出<br/>生検でFCoV抗原陽性<br/>確定診断困難なことが多い</td>
-<td>良好だが<br/>反応に時間がかかる</td>
+<td style="text-align: left;">ドライタイプや神経症状が出たFIPは助からない</td>
+<td style="text-align: left;">眼や神経へ移行したFIPウイルスには、<strong>血液脳関門/血液眼関門を突破するための「高用量投与」</strong>で対応可能。</td>
 </tr>
 <tr>
-<td><strong>🧠 神経型/眼型</strong></td>
-<td>約5〜10%</td>
-<td>神経: 運動失調・痙攣・眼振<br/>眼: ぶどう膜炎・前房蓄膿</td>
-<td>CSF分析<br/>神経学的検査<br/>眼科検査（フレアー等）</td>
-<td>治療反応は低め<br/><strong>高用量が必須</strong></td>
+<td style="text-align: left;">治療期間は必ず84日間（12週間）必要である</td>
+<td style="text-align: left;">滲出型の初期・順調な症例では、<strong>42日間（6週間）への治療期間短縮</strong>も可能とする研究結果（2024年）が出ている。</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="free-content">
-<div class="card" style="margin-top:var(--space-md);">
-<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
-<table class="comparison-table" style="margin:0;">
+<hr />
+                </div>
+            </div>
+        </div>
+        <!-- ===== PREMIUM ZONE ===== -->
+        <!-- 📊 FIPを疑うための診断補助カットオフ値 -->
+        <div id="section-2">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🔬</span><span>📊 FIPを疑うための診断補助カットオフ値</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>❌ 旧来</th>
-<th>✅ 最新</th>
+<th style="text-align: left;">検査項目</th>
+<th style="text-align: left;">カットオフ値</th>
+<th style="text-align: left;">臨床的意義</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>FIPは不治の病、確定診断されたら安楽死を検討</td>
-<td><strong>GS-441524で84.6%が寛解</strong>。再発後の2回目の治療でさらに4%が追加寛解</td>
+<td style="text-align: left;"><strong>血清総蛋白</strong></td>
+<td style="text-align: left;"><strong>&gt; 7.8 g/dL</strong></td>
+<td style="text-align: left;">高TP＋高グロブリンの組み合わせでFIPを強く示唆</td>
 </tr>
 <tr>
-<td>FIPの治療薬は入手できない</td>
-<td>米国では2024年6月から調合GS-441524が合法的に処方可能。日本でも海外承認動物用医薬品の輸入で入手可能</td>
+<td style="text-align: left;"><strong>A/G比</strong></td>
+<td style="text-align: left;"><strong>&lt; 0.4</strong> で強く示唆、<strong>&lt; 0.6</strong> で疑い</td>
+<td style="text-align: left;">FIP鑑別の最も有用な指標の一つ</td>
 </tr>
 <tr>
-<td>治療期間は84日間が絶対</td>
-<td>2024年RCT: 滲出型では<strong>42日間の短縮プロトコルが84日間と同等の有効性</strong>（早期診断・集中管理例に限る）</td>
-</tr>
-<tr>
-<td>コロナウイルス抗体価でFIPを確定できる</td>
-<td>抗体価はFCoV曝露を示すのみ。<strong>FIPの確定診断にはならない</strong>。滲出液分析・組織のFCoV抗原検出が重要</td>
+<td style="text-align: left;"><strong>SAA（血清アミロイドA）</strong></td>
+<td style="text-align: left;">高値</td>
+<td style="text-align: left;">炎症マーカーとして治療効果のモニタリングにも使用</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<!-- ===== PREMIUM ZONE ===== -->
-<div id="diagnosis">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🔬</span><span>診断アプローチ ─
-                            確定診断は難しい</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>滲出型の診断</h4>
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>📊 FIPを疑うための診断補助カットオフ値の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div><!-- 💊 2大抗ウイルス薬の比較と特徴 -->
+        <div id="section-3">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📖</span><span>💊 2大抗ウイルス薬の比較と特徴</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h3>1️⃣ GS-441524</h3>
 <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>検査</th>
-<th>特徴的所見</th>
-<th>感度/特異度</th>
+<th style="text-align: left;">投与経路</th>
+<th style="text-align: left;">病型</th>
+<th style="text-align: left;">用量</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>滲出液性状</td>
-<td>黄色〜黄緑、粘稠、蛋白＞3.5g/dL</td>
-<td>高い（特異度は他の疾患との鑑別次第）</td>
+<td style="text-align: left;"><strong>注射（皮下）</strong></td>
+<td style="text-align: left;">通常のウェット/ドライ型</td>
+<td style="text-align: left;"><strong>5〜10 mg/kg</strong> 1日1回</td>
 </tr>
 <tr>
-<td>A/G比（滲出液）</td>
-<td>＜0.4 → FIP強く示唆<br/>0.4〜0.8 → 可能性あり<br/>＞0.8 → FIPは否定的</td>
-<td>A/G＜0.4: 感度低いが特異度高い</td>
+<td style="text-align: left;"><strong>注射（皮下）</strong></td>
+<td style="text-align: left;">神経型/眼型</td>
+<td style="text-align: left;"><strong>8〜10 mg/kg</strong> 1日1回</td>
 </tr>
 <tr>
-<td>Rivalta test</td>
-<td>陽性（滲出液の液滴が沈まない）</td>
-<td>感度〜91%、特異度〜66%</td>
+<td style="text-align: left;"><strong>経口</strong></td>
+<td style="text-align: left;">通常のウェット/ドライ型</td>
+<td style="text-align: left;"><strong>10〜15 mg/kg</strong> 1日1回</td>
 </tr>
 <tr>
-<td>滲出液RT-PCR</td>
-<td>FCoV RNA陽性</td>
-<td>高感度だが腸管型FCoVとの区別困難</td>
-</tr>
-<tr>
-<td>免疫染色（滲出液中マクロファージ）</td>
-<td>FCoV抗原陽性マクロファージ</td>
-<td>確定診断に最も近い</td>
+<td style="text-align: left;"><strong>経口</strong></td>
+<td style="text-align: left;">神経型/眼型</td>
+<td style="text-align: left;"><strong>15 mg/kg 以上</strong> 1日1回</td>
 </tr>
 </tbody>
 </table>
-<div class="clinical-tip">
-<h4>💊 臨床Tips</h4>
-<!-- 個別生成図表 -->
-<div class="mermaid-wrapper"><pre class="mermaid">
-graph TD
-    A["FIP診断確定 GS-441524治療開始"] --> B{"病型分類"}
-    B -->|"滲出型/非滲出型 (眼・神経症状なし)"| C1["経口用量: 15mg/kg PO SID"]
-    B -->|"眼型"| C2["経口用量: 15-20mg/kg PO SID"]
-    B -->|"神経型"| C3["経口用量: 20mg/kg/日 (10mg/kg q12h分割推奨)"]
-    C1 --> D{"経口投与可能か？"}
-    C2 --> D
-    C3 --> D
-    D -->|"Yes"| E["経口投与継続 (在宅管理が主)"]
-    D -->|"No (嘔吐,重度口内炎等)"| F["SC注射で開始"]
-    F --> G{"経口投与に切替可能？"}
-    G -->|"Yes"| E
-    G -->|"No"| F
-    E --> H["治療開始後モニタリング"]
-    H -->|"毎週"| I["体重測定 用量再計算"]
-    H -->|"1-2週で確認"| J["食欲改善, 活動性回復"]
-    H -->|"1-2週で確認"| K["腹水/胸水減少"]
-    H -->|"4週ごと検査"| L["CBC, 生化学, SAA"]
-    H -->|"4週ごと検査"| M["A/G比 (血清/滲出液)"]
-    L --> N{"SAA正常化, グロブリン低下, リンパ球上昇？"}
-    M --> O{"A/G比 0.6以上に正常化？"}
-    N -->|"Yes"| P{"総合評価 治療期間判断"}
-    O -->|"Yes"| P
-    N -->|"No"| Q["治療継続 or 用量増加 (再評価)"]
-    O -->|"No"| Q
-    Q --> H
-    P -->|"滲出型で良好な反応"| R1["治療完了: 42日間"]
-    P -->|"その他/神経型は84日以上推奨"| R2["治療完了: 84日間"]
-    R1 --> T["治療完了後3ヶ月間モニタリング"]
-    R2 --> T
-    T -->|"再発兆候なし"| U["寛解と判断"]
-    T -->|"再発兆候あり (発熱,グロブリン/SAA再上昇)"| V["再治療 (同用量or増量)"]
-</pre></div>
 <ul>
-<li>非滲出型: 確定診断には生検が必要なことが多い。MRI/CTで肉芽腫の描出</li>
-<li>血液検査: 高グロブリン血症（A/G比＜0.6）、リンパ球減少、高ビリルビン血症が支持的</li>
-<li>FCoV抗体価高値はFCoV曝露を示すのみで、FIPの確定診断にはならない</li>
-<li>臨床的には「compatible with FIP」の段階で治療開始を判断せざるを得ないことが多い</li>
+<li><strong>成功率</strong>: 全体で約84%。</li>
 </ul>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>診断アプローチの詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="gs441524">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">💊</span><span>GS-441524 ─
-                            作用機序と有効性</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>作用機序</h4>
-<ul>
-<li>GS-441524はヌクレオシドアナログ。FCoVのRNA依存性RNAポリメラーゼ（RdRp）を阻害</li>
-<li>レムデシビルは体内でGS-441524に代謝されるプロドラッグ</li>
-<li>細胞内でGS-441524がリン酸化 → 活性代謝体のGS-443902として作用 → ウイルスRNA複製を停止</li>
-</ul>
-<h4>治療成績（2025年システマティックレビュー）</h4>
-<ul>
-<li>Pathologens誌: 650症例/11研究の統合解析</li>
-<li><strong>全体の治療成功率: 84.6%</strong>
-<ul>
-<li>初回寛解率: 80.6%</li>
-<li>再発後の2回目治療での追加寛解: 4.0%</li>
-</ul>
-</li>
-<li>滲出型が最も治療反応が良い</li>
-<li>神経型は寛解率が最も低い → 高用量が必要</li>
-</ul>
-<h4>レムデシビル vs GS-441524</h4>
-<table class="comparison-table" style="margin:12px 0;">
-<thead>
-<tr>
-<th></th>
-<th>GS-441524（経口/SC）</th>
-<th>レムデシビル（IV/SC）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>投与経路</td>
-<td>経口が主流（SC注射も可）</td>
-<td>IV推奨（SC注射も可）</td>
-</tr>
-<tr>
-<td>在宅治療</td>
-<td><strong>可能</strong>（経口投与）</td>
-<td>困難（通院注射が必要）</td>
-</tr>
-<tr>
-<td>SC注射時の疼痛</td>
-<td>中等度（pH低い製剤あり）</td>
-<td>やや少ない</td>
-</tr>
-<tr>
-<td>費用</td>
-<td>比較的費用対効果が良い</td>
-<td>やや高い</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>GS-441524の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="dosing">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">📋</span><span>用量・治療期間プロトコル</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>GS-441524 経口投与プロトコル</h4>
+<h3>2️⃣ モルヌピラビル (Molnupiravir)</h3>
 <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>病型</th>
-<th>用量</th>
-<th>標準治療期間</th>
+<th style="text-align: left;">病型</th>
+<th style="text-align: left;">用量</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>滲出型（眼・神経症状なし）</td>
-<td>15 mg/kg PO SID</td>
-<td>84日間（12週間）<br/>※早期診断例では42日間も選択肢</td>
+<td style="text-align: left;">通常</td>
+<td style="text-align: left;"><strong>10〜15 mg/kg</strong> を <strong>1日2回</strong> 経口</td>
 </tr>
 <tr>
-<td>非滲出型（眼・神経症状なし）</td>
-<td>15 mg/kg PO SID</td>
-<td>84日間（12週間）</td>
+<td style="text-align: left;">代替プロトコル</td>
+<td style="text-align: left;"><strong>30 mg/kg</strong> 1日1回</td>
 </tr>
 <tr>
-<td>眼型</td>
-<td>15〜20 mg/kg PO SID</td>
-<td>84日間（12週間）</td>
-</tr>
-<tr>
-<td>神経型</td>
-<td><strong>20 mg/kg/日</strong><br/>（10mg/kg q12hに分割推奨）</td>
-<td>84日間（12週間）以上</td>
+<td style="text-align: left;">眼/神経症状あり</td>
+<td style="text-align: left;"><strong>20 mg/kg</strong> を 1日2回</td>
 </tr>
 </tbody>
 </table>
-<h4>皮下注射プロトコル</h4>
-<table class="comparison-table" style="margin:0 0 12px;">
+<ul>
+<li><strong>成功率</strong>: 78%〜90%以上。</li>
+<li><strong>注意</strong>: 半減期の関係上、<strong>「1日2回投与」</strong>が基本。</li>
+</ul>
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>💊 2大抗ウイルス薬の比較と特徴の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div><!-- 🗺️ 臨床アクション表 ─ FIP治療成功のための要点 -->
+        <div id="section-4">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🗺️</span><span>🗺️ 臨床アクション表 ─ FIP治療成功のための要点</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>病型</th>
-<th>用量</th>
+<th style="text-align: left;">鉄則</th>
+<th style="text-align: left;">具体的なアクション</th>
+<th style="text-align: left;">失敗に直結するリスク</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>滲出型/非滲出型</td>
-<td>6〜7.5 mg/kg SC SID</td>
+<td style="text-align: left;"><strong>① 用量は「症状の最も重い場所」に合わせる</strong></td>
+<td style="text-align: left;">眼の混濁や神経症状があれば<strong>高用量</strong>からスタート。</td>
+<td style="text-align: left;">用量不足はウイルスの耐性化と再燃の最大の原因。</td>
 </tr>
 <tr>
-<td>眼型</td>
-<td>10 mg/kg SC SID</td>
+<td style="text-align: left;"><strong>② 体重増加に合わせて薬の量を増やす</strong></td>
+<td style="text-align: left;"><strong>毎週必ず体重を測り、mg/kgの計算をやり直す</strong>。</td>
+<td style="text-align: left;">相対的な「用量不足」に陥り再燃する。</td>
 </tr>
 <tr>
-<td>神経型</td>
-<td>15〜20 mg/kg SC SID（BBB通過のため高用量が必要）</td>
+<td style="text-align: left;"><strong>③ 治療期間は12週間（84日間）が基本</strong></td>
+<td style="text-align: left;">途中中断は耐性ウイルスを生む。</td>
+<td style="text-align: left;">プロトコル完遂後の再発率は <strong>5〜10%</strong>。途中中断は再発率を大幅に上昇させる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>④ 初期の炎症にはステロイド併用</strong></td>
+<td style="text-align: left;"><strong>プレドニゾロン 1〜2 mg/kg/day</strong> を数日間併用し漸減。</td>
+<td style="text-align: left;">長期併用は免疫抑制によりウイルスクリアランスを妨げる。</td>
 </tr>
 </tbody>
 </table>
-<div class="clinical-tip">
-<h4>💊 臨床Tips</h4>
-<!-- 個別生成図表 -->
-<div class="mermaid-wrapper"><pre class="mermaid">
-graph TD
-    A["FIP診断確定 GS-441524治療開始"] --> B{"病型分類"}
-    B -->|"滲出型/非滲出型 (眼・神経症状なし)"| C1["経口用量: 15mg/kg PO SID"]
-    B -->|"眼型"| C2["経口用量: 15-20mg/kg PO SID"]
-    B -->|"神経型"| C3["経口用量: 20mg/kg/日 (10mg/kg q12h分割推奨)"]
-    C1 --> D{"経口投与可能か？"}
-    C2 --> D
-    C3 --> D
-    D -->|"Yes"| E["経口投与継続 (在宅管理が主)"]
-    D -->|"No (嘔吐,重度口内炎等)"| F["SC注射で開始"]
-    F --> G{"経口投与に切替可能？"}
-    G -->|"Yes"| E
-    G -->|"No"| F
-    E --> H["治療開始後モニタリング"]
-    H -->|"毎週"| I["体重測定 用量再計算"]
-    H -->|"1-2週で確認"| J["食欲改善, 活動性回復"]
-    H -->|"1-2週で確認"| K["腹水/胸水減少"]
-    H -->|"4週ごと検査"| L["CBC, 生化学, SAA"]
-    H -->|"4週ごと検査"| M["A/G比 (血清/滲出液)"]
-    L --> N{"SAA正常化, グロブリン低下, リンパ球上昇？"}
-    M --> O{"A/G比 0.6以上に正常化？"}
-    N -->|"Yes"| P{"総合評価 治療期間判断"}
-    O -->|"Yes"| P
-    N -->|"No"| Q["治療継続 or 用量増加 (再評価)"]
-    O -->|"No"| Q
-    Q --> H
-    P -->|"滲出型で良好な反応"| R1["治療完了: 42日間"]
-    P -->|"その他/神経型は84日以上推奨"| R2["治療完了: 84日間"]
-    R1 --> T["治療完了後3ヶ月間モニタリング"]
-    R2 --> T
-    T -->|"再発兆候なし"| U["寛解と判断"]
-    T -->|"再発兆候あり (発熱,グロブリン/SAA再上昇)"| V["再治療 (同用量or増量)"]
-</pre></div>
-<ul>
-<li><strong>毎週体重測定</strong>して用量を再計算（回復に伴い急速に体重が増加する）</li>
-<li>経口投与困難（嘔吐、重度口内炎等）→ SC注射で開始し、状態安定後に経口に切替</li>
-<li>SC注射は疼痛を伴う → 注射部位のローテーション、投与前にエムラクリーム®等で局所麻酔を検討</li>
-<li>治療開始後24〜48時間で食欲改善、1〜2週間で腹水減少が見られることが多い</li>
-</ul>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>投与プロトコルの詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="monitoring">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">📊</span><span>治療中のモニタリングと再発の判定</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>推奨モニタリングスケジュール</h4>
-<table class="comparison-table" style="margin:0 0 12px;">
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>🗺️ 臨床アクション表 ─ FIP治療成功のための要点の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div><!-- 📊 成功率と再発率のまとめ -->
+        <div id="section-5">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📖</span><span>📊 成功率と再発率のまとめ</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
 <thead>
 <tr>
-<th>時期</th>
-<th>検査項目</th>
-<th>期待される変化</th>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">数値</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>毎週</td>
-<td>体重</td>
-<td>治療開始後に増加</td>
+<td style="text-align: left;">抗ウイルス薬使用時の<strong>治癒・寛解率</strong></td>
+<td style="text-align: left;"><strong>80〜90%以上</strong></td>
 </tr>
 <tr>
-<td>2週間ごと</td>
-<td>CBC、生化学、SAA</td>
-<td>リンパ球↑、グロブリン↓、SAA正常化</td>
+<td style="text-align: left;">12週間プロトコル完遂後の<strong>再発率</strong></td>
+<td style="text-align: left;"><strong>5〜10%</strong></td>
 </tr>
 <tr>
-<td>4週間ごと</td>
-<td>A/G比</td>
-<td>0.6以上に正常化</td>
+<td style="text-align: left;">GS-441524の成功率</td>
+<td style="text-align: left;">約 <strong>84%</strong></td>
 </tr>
 <tr>
-<td>腹水/胸水あり</td>
-<td>エコーでの液体評価</td>
-<td>1〜3週間で減少</td>
-</tr>
-<tr>
-<td>治療完了時</td>
-<td>全検査 + 3ヶ月の経過観察</td>
-<td>再発なし → 寛解と判断</td>
+<td style="text-align: left;">モルヌピラビルの成功率</td>
+<td style="text-align: left;"><strong>78〜90%以上</strong></td>
 </tr>
 </tbody>
 </table>
-<h4>再発の判定</h4>
-<ul>
-<li>治療完了後3ヶ月間は厳重にフォロー</li>
-<li>再発は治療完了後2〜8週間に多い</li>
-<li>再発の兆候: 発熱再燃、食欲低下、体重減少、グロブリン再上昇、SAA再上昇</li>
-<li>再発時 → 同用量 or 増量で再治療（2回目も高い寛解率）</li>
-</ul>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>モニタリングの詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="japan">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🇯🇵</span><span>日本でのGS-441524入手と法的位置づけ</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>2025年現在の日本の状況</h4>
-<ul>
-<li>GS-441524は日本国内では<strong>動物用医薬品として未承認</strong></li>
-<li>英国BOVA社等の海外で動物用医薬品として承認された製品を<strong>動物病院が輸入して使用</strong>するケースが増加</li>
-<li>以前流通していたMutian・Xraphconn等のブラックマーケット製品は品質保証がなく、成分含有量が不安定 → 正規品の使用が推奨</li>
-<li>レムデシビル（ヒト用新型コロナ治療薬として日本承認済み）を転用するケースもあるが、FIPに対する正式承認はない</li>
-<li>モルヌピラビルもFIP治療への有効性が報告されており、安価という利点があるが、変異誘発のリスクに関して慎重な意見がある</li>
-</ul>
-<div class="clinical-tip">
-<h4>💊 実務上のポイント</h4>
-<ul>
-<li>治療の総費用: 84日間で<strong>約30〜60万円</strong>（製品・体重・病型による。神経型は高用量のため高額に）</li>
-<li>獣医師の裁量と飼い主のインフォームドコンセントのもとで使用</li>
-<li>品質管理された正規の動物用医薬品（海外承認品）の使用を強く推奨</li>
-<li>ブラックマーケット製品を飼い主が独自に購入・投与しているケースもある → 濃度が不明で治療失敗・耐性のリスク</li>
-<li>今後の日本国内での正式承認に向けた動きに注目</li>
-</ul>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>日本での入手方法の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
+<hr />
 <div id="owner-tips">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<div class="owner-tip" style="margin-top:0;">
-<h4>FIPと言われました。治ることはあるのですか？</h4>
-<div class="speech-bubble">
-                                以前は治療法がありませんでしたが、<strong>GS-441524という新しい抗ウイルス薬で、約85%の猫ちゃんが回復</strong>しています。ただし、最低12週間の治療が必要で、途中でやめると再発のリスクがあります。早期に治療を始めるほど効果が高いです。
-                            </div>
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>Q. 「薬がとても高額だと聞きました。途中でやめるとどうなりますか？」</h4>
+                <div class="speech-bubble">「FIPの抗ウイルス薬は、ウイルスを完全に叩き切るまで基本は84日間連続投与が必要です。途中でやめると薬に対する『耐性』を持った強いウイルスとして再発してしまう危険が高いです。費用面も含め、最後まで続けられる治療プランを一緒に考えましょう。」</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「FIPは治る病気になったと聞きましたが、本当ですか？」</h4>
+                <div class="speech-bubble">「はい、本当です。適切に治療すれば80〜90%の猫ちゃんが治癒できるようになりました。正しい用量で最後まで投薬を続けることが絶対条件です。治療完了後の再発率は5〜10%程度に抑えられます。」</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「目がおかしい（濁っている）のですが、それもFIPのせいですか？」</h4>
+                <div class="speech-bubble">「はい、FIPのウイルスは眼や脳にも入り込むことがあります。通常よりも高い用量のお薬が必要になりますが、適切に治療すれば回復が期待できます。」</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
 </div>
-<div class="owner-tip">
-<h4>治療費はどのくらいかかりますか？</h4>
-<div class="speech-bubble">
-                                お薬代だけで<strong>84日間で約30〜60万円</strong>程度です。体重や病型によって変わります。これに加えて定期的な血液検査や診察費用がかかります。分割払いや、ペット保険の適用についてもご相談ください。
-                            </div>
+
+<hr />
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>📊 成功率と再発率のまとめの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+        <!-- 飼い主説明 -->
+        
+        <!-- 参照論文 -->
+        <div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（4本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Sykes JE, et al. 2024 Consensus statement on the treatment of feline infectious peritonitis. <em>J Vet Intern Med</em>.</li>
+                <li>Zuzzi-Krebitz et al. Efficacy of a 42-day short-course oral GS-441524 treatment in cats with effusive FIP. <em>JFMS</em>, 2024.</li>
+                <li>Recent trials on Molnupiravir efficacy as first-line &amp; rescue therapy for FIP (2024-2025).</li>
+                <li>Addie DD, et al. Oral Mutian X stopped feline infectious peritonitis. <em>Res Vet Sci</em>, 2020.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
 </div>
-<div class="owner-tip">
-<h4>他の猫にうつりますか？</h4>
-<div class="speech-bubble">
-                                FIPそのものは他の猫にうつることはほぼありません。ただし、原因となるコロナウイルス自体は猫同士で感染します。多頭飼育の場合はトイレの共有に注意し、別のお部屋で隔離することをお勧めします。
-                            </div>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="refs">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body">
-<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-<li>Pedersen NC et al. Efficacy and safety of the nucleoside analog GS-441524 for treatment
-                                of cats with naturally occurring feline infectious peritonitis (2019). <em>J Feline Med
-                                    Surg</em> 2019;21(4):271-281.</li>
-<li>Gokalsing E et al. Efficacy of GS-441524 for feline infectious peritonitis: a systematic
-                                review (2018-2024) (2025). <em>Pathogens</em> 2025;14(7).</li>
-<li>Zuzzi-Krebitz A-M et al. Short treatment of 42 days with oral GS-441524 results in equal
-                                efficacy
-                                as the recommended 84-day treatment in cats suffering from FIP with effusion — a
-                                prospective randomized controlled study (2024). <em>Viruses</em> 2024;16(7):1138.</li>
-<li>Taylor CS et al. Outcomes of cats treated with legally sourced remdesivir and GS-441524
-                                for
-                                feline infectious peritonitis in the United Kingdom (2023). <em>J Feline Med Surg</em>
-                                2023;25(9).</li>
-<li>Addie DD et al. Long-term follow-up of cats in remission after antiviral treatment for
-                                feline infectious peritonitis (2023). <em>J Feline Med Surg</em> 2023;25(8).</li>
-<li>Tasker S. Diagnosis of feline infectious peritonitis: update on evidence supporting
-                                available tests (2018). <em>J Feline Med Surg</em> 2018;20(3):228-243.</li>
-<li>US FDA Center for Veterinary Medicine. Guidance for Industry #256: Compounding Animal
-                                Drugs from Bulk Drug Substances (2024). <em>fda.gov</em></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<footer class="page-footer" style="margin-top: var(--space-xl);">
-<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+        <footer class="page-footer" style="margin-top: var(--space-xl);">
+            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-</footer>
-</div>
-<script src="../../assets/script.js?v=20250225v9"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+        </footer>
+    </div>
+    <script src="../../assets/script.js?v=20250225v9"></script>
+    <script
+        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
+
 </html>
