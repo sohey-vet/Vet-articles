@@ -1,440 +1,322 @@
 <!DOCTYPE html>
-
 <html lang="ja">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="犬猫の疾患別療法食ガイド。腎臓病、消化器、皮膚、泌尿器、肝臓の療法食を比較し日本での入手性と選び方を解説。" name="description"/>
-<title>療法食の選び方 ─ 疾患別フードガイド | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="療法食の疾患別選び方。CKD（リン制限・タンパク制限・Omega-3）、心疾患、膵炎、IBDの栄養管理と複数疾患併発時の栄養トリアージの考え方。" name="description" />
+    <title>療法食の選び方 ─ 疾患別フードガイド | VetEvidence</title>
+    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet" />
 </head>
+
 <body class="mode-premium">
-<nav class="mobile-nav">
-<span class="nav-brand">🩺 VetEvidence</span>
-<button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button>
-</nav>
-<div class="slide-menu-overlay"></div>
-<aside class="slide-menu">
-<h4>ナビゲーション</h4>
-<a href="../../index.html">🏠 トップ</a>
-<a href="#conclusion">🎯 結論</a>
-<a href="#action-table">🗺️ 主要療法食</a>
-<a href="#renal">🫘 腎臓食</a>
-<a href="#gi">🍽️ 消化器食</a>
-<a href="#derm">🐕 皮膚食</a>
-<a href="#urinary">💧 泌尿器食</a>
-<a href="#multi">⚖️ 複数疾患の併存</a>
-<a href="#owner-tips">🗣️ 飼い主説明</a>
-<a href="#refs">📚 参照論文</a>
-</aside>
-<div class="page-container">
-<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-<div class="tags" style="margin-bottom: 8px;">
-<a class="tag tag--primary" href="../../index.html?tag=%E6%A0%84%E9%A4%8A">栄養</a>
-<a class="tag tag--success" href="../../index.html?tag=%E7%8A%AC%E7%8C%AB%E5%85%B1%E9%80%9A">犬猫共通</a>
-<a class="tag tag--warning" href="../../index.html?tag=%E7%99%82%E6%B3%95%E9%A3%9F">療法食</a>
-<a class="tag tag--primary" href="../../index.html?tag=%E9%A3%9F%E4%BA%8B%E7%99%82%E6%B3%95">食事療法</a></div>
-<h1 style="font-size: 1.3rem;">🍽️ 療法食の選び方 ─ 疾患別フードガイド</h1>
-<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-                療法食は「処方」の一部であり、適当に選ぶものではない。
-                各疾患の栄養戦略を理解し、日本で入手可能な製品の中から最適なものを選択するための実践ガイド。
+    <nav class="mobile-nav">
+        <span class="nav-brand">🩺 VetEvidence</span>
+        <button aria-label="メニュー" class="hamburger-btn">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="slide-menu-overlay"></div>
+    <aside class="slide-menu">
+        <h4>ナビゲーション</h4>
+        <a href="../../index.html">🏠 トップ</a>
+        <a href="#conclusion">🎯 結論</a>
+        <a href="#ckd">🫘 CKDの栄養原則</a>
+        <a href="#triage">⚖️ 栄養トリアージ</a>
+        <a href="#pitfalls">⚠️ よくある失敗</a>
+        <a href="#owner-tips">🗣️ 飼い主説明</a>
+        <a href="#refs">📚 参照論文</a>
+        <h4>情報ソース</h4>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+    </aside>
+    <div class="page-container">
+        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+            <div class="tags" style="margin-bottom: 8px;">
+                <a class="tag tag--primary" href="../../index.html?tag=%E6%A0%84%E9%A4%8A">栄養</a>
+                <a class="tag tag--warning" href="../../index.html?tag=%E7%99%82%E6%B3%95%E9%A3%9F">療法食</a>
+                <a class="tag tag--success" href="../../index.html?tag=%E7%8A%AC%E7%8C%AB%E5%85%B1%E9%80%9A">犬猫共通</a>
+            </div>
+            <h1 style="font-size: 1.3rem;">🍽️ 療法食の選び方 ─ 疾患別フードガイド</h1>
+            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                「なんとなく良さそうだから」ではなく確定診断に基づいて選択する。CKDには強いエビデンス。複数疾患の併発時は「栄養トリアージ」の考え方を用いる。
             </p>
-<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
-<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
-</div>
-</header>
-<div class="content-mode-bar">
-<span>📋</span>
-<label class="toggle-switch">
-<input checked="" id="content-mode-toggle" type="checkbox"/>
-<span class="toggle-slider"></span>
-</label>
-<span class="mode-label">👑 すべて表示</span>
-</div>
-<div class="free-content" id="conclusion">
-<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-<h3 style="font-size:0.95rem;">🎯 結論</h3>
-<p style="font-size:0.88rem;">
-                    療法食は<strong>「薬の一部」</strong>として処方すべきもの。
-                    日本で入手可能な主要ブランドは<strong>ヒルズ、ロイヤルカナン、ピュリナプロプラン</strong>の3社。
-                    <strong>腎臓食は最もエビデンスが強い</strong>療法食（IRIS Stage 2以上のCKDで生存期間を延長する複数の臨床試験（観察研究やRCTを含む）あり）。
-                    複数疾患が併存する場合は<strong>最も生命に影響する疾患を優先</strong>してフードを選択する。
-                    「食べないフード（正しいフード）」より「食べるフード（次善のフード）」の方がはるかに良い ─
-                    <strong>食べてもらうことが最優先</strong>。
-                </p>
-</div>
-</div>
-<div class="free-content" id="action-table">
-<div class="card">
-<h3 style="font-size: 0.95rem;">⚡ 主要疾患別 ─ 栄養戦略の概要</h3>
-<div style="overflow-x:auto;">
-<table class="comparison-table" style="margin:12px 0 0;">
-<thead>
-<tr>
-<th>疾患</th>
-<th>栄養戦略</th>
-<th>エビデンスレベル</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CKD（腎臓病）</td>
-<td>リン・蛋白制限、Na制限、EPA/DHA添加</td>
-<td>⭐⭐⭐ 複数RCT</td>
-</tr>
-<tr>
-<td>消化器疾患</td>
-<td>高消化性・低脂肪 or 加水分解蛋白</td>
-<td>⭐⭐ 臨床研究あり</td>
-</tr>
-<tr>
-<td>食物アレルギー</td>
-<td>新奇蛋白 or 加水分解蛋白（除去食試験）</td>
-<td>⭐⭐⭐ ゴールドスタンダード</td>
-</tr>
-<tr>
-<td>尿石症</td>
-<td>結石種に応じたpH調整＋ミネラル管理</td>
-<td>⭐⭐⭐ 多数の臨床研究</td>
-</tr>
-<tr>
-<td>心臓病</td>
-<td>Na制限（過度でないこと）、タウリン確保</td>
-<td>⭐〜⭐⭐ エビデンス限定的</td>
-</tr>
-<tr>
-<td>肝臓病</td>
-<td>適度な蛋白制限（過度は避ける）、BCAA重視</td>
-<td>⭐〜⭐⭐ エビデンス限定的</td>
-</tr>
-<tr>
-<td>肥満</td>
-<td>カロリー制限、高蛋白・高繊維で満腹感維持</td>
-<td>⭐⭐ メタボリック食に関する研究あり</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<!-- PREMIUM -->
-<div id="renal">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🫘</span><span>腎臓食 ─
-                            最もエビデンスが強い療法食</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>腎臓食の栄養管理目標</h4>
-<ul>
-<li><strong>リン制限</strong>: 最重要。高リン血症を防ぎ腎機能低下を遅延</li>
-<li><strong>蛋白制限</strong>: 適度に制限（過度な制限は筋肉量低下のリスク）。猫ではDM 28〜35%程度</li>
-<li><strong>Na制限</strong>: 高血圧管理に寄与</li>
-<li><strong>EPA/DHA</strong>: 抗炎症効果。腎保護のエビデンスあり</li>
-<li><strong>カリウム補充</strong>: 猫で低K血症が多い → 腎臓食はK含量が高めに設計</li>
-</ul>
-<h4 style="margin-top:12px;">日本で入手可能な腎臓食</h4>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th>ブランド</th>
-<th>犬</th>
-<th>猫</th>
-<th>特徴</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ヒルズ</td>
-<td>k/d</td>
-<td>k/d（通常/早期）</td>
-<td>EPA/DHA強化。k/d Early Supportは早期CKD向け</td>
-</tr>
-<tr>
-<td>ロイヤルカナン</td>
-<td>腎臓サポート</td>
-<td>腎臓サポート</td>
-<td>ドライ・ウェット・リキッドの3形態が揃っている</td>
-</tr>
-<tr>
-<td>ピュリナ</td>
-<td>NF</td>
-<td>NF（Early Care/Advanced Care）</td>
-<td>ステージに応じた2段階の製品展開</td>
-</tr>
-</tbody>
-</table>
-<div class="clinical-tip">
-<h4>💊 臨床Tips</h4>
-<ul>
-<li>IRIS Stage 2以上で<strong>腎臓食への切り替えを推奨</strong>（エビデンスが最も強い段階）</li>
-<li>切り替えは<strong>7〜14日かけて</strong>徐々に混ぜていく（急な切り替えは食べなくなるリスク）</li>
-<li>食べない場合は<strong>温める、少量のトッピング（鶏むね肉の煮汁等）</strong>で嗜好性を上げる</li>
-<li>それでも食べない → <strong>「食べないk/d」より「食べる一般食」</strong>の方がはるかに良い</li>
-</ul>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>腎臓食の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="gi">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🍽️</span><span>消化器食 ─ 下痢・嘔吐・膵炎</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th>状況</th>
-<th>推奨フードタイプ</th>
-<th>具体例（日本入手可）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>急性胃腸炎（下痢・嘔吐）</td>
-<td>高消化性</td>
-<td>ヒルズ i/d、ロイヤルカナン 消化器サポート</td>
-</tr>
-<tr>
-<td>急性膵炎（犬）</td>
-<td><strong>低脂肪</strong>高消化性</td>
-<td>ヒルズ i/d Low Fat、ロイヤルカナン 消化器サポート低脂肪</td>
-</tr>
-<tr>
-<td>IBD / 食物反応性腸症</td>
-<td><strong>加水分解蛋白</strong> or 新奇蛋白</td>
-<td>ヒルズ z/d、ロイヤルカナン アミノペプチドフォーミュラ（犬用のみ）<br/>猫にはロイヤルカナン 低分子プロテイン等</td>
-</tr>
-<tr>
-<td>大腸性下痢（繊維反応性）</td>
-<td>高繊維</td>
-<td>ヒルズ w/d、ロイヤルカナン 消化器サポート高繊維</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>消化器食の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="derm">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🐕</span><span>皮膚食 ─
-                            食物アレルギーと除去食試験</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>除去食試験の原則</h4>
-<ul>
-<li>除去食試験は最低<strong>8週間</strong>（12週間が望ましい）</li>
-<li>加水分解蛋白食 or 新奇蛋白食を<strong>100%厳密に</strong>給餌（おやつ、人間の食べ物は完全に排除）</li>
-<li>反応があった場合: <strong>元のフードに戻して症状が再発</strong>すれば食物アレルギーの確定</li>
-</ul>
-<table class="comparison-table" style="margin:12px 0 0;">
-<thead>
-<tr>
-<th>タイプ</th>
-<th>具体例</th>
-<th>メリット/デメリット</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加水分解蛋白</td>
-<td>ヒルズ z/d<br/>ロイヤルカナン アミノペプチドフォーミュラ</td>
-<td>✅ どの蛋白に過敏かわからなくても使える<br/>❌ 嗜好性がやや低い、コスト高</td>
-</tr>
-<tr>
-<td>新奇蛋白</td>
-<td>ヒルズ d/d（鹿肉＆米、サーモン＆芋）<br/>ロイヤルカナン セレクトプロテイン</td>
-<td>✅ 嗜好性が高い<br/>❌ 過去に摂取歴がないことが条件</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>皮膚食の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="urinary">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">💧</span><span>泌尿器食 ─ 結石予防とFLUTD</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<ul>
-<li><strong>ヒルズ c/d Multicare</strong>:
-                                ストルバイト＋CaOxの両方の予防に対応。Stress（猫用）はL-トリプトファン＋加水分解ミルクカゼイン配合でFICにも配慮</li>
-<li><strong>ロイヤルカナン ユリナリーS/O</strong>: 高い尿量産生効果。溶解にも予防にも使用可</li>
-<li>⚠️ 泌尿器食はK含量が低い製品があるため、<strong>CKDとの併存では注意</strong>（腎臓食を優先する場合が多い）</li>
-</ul>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>泌尿器食の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="multi">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">⚖️</span><span>複数疾患の併存 ─
-                            どの食事を優先？</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<h4>優先順位の考え方</h4>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th>併存パターン</th>
-<th>推奨アプローチ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CKD ＋ CaOx尿石症</td>
-<td><strong>腎臓食を優先</strong>。腎臓食はリンを制限し尿pHが酸性に傾きにくいため CaOx予防と両立しやすい</td>
-</tr>
-<tr>
-<td>CKD ＋ 心臓病</td>
-<td>腎臓食（Na制限＋蛋白制限が心臓にも有益）。ただし心臓病の進行で食欲低下 → 嗜好性重視</td>
-</tr>
-<tr>
-<td>食物アレルギー ＋ CKD</td>
-<td>加水分解蛋白食（z/d等）をベースに、リン吸着剤の併用で腎臓管理</td>
-</tr>
-<tr>
-<td>DM ＋ 肥満</td>
-<td>高蛋白・低炭水化物食（ヒルズ m/d）。体重管理食との相性が良い
-
-<!-- 個別生成図表 -->
-
-</td>
-</tr>
-</tbody>
-</table><div class="mermaid-wrapper"><pre class="mermaid">
-graph TD
-    A["複数の疾患併存を診断"] --> B{"どちらの疾患が生命予後により影響するか？"}
-
-    B -->|"生命予後への影響大 (例: CKD進行度, 心不全ステージ)"| C["その疾患に対応する療法食を第一選択"]
-    B -->|"生命予後への影響小 (例: 軽度アレルギー, 尿石症リスク)"| C
-
-    C --> D{"選択した療法食は、他の併存疾患に悪影響がないか？"}
-    D -->|"YES (悪影響あり)"| E["栄養成分衝突の調整: 療法食の組み合わせ検討 / サプリメント併用 (例: リン吸着剤)"]
-    D -->|"NO (悪影響なし)"| F["嗜好性の評価"]
-
-    E --> F
-
-    F --> G{"動物が療法食を食べてくれるか？"}
-    G -->|"YES"| H["決定した療法食で管理開始"]
-    G -->|"NO"| I["嗜好性を高める工夫 (温める、トッピング、ウェットフードなど)"]
-    I --> J{"それでも食べない場合"}
-    J -->|"YES"| K["次善の療法食、または最も食いつきの良い一般食 + 必要なサプリメントで補完"]
-    J -->|"NO"| H
-
-    K --> L["定期的な経過観察と栄養状態の評価、必要に応じて調整"]
-    H --> L
-</pre></div>
-<div class="clinical-tip">
-<h4>💊 原則</h4>
-<ul>
-<li><strong>「最も死に近い疾患」のフードを優先</strong>。CKDと尿石症なら腎臓食が優先</li>
-<li>完璧なフードが存在しない場合は、<strong>リン吸着剤やサプリメントで補完</strong>する</li>
-<li>何より<strong>食べてくれること</strong>が最優先。食べないフードに意味はない</li>
-</ul>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>複数疾患管理の詳細は有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="owner-tips">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<div class="owner-tip" style="margin-top:0;">
-<h4>療法食は一般のフードと何が違うのですか？</h4>
-<div class="speech-bubble">
-                                療法食は<strong>特定の病気の治療や管理のために成分を調整した「薬のような食事」</strong>です。
-                                例えば腎臓病のフードは、腎臓に負担をかけるリンや蛋白質を制限し、
-                                腎臓を守る成分（EPA/DHAなど）を添加しています。
-                                一般のフードでは得られない治療効果があります。
+            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+                <div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+                <div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+            </div>
+        </header>
+        <div class="content-mode-bar">
+            <span>📋</span>
+            <label class="toggle-switch">
+                <input checked="" id="content-mode-toggle" type="checkbox" />
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="mode-label">👑 すべて表示</span>
+        </div>
+        <!-- FREE ZONE -->
+        <div class="free-content" id="conclusion">
+            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+                <div style="font-size:0.88rem;">
+                    <p>療法食は<strong>確定診断に基づいて疾患ごとに選択</strong>すべきものであり、「万能フード」は存在しない。CKD療法食は生存期間を延長するエビデンスが最も強い（IRISステージ2以上で推奨）。複数疾患を併発する場合は<strong>栄養トリアージ（最も生命を脅かす疾患を優先）</strong>の考え方を用い、複雑な症例は獣医栄養学専門医への相談を検討する。
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <div class="free-content" id="overview">
+            <div class="card" style="margin-top:var(--space-md);">
+                <h3 style="font-size:0.95rem;margin-bottom:8px;">📊 疾患別 ─ 療法食の主要栄養方針</h3>
+                <div style="overflow-x:auto;">
+                    <table class="comparison-table" style="margin:0 0 12px;">
+                        <thead>
+                            <tr>
+                                <th>疾患</th>
+                                <th>重要な制限・増量</th>
+                                <th>注意点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CKD</strong></td>
+                                <td>リン制限（最重要）、タンパク制限、Na軽度制限、Omega-3脂肪酸増量</td>
+                                <td>IRISステージ2以上で推奨。食欲低下に注意</td>
+                            </tr>
+                            <tr>
+                                <td><strong>心疾患</strong></td>
+                                <td>Na制限（軽〜中等度）</td>
+                                <td>極端なNa制限は腎血流低下リスク。適度な制限に留める</td>
+                            </tr>
+                            <tr>
+                                <td><strong>膵炎（犬）</strong></td>
+                                <td>低脂肪</td>
+                                <td>CKD用食との相反に注意。猫では低脂肪の強いエビデンスなし</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IBD/食物アレルギー</strong></td>
+                                <td>新奇タンパク または 加水分解タンパク</td>
+                                <td>6〜8週間の厳格な除去食試験が必要</td>
+                            </tr>
+                            <tr>
+                                <td><strong>尿路系</strong></td>
+                                <td>結石の種類に応じた処方食</td>
+                                <td>誤った療法食で別の結石リスクが増加する可能性</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <!-- PREMIUM ZONE -->
+        <div id="ckd">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🫘</span><span>CKD ─
+                            最も強いエビデンスをもつ療法食</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>栄養素</th>
+                                    <th>方針</th>
+                                    <th>根拠</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>リン</strong></td>
+                                    <td>制限（最重要）</td>
+                                    <td>CKD進行遅延の最重要因子。高リン血症は腎臓への二次的障害を促進</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>タンパク質</strong></td>
+                                    <td>適度に制限</td>
+                                    <td>窒素性老廃物（BUN）の軽減。ただし筋肉量維持とのバランスが必要</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ナトリウム</strong></td>
+                                    <td>軽度制限</td>
+                                    <td>血圧管理。極端な制限はRAAシステム活性化で悪化リスク</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Omega-3脂肪酸</strong></td>
+                                    <td>増量（EPA/DHA）</td>
+                                    <td>腎臓の炎症・酸化ストレスの軽減</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>水分</strong></td>
+                                    <td>増加推奨</td>
+                                    <td>特に猫でウェットフードが強く推奨</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clinical-tip">
+                            <h4>💡 食欲増進薬と移行のタイミング</h4>
+                            <ul>
+                                <li>CKD療法食への移行はIRISステージ2以上からが推奨</li>
+                                <li>食欲不振にはミルタザピン、カプロモレリンが使用可能</li>
+                                <li>7〜10日かけて段階的に移行（急な切り替えは消化器症状を招く）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>CKD栄養管理の詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+        <div id="triage">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">⚖️</span><span>複数疾患の栄養トリアージ ─
+                            相反する要求への対応</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <h4>栄養トリアージの手順</h4>
+                        <ol>
+                            <li><strong>包括的栄養評価</strong>：BCS・MCS・食欲・現在の食事内容の評価</li>
+                            <li><strong>各疾患の栄養目標をリスト化</strong></li>
+                            <li><strong>互換性の評価</strong>：例）CKDと心疾患のNa制限は合致。膵炎の低脂肪はCKD食の高エネルギー密度と相反しうる</li>
+                            <li><strong>最も生命を脅かす疾患を優先</strong>：IRISステージ2以上のCKDは腎臓食優先のエビデンスが強い</li>
+                            <li><strong>複雑な症例は獣医栄養学専門医へ相談</strong></li>
+                            <li><strong>モニタリングと定期的な見直し</strong></li>
+                        </ol>
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>併発パターン</th>
+                                    <th>推奨アプローチ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CKD + 心疾患</td>
+                                    <td>Na制限はどちらも方向性は一致。CKD食でNaの過度な制限がない製品を選択</td>
+                                </tr>
+                                <tr>
+                                    <td>CKD + 膵炎（犬）</td>
+                                    <td>CKDのステージが高ければCKD食を優先。低脂肪かつ低リンの製品を探す</td>
+                                </tr>
+                                <tr>
+                                    <td>CKD + IBD</td>
+                                    <td>加水分解タンパク食の中にCKD対応製品があるか確認</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>栄養トリアージの詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+        <div id="pitfalls">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">⚠️</span><span>療法食のよくある失敗パターン</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <table class="comparison-table" style="margin:0 0 12px;">
+                            <thead>
+                                <tr>
+                                    <th>失敗パターン</th>
+                                    <th>対策</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>確定診断前に処方</td>
+                                    <td>検査結果を待って選択。不適切な制限で悪化する可能性</td>
+                                </tr>
+                                <tr>
+                                    <td>市販おやつの追加</td>
+                                    <td>栄養制限（リン制限等）が台無しに。同メーカーの専用おやつのみ</td>
+                                </tr>
+                                <tr>
+                                    <td>急な切り替え</td>
+                                    <td>7〜10日かけて段階的に移行する</td>
+                                </tr>
+                                <tr>
+                                    <td>モニタリングなし</td>
+                                    <td>効果判定のため定期的な尿検査・血液検査が必須</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+        <div id="owner-tips">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body premium-content">
+                        <div class="owner-tip" style="margin-top:0;">
+                            <h4>「療法食って普通のフードとどう違うのですか？」</h4>
+                            <div class="speech-bubble">
+                                療法食は病気の管理を目的として、特定の栄養素を増やしたり減らしたりして設計された「処方食」です。例えば腎臓病用はリンやタンパク質を制限しています。普通のフードでは達成できない精密な栄養コントロールが行われており、獣医師の診断に基づいて使用するものです。
                             </div>
-</div>
-<div class="owner-tip">
-<h4>療法食を食べてくれないのですが…</h4>
-<div class="speech-bubble">
-                                よくある悩みです。まずは<strong>7〜14日かけて今のフードに少しずつ混ぜて</strong>慣らしてみてください。
-                                温めると香りが立って食いつきが良くなることもあります。
-                                それでもだめなら<strong>会社やラインナップを変えて</strong>試しましょう。
-                                食べてくれないフードに固執するより、<strong>次善のフードでも食べてくれる方がはるかに良い</strong>のです。
+                        </div>
+                        <div class="owner-tip">
+                            <h4>「おやつを足してもいいですか？」</h4>
+                            <div class="speech-bubble">
+                                市販のおやつを追加すると、せっかくの栄養制限が台無しになってしまいます。おやつを与えたい場合は、同じメーカーから出ている「対応おやつ」を使うか、獣医師に相談してください。
                             </div>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-</div>
-</div>
-</div>
-<div id="refs">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body">
-<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-<li>Elliott J et al. Survival of cats with naturally occurring chronic renal
-                                failure: effect of dietary management.
-                                <em>J Small Anim Pract</em> 2000;41(6):235-242.
-                            </li>
-<li>Ross SJ et al. Clinical evaluation of dietary modification for treatment
-                                of spontaneous chronic kidney disease in cats.
-                                <em>JAVMA</em> 2006;229(6):949-957.
-                            </li>
-<li>Jacob F et al. Clinical evaluation of dietary modification for treatment
-                                of spontaneous chronic renal failure in dogs.
-                                <em>JAVMA</em> 2002;220(8):1163-1170.
-                            </li>
-<li>Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated
-                                guidelines from the International Committee on Allergic Diseases of
-                                Animals (ICADA). <em>BMC Vet Res</em> 2015;11:210.</li>
-<li>Lulich JP et al. ACVIM small animal consensus recommendations on the
-                                treatment and prevention of uroliths in dogs and cats.
-                                <em>J Vet Intern Med</em> 2016;30(5):1564-1574.
-                            </li>
-<li>Freeman LM et al. Nutritional alterations and the effect of fish oil
-                                supplementation in dogs with heart failure.
-                                <em>J Vet Intern Med</em> 1998;12(6):440-448.
-                            </li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<footer class="page-footer" style="margin-top: var(--space-xl);">
-<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                        </div>
+                        <div class="owner-tip">
+                            <h4>「フードの切り替えはいきなりでいいですか？」</h4>
+                            <div class="speech-bubble">
+                                急な切り替えは嘔吐や下痢を引き起こすことがあります。7〜10日かけて、少しずつ新しいフードの割合を増やしていってください。例えば最初の2日は元のフード75%＋新フード25%、次の2日は半々…というように段階的に移行するのがお勧めです。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+                </div>
+            </div>
+        </div>
+        <div id="refs">
+            <div class="accordion">
+                <button class="accordion-trigger">
+                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+                    <span class="chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                            <li>IRIS (International Renal Interest Society). Treatment Recommendations for CKD in Cats
+                                &amp; Dogs. 2023.</li>
+                            <li>Polzin DJ. Evidence-based step-wise approach to managing chronic kidney disease.
+                                <em>JVIM</em>, 2011.</li>
+                            <li>Elliott J, et al. Effect of dietary intake of renal diets on survival of cats with CKD.
+                                <em>JVIM</em>, 2000.</li>
+                            <li>Freeman LM. Nutritional alterations and the effect of fish oil supplementation in dogs
+                                with heart failure. <em>JVIM</em>, 1998.</li>
+                            <li>WSAVA Global Nutrition Committee. WSAVA Nutritional Assessment Guidelines.
+                                <em>JSAP</em>, 2011.</li>
+                            <li>Larsen JA, et al. Nutritional management of concurrent diseases. <em>Today's Veterinary
+                                    Practice</em>, 2023.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer" style="margin-top: var(--space-xl);">
+            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
                 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-</footer>
-</div>
-<script src="../../assets/script.js?v=20250225v9"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+        </footer>
+    </div>
+    <script src="../../assets/script.js?v=20250225v9"></script>
+    <script
+        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
+
 </html>
