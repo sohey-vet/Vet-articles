@@ -15,7 +15,7 @@ import html as htmllib
 from pathlib import Path
 
 PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\論文まとめ")
-STYLE_VERSION = "20260304v2"
+STYLE_VERSION = "20260304v3"
 
 
 def extract_tags_from_meta(md_text: str, title: str) -> list[dict]:
@@ -105,12 +105,11 @@ def md_to_html_body(md_text: str) -> str:
             result.append(f'<li>{item}</li>')
         # Numbered list
         elif is_number:
-            if list_type != 'ol':
-                result.append('<ol>')
-                list_type = 'ol'
-            item = re.sub(r'^\d+\.\s+', '', stripped)
-            item = format_inline(item)
-            result.append(f'<li>{item}</li>')
+            if list_type:
+                result.append(f'</{list_type}>')
+                list_type = None
+            item = format_inline(stripped)
+            result.append(f'<div style="margin-top: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; font-size: 1.05rem; color: var(--color-text-primary);">{item}</div>')
         # Blockquote (clinical tip)
         elif stripped.startswith('> '):
             content = stripped[2:].strip()
