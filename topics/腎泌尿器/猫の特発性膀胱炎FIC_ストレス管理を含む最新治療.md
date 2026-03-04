@@ -1,0 +1,113 @@
+# 猫の特発性膀胱炎（FIC）─ ストレス管理を含む最新治療
+
+## 結論 (Take-home Message)
+
+- 猫の下部尿路症状（頻尿・血尿・不適切排泄）の最大原因は**特発性膀胱炎（FIC）**であり、細菌感染ではない。若齢〜中齢猫の60〜75%がFICに分類される。
+- 抗菌薬は無菌性のFICには無効であり、**環境エンリッチメント（MEMO: Multimodal Environmental Modification）が治療の根幹**を成す。
+- **完全ウェットフード（水分含有量70%以上）への変更**により尿比重が低下し、再発率が有意に低下する。
+- 急性期の疼痛管理には**ブプレノルフィンやガバペンチン**を使用し、NSAIDsの有効性は示されていない。
+
+## 本文
+
+### FICとは何か
+
+猫の特発性膀胱炎（Feline Idiopathic Cystitis: FIC）は、猫の下部尿路疾患（FLUTD）の中で最も頻度の高い原因であり、特に10歳以下の猫では全症例の60〜75%を占める。「特発性」の名が示す通り、明確な単一原因は特定されていないが、ストレス応答系の異常（視床下部-下垂体-副腎軸の過活動）、膀胱粘膜のグリコサミノグリカン（GAG）層の欠損、および神経性炎症の三者が相互に関与する複合病態と考えられている。
+
+### 診断 ─「除外診断」が基本
+
+FICは積極的に診断できる単一の検査法がなく、除外診断によって到達する。以下を除外する必要がある：
+
+- 細菌性膀胱炎（膀胱穿刺による定量培養で除外。10歳未満の猫では細菌性UTIは稀）
+- 尿石症（X線・超音波で結石を除外）
+- 尿道閉塞（雄猫で特に注意。触診と超音波で膀胱の緊満を評価）
+- 腫瘍（高齢猫で考慮。超音波で膀胱壁の腫瘤性病変を評価）
+
+尿検査では血尿・蛋白尿が認められるが、尿培養は陰性（無菌性）であることがFICの特徴である。
+
+### MEMO ─ 環境エンリッチメントが治療の核心
+
+FICの治療において最もエビデンスが強いのは、多面的環境改善（Multimodal Environmental Modification: MEMO）である。
+
+#### トイレ環境の最適化
+- **数**: 猫の数＋1個
+- **場所**: 静かで安全、猫が容易にアクセスできる場所（変形性関節症の猫には入口が低いトイレ）
+- **猫砂**: 無香料で細かい砂質のものが最も好まれる
+- **清掃頻度**: 毎日のスクーピングと週1回の全交換
+
+#### 生活空間のエンリッチメント
+- 垂直スペース（キャットタワー、棚）の確保
+- 隠れ家（段ボール箱、トンネル）の設置
+- 遊びの時間の確保（1日15分以上のインタラクティブな遊び）
+- 多頭飼育では各猫にそれぞれの資源（フード皿、水皿、トイレ、寝場所）を確保
+
+#### フェロモン療法
+- **フェリウェイ（Feliway）**などの合成フェイシャルフェロモン（F3フラクション）の拡散型プラグインが、ストレス関連行動の軽減に有効とされる。
+
+### 食事管理 ─ 水分摂取の増加が最重要
+
+FICの再発予防において、水分摂取の増加は環境改善と並んで最も重要な介入である。
+
+- **完全ウェットフードへの変更**（水分含有量70%以上）により尿比重が低下し、膀胱粘膜への刺激性物質の濃度が下がる
+- ドライフードのみの場合は、流水式の水飲み器の導入やフードへの加水で摂取量を増加させる
+- 療法食（下部尿路疾患用）の使用は補助的手段であり、食事変更だけでMEMOの代替にはならない
+
+### 薬物療法 ─ 補助的位置づけ
+
+FICの薬物療法はあくまで補助的であり、環境改善と食事管理を実施した上での追加手段である。
+
+- **急性期の鎮痛**: ブプレノルフィン（0.01-0.02 mg/kg 口腔粘膜投与 q6-8h）またはガバペンチン（5-10 mg/kg PO q12h）が推奨される。NSAIDsの有効性は示されていない。
+- **慢性再発例**: アミトリプチリン（三環系抗うつ薬）が検討されることがあるが、第一選択ではない。抗コリン作用による副作用のリスクと、MEMOが十分に実施されていない症例では効果がないことに留意。
+- **グリコサミノグリカン（GAG）製剤**: 経口GAG補充（N-acetyl glucosamine等）の有効性は、現時点でプラセボを上回るエビデンスが乏しい。
+- **抗菌薬**: 無菌性のFICに対する抗菌薬投与は無効であり、推奨されない。
+
+### 予後と再発率
+
+FICは自然寛解率が高く（急性エピソードの約85%は1-2週間で自然軽快）、そのため薬物療法の有効性評価が困難な疾患でもある。しかし、MEMOを実施しない場合の**1年以内の再発率は約40〜50%**と高い。MEMOの継続的実施により再発率を有意に低下させることができる。
+
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>「膀胱炎なのに抗生物質は使わないのですか？」</h4>
+                <div class="speech-bubble">猫ちゃんの膀胱炎の多くは、細菌が原因ではない「特発性膀胱炎」というタイプです。ストレスや生活環境が大きく関わっていて、抗生物質では改善しません。むしろ不要な抗生物質は腸内環境を乱すリスクがあります。今一番大切なのは、トイレ環境やお部屋の環境を猫ちゃんにとって快適に整えてあげることです。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>「また再発するのでしょうか？」</h4>
+                <div class="speech-bubble">正直にお伝えすると、環境改善を行わない場合は1年以内に約半数が再発します。ただし、トイレの数を増やす、ウェットフードに変える、遊びの時間を確保するなどの環境改善を続けることで、再発リスクをかなり下げることができます。一度にすべてを変える必要はありませんので、できることから始めていきましょう。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+
+<div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Buffington CAT. Idiopathic Cystitis in Domestic Cats ─ Beyond the Lower Urinary Tract. JVIM, 2011.</li>
+                <li>Westropp JL, et al. Evaluation of the effects of stress in cats with idiopathic cystitis. Am J Vet Res, 2006.</li>
+                <li>Buffington CAT, et al. Clinical evaluation of multimodal environmental modification (MEMO) in the management of cats with idiopathic cystitis. JFMS, 2006.</li>
+                <li>Kruger JM, et al. Feline Lower Urinary Tract Disease. In: Ettinger SJ, Feldman EC, eds. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.</li>
+                <li>Dorsch R, et al. Feline lower urinary tract disease in a German cat population ─ A retrospective analysis of demographic data, causes and clinical signs. Tierarztl Prax Ausg K Kleintiere Heimtiere, 2014.</li>
+                <li>Defauw PAM, et al. Risk factors and clinical presentation of cats with feline idiopathic cystitis. JFMS, 2011.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+</div>
+
+## メタデータ
+- ジャンル: 腎泌尿器
+- ターゲット: 獣医師
+- 更新日: 2026-03-03
