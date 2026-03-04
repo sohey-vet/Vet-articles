@@ -521,9 +521,16 @@ h4 {
   margin-top: var(--space-md);
 }
 
+.accordion-body ul,
+.accordion-body ol {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-xl);
+}
+
 .accordion-body li {
-  margin-bottom: var(--space-sm);
-  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  line-height: 1.75;
 }
 
 .accordion-body>h4 {

@@ -15,7 +15,7 @@ import html as htmllib
 from pathlib import Path
 
 PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\論文まとめ")
-STYLE_VERSION = "20260304v1"
+STYLE_VERSION = "20260304v2"
 
 
 def extract_tags_from_meta(md_text: str, title: str) -> list[dict]:
@@ -40,7 +40,7 @@ def md_to_html_body(md_text: str) -> str:
     """MarkdownのbodyをHTMLに変換（簡易版）"""
     lines = md_text.splitlines()
     result = []
-    in_list = False
+    list_type = None  # None, 'ul', or 'ol'
     i = 0
     
     while i < len(lines):
@@ -64,10 +64,24 @@ def md_to_html_body(md_text: str) -> str:
                     break
             continue
 
-        # Close open list
-        if in_list and (not stripped.startswith('- ') and not stripped.startswith('  -')):
-            result.append('</ul>')
-            in_list = False
+        is_bullet = stripped.startswith('- ') or stripped.startswith('✅ ') or stripped.startswith('* ')
+        is_number = re.match(r'^\d+\. ', stripped)
+
+        # Close open list if list type changes or list ends
+        if list_type:
+            if stripped == '' or stripped.startswith('#') or stripped.startswith('> '):
+                # Empty line or new block closes the list
+                pass # We will handle empty line closing later to allow multi-paragraph list items if needed, but for simplicity, let's just close on non-list items.
+            
+            if not is_bullet and not is_number and stripped != '':
+                 result.append(f'</{list_type}>')
+                 list_type = None
+            elif list_type == 'ul' and is_number:
+                 result.append('</ul>')
+                 list_type = None
+            elif list_type == 'ol' and is_bullet:
+                 result.append('</ol>')
+                 list_type = None
 
         # Heading 2
         if stripped.startswith('## '):
@@ -81,20 +95,20 @@ def md_to_html_body(md_text: str) -> str:
         elif stripped.startswith('#### '):
             heading = stripped[5:].strip()
             result.append(f'<h4>{htmllib.escape(heading)}</h4>')
-        # List item
-        elif stripped.startswith('- ') or stripped.startswith('✅ ') or stripped.startswith('* '):
-            if not in_list:
+        # List item (Bullet)
+        elif is_bullet:
+            if list_type != 'ul':
                 result.append('<ul>')
-                in_list = True
-            item = stripped[2:].strip()
+                list_type = 'ul'
+            item = re.sub(r'^[-✅*]\s+', '', stripped)
             item = format_inline(item)
             result.append(f'<li>{item}</li>')
         # Numbered list
-        elif re.match(r'^\d+\. ', stripped):
-            if not in_list:
+        elif is_number:
+            if list_type != 'ol':
                 result.append('<ol>')
-                in_list = True
-            item = re.sub(r'^\d+\. ', '', stripped)
+                list_type = 'ol'
+            item = re.sub(r'^\d+\.\s+', '', stripped)
             item = format_inline(item)
             result.append(f'<li>{item}</li>')
         # Blockquote (clinical tip)
@@ -107,9 +121,9 @@ def md_to_html_body(md_text: str) -> str:
             pass  # skip
         # Empty line
         elif stripped == '':
-            if in_list:
-                result.append('</ul>')
-                in_list = False
+            if list_type:
+                result.append(f'</{list_type}>')
+                list_type = None
         # Normal paragraph
         else:
             content = format_inline(stripped)
@@ -118,8 +132,8 @@ def md_to_html_body(md_text: str) -> str:
 
         i += 1
 
-    if in_list:
-        result.append('</ul>')
+    if list_type:
+        result.append(f'</{list_type}>')
 
     return '\n'.join(result)
 
