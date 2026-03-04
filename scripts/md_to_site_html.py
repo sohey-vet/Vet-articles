@@ -231,12 +231,21 @@ def convert_md_to_html(md_path: Path) -> Path:
     md_text = md_path.read_text(encoding='utf-8')
     lines = md_text.splitlines()
 
-    # Title
+    # Title — 3つのフォーマットに対応
     title = ""
     for line in lines:
-        if line.startswith('# '):
+        if line.startswith('# ') and not line.startswith('## '):
             title = line[2:].strip()
             break
+    # Fallback: タイトル: メタデータ形式
+    if not title:
+        title_match_meta = re.search(r'タイトル:\s*(.+)', md_text)
+        if title_match_meta:
+            title = title_match_meta.group(1).strip()
+    # Fallback: TITLE ブロック形式
+    if not title:
+        if lines and lines[0].strip() == 'TITLE' and len(lines) > 1:
+            title = lines[1].strip()
 
     # Description from 結論 section
     desc_match = re.search(r'## 結論\n(.*?)(?=\n## |\Z)', md_text, re.DOTALL)
@@ -298,6 +307,8 @@ def convert_md_to_html(md_path: Path) -> Path:
             # Strip outer <div id="owner-tips">...</div> and parse inner Markdown
             inner = re.sub(r'^<div id="owner-tips">\s*', '', owner_tips_raw)
             inner = re.sub(r'\s*</div>\s*$', '', inner)
+            # Remove heading line to avoid double header (accordion button already has the title)
+            inner = re.sub(r'^###?\s*[💬🗣️]*\s*飼い主への説明ガイド\s*\n?', '', inner.strip())
             ot_body_html = md_to_html_body(inner)
             owner_tips_raw = f'''<div id="owner-tips">
 <div class="accordion"><button class="accordion-trigger">
@@ -311,7 +322,44 @@ def convert_md_to_html(md_path: Path) -> Path:
         if 'accordion' not in refs_raw:
             inner = re.sub(r'^<div id="refs">\s*', '', refs_raw)
             inner = re.sub(r'\s*</div>\s*$', '', inner)
+            # Remove heading line to avoid double header (accordion button already has the title)
+            inner = re.sub(r'^###?\s*[📚]*\s*参照論文[・]?[資料]*\s*\n?', '', inner.strip())
             rf_body_html = md_to_html_body(inner)
+            refs_raw = f'''<div id="refs">
+<div class="accordion"><button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文・資料</span></span>
+<span class="chevron">▼</span></button>
+<div class="accordion-content"><div class="accordion-body">
+{rf_body_html}
+</div></div></div></div>'''
+
+    # Fallback: Markdown section 형식의 owner-tips 와 refs 처리
+    # owner_tips_raw가 아직 비어 있으면, ## 飼い主への説明ガイド 섹션에서 추출
+    if not owner_tips_raw:
+        ot_md_match = re.search(r'\n(##\s+[🗣️💬]*\s*飼い主への説明ガイド\n.*?)(?=\n## |\Z)', clean_md_text if 'clean_md_text' in dir() else md_text, re.DOTALL)
+        if not ot_md_match:
+            ot_md_match = re.search(r'\n(##\s+[🗣️💬]*\s*飼い主への説明ガイド\n.*?)(?=\n## |\Z)', md_text, re.DOTALL)
+        if ot_md_match:
+            ot_section = ot_md_match.group(1).strip()
+            # Remove the heading line
+            ot_lines = ot_section.splitlines()
+            ot_body = '\n'.join(ot_lines[1:]).strip()
+            ot_body_html = md_to_html_body(ot_body)
+            owner_tips_raw = f'''<div id="owner-tips">
+<div class="accordion"><button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💬</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span></button>
+<div class="accordion-content"><div class="accordion-body">
+{ot_body_html}
+</div></div></div></div>'''
+
+    if not refs_raw:
+        rf_md_match = re.search(r'\n(##\s+[📚]*\s*参照論文[・資料]*\n.*?)(?=\n## |\Z)', md_text, re.DOTALL)
+        if rf_md_match:
+            rf_section = rf_md_match.group(1).strip()
+            rf_lines = rf_section.splitlines()
+            rf_body = '\n'.join(rf_lines[1:]).strip()
+            rf_body_html = md_to_html_body(rf_body)
             refs_raw = f'''<div id="refs">
 <div class="accordion"><button class="accordion-trigger">
 <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文・資料</span></span>
@@ -388,7 +436,12 @@ def convert_md_to_html(md_path: Path) -> Path:
         block_lines = block.strip().splitlines()
         heading = block_lines[0][3:].strip()
 
-        if heading in ['結論', 'メタデータ']:
+        if '結論' in heading or heading in ['メタデータ']:
+            continue
+        # Skip owner-tips and refs sections (handled separately)
+        if '飼い主' in heading and '説明' in heading:
+            continue
+        if '参照論文' in heading or '参考文献' in heading:
             continue
 
         # Determine icon
