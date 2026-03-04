@@ -118,7 +118,46 @@ def type_body_text(page, text: str):
     time.sleep(0.5)
 
 
-def post_to_note(page, article: dict, draft_only: bool = False) -> bool:
+def get_scheduled_articles(start_date: datetime.date) -> list:
+    content_plan = PROJECT_ROOT / "CONTENT_PLAN.md"
+    if not content_plan.exists():
+        return []
+    content = content_plan.read_text(encoding="utf-8")
+    
+    try:
+        table_section = content.split("## 📅 最初の30本")[1].split("### 📊")[0]
+    except IndexError:
+        return []
+        
+    schedule = []
+    for line in table_section.splitlines():
+        if "| **" in line:
+            parts = [p.strip() for p in line.split("|")]
+            if len(parts) >= 4:
+                week_str = parts[1].replace("**", "").strip()
+                try:
+                    week = int(week_str)
+                except ValueError:
+                    continue
+                
+                mon_title = re.sub(r'^[🚨❤️🫘💊🐱🛡️🧠🔬💧🦷⚖️😴🧪🩺👁️🏥🧬🦴]+\s*', '', parts[2].replace('✅', '')).strip()
+                thu_title = re.sub(r'^[🚨❤️🫘💊🐱🛡️🧠🔬💧🦷⚖️😴🧪🩺👁️🏥🧬🦴]+\s*', '', parts[3].replace('✅', '')).strip()
+                
+                if mon_title:
+                    days_offset = (week - 1) * 7
+                    post_date = start_date + datetime.timedelta(days=days_offset)
+                    post_time = datetime.datetime.combine(post_date, datetime.time(12, 0))
+                    schedule.append({"title_key": mon_title, "time": post_time})
+                
+                if thu_title:
+                    days_offset = (week - 1) * 7 + 3
+                    post_date = start_date + datetime.timedelta(days=days_offset)
+                    post_time = datetime.datetime.combine(post_date, datetime.time(12, 0))
+                    schedule.append({"title_key": thu_title, "time": post_time})
+                    
+    return schedule[:10]
+
+def post_to_note(page, article: dict, draft_only: bool = False, schedule_time: datetime.datetime = None, test_schedule: bool = False) -> bool:
     title = article["title"]
     tags = article["tags"]
     body = article["body"]
@@ -183,7 +222,7 @@ def post_to_note(page, article: dict, draft_only: bool = False) -> bool:
             return True
         return False
 
-    # ── 即時公開 ──
+    # ── 即時公開 / 予約投稿 ──
     print("  📤 公開設定へ...")
     publish_btn = page.locator('button').filter(has_text="公開に進む")
     if publish_btn.count() > 0:
@@ -200,12 +239,37 @@ def post_to_note(page, article: dict, draft_only: bool = False) -> bool:
                     time.sleep(0.5)
                     page.keyboard.press("Enter")
                     time.sleep(0.5)
+                    
+        # 予約設定のアテンプト
+        if schedule_time:
+            print(f"  ⏰ 予約設定: {schedule_time.strftime('%Y/%m/%d %H:%M')}")
+            schedule_label = page.locator('label').filter(has_text=re.compile(r"日時指定|日時を設定|予約"))
+            if schedule_label.count() > 0:
+                schedule_label.first.click()
+                time.sleep(1)
+                
+                try:
+                    # Input the date by name targeting
+                    page.locator('input[name="year"]').fill(str(schedule_time.year))
+                    page.locator('input[name="month"]').fill(str(schedule_time.month))
+                    page.locator('input[name="day"]').fill(str(schedule_time.day))
+                    page.locator('input[name="hour"]').fill(str(schedule_time.hour))
+                    page.locator('input[name="minute"]').fill(str(schedule_time.minute))
+                    time.sleep(1)
+                except Exception as e:
+                    print(f"  ⚠️ 日時指定UIへの入力に失敗しました。下書きとして保存します: {e}")
+                    page.locator('button').filter(has_text="下書き保存").first.click()
+                    return True
 
-        final_publish = page.locator('button').filter(has_text="投稿").last
+        final_publish = page.locator('button').filter(has_text=re.compile(r"投稿|予約")).last
         if final_publish.count() > 0:
+            if test_schedule:
+                print("  🧪 テストモードのため、最終投稿ボタンは押さずに下書きとして保存します。")
+                page.locator('button').filter(has_text="下書き保存").first.click()
+                return True
             final_publish.click()
             time.sleep(5)
-            print("  ✅ 公開完了！")
+            print("  ✅ 投稿・予約完了！")
             return True
 
     return False
@@ -213,16 +277,58 @@ def post_to_note(page, article: dict, draft_only: bool = False) -> bool:
 
 def main():
     draft_only = "--draft" in sys.argv
+    schedule_mode = "--schedule" in sys.argv
+    test_schedule = "--test-schedule" in sys.argv
 
-    pending = get_pending_articles()
-    if not pending:
-        print("📭 投稿する記事がありません。")
-        return
-
-    to_post = pending[:1]
+    if schedule_mode:
+        today = datetime.date.today()
+        # 次の月曜を計算
+        days_ahead = 0 - today.weekday()
+        if days_ahead <= 0:
+            days_ahead += 7
+        next_monday = today + datetime.timedelta(days=days_ahead)
+        
+        schedule_plan = get_scheduled_articles(next_monday)
+        if not schedule_plan:
+            print("スケジュールの取得に失敗しました。")
+            return
+            
+        all_files = sorted(TOPICS_NOTE_DIR.glob("*_formatted.txt"))
+        
+        to_post = []
+        for s in schedule_plan:
+            key = s["title_key"]
+            core_key = key.split('─')[0].split('—')[0].strip()
+            clean_key = re.sub(r'[\sのとい・]', '', core_key)
+            
+            matched_file = None
+            for f in all_files:
+                f_name = f.stem.replace('_formatted', '')
+                core_f = f_name.split('_')[0].strip()
+                clean_f = re.sub(r'[\sのとい・]', '', core_f)
+                if clean_key in clean_f or clean_f in clean_key:
+                    matched_file = f
+                    break
+                    
+            if matched_file:
+                to_post.append({"file": matched_file, "time": s["time"]})
+            else:
+                print(f"⚠️ スケジュール上の記事 {key} に対応するファイルが見つかりません。")
+                
+        if not to_post:
+            print("📭 予約投稿する記事ファイルが見つかりません。")
+            return
+    else:
+        pending = get_pending_articles()
+        if not pending:
+            print("📭 投稿する記事がありません。")
+            return
+        to_post = [{"file": pending[0], "time": None}]
 
     print(f"{'='*60}")
     print(f"  Note 自動投稿: {len(to_post)} 記事")
+    if schedule_mode:
+        print("  🗓️  スケジュール予約モード（10記事まとめ投稿）")
     if draft_only:
         print("  ⚠️  テストモード（下書き保存のみ）")
     print(f"{'='*60}")
@@ -240,7 +346,9 @@ def main():
         log = load_post_log()
         success_count = 0
 
-        for file_path in to_post:
+        for item in to_post:
+            file_path = item["file"]
+            schedule_time = item["time"]
             article_name = file_path.stem.replace("_formatted", "")
             print(f"\n{'─'*50}")
             print(f"  📄 {article_name}")
@@ -248,17 +356,19 @@ def main():
 
             try:
                 article = parse_formatted_file(file_path)
-                success = post_to_note(page, article, draft_only=draft_only)
+                success = post_to_note(page, article, draft_only=draft_only, schedule_time=schedule_time, test_schedule=test_schedule)
 
                 if success:
                     log.append({
                         "title": article["title"],
                         "file": article_name,
                         "posted_at": datetime.datetime.now().isoformat(),
-                        "status": "draft" if draft_only else "published",
+                        "scheduled_for": schedule_time.isoformat() if schedule_time else None,
+                        "status": "draft" if draft_only else ("scheduled" if schedule_time else "published"),
                     })
                     save_post_log(log)
                     os.makedirs(DONE_DIR, exist_ok=True)
+                    # For scheduled posts, immediately move to done to prevent duplicate processing
                     file_path.rename(DONE_DIR / file_path.name)
                     success_count += 1
             except Exception as e:
