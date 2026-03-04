@@ -15,7 +15,7 @@ import html as htmllib
 from pathlib import Path
 
 PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\論文まとめ")
-STYLE_VERSION = "20260304v4"
+STYLE_VERSION = "20260304v5"
 
 
 def extract_tags_from_meta(md_text: str, title: str) -> list[dict]:
@@ -110,11 +110,16 @@ def md_to_html_body(md_text: str) -> str:
                 list_type = None
             item = format_inline(stripped)
             result.append(f'<div style="margin-top: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; font-size: 1.05rem; color: var(--color-text-primary);">{item}</div>')
-        # Blockquote (clinical tip)
+        # Blockquote (clinical tip) — collect consecutive > lines into one block
         elif stripped.startswith('> '):
-            content = stripped[2:].strip()
-            content = format_inline(content)
-            result.append(f'<div class="clinical-tip"><p>{content}</p></div>')
+            bq_lines = []
+            while i < len(lines) and lines[i].strip().startswith('> '):
+                content = lines[i].strip()[2:].strip()
+                content = format_inline(content)
+                bq_lines.append(content)
+                i += 1
+            result.append('<div class="clinical-tip">' + ''.join(f'<p>{l}</p>' for l in bq_lines) + '</div>')
+            i -= 1  # outer loop will increment
         # Horizontal rule
         elif stripped == '---':
             pass  # skip
@@ -281,36 +286,81 @@ def convert_md_to_html(md_path: Path) -> Path:
         encoded_q = urllib.parse.quote(tag['query'])
         tags_html += f'<a class="tag {tag["class"]}" href="../../index.html?tag={encoded_q}">{tag["label"]}</a>'
 
-    # Conclusion section
-    conclusion_html = ""
-    if desc_match:
-        raw_conclusion = desc_match.group(1).strip()
-        conclusion_items = []
-        for line in raw_conclusion.splitlines():
-            stripped = line.strip()
-            if stripped.startswith('- ') or stripped.startswith('・') or stripped.startswith('-'):
-                item = re.sub(r'^[-・]\s*', '', stripped)
-                item = format_inline(item)
-                conclusion_items.append(f'<li>{item}</li>')
-        if conclusion_items:
-            conclusion_html = '<ul>' + ''.join(conclusion_items) + '</ul>'
-        else:
-            conclusion_html = f'<p>{format_inline(raw_conclusion)}</p>'
-
-    # Owner tips & refs raw HTML from MD
+    # Owner tips & refs — support both HTML blocks and Markdown sections
     owner_tips_raw = extract_owner_tips_html(md_text)
     refs_raw = extract_refs_html(md_text)
 
-    # Prepare markdown text for section generation
+    # If extract_html_block returned the outer div but inner content is Markdown,
+    # rebuild as accordion HTML
+    if owner_tips_raw:
+        # Already got the full HTML block including nested divs - check if it has accordion structure
+        if 'accordion' not in owner_tips_raw:
+            # Strip outer <div id="owner-tips">...</div> and parse inner Markdown
+            inner = re.sub(r'^<div id="owner-tips">\s*', '', owner_tips_raw)
+            inner = re.sub(r'\s*</div>\s*$', '', inner)
+            ot_body_html = md_to_html_body(inner)
+            owner_tips_raw = f'''<div id="owner-tips">
+<div class="accordion"><button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💬</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span></button>
+<div class="accordion-content"><div class="accordion-body">
+{ot_body_html}
+</div></div></div></div>'''
+
+    if refs_raw:
+        if 'accordion' not in refs_raw:
+            inner = re.sub(r'^<div id="refs">\s*', '', refs_raw)
+            inner = re.sub(r'\s*</div>\s*$', '', inner)
+            rf_body_html = md_to_html_body(inner)
+            refs_raw = f'''<div id="refs">
+<div class="accordion"><button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文・資料</span></span>
+<span class="chevron">▼</span></button>
+<div class="accordion-content"><div class="accordion-body">
+{rf_body_html}
+</div></div></div></div>'''
+
+    # Prepare markdown text for section generation (remove owner-tips, refs, normalize headings)
     clean_md_text = md_text
     if owner_tips_raw:
-        clean_md_text = clean_md_text.replace(owner_tips_raw, '')
+        # Remove original owner-tips block from md_text
+        ot_original = extract_html_block(md_text, '<div id="owner-tips">')
+        if ot_original:
+            clean_md_text = clean_md_text.replace(ot_original, '')
     if refs_raw:
-        clean_md_text = clean_md_text.replace(refs_raw, '')
+        rf_original = extract_html_block(md_text, '<div id="refs">')
+        if rf_original:
+            clean_md_text = clean_md_text.replace(rf_original, '')
 
     # Normalize heading levels if content is wrapped in "## 本文"
     clean_md_text = re.sub(r'^##\s*本文\s*\n', '\n', clean_md_text, flags=re.MULTILINE)
     clean_md_text = re.sub(r'^###\s+', '## ', clean_md_text, flags=re.MULTILINE)
+
+    # Conclusion section — try multiple heading patterns
+    conclusion_html = ""
+    for line in clean_md_text.splitlines():
+        if '結論' in line and line.strip().startswith('##'):
+            # Found the conclusion heading, extract content until next ##
+            idx = clean_md_text.index(line)
+            after = clean_md_text[idx + len(line):]
+            next_heading = re.search(r'\n##\s', after)
+            if next_heading:
+                raw_conclusion = after[:next_heading.start()].strip()
+            else:
+                raw_conclusion = after.strip()
+            # Check if it contains bullet points
+            bullet_lines = [l.strip() for l in raw_conclusion.splitlines()
+                          if l.strip() and re.match(r'^[-・*]', l.strip())]
+            if bullet_lines:
+                conclusion_items = []
+                for bl in bullet_lines:
+                    item = re.sub(r'^[-・*]\s*', '', bl)
+                    item = format_inline(item)
+                    conclusion_items.append(f'<li>{item}</li>')
+                conclusion_html = '<ul>' + ''.join(conclusion_items) + '</ul>'
+            else:
+                conclusion_html = f'<p style="font-size:0.88rem;">{format_inline(raw_conclusion)}</p>'
+            break
 
     # Body sections - split by ## headers
     section_blocks = re.split(r'\n(?=## )', clean_md_text)
