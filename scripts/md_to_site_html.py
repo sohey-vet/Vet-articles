@@ -15,7 +15,7 @@ import html as htmllib
 from pathlib import Path
 
 PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\論文まとめ")
-STYLE_VERSION = "20260304v3"
+STYLE_VERSION = "20260304v4"
 
 
 def extract_tags_from_meta(md_text: str, title: str) -> list[dict]:
@@ -118,6 +118,31 @@ def md_to_html_body(md_text: str) -> str:
         # Horizontal rule
         elif stripped == '---':
             pass  # skip
+        # Table
+        elif stripped.startswith('|'):
+            table_lines = []
+            while i < len(lines) and lines[i].strip().startswith('|'):
+                table_lines.append(lines[i].strip())
+                i += 1
+            if len(table_lines) >= 2 and '-' in table_lines[1]:
+                result.append('<table class="comparison-table">')
+                headers = [h.strip() for h in table_lines[0].split('|')[1:-1]]
+                result.append('<thead><tr>')
+                for h in headers:
+                    result.append(f'<th>{format_inline(h)}</th>')
+                result.append('</tr></thead>')
+                result.append('<tbody>')
+                for row_line in table_lines[2:]:
+                    cells = [c.strip() for c in row_line.split('|')[1:-1]]
+                    result.append('<tr>')
+                    for c in cells:
+                        result.append(f'<td>{format_inline(c)}</td>')
+                    result.append('</tr>')
+                result.append('</tbody></table>')
+            else:
+                for l in table_lines:
+                    result.append(f'<p>{format_inline(l)}</p>')
+            i -= 1
         # Empty line
         elif stripped == '':
             if list_type:
