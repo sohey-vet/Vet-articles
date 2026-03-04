@@ -252,21 +252,34 @@ def convert_md_to_html(md_path: Path) -> Path:
         else:
             conclusion_html = f'<p>{format_inline(raw_conclusion)}</p>'
 
+    # Owner tips & refs raw HTML from MD
+    owner_tips_raw = extract_owner_tips_html(md_text)
+    refs_raw = extract_refs_html(md_text)
+
+    # Prepare markdown text for section generation
+    clean_md_text = md_text
+    if owner_tips_raw:
+        clean_md_text = clean_md_text.replace(owner_tips_raw, '')
+    if refs_raw:
+        clean_md_text = clean_md_text.replace(refs_raw, '')
+
+    # Normalize heading levels if content is wrapped in "## 本文"
+    clean_md_text = re.sub(r'^##\s*本文\s*\n', '\n', clean_md_text, flags=re.MULTILINE)
+    clean_md_text = re.sub(r'^###\s+', '## ', clean_md_text, flags=re.MULTILINE)
+
     # Body sections - split by ## headers
-    # We will build accordion sections for each ## section (except 結論 and metadata)
-    section_blocks = re.split(r'\n(?=## )', md_text)
+    section_blocks = re.split(r'\n(?=## )', clean_md_text)
     accordion_sections = []
 
     icon_map = {
         '臨床症状': '⚡',
         '原因': '🔍',
-        '段階的治療': '💊',
-        '内科的介入': '💊',
+        '治療': '💊',
+        '介入': '💊',
         '画像診断': '🩺',
         '難産': '🩺',
-        '外科的介入': '🔪',
+        '外科': '🔪',
         '新生子': '👶',
-        '治療': '💊',
         '輸液': '💧',
         'ステップ': '🗺️',
         'モニタリング': '📊',
@@ -275,9 +288,9 @@ def convert_md_to_html(md_path: Path) -> Path:
     }
 
     for block in section_blocks:
-        if not block.startswith('## '):
+        if not block.strip().startswith('## '):
             continue
-        block_lines = block.splitlines()
+        block_lines = block.strip().splitlines()
         heading = block_lines[0][3:].strip()
 
         if heading in ['結論', 'メタデータ']:
@@ -292,12 +305,6 @@ def convert_md_to_html(md_path: Path) -> Path:
 
         anchor = re.sub(r'[^\w\u3040-\u9fff]', '', heading)[:20]
         section_content = '\n'.join(block_lines[1:])
-
-        # Extract owner-tips and refs blocks separately
-        if '<div id="owner-tips">' in section_content:
-            continue
-        if '<div id="refs">' in section_content:
-            continue
 
         body_html = md_to_html_body(section_content)
         accordion_sections.append({
@@ -325,10 +332,6 @@ def convert_md_to_html(md_path: Path) -> Path:
 </div>
 </div>
 </div>'''
-
-    # Owner tips & refs raw HTML from MD
-    owner_tips_raw = extract_owner_tips_html(md_text)
-    refs_raw = extract_refs_html(md_text)
 
     # Full HTML
     html_out = f'''<!DOCTYPE html>
