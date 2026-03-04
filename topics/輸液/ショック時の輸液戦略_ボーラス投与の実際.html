@@ -1,351 +1,265 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="ショック時の輸液戦略。目標指向型蘇生。犬の初期ボーラス20mL/kg（15-20分）、猫の5-10mL/kg小容量Titration。膠質液の腎障害リスクと高張食塩水の適応。"
-        name="description" />
-    <title>ショック時の輸液戦略 ─ ボーラス投与の実際 | VetEvidence</title>
-    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<title>ショック時の輸液戦略 ─ ボーラス投与の実際 | VetEvidence</title>
+<link href="../../assets/style.css?v=20260304v1" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button aria-label="メニュー" class="hamburger-btn">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
-        <a href="#isotonic">💉 等張性晶質液</a>
-        <a href="#colloid">🧪 膠質液</a>
-        <a href="#hypertonic">🔬 高張食塩水</a>
-        <a href="#monitoring">📊 モニタリング</a>
-        <a href="#owner-tips">🗣️ 飼い主説明</a>
-        <a href="#refs">📚 参照論文</a>
-        <h4>情報ソース</h4>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-    </aside>
-    <div class="page-container">
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <a class="tag tag--primary" href="../../index.html?tag=%E8%BC%B8%E6%B6%B2">輸液</a>
-                <a class="tag tag--danger" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
-                <a class="tag tag--success" href="../../index.html?tag=%E7%8A%AC%E7%8C%AB%E5%85%B1%E9%80%9A">犬猫共通</a>
-            </div>
-            <h1 style="font-size: 1.3rem;">💧 ショック時の輸液戦略 ─ ボーラス投与の実際</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-                目標指向型蘇生（Goal-directed
-                resuscitation）が基本。「決まった量を一律に投与」の時代は終わった。ボーラス→再評価→必要時追加のサイクル。猫は5-10mL/kgの小容量Titrationが厳格化。
-            </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
-            </div>
-        </header>
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input checked="" id="content-mode-toggle" type="checkbox" />
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-        <!-- FREE ZONE -->
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
-                <div style="font-size:0.88rem;">
-                    <ul>
-                        <li><strong>犬</strong>：ショックドーズは80-90 mL/kg。初期ボーラスは<strong>20
-                                mL/kgを15-20分</strong>で投与し、各ボーラス後に心拍数・血圧・CRT等を再評価</li>
-                        <li><strong>猫</strong>：ショックドーズは50-55 mL/kg。初期ボーラスは<strong>5-10
-                                mL/kgの小容量ボーラス（Titration）</strong>で開始。体液過負荷に極めて脆弱であり医原性肺水腫リスクが高い</li>
-                        <li><strong>猫のショックの三徴（徐脈＋低体温＋低血圧）</strong>を認識し、犬と同じアプローチを適用しないことが重要</li>
-                        <li>膠質液は敗血症患者での腎障害リスクから使用は<strong>慎重に</strong>傾いている</li>
-                    </ul>
-                    <hr />
-                </div>
-            </div>
-        </div>
-        <div class="free-content" id="overview">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 犬と猫の輸液蘇生の根本的な違い</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:0 0 12px;">
-                        <thead>
-                            <tr>
-                                <th>項目</th>
-                                <th>🐕 犬</th>
-                                <th>🐱 猫</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ショックドーズ（全量）</td>
-                                <td>80-90 mL/kg</td>
-                                <td>50-55 mL/kg</td>
-                            </tr>
-                            <tr>
-                                <td><strong>初期ボーラス量</strong></td>
-                                <td><strong>20 mL/kg（15〜20分）</strong></td>
-                                <td><strong>5-10 mL/kgの小容量Titration</strong></td>
-                            </tr>
-                            <tr>
-                                <td>ショック時の心拍数</td>
-                                <td>頻脈（代償性）</td>
-                                <td><strong>徐脈（&lt;140 bpm）が特徴</strong></td>
-                            </tr>
-                            <tr>
-                                <td>体温変化</td>
-                                <td>発熱や維持</td>
-                                <td><strong>低体温が典型</strong></td>
-                            </tr>
-                            <tr>
-                                <td>肺水腫リスク</td>
-                                <td>比較的低い</td>
-                                <td><strong>極めて高い</strong>（積極的加温が必要）</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr />
-                </div>
-            </div>
-        </div>
-        <!-- PREMIUM ZONE -->
-        <div id="isotonic">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">💉</span><span>等張性晶質液 ─
-                            第一選択の輸液蘇生</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>犬のショック輸液プロトコル</h4>
-                        <ol>
-                            <li>LRS（乳酸リンゲル液）または生理食塩水を準備</li>
-                            <li><strong>20 mL/kgを15-20分</strong>かけてIV（初期ボーラス）</li>
-                            <li>各ボーラス後に心拍数・血圧・CRT・意識レベルを再評価</li>
-                            <li>改善不十分なら20 mL/kgを追加（最大累積量を意識する）</li>
-                            <li>エンドポイント達成後は維持・補水輸液へ移行</li>
-                        </ol>
-                        <h4 style="margin-top:12px;">猫のショック輸液プロトコル ─ 根本的に犬と異なる！</h4>
-                        <ol>
-                            <li><strong>まず保温</strong>：猫の低体温は血管反応性を著しく低下させる。輸液と同時に積極的加温を開始</li>
-                            <li>初期ボーラス：<strong>5-10 mL/kgの小容量ボーラス（Titration）15-30分かけて投与</strong></li>
-                            <li>各ボーラス後に呼吸状態（頻呼吸、啰音）を特に注意して再評価</li>
-                            <li>低体温が回復すると血管が拡張し急速に肺水腫リスクが上昇する点に注意</li>
-                        </ol>
-                        <div class="clinical-tip">
-                            <h4>⚠️ 心原性ショックの除外が必須</h4>
-                            <p>心原性ショックでは積極的輸液は禁忌（肺水腫悪化）。聴診とPOCUS（TFAST/Bライン）で事前確認が必須。</p>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>輸液プロトコルの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="colloid">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🧪</span><span>膠質液（コロイド） ─
-                            慎重な使用が推奨される</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <p>ヒド口キシエチルスターチ（HES）等の膠質液は大分子量ポリマーにより血管内に水分を保持するが、近年（6S trial, CHEST
-                            trial）で敗血症患者への使用と<strong>腎障害リスクの関連</strong>が示された。獣医療でも使用は慎重な傾向にある。</p>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>種</th>
-                                    <th>ボーラス量</th>
-                                    <th>24時間上限</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>犬</td>
-                                    <td>5-10 mL/kg</td>
-                                    <td>約20 mL/kg</td>
-                                </tr>
-                                <tr>
-                                    <td>猫</td>
-                                    <td>1-5 mL/kg</td>
-                                    <td>10-20 mL/kg</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p><strong>依然として選択肢となる状況</strong>：低アルブミン血症（&lt;2.0 g/dL）を伴う症例、大量の晶質液に反応しないケース</p>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>膠質液の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="hypertonic">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🔬</span><span>高張食塩水（Hypertonic
-                            Saline）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <p>3〜7.5%の高張食塩水は間質・細胞内から血管内への急速な水分移動を引き起こし、少量で迅速な血管内容量拡張を達成する。</p>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>種</th>
-                                    <th>投与量</th>
-                                    <th>投与方法</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>犬</td>
-                                    <td>4-5 mL/kg</td>
-                                    <td>10-15分かけてIV</td>
-                                </tr>
-                                <tr>
-                                    <td>猫</td>
-                                    <td>2-4 mL/kg</td>
-                                    <td>10-15分かけてIV</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p><strong>適応</strong>：頭部外傷（脳浮腫軽減）、急速な血管内容量拡張が必要な場面</p>
-                        <p><strong>禁忌</strong>：高ナトリウム血症、重度脱水（間質から水分を引き抜くため悪化）、未コントロールの出血</p>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>高張食塩水の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="monitoring">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📊</span><span>蘇生のエンドポイントとモニタリング</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>パラメータ</th>
-                                    <th>目標</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>心拍数</td>
-                                    <td>正常範囲（犬80-120 bpm、猫160-220 bpm）</td>
-                                </tr>
-                                <tr>
-                                    <td>CRT（毛細血管再充満時間）</td>
-                                    <td>&lt;2秒</td>
-                                </tr>
-                                <tr>
-                                    <td>粘膜色</td>
-                                    <td>ピンク</td>
-                                </tr>
-                                <tr>
-                                    <td>平均動脈圧（MAP）</td>
-                                    <td>&gt;65-80 mmHg</td>
-                                </tr>
-                                <tr>
-                                    <td>尿量</td>
-                                    <td>&gt;1 mL/kg/h</td>
-                                </tr>
-                                <tr>
-                                    <td>乳酸値</td>
-                                    <td>&lt;2.5 mmol/L</td>
-                                </tr>
-                                <tr>
-                                    <td>意識レベル</td>
-                                    <td>改善</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>⚠️ 体液過負荷（Fluid Overload）の兆候に注意</h4>
-                            <ul>
-                                <li>頻呼吸・湿性ラ音</li>
-                                <li>鼻汁・結膜浮腫</li>
-                                <li>新しい心雑音や不整脈</li>
-                                <li>体重増加</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>モニタリングの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>「ショック状態と言われたのですが、どういうことですか？」</h4>
-                            <div class="speech-bubble">
-                                ショックとは、体中の臓器に十分な血液（酸素）が行き届かなくなっている危険な状態です。出血、重症感染、アレルギーなどさまざまな原因で起こります。今は急速に点滴を行って血液の循環を回復させる「蘇生」処置を行っています。状態の変化をこまめに確認しながら点滴の量を調整していきます。
-                            </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>「点滴をたくさんしても大丈夫ですか？」</h4>
-                            <div class="speech-bubble">
-                                点滴は多ければ多いほどいいというものではありません。特に猫や心臓病のある子の場合、過剰な点滴は肺に水が溜まる「肺水腫」を引き起こすリスクがあります。少量ずつ投与して体の反応を確認しながら、慎重に量を調整しています。これが「目標指向型（Titration）」と呼ばれる輸液の方法です。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <li>Davis H, et al. AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. <em>JAAHA</em>,
-                                2013.</li>
-                            <li>Silverstein DC, Hopper K. <em>Small Animal Critical Care Medicine</em>, 3rd ed.
-                                Elsevier, 2022.</li>
-                            <li>Cazzolli D, Prittie J. The crystalloid-colloid debate. <em>JVECC</em>, 2015.</li>
-                            <li>Mazzaferro EM. Update on Hypertonic Saline Use in the Treatment of Severe Hypovolemia.
-                                <em>Today's Veterinary Practice</em>, 2023.</li>
-                            <li>Rudloff E, Kirby R. Fluid therapy: Crystalloid and colloid therapy. <em>Vet Clin North
-                                    Am</em>, 2008.</li>
-                            <li>Smart L, et al. Fluid therapy for cats and dogs: guidelines and controversies.
-                                VetEducation, 2024.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
-                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js?v=20250225v9"></script>
-    <script
-        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
-</body>
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<a class="tag tag--primary" href="../../index.html?tag=%E8%BC%B8%E6%B6%B2">輸液</a>
+</div>
+<h1 style="font-size: 1.3rem;">ショック時の輸液戦略 ─ ボーラス投与の実際</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
 
+</p>
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- FREE ZONE -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<div style="font-size:0.88rem;">
+
+</div>
+</div>
+</div>
+<!-- PREMIUM ZONE -->
+<hr class="section-divider"/>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+<div>
+<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+</div>
+</div>
+
+<div id="結論TakehomeMessage">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>結論 (Take-home Message)</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<ul>
+<li>ショック時の輸液蘇生は <strong>目標指向型蘇生（Goal-directed resuscitation）</strong> が基本であり、決められた量を一律に投与するのではなく、<strong>ボーラス投与→再評価→必要時追加</strong>のサイクルを繰り返す。</li>
+<li><strong>犬</strong>: 等張性晶質液のショックドーズは 80-90 mL/kg。初期ボーラスは <strong>20 mL/kg を15-20分</strong> で投与し、心拍数・血圧・CRT等を再評価する。</li>
+<li><strong>猫</strong>: ショックドーズは 50-55 mL/kg だが、猫は<strong>体液過負荷に極めて脆弱</strong>。初期ボーラスは <strong>5-10 mL/kgの小容量ボーラス（Titration）</strong> で開始し、少量ずつ慎重に投与する。</li>
+<li>膠質液はかつて頻用されたが、近年は敗血症患者での腎障害リスクから<strong>使用は慎重</strong>に傾いている。</li>
+<li><strong>猫のショックの三徴（徐脈＋低体温＋低血圧）</strong>を認識し、犬と同じアプローチを適用しないことが重要。</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>結論 (Take-home Message)の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="ショックの病態と輸液の目的">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💧</span><span>ショックの病態と輸液の目的</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>ショックは「組織への酸素供給が組織の酸素需要を満たせない状態」であり、最終的に臓器不全に至る。輸液蘇生の目的は循環血液量の回復と組織灌流の改善にある。</p>
+<p>ショックは大きく4つに分類される：</p>
+<p>| タイプ | 例 |</p>
+<p>|--------|-----|</p>
+<p>| 循環血液量減少性 | 出血、脱水、第三腔液貯留 |</p>
+<p>| 分布異常性 | 敗血症、SIRS、アナフィラキシー |</p>
+<p>| 心原性 | 心タンポナーデ、重度不整脈、弁膜症 |</p>
+<p>| 閉塞性 | GDV、肺血栓塞栓症、緊張性気胸 |</p>
+<p>いずれのタイプでも初期対応に輸液は重要だが、<strong>心原性ショックでは過剰輸液が致命的</strong>となりうるため、カテゴリーの鑑別が不可欠である。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>ショックの病態と輸液の目的の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="等張性晶質液輸液蘇生の基本">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💧</span><span>等張性晶質液 ─ 輸液蘇生の基本</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>乳酸リンゲル液（LRS/Hartmann液）や0.9%生理食塩水が第一選択。</p>
+<h4>犬のショックドーズ</h4>
+<ul>
+<li><strong>全量</strong>: 80-90 mL/kg</li>
+<li><strong>初期ボーラス</strong>: <strong>20 mL/kgを15-20分</strong>かけて静注</li>
+<li>ボーラス後に心拍数、脈の質、粘膜色、CRT（毛細血管再充満時間）、血圧、意識レベルを再評価</li>
+<li>改善が不十分であれば追加ボーラス（20 mL/kg）、計90 mL/kgまで</li>
+</ul>
+<p><strong>注意</strong>: 20-50 mL/kgを初期投与とするガイドラインもあるが、いずれの場合も「一度に全量を投与しない」原則を守り、各ボーラス後の再評価が必須。</p>
+<h4>猫のショックドーズ ─ 犬とは根本的に異なる</h4>
+<ul>
+<li><strong>全量</strong>: 50-55 mL/kg</li>
+<li><strong>初期ボーラス</strong>: <strong>5-10 mL/kgの小容量ボーラス（Titration）</strong> を15-30分かけて投与し、各ボーラス後に必ず再評価</li>
+</ul>
+<p><strong>猫が犬と異なる理由</strong>:</p>
+<ol>
+<li>猫は犬に比べて<strong>肺水腫に陥りやすい</strong>。</li>
+</ul>
+<ol>
+<li>ショック時に猫は<strong>徐脈・低体温・低血圧の三徴</strong>を呈することが多く、犬のような頻脈・粘膜紅潮はむしろ例外。</li>
+</ul>
+<ol>
+<li>低体温の猫では末梢血管がカテコラミンに反応しにくく、大量輸液後の復温で一気に血管が拡張→肺水腫のリスクがある。</li>
+</ul>
+<ol>
+<li>まず<strong>保温と小容量輸液</strong>を同時に行い、復温を確認しながら漸増する。</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>等張性晶質液 ─ 輸液蘇生の基本の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="膠質液Colloids">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>膠質液（Colloids）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>大分子量のポリマー（ヒドロキシエチルスターチ：HES等）を含み、タンパク質結合力により血管内に水分を保持する。</p>
+<h4>投与量</h4>
+<p>| 種 | ボーラス量 | 24時間上限 |</p>
+<p>|:---:|:---:|:---:|</p>
+<p>| 犬 | 5-10 mL/kg | ~20 mL/kg |</p>
+<p>| 猫 | 1-5 mL/kg | 10-20 mL/kg |</p>
+<h4>使用上の注意</h4>
+<p>近年、ヒト医療におけるRCT（6S trial, CHEST trial）で敗血症患者へのHES使用と腎障害リスクの関連が示されて以降、獣医療でも膠質液の使用は<strong>慎重になっている</strong>。特に敗血症や全身性炎症反応を伴うショックでは、晶質液ベースの蘇生が推奨される傾向にある。</p>
+<p>低アルブミン血症（<2.0 g/dL）を伴う症例や、大量の晶質液投与に反応しないケースでは依然として選択肢となりうる。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>膠質液（Colloids）の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="高張食塩水HypertonicSalin">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>高張食塩水（Hypertonic Saline）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>3-7.5%の高張食塩水は、間質・細胞内から血管内への急速な水分移動を引き起こし、少量で迅速な血管内容量拡張を達成する。</p>
+<p>| 種 | 投与量 | 投与方法 |</p>
+<p>|:---:|:---:|:---:|</p>
+<p>| 犬 | 4-5 mL/kg | 10-15分かけてIV |</p>
+<p>| 猫 | 2-4 mL/kg | 10-15分かけてIV |</p>
+<p><strong>適応</strong>: 頭部外傷（脳浮腫軽減）、急速な血管内容量拡張が必要な場面。</p>
+<p><strong>禁忌</strong>: 高ナトリウム血症、重度脱水（間質から水分を引き抜くため悪化）、未コントロールの出血。</p>
+<p>高張食塩水投与後は等張性晶質液による間質液量の補充が必要。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>高張食塩水（Hypertonic Saline）の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="モニタリングと蘇生のエンドポイント">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📊</span><span>モニタリングと蘇生のエンドポイント</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>蘇生の効果判定に用いるパラメータ：</p>
+<p>| パラメータ | 目標 |</p>
+<p>|-----------|------|</p>
+<p>| 心拍数 | 正常範囲（犬80-120, 猫160-220） |</p>
+<p>| CRT | < 2秒 |</p>
+<p>| 粘膜色 | ピンク |</p>
+<p>| 血圧（MAP） | > 65-80 mmHg |</p>
+<p>| 尿量 | > 1 mL/kg/h |</p>
+<p>| 乳酸値 | < 2.5 mmol/L |</p>
+<p>| 意識レベル | 改善 |</p>
+<p>蘇生のエンドポイントを意識し、「もう少し」の追加投与が体液過負荷を引き起こさないよう常に注意する。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>モニタリングと蘇生のエンドポイントの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>「ショック状態と言われたのですが、どういうことですか？」</h4>
+                <div class="speech-bubble">ショックとは、体中の臓器に十分な血液（酸素）が行き届かなくなっている危険な状態です。出血、重症感染、アレルギーなどさまざまな原因で起こります。今は急速に点滴を行って血液の循環を回復させる「蘇生」処置を行っています。状態の変化をこまめに確認しながら点滴の量を調整していきます。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>「点滴をたくさんしても大丈夫ですか？」</h4>
+                <div class="speech-bubble">点滴は多ければ多いほどいいというものではありません。特に猫や心臓病のある子の場合、過剰な点滴は肺に水が溜まる「肺水腫」を引き起こすリスクがあります。ですので私たちは少量ずつ投与して体の反応を確認しながら、慎重に量を調整しています。これが「目標指向型」といわれる輸液の方法です。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+<div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Davis H, et al. AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. JAAHA, 2013.</li>
+                <li>Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022.</li>
+                <li>Cazzolli D, Prittie J. The crystalloid-colloid debate: Consequences of resuscitation fluid selection in veterinary critical care. JVECC, 2015.</li>
+                <li>Mazzaferro EM. Update on Hypertonic Saline Use in the Treatment of Severe Hypovolemia and Shock. Today's Veterinary Practice, 2023.</li>
+                <li>Rudloff E, Kirby R. Fluid therapy: Crystalloid and colloid therapy. Vet Clin North Am Small Anim Pract, 2008.</li>
+                <li>Smart L, et al. Fluid therapy for cats and dogs: guidelines and controversies. VetEducation, 2024.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+</footer>
+</div>
+<script src="../../assets/script.js?v=20260304v1"></script>
+</body>
 </html>

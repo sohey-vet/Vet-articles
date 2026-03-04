@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="犬猫の敗血症の早期認識と初期蘇生。SIRS基準の犬猫差異、Sepsis Bundleの適応、ソースコントロールの原則。" name="description"/>
-<title>敗血症の早期認識と初期蘇生 | VetEvidence</title>
-<link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
+<meta content="" name="description"/>
+<title>敗血症の早期認識と初期蘇生 ─ 「1時間以内」が生死を分ける | VetEvidence</title>
+<link href="../../assets/style.css?v=20260304v1" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
 <span class="nav-brand">🩺 VetEvidence</span>
-<button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
 </nav>
 <div class="slide-menu-overlay"></div>
 <aside class="slide-menu">
 <h4>ナビゲーション</h4>
 <a href="../../index.html">🏠 トップ</a>
-<a href="#conclusion">🎯 結論</a>
-<a href="#action-table">🗺️ SIRS基準</a>
-<a href="#recognition">🔍 早期認識</a>
-<a href="#resuscitation">💧 初期蘇生</a>
-<a href="#antibiotics">💊 抗菌薬</a>
-<a href="#source-control">🔧 ソースコントロール</a>
 <a href="#owner-tips">🗣️ 飼い主説明</a>
 <a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
 </aside>
 <div class="page-container">
 <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
 <div class="tags" style="margin-bottom: 8px;">
-<a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
-<a class="tag tag--danger" href="../../index.html?tag=%E6%95%97%E8%A1%80%E7%97%87">敗血症</a>
-<a class="tag tag--success" href="../../index.html?tag=%E7%8A%AC%E7%8C%AB%E5%85%B1%E9%80%9A">犬猫共通</a>
-<a class="tag tag--primary" href="../../index.html?tag=%E6%8A%97%E8%8F%8C%E8%96%AC">抗菌薬</a><a class="tag tag--primary" href="../../index.html?tag=%E8%BC%B8%E6%B6%B2">輸液</a></div>
-<h1 style="font-size: 1.3rem;">🚨 敗血症の早期認識と初期蘇生</h1>
+<a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a><a class="tag tag--primary" href="../../index.html?tag=%E9%9B%86%E4%B8%AD%E6%B2%BB%E7%99%82">集中治療</a>
+</div>
+<h1 style="font-size: 1.3rem;">敗血症の早期認識と初期蘇生 ─ 「1時間以内」が生死を分ける</h1>
 <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-                感染＋臓器障害 = 敗血症。犬の死亡率20〜68%。
-                ヒトの Surviving Sepsis Campaign の原則を獣医領域に適応し、
-                「最初の1時間」の早期認識・輸液蘇生・抗菌薬投与が転帰を左右する。
-            </p>
+
+</p>
 <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
 <div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
-<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
 </div>
 </header>
 <div class="content-mode-bar">
@@ -56,362 +49,225 @@
 <div class="free-content" id="conclusion">
 <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
 <h3 style="font-size:0.95rem;">🎯 結論</h3>
-<!-- 個別生成図表 -->
-<div class="mermaid-wrapper"><pre class="mermaid">
-graph TD
-    A["感染源の疑いあり"] --> B{"SIRS基準に合致"}
-    B -->|"No"| C["経過観察 感染治療"]
-    B -->|"Yes"| D{"臓器障害あり 例:乳酸高値 乏尿"}
-    D -->|"No"| E["全身性炎症反応症候群 SIRS"]
-    D -->|"Yes"| F["敗血症を疑う"]
+<div style="font-size:0.88rem;">
 
-    F --> G["ゴールデンアワー 最初の1時間で"]
-    G --> H["1 輸液蘇生"]
-    G --> I["2 広域抗菌薬投与 培養後"]
-    G --> J["3 ソースコントロール 感染源除去"]
-
-    H --> K{"灌流パラメータ改善? HR CRT 脈 血圧 乳酸"}
-    K -->|"Yes"| L["維持輸液 状態安定化"]
-    K -->|"No"| M["輸液ボーラス追加 または昇圧薬検討"]
-
-    M --> N{"低血圧持続?"}
-    N -->|"Yes"| O["ノルエピネフリン 第一選択"]
-    N -->|"No"| L
-
-    O --> P{"目標MAP達成?"}
-    P -->|"No"| Q["他昇圧薬追加 バソプレシン ドブタミン"]
-    P -->|"Yes"| L
-
-    J --> R["可能な限り早期に実施"]
-
-    style A fill:#DDF,stroke:#333,stroke-width:2px
-    style F fill:#FEE,stroke:#C00,stroke-width:2px
-    style G fill:#EFE,stroke:#090,stroke-width:2px
-</pre></div>
-<p style="font-size:0.88rem;">
-                    敗血症は<strong>感染に対する宿主の調節異常な反応による臓器障害</strong>（Sepsis-3定義の獣医適用）。
-                    犬はSIRS基準<strong>4項目中2項目以上</strong>で疑い、猫は<strong>3項目以上</strong>を要求する（感度を補うため）。
-                    治療の<strong>ゴールデンアワー（最初の1時間）</strong>に行うべきことは3つ：
-                    ①<strong>輸液蘇生</strong>（犬10〜20 mL/kg、猫5〜10 mL/kgのボーラス→再評価）、
-                    ②<strong>広域スペクトル抗菌薬</strong>（培養検体採取後、1時間以内に投与開始）、
-                    ③<strong>ソースコントロール</strong>（感染源の特定と除去/ドレナージ）。
-                    <strong>ノルエピネフリン</strong>が輸液蘇生に反応しない低血圧の第一選択昇圧薬。
-                </p>
 </div>
-</div>
-<div class="free-content" id="action-table">
-<div class="card">
-<h3 style="font-size: 0.95rem;">⚡ SIRS基準 ─ 犬と猫の違い</h3>
-<div style="overflow-x:auto;">
-<table class="comparison-table" style="margin:12px 0 0;">
-<thead>
-<tr>
-<th>項目</th>
-<th>🐕 犬</th>
-<th>🐱 猫</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>体温</td>
-<td>＜38.1°C or ＞39.2°C</td>
-<td><strong>＜37.8°C</strong> or ＞40.0°C</td>
-</tr>
-<tr>
-<td>心拍数</td>
-<td>＞120/min</td>
-<td>＞225/min（or <strong>＜140/min</strong>）</td>
-</tr>
-<tr>
-<td>呼吸数</td>
-<td>＞20/min</td>
-<td>＞40/min</td>
-</tr>
-<tr>
-<td>WBC</td>
-<td>＜6,000 or ＞16,000/μL<br/>or バンド好中球＞3%</td>
-<td>＜5,000 or ＞19,000/μL</td>
-</tr>
-<tr>
-<td><strong>診断基準</strong></td>
-<td><strong>4項目中2項目以上</strong></td>
-<td><strong>4項目中3項目以上</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p style="font-size:0.8rem;margin-top:8px;color:var(--color-text-muted);">
-                    ⚠️ 猫は興奮・ストレスで頻脈・頻呼吸になりやすいため、3項目という高い閾値を設定。
-                    また猫の敗血症は<strong>低体温・徐脈</strong>で来院することが多い（hypodynamic phase）。
-                </p>
 </div>
 </div>
 <!-- PREMIUM ZONE -->
-<div id="recognition">
+<hr class="section-divider"/>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+<div>
+<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+</div>
+</div>
+
+<div id="結論TakehomeMessage">
 <div class="accordion">
 <button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🔍</span><span>早期認識 ─
-                            「何かおかしい」の具体化</span></span>
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>結論 (Take-home Message)</span></span>
 <span class="chevron">▼</span>
 </button>
 <div class="accordion-content">
 <div class="accordion-body premium-content">
-<h4>犬の敗血症 ─ Hyperdynamic Phase（初期）</h4>
 <ul>
-<li>発熱、頻脈、<strong>赤い粘膜</strong>、バウンディングパルス（弾むような脈）</li>
-<li>CRT短縮（＜1秒）、血圧は保たれているか低血圧</li>
-<li>元気消失、嘔吐、下痢、腹痛</li>
+<li>敗血症は「感染に対する宿主の制御不能な反応による生命を脅かす臓器障害」であり、早期認識と初期蘇生の速度が予後を大きく左右する。</li>
+<li><strong>犬のSIRS基準</strong>（体温・心拍数 >120・呼吸数・WBCの4項目中2つ以上）と<strong>猫のSIRS基準</strong>は数値が異なり、特に猫は「徐脈（<140 bpm）」を示す点が犬と大きく異なる。</li>
+<li>Surviving Sepsis Campaignの原則に基づき、<strong>診断後1時間以内の広域スペクトル抗菌薬投与</strong>と<strong>積極的輸液蘇生</strong>（犬: 60-90 mL/kg、猫: 45-60 mL/kg）が推奨される。</li>
+<li>感染源のコントロール（source control）が根本治療であり、支持療法と並行して感染巣の特定・ドレナージを行う。</li>
 </ul>
-<h4 style="margin-top:12px;">猫の敗血症 ─ Hypodynamic Phase（初期から）</h4>
-<ul>
-<li><strong>低体温</strong>、蒼白な粘膜、<strong>徐脈</strong>（or 不適切に正常な心拍数）</li>
-<li>弱い脈、低血圧、CRT延長</li>
-<li>⚠️ 猫ではhyperdynamicフェーズを<strong>ほとんど示さない</strong>ため、発見が遅れやすい</li>
-</ul>
-<h4 style="margin-top:12px;">臓器障害の評価</h4>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th>臓器</th>
-<th>評価指標</th>
-<th>異常値</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>腎臓</td>
-<td>BUN/Cr、尿量</td>
-<td>乏尿（＜1 mL/kg/h）</td>
-</tr>
-<tr>
-<td>肝臓</td>
-<td>ALT、T.Bil、血糖</td>
-<td>低血糖（肝糖新生障害）</td>
-</tr>
-<tr>
-<td>凝固系</td>
-<td>PT/APTT、血小板数、D-dimer</td>
-<td>DICの兆候</td>
-</tr>
-<tr>
-<td>消化管</td>
-<td>嘔吐、下痢、イレウス</td>
-<td>バリア破綻→バクテリアルトランスロケーション</td>
-</tr>
-<tr>
-<td>乳酸</td>
-<td>血中乳酸値</td>
-<td><strong>＞2.5 mmol/L</strong> → 組織低灌流</td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>早期認識の詳細は有料会員限定です</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>結論 (Take-home Message)の詳細は有料会員限定です</div>
 </div>
 </div>
 </div>
-<div id="resuscitation">
+<div id="敗血症とは何か">
 <div class="accordion">
 <button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">💧</span><span>初期蘇生 ─ 最初の1時間</span></span>
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>敗血症とは何か</span></span>
 <span class="chevron">▼</span>
 </button>
 <div class="accordion-content">
 <div class="accordion-body premium-content">
-<h4>輸液蘇生プロトコル</h4>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th>パラメータ</th>
-<th>🐕 犬</th>
-<th>🐱 猫</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>初期ボーラス</td>
-<td>等張晶質液 10〜20 mL/kg<br/>15〜30分で投与</td>
-<td>等張晶質液 10〜15 mL/kg<br/>15〜30分で投与</td>
-</tr>
-<tr>
-<td>再評価ポイント</td>
-<td colspan="2">灌流パラメータ（HR、CRT、脈の質、血圧、乳酸値）を再評価。改善しなければボーラス追加</td>
-</tr>
-<tr>
-<td>目標</td>
-<td colspan="2">MAP ≥65 mmHg、乳酸正常化、尿量 ≥1 mL/kg/h</td>
-</tr>
-</tbody>
-</table>
-<h4 style="margin-top:12px;">昇圧薬（輸液に反応しない低血圧）</h4>
-<ul>
-<li><strong>ノルエピネフリン</strong>: 0.1〜1 μg/kg/min CRI ─ <strong>第一選択</strong></li>
-<li><strong>バソプレシン</strong>: 0.5〜5 mU/kg/min CRI ─ ノルエピネフリンに追加</li>
-<li><strong>ドブタミン</strong>: 2〜10 μg/kg/min CRI ─ 心機能低下が明らかな場合に追加</li>
-<li>⚠️ <strong>ドパミン</strong>は有害事象（不整脈）のリスクが高く、<strong>第一選択としては推奨されない</strong></li>
-</ul>
-<div class="clinical-tip">
-<h4>💊 日本での現実</h4>
-<ul>
-<li><strong>ノルエピネフリン</strong>（ノルアドリナリン®注）: 動物用製剤はないがヒト用製剤を使用。一般病院でも入手可能</li>
-<li>一般病院ではCRI管理が困難な場合 → <strong>安定化後、二次診療施設への転送</strong>を検討</li>
-<li>乳酸の院内測定が可能なPOC機器（i-STAT等）があると敗血症管理の質が大幅に向上する</li>
-</ul>
+<p>敗血症（sepsis）とは、感染に対する宿主の免疫応答が制御不能となり、自身の組織を傷害して臓器障害を引き起こす症候群である。全身性炎症反応症候群（SIRS）に感染が合併した状態として認識される。進行すると敗血症性ショック（septic shock）に至り、輸液蘇生に反応しない持続的低血圧と組織低灌流を引き起こす。</p>
 </div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>初期蘇生の詳細は有料会員限定です</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>敗血症とは何かの詳細は有料会員限定です</div>
 </div>
 </div>
 </div>
-<div id="antibiotics">
+<div id="犬におけるSIRS基準と早期認識">
 <div class="accordion">
 <button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">💊</span><span>抗菌薬 ─ 1時間以内の投与開始</span></span>
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>犬におけるSIRS基準と早期認識</span></span>
 <span class="chevron">▼</span>
 </button>
 <div class="accordion-content">
 <div class="accordion-body premium-content">
-<h4>経験的抗菌薬の選択（培養結果判明前）</h4>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th>感染源</th>
-<th>推奨レジメン</th>
-<th>備考</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>不明・消化管由来</td>
-<td>アンピシリン/スルバクタム 30 mg/kg IV q8h<br/>＋ エンロフロキサシン 10 mg/kg IV SID（犬）</td>
-<td>嫌気性菌＋グラム陰性菌カバー</td>
-</tr>
-<tr>
-<td>泌尿器由来</td>
-<td>アンピシリン/スルバクタム<br/>or エンロフロキサシン</td>
-<td>E.coli が最多起因菌</td>
-</tr>
-<tr>
-<td>皮膚・軟部組織</td>
-<td>アンピシリン/スルバクタム<br/>± クリンダマイシン 10 mg/kg IV q12h</td>
-<td>MRSA/MRSP懸念があれば培養結果待ち</td>
-</tr>
-<tr>
-<td>呼吸器</td>
-<td>アンピシリン/スルバクタム<br/>＋ エンロフロキサシン</td>
-<td>吸引性肺炎では嫌気性菌も考慮</td>
-</tr>
-</tbody>
-</table>
-<div class="clinical-tip">
-<h4>⚠️ 重要原則</h4>
-<ul>
-<li><strong>培養検体は抗菌薬投与前に必ず採取</strong>（血液培養、尿、ドレナージ液など）</li>
-<li>培養結果が出たら<strong>De-escalation（狭域化）</strong>を行う</li>
-<li>エンロフロキサシンは<strong>猫では高用量で網膜毒性</strong>のリスク → 犬 10〜20 mg/kg IV
-                                    SID、猫は網膜毒性を避けるため<strong>上限 5 mg/kg</strong></li>
-</ul>
+<p>犬は以下の4項目のうち <strong>2つ以上</strong> を満たした場合にSIRSと判定される：</p>
+<p>| パラメータ | 異常値 |</p>
+<p>|-----------|--------|</p>
+<p>| 体温 | 発熱（>39.2℃）または低体温（<37.8℃） |</p>
+<p>| 心拍数 | >120 bpm |</p>
+<p>| 呼吸数 | >20回/分（またはPaCO2 < 30mmHg） |</p>
+<p>| WBC | >16,000/μL または <6,000/μL、または桿状核球 >3% |</p>
+<p>犬の敗血症初期には、消化器症状（嘔吐・下痢）、嗜眠、意識変容がみられることがある。Hyperdynamic phase（過動態相）では粘膜の紅潮（brick red mucous membranes）と弾発脈（bounding pulses）が特徴的。</p>
 </div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>抗菌薬の詳細は有料会員限定です</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>犬におけるSIRS基準と早期認識の詳細は有料会員限定です</div>
 </div>
 </div>
 </div>
-<div id="source-control">
+<div id="猫におけるSIRS基準犬との決定的な違い">
 <div class="accordion">
 <button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🔧</span><span>ソースコントロール ─
-                            感染源の除去</span></span>
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>猫におけるSIRS基準 ─ 犬との決定的な違い</span></span>
 <span class="chevron">▼</span>
 </button>
 <div class="accordion-content">
 <div class="accordion-body premium-content">
-<h4>犬猫の敗血症 ─ 主な感染源</h4>
-<ul>
-<li><strong>消化管</strong>: 消化管穿孔、膵炎からの膿瘍、腸管壊死（腸重積、腸閉塞）</li>
-<li><strong>子宮蓄膿症</strong>: とくに未避妊の中高齢雌犬で最多の敗血症の原因 → <strong>外科的子宮卵巣摘出が標準治療</strong></li>
-<li><strong>膿胸</strong>: 胸腔チューブ留置＋洗浄、反応不良なら胸腔探索術</li>
-<li><strong>尿路</strong>: 腎盂腎炎、尿管閉塞を伴う感染</li>
-<li><strong>腹膜炎</strong>: 開腹し病変部の修復＋腹腔洗浄、場合によりオープンペリトニアルドレナージ</li>
-</ul>
-<div class="clinical-tip">
-<h4>💊 原則</h4>
-<ul>
-<li>ソースコントロールは<strong>可能な限り早期に</strong>行う（安定化を待ちすぎない）</li>
-<li>外科的介入のリスクとベネフィットを慎重に評価し、<strong>「安定してから手術」ではなく「手術しないと安定しない」</strong>というケースを見極める</li>
-</ul>
+<p>猫のSIRS基準は犬と同じ4項目で構成されるが、数値が異なり認識がより困難である。以下の項目のうち <strong>2つまたは3つ以上</strong> を満たす場合にSIRSと判定される：</p>
+<p>| パラメータ | 異常値 |</p>
+<p>|-----------|--------|</p>
+<p>| 体温 | >39.7℃（103.5°F）または <37.8℃（100°F） |</p>
+<p>| 心拍数 | <strong><140 bpm（徐脈）</strong> または >225 bpm |</p>
+<p>| 呼吸数 | >40 回/分 |</p>
+<p>| WBC | >19,500/μL または <5,000/μL、または桿状核球 >5% |</p>
+<p><strong>猫の最大の特徴は、犬のような過動態相（頻脈・粘膜紅潮）を呈さず、むしろ徐脈・低体温・低血圧を示すことが多い点</strong>である。初期の微妙な症状は食欲低下、嗜眠、隠れる行動にとどまり、容易に見逃される。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>猫におけるSIRS基準 ─ 犬との決定的な違いの詳細は有料会員限定です</div>
 </div>
 </div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>ソースコントロールの詳細は有料会員限定です</div>
+</div>
+<div id="SIRS基準の限界">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>SIRS基準の限界</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>SIRS基準は臨床的に有用なスクリーニングツールであるが、単独使用では健康犬猫と疾患犬猫の鑑別能力に限界がある（特異度が低い）。SIRS基準を満たすこと自体が敗血的であることを意味するわけではなく、「感染の確証または高い疑い」との組み合わせで初めて敗血的と評価する必要がある。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>SIRS基準の限界の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="初期蘇生最初の1時間">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>初期蘇生 ─ 最初の1時間</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>Surviving Sepsis Campaign（SSC）の原則を獣医療に適用したアプローチが推奨される。</p>
+<h4>輸液蘇生</h4>
+<p>積極的な静脈内輸液により循環血液量を回復し、組織灌流を改善する。</p>
+<ul>
+<li><strong>犬</strong>: 等張性晶質液のショック用量は <strong>60-90 mL/kg</strong>。20 mL/kgのボーラスを15-20分で投与し、各ボーラス後に再評価。</li>
+<li><strong>猫</strong>: <strong>45-60 mL/kg</strong>。ただし猫は体液過負荷に陥りやすく、小容量ボーラス（5-10 mL/kg）で慎重に投与し頻繁に再評価する。</li>
+</ul>
+<h4>抗菌薬の早期投与</h4>
+<p><strong>診断後（認識後）1時間以内</strong>に広域スペクトル抗菌薬を静脈内に投与する。培養結果が判明した時点で感受性に基づきde-escalation（狭域化）を行う。</p>
+<h4>血液培養</h4>
+<p>抗菌薬投与前に血液培養を実施。ただし培養結果を待って抗菌薬投与を遅延させてはならない。</p>
+<h4>感染源のコントロール（Source Control）</h4>
+<p>外科的ドレナージ、デブリードメント、異物除去など、感染源の直接的な排除が根本治療として不可欠。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>初期蘇生 ─ 最初の1時間の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="補助的支持療法">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>補助的支持療法</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<ul>
+<li><strong>血圧管理</strong>: 輸液蘇生に反応しない低血圧にはノルエピネフリン等の昇圧剤を使用。</li>
+<li><strong>疼痛管理</strong>: 感染巣に伴う疼痛に対する適切な鎮痛。</li>
+<li><strong>栄養サポート</strong>: 安定後は早期の経腸栄養を開始。</li>
+<li><strong>酸素療法</strong>: 低酸素血症に対する酸素補充。</li>
+<li><strong>モニタリング</strong>: バイタルサイン、尿量、乳酸値、臓器機能の継続的モニタリング。</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>補助的支持療法の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="犬猫のSIRS基準比較表">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>犬猫のSIRS基準 比較表</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>| 項目 | 犬 | 猫 |</p>
+<p>|------|:---:|:---:|</p>
+<p>| 体温上限 | >39.2℃ | >39.7℃ |</p>
+<p>| 頻脈 | >120 bpm | >225 bpm |</p>
+<p>| 徐脈 | 基準に含まず | <140 bpm（特徴的） |</p>
+<p>| 呼吸数 | >20（またはPaCO2<30） | >40 |</p>
+<p>| WBC上限 | >16,000 | >19,500 |</p>
+<p>| 桿状核球 | >3% | >5% |</p>
+<p>| 典型的な初期相 | Hyperdynamic（紅潮・弾発脈） | 徐脈・低体温・低血圧 |</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>犬猫のSIRS基準 比較表の詳細は有料会員限定です</div>
 </div>
 </div>
 </div>
 <div id="owner-tips">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body premium-content">
-<div class="owner-tip" style="margin-top:0;">
-<h4>敗血症とは何ですか？</h4>
-<div class="speech-bubble">
-                                体のどこかに感染（ばい菌）があり、それに対する<strong>体の反応が過剰になって自分自身の臓器を傷つけてしまう</strong>状態です。
-                                いわば「免疫の暴走」です。点滴・抗生物質・場合によっては手術で感染源を取り除く治療を行いますが、
-                                <strong>重症度が高いと命に関わります</strong>。
-                            </div>
-</div>
-<div class="owner-tip">
-<h4>助かる確率はどのくらいですか？</h4>
-<div class="speech-bubble">
-                                正直に申し上げて、敗血症の<strong>死亡率は20〜68%</strong>と報告されています。
-                                早期に発見して治療を開始できたかどうかが大きく影響します。
-                                最善を尽くしますが、急変のリスクがあることをご理解ください。
-                            </div>
-</div>
-</div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-</div>
-</div>
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>「敗血症ってどういう病気ですか？」</h4>
+                <div class="speech-bubble">体の中に侵入した細菌に対して免疫が過剰反応を起こし、全身の臓器を傷つけてしまう非常に重篤な状態です。わかりやすく言うと、「体を守るはずの免疫が暴走して、自分自身を攻撃してしまう」状態です。早期に適切な抗生物質と点滴治療を開始することが、救命率を大きく左右します。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>「入院が長引くと聞いたのですが…」</h4>
+                <div class="speech-bubble">敗血症は全身の臓器に影響を及ぼす病気ですので、状態が安定するまでICU管理が必要になることが多いです。24時間体制での点滴、抗生物質、臓器サポートが必要で、数日〜1週間以上の入院になることもあります。ただし、早期に発見して治療を始められたケースでは回復率は良好です。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
 </div>
 <div id="refs">
-<div class="accordion">
-<button class="accordion-trigger">
-<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
-<span class="chevron">▼</span>
-</button>
-<div class="accordion-content">
-<div class="accordion-body">
-<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-<li>Hauptman JG et al. Evaluation of the sensitivity and specificity of
-                                diagnostic criteria for sepsis in dogs. <em>Vet Surg</em> 1997;26(5):393-397.</li>
-<li>Brady CA, Otto CM. Systemic inflammatory response syndrome, sepsis, and
-                                multiple organ dysfunction. <em>Vet Clin North Am Small Anim Pract</em>
-                                2001;31(6):1147-1162.</li>
-<li>Gonçalves R, Odunayo A. An algorithmic approach to managing the septic small
-                                animal patient. <em>Today's Vet Pract</em> 2024;14(3):38-48.</li>
-<li>Evans L et al. Surviving Sepsis Campaign: International Guidelines for
-                                Management of Sepsis and Septic Shock 2021.
-                                <em>Crit Care Med</em> 2021;49(11):e1063-e1143.
-                            </li>
-<li>Cortellini S, DeClue AE, Letendre JA et al. Defining sepsis in small animals.
-                                <em>J Vet Emerg Crit Care</em> 2024;34(2):97-109.
-                            </li>
-<li>Kenney EM et al. Association between outcome and organ system dysfunction
-                                in dogs with sepsis: 114 cases (2003-2007). <em>JAVMA</em> 2010;236(1):83-87.</li>
-</ol>
-</div>
-</div>
-</div>
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Silverstein DC. Sepsis. In: Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022.</li>
+                <li>Hlavac B, et al. Application of Surviving Sepsis Campaign guidelines in critical canine cases. JVECC, 2020.</li>
+                <li>Bentley AM, et al. Sepsis and Septic Shock in Dogs and Cats. Today's Veterinary Practice, 2023.</li>
+                <li>DeClue AE, et al. Systemic response to sepsis in dogs and cats. Vet Clin North Am Small Anim Pract, 2017.</li>
+                <li>Brady CA, et al. SIRS criteria: discriminating values and their utility in predicting outcome. JVIM, 2000.</li>
+                <li>Evans L, Rhodes A, et al. Surviving Sepsis Campaign: International Guidelines 2021. Intensive Care Med, 2021.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
 </div>
 <footer class="page-footer" style="margin-top: var(--space-xl);">
 <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
 <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
-                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
-<script src="../../assets/script.js?v=20250225v9"></script>
-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+<script src="../../assets/script.js?v=20260304v1"></script>
 </body>
 </html>

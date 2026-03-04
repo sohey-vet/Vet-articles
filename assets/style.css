@@ -521,6 +521,20 @@ h4 {
   margin-top: var(--space-md);
 }
 
+.accordion-body li {
+  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+}
+
+.accordion-body>h4 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-accent-primary);
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 4px;
+}
+
 /* --- Tags --- */
 .tags {
   display: flex;

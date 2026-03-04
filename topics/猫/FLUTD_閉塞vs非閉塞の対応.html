@@ -1,337 +1,244 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="猫のFLUTD（下部尿路疾患）の閉塞vs非閉塞の対応。FICの環境エンリッチメントMEMO、尿道閉塞の緊急管理プロトコル、最新のプラゾシン非推奨エビデンス。" name="description" />
-    <title>FLUTD ─ 閉塞vs非閉塞の対応 | VetEvidence</title>
-    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<title>FLUTD ─ 閉塞vs非閉塞の対応：救急から長期管理まで | VetEvidence</title>
+<link href="../../assets/style.css?v=20260304v1" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button aria-label="メニュー" class="hamburger-btn">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
-        <a href="#fic">🐱 FIC（非閉塞性）</a>
-        <a href="#obstruction">🚨 尿道閉塞（緊急）</a>
-        <a href="#comparison">📊 比較表</a>
-        <a href="#owner-tips">🗣️ 飼い主説明</a>
-        <a href="#refs">📚 参照論文</a>
-        <h4>情報ソース</h4>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-    </aside>
-    <div class="page-container">
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a>
-                <a class="tag tag--danger" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
-                <a class="tag tag--warning" href="../../index.html?tag=%E6%B3%8C%E5%B0%BF%E5%99%A8">泌尿器</a>
-                <a class="tag tag--success" href="../../index.html?tag=%E8%86%80%E8%83%B1%E7%82%8E">膀胱炎</a>
-            </div>
-            <h1 style="font-size: 1.3rem;">🐱 FLUTD ─ 閉塞vs非閉塞の対応</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-                猫の下部尿路症状は「膀胱炎＝抗菌薬」ではない。FICは環境管理（MEMO）が治療の中心であり、尿道閉塞は致死的緊急疾患。プラゾシンのルーチン使用は現在非推奨。
-            </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文7本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
-            </div>
-        </header>
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input checked="" id="content-mode-toggle" type="checkbox" />
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-        <!-- FREE ZONE -->
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
-                <div style="font-size:0.88rem;">
-                    <p><strong>FLUTDは単一疾患ではなく、閉塞性と非閉塞性で管理が根本的に異なる。</strong>非閉塞性の大部分（約60〜70%）は猫特発性膀胱炎（FIC）であり、<strong>無菌性のため抗菌薬は不要</strong>。治療は疼痛管理・MEMO（環境エンリッチメント）・ウェットフードが柱。閉塞性FLUTD（尿道閉塞）は<strong>致死的緊急疾患</strong>であり、2〜3日以内に腎不全で死亡しうる。直ちに鎮静下でカテーテル処置と高カリウム血症の補正が必要。プラゾシンは近年の研究で再閉塞予防効果が否定されたため、<strong>現在のガイドラインではルーチン使用は非推奨。</strong>
-                    </p>
-                    <hr />
-                </div>
-            </div>
-        </div>
-        <div class="free-content" id="section-overview">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ よくある誤解 vs 最新のエビデンス</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:0 0 12px;">
-                        <thead>
-                            <tr>
-                                <th style="text-align:left;">❌ よくある誤解</th>
-                                <th style="text-align:left;">✅ 最新のエビデンス</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>血尿＝細菌性膀胱炎 → 抗菌薬</td>
-                                <td>猫の下部尿路症状の大半は<strong>FIC（無菌性）</strong>。尿培養で細菌が確認されない限り抗菌薬は不要</td>
-                            </tr>
-                            <tr>
-                                <td>再発性FLUTD → 抗菌薬を続ける</td>
-                                <td>再発原因を特定し、<strong>MEMO（環境エンリッチメント）</strong>とウェットフードへの切り替えが根本対策</td>
-                            </tr>
-                            <tr>
-                                <td>尿道閉塞後 → プラゾシンで再閉塞予防</td>
-                                <td>近年の複数研究でプラゾシンの再閉塞予防効果は<strong>否定</strong>。低血圧リスクもあり<strong>ルーチン使用は非推奨</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr />
-                </div>
-            </div>
-        </div>
-        <!-- PREMIUM ZONE -->
-        <div id="fic">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🐱</span><span>非閉塞性FLUTD ─
-                            FICの管理（MEMO）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <h4>疼痛管理</h4>
-                        <p>FICは疼痛を伴う疾患であり、急性エピソード時には<strong>ブプレノルフィンやガバペンチン等</strong>による疼痛緩和が推奨される。ブトルファノールは作用時間が1〜2時間と短く現在の第一選択としては不適切。NSAIDsのFICに対する有効性は示されていない。
-                        </p>
-                        <h4 style="margin-top:12px;">MEMO：Multimodal Environmental Modification</h4>
-                        <p>FICの再発予防において最も重要な要素。ストレスが主要な誘因であるため、生活環境の改善が根本治療となる。</p>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>MEMOの要素</th>
-                                    <th>具体的アクション</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>トイレ管理</strong></td>
-                                    <td>猫の頭数＋1個。静かで安全な場所。常に清潔を保つ</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>水分摂取増加</strong></td>
-                                    <td>完全ウェットフードへ切り替え。複数の給水場所。流水式給水器</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>生活環境</strong></td>
-                                    <td>遊び・上下運動・爪とぎ・休息場所など多様な活動機会</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>ルーティン維持</strong></td>
-                                    <td>給餌・遊び・スキンシップの時間を一定に保つ</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>フェロモン</strong></td>
-                                    <td>合成フェロモン（フェリウェイ®等）の使用</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💊 抗菌薬についての重要注意点</h4>
-                            <p>FICの尿は通常<strong>無菌</strong>であり、尿培養で細菌感染が確認されない限り抗菌薬は投与しない。不必要な抗菌薬投与は耐性菌リスクを高め、患者にも無益。</p>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>非閉塞性FLUTD（FIC）管理の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="obstruction">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🚨</span><span>閉塞性FLUTD ─
-                            尿道閉塞の緊急管理</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <p>尿道閉塞は主に<strong>雄猫</strong>に発生する致死的緊急疾患。未治療では2〜3日以内に腎不全・高カリウム血症による致死的不整脈で死亡しうる。</p>
-                        <h4>緊急対応プロトコル</h4>
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>ステップ</th>
-                                    <th>処置内容</th>
-                                    <th>注意点</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Step 1: 安定化</strong></td>
-                                    <td>静脈路確保。高カリウム血症・代謝性アシドーシスに対する輸液</td>
-                                    <td>ECG監視。高カリウム血症は致死的不整脈を引き起こす</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Step 2: 閉塞解除</strong></td>
-                                    <td>鎮静/全麻下で尿道カテーテルを通過させ閉塞物を膀胱へフラッシュ</td>
-                                    <td>極度の緊満には先に減圧性膀胱穿刺を検討（壁脆弱化に注意）</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Step 3: カテーテル留置</strong></td>
-                                    <td>1〜3日間の留置で持続的な尿路開通を確保</td>
-                                    <td>閉塞後利尿（post-obstructive diuresis）に注意</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Step 4: 薬物療法</strong></td>
-                                    <td>ブプレノルフィン等による鎮痛<br />尿道弛緩薬：アセプロマジンやガバペンチン等</td>
-                                    <td><strong>⚠️ プラゾシンは現在非推奨</strong>（再閉塞予防効果が複数研究で否定、低血圧リスク）</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Step 5: モニタリング</strong></td>
-                                    <td>水和状態・尿量・BUN/Cre・電解質の継続評価</td>
-                                    <td>腎機能低下時はNSAIDs慎重投与</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="clinical-tip">
-                            <h4>💡 再発予防 ─ 長期管理</h4>
-                            <ul>
-                                <li>結石の種類に応じた処方食を選択</li>
-                                <li>FIC関連ではウェットフードへの切り替え</li>
-                                <li>MEMOの継続実施</li>
-                                <li>繰り返す閉塞には<strong>会陰尿道造瘻術（PU手術）</strong>を検討</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>閉塞性FLUTD緊急管理の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="comparison">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📊</span><span>閉塞vs非閉塞 ─ 対応フロー比較</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <table class="comparison-table" style="margin:0 0 12px;">
-                            <thead>
-                                <tr>
-                                    <th>項目</th>
-                                    <th>非閉塞性（FIC）</th>
-                                    <th>閉塞性（Emergency）</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>緊急度</td>
-                                    <td>中程度</td>
-                                    <td><strong>最高（致死的）</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>好発性別</td>
-                                    <td>雌雄いずれも</td>
-                                    <td>主に雄</td>
-                                </tr>
-                                <tr>
-                                    <td>主な治療</td>
-                                    <td>疼痛管理 + MEMO</td>
-                                    <td>カテーテル + 輸液</td>
-                                </tr>
-                                <tr>
-                                    <td>抗菌薬</td>
-                                    <td>原則不要</td>
-                                    <td>培養結果で判断</td>
-                                </tr>
-                                <tr>
-                                    <td>尿道弛緩薬</td>
-                                    <td>通常不要</td>
-                                    <td>アセプロマジン/ガバペンチン等（プラゾシン非推奨）</td>
-                                </tr>
-                                <tr>
-                                    <td>予後</td>
-                                    <td>再発あるが管理可能</td>
-                                    <td>迅速治療で良好</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <hr />
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>比較の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="owner-tips">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <div class="owner-tip" style="margin-top:0;">
-                            <h4>「おしっこが出なくなったのですが、様子を見ても大丈夫ですか？」</h4>
-                            <div class="speech-bubble">
-                                特に男の子の猫で排尿が全くできなくなった場合、これは命に関わる緊急事態です。24〜48時間で腎不全に進行し、心臓にも影響が出ます。トイレに何度も行くのに何も出ない、鳴き声を上げる、ぐったりしている場合は、夜間でもすぐに動物病院を受診してください。
-                            </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>「膀胱炎を繰り返すのですが…」</h4>
-                            <div class="speech-bubble">
-                                猫の膀胱の問題の多くは「ストレス」が大きな原因です。お薬だけでなく、生活環境の見直しがとても大切です。トイレを清潔に保つこと（猫の数＋1個）、遊びの時間の確保、新鮮な水をいつでも飲めるようにすること、ウェットフード主体の食事が再発予防の柱になります。
-                            </div>
-                        </div>
-                        <div class="owner-tip">
-                            <h4>「ウェットフードに変えた方がいいですか？」</h4>
-                            <div class="speech-bubble">
-                                はい、特に膀胱や尿の問題を繰り返す猫には、ウェットフードが強く推奨されます。水分量が多いため尿が薄まり結晶ができにくくなります。完全にウェットフードに切り替えるか、少なくとも食事の半分以上をウェットにすることをお勧めします。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <div id="refs">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body">
-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
-                            <li>Westropp JL, et al. Feline Idiopathic Cystitis. <em>Vet Clin North Am Small Anim
-                                    Pract</em>, 2019.</li>
-                            <li>Buffington CAT. Idiopathic Cystitis in Domestic Cats: Beyond the Lower Urinary Tract.
-                                <em>JVIM</em>, 2011.</li>
-                            <li>Cooper ES. Controversies in the Management of Feline Urethral Obstruction.
-                                <em>JVECC</em>, 2015.</li>
-                            <li>Hetrick PF, Davidow EB. Initial treatment factors associated with feline urethral
-                                obstruction recurrence rate. <em>JAVMA</em>, 2013.</li>
-                            <li>Hall J, et al. Outcome of cats with idiopathic cystitis: 36 cases. <em>JAVMA</em>, 2015.
-                            </li>
-                            <li>Defauw PAM, et al. Risk factors and clinical presentation of cats with feline idiopathic
-                                cystitis. <em>JFMS</em>, 2011.</li>
-                            <li>AVMA. Feline Lower Urinary Tract Disease. AVMA Patient Resources, 2024.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
-                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js?v=20250225v9"></script>
-    <script
-        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
-</body>
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB%E5%B0%82%E9%96%80">猫専門</a><a class="tag tag--primary" href="../../index.html?tag=%E6%B3%8C%E5%B0%BF%E5%99%A8">泌尿器</a>
+</div>
+<h1 style="font-size: 1.3rem;">FLUTD ─ 閉塞vs非閉塞の対応：救急から長期管理まで</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
 
+</p>
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文7本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- FREE ZONE -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<div style="font-size:0.88rem;">
+
+</div>
+</div>
+</div>
+<!-- PREMIUM ZONE -->
+<hr class="section-divider"/>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+<div>
+<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+</div>
+</div>
+
+<div id="結論TakehomeMessage">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>結論 (Take-home Message)</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<ul>
+<li>FLUTDは単一疾患ではなく、猫の下部尿路に関連する臨床症状群の総称である。</li>
+<li><strong>非閉塞性FLUTD</strong> の大部分は<strong>猫特発性膀胱炎（FIC）</strong>であり、原因不明・無菌性のため<strong>抗菌薬は不要</strong>。治療の中心は疼痛管理・水分摂取増加・<strong>環境エンリッチメント（MEMO）</strong>によるストレス軽減である。</li>
+<li><strong>閉塞性FLUTD</strong>（いわゆる「ブロックキャット」）は主に雄猫に発生する<strong>致死的緊急疾患</strong>であり、2〜3日以内に腎不全で死に至りうる。直ちに鎮静下での尿道カテーテル留置と高カリウム血症の補正が必要。</li>
+<li>長期予防には、ウェットフード主体の食事、十分な水分摂取、多頭飼育環境でのトイレ管理（猫の数＋1個）、ストレス軽減が不可欠。</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>結論 (Take-home Message)の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="FLUTDの概要">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>FLUTDの概要</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>FLUTD（Feline Lower Urinary Tract Disease: 猫下部尿路疾患）は、頻尿、血尿、排尿困難、不適切な場所での排尿など、膀胱〜尿道に関連する臨床症候群の総称である。中年、肥満、運動不足、室内飼育の猫に好発する。ストレス、食事内容、多頭飼育環境もリスク因子となる。</p>
+<p>重要なのは、FLUTDは「閉塞性」と「非閉塞性」で管理が根本的に異なることである。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>FLUTDの概要の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="非閉塞性FLUTD特発性膀胱炎FICへの">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>非閉塞性FLUTD ─ 特発性膀胱炎（FIC）への対応</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>非閉塞性FLUTDの約2/3は原因を特定できず、<strong>猫特発性膀胱炎（FIC: Feline Idiopathic Cystitis）</strong>と診断される。ストレスが主要な誘因と推定されている。</p>
+<h4>疼痛管理</h4>
+<p>FICは疼痛を伴う疾患であり、急性エピソード時にはブプレノルフィンやガバペンチン等による疼痛緩和が推奨される。NSAIDsのFICに対する有効性は示されていない。</p>
+<h4>水分摂取の増加</h4>
+<p>尿を希釈し排尿頻度を増やすことが症状緩和に有効である。具体的には完全ウェットフードへの切り替え、複数箇所への新鮮な水の設置、流水式給水器の使用、水への低ナトリウムブロスの添加などが推奨される。</p>
+<h4>環境エンリッチメント ─ MEMO</h4>
+<p><strong>MEMO（Multimodal Environmental Modification）</strong>はFICの再発予防において最も重要な要素とされる。</p>
+<ul>
+<li><strong>トイレ管理</strong>: 頭数 +1 個のトイレを、静かで安全な場所に設置し清潔に保つ。</li>
+<li><strong>生活環境</strong>: 遊び、上下運動、爪とぎ、休息場所など、多様な活動機会を提供する。</li>
+<li><strong>ルーティンの維持</strong>: 給餌・遊び・スキンシップの時間を一定に保つ。</li>
+<li><strong>多頭飼育の最適化</strong>: 猫同士の競合を最小化する。</li>
+<li><strong>フェロモン</strong>: 合成フェロモン（フェリウェイ等）の使用が推奨される。</li>
+</ul>
+<h4>抗菌薬 ─ FICでは原則不要</h4>
+<p>FICの尿は通常無菌であり、尿培養で細菌感染が確認されない限り抗菌薬は投与しない。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>非閉塞性FLUTD ─ 特発性膀胱炎（FIC）への対応の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="閉塞性FLUTD致死的緊急疾患">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🚨</span><span>閉塞性FLUTD ─ 致死的緊急疾患</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>尿道閉塞（obstructive FLUTD）は主に雄猫で発生する。雄の尿道は狭いため、尿路結石、尿道栓子（クリスタルとマトリックスの混合物）、または尿道痙攣により閉塞しやすい。未治療では2〜3日以内に腎不全を来し致死的となる。</p>
+<h4>緊急安定化</h4>
+<p>##### 閉塞解除</p>
+<p>鎮静または麻酔下で尿道カテーテルを通過させ、閉塞物を膀胱内へフラッシュバックする。カテーテル留置が直ちに困難な場合、または膀胱が極度に緊満している場合は減圧性膀胱穿刺（decompressive cystocentesis）を考慮する。ただし炎症により膀胱壁が脆弱化している可能性があり慎重に行う。</p>
+<p>##### 代謝異常の補正</p>
+<p>高カリウム血症、代謝性アシドーシス、高窒素血症（BUN/Cre上昇）に対する積極的な静脈内輸液が不可欠。高カリウム血症は致死的不整脈を引き起こしうるため、優先的に対処する。</p>
+<h4>閉塞解除後の管理</h4>
+<p>##### 尿道カテーテル留置</p>
+<p>1〜3日間の留置により持続的な尿路開通を確保し、膀胱の回復を促す。</p>
+<p>##### 薬物療法</p>
+<ul>
+<li><strong>鎮痛剤</strong>: ブプレノルフィン等で十分な疼痛管理を行う。</li>
+<li><strong>尿道弛緩剤</strong>: アセプロマジンやガバペンチン等により尿道痙攣を緩和し再閉塞を予防する（※尿道括約筋弛緩薬として頻用されたプラゾシンは、近年の複数の研究で再閉塞予防効果が否定され、低血圧リスクがあるため現在のガイドラインではルーチン使用は非推奨）。</li>
+<li><strong>抗菌薬</strong>: 尿培養の結果に基づいて判断。カテーテル留置が48時間を超えた場合は検討。</li>
+<li><strong>NSAIDs</strong>: 腎機能が低下している患者では慎重に使用する。</li>
+</ul>
+<p>##### モニタリング</p>
+<p>水和状態、尿量、血液検査（電解質、腎パネル）を注意深くモニタリングする。閉塞後利尿（post-obstructive diuresis）に注意。</p>
+<h4>再発予防と長期管理</h4>
+<p>##### 原因の特定</p>
+<p>尿検査、画像検査（X線・エコー）、結石分析を通じて根本原因を特定する。</p>
+<p>##### 食事管理</p>
+<p>結石の種類に応じた処方食を選択（ストルバイト溶解食、シュウ酸カルシウム予防食など）。FIC関連ではウェットフードが推奨される。</p>
+<p>##### 環境エンリッチメント</p>
+<p>非閉塞性FLUTDと同様にMEMOが重要。</p>
+<p>##### 会陰尿道造瘻術（PU手術）</p>
+<p>繰り返す閉塞に対する最終手段。尿道開口部を拡大するが、狭窄やUTIリスク増加の合併症がある。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>閉塞性FLUTD ─ 致死的緊急疾患の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="閉塞vs非閉塞対応フロー比較">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>閉塞vs非閉塞 ─ 対応フロー比較</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>| 項目 | 非閉塞性（FIC） | 閉塞性（Emergency） |</p>
+<p>|------|:---:|:---:|</p>
+<p>| 緊急度 | 中程度 | 最高（致死的） |</p>
+<p>| 好発 | 雌雄いずれも | 主に雄 |</p>
+<p>| 主な治療 | 疼痛管理 + MEMO | 尿道カテーテル + 輸液 |</p>
+<p>| 抗菌薬 | 原則不要 | 培養結果で判断 |</p>
+<p>| 予後 | 再発あるが管理可能 | 迅速治療で良好 |</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>閉塞vs非閉塞 ─ 対応フロー比較の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>「おしっこが出なくなったのですが、様子を見ても大丈夫ですか？」</h4>
+                <div class="speech-bubble">特に男の子の猫で排尿が全くできなくなった場合、これは命に関わる緊急事態です。24〜48時間で腎不全に進行し、心臓にも影響が出ます。トイレに何度も行くのに何も出ない、鳴き声を上げる、ぐったりしている場合は、夜間でもすぐに動物病院を受診してください。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>「膀胱炎は繰り返すと聞いたのですが…」</h4>
+                <div class="speech-bubble">猫の膀胱の問題は、実は「ストレス」が大きな原因であることが多いです。お薬だけでなく、生活環境の見直しがとても大切です。トイレを清潔に保つこと（猫の数＋1個）、遊びの時間を確保すること、新鮮な水をいつでも飲めるようにすること、ウェットフード主体にすることが再発予防の柱になります。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>「ウェットフードに変えた方がいいですか？」</h4>
+                <div class="speech-bubble">はい、特に膀胱や尿の問題を繰り返す猫には、ウェットフードが強く推奨されます。ドライフードに比べて水分量が多いため、尿が薄まり結晶ができにくくなります。完全にウェットフードに切り替えるか、少なくとも食事の半分以上をウェットにすることをお勧めします。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+<div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Westropp JL, et al. Feline Idiopathic Cystitis. Vet Clin North Am Small Anim Pract, 2019.</li>
+                <li>Buffington CAT. Idiopathic Cystitis in Domestic Cats: Beyond the Lower Urinary Tract. JVIM, 2011.</li>
+                <li>Cooper ES. Controversies in the Management of Feline Urethral Obstruction. JVECC, 2015.</li>
+                <li>Hetrick PF, Davidow EB. Initial treatment factors associated with feline urethral obstruction recurrence rate. JAVMA, 2013.</li>
+                <li>Hall J, et al. Outcome of cats with idiopathic cystitis: 36 cases. JAVMA, 2015.</li>
+                <li>Defauw PAM, et al. Risk factors and clinical presentation of cats with feline idiopathic cystitis. JFMS, 2011.</li>
+                <li>AVMA. Feline Lower Urinary Tract Disease. AVMA Patient Resources, 2024.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+</footer>
+</div>
+<script src="../../assets/script.js?v=20260304v1"></script>
+</body>
 </html>

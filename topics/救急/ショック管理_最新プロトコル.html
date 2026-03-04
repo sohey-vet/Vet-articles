@@ -1,255 +1,229 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta content="犬猫のショック管理最新プロトコル。4類型の鑑別、輸液ボーラス用量（2024 AAHA GL準拠）、昇圧薬の使い方。" name="description"/>
-    <title>ショック管理の最新プロトコル ─ 犬猫 | VetEvidence</title>
-    <link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<title>ショック管理の最新プロトコル ─ 2024 AAHA輸液ガイドラインに基づく実践 | VetEvidence</title>
+<link href="../../assets/style.css?v=20260304v1" rel="stylesheet"/>
 </head>
-
 <body class="mode-premium">
-    <!-- ===== Mobile Navigation ===== -->
-    <nav class="mobile-nav">
-        <span class="nav-brand">🩺 VetEvidence</span>
-        <button aria-label="メニュー" class="hamburger-btn">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-    <div class="slide-menu-overlay"></div>
-    <aside class="slide-menu">
-        <h4>ナビゲーション</h4>
-        <a href="../../index.html">🏠 トップ</a>
-        <a href="#conclusion">🎯 結論</a>
-        <a href="#section-0">🎯 結論（30秒で読める）</a>
-        <a href="#section-1">⚡ 昔の常識 vs 今のエビデンス</a>
-        <a href="#section-2">📊 ショックの数値基準 ─ 覚えるべきカット...</a>
-        <a href="#section-3">📖 循環血液量減少性（血液減少/脱水）ショッ...</a>
-        <a href="#section-4">🗺️ ️ 臨床アクション表 ─ 輸液蘇生アルゴ...</a>
-        <a href="#section-5">📖 猫のショック管理における特異的アプローチ...</a>
-        <a href="#owner-tips">🗣️ 飼い主説明</a>
-        <a href="#refs">📚 参照論文</a>
-        <h4>情報ソース</h4>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
-    </aside>
-    <div class="page-container">
-        <!-- ===== HEADER ===== -->
-        <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-            <div class="tags" style="margin-bottom: 8px;">
-                <a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a><a class="tag tag--warning" href="../../index.html?tag=%E8%BC%B8%E6%B6%B2">輸液</a><a class="tag tag--success" href="../../index.html?tag=%E6%98%87%E5%9C%A7%E8%96%AC">昇圧薬</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8A%AC">犬</a><a class="tag tag--primary" href="../../index.html?tag=%E5%BE%AA%E7%92%B0%E5%99%A8">循環器</a></div>
-            <h1 style="font-size: 1.3rem;">🚨 ショック管理の最新プロトコル ─ 犬猫</h1>
-            <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-                4つのショック類型を正しく鑑別し、最初の1時間で勝負を決める。2024 AAHA輸液ガイドライン準拠。
-            </p>
-            <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-                <div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
-                <div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
-            </div>
-        </header>
-        <!-- ===== 表示モード切替 ===== -->
-        <div class="content-mode-bar">
-            <span>📋</span>
-            <label class="toggle-switch">
-                <input checked="" id="content-mode-toggle" type="checkbox"/>
-                <span class="toggle-slider"></span>
-            </label>
-            <span class="mode-label">👑 すべて表示</span>
-        </div>
-        <!-- ===== FREE ZONE ===== -->
-        <div class="free-content" id="conclusion">
-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
-                <div style="font-size:0.88rem;">
-                    <p><strong>「ショック＝一律の急速大量ボーラス」の時代は終わりました。</strong>
-2024年AAHAガイドラインが強調するのは、<strong>個別化された小刻みな輸液（Titration）</strong>と、<strong>厳格なモニタリングに基づく過剰輸液の回避</strong>です。心原性ショックを見逃さないためのトリアージエコグラフィー（POCUS）の実施と、輸液反応性の評価が救命率を左右します。</p>
-<hr />
-                </div>
-            </div>
-        </div>
-        <div class="free-content" id="section-1">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th style="text-align: left;">❌ 旧来の常識</th>
-<th style="text-align: left;">✅ 最新のエビデンス (2024 AAHA)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">犬のショック投与量は90mL/kg、これを一気に静注する</td>
-<td style="text-align: left;"><strong>犬10〜20mL/kg、猫5〜10mL/kg</strong>の小ボーラスを10〜15分かけて投与し、その都度効果を再評価する（Titration）。</td>
-</tr>
-<tr>
-<td style="text-align: left;">脱水もショックも、とりあえず乳酸リンゲル液を全開で落とす</td>
-<td style="text-align: left;"><strong>ショック（還流障害）</strong>と<strong>脱水（間質水分低下）</strong>を明確に区別し、蘇生段階（Resuscitation phase）と補水段階（Replacement phase）を分けて計画する。</td>
-</tr>
-<tr>
-<td style="text-align: left;">血圧が正常ならショックは脱した</td>
-<td style="text-align: left;"><strong>代償性ショック</strong>では血圧は維持される（特に犬）。心拍数、粘膜色、CRT、乳酸値で「隠れた組織低灌流」を見逃さない。</td>
-</tr>
-</tbody>
-</table>
-<hr />
-                </div>
-            </div>
-        </div><div class="free-content" id="section-2">
-            <div class="card" style="margin-top:var(--space-md);">
-                <h3 style="font-size:0.95rem;margin-bottom:8px;">📊 ショックの数値基準 ─ 覚えるべきカットオフ値</h3>
-                <div style="overflow-x:auto;">
-                    <table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th style="text-align: left;">指標</th>
-<th style="text-align: left;">カットオフ値</th>
-<th style="text-align: left;">臨床的意義</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>収縮期血圧（SBP）</strong></td>
-<td style="text-align: left;"><strong>&lt; 90 mmHg</strong></td>
-<td style="text-align: left;">低血圧の定義。即座に介入が必要。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>平均動脈圧（MAP）</strong></td>
-<td style="text-align: left;"><strong>&lt; 60 mmHg</strong></td>
-<td style="text-align: left;">臓器灌流が維持できない危険水準。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>ショック量（犬）</strong></td>
-<td style="text-align: left;"><strong>80〜90 mL/kg</strong></td>
-<td style="text-align: left;">全量ではなく<strong>1/4量ずつ</strong>使用する基準値。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>ショック量（猫）</strong></td>
-<td style="text-align: left;"><strong>50〜60 mL/kg</strong></td>
-<td style="text-align: left;">犬より少ない。過剰投与に特に注意。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>乳酸クリアランス</strong></td>
-<td style="text-align: left;">2〜6時間で <strong>50%以上低下</strong></td>
-<td style="text-align: left;">達成時に生存率が有意に改善。</td>
-</tr>
-</tbody>
-</table>
-<hr />
-                </div>
-            </div>
-        </div>
-        <!-- ===== PREMIUM ZONE ===== -->
-        <!-- 循環血液量減少性（血液減少/脱水）ショックの3ステージ -->
-        <div id="section-3">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📖</span><span>循環血液量減少性（血液減少/脱水）ショックの3ステージ</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <p>犬と猫ではショックの現れ方が異なります。特に猫の「徐脈」には要注意です。</p>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th style="text-align: left;">ステージ</th>
-<th style="text-align: left;">犬の主なサイン</th>
-<th style="text-align: left;">猫の主なサイン</th>
-<th style="text-align: left;">対応の緊急度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>代償性</strong></td>
-<td style="text-align: left;">頻脈（&gt;140）、速いCRT（&lt;1秒）、レンガ色の粘膜</td>
-<td style="text-align: left;">★猫にはこのステージがほぼ見られない</td>
-<td style="text-align: left;">すぐに介入すれば予後良好。血圧正常の罠に注意。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>初期非代償性</strong></td>
-<td style="text-align: left;">頻脈、遅いCRT（&gt;2秒）、蒼白な粘膜、低血圧</td>
-<td style="text-align: left;"><strong>徐脈（&lt; 140 bpm）</strong>、低血圧、<strong>低体温（&lt; 37.8℃）</strong>、蒼白な粘膜</td>
-<td style="text-align: left;"><strong>緊急介入必須</strong>。猫の「徐脈＋低体温」は死のサイン。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>後期非代償性</strong></td>
-<td style="text-align: left;">深刻な徐脈への移行、昏睡、チアノーゼ</td>
-<td style="text-align: left;">深刻な徐脈、昏睡、無呼吸</td>
-<td style="text-align: left;">直ちに心肺蘇生（CPR）の準備が必要。</td>
-</tr>
-</tbody>
-</table>
-<hr />
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>循環血液量減少性（血液減少/脱水）ショックの3ステージの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div><!-- 🗺️ 臨床アクション表 ─ 輸液蘇生アルゴリズム -->
-        <div id="section-4">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">🗺️</span><span>🗺️ 臨床アクション表 ─ 輸液蘇生アルゴリズム</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <p><strong>⚠️ 注意: 心原性ショック（心疾患が原因）の場合、輸液は禁忌（肺水腫悪化）です。必ず事前聴診とPOCUS（TFAST）で左房拡大やＢラインの有無を確認してください。</strong></p>
-<table class="comparison-table" style="margin:0 0 12px;">
-<thead>
-<tr>
-<th style="text-align: left;">ステップ</th>
-<th style="text-align: left;">具体的なアクション</th>
-<th style="text-align: left;">評価ポイント・目標</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Step 1: Fluid Challenge</strong></td>
-<td style="text-align: left;">等張性晶質液の小ボーラスを投与。🐶 犬: <strong>10〜20 mL/kg</strong>、🐱 猫: <strong>5〜10 mL/kg</strong> を10〜15分かけて静注。</td>
-<td style="text-align: left;">投与<strong>前</strong>と<strong>直後</strong>の心拍数、血圧、CRT、乳酸値、意識レベルを記録する。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Step 2: 効果判定</strong></td>
-<td style="text-align: left;">エンドポイント（MAP &gt; 60 mmHg、SBP &gt; 90 mmHg、CRT &lt; 2秒、乳酸値低下傾向）に達したか？</td>
-<td style="text-align: left;">達した場合はStep 4（維持・補水）へ。達しない場合はStep 3へ。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Step 3: 追加ボーラス</strong></td>
-<td style="text-align: left;">Step 1と同じ用量をもう一度投与する（最大3〜4回まで追加考慮）。</td>
-<td style="text-align: left;">晶質液だけで反応が悪い場合、高張食塩水や膠質液、または<strong>昇圧剤（ノルアドレナリン 0.1〜2.0 μg/kg/min CRI）</strong>の併用を検討。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Step 4: 移行とモニタリング</strong></td>
-<td style="text-align: left;">蘇生完了後は、脱水補正と維持輸液（Replacement &amp; Maintenance）の計算に切り替える。</td>
-<td style="text-align: left;"><strong>過剰輸液（Fluid Overload）の兆候</strong>（頻呼吸、鼻汁、結膜浮腫、新しい心雑音）を厳重に監視する。</td>
-</tr>
-</tbody>
-</table>
-<hr />
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>🗺️ 臨床アクション表 ─ 輸液蘇生アルゴリズムの詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div><!-- 💡 猫のショック管理における特異的アプローチ（Three-Telltale Signs） -->
-        <div id="section-5">
-            <div class="accordion">
-                <button class="accordion-trigger">
-                    <span class="trigger-left"><span class="trigger-icon">📖</span><span>💡 猫のショック管理における特異的アプローチ（Three-Telltale Signs）</span></span>
-                    <span class="chevron">▼</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="accordion-body premium-content">
-                        <p>猫のショックは<strong>「徐脈（&lt; 140 bpm）・低体温（&lt; 37.8℃）・低血圧」</strong>の3徴候で知られます。</p>
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom: 8px;">
+<a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
+</div>
+<h1 style="font-size: 1.3rem;">ショック管理の最新プロトコル ─ 2024 AAHA輸液ガイドラインに基づく実践</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+
+</p>
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文3本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- FREE ZONE -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<div style="font-size:0.88rem;">
+
+</div>
+</div>
+</div>
+<!-- PREMIUM ZONE -->
+<hr class="section-divider"/>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+<div>
+<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+</div>
+</div>
+
+<div id="結論30秒で読める">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>🎯 結論（30秒で読める）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p><strong>「ショック＝一律の急速大量ボーラス」の時代は終わりました。</strong></p>
+<p>2024年AAHAガイドラインが強調するのは、<strong>個別化された小刻みな輸液（Titration）</strong>と、<strong>厳格なモニタリングに基づく過剰輸液の回避</strong>です。心原性ショックを見逃さないためのトリアージエコグラフィー（POCUS）の実施と、輸液反応性の評価が救命率を左右します。</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>🎯 結論（30秒で読める）の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="昔の常識vs今のエビデンス">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>⚡ 昔の常識 vs 今のエビデンス</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>| ❌ 旧来の常識 | ✅ 最新のエビデンス (2024 AAHA) |</p>
+<p>|:---|:---|</p>
+<p>| 犬のショック投与量は90mL/kg、これを一気に静注する | <strong>犬10〜20mL/kg、猫5〜10mL/kg</strong>の小ボーラスを10〜15分かけて投与し、その都度効果を再評価する（Titration）。 |</p>
+<p>| 脱水もショックも、とりあえず乳酸リンゲル液を全開で落とす | <strong>ショック（還流障害）</strong>と<strong>脱水（間質水分低下）</strong>を明確に区別し、蘇生段階（Resuscitation phase）と補水段階（Replacement phase）を分けて計画する。 |</p>
+<p>| 血圧が正常ならショックは脱した | <strong>代償性ショック</strong>では血圧は維持される（特に犬）。心拍数、粘膜色、CRT、乳酸値で「隠れた組織低灌流」を見逃さない。 |</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>⚡ 昔の常識 vs 今のエビデンスの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="ショックの数値基準覚えるべきカットオフ値">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>📊 ショックの数値基準 ─ 覚えるべきカットオフ値</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>| 指標 | カットオフ値 | 臨床的意義 |</p>
+<p>|:---|:---|:---|</p>
+<p>| <strong>収縮期血圧（SBP）</strong> | <strong>< 90 mmHg</strong> | 低血圧の定義。即座に介入が必要。 |</p>
+<p>| <strong>平均動脈圧（MAP）</strong> | <strong>< 60 mmHg</strong> | 臓器灌流が維持できない危険水準。 |</p>
+<p>| <strong>ショック量（犬）</strong> | <strong>80〜90 mL/kg</strong> | 全量ではなく<strong>1/4量ずつ</strong>使用する基準値。 |</p>
+<p>| <strong>ショック量（猫）</strong> | <strong>50〜60 mL/kg</strong> | 犬より少ない。過剰投与に特に注意。 |</p>
+<p>| <strong>乳酸クリアランス</strong> | 2〜6時間で <strong>50%以上低下</strong> | 達成時に生存率が有意に改善。 |</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>📊 ショックの数値基準 ─ 覚えるべきカットオフ値の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="循環血液量減少性血液減少脱水ショックの3">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>循環血液量減少性（血液減少/脱水）ショックの3ステージ</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>犬と猫ではショックの現れ方が異なります。特に猫の「徐脈」には要注意です。</p>
+<p>| ステージ | 犬の主なサイン | 猫の主なサイン | 対応の緊急度 |</p>
+<p>|:---|:---|:---|:---|</p>
+<p>| <strong>代償性</strong> | 頻脈（>140）、速いCRT（<1秒）、レンガ色の粘膜 | ★猫にはこのステージがほぼ見られない | すぐに介入すれば予後良好。血圧正常の罠に注意。 |</p>
+<p>| <strong>初期非代償性</strong> | 頻脈、遅いCRT（>2秒）、蒼白な粘膜、低血圧 | <strong>徐脈（< 140 bpm）</strong>、低血圧、<strong>低体温（< 37.8℃）</strong>、蒼白な粘膜 | <strong>緊急介入必須</strong>。猫の「徐脈＋低体温」は死のサイン。 |</p>
+<p>| <strong>後期非代償性</strong> | 深刻な徐脈への移行、昏睡、チアノーゼ | 深刻な徐脈、昏睡、無呼吸 | 直ちに心肺蘇生（CPR）の準備が必要。 |</p>
+<p><!--</p>
+<p>==========================================================</p>
+<p>---✂️ ここから有料（Phase 2以降で有料ラインを引く位置）---</p>
+<p>==========================================================</p>
+<p>--></p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>循環血液量減少性（血液減少/脱水）ショックの3ステージの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="臨床アクション表輸液蘇生アルゴリズム">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💧</span><span>🗺️ 臨床アクション表 ─ 輸液蘇生アルゴリズム</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p><strong>⚠️ 注意: 心原性ショック（心疾患が原因）の場合、輸液は禁忌（肺水腫悪化）です。必ず事前聴診とPOCUS（TFAST）で左房拡大やＢラインの有無を確認してください。</strong></p>
+<p>| ステップ | 具体的なアクション | 評価ポイント・目標 |</p>
+<p>|:---|:---|:---|</p>
+<p>| <strong>Step 1: Fluid Challenge</strong> | 等張性晶質液の小ボーラスを投与。🐶 犬: <strong>10〜20 mL/kg</strong>、🐱 猫: <strong>5〜10 mL/kg</strong> を10〜15分かけて静注。 | 投与<strong>前</strong>と<strong>直後</strong>の心拍数、血圧、CRT、乳酸値、意識レベルを記録する。 |</p>
+<p>| <strong>Step 2: 効果判定</strong> | エンドポイント（MAP > 60 mmHg、SBP > 90 mmHg、CRT < 2秒、乳酸値低下傾向）に達したか？ | 達した場合はStep 4（維持・補水）へ。達しない場合はStep 3へ。 |</p>
+<p>| <strong>Step 3: 追加ボーラス</strong> | Step 1と同じ用量をもう一度投与する（最大3〜4回まで追加考慮）。 | 晶質液だけで反応が悪い場合、高張食塩水や膠質液、または<strong>昇圧剤（ノルアドレナリン 0.1〜2.0 μg/kg/min CRI）</strong>の併用を検討。 |</p>
+<p>| <strong>Step 4: 移行とモニタリング</strong> | 蘇生完了後は、脱水補正と維持輸液（Replacement & Maintenance）の計算に切り替える。 | <strong>過剰輸液（Fluid Overload）の兆候</strong>（頻呼吸、鼻汁、結膜浮腫、新しい心雑音）を厳重に監視する。 |</p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>🗺️ 臨床アクション表 ─ 輸液蘇生アルゴリズムの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="猫のショック管理における特異的アプローチ">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>💡 猫のショック管理における特異的アプローチ（Three-Telltale Signs）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<p>猫のショックは<strong>「徐脈（< 140 bpm）・低体温（< 37.8℃）・低血圧」</strong>の3徴候で知られます。</p>
 <ol>
 <li><strong>温めることを優先</strong>: 猫は低体温のままでは輸液や昇圧剤に対する血管の反応性が極めて悪いです。輸液の加温と併行して、積極的な体表加温を行います。</li>
+</ul>
+<ol>
 <li><strong>輸液量に極度な注意</strong>: 猫の血液量は犬より少ない（約60 mL/kg）ため、過剰輸液による肺水腫や胸水のリスクが非常に高いです。ボーラスは必ず<strong>5〜10 mL/kg</strong>の少量から開始します。</li>
+</ul>
+<ol>
 <li><strong>体温が復温する前の積極的な大量輸液は肺水腫のリスクを高める</strong>ため、加温しながら慎重に輸液を行います。</li>
+</ul>
+<ol>
 <li><strong>ショック器官</strong>: 猫のショック標的器官は「肺」です。輸液蘇生中に呼吸状態が悪化しないか、呼吸数のカウント（頻呼吸）が最重要のモニタリングとなります。</li>
-</ol>
-<hr />
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>💡 猫のショック管理における特異的アプローチ（Three-Telltale Signs）の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="編集情報">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📋</span><span>✏️ 編集情報</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<ul>
+<li><strong>初版公開</strong>: 2026年03月14日</li>
+<li><strong>最終更新</strong>: 2026年03月14日</li>
+<li><strong>更新内容</strong>: ショック量のカットオフ値一覧表、Fluid Challenge用量、乳酸クリアランス目標値、ノルアドレナリンCRI用量、猫のThree-Telltale Signs（具体的数値つき）を追加。</li>
+<li><strong>執筆</strong>: VetEvidence 🩺</li>
+<li><strong>免責</strong>: 臨床判断の参考資料です。個々の患者の状態に応じて輸液計画を調整してください。</li>
+</ul>
+<p><!--</p>
+<p>==================================================================</p>
+<p>📌 Note投稿時のチェックリスト</p>
+<p>==================================================================</p>
+<p>☑ タイトルは40文字以内か？ → 35文字 OK</p>
+<p>☑ ハッシュタグ → #獣医 #獣医師 #動物病院 #エビデンス #ショック #救急 #輸液 #AAHA</p>
+<p>☑ 結論が最初の3行以内 → OK</p>
+<p>☑ 表は2つ以上 → 4表 OK</p>
+<p>☑ 飼い主説明ガイド → 2問 OK</p>
+<p>☑ 参照論文確認済み → OK</p>
+<p>==================================================================</p>
+<p>--></p>
+<p><code>`</code></p>
+<p>ジャンル: 救急</p>
+<p>ターゲット: 獣医師/看護師</p>
+<p>更新日: 2026-03-14</p>
+<p><code>`</code></p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>✏️ 編集情報の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
 <div id="owner-tips">
   <div class="accordion">
     <button class="accordion-trigger">
@@ -271,17 +245,7 @@
     </div>
   </div>
 </div>
-
-<hr />
-                    </div>
-                    <div class="premium-lock"><span class="lock-icon">🔒</span>💡 猫のショック管理における特異的アプローチ（Three-Telltale Signs）の詳細は有料会員限定です</div>
-                </div>
-            </div>
-        </div>
-        <!-- 飼い主説明 -->
-        
-        <!-- 参照論文 -->
-        <div id="refs">
+<div id="refs">
   <div class="accordion">
     <button class="accordion-trigger">
         <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（3本）</span></span>
@@ -298,15 +262,12 @@
     </div>
   </div>
 </div>
-        <footer class="page-footer" style="margin-top: var(--space-xl);">
-            <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
-                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
-        </footer>
-    </div>
-    <script src="../../assets/script.js?v=20250225v9"></script>
-    <script
-        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+</footer>
+</div>
+<script src="../../assets/script.js?v=20260304v1"></script>
 </body>
-
 </html>

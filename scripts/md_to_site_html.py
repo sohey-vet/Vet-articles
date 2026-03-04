@@ -15,7 +15,7 @@ import html as htmllib
 from pathlib import Path
 
 PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\論文まとめ")
-STYLE_VERSION = "20250225v9"
+STYLE_VERSION = "20260304v1"
 
 
 def extract_tags_from_meta(md_text: str, title: str) -> list[dict]:
@@ -139,32 +139,39 @@ def format_inline(text: str) -> str:
     return text
 
 
-def extract_owner_tips_html(md_text: str) -> str:
-    """Markdownをspeech-bubbleのhtmlに変換"""
-    block_match = re.search(
-        r'<div id="owner-tips">(.*?)</div>\s*\n\s*</div>\s*\n\s*</div>',
-        md_text, re.DOTALL
-    )
-    if not block_match:
-        # Try alternative closing
-        block_match = re.search(
-            r'(<div id="owner-tips">.*?</div>\s*\n\s*</div>\s*\n\s*</div>)',
-            md_text, re.DOTALL
-        )
-    if block_match:
-        return block_match.group(0)
-    return ""
+def extract_html_block(text: str, start_marker: str) -> str:
+    """ネストされたHTMLのdivタグを深さカウントで正確に抽出する関数"""
+    start_idx = text.find(start_marker)
+    if start_idx == -1:
+        return ""
+    
+    sub_text = text[start_idx:]
+    depth = 0
+    i = 0
+    while i < len(sub_text):
+        # <div を見つける
+        if sub_text.startswith('<div', i):
+            depth += 1
+            i += 4
+        # </div を見つける
+        elif sub_text.startswith('</div', i):
+            depth -= 1
+            if depth == 0:
+                # タグの終わり（>）まで含める
+                end_idx = sub_text.find('>', i) + 1
+                return sub_text[:end_idx]
+            i += 5
+        else:
+            i += 1
+    return sub_text
 
+def extract_owner_tips_html(md_text: str) -> str:
+    """飼い主説明のhtmlブロックを抽出"""
+    return extract_html_block(md_text, '<div id="owner-tips">')
 
 def extract_refs_html(md_text: str) -> str:
-    """参照論文ブロックをそのまま取得"""
-    block_match = re.search(
-        r'(<div id="refs">.*?</div>\s*\n\s*</div>\s*\n\s*</div>)',
-        md_text, re.DOTALL
-    )
-    if block_match:
-        return block_match.group(0)
-    return ""
+    """参照論文ブロックをそのまま抽出"""
+    return extract_html_block(md_text, '<div id="refs">')
 
 
 def generate_nav_links(sections: list[tuple[str, str]]) -> str:
