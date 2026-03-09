@@ -1,0 +1,154 @@
+# アポキルvsサイトポイントvsステロイド ─ 犬のアトピー性皮膚炎の痒み管理
+
+## 🎯 結論
+
+- 犬のアトピー性皮膚炎の痒み管理には、**オクラシチニブ（アポキル）、ロキベトマブ（サイトポイント）、プレドニゾロン（ステロイド）**の3つが主要な選択肢となる。
+- **アポキル**は数時間で効果が発現する即効性があるが、**生後12ヶ月未満、重度の感染症併発例、悪性腫瘍の既往例**には禁忌。
+- **サイトポイント**は犬特異的モノクローナル抗体であり、肝・腎代謝されないため臓器障害のある犬にも安全に使用できる。**猫への投与はアナフィラキシーのリスクがあり絶対禁忌**。
+- ステロイドは即効性と強力な抗炎症効果を持つが、長期使用は**多飲多尿、肝酵素上昇、筋萎縮、皮膚菲薄化、医原性クッシング症候群**など多臓器への副作用が問題となる。
+
+## 本文
+
+### 3剤の比較一覧
+
+| 項目 | オクラシチニブ（アポキル） | ロキベトマブ（サイトポイント） | プレドニゾロン |
+|------|--------------------------|-------------------------------|---------------|
+| **分類** | JAK阻害薬（低分子化合物） | 抗IL-31モノクローナル抗体 | グルココルチコイド |
+| **投与経路** | PO（経口） | SC（皮下注射） | PO（経口） |
+| **用量** | **0.4〜0.6 mg/kg BID**（14日間）→ SID | **2.0 mg/kg SC**/4週ごと | **0.5〜1.0 mg/kg SID** → 漸減 |
+| **効果発現** | **数時間**（即効性） | **24〜48時間** | **数時間〜1日** |
+| **持続期間** | 投与している間 | 約4週間 | 投与している間 |
+| **代謝経路** | 肝臓（CYP450） | 網内系（RES） | 肝臓 |
+| **長期副作用** | 比較的少ない（下記参照） | 極めて少ない | 多い（下記参照） |
+
+### オクラシチニブ（アポキル）の詳細
+
+#### 作用機序
+JAK（ヤヌスキナーゼ）阻害薬であり、主にJAK1を阻害することでIL-31やIL-4などの痒み関連サイトカインのシグナル伝達を遮断する。
+
+#### 用法
+- **導入期**: **0.4〜0.6 mg/kg BID PO**（最大14日間）
+- **維持期**: **0.4〜0.6 mg/kg SID PO**
+- 食事の有無にかかわらず投与可能
+
+#### 禁忌・注意事項
+| 禁忌/注意 | 理由 |
+|-----------|------|
+| **生後12ヶ月未満の犬** | 免疫系の発達が未熟。安全性データなし |
+| **重度の感染症**（深在性膿皮症、デモデックス等） | JAK阻害による免疫抑制で感染が悪化しうる |
+| **悪性腫瘍の既往** | JAK-STAT経路は腫瘍増殖にも関与するため理論的リスクあり |
+
+#### 副作用プロファイル
+- 嘔吐、下痢（投与初期に一時的）
+- リンパ球減少（軽度〜中等度、可逆的）
+- 長期投与例での皮膚感染症・尿路感染症の報告あり
+- ステロイドに比べると副作用は大幅に軽減される
+
+### ロキベトマブ（サイトポイント）の詳細
+
+#### 作用機序
+IL-31（痒みの主要メディエーター）に対する**犬特異的モノクローナル抗体（caninized mAb）**。IL-31を中和することで、痒みの神経伝達そのものをブロックする。
+
+#### 用法
+- **2.0 mg/kg SC**、**4週間に1回**投与
+
+#### 最大の利点: 安全性
+- 肝臓・腎臓で代謝されず、**網内系（RES）**によるタンパク分解によって排泄される
+- そのため**肝不全、腎不全の犬にも安全に使用可能**
+- 他の薬剤との相互作用がない
+- 免疫系への広範な抑制がないため、感染症リスクの上昇が極めて低い
+
+#### 禁忌
+- **猫への投与は絶対禁忌**: 犬特異的抗体であるため、猫に投与すると異種タンパクとして認識され、**重篤なアナフィラキシー**を引き起こすリスクがある
+
+#### 注意点
+- 効果は個体差があり、約30%の犬では十分な痒みの改善が得られないとの報告がある
+- 効果発現にやや時間がかかる（24〜48時間）ため、急性増悪時にはアポキルやステロイドとの短期併用を検討
+
+### プレドニゾロン（ステロイド）の詳細
+
+#### 用法
+- **抗炎症量**: **0.5〜1.0 mg/kg SID PO**
+- 痒みのコントロールが得られたら、**漸減してEOD（隔日投与）**に移行
+- 長期のSID投与は副作用の観点から避けるべき
+
+#### 長期副作用
+| 副作用 | 発現時期 |
+|--------|---------|
+| 多飲多尿 | 数日〜 |
+| 多食・体重増加 | 数週間〜 |
+| パンティング | 数日〜 |
+| 肝酵素上昇（ALP↑） | 数週間〜 |
+| 筋萎縮・腹部膨満 | 数ヶ月〜 |
+| 皮膚菲薄化・脱毛 | 数ヶ月〜 |
+| **医原性クッシング症候群** | 長期継続時 |
+| 石灰沈着症 | 長期継続時 |
+| 糖尿病 | 長期継続時 |
+
+#### ステロイドの役割
+- 急性の痒みフレアに対する短期使用（数日〜1〜2週間）には依然として有用
+- 長期の痒み管理としては、アポキルやサイトポイントへの切り替えが推奨される
+- 併用禁忌: アポキルとの長期併用は免疫抑制の増強リスクがあるため避ける
+
+### 症例に応じた選択の指針
+
+| 症例の特徴 | 推奨される第1選択 | 理由 |
+|-----------|-----------------|------|
+| 急性フレア・即効性が必要 | **アポキル** or ステロイド短期 | 数時間以内に効果発現 |
+| 長期維持管理 | **サイトポイント** or アポキル | 副作用プロファイルが良好 |
+| 肝臓・腎臓に問題あり | **サイトポイント** | 臓器代謝されない |
+| 1歳未満の若齢犬 | **サイトポイント** or ステロイド短期 | アポキルは禁忌 |
+| 腫瘍の既往がある | **サイトポイント** | 免疫系への影響が最小限 |
+| 飼い主が毎日の投薬困難 | **サイトポイント** | 月1回の注射のみ |
+
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>Q. 「ステロイドはずっと飲ませ続けて大丈夫ですか？」</h4>
+                <div class="speech-bubble">ステロイドは短期間の使用であれば非常に効果的なお薬ですが、長期間飲み続けると、多飲多尿や体重増加、筋肉が痩せる、皮膚が薄くなるなどの副作用が出てきます。現在は、長期管理にはステロイド以外の選択肢（アポキルやサイトポイント）がありますので、ステロイドからの切り替えを一緒に考えましょう。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「腎臓が悪いのですが、痒みのお薬は使えますか？」</h4>
+                <div class="speech-bubble">はい、使えます。サイトポイント（ロキベトマブ）というお薬は注射で月1回投与するもので、肝臓や腎臓を通して代謝されないため、腎臓病のワンちゃんにも安全に使用できます。腎臓に負担をかけずに痒みを管理できるのが大きなメリットです。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「アポキルとサイトポイント、どちらがいいですか？」</h4>
+                <div class="speech-bubble">どちらも効果的なお薬ですが、それぞれ特徴があります。アポキルは飲み薬で即効性があり、すぐに痒みを抑えたい場合に適しています。サイトポイントは月1回の注射で副作用が非常に少なく、長期管理に向いています。ワンちゃんの年齢や体調、飼い主さまの生活スタイルに合わせて最適なお薬を選びましょう。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+
+<div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Cosgrove SB et al. Efficacy and safety of oclacitinib for the control of pruritus and associated skin lesions in dogs with canine allergic dermatitis. <em>Vet Dermatol</em>, 2013;24(5):479-e114.</li>
+                <li>Michels GM et al. A blinded, randomized, placebo-controlled, dose determination trial of lokivetmab (ZTS-00103289), a caninized, anti-canine IL-31 monoclonal antibody in client owned dogs with atopic dermatitis. <em>Vet Dermatol</em>, 2016;27(6):478-e129.</li>
+                <li>Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). <em>BMC Vet Res</em>, 2015;11:210.</li>
+                <li>Gonzales AJ et al. Oclacitinib (APOQUEL) is a novel Janus kinase inhibitor with activity against cytokines involved in allergy. <em>J Vet Pharmacol Ther</em>, 2014;37(4):317-324.</li>
+                <li>Moyaert H et al. A blinded, randomized clinical trial evaluating the efficacy and safety of lokivetmab compared to ciclosporin in client-owned dogs with atopic dermatitis. <em>Vet Dermatol</em>, 2017;28(6):593-e145.</li>
+                <li>Mueller RS et al. A systematic review of allergen immunotherapy, antihistamines, and pharmacotherapy for canine atopic dermatitis. <em>BMC Vet Res</em>, 2023;19:139.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+</div>
+
+---
+tags: [皮膚, ステロイド]
+description: 犬のアトピー性皮膚炎に対するアポキル、サイトポイント、ステロイドの3剤比較。用量・禁忌・選択の指針を解説。
+update: 2026-03-09
