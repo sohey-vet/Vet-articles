@@ -1,0 +1,133 @@
+# 脊髄軟化症・変形性関節症・DM
+
+## 🎯 結論
+
+- **進行性脊髄軟化症（PMM）は致死率100%**。深部痛覚喪失（グレード5）のTL-IVDD症例の約10〜17%で続発し、発症後3〜7日で呼吸不全に至る。診断確定時には速やかな安楽死の検討が推奨される
+- **変形性関節症（OA）では体重管理が最も高いエビデンス**を持つ。体重の6〜9%の減量で臨床的跛行が有意に改善する。抗NGF抗体（Librela/Solensia）が新たなパラダイムを提供
+- **変性性脊髄症（DM）には根治療法がない**が、積極的な理学療法によりMSTが約130日→**約255日**に延長する
+
+## 本文
+
+### 進行性脊髄軟化症（PMM）
+
+#### 疫学
+- 胸腰部椎間板ヘルニア（TL-IVDD）のグレード5（深部痛覚消失・完全対麻痺）の約**10〜17%**で続発
+- フレンチ・ブルドッグでの発生率は他の軟骨異栄養性犬種より有意に高い（**最大約30%**との報告あり）。ミニチュア・ダックスフンドにも多発
+
+#### 診断
+- **臨床徴候**: 初期病変部からのLMN（下位運動ニューロン）徴候の頭尾方向への進行。**皮幹筋反射（Cutaneous trunci reflex）消失ラインの1日1〜2椎体レベルでの頭側移行**、広汎な筋弛緩、発熱
+- **MRI**: T2強調画像で脊髄高信号領域が**L2椎体長の3〜6倍以上**に及ぶ場合、PMMリスクが極めて高い（特異度89〜97%）
+- **バイオマーカー**: CSF中のGFAP（グリア線維酸性タンパク質）の著明な上昇が有用
+
+#### 治療と予後
+- 進行を止める確立された治療法は**存在しない**
+- **予後は極めて不良（致死率100%）**。発症から通常3〜7日以内に頸髄へ上行し、横隔神経麻痺による呼吸不全に至る
+- **安楽死**: 診断がついた段階で速やかに検討することが動物福祉の観点から推奨される
+- **最新の知見**: 深部痛覚喪失例の減圧手術時に**広範な硬膜切開（Extensive durotomy）**を行うことでPMM進行率を低下させたとする報告がある（Takahashi et al., 2020）
+
+---
+
+### 変形性関節症（OA）
+
+#### 疫学
+- **犬**: 成犬の約**40%**に潜在的・顕在的なOAが存在。肥満犬のリスクは適正体重犬の**約2.3倍**
+- **猫**: 12歳以上の高齢猫の約**90%**にX線学的OA所見（特に肘・股・膝・脊椎）が認められる
+
+#### 診断
+- **COAST（Canine OsteoArthritis Staging Tool）**: Stage 0〜4の病期分類がWSAVAで推奨
+- **疼痛評価ツール**:
+  - 犬: **LOAD**（Liverpool OA in Dogs）、**CBPI**（Canine Brief Pain Inventory）
+  - 猫: **FMPI**（Feline Musculoskeletal Pain Index）
+
+#### 治療 ─ マルチモーダルアプローチ
+
+1. **体重管理（最高エビデンス）**: **6〜9%の減量**で臨床的跛行が有意に改善する
+2. **NSAIDs（第一選択薬）**: カルプロフェン、メロキシカム、グラピプラント（EP4拮抗薬）。長期投与時は消化管潰瘍・腎機能への定期モニタリングが必須（合併症率**2〜5%**）
+3. **抗NGFモノクローナル抗体（パラダイムシフト）**:
+   - 犬: **ベディンベトマブ（Librela）** 月1回SQ
+   - 猫: **フルネベトマブ（Solensia）** 月1回SQ
+   - 肝・腎への代謝負荷が少なく、NSAIDs継続困難な症例に特に有用
+
+#### 予後
+- 完治はしないが、適切なペインコントロールと体重管理により通常の寿命まで良好なQOLを維持可能
+- NSAIDs長期投与の消化管潰瘍・腎機能低下発生率: **約2〜5%**
+- 抗NGF抗体では稀に注射部位反応や免疫原性による効果減弱が報告
+
+---
+
+### 変性性脊髄症（DM）
+
+#### 疫学
+- **SOD1遺伝子変異**のホモ接合体が強力なリスクファクター（ただし不完全浸透）
+- 好発犬種: ペンブローク・ウェルシュ・コーギー（極めて多い）、ジャーマン・シェパード、ボクサー、バーニーズ
+- 発症: 通常**8歳以上**（平均9〜11歳）
+
+#### 診断
+確定診断は死後の脊髄病理組織学的検査に依存するが、臨床的「推定診断」は以下で行う:
+1. 進行性・非対称性のT3-L3脊髄障害（UMN徴候）
+2. 脊髄の非痛覚性（触診で疼痛を示さない）
+3. MRI/CSFで他の圧迫性・炎症性疾患を除外
+4. **SOD1遺伝子変異のホモ接合体**を確認
+
+#### 治療
+- 病態の進行を停止・逆転させる有効な薬物療法は**存在しない**
+- **積極的な理学療法（リハビリテーション）が唯一の科学的根拠を持つ介入**
+  - 水中トレッドミル
+  - ROM（関節可動域）訓練
+  - 早期の車椅子（カート）導入
+
+#### 予後
+- 初期不全麻痺から非歩行状態まで: 約**6〜9ヶ月**
+- **集中的な理学療法群のMST: 約255日** vs **中等度群: 約130日** vs **なし群: 約55日**（理学療法の有無で生存期間に圧倒的な差が出る）
+- 最終的に前肢麻痺、嚥下障害、呼吸筋麻痺に至る。発症から死亡/安楽死までの総MST: **約12〜18ヶ月**
+
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>Q. 「関節の痛みは年だから仕方ないですか？」</h4>
+                <div class="speech-bubble">確かに加齢とともに関節は衰えますが、「仕方がない」ものではありません。適切な体重管理とお薬で痛みを大幅に減らすことができます。最近は月1回の注射で痛みをコントロールできるお薬もあります。痛みの管理をしっかり行えば、高齢でも元気に生活できる子がたくさんいます。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「コーギーが後ろ足を引きずるようになりました。治りますか？」</h4>
+                <div class="speech-bubble">後ろ足の引きずりにはいくつかの原因がありますが、コーギーでは変性性脊髄症（DM）という遺伝性の神経疾患の可能性があります。残念ながら完治させるお薬はまだありませんが、リハビリテーション（水中歩行訓練など）を積極的に行うことで、歩ける期間を大幅に延ばせることがわかっています。また、車椅子を使うことで生活の質を維持しながら日々を過ごしている子もたくさんいます。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「脊髄軟化症と言われました。どういうことですか？」</h4>
+                <div class="speech-bubble">脊髄軟化症は、ヘルニアなどで傷ついた脊髄が溶けるように壊れていく非常に重い状態です。残念ながら現在の医学では進行を止めることができず、数日以内に呼吸ができなくなることがほとんどです。つらいお話ですが、苦しまないうちに安楽死を考えることも、この子のためにできる最後の優しさだと考えています。何でもお聞きください。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+
+<div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（5本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Okada M, et al. Magnetic resonance imaging features and clinical signs associated with presumptive and confirmed progressive myelomalacia in dogs: 12 cases (1997-2008). <em>J Am Vet Med Assoc</em>. 2010;237(10):1160-1165.</li>
+                <li>Takahashi F, et al. Efficacy of extensive durotomy in dogs with presumptive progressive myelomalacia. <em>Vet Surg</em>. 2020;49(6):1061-1072.</li>
+                <li>Cachon T, et al. Face validity of a proposed tool for staging canine osteoarthritis: Canine OsteoArthritis Staging Tool (COAST). <em>Vet J</em>. 2018;235:1-8.</li>
+                <li>Monteiro BP, et al. 2022 WSAVA guidelines for the recognition, assessment and treatment of pain. <em>J Small Anim Pract</em>. 2023;64(4):177-254.</li>
+                <li>Kathmann I, et al. Daily controlled physiotherapy increases survival time in dogs with suspected degenerative myelopathy. <em>J Vet Intern Med</em>. 2006;20(4):927-932.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+</div>
+
+---
+tags: [神経, 整形外科]
+description: PMM（致死率100%・MRI基準）、OA（マルチモーダル治療・抗NGF抗体）、DM（理学療法によるMST延長）の3疾患を網羅的に解説。
+update: 2026-03-10
