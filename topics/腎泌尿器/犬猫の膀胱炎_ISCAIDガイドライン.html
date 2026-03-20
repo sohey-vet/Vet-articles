@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="犬猫の膀胱炎。ISCAIDガイドライン準拠。細菌性UTIの抗菌薬選択、尿培養の解釈、猫のFICとの鑑別。" name="description"/>
+<title>犬猫の膀胱炎 ─ ISCAIDガイドライン準拠 | VetEvidence</title>
+<link href="../../assets/style.css?v=20260304v5" rel="stylesheet"/>
+</head>
+<body class="mode-premium">
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#conclusion">🎯 結論</a>
+<a href="#action-table">🗺️ 犬vs猫の違い</a>
+<a href="#dog-uti">🐕 犬の細菌性膀胱炎</a>
+<a href="#cat-fic">🐱 猫のFIC</a>
+<a href="#culture">🧫 尿培養の解釈</a>
+<a href="#abx">💊 抗菌薬選択</a>
+<a href="#recurrent">🔄 再発性UTI</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom:8px;"><a class="tag tag--primary" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=%E6%8A%97%E8%8F%8C%E8%96%AC">抗菌薬</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a></div>
+<h1 style="font-size: 1.3rem;">🚽 犬猫の膀胱炎 ─ ISCAIDガイドライン準拠</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                「猫の膀胱炎 ≠ 細菌感染」を理解し、不要な抗菌薬を減らす。犬の単純性UTIは3〜5日短期治療へ。
+            </p>
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- ===== FREE ZONE ===== -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<p style="font-size:0.88rem;">
+                    犬と猫の膀胱炎は<strong>まったく異なる疾患概念</strong>で治療アプローチが根本的に違う。
+                    犬の下部尿路症状のほとんどは<strong>細菌性UTI</strong>（E. coliが最多）。ISCAIDガイドラインでは単純性UTIに対し、
+                    <strong>アモキシシリン11〜15mg/kg PO q8〜12h × 3〜5日の短期治療</strong>を推奨。
+                    一方、若齢〜中齢の猫の下部尿路症状の<strong>約60〜70%は猫特発性膀胱炎（FIC）</strong>で細菌感染は1〜2%のみ → <strong>抗菌薬は不要</strong>。
+                    尿培養は<strong>膀胱穿刺尿</strong>で行い、≥10³ CFU/mLを有意とする。
+                </p>
+</div>
+</div>
+<div class="free-content" id="action-table">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ 犬 vs 猫 ─ 下部尿路症状の原因の違い
+
+<!-- 個別生成図表 -->
+<div class="mermaid-wrapper"><pre class="mermaid">
+graph TD
+    A["来院: 下部尿路症状"] --> B("問診・身体検査")
+    B --> C{"尿道閉塞の有無 (オス猫で特に重要)"}
+
+    C -- あり --> D["!!! 緊急処置 !!!"]
+
+    C -- なし --> E("初期尿検査: 尿比重・pH・沈渣")
+
+    E --> F{"動物種: 犬 or 猫?"}
+
+    F -- 犬 --> G["犬ルート"]
+    G --> G1["膀胱穿刺尿培養"]
+    G1 --> G2{"尿沈渣で細菌・白血球あり?"}
+    G2 -- あり --> G3{"UTIのタイプ?"}
+    G3 -- 散発性UTI --> G4["経験的抗菌薬 (Amoxicillin 3-5日)"]
+    G4 --> G5{"症状改善?"}
+    G5 -- Yes --> G6["治療終了"]
+    G5 -- No --> G7["培養結果に基づき抗菌薬調整"]
+    G3 -- 再発性/複雑性UTI --> G8["基礎疾患検索 (画像, 血液) + 培養結果に基づき抗菌薬 (7-14日) + 基礎疾患治療"]
+
+    F -- 猫 --> H["猫ルート"]
+    H --> H1{"年齢・基礎疾患の有無?"}
+    H1 -- 若〜中齢猫<br/>基礎疾患なし --> H2["FIC疑い (細菌感染稀)"]
+    H2 --> H3["膀胱穿刺尿培養 (細菌除外目的)"]
+    H3 --> H4{"培養結果"}
+    H4 -- 細菌(-) --> H5["FIC確定: MEMO療法 + 鎮痛"]
+    H4 -- 細菌(+) --> H6["細菌性UTI: 培養結果に基づき抗菌薬 + 基礎疾患検索"]
+    H1 -- 高齢猫 (>10歳)<br/>またはDM/CKDなど基礎疾患あり --> H7["細菌性UTIリスク増"]
+    H7 --> H8["膀胱穿刺尿培養"]
+    H8 --> H6
+
+    E --> I{"尿路結石/腫瘍の疑い?"}
+    I -- あり --> J["画像診断 (X線, エコー)"]
+
+    subgraph 臨床ポイント
+        K["<b>尿培養:</b> 膀胱穿刺が推奨 (≥10³ CFU/mLで有意)"]
+        L["<b>犬単純性UTI経験的ABx:</b> アモキシシリン (3-5日)"]
+        M["<b>温存すべきABx:</b> フルオロキノロン, 第3世代セファロスポリン"]
+        N["<b>無症候性細菌尿:</b> 原則治療しない"]
+    end
+</pre></div>
+</h3>
+<div style="overflow-x:auto;">
+<table class="comparison-table" style="margin:0;min-width:600px;">
+<thead>
+<tr>
+<th>原因</th>
+<th>🐕 犬</th>
+<th>🐱 猫（若〜中齢）</th>
+<th>🐱 猫（高齢 ≥10歳）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>細菌性UTI</td>
+<td><strong>最多</strong>（メスに多い）</td>
+<td>1〜2%</td>
+<td>増加（CKD・DM合併例）</td>
+</tr>
+<tr>
+<td>猫特発性膀胱炎（FIC）</td>
+<td>─</td>
+<td><strong>60〜70%</strong></td>
+<td>減少</td>
+</tr>
+<tr>
+<td>尿路結石</td>
+<td>15〜20%</td>
+<td>10〜20%</td>
+<td>10〜20%</td>
+</tr>
+<tr>
+<td>尿道閉塞</td>
+<td>まれ</td>
+<td>オス猫で多い<br/>（緊急！）</td>
+<td>結石・腫瘍が原因</td>
+</tr>
+<tr>
+<td>腫瘍</td>
+<td>移行上皮癌（中〜高齢）</td>
+<td>まれ</td>
+<td>少数</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="free-content">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<table class="comparison-table" style="margin:0;">
+<thead>
+<tr>
+<th>❌ 旧来</th>
+<th>✅ 最新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UTIの治療は14日間</td>
+<td>単純性UTI（犬）は<strong>3〜5日の短期治療で十分</strong>（ISCAID 2019）</td>
+</tr>
+<tr>
+<td>猫の膀胱炎には抗菌薬</td>
+<td>若〜中齢猫の膀胱炎の大部分はFIC → <strong>抗菌薬は不要</strong>。ストレス管理と環境改善が主体</td>
+</tr>
+<tr>
+<td>尿検査で細菌が見えたら治療</td>
+<td><strong>無症候性細菌尿は治療しない</strong>（臨床的リスクがない限り）。耐性菌増加の原因に</td>
+</tr>
+<tr>
+<td>経験的にフルオロキノロン</td>
+<td>単純性UTIの第一選択は<strong>アモキシシリンまたはTMP-SMX</strong>。フルオロキノロンは腎盂腎炎や耐性菌用に温存</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ===== PREMIUM ZONE ===== -->
+<div id="dog-uti">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🐕</span><span>犬の細菌性膀胱炎 ─ 散発性(sporadic) vs
+                            再発性・複雑性</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>散発性 (Sporadic) UTI</h4>
+<ul>
+<li>定義: 解剖学的・機能的異常のない犬に初発〜散発的に起こる細菌性膀胱炎</li>
+<li>最頻菌: <strong>E. coli</strong>（約50%）、Staphylococcus spp.、Proteus spp.</li>
+<li>治療: アモキシシリン 11〜15mg/kg PO q8〜12h × <strong>3〜5日</strong></li>
+<li>治療後のルーチン尿培養は不要（臨床症状の改善が指標）</li>
+</ul>
+<h4>再発性・複雑性 (Recurrent/Complicated) UTI</h4>
+<ul>
+<li>基礎疾患あり: クッシング、糖尿病、CKD、尿路結石、外尿道括約筋機能不全等</li>
+<li>治療: 尿培養に基づく抗菌薬選択 × 7〜14日</li>
+<li>基礎疾患の治療が不可欠（そうしないと再発する）</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>避妊メス犬はUTIのリスクが高い（解剖的に尿道が短い + ホルモン変化）</li>
+<li>細菌尿があっても症状がなければ治療しない（subclinical bacteriuria）</li>
+<li>腎盂腎炎を疑う所見: 発熱、腎痛、高BUN/Cre → フルオロキノロン or 広域βラクタム × 10〜14日</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>犬の膀胱炎の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="cat-fic">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🐱</span><span>猫の特発性膀胱炎（FIC）─
+                            抗菌薬ではなくストレス管理</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>FICの病態</h4>
+<ul>
+<li>ヒトの間質性膀胱炎に類似した疾患概念。ストレス応答系の異常（視床下部-下垂体-副腎軸の過活動）が関与</li>
+<li>膀胱上皮のGAG層の破綻 → 尿中の刺激物質が粘膜下に浸透 → 炎症・疼痛</li>
+<li>細菌感染は<strong>原因ではない</strong>（二次的な細菌定着は高齢猫で起こり得る）</li>
+<li>自然寛解しやすい（多くの症例は3〜7日で改善）→ 抗菌薬の誤った「有効性」の印象を生む原因</li>
+</ul>
+<h4>治療（MEMO: Multimodal Environmental MOdification）</h4>
+<ul>
+<li><strong>環境の豊かさの改善</strong>（enrichment）: 高い場所、隠れ場所、窓辺の確保</li>
+<li><strong>トイレの改善</strong>: 猫の数 + 1個のトイレ、毎日の清掃、蓋なしが望ましい</li>
+<li><strong>水分摂取の増加</strong>: ウェットフード中心に変更、流水式フォンテン設置</li>
+<li><strong>ストレス要因の特定と除去</strong>: 多頭飼育のリソース競合、生活環境の変化</li>
+<li><strong>鎮痛</strong>: ブプレノルフィン 0.01〜0.02mg/kg 粘膜投与 × 3〜5日（重症例）</li>
+<li>フェロモン製剤（フェリウェイ®）: エビデンスは限定的だがストレス軽減の補助として使用可</li>
+</ul>
+<p style="font-size:0.85rem;margin-top:8px;">
+                            ⚠️ 日本の注意: 日本の住宅環境（ワンルームマンション等）ではFICのリスクが高い。完全室内飼いの運動不足も要因になる。キャットタワー・窓際の日光浴スペースの確保を具体的に提案する。
+                        </p>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>FICの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="culture">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🧫</span><span>尿培養の採取と解釈</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>採尿法と有意菌数</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>採取法</th>
+<th>有意菌数</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>膀胱穿刺（推奨）</strong></td>
+<td>≥10³ CFU/mL</td>
+<td>コンタミネーション最小。培養に最適</td>
+</tr>
+<tr>
+<td>カテーテル採尿</td>
+<td>≥10³ CFU/mL</td>
+<td>尿道のコンタミに注意</td>
+</tr>
+<tr>
+<td>自然排尿（free-catch）</td>
+<td>培養には<strong>不適</strong></td>
+<td>一般尿検査のみに使用</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>尿検体は採取後冷蔵保存し、6時間以内に検査機関に提出</li>
+<li>沈渣で細菌を見つけても → <strong>必ず培養で確認</strong>（コンタミの可能性）</li>
+<li>猫は原則<strong>全例で培養を推奨</strong>（細菌性UTIが稀なため、経験的治療は避ける）</li>
+<li>治療後の確認培養: 投与終了7日後（セフォベシンは3週間後）</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>尿培養の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="abx">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💊</span><span>抗菌薬の選択 ─
+                            第一選択と温存すべき薬剤</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>犬の単純性UTI ─ 経験的治療</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>順位</th>
+<th>薬剤</th>
+<th>用量</th>
+<th>期間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>第一選択</strong></td>
+<td>アモキシシリン</td>
+<td>11〜15mg/kg PO q8〜12h</td>
+<td>3〜5日</td>
+</tr>
+<tr>
+<td>代替</td>
+<td>TMP-SMX</td>
+<td>15mg/kg PO q12h</td>
+<td>3〜5日</td>
+</tr>
+<tr>
+<td>代替</td>
+<td>アモキシシリン-クラブラン酸</td>
+<td>12.5〜25mg/kg PO q12h</td>
+<td>3〜5日</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:0.82rem;color:var(--color-text-muted);margin-top:4px;">
+                            ※
+                            アモキシシリン-クラブラン酸はβラクタマーゼ産生菌に対する代替薬としての位置づけ。感受性結果に基づいて選択。ISCAIDは散発性UTIの経験的治療にはアモキシシリン単剤またはTMP-SMXを推奨。
+                        </p>
+<h4>温存すべき薬剤</h4>
+<ul>
+<li><strong>フルオロキノロン</strong>（エンロフロキサシン、マルボフロキサシン）: 腎盂腎炎や耐性菌に限定使用</li>
+<li><strong>第3世代セファロスポリン</strong>（セフォベシン含む）: ESBL産生菌選択圧 → AMRの観点から温存</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 セフォベシン（コンベニア®）について</h4>
+<ul>
+<li>単回SC注射で14日間効果が持続 → 服薬困難な動物に便利</li>
+<li>しかし<strong>ISCAIDは単純性UTIへの第一選択としては推奨していない</strong></li>
+<li>「使いやすい」と安易に選択すると、広域スペクトラムによる耐性菌リスクが増大</li>
+<li>適応: 経口投与不可能な場合の限定的使用</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>抗菌薬選択の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="recurrent">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🔄</span><span>再発性UTI ─
+                            基礎疾患の検索が鍵</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>定義</h4>
+<ul>
+<li>12ヶ月間に3回以上、または6ヶ月間に2回以上のUTI</li>
+<li>再感染（reinfection）vs 再発（relapse）の区別が重要: 尿培養で同一菌 vs 異なる菌</li>
+</ul>
+<h4>検索すべき基礎疾患</h4>
+<ul>
+<li>尿路結石（膀胱結石がニダスに）→ 画像検査</li>
+<li>クッシング症候群 → 免疫抑制 + 尿比重低下</li>
+<li>糖尿病 → 尿糖が細菌の栄養源に</li>
+<li>外陰部の解剖的異常（外陰部の陥没: vulvar fold dermatitis）</li>
+<li>CKD → 尿濃縮能低下で自浄作用↓</li>
+<li>避妊後尿失禁 → 括約筋機能不全（フェニルプロパノールアミン検討）</li>
+</ul>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>再発性UTIの詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>【犬】膀胱炎はお薬を飲めば治りますか？</h4>
+<div class="speech-bubble">
+                                はい、<strong>3〜5日間のお薬</strong>で多くの場合は治ります。ただし途中でやめると再発しやすくなるので、処方された分は最後まで飲み切ってください。お薬を飲み始めて2日以内に症状が改善しない場合はご連絡ください。
+                            </div>
+</div>
+<div class="owner-tip">
+<h4>【猫】膀胱炎と言われましたが、抗菌薬は出ないのですか？</h4>
+<div class="speech-bubble">
+                                若い猫ちゃんの膀胱炎は、多くの場合<strong>細菌が原因ではなく、ストレスが主な原因</strong>です。不要な抗菌薬を使うと良い菌まで殺してしまい、かえって問題が起きることがあります。生活環境の改善とお水を多く飲む工夫が一番大切です。
+                            </div>
+</div>
+<div class="owner-tip">
+<h4>【猫】再発を防ぐにはどうすれば？</h4>
+<div class="speech-bubble">
+<strong>ウェットフードをメインにする、流水式の水飲みを置く、トイレを清潔に保つ（猫の数+1個）、隠れ場所や高い場所を作る</strong>ことが効果的です。ストレスの原因（多頭飼育の相性・騒音・引越し等）を見つけて減らすことも大切です。
+                            </div>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+</div>
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Weese JS et al. International Society for Companion Animal Infectious Diseases (ISCAID)
+                                guidelines for the diagnosis and management of bacterial urinary tract infections in
+                                dogs and cats (2019). <em>Vet J</em> 2019;247:8-25.</li>
+<li>Buffington CA. Idiopathic cystitis in domestic cats ─ beyond the lower urinary tract
+                                (2011). <em>J Vet Intern Med</em> 2011;25(4):784-796.</li>
+<li>Dorsch R et al. Feline lower urinary tract disease in a German cat population: a
+                                retrospective analysis of demographic data, causes, and clinical signs (2014).
+                                <em>Tierärztl Prax Ausg K Kleintiere Heimtiere</em> 2014;42(4):231-239.
+                            </li>
+<li>Westropp JL et al. Evaluation of the effects of stress in cats with idiopathic cystitis
+                                (2006). <em>Am J Vet Res</em> 2006;67(4):731-736.</li>
+<li>Olin SJ, Bartges JW. Urinary tract infections: treatment/comparative therapeutics
+                                (2015). <em>Vet Clin North Am Small Anim Pract</em> 2015;45(4):721-746.</li>
+<li>Seguin MA et al. Persistent urinary tract infections and reinfections in 100 dogs
+                                (2003). <em>J Vet Intern Med</em> 2003;17(5):622-631.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+</footer>
+</div>
+<script src="../../assets/script.js?v=20260304v5"></script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="不整脈の救急対応と心電図の読み方。洞性頻脈・心室頻拍・房室ブロック・心房細動の鑑別と初期治療。犬猫の違いを解説。" name="description"/>
+<title>不整脈の救急対応 ─ 心電図の読み方 | VetEvidence</title>
+<link href="../../assets/style.css?v=20260304v5" rel="stylesheet"/>
+</head>
+<body class="mode-premium">
+<nav class="mobile-nav">
+<span class="nav-brand">🩺 VetEvidence</span>
+<button aria-label="メニュー" class="hamburger-btn">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="slide-menu-overlay"></div>
+<aside class="slide-menu">
+<h4>ナビゲーション</h4>
+<a href="../../index.html">🏠 トップ</a>
+<a href="#conclusion">🎯 結論</a>
+<a href="#action-table">🗺️ 不整脈鑑別フロー</a>
+<a href="#ecg-basics">📈 心電図の超基本</a>
+<a href="#vtach">⚡ 心室頻拍</a>
+<a href="#svt">💓 上室性頻拍・心房細動</a>
+<a href="#bradycardia">🐌 徐脈性不整脈</a>
+<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#refs">📚 参照論文</a>
+<h4>情報ソース</h4>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+</aside>
+<div class="page-container">
+<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+<div class="tags" style="margin-bottom:8px;"><a class="tag tag--primary" href="../../index.html?tag=%E5%BE%AA%E7%92%B0%E5%99%A8">循環器</a><a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a><a class="tag tag--primary" href="../../index.html?tag=%E5%BF%83%E9%9B%BB%E5%9B%B3">心電図</a><a class="tag tag--primary" href="../../index.html?tag=%E4%B8%8D%E6%95%B4%E8%84%88">不整脈</a></div>
+<h1 style="font-size: 1.3rem;">❤️ 不整脈の救急対応 ─ 心電図の読み方</h1>
+<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+                「不整脈を見つけたけど、治療すべき？経過観察でいい？」救急で遭遇する不整脈の鑑別と、治療開始の判断基準を整理。
+            </p>
+<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+<div class="meta-item"><span class="icon">📄</span><span>参照論文7本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
+</div>
+</header>
+<div class="content-mode-bar">
+<span>📋</span>
+<label class="toggle-switch">
+<input checked="" id="content-mode-toggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+<span class="mode-label">👑 すべて表示</span>
+</div>
+<!-- FREE ZONE -->
+<div class="free-content" id="conclusion">
+<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+<h3 style="font-size:0.95rem;">🎯 結論</h3>
+<p style="font-size:0.88rem;">
+                    救急で遭遇する不整脈の対応原則は<strong>「不整脈そのものを治すのではなく、血行動態への影響を治療する」</strong>。心室性期外収縮（VPC）の散発は治療不要だが、<strong>持続性心室頻拍（VT:
+                        HR＞160〜180
+                        bpmかつ灌流低下）</strong>はリドカインの適応。上室性頻脈（SVT）は<strong>迷走神経刺激（頸動脈洞マッサージ等。※眼球圧迫は網膜剥離や眼球損傷の重大なリスクがあるため現在は絶対禁忌）</strong>で診断的に鑑別し、反応がなければ薬物治療。徐脈（房室ブロック・洞不全症候群）は症候性なら<strong>アトロピン反応試験</strong>を行い、反応なければペースメーカーの適応を検討。まず<strong>不整脈の原因（電解質異常、GDV、低酸素、薬剤性など）を検索・是正</strong>することが最優先。
+                </p>
+</div>
+</div>
+<div class="free-content" id="action-table">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ 救急不整脈 ─ 迅速鑑別フロー</h3>
+<!-- 個別生成図表 -->
+<div class="mermaid-wrapper"><pre class="mermaid">
+graph TD
+    A["心電図所見から不整脈を鑑別"] --> B{"心拍数は？"}
+    B -->|"頻脈 (犬>160 / 猫>220 bpm)"| C{"QRS幅は？"}
+    C -->|"幅広い (>0.06秒)"| D{"リズムは？"}
+    D -->|"規則的"| E["心室頻拍 (VT)"]
+    E --> F["初期治療: リドカイン 2mg/kg IV"]
+    C -->|"狭い (<0.06秒)"| G{"リズムは？"}
+    G -->|"規則的"| H["上室性頻拍 (SVT)"]
+    H --> I["初期治療: 迷走神経刺激"]
+    G -->|"不規則"| J["心房細動 (AF)"]
+    J --> K["初期治療: ジルチアゼム"]
+    B -->|"徐脈 (犬<60 / 猫<120 bpm)"| L{"P波とQRSの関係は？"}
+    L -->|"P-QRS解離"| M["3度房室ブロック"]
+    M --> N["アトロピン反応試験"]
+    L -->|"PR延長"| O["1度/2度房室ブロック"]
+    B -->|"正常心拍"| P{"不規則なリズム？"}
+    P -->|"散発性幅広QRS"| Q["心室期外収縮 (VPC)"]
+    F --> R["治療効果評価と基礎疾患検索"]
+    I --> R
+    K --> R
+    N --> R
+    Q --> R
+</pre></div>
+<div style="overflow-x:auto;">
+<table class="comparison-table" style="margin:0;min-width:600px;">
+<thead>
+<tr>
+<th>心拍数</th>
+<th>QRS幅</th>
+<th>リズム</th>
+<th>考えるべき不整脈</th>
+<th>初期治療</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2"><strong>頻脈</strong><br/>(＞160 bpm)</td>
+<td><strong>幅広い</strong></td>
+<td>規則的</td>
+<td>心室頻拍（VT）</td>
+<td>リドカイン 2mg/kg IV</td>
+</tr>
+<tr>
+<td><strong>狭い</strong></td>
+<td>規則的 or 不整</td>
+<td>SVT / 心房細動（AF）</td>
+<td>迷走神経刺激 → ジルチアゼム</td>
+</tr>
+<tr>
+<td rowspan="2"><strong>徐脈</strong><br/>(犬＜60 / 猫＜140 bpm)</td>
+<td>正常</td>
+<td>規則的</td>
+<td>洞徐脈 / 洞不全症候群</td>
+<td>アトロピン反応試験</td>
+</tr>
+<tr>
+<td>正常〜幅広</td>
+<td>不整</td>
+<td>2度〜3度房室ブロック</td>
+<td>アトロピン反応試験 → ペースメーカー検討</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- 昔vs今 -->
+<div class="free-content">
+<div class="card" style="margin-top:var(--space-md);">
+<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<table class="comparison-table" style="margin:0;">
+<thead>
+<tr>
+<th>❌ 旧来</th>
+<th>✅ 最新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPCが出たらすぐリドカイン</td>
+<td><strong>散発性VPCは治療不要</strong>。持続性VTで血行動態に影響がある場合のみ治療。「R-on-T」も単独では治療指標にならない</td>
+</tr>
+<tr>
+<td>不整脈＝心臓の問題</td>
+<td>救急不整脈の多くは<strong>二次的原因</strong>（電解質異常・低酸素・疼痛・脾臓疾患・GDV等）。原因治療が最優先</td>
+</tr>
+<tr>
+<td>リドカインが効かなければプロカインアミド</td>
+<td>リドカイン不応のVTには<strong>ソタロール（1〜2mg/kg PO BID）</strong>が現在の選択肢。プロカインアミドは獣医領域での使用報告が減少</td>
+</tr>
+<tr>
+<td>猫の不整脈は稀</td>
+<td>猫でも心筋症に伴う不整脈（AF、VPC）は少なくない。ただし<strong>猫の心電図判読は犬より記録が難しく、見落とされやすい</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- PREMIUM ZONE -->
+<hr class="section-divider"/>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+<div>
+<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+</div>
+</div>
+<!-- 心電図の超基本 -->
+<div id="ecg-basics">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📈</span><span>心電図の超基本 ─
+                            5秒で見るべき3つのポイント</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>心電図記録のポイント</h4>
+<ul>
+<li>標準: 第II誘導、紙送り速度 25mm/秒 or 50mm/秒、感度 1mV=10mm</li>
+<li>犬は右側臥位が標準。猫は保定困難ならスタンディングでも可</li>
+<li>最低<strong>6秒間の記録</strong>（できれば30秒以上）で間欠的な不整脈も捉える</li>
+</ul>
+<h4>5秒で判断する3ステップ</h4>
+<ul>
+<li><strong>① 心拍数は？</strong> → 速い（頻脈）か遅い（徐脈）か正常か</li>
+<li><strong>② QRSの幅は？</strong> → 狭い＝上室性、幅広い＝心室性</li>
+<li><strong>③ リズムは規則的か？</strong> → 不整ならP波とQRSの関係を確認</li>
+</ul>
+<h4>正常値の目安</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>項目</th>
+<th>🐶 犬</th>
+<th>🐱 猫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正常心拍数</td>
+<td>60〜160 bpm（大型犬は低め）</td>
+<td>140〜220 bpm</td>
+</tr>
+<tr>
+<td>P波</td>
+<td>幅 ＜0.04秒、高さ ＜0.4mV</td>
+<td>幅 ＜0.04秒、高さ ＜0.2mV</td>
+</tr>
+<tr>
+<td>QRS幅</td>
+<td>＜0.06秒（大型犬 ＜0.05秒）</td>
+<td>＜0.04秒</td>
+</tr>
+<tr>
+<td>PR間隔</td>
+<td>0.06〜0.13秒</td>
+<td>0.05〜0.09秒</td>
+</tr>
+</tbody>
+</table>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>心電図を読む自信がなくても、<strong>「速いか遅いか」「QRSは広いか狭いか」「規則的か不整か」</strong>の3点だけ判断できれば初期対応は可能</li>
+<li>モニター心電図が装置がなくても、パルスオキシメーターの脈波形の不整で不整脈を疑える</li>
+<li>心電図の写真をスマートフォンで撮影し、循環器専門医にLINE/メールで相談する方法も日本では広く使われている</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>心電図の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 心室頻拍 -->
+<div id="vtach">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">⚡</span><span>心室頻拍（VT）─
+                            リドカインの使い方</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>心室頻拍の特徴</h4>
+<ul>
+<li>幅広いQRS（＞0.06秒）が<strong>3拍以上連続</strong></li>
+<li>P波とQRSの解離（AV dissociation）</li>
+<li>HR＞160〜180 bpm で<strong>血行動態に影響</strong>（低血圧・意識低下・薄い脈）</li>
+</ul>
+<h4>治療適応の判断</h4>
+<ul>
+<li>散発性VPC（単発・二段脈程度）→ <strong>原因検索のみ。治療不要</strong></li>
+<li>持続性VT（＞30秒）かつ血行動態に影響 → <strong>リドカイン投与</strong></li>
+<li>非持続性VT（＜30秒）で灌流良好 → 経過観察＋原因治療</li>
+</ul>
+<h4>リドカインの投与法</h4>
+<ul>
+<li><strong>初回ボーラス: 2mg/kg IV</strong>（2分以上かけてゆっくり）</li>
+<li>効果あり → <strong>CRI 25〜80μg/kg/min</strong> で維持</li>
+<li>初回ボーラスで効果不十分 → 2mg/kgを<strong>最大3回まで</strong>繰り返し可能（総量6mg/kg以内）</li>
+<li>リドカインCRIの設定例: 2%リドカイン（20mg/mL）を使用。5kgの犬でCRI 50μg/kg/min → 0.75mL/h</li>
+</ul>
+<h4>リドカイン不応時</h4>
+<ul>
+<li><strong>ソタロール 1〜2mg/kg PO BID</strong> → β遮断＋Kチャネル遮断。経口薬のため即効性はない</li>
+<li>メキシレチン 5〜8mg/kg PO TID → リドカインと同じIb群の経口薬</li>
+<li>マグネシウム静注（MgSO4 0.15〜0.3mEq/kg IV 5〜10分）→ 多形性VT（torsades de pointes）に有効</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>GDV術後のVTが最も遭遇頻度が高い。リドカインの適応と用量を暗記しておく価値がある</li>
+<li>猫へのリドカイン使用は<strong>0.25〜0.5mg/kg IV</strong>と低用量。猫はリドカインに対する感受性が高い</li>
+<li>リドカインの副作用: 嘔吐、筋攣縮、痙攣（過量投与時）。過量投与を避けるため総量を必ず計算</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>心室頻拍の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 上室性頻拍・心房細動 -->
+<div id="svt">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">💓</span><span>上室性頻拍・心房細動 ─
+                            レートコントロール</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>上室性頻拍（SVT）の特徴</h4>
+<ul>
+<li>QRS幅は正常（狭い）</li>
+<li>HR＞250〜300 bpmの整脈</li>
+<li>P波が確認困難（T波に隠れている）</li>
+<li>洞性頻脈（痛み・発熱・興奮）との鑑別が重要</li>
+</ul>
+<h4>迷走神経刺激（Vagal maneuver）</h4>
+<ul>
+<li>SVTの診断的＋治療的手技</li>
+<li><strong>頸動脈洞マッサージ</strong>等を行う。<strong>※眼球圧迫は網膜剥離や眼球損傷の重大なリスクがあるため現在は絶対禁忌</strong></li>
+<li>SVTなら突然リズムが整って洞調律に戻る or 一時的に減速 → 確定的</li>
+<li>洞性頻脈は徐々に減速するのみ（原因を除かない限り戻る）</li>
+</ul>
+<h4>心房細動（AF）</h4>
+<ul>
+<li>P波が消失し、<strong>基線が不規則に揺れる（f波）</strong></li>
+<li>R-R間隔が完全に不整</li>
+<li>犬では主にDCM・重度MMVD に合併。大型犬に多い（lone AFは稀）</li>
+<li>治療目標: <strong>レートコントロール</strong>（心拍数を≤140〜160 bpm 安静時に下げる。リズムコントロールは通常不可能）</li>
+<li>薬剤: <strong>ジルチアゼム 0.5〜1.5mg/kg PO TID</strong>。ジゴキシンを併用することも</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>SVTの迷走神経刺激は<strong>心電図記録中に行う</strong>。リズムの変化をリアルタイムで確認できるため診断価値が高い。眼球圧迫は絶対に行わない</li>
+<li>日本の一般病院でAFを見つけた場合 → まず基礎心疾患の心エコー検査。レートコントロールを開始しつつ循環器専門医に相談</li>
+<li>猫のAFは頻度が低いが、重度の心筋症で発生する場合がある</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>上室性頻拍・心房細動の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 徐脈性不整脈 -->
+<div id="bradycardia">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🐌</span><span>徐脈性不整脈 ─
+                            房室ブロックとアトロピン反応試験</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<h4>徐脈の定義</h4>
+<ul>
+<li>犬: HR＜60 bpm（大型犬ではHR＜50 bpmが臨床的に有意）</li>
+<li>猫: HR＜140 bpm（ただしストレスのない環境では120 bpm程度もありうる）</li>
+</ul>
+<h4>房室ブロック（AVB）の分類</h4>
+<table class="comparison-table" style="margin:0 0 12px;">
+<thead>
+<tr>
+<th>種類</th>
+<th>心電図所見</th>
+<th>臨床的意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1度AVB</td>
+<td>PR延長（犬＞0.13秒）</td>
+<td>通常無症状。基礎疾患の検索</td>
+</tr>
+<tr>
+<td>2度AVB（Mobitz I型）</td>
+<td>PRが徐々に延長し、1拍QRSが脱落</td>
+<td>迷走神経緊張で生理的にも起こる。多くは治療不要</td>
+</tr>
+<tr>
+<td>2度AVB（Mobitz II型）</td>
+<td>PRが一定のまま突然QRSが脱落</td>
+<td>3度に進展する可能性。要注意</td>
+</tr>
+<tr>
+<td>3度AVB（完全）</td>
+<td>P波とQRSが完全に解離</td>
+<td>症候性なら<strong>ペースメーカーの適応</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>アトロピン反応試験</h4>
+<ul>
+<li>アトロピン <strong>0.04mg/kg IV</strong> → <strong>1〜5分後</strong>に心電図再検（効果は即効性）</li>
+<li><strong>反応あり</strong>（HR↑、ブロック解消）→ 迷走神経性。多くは治療不要 or 原因除去</li>
+<li><strong>反応なし</strong> → 器質的伝導障害。3度AVBではペースメーカーの適応</li>
+</ul>
+<div class="clinical-tip">
+<h4>💊 臨床Tips</h4>
+<ul>
+<li>3度AVBで<strong>失神歴あり</strong>の犬はペースメーカーの絶対的適応 → 循環器専門施設へ紹介</li>
+<li>日本では永久ペースメーカー植え込みが可能な施設は限られるが、増加傾向</li>
+<li>ペースメーカーまでの橋渡し: <strong>テルブタリン（犬の場合） 0.2mg/kg PO TID (q8h)</strong>（β2刺激で心拍数を維持）</li>
+<li>猫の徐脈は高K血症（尿道閉塞）を第一に疑う。原因が非心臓性のことが多い</li>
+</ul>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>徐脈性不整脈の詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 飼い主説明 -->
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>不整脈って何ですか？</h4>
+<div class="speech-bubble">
+                                心臓のリズムの乱れです。心臓は通常、一定のリズムで電気信号を出して動いていますが、このリズムが速すぎたり遅すぎたり、不規則になったりすることがあります。<strong>軽いものは問題ないことも多い</strong>ですが、ひどい場合は血液を十分に送れなくなり、ぐったりしたり倒れたりする原因になります。
+                            </div>
+</div>
+<div class="owner-tip">
+<h4>治療が必要な不整脈かどうか、どう判断するのですか？</h4>
+<div class="speech-bubble">
+                                心電図で不整脈の種類を確認し、同時に<strong>血圧や全身状態</strong>を見て判断します。心臓のリズムが乱れていても体に影響がなければ様子を見ることもありますし、血圧が下がっている場合はすぐにお薬で治療します。
+                            </div>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 参照論文 -->
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（7本）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>Moise NS. Diagnosis and management of canine arrhythmias. In: Tilley LP et al, eds.
+                                <em>Manual of Canine and Feline Cardiology</em>, 5th ed. Elsevier, 2016:310-340.
+                            </li>
+<li>Côté E. Electrocardiography and cardiac arrhythmias. In: Ettinger SJ et al, eds.
+                                <em>Textbook of Veterinary Internal Medicine</em>, 8th ed. Elsevier, 2017:1140-1191.
+                            </li>
+<li>Pedro B et al. Retrospective evaluation of the effect of sotalol on survival in Boxer
+                                dogs with ventricular arrhythmias (2020). <em>J Vet Intern Med</em>
+                                2020;34(3):1029-1039.</li>
+<li>Wright KN et al. Supraventricular tachycardia in four young dogs. <em>J Am Vet
+                                    Med Assoc</em> 1996;208(1):75-80.</li>
+<li>Gelzer AR et al. Combination therapy with digoxin and diltiazem for atrial fibrillation
+                                in dogs (2009). <em>J Vet Intern Med</em> 2009;23(3):499-504.</li>
+<li>Scansen BA et al. Temporary transvenous cardiac pacing in 28 dogs and 2 cats (2008).
+                                <em>J Vet Intern Med</em> 2008;22(6):1254-1261.
+                            </li>
+<li>Tilley LP. <em>Essentials of Canine and Feline Electrocardiography</em>, 3rd ed. Lea &amp;
+                                Febiger, 1992.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<footer class="page-footer" style="margin-top: var(--space-xl);">
+<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+</footer>
+</div>
+<script src="../../assets/script.js?v=20260304v5"></script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+</body>
+</html>
