@@ -19,21 +19,28 @@ STYLE_VERSION = "20260304v5"
 
 
 def extract_tags_from_meta(md_text: str, title: str) -> list[dict]:
-    """メタデータからタグを生成。ジャンルを使う。"""
-    genre_match = re.search(r'ジャンル:\s*(.+)', md_text)
     tags = []
-    if genre_match:
-        genres = [g.strip() for g in genre_match.group(1).split('・')]
-        for g in genres:
-            css_class = "tag--primary"
-            if g in ["皮膚", "外科", "整形"]:
-                css_class = "tag--warning"
-            elif g in ["猫", "犬"]:
-                css_class = "tag--success"
-            tags.append({"label": g, "class": css_class, "query": g})
-    if not tags:
-        tags = [{"label": "救急", "class": "tag--primary", "query": "救急"}]
-    return tags
+    
+    match = re.search(r'tags:\s*\[(.*?)\]', md_text)
+    if match:
+        genres = [g.strip() for g in match.group(1).split(',')]
+    else:
+        match_legacy = re.search(r'TAGS\n(.*?)\n', md_text)
+        if match_legacy:
+            raw_tag = match_legacy.group(1).replace('　', ' ')
+            genres = [raw_tag] if "その他" not in raw_tag else ["その他", raw_tag.replace("その他", "")]
+        else:
+            genre_match = re.search(r'ジャンル:\s*(.+)', md_text)
+            genres = [g.strip() for g in genre_match.group(1).split('・')] if genre_match else []
+            
+    for g in genres:
+        if not g: continue
+        css_class = "tag--secondary" if g == "その他" else "tag--primary"
+        if g in ["皮膚", "外科", "整形"]: css_class = "tag--warning"
+        elif g in ["猫", "犬"]: css_class = "tag--success"
+        tags.append({"label": g, "class": css_class, "query": g})
+        
+    return tags or [{"label": "救急", "class": "tag--primary", "query": "救急"}]
 
 
 def md_to_html_body(md_text: str) -> str:
@@ -370,6 +377,11 @@ def convert_md_to_html(md_path: Path) -> Path:
 
     # Prepare markdown text for section generation (remove owner-tips, refs, normalize headings)
     clean_md_text = md_text
+    
+    # Strip metadata frontmatter
+    clean_md_text = re.sub(r'\n---\n+tags:\s*\[.*?\].*?(?=\n## |\Z)', '', clean_md_text, flags=re.DOTALL)
+    clean_md_text = re.sub(r'\nTAGS\n.*?(?=\n## |\Z)', '', clean_md_text, flags=re.DOTALL)
+    
     if owner_tips_raw:
         # Remove original owner-tips block from md_text
         ot_original = extract_html_block(md_text, '<div id="owner-tips">')

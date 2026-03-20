@@ -129,6 +129,6 @@
 </div>
 
 ---
-tags: [感染症, 予防医療]
+tags: [その他, 感染症, 予防医療]
 description: フィラリア予防の通年推奨根拠、AHS 3-dose protocol（駆除率98%）、偽陰性対策の血清熱処理、Caval Syndromeの外科対応を解説。
 update: 2026-03-10

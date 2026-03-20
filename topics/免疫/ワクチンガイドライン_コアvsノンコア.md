@@ -128,6 +128,6 @@ WSAVA・AAHA・AAFPガイドラインに基づく分類:
 </div>
 
 ---
-tags: [予防医療, 免疫]
+tags: [その他, 予防医療, 免疫]
 description: WSAVA/AAHA/AAFPガイドラインに基づくコア・ノンコア分類、16週齢以降の最終接種、3年間隔ブースター、FISS予防の接種部位変更を解説。
 update: 2026-03-10
