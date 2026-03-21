@@ -388,9 +388,9 @@
                     <span>血液</span>
                     <span class="genre-count">10</span>
                 </button>
-                <button class="genre-btn" data-genre="消化器・肝臓">
+                <button class="genre-btn" data-genre="消化器">
                     <span class="genre-icon">🍽️</span>
-                    <span>消化器・肝臓</span>
+                    <span>消化器</span>
                     <span class="genre-count">3</span>
                 </button>
                 <button class="genre-btn" data-genre="腫瘍">
@@ -447,12 +447,12 @@
                     
                 
                 
-                <a class="article-card" data-tags="救急" href="topics/下痢/犬の急性下痢_最新エビデンス.html"><span
+                <a class="article-card" data-tags="消化器" href="topics/下痢/犬の急性下痢_最新エビデンス.html"><span
                             class="card-icon">🐕</span>
                         <h3>犬の急性下痢 ─ 最新エビデンス</h3>
                         <p>「とりあえずメトロニダゾール」の時代は終わった？ 最新の治療アプローチを整理。</p>
                         <div class="card-footer">
-<span class="tag tag--primary">救急</span>
+<span class="tag tag--primary">消化器</span>
 <span class="card-papers">📄 参照論文5本</span>
 </div>
                     </a>
@@ -593,13 +593,12 @@
 <span class="card-papers">📄 参照論文5本</span>
 </div>
                     </a>
-                <a class="article-card" data-tags="救急,消化器" href="topics/救急/急性膵炎_犬猫の違いと管理.html"><span
+                <a class="article-card" data-tags="消化器" href="topics/救急/急性膵炎_犬猫の違いと管理.html"><span
                             class="card-icon">🚨</span>
                         <h3>急性膵炎 ─ 犬猫の違いと管理</h3>
                         <p>犬と猫で病態・診断・治療が大きく異なる疾患。犬ではSIRSへの進展リスク、猫では三臓器炎との関連が重要。
                             支持療法が治療の柱であることは変わらないが、近年新薬（fuzapladib）や早期栄養介入に関するエビデンスが蓄積されている。</p>
                         <div class="card-footer">
-<span class="tag tag--primary">救急</span>
 <span class="tag tag--primary">消化器</span>
 <span class="card-papers">📄 参照論文7本</span>
 </div>
@@ -1412,12 +1411,11 @@
 
 </div>
                     </a>
-                <a class="article-card" data-tags="救急,消化器" href="topics/消化器/犬慢性腸症_CE診断カスケード.html"><span
+                <a class="article-card" data-tags="消化器" href="topics/消化器/犬慢性腸症_CE診断カスケード.html"><span
                             class="card-icon">🍽️</span>
                         <h3>犬の慢性腸症（CE）─ 2025年最新「診断カスケード」の実践</h3>
                         <p>慢性の嘔吐・下痢・体重減少 ── まず除去食試験、次に抗菌薬反応性、最後に免疫抑制療法。段階的アプローチで8割が改善。</p>
                         <div class="card-footer">
-<span class="tag tag--primary">救急</span>
 <span class="tag tag--primary">消化器</span>
 <span class="card-papers">📄
                                 参照論文4本</span>
@@ -1686,7 +1684,7 @@
                 '皮膚': '🐾 皮膚',
                 '免疫': '🛡️ 免疫',
                 '血液': '🩸 血液',
-                '消化器・肝臓': '🍽️ 消化器・肝臓',
+                '消化器': '🍽️ 消化器',
                 '腫瘍': '🔬 腫瘍',
                 '神経': '🧠 神経',
                 '内分泌': '⚖️ 内分泌',
@@ -1710,7 +1708,7 @@
                 if (!countEl) return;
                 const genreCount = [...cards].filter(c => {
                     const tgs = c.dataset.tags ? c.dataset.tags.split(',') : [];
-                    if (genre === '消化器・肝臓') {
+                    if (genre === '消化器') {
                         return tgs.includes('消化器') || tgs.includes('肝臓');
                     }
                     return tgs.includes(genre);
@@ -1744,7 +1742,7 @@
 
                     if (targetTag === 'all') {
                         match = true;
-                    } else if (targetTag === '消化器・肝臓') {
+                    } else if (targetTag === '消化器') {
                         match = cardTags.includes('消化器') || cardTags.includes('肝臓');
                     } else {
                         match = cardTags.includes(targetTag);
