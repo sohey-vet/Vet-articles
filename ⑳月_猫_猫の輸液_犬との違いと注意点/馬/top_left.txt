@@ -1,0 +1,4 @@
+Tag: DIV, Classes: x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed x-first x-last, Text: , Rect: 2,3 38x34
+Tag: DIV, Classes: x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed x-first, Text: , Rect: 46,3 38x34
+Tag: DIV, Classes: x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed, Text: , Rect: 84,3 38x34
+Tag: DIV, Classes: x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed x-last, Text: , Rect: 122,3 38x34

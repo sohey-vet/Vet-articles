@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.idea/
+.vscode/
+.DS_Store
+VetEvidence_AutoPost/logs/
+VetEvidence_AutoPost/Canva_CSVs/
+VetEvidence_AutoPost/debug_output.txt
+VetEvidence_AutoPost/sync_log.txt
+*.png
+*.jpg
+*.jpeg
+*.svg

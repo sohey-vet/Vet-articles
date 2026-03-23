@@ -1,0 +1,14 @@
+x=2
+  HTML=<div class="x-inner-el" id="ext-element-2431"><div class="x-body-el" id="ext-element-2430"><div class="x-icon-el x-font-icon x-fa fa-arrow-left" id="ext-element-2432"></div><div class="x-text-el"></div></div><div class="x-arrow-el x-font-icon"></div></div><div class="x-badge-el"></div><button onfocus="return Ext.doEv(this, event);" onblur="return Ext.doEv(this, event);" class="x-button-el" type="button" id="ext-element-2429"></button>
+
+x=46
+  HTML=<div class="x-inner-el" id="ext-element-2436"><div class="x-body-el" id="ext-element-2435"><div class="x-icon-el x-font-icon x-fa fa-arrow-up" id="ext-element-2437"></div><div class="x-text-el"></div></div><div class="x-arrow-el x-font-icon"></div></div><div class="x-badge-el"></div><button onfocus="return Ext.doEv(this, event);" onblur="return Ext.doEv(this, event);" class="x-button-el" type="button" id="ext-element-2434"></button>
+
+x=84
+  HTML=<div class="x-inner-el" id="ext-element-2440"><div class="x-body-el" id="ext-element-2439"><div class="x-icon-el x-font-icon x-fa fa-angle-down" id="ext-element-2441"></div><div class="x-text-el"></div></div><div class="x-arrow-el x-font-icon"></div></div><div class="x-badge-el"></div><button onfocus="return Ext.doEv(this, event);" onblur="return Ext.doEv(this, event);" class="x-button-el" type="button" id="ext-element-2438"></button>
+
+x=122
+  HTML=<div class="x-inner-el" id="ext-element-2444"><div class="x-body-el" id="ext-element-2443"><div class="x-icon-el x-font-icon x-fa fa-arrow-down" id="ext-element-2445"></div><div class="x-text-el"></div></div><div class="x-arrow-el x-font-icon"></div></div><div class="x-badge-el"></div><button onfocus="return Ext.doEv(this, event);" onblur="return Ext.doEv(this, event);" class="x-button-el" type="button" id="ext-element-2442"></button>
+
+x=166
+  HTML=<div class="x-inner-el" id="ext-element-2449"><div class="x-body-el" id="ext-element-2448" style="padding: 0px !important;"><div class="x-icon-el x-font-icon fa-betting" id="ext-element-2450"></div><div class="x-text-el" id="ext-element-2451"><div class="d-ib" style="transform:scaleX(0.7);width:0em;letter-spacing:1px;white-space: nowrap;text-shadow:1px 0px #aaa;">IPAT</div><br>投票</div></div><div class="x-arrow-el x-font-icon"></div></div><div class="x-badge-el"></div><button onfocus="return Ext.doEv(this, event);" onblur="return Ext.doEv(this, event);" class="x-button-el" type="button" id="ext-element-2447"></button>

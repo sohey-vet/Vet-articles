@@ -1,0 +1,46 @@
+ブラウザを起動しています...
+ホーム画面へ...
+中山（index:0）をクリック...
+中山 3R をクリック...
+    レース: found:3R３歳未勝利
+11:05ダ1800
+現在地: unknown title
+画面内のボタン一覧をダンプします:
+  <DIV class='x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed x-first x-last'> txt:[''] html:['<div class="x-inner-el" id="ext-element-2431"><div']
+  <DIV class='x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed x-first'> txt:[''] html:['<div class="x-inner-el" id="ext-element-2436"><div']
+  <DIV class='x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed'> txt:[''] html:['<div class="x-inner-el" id="ext-element-2440"><div']
+  <DIV class='x-component x-button x-has-icon x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed x-last'> txt:[''] html:['<div class="x-inner-el" id="ext-element-2444"><div']
+  <DIV class='x-component x-button x-has-icon x-icon-align-right x-has-text x-arrow-align-right x-button-action x-component-action x-button-minilabel x-component-minilabel x-layout-box-item x-layout-hbox-item x-flexed x-first'> txt:['IPAT 投票'] html:['<div class="x-inner-el" id="ext-element-2449"><div']
+  <DIV class='x-component x-button x-widthed x-icon-align-right x-has-icon s-reserve-badge x-has-badge x-disabled x-arrow-align-right x-button-action x-component-action x-button-bigicon x-component-bigicon x-layout-box-item x-layout-hbox-item x-flexed'> txt:['0'] html:['<div class="x-inner-el" id="ext-element-2454"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-action x-component-action x-button-minilabel x-component-minilabel x-has-menu x-layout-box-item x-layout-hbox-item x-flexed x-last'> txt:['IPAT 照会'] html:['<div class="x-inner-el" id="ext-element-2459"><div']
+  <DIV class='x-component x-button x-has-icon x-has-text x-widthed x-icon-align-left x-arrow-align-right x-button-micro x-component-micro x-layout-box-item x-layout-hbox-item'> txt:['データ 更新'] html:['<div class="x-inner-el" id="ext-element-2468"><div']
+  <DIV class='x-component x-button x-has-text x-has-icon x-widthed x-icon-align-left x-arrow-align-right x-button-micro x-component-micro x-layout-box-item x-layout-hbox-item x-disabled'> txt:['レース 映像'] html:['<div class="x-inner-el" id="ext-element-2473"><div']
+  <DIV class='x-component x-button x-has-icon x-no-arrow x-icon-align-left x-arrow-align-right x-has-menu x-layout-box-item x-layout-hbox-item'> txt:[''] html:['<div class="x-inner-el" id="ext-element-2478"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-biglabel x-component-biglabel x-layout-box-item x-layout-hbox-item x-flexed x-first x-last x-pressed'> txt:['馬'] html:['<div class="x-inner-el" id="ext-element-2817"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-layout-box-item x-layout-hbox-item x-flexed x-first x-pressed'> txt:['全て'] html:['<div class="x-inner-el" id="ext-element-2823"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-minilabel x-component-minilabel x-layout-box-item x-layout-hbox-item x-flexed'> txt:['血統 系統'] html:['<div class="x-inner-el" id="ext-element-2828"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-minilabel x-component-minilabel x-layout-box-item x-layout-hbox-item x-flexed'> txt:['国 系統'] html:['<div class="x-inner-el" id="ext-element-2833"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-minilabel x-component-minilabel x-layout-box-item x-layout-hbox-item x-flexed'> txt:['評価 順位'] html:['<div class="x-inner-el" id="ext-element-2838"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-minilabel x-component-minilabel x-layout-box-item x-layout-hbox-item x-flexed'> txt:['合成 オッズ'] html:['<div class="x-inner-el" id="ext-element-2843"><div']
+  <DIV class='x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-minilabel x-component-minilabel x-layout-box-item x-layout-hbox-item x-flexed x-last'> txt:['過去 ５走'] html:['<div class="x-inner-el" id="ext-element-2848"><div']
+  <DIV class='x-tab x-component x-button x-has-text xs-scaleX80 x-icon-align-left x-arrow-align-right x-button-subtab x-tab-subtab x-component-subtab x-button-single x-tab-single x-component-single x-layout-box-item x-layout-hbox-item x-active'> txt:['出馬表'] html:['<div class="x-inner-el" id="ext-element-3196"><div']
+  <DIV class='x-tab x-component x-button x-has-text xs-scaleX80 x-icon-align-left x-arrow-align-right x-button-subtab x-tab-subtab x-component-subtab x-button-double x-tab-double x-component-double x-layout-box-item x-layout-hbox-item'> txt:['コース データ'] html:['<div class="x-inner-el" id="ext-element-3201"><div']
+  <DIV class='x-tab x-component x-button x-has-text xs-scaleX80 x-icon-align-left x-arrow-align-right x-button-subtab x-tab-subtab x-component-subtab x-button-double x-tab-double x-component-double x-layout-box-item x-layout-hbox-item'> txt:['傾向速報 コース'] html:['<div class="x-inner-el" id="ext-element-3206"><div']
+  <DIV class='x-tab x-component x-button x-has-text xs-scaleX80 x-icon-align-left x-arrow-align-right x-button-subtab x-tab-subtab x-component-subtab x-button-double x-tab-double x-component-double x-layout-box-item x-layout-hbox-item'> txt:['傾向速報 競馬場'] html:['<div class="x-inner-el" id="ext-element-3211"><div']
+  <DIV class='x-tab x-component x-button x-has-text x-icon-align-left x-arrow-align-right x-button-subtab x-tab-subtab x-component-subtab x-button-double x-tab-double x-component-double x-layout-box-item x-layout-hbox-item'> txt:['結果 払戻'] html:['<div class="x-inner-el" id="ext-element-3226"><div']
+  <DIV class='x-tab x-component x-button x-icon-align-top x-has-text x-has-icon x-arrow-align-right x-button-maintab x-tab-maintab x-component-maintab x-layout-box-item x-layout-hbox-item x-active'> txt:['ホーム'] html:['<div class="x-inner-el" id="ext-element-18"><div c']
+  <DIV class='x-tab x-component x-button x-icon-align-top x-has-text x-has-icon x-arrow-align-right x-button-maintab x-tab-maintab x-component-maintab x-layout-box-item x-layout-hbox-item'> txt:['傾向集計'] html:['<div class="x-inner-el" id="ext-element-27"><div c']
+  <DIV class='x-tab x-component x-button x-icon-align-top x-has-text x-has-icon x-arrow-align-right x-button-maintab x-tab-maintab x-component-maintab x-layout-box-item x-layout-hbox-item'> txt:['マイページ'] html:['<div class="x-inner-el" id="ext-element-37"><div c']
+  <DIV class='x-tab x-component x-button x-icon-align-top x-has-text x-has-icon x-arrow-align-right x-button-maintab x-tab-maintab x-component-maintab x-layout-box-item x-layout-hbox-item'> txt:['お知らせ'] html:['<div class="x-inner-el" id="ext-element-57"><div c']
+  <DIV class='x-tab x-component x-button x-icon-align-top x-has-text x-has-icon x-arrow-align-right x-button-maintab x-tab-maintab x-component-maintab x-layout-box-item x-layout-hbox-item'> txt:['環境設定'] html:['<div class="x-inner-el" id="ext-element-62"><div c']
+  <DIV class='x-tab x-component x-button x-icon-align-top x-has-text x-has-icon x-arrow-align-right x-button-maintab x-tab-maintab x-component-maintab x-layout-box-item x-layout-hbox-item'> txt:['ヘルプ'] html:['<div class="x-inner-el" id="ext-element-67"><div c']
+  <DIV class='x-component x-button x-has-icon x-widthed x-has-text x-icon-align-left x-arrow-align-right x-button-action x-component-action x-layout-box-item x-layout-hbox-item'> txt:[''] html:['<div class="x-inner-el" id="ext-element-3548"><div']
+  <DIV class='x-component x-button x-widthed x-has-text x-disabled x-icon-align-left x-arrow-align-right x-button-action x-component-action x-layout-box-item x-layout-hbox-item'> txt:[''] html:['<div class="x-inner-el" id="ext-element-3553"><div']
+  <DIV class='x-component x-button x-has-icon x-icon-align-right x-widthed x-has-text x-arrow-align-right x-button-action x-component-action x-layout-box-item x-layout-hbox-item'> txt:[''] html:['<div class="x-inner-el" id="ext-element-3558"><div']
+  <DIV class='x-component x-button x-widthed x-has-text x-icon-align-left x-arrow-align-right x-button-action x-component-action x-layout-box-item x-layout-hbox-item'> txt:[''] html:['<div class="x-inner-el" id="ext-element-3571"><div']
+  <DIV class='x-component x-button x-has-icon x-widthed x-has-text x-icon-align-left x-arrow-align-right x-button-action x-component-action x-layout-box-item x-layout-hbox-item'> txt:[''] html:['<div class="x-inner-el" id="ext-element-3605"><div']
+↓ボタンを押して 4R へ移動テスト...
+↓矢印ボタンをクリックしましたか？: clicked via condition 1
+5秒待機...
+次レース遷移後の画面上部のテキスト取得:
+移動後現在地: SmartRc
