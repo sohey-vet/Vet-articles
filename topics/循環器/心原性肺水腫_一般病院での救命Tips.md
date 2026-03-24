@@ -172,5 +172,19 @@ graph TD
 
 ---
 
+## 📚 参照論文
+
+1. Del Prete G et al. Continuous positive airway pressure ventilation in dogs with acute cardiogenic pulmonary edema (2023). **JAVMA**
+2. CPAP helmet feasibility and tolerance in dogs with respiratory distress. **J Vet Emerg Crit Care**
+3. Edwards TH et al. PPV for CHF in dogs and cats: retrospective study 1992-2012 (survival 62.5%, 77% post-2005; 2014). **J Vet Emerg Crit Care**
+4. Multi-institutional analysis: MV >24h survival 52.3%, CHF subgroup 43.2% (2019-2025). **JAVMA**
+5. Boswood A et al. EPIC trial ─ pimobendan for preclinical MMVD. **J Vet Intern Med**
+6. Mizuno et al. Pimobendan + conventional therapy: survival 277-334 days vs 136 days (2017). **J Vet Med Sci**
+7. Beaumier A et al. Clinical findings and survival time in dogs with advanced heart failure ─ high-dose furosemide (2018). **J Vet Intern Med**
+8. Emergency management of congestive heart failure in dogs (review). **dvm360**
+9. Cornell University: CPAP mechanism and settings for veterinary use. **cornell.edu**
+
+---
+
 tags: [循環器, 救急, 肺水腫, 呼吸器]
 update: 2026-03-24
