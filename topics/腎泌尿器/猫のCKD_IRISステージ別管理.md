@@ -35,42 +35,51 @@
 <div class="mermaid-wrapper">
 <pre class="mermaid">
 graph TB
-    A["CKD診断開始"] --> B{"7歳以上/多飲多尿"}
-    B -- Yes --> C["初期検査(Cre,SDMA)"]
+    A["CKD診断開始"] -->|7歳以上/多飲多尿| C["初期検査(Cre,SDMA)"]
 
     subgraph IRIS分類
         D{"持続的腎障害?"}
-        D -- No --> E["定期検診へ"]
-        D -- Yes --> F{"Cre値判定"}
+        D -->|No| E["定期検診へ"]
+        D -->|Yes| F{"Cre値判定"}
 
-        F -- 1.6未 --> G{"SDMA判定"}
-        G -- 14未 --> S1_NC["Stg1(他徴候)"]
-        G -- 14から17 --> S1_SDMA["Stg1(SDMA高)"]
-        G -- 18以上 --> S2_SDMA["Stg2(SDMA高)"]
+        F -->|1.6未満| G{"SDMA判定"}
+        G -->|14未満| S1_NC["Stg1(他徴候)"]
+        G -->|14-17| S1_SDMA["Stg1(SDMA高)"]
+        G -->|18以上| S2_SDMA["Stg2(SDMA高)"]
 
-        F -- 1.6から2.8 --> S2_Cre["Stg2"]
-        F -- 2.9から5.0 --> S3["Stg3"]
-        F -- 5.0超 --> S4["Stg4"]
+        F -->|1.6-2.8| S2_Cre["Stg2"]
+        F -->|2.9-5.0| S3["Stg3"]
+        F -->|5.0超| S4["Stg4"]
     end
 
-    S1_NC & S1_SDMA --> M1["Stg1管理(モニタ)"]
-    S2_SDMA & S2_Cre --> M2["Stg2管理(腎臓食)"]
+    S1_NC --> M1["Stg1管理(モニタ)"]
+    S1_SDMA --> M1
+    S2_SDMA --> M2["Stg2管理(腎臓食)"]
+    S2_Cre --> M2
     S3 --> M3["Stg3管理(リン吸着)"]
     S4 --> M4["Stg4管理(皮下補液)"]
 
-    M1 & M2 & M3 & M4 --> O["合併症評価"]
+    M1 --> O["合併症評価"]
+    M2 --> O
+    M3 --> O
+    M4 --> O
 
     subgraph 合併症
-        O -- 高血圧 --> T_BP["アムロジピン"]
-        O -- 蛋白尿 --> T_Pro["テルミサルタン"]
-        O -- 貧血 --> T_Anemia["EPO製剤等"]
-        O -- 嘔吐 --> T_GI["止吐薬"]
-        O -- 脱水 --> T_Dehyd["皮下補液"]
+        O -->|高血圧| T_BP["アムロジピン"]
+        O -->|蛋白尿| T_Pro["テルミサルタン"]
+        O -->|貧血| T_Anemia["EPO製剤等"]
+        O -->|嘔吐| T_GI["止吐薬"]
+        O -->|脱水| T_Dehyd["皮下補液"]
     end
 
-    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続管理"]
+    T_BP --> P["継続管理"]
+    T_Pro --> P
+    T_Anemia --> P
+    T_GI --> P
+    T_Dehyd --> P
     E --> P
-    S1_NC & S1_SDMA -- 合併症なし --> P
+    S1_NC -->|合併症なし| P
+    S1_SDMA -->|合併症なし| P
 </pre>
 </div>
 
