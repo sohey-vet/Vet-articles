@@ -70,6 +70,21 @@ def md_to_html_body(md_text: str) -> str:
                 if depth <= 0:
                     break
             continue
+            
+        # Mermaid blocks must be appended exactly as pure HTML without <p> wrappers
+        if stripped.startswith('<div class="mermaid-wrapper">'):
+            depth = 0
+            mermaid_buf = []
+            while i < len(lines):
+                l = lines[i]
+                mermaid_buf.append(l)
+                depth += l.count('<div')
+                depth -= l.count('</div>')
+                i += 1
+                if depth <= 0 and '</div' in l:
+                    break
+            result.append('\n'.join(mermaid_buf))
+            continue
 
         is_bullet = stripped.startswith('- ') or stripped.startswith('✅ ') or stripped.startswith('* ')
         is_number = re.match(r'^\d+\. ', stripped)
