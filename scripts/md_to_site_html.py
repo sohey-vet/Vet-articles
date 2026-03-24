@@ -408,18 +408,8 @@ def convert_md_to_html(md_path: Path) -> Path:
                 raw_conclusion = after[:next_heading.start()].strip()
             else:
                 raw_conclusion = after.strip()
-            # Check if it contains bullet points
-            bullet_lines = [l.strip() for l in raw_conclusion.splitlines()
-                          if l.strip() and re.match(r'^[-・*]', l.strip())]
-            if bullet_lines:
-                conclusion_items = []
-                for bl in bullet_lines:
-                    item = re.sub(r'^[-・*]\s*', '', bl)
-                    item = format_inline(item)
-                    conclusion_items.append(f'<li>{item}</li>')
-                conclusion_html = '<ul>' + ''.join(conclusion_items) + '</ul>'
-            else:
-                conclusion_html = f'<p style="font-size:0.88rem;">{format_inline(raw_conclusion)}</p>'
+            # Use universal md_to_html_body for the entire conclusion
+            conclusion_html = f'<div class="conclusion-content" style="font-size:0.88rem;">\n{md_to_html_body(raw_conclusion)}\n</div>'
             break
 
     # Body sections - split by ## headers
