@@ -1,40 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="" name="description"/>
-<title>💊 抗菌薬選択の基本原則 ─ 臓器別アプローチ | VetEvidence</title>
+<meta content="獣医臨床における抗菌薬選択の基本原則。ISCAID/AAHAガイドラインに基づく臓器別第一選択薬と耐性菌対策。" name="description"/>
+<title>抗菌薬選択の基本原則 ─ 臓器別アプローチ | VetEvidence</title>
 <link href="../../assets/style.css?v=20260304v5" rel="stylesheet"/>
 </head>
 <body class="mode-premium">
 <nav class="mobile-nav">
 <span class="nav-brand">🩺 VetEvidence</span>
-<button aria-label="メニュー" class="hamburger-btn">
-<span></span><span></span><span></span>
-</button>
+<button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button>
 </nav>
 <div class="slide-menu-overlay"></div>
 <aside class="slide-menu">
 <h4>ナビゲーション</h4>
 <a href="../../index.html">🏠 トップ</a>
-<a href="#owner-tips">🗣️ 飼い主説明</a>
+<a href="#conclusion">🎯 結論</a>
+<a href="#action-table">🗺️ 臓器別一覧</a>
+<a href="#tier">📊 階層化</a>
+<a href="#culture">🔬 培養の判断</a>
 <a href="#refs">📚 参照論文</a>
-<h4>情報ソース</h4>
-<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
 </aside>
 <div class="page-container">
 <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
-<div class="tags" style="margin-bottom: 8px;">
-<a class="tag tag--secondary" href="../../index.html?tag=%E3%81%9D%E3%81%AE%E4%BB%96">その他</a><a class="tag tag--primary" href="../../index.html?tag=%E6%8A%97%E8%8F%8C%E8%96%AC">抗菌薬</a>
-</div>
+<div class="tags" style="margin-bottom:8px;"><a class="tag tag--primary" href="../../index.html?tag=%E6%8A%97%E8%8F%8C%E8%96%AC">抗菌薬</a></div>
 <h1 style="font-size: 1.3rem;">💊 抗菌薬選択の基本原則 ─ 臓器別アプローチ</h1>
 <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
-
-</p>
+                「とりあえずセフェム」から卒業する。ISCAID（国際コンパニオンアニマル感染症学会）/AAHA（米国動物病院協会）ガイドラインに基づく合理的な抗菌薬選択。
+            </p>
 <div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
-<div class="meta-item"><span class="icon">📄</span><span>参照論文0本</span></div>
-<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+<div class="meta-item"><span class="icon">🔄</span><span>2026年2月更新</span></div>
 </div>
 </header>
 <div class="content-mode-bar">
@@ -45,16 +43,131 @@
 </label>
 <span class="mode-label">👑 すべて表示</span>
 </div>
-<!-- FREE ZONE -->
+<!-- 🎯 結論 -->
 <div class="free-content" id="conclusion">
-<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
-<h3 style="font-size:0.95rem;">🎯 結論</h3>
-<div style="font-size:0.88rem;">
+<div class="bottom-line" style="margin-top: 0; padding: var(--space-md) var(--space-lg);">
+<h3 style="font-size: 0.95rem;">🎯 結論</h3>
+<p style="font-size: 0.88rem;">
+                    抗菌薬は<strong>「臓器 × 起因菌 × 第一選択」</strong>の3軸で選ぶ。
+                    まず第一選択薬（アモキシシリン、第一世代セフェム、ST合剤）を検討し、<strong>フルオロキノロン・第三世代セフェムは最終手段</strong>として温存する。
+                    → 培養検査なしでの経験的治療は「単純症例 × 初回」に限る。
 
+<!-- 個別生成図表 -->
+<div class="mermaid-wrapper"><pre class="mermaid">
+graph TD
+    A["感染症を疑う"] --> B{"抗菌薬必要か"}
+    B -->|"いいえ"| C["対症療法 経過観察"]
+    B -->|"はい"| D{"感染種類 重症度"}
+
+    D -->|"単純 初回"| E["経験的治療"]
+    D -->|"複雑 再発 重症"| F["培養検査推奨"]
+
+    E --> G["Tier 1 抗菌薬"]
+    F --> H["培養結果待ち Tier 1/2"]
+
+    G --> I{"臨床改善 3-5日"}
+    H --> J{"培養結果判明"}
+
+    I -->|"改善あり"| K["治療継続 期間遵守"]
+    I -->|"改善なし"| F
+
+    J -->|"感受性あり"| K
+    J -->|"感受性なし"| L["Tier 3 検討"]
+
+    L --> M["感受性確認後 慎重使用"]
+
+    K --> N["治療完了"]
+    M --> N
+
+    subgraph 抗菌薬グループ
+        G -->|"例: アモキシシリン ST合剤 セファレキシン"| I
+        L -->|"例: フルオロキノロン 第3世代セフェム"| M
+    end
+</pre></div>
+</p>
 </div>
 </div>
+<!-- 🗺️ 臓器別 第一選択薬一覧 -->
+<div class="free-content" id="action-table">
+<div class="card" style="margin-top: var(--space-md);">
+<h3 style="font-size: 0.95rem; margin-bottom: 8px;">🗺️ 臓器別 第一選択薬</h3>
+<table class="comparison-table" style="margin: 0;">
+<thead>
+<tr>
+<th>臓器・疾患</th>
+<th>第一選択</th>
+<th>培養の要否</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>散発性細菌性膌胱炎<br/><small style="font-weight:normal;opacity:0.7;">尿路感染症</small></strong>
+</td>
+<td>アモキシシリン<br/>ST合剤<small style="opacity:0.7;">（スルファメトキサゾール・トリメトプリム）</small></td>
+<td>初回であっても可能な限り全例で培養を推奨</td>
+</tr>
+<tr>
+<td><strong>複雑性UTI<br/><small style="font-weight:normal;opacity:0.7;">尿路感染症</small></strong>
+</td>
+<td>培養結果に基づく</td>
+<td><strong>必須</strong></td>
+</tr>
+<tr>
+<td><strong>表在性膿皮症</strong></td>
+<td>外用抗菌薬が第一<br/>全身投与ならセファレキシン</td>
+<td>再発・難治例で</td>
+</tr>
+<tr>
+<td><strong>猫上部気道</strong></td>
+<td>10日間の経過観察<br/>→ドキシサイクリン</td>
+<td>通常不要</td>
+</tr>
+<tr>
+<td><strong>周術期予防</strong></td>
+<td>セファゾリン IV<br/>（執刀30分前）</td>
+<td>不要</td>
+</tr>
+<tr>
+<td><strong>歯科処置</strong></td>
+<td>原則不要<br/>（全身疾患ある場合のみ）</td>
+<td>不要</td>
+</tr>
+</tbody>
+</table>
 </div>
-<!-- PREMIUM ZONE -->
+</div>
+<!-- ⚡ 旧来 vs 今 -->
+<div class="free-content">
+<div class="card" style="margin-top: var(--space-md);">
+<h3 style="font-size: 0.95rem; margin-bottom: 8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+<table class="comparison-table" style="margin: 0;">
+<thead>
+<tr>
+<th>❌ 旧来</th>
+<th>✅ 最新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UTIにはエンロフロキサシン</td>
+<td>散発性UTIにFQ（フルオロキノロン）は過剰。アモキシシリンで十分</td>
+</tr>
+<tr>
+<td>膿皮症＝即内服抗菌薬</td>
+<td>表在性なら外用療法（クロルヘキシジン等）が第一選択</td>
+</tr>
+<tr>
+<td>猫の鼻水＝即抗菌薬</td>
+<td>ウイルス性が大半。10日間は経過観察が推奨</td>
+</tr>
+<tr>
+<td>歯科処置前に抗菌薬予防投与</td>
+<td>健康な犬猫では不要（心疾患等の既往がある場合のみ）</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <hr class="section-divider"/>
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
 <h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
@@ -63,15 +176,134 @@
 <button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
 </div>
 </div>
-
-
-
+<!-- セクション1: 階層化 -->
+<div id="tier">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📊</span><span>抗菌薬の階層化 ─ 第一選択 vs
+                            第二選択</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>要点</h4>
+<ul>
+<li>AAFP（米国猫医療専門家協会）/AAHA 2022ガイドラインはAVMA（米国獣医師会）の5原則に基づく</li>
+<li><strong>第一選択（Tier 1）</strong>: アモキシシリン±クラブラン酸、第一世代セフェム（セファレキシン）、ST合剤</li>
+<li><strong>第二選択（Tier 2）</strong>: ドキシサイクリン、クリンダマイシン、クロラムフェニコール</li>
+<li><strong>最終手段（Tier 3）</strong>: フルオロキノロン（エンロ・マルボ）、第三世代セフェム → 培養で感受性確認後のみ</li>
+</ul>
+</div>
+<p>ISCAIDガイドラインでは、臓器別に推奨される抗菌薬が明確に示されている。共通する原則は<strong>「最も狭域スペクトラムの薬剤を、十分な期間で使う」</strong>こと。
+                        </p>
+<p>2024年の研究では、施設レベルのAMS（抗菌薬スチュワードシップ: 抗菌薬の適正使用推進活動）ガイドライン導入により、CIAs（Critically Important
+                            Antimicrobials: 人医療にとって極めて重要な抗菌薬）の処方が有意に減少したことが報告されている。</p>
+<div class="warning-box">
+<h4>フルオロキノロンの安易な使用を避ける理由</h4>
+<p>WHO（世界保健機関）が「人医療にとって最も重要な抗菌薬」に分類。獣医領域での乱用は、MRSA（メチシリン耐性黄色ブドウ球菌）/MRSP（メチシリン耐性ブドウ球菌）など多剤耐性菌の選択圧を高める。
+                            </p>
+</div>
+<div class="clinical-tip">
+<h4>臨床アクション</h4>
+<p>まず「本当に抗菌薬が必要か？」を問う → 必要なら第一選択薬 → 効果不十分なら培養検査 → 結果に基づき変更。</p>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- セクション2: 培養 -->
+<div id="culture">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🔬</span><span>培養検査 ─ いつ出す？
+                            いつ出さない？</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="key-findings" style="margin-top:0;">
+<h4>培養を出すべき場面</h4>
+<ul>
+<li>複雑性・再発性UTI</li>
+<li>難治性・再発性膿皮症</li>
+<li>第一選択薬に反応しない感染症</li>
+<li>院内感染が疑われる症例</li>
+<li>免疫抑制状態の患者</li>
+</ul>
+</div>
+<p>初回の散発性感染症（散発性細菌性膀胱炎、初発の表在性膿皮症）であっても、初回から可能な限り全例で培養検査を行うことが推奨される。ただし結果判明前に経験的治療を開始し、3〜5日で臨床改善がなければ感受性結果に基づき切り替える。
+                        </p>
+<div class="clinical-tip">
+<h4>臨床アクション</h4>
+<p>培養の費用対効果を飼い主に説明する際は「的確な抗菌薬を選ぶことで治療期間が短くなり、結果的にコストダウンにつながる」とフレーミングする。</p>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 飼い主説明 -->
+<div id="owner-tips">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<div class="owner-tip" style="margin-top:0;">
+<h4>なぜ強い抗生剤を最初から使わないの？</h4>
+<div class="speech-bubble">
+                                強い薬を最初から使うと、バイ菌がそれに慣れてしまい、本当に困ったときに効かなくなることがあります。まず効果の穏やかな薬で治療して、それで治らなければ検査をして最適な薬を選びます。
+                            </div>
+</div>
+<div class="owner-tip">
+<h4>症状が良くなったら途中でやめてもいい？</h4>
+<div class="speech-bubble">
+                                途中でやめると、生き残ったバイ菌が薬に強くなって再発しやすくなります。処方された期間は最後まで飲み切ってください。
+                            </div>
+</div>
+</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+</div>
+</div>
+</div>
+<!-- 参照論文 -->
+<div id="refs">
+<div class="accordion">
+<button class="accordion-trigger">
+<span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+<span class="chevron">▼</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body premium-content">
+<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+<li>AAFP/AAHA Antimicrobial Stewardship Guidelines (2022). <em>JAAHA</em></li>
+<li>Weese JS et al. ISCAID guidelines for UTI diagnosis and management in dogs and cats
+                                (2019). <em>Vet J</em></li>
+<li>Hillier A et al. ISCAID guidelines for superficial bacterial folliculitis in dogs
+                                (2014). <em>Vet Dermatol</em></li>
+<li>Lappin MR et al. ISCAID guidelines for respiratory tract disease in dogs and cats
+                                (2017). <em>J Vet Intern Med</em></li>
+<li>Effect of institutional AMS guidelines on CIA prescribing in dogs and cats (2024). <em>J
+                                    Vet Intern Med</em></li>
+<li>Guardabassi L, Prescott JF. Antimicrobial Stewardship in Small Animal Veterinary
+                                Practice: From Theory to Practice (2015). <em>Vet Clin North Am Small Anim Pract</em>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <footer class="page-footer" style="margin-top: var(--space-xl);">
 <p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
 <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
-※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+                ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
 </div>
 <script src="../../assets/script.js?v=20260304v5"></script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
 </body>
 </html>
