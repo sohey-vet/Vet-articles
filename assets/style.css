@@ -1648,3 +1648,28 @@ body.mode-free .premium-lock {
 #owner-tips .accordion-body {
   border-top: 1px solid rgba(168, 85, 247, 0.15);
 }
+
+/* ============================================
+   Mermaid Flowchart - Pro Mobile Readability Enhancements
+   ============================================ */
+/* Increase line thickness for connector arrows */
+.mermaid svg .edgePath .path {
+  stroke-width: 2.5px !important;
+}
+/* Increase border thickness for all node shapes (rectangles, diamonds) */
+.mermaid svg .node rect,
+.mermaid svg .node circle,
+.mermaid svg .node ellipse,
+.mermaid svg .node polygon,
+.mermaid svg .node path {
+  stroke-width: 2.5px !important;
+}
+/* Make the text on arrows (branch labels) slightly bolder */
+.mermaid svg .edgeLabel {
+  font-weight: 600 !important;
+  font-size: 1.05em !important;
+}
+/* Make the text inside the nodes (rectangles, diamonds) slightly bolder */
+.mermaid svg .node .label {
+  font-weight: 600 !important;
+}
