@@ -23,6 +23,12 @@ def main():
         if basename not in date_map or date_str < date_map[basename]:
             date_map[basename] = date_str
 
+    hardcoded_map = {
+        "中毒_初期対応と活性炭": "犬猫の中毒_よくある原因物質と初期対応",
+        "犬の高浸透圧高血糖症候群_HHSの罠": "犬のHHS_高浸透圧高血糖症候群の罠",
+        "猫の糖尿病性ケトアシドーシス_DKAの緊急管理": "猫のDKA_糖尿病性ケトアシドーシスの緊急管理"
+    }
+
     with open(index_path, "r", encoding="utf-8") as f:
         index_html = f.read()
 
@@ -38,12 +44,10 @@ def main():
     
     grid_content = index_html[start_idx:grid_end_idx]
 
-    # Split by <a class="article-card"
     parts = grid_content.split('<a class="article-card"')
     cards = []
     
     for p in parts[1:]:
-        # The card contents are up to the first </a>
         card_inner = p.split('</a>')[0]
         full_card = f'<a class="article-card"{card_inner}</a>'
         cards.append(full_card)
@@ -56,6 +60,10 @@ def main():
             href = href_match.group(1)
             href_decoded = urllib.parse.unquote(href)
             basename = os.path.basename(href_decoded).replace('.html', '')
+            
+            if basename in hardcoded_map:
+                basename = hardcoded_map[basename]
+                
             if basename in date_map:
                 return date_map[basename]
             for mapped_name, mapped_date in date_map.items():
@@ -76,7 +84,7 @@ def main():
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(new_index_html)
 
-    print("index.html rewritten successfully!")
+    print("index.html rewritten successfully with new mapping!")
 
 if __name__ == "__main__":
     main()
