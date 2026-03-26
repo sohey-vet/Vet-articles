@@ -1,0 +1,3353 @@
+commit 9d8cf58b9da621a7bb41e59f73f8c1adb088b130
+Author: Sohey <souhei1219@gmail.com>
+Date:   Sat Mar 21 08:09:57 2026 +0900
+
+    Apply strict user-defined tagging to 64 specific articles and synchronize index.html
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index ccf031f..c37f7df 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -26,7 +26,7 @@
+ <div class="page-container">
+ <header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+ <div class="tags" style="margin-bottom: 8px;">
+-<a class="tag tag--primary" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">腎泌尿器CKD（慢性腎臓病）IRIS（国際腎臓学会）</a>
++<a class="tag tag--primary" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a>
+ </div>
+ <h1 style="font-size: 1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+ <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+
+commit b1ba6afbe72b30e9b8bdc3332421b07cc1d40c56
+Author: Sohey <souhei1219@gmail.com>
+Date:   Fri Mar 20 13:08:21 2026 +0900
+
+    Fix md_to_site_html.py metadata parsing, update その他 tags across MDs, regenerate HTML
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 9ef48ea..ccf031f 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -1,257 +1,77 @@
+ <!DOCTYPE html>
+-
+ <html lang="ja">
+ <head>
+ <meta charset="utf-8"/>
+-<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+-<meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+-<title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
++<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
++<meta content="" name="description"/>
++<title>🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理 | VetEvidence</title>
+ <link href="../../assets/style.css?v=20260304v5" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+-<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
++<nav class="mobile-nav">
++<span class="nav-brand">🩺 VetEvidence</span>
++<button aria-label="メニュー" class="hamburger-btn">
++<span></span><span></span><span></span>
++</button>
++</nav>
+ <div class="slide-menu-overlay"></div>
+ <aside class="slide-menu">
+-<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
+-            ステージ別</a><a href="#refs">📚 論文</a>
++<h4>ナビゲーション</h4>
++<a href="../../index.html">🏠 トップ</a>
++<a href="#owner-tips">🗣️ 飼い主説明</a>
++<a href="#refs">📚 参照論文</a>
++<h4>情報ソース</h4>
++<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+ </aside>
+ <div class="page-container">
+-<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+-<div class="tags" style="margin-bottom:8px;"><a class="tag tag--primary" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a></div>
+-<h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+-<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+-<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+-<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+-<div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
++<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
++<div class="tags" style="margin-bottom: 8px;">
++<a class="tag tag--primary" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">腎泌尿器CKD（慢性腎臓病）IRIS（国際腎臓学会）</a>
++</div>
++<h1 style="font-size: 1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
++<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
++
++</p>
++<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
++<div class="meta-item"><span class="icon">📄</span><span>参照論文0本</span></div>
++<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+ </div>
+ </header>
+-<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
++<div class="content-mode-bar">
++<span>📋</span>
++<label class="toggle-switch">
++<input checked="" id="content-mode-toggle" type="checkbox"/>
++<span class="toggle-slider"></span>
++</label>
++<span class="mode-label">👑 すべて表示</span>
++</div>
++<!-- FREE ZONE -->
+ <div class="free-content" id="conclusion">
+ <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+ <h3 style="font-size:0.95rem;">🎯 結論</h3>
+-<p style="font-size:0.88rem;">
+-<strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
+-                </p>
++<div style="font-size:0.88rem;">
++
++</div>
+ </div>
+ </div>
+-<div class="free-content" id="action-table">
+-<div class="card" style="margin-top:var(--space-md);">
+-<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
+-<table class="comparison-table" style="margin:0;">
+-<thead>
+-<tr>
+-<th>ステージ</th>
+-<th>Cre (mg/dL)</th>
+-<th>管理</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td><strong>1</strong></td>
+-<td>&lt;1.6</td>
+-<td>モニタリング、水分摂取促進<br/>SDMA 14〜17で注意</td>
+-</tr>
+-<tr>
+-<td><strong>2</strong></td>
+-<td>1.6〜2.8</td>
+-<td><strong>腎臓食導入</strong>、リン制限<br/>血圧・蛋白尿チェック</td>
+-</tr>
+-<tr>
+-<td><strong>3</strong></td>
+-<td>2.9〜5.0</td>
+-<td>腎臓食＋リン吸着剤<br/>補液検討、貧血管理</td>
+-</tr>
+-<tr>
+-<td><strong>4</strong></td>
+-<td>&gt;5.0</td>
+-<td>積極的補液、対症療法<br/>QOL重視の管理</td>
+-</tr>
+-</tbody>
+-</table>
++<!-- PREMIUM ZONE -->
++<hr class="section-divider"/>
++<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
++<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
++<div>
++<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
++<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+ </div>
+ </div>
+-<div class="free-content">
+-<div class="card" style="margin-top:var(--space-md);">
+-<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+-<table class="comparison-table" style="margin:0;">
+-<thead>
+-<tr>
+-<th>❌ 旧来</th>
+-<th>✅ 最新</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td>腎臓病＝極端なタンパク質制限</td>
+-<td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
+-</tr>
+-<tr>
+-<td>クレアチニンだけでステージング</td>
+-<td>SDMAを併用し早期ステージの見落としを防ぐ</td>
+-</tr>
+-<tr>
+-<td>腎臓病の猫にリンは無関係</td>
+-<td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
+-</tr>
+-</tbody>
+-</table>
+-<!-- 個別生成図表 -->
+-<div class="mermaid-wrapper"><pre class="mermaid">
+-graph TD
+-    A["猫のCKD診断・管理アルゴリズム"] --> B{"猫: 7歳以上 / CKD症状 / 定期検診"}
+-    B -- Yes --> C["初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定"]
+-
+-    subgraph IRISステージ分類
+-        D{"持続的な腎疾患の存在?"}
+-        D -- No --> E["非CKD: 定期再評価"]
+-        D -- Yes --> F{"Cre (mg/dL) の評価"}
+-
+-        F -- <1.6 --> G{"SDMA (µg/dL) の評価"}
+-        G -- <14 --> S1_NC["ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり"]
+-        G -- 14-17 --> S1_SDMA["ステージ1: Cre正常・SDMA軽度高値"]
+-        G -- >=18 (持続的) --> S2_SDMA["ステージ2: Cre正常・SDMA高値によりステージアップ"]
+-
+-        F -- 1.6-2.8 --> S2_Cre["ステージ2: Cre中等度高値"]
+-        F -- 2.9-5.0 --> S3["ステージ3: Cre高値"]
+-        F -- >5.0 --> S4["ステージ4: Cre非常に高値"]
+-    end
+-
+-    S1_NC & S1_SDMA --> M1["ステージ1管理: モニタリング強化, 水分摂取促進"]
+-    S2_SDMA & S2_Cre --> M2["ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック"]
+-    S3 --> M3["ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理"]
+-    S4 --> M4["ステージ4管理: 積極的補液, 対症療法, QOL重視"]
+ 
+-    M1 & M2 & M3 & M4 --> O["合併症の評価と管理"]
+ 
+-    subgraph 主要な合併症管理
+-        O -- 高血圧 (SBP≥160mmHg) --> T_BP["アムロジピン"]
+-        O -- 蛋白尿 (UPC≥0.4) --> T_Pro["テルミサルタン"]
+-        O -- 貧血 --> T_Anemia["モリデュスタット/EPO"]
+-        O -- 嘔気/食欲不振 --> T_GI["マロピタント/ミルタザピン"]
+-        O -- 脱水 --> T_Dehyd["自宅皮下補液指導"]
+-    end
+ 
+-    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続的な管理と再評価"]
+-    E --> P
+-    S1_NC -- No合併症 --> P
+-    S1_SDMA -- No合併症 --> P
+-</pre></div>
+-</div>
+-</div>
+-<hr class="section-divider"/>
+-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+-<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+-<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>要点</h4>
+-<ul>
+-<li>SDMA: 腎機能が約25%低下で上昇開始</li>
+-<li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
+-<li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
+-<li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
+-                                μg/dLはステージ1）</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>要点</h4>
+-<ul>
+-<li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
+-<li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
+-<li>IRISステージ2で導入推奨</li>
+-<li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>合併症と対応</h4>
+-<ul>
+-<li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
+-<li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
+-<li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
+-<li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
+-<li><strong>脱水</strong> → 自宅皮下補液の指導</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div id="owner-tips">
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="owner-tip" style="margin-top:0;">
+-<h4>腎臓病は治るの？</h4>
+-<div class="speech-bubble">
+-                                残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
+-                            </div>
+-</div>
+-<div class="owner-tip">
+-<h4>腎臓食を食べてくれない…</h4>
+-<div class="speech-bubble">
+-                                いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+-</div>
+-</div>
+-</div>
+-<div id="refs">
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+-<li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
+-<li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
+-<li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
+-<li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
+-                                    Feline Med
+-                                    Surg</em></li>
+-<li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em>
+-</li>
+-<li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
+-</ol>
+-</div>
+-</div>
+-</div>
+-</div>
+-<footer class="page-footer" style="margin-top:var(--space-xl);">
+-<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
++<footer class="page-footer" style="margin-top: var(--space-xl);">
++<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+ <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+-                ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
++※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+ <script src="../../assets/script.js?v=20260304v5"></script>
+-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit c29d6dfa130aba9055e7a7ee4d94e553d4efea68
+Author: Sohey <souhei1219@gmail.com>
+Date:   Fri Mar 6 10:46:12 2026 +0900
+
+    fix(tags): refactor all article tags, sync with index.html, and define new tagging rules as a skill
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 047a665..9ef48ea 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -17,9 +17,7 @@
+ </aside>
+ <div class="page-container">
+ <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+-<div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a class="tag tag--success" href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
+-<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a>
+-</div>
++<div class="tags" style="margin-bottom:8px;"><a class="tag tag--primary" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a></div>
+ <h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+ <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+ <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+
+commit 7d40a93a3b0042d78ce2870017988f3d45ae82a2
+Author: Sohey <souhei1219@gmail.com>
+Date:   Thu Mar 5 09:22:47 2026 +0900
+
+    feat: Standardize all 94 articles + add 8 Skills workflows
+    
+    - Restore 5 empty articles from Git (IMHA, pulmonary edema, antibiotics, IVDD, CKD)
+    - Unify CSS/JS version to 20260304v5 across all 94 articles
+    - Convert owner-tips to owner-tip/speech-bubble format (purple border)
+    - Add premium-content/premium-lock classes
+    - Create 8 Skills: html-structure, version-control, md-writing-rules,
+      conversion-pipeline, project-map, note-posting, x-posting, index-management
+    - Remove old artifacts and proofreading drafts
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 65800fa..047a665 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -1,77 +1,259 @@
+ <!DOCTYPE html>
++
+ <html lang="ja">
+ <head>
+ <meta charset="utf-8"/>
+-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+-<meta content="" name="description"/>
+-<title>🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理 | VetEvidence</title>
++<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
++<meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
++<title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+ <link href="../../assets/style.css?v=20260304v5" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+-<nav class="mobile-nav">
+-<span class="nav-brand">🩺 VetEvidence</span>
+-<button aria-label="メニュー" class="hamburger-btn">
+-<span></span><span></span><span></span>
+-</button>
+-</nav>
++<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+ <div class="slide-menu-overlay"></div>
+ <aside class="slide-menu">
+-<h4>ナビゲーション</h4>
+-<a href="../../index.html">🏠 トップ</a>
+-<a href="#owner-tips">🗣️ 飼い主説明</a>
+-<a href="#refs">📚 参照論文</a>
+-<h4>情報ソース</h4>
+-<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
++<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
++            ステージ別</a><a href="#refs">📚 論文</a>
+ </aside>
+ <div class="page-container">
+-<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
+-<div class="tags" style="margin-bottom: 8px;">
+-<a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
++<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
++<div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a class="tag tag--success" href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
++<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a>
+ </div>
+-<h1 style="font-size: 1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+-<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+-
+-</p>
+-<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
+-<div class="meta-item"><span class="icon">📄</span><span>参照論文0本</span></div>
+-<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
++<h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
++<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
++<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
++<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
++<div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
+ </div>
+ </header>
+-<div class="content-mode-bar">
+-<span>📋</span>
+-<label class="toggle-switch">
+-<input checked="" id="content-mode-toggle" type="checkbox"/>
+-<span class="toggle-slider"></span>
+-</label>
+-<span class="mode-label">👑 すべて表示</span>
+-</div>
+-<!-- FREE ZONE -->
++<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
+ <div class="free-content" id="conclusion">
+ <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+ <h3 style="font-size:0.95rem;">🎯 結論</h3>
+-<div style="font-size:0.88rem;">
+-
++<p style="font-size:0.88rem;">
++<strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
++                </p>
+ </div>
+ </div>
+-</div>
+-<!-- PREMIUM ZONE -->
+-<hr class="section-divider"/>
+-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+-<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
+-<div>
+-<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
+-<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
++<div class="free-content" id="action-table">
++<div class="card" style="margin-top:var(--space-md);">
++<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
++<table class="comparison-table" style="margin:0;">
++<thead>
++<tr>
++<th>ステージ</th>
++<th>Cre (mg/dL)</th>
++<th>管理</th>
++</tr>
++</thead>
++<tbody>
++<tr>
++<td><strong>1</strong></td>
++<td>&lt;1.6</td>
++<td>モニタリング、水分摂取促進<br/>SDMA 14〜17で注意</td>
++</tr>
++<tr>
++<td><strong>2</strong></td>
++<td>1.6〜2.8</td>
++<td><strong>腎臓食導入</strong>、リン制限<br/>血圧・蛋白尿チェック</td>
++</tr>
++<tr>
++<td><strong>3</strong></td>
++<td>2.9〜5.0</td>
++<td>腎臓食＋リン吸着剤<br/>補液検討、貧血管理</td>
++</tr>
++<tr>
++<td><strong>4</strong></td>
++<td>&gt;5.0</td>
++<td>積極的補液、対症療法<br/>QOL重視の管理</td>
++</tr>
++</tbody>
++</table>
+ </div>
+ </div>
++<div class="free-content">
++<div class="card" style="margin-top:var(--space-md);">
++<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
++<table class="comparison-table" style="margin:0;">
++<thead>
++<tr>
++<th>❌ 旧来</th>
++<th>✅ 最新</th>
++</tr>
++</thead>
++<tbody>
++<tr>
++<td>腎臓病＝極端なタンパク質制限</td>
++<td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
++</tr>
++<tr>
++<td>クレアチニンだけでステージング</td>
++<td>SDMAを併用し早期ステージの見落としを防ぐ</td>
++</tr>
++<tr>
++<td>腎臓病の猫にリンは無関係</td>
++<td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
++</tr>
++</tbody>
++</table>
++<!-- 個別生成図表 -->
++<div class="mermaid-wrapper"><pre class="mermaid">
++graph TD
++    A["猫のCKD診断・管理アルゴリズム"] --> B{"猫: 7歳以上 / CKD症状 / 定期検診"}
++    B -- Yes --> C["初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定"]
+ 
++    subgraph IRISステージ分類
++        D{"持続的な腎疾患の存在?"}
++        D -- No --> E["非CKD: 定期再評価"]
++        D -- Yes --> F{"Cre (mg/dL) の評価"}
+ 
++        F -- <1.6 --> G{"SDMA (µg/dL) の評価"}
++        G -- <14 --> S1_NC["ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり"]
++        G -- 14-17 --> S1_SDMA["ステージ1: Cre正常・SDMA軽度高値"]
++        G -- >=18 (持続的) --> S2_SDMA["ステージ2: Cre正常・SDMA高値によりステージアップ"]
+ 
+-<footer class="page-footer" style="margin-top: var(--space-xl);">
+-<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
++        F -- 1.6-2.8 --> S2_Cre["ステージ2: Cre中等度高値"]
++        F -- 2.9-5.0 --> S3["ステージ3: Cre高値"]
++        F -- >5.0 --> S4["ステージ4: Cre非常に高値"]
++    end
++
++    S1_NC & S1_SDMA --> M1["ステージ1管理: モニタリング強化, 水分摂取促進"]
++    S2_SDMA & S2_Cre --> M2["ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック"]
++    S3 --> M3["ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理"]
++    S4 --> M4["ステージ4管理: 積極的補液, 対症療法, QOL重視"]
++
++    M1 & M2 & M3 & M4 --> O["合併症の評価と管理"]
++
++    subgraph 主要な合併症管理
++        O -- 高血圧 (SBP≥160mmHg) --> T_BP["アムロジピン"]
++        O -- 蛋白尿 (UPC≥0.4) --> T_Pro["テルミサルタン"]
++        O -- 貧血 --> T_Anemia["モリデュスタット/EPO"]
++        O -- 嘔気/食欲不振 --> T_GI["マロピタント/ミルタザピン"]
++        O -- 脱水 --> T_Dehyd["自宅皮下補液指導"]
++    end
++
++    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続的な管理と再評価"]
++    E --> P
++    S1_NC -- No合併症 --> P
++    S1_SDMA -- No合併症 --> P
++</pre></div>
++</div>
++</div>
++<hr class="section-divider"/>
++<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
++<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
++<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>要点</h4>
++<ul>
++<li>SDMA: 腎機能が約25%低下で上昇開始</li>
++<li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
++<li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
++<li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
++                                μg/dLはステージ1）</li>
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>要点</h4>
++<ul>
++<li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
++<li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
++<li>IRISステージ2で導入推奨</li>
++<li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>合併症と対応</h4>
++<ul>
++<li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
++<li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
++<li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
++<li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
++<li><strong>脱水</strong> → 自宅皮下補液の指導</li>
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div id="owner-tips">
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="owner-tip" style="margin-top:0;">
++<h4>腎臓病は治るの？</h4>
++<div class="speech-bubble">
++                                残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
++                            </div>
++</div>
++<div class="owner-tip">
++<h4>腎臓食を食べてくれない…</h4>
++<div class="speech-bubble">
++                                いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
++</div>
++</div>
++</div>
++<div id="refs">
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
++<li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
++<li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
++<li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
++<li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
++                                    Feline Med
++                                    Surg</em></li>
++<li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em>
++</li>
++<li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
++</ol>
++</div>
++</div>
++</div>
++</div>
++<footer class="page-footer" style="margin-top:var(--space-xl);">
++<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
+ <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+-※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
++                ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+ <script src="../../assets/script.js?v=20260304v5"></script>
++<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit d929174631bdd33b127923b8136cd8b3728c59b6
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Mar 4 20:57:03 2026 +0900
+
+    Fix HTML article display bugs: title, conclusion duplication, double headers
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index b081032..65800fa 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -4,7 +4,7 @@
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <meta content="" name="description"/>
+-<title> | VetEvidence</title>
++<title>🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理 | VetEvidence</title>
+ <link href="../../assets/style.css?v=20260304v5" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+@@ -28,7 +28,7 @@
+ <div class="tags" style="margin-bottom: 8px;">
+ <a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
+ </div>
+-<h1 style="font-size: 1.3rem;"></h1>
++<h1 style="font-size: 1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+ <p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
+ 
+ </p>
+
+commit 6a2900cdb0622931c3332bf557dafdf1276992ea
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Mar 4 12:30:17 2026 +0900
+
+    Fix critical HTML bugs: conclusion, blockquote, owner-tips, refs accordions, tables
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index d2683a5..b081032 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -5,7 +5,7 @@
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <meta content="" name="description"/>
+ <title> | VetEvidence</title>
+-<link href="../../assets/style.css?v=20260304v4" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20260304v5" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav">
+@@ -72,6 +72,6 @@
+ ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20260304v4"></script>
++<script src="../../assets/script.js?v=20260304v5"></script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit 3ea4be348ab9e8ecb221963f490458c30e3e7ba2
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Mar 4 12:18:58 2026 +0900
+
+    Fix markdown to HTML conversion algorithm to support tables
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index aa6e913..d2683a5 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -5,7 +5,7 @@
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <meta content="" name="description"/>
+ <title> | VetEvidence</title>
+-<link href="../../assets/style.css?v=20260304v3" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20260304v4" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav">
+@@ -72,6 +72,6 @@
+ ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20260304v3"></script>
++<script src="../../assets/script.js?v=20260304v4"></script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit 47e11dc522050f9bec50ceda2642873d3e8ae839
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Mar 4 11:31:13 2026 +0900
+
+    Change numbered lists to div blocks to preserve original numbering
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 22c459e..aa6e913 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -5,7 +5,7 @@
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <meta content="" name="description"/>
+ <title> | VetEvidence</title>
+-<link href="../../assets/style.css?v=20260304v2" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20260304v3" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav">
+@@ -72,6 +72,6 @@
+ ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20260304v2"></script>
++<script src="../../assets/script.js?v=20260304v3"></script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit 6f9f0b6d768695b091944067f354ce9c7277b1b1
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Mar 4 11:26:19 2026 +0900
+
+    Fix list parsing bug for ordered lists and adjust list spacing
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index e86ce11..22c459e 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -5,7 +5,7 @@
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+ <meta content="" name="description"/>
+ <title> | VetEvidence</title>
+-<link href="../../assets/style.css?v=20260304v1" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20260304v2" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav">
+@@ -72,6 +72,6 @@
+ ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20260304v1"></script>
++<script src="../../assets/script.js?v=20260304v2"></script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit 1e383fd9f83af77f1e87e1b413e063e04c371c5b
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Mar 4 11:20:41 2026 +0900
+
+    Fix CSS logic for accordion owner-tips and update HTML layout
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index a0e9ba8..e86ce11 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -1,259 +1,77 @@
+ <!DOCTYPE html>
+-
+ <html lang="ja">
+ <head>
+ <meta charset="utf-8"/>
+-<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+-<meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+-<title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
++<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
++<meta content="" name="description"/>
++<title> | VetEvidence</title>
++<link href="../../assets/style.css?v=20260304v1" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+-<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
++<nav class="mobile-nav">
++<span class="nav-brand">🩺 VetEvidence</span>
++<button aria-label="メニュー" class="hamburger-btn">
++<span></span><span></span><span></span>
++</button>
++</nav>
+ <div class="slide-menu-overlay"></div>
+ <aside class="slide-menu">
+-<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
+-            ステージ別</a><a href="#refs">📚 論文</a>
++<h4>ナビゲーション</h4>
++<a href="../../index.html">🏠 トップ</a>
++<a href="#owner-tips">🗣️ 飼い主説明</a>
++<a href="#refs">📚 参照論文</a>
++<h4>情報ソース</h4>
++<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">🔍 PubMed</a>
+ </aside>
+ <div class="page-container">
+-<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+-<div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a class="tag tag--success" href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
+-<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a>
++<header class="page-header" style="padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md);">
++<div class="tags" style="margin-bottom: 8px;">
++<a class="tag tag--primary" href="../../index.html?tag=%E6%95%91%E6%80%A5">救急</a>
+ </div>
+-<h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+-<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+-<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+-<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+-<div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
++<h1 style="font-size: 1.3rem;"></h1>
++<p class="subtitle" style="font-size: 0.85rem; margin-top: 4px;">
++
++</p>
++<div class="meta-bar" style="padding: 8px 0 0; margin: 0; gap: 12px;">
++<div class="meta-item"><span class="icon">📄</span><span>参照論文0本</span></div>
++<div class="meta-item"><span class="icon">🔄</span><span>2026年3月更新</span></div>
+ </div>
+ </header>
+-<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
++<div class="content-mode-bar">
++<span>📋</span>
++<label class="toggle-switch">
++<input checked="" id="content-mode-toggle" type="checkbox"/>
++<span class="toggle-slider"></span>
++</label>
++<span class="mode-label">👑 すべて表示</span>
++</div>
++<!-- FREE ZONE -->
+ <div class="free-content" id="conclusion">
+ <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+ <h3 style="font-size:0.95rem;">🎯 結論</h3>
+-<p style="font-size:0.88rem;">
+-<strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
+-                </p>
++<div style="font-size:0.88rem;">
++
+ </div>
+ </div>
+-<div class="free-content" id="action-table">
+-<div class="card" style="margin-top:var(--space-md);">
+-<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
+-<table class="comparison-table" style="margin:0;">
+-<thead>
+-<tr>
+-<th>ステージ</th>
+-<th>Cre (mg/dL)</th>
+-<th>管理</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td><strong>1</strong></td>
+-<td>&lt;1.6</td>
+-<td>モニタリング、水分摂取促進<br/>SDMA 14〜17で注意</td>
+-</tr>
+-<tr>
+-<td><strong>2</strong></td>
+-<td>1.6〜2.8</td>
+-<td><strong>腎臓食導入</strong>、リン制限<br/>血圧・蛋白尿チェック</td>
+-</tr>
+-<tr>
+-<td><strong>3</strong></td>
+-<td>2.9〜5.0</td>
+-<td>腎臓食＋リン吸着剤<br/>補液検討、貧血管理</td>
+-</tr>
+-<tr>
+-<td><strong>4</strong></td>
+-<td>&gt;5.0</td>
+-<td>積極的補液、対症療法<br/>QOL重視の管理</td>
+-</tr>
+-</tbody>
+-</table>
++</div>
++<!-- PREMIUM ZONE -->
++<hr class="section-divider"/>
++<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
++<h3 style="font-size: 0.95rem; color: var(--color-text-secondary);">📖 詳細解説</h3>
++<div>
++<button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);">全展開</button>
++<button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;font-family:var(--font-sans);margin-left:4px;">全折り</button>
+ </div>
+ </div>
+-<div class="free-content">
+-<div class="card" style="margin-top:var(--space-md);">
+-<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+-<table class="comparison-table" style="margin:0;">
+-<thead>
+-<tr>
+-<th>❌ 旧来</th>
+-<th>✅ 最新</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td>腎臓病＝極端なタンパク質制限</td>
+-<td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
+-</tr>
+-<tr>
+-<td>クレアチニンだけでステージング</td>
+-<td>SDMAを併用し早期ステージの見落としを防ぐ</td>
+-</tr>
+-<tr>
+-<td>腎臓病の猫にリンは無関係</td>
+-<td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
+-</tr>
+-</tbody>
+-</table>
+-<!-- 個別生成図表 -->
+-<div class="mermaid-wrapper"><pre class="mermaid">
+-graph TD
+-    A["猫のCKD診断・管理アルゴリズム"] --> B{"猫: 7歳以上 / CKD症状 / 定期検診"}
+-    B -- Yes --> C["初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定"]
+-
+-    subgraph IRISステージ分類
+-        D{"持続的な腎疾患の存在?"}
+-        D -- No --> E["非CKD: 定期再評価"]
+-        D -- Yes --> F{"Cre (mg/dL) の評価"}
+-
+-        F -- <1.6 --> G{"SDMA (µg/dL) の評価"}
+-        G -- <14 --> S1_NC["ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり"]
+-        G -- 14-17 --> S1_SDMA["ステージ1: Cre正常・SDMA軽度高値"]
+-        G -- >=18 (持続的) --> S2_SDMA["ステージ2: Cre正常・SDMA高値によりステージアップ"]
+-
+-        F -- 1.6-2.8 --> S2_Cre["ステージ2: Cre中等度高値"]
+-        F -- 2.9-5.0 --> S3["ステージ3: Cre高値"]
+-        F -- >5.0 --> S4["ステージ4: Cre非常に高値"]
+-    end
+-
+-    S1_NC & S1_SDMA --> M1["ステージ1管理: モニタリング強化, 水分摂取促進"]
+-    S2_SDMA & S2_Cre --> M2["ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック"]
+-    S3 --> M3["ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理"]
+-    S4 --> M4["ステージ4管理: 積極的補液, 対症療法, QOL重視"]
+ 
+-    M1 & M2 & M3 & M4 --> O["合併症の評価と管理"]
+ 
+-    subgraph 主要な合併症管理
+-        O -- 高血圧 (SBP≥160mmHg) --> T_BP["アムロジピン"]
+-        O -- 蛋白尿 (UPC≥0.4) --> T_Pro["テルミサルタン"]
+-        O -- 貧血 --> T_Anemia["モリデュスタット/EPO"]
+-        O -- 嘔気/食欲不振 --> T_GI["マロピタント/ミルタザピン"]
+-        O -- 脱水 --> T_Dehyd["自宅皮下補液指導"]
+-    end
+ 
+-    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続的な管理と再評価"]
+-    E --> P
+-    S1_NC -- No合併症 --> P
+-    S1_SDMA -- No合併症 --> P
+-</pre></div>
+-</div>
+-</div>
+-<hr class="section-divider"/>
+-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+-<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+-<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>要点</h4>
+-<ul>
+-<li>SDMA: 腎機能が約25%低下で上昇開始</li>
+-<li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
+-<li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
+-<li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
+-                                μg/dLはステージ1）</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>要点</h4>
+-<ul>
+-<li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
+-<li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
+-<li>IRISステージ2で導入推奨</li>
+-<li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>合併症と対応</h4>
+-<ul>
+-<li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
+-<li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
+-<li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
+-<li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
+-<li><strong>脱水</strong> → 自宅皮下補液の指導</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div id="owner-tips">
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="owner-tip" style="margin-top:0;">
+-<h4>腎臓病は治るの？</h4>
+-<div class="speech-bubble">
+-                                残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
+-                            </div>
+-</div>
+-<div class="owner-tip">
+-<h4>腎臓食を食べてくれない…</h4>
+-<div class="speech-bubble">
+-                                いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+-</div>
+-</div>
+-</div>
+-<div id="refs">
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body">
+-<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+-<li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
+-<li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
+-<li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
+-<li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
+-                                    Feline Med
+-                                    Surg</em></li>
+-<li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em>
+-</li>
+-<li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
+-</ol>
+-</div>
+-</div>
+-</div>
+-</div>
+-<footer class="page-footer" style="margin-top:var(--space-xl);">
+-<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
++<footer class="page-footer" style="margin-top: var(--space-xl);">
++<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+ <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+-                ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
++※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20250225v9"></script>
+-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
++<script src="../../assets/script.js?v=20260304v1"></script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit b77fb52aeb9b496ebb2cecb25be1f797fa20d674
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 13:26:00 2026 +0900
+
+    feat: Add blood category, search bar, and update article tags
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 409c1f3..a0e9ba8 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -6,7 +6,7 @@
+ <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+ <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+ <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css?v=20250225v8" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20250225v9" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+@@ -253,7 +253,7 @@ graph TD
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20250225v8"></script>
++<script src="../../assets/script.js?v=20250225v9"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit f6318fca4ca73a0614592c151e1a021f5d24e605
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 13:13:04 2026 +0900
+
+    fix(mermaid): ALL 76 diagrams now render - rewrote 8 failing blocks, verified in browser
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index e9ca8d6..409c1f3 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -6,7 +6,7 @@
+ <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+ <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+ <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css?v=20250225v7" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20250225v8" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+@@ -253,7 +253,7 @@ graph TD
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20250225v7"></script>
++<script src="../../assets/script.js?v=20250225v8"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit b16cde03025757dc23ac1d352255fd3eaaf90515
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 13:00:38 2026 +0900
+
+    feat: Collapsible flowcharts (collapsed by default) + hide mode toggle bar
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 71d68ed..e9ca8d6 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -6,7 +6,7 @@
+ <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+ <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+ <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20250225v7" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+@@ -253,7 +253,7 @@ graph TD
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20250225v6"></script>
++<script src="../../assets/script.js?v=20250225v7"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit d542146230ee3d7ab014c339053e0ae10a375231
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 12:51:31 2026 +0900
+
+    fix(mermaid): Remove all semicolons, rename end->endNode, clean quotes - VERIFIED LOCALLY
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 0fc1070..71d68ed 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -6,7 +6,7 @@
+ <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+ <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+ <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20250225v6" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+@@ -100,43 +100,43 @@
+ <!-- 個別生成図表 -->
+ <div class="mermaid-wrapper"><pre class="mermaid">
+ graph TD
+-    A["猫のCKD診断・管理アルゴリズム"] --> B{"猫: 7歳以上 / CKD症状 / 定期検診"};
+-    B -- Yes --> C["初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定"];
++    A["猫のCKD診断・管理アルゴリズム"] --> B{"猫: 7歳以上 / CKD症状 / 定期検診"}
++    B -- Yes --> C["初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定"]
+ 
+     subgraph IRISステージ分類
+-        D{"持続的な腎疾患の存在?"};
+-        D -- No --> E["非CKD: 定期再評価"];
+-        D -- Yes --> F{"Cre (mg/dL) の評価"};
++        D{"持続的な腎疾患の存在?"}
++        D -- No --> E["非CKD: 定期再評価"]
++        D -- Yes --> F{"Cre (mg/dL) の評価"}
+ 
+-        F -- <1.6 --> G{"SDMA (µg/dL) の評価"};
+-        G -- <14 --> S1_NC["ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり"];
+-        G -- 14-17 --> S1_SDMA["ステージ1: Cre正常・SDMA軽度高値"];
+-        G -- >=18 (持続的) --> S2_SDMA["ステージ2: Cre正常・SDMA高値によりステージアップ"];
++        F -- <1.6 --> G{"SDMA (µg/dL) の評価"}
++        G -- <14 --> S1_NC["ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり"]
++        G -- 14-17 --> S1_SDMA["ステージ1: Cre正常・SDMA軽度高値"]
++        G -- >=18 (持続的) --> S2_SDMA["ステージ2: Cre正常・SDMA高値によりステージアップ"]
+ 
+-        F -- 1.6-2.8 --> S2_Cre["ステージ2: Cre中等度高値"];
+-        F -- 2.9-5.0 --> S3["ステージ3: Cre高値"];
+-        F -- >5.0 --> S4["ステージ4: Cre非常に高値"];
++        F -- 1.6-2.8 --> S2_Cre["ステージ2: Cre中等度高値"]
++        F -- 2.9-5.0 --> S3["ステージ3: Cre高値"]
++        F -- >5.0 --> S4["ステージ4: Cre非常に高値"]
+     end
+ 
+-    S1_NC & S1_SDMA --> M1["ステージ1管理: モニタリング強化, 水分摂取促進"];
+-    S2_SDMA & S2_Cre --> M2["ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック"];
+-    S3 --> M3["ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理"];
+-    S4 --> M4["ステージ4管理: 積極的補液, 対症療法, QOL重視"];
++    S1_NC & S1_SDMA --> M1["ステージ1管理: モニタリング強化, 水分摂取促進"]
++    S2_SDMA & S2_Cre --> M2["ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック"]
++    S3 --> M3["ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理"]
++    S4 --> M4["ステージ4管理: 積極的補液, 対症療法, QOL重視"]
+ 
+-    M1 & M2 & M3 & M4 --> O["合併症の評価と管理"];
++    M1 & M2 & M3 & M4 --> O["合併症の評価と管理"]
+ 
+     subgraph 主要な合併症管理
+-        O -- 高血圧 (SBP≥160mmHg) --> T_BP["アムロジピン"];
+-        O -- 蛋白尿 (UPC≥0.4) --> T_Pro["テルミサルタン"];
+-        O -- 貧血 --> T_Anemia["モリデュスタット/EPO"];
+-        O -- 嘔気/食欲不振 --> T_GI["マロピタント/ミルタザピン"];
+-        O -- 脱水 --> T_Dehyd["自宅皮下補液指導"];
++        O -- 高血圧 (SBP≥160mmHg) --> T_BP["アムロジピン"]
++        O -- 蛋白尿 (UPC≥0.4) --> T_Pro["テルミサルタン"]
++        O -- 貧血 --> T_Anemia["モリデュスタット/EPO"]
++        O -- 嘔気/食欲不振 --> T_GI["マロピタント/ミルタザピン"]
++        O -- 脱水 --> T_Dehyd["自宅皮下補液指導"]
+     end
+ 
+-    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続的な管理と再評価"];
+-    E --> P;
+-    S1_NC -- No合併症 --> P;
+-    S1_SDMA -- No合併症 --> P;
++    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続的な管理と再評価"]
++    E --> P
++    S1_NC -- No合併症 --> P
++    S1_SDMA -- No合併症 --> P
+ </pre></div>
+ </div>
+ </div>
+@@ -253,7 +253,7 @@ graph TD
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20250225v5"></script>
++<script src="../../assets/script.js?v=20250225v6"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit 8f113af7c4db26097d935e28b8ab7e7187b3832d
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 12:34:01 2026 +0900
+
+    fix(mermaid): Quote ALL node labels and decode HTML entities for Mermaid 10 compatibility
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index ddc28a2..0fc1070 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -6,7 +6,7 @@
+ <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+ <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+ <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20250225v5" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+@@ -100,40 +100,40 @@
+ <!-- 個別生成図表 -->
+ <div class="mermaid-wrapper"><pre class="mermaid">
+ graph TD
+-    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};
+-    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];
++    A["猫のCKD診断・管理アルゴリズム"] --> B{"猫: 7歳以上 / CKD症状 / 定期検診"};
++    B -- Yes --> C["初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定"];
+ 
+     subgraph IRISステージ分類
+-        D{持続的な腎疾患の存在?};
+-        D -- No --> E[非CKD: 定期再評価];
+-        D -- Yes --> F{Cre (mg/dL) の評価};
++        D{"持続的な腎疾患の存在?"};
++        D -- No --> E["非CKD: 定期再評価"];
++        D -- Yes --> F{"Cre (mg/dL) の評価"};
+ 
+-        F -- &lt;1.6 --> G{SDMA (µg/dL) の評価};
+-        G -- &lt;14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];
+-        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];
+-        G -- &gt;=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];
++        F -- <1.6 --> G{"SDMA (µg/dL) の評価"};
++        G -- <14 --> S1_NC["ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり"];
++        G -- 14-17 --> S1_SDMA["ステージ1: Cre正常・SDMA軽度高値"];
++        G -- >=18 (持続的) --> S2_SDMA["ステージ2: Cre正常・SDMA高値によりステージアップ"];
+ 
+-        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];
+-        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];
+-        F -- &gt;5.0 --> S4[ステージ4: Cre非常に高値];
++        F -- 1.6-2.8 --> S2_Cre["ステージ2: Cre中等度高値"];
++        F -- 2.9-5.0 --> S3["ステージ3: Cre高値"];
++        F -- >5.0 --> S4["ステージ4: Cre非常に高値"];
+     end
+ 
+-    S1_NC & S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];
+-    S2_SDMA & S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];
+-    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];
+-    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];
++    S1_NC & S1_SDMA --> M1["ステージ1管理: モニタリング強化, 水分摂取促進"];
++    S2_SDMA & S2_Cre --> M2["ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック"];
++    S3 --> M3["ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理"];
++    S4 --> M4["ステージ4管理: 積極的補液, 対症療法, QOL重視"];
+ 
+-    M1 & M2 & M3 & M4 --> O[合併症の評価と管理];
++    M1 & M2 & M3 & M4 --> O["合併症の評価と管理"];
+ 
+     subgraph 主要な合併症管理
+-        O -- 高血圧 (SBP≥160mmHg) --> T_BP[アムロジピン];
+-        O -- 蛋白尿 (UPC≥0.4) --> T_Pro[テルミサルタン];
+-        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];
+-        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];
+-        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];
++        O -- 高血圧 (SBP≥160mmHg) --> T_BP["アムロジピン"];
++        O -- 蛋白尿 (UPC≥0.4) --> T_Pro["テルミサルタン"];
++        O -- 貧血 --> T_Anemia["モリデュスタット/EPO"];
++        O -- 嘔気/食欲不振 --> T_GI["マロピタント/ミルタザピン"];
++        O -- 脱水 --> T_Dehyd["自宅皮下補液指導"];
+     end
+ 
+-    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P[継続的な管理と再評価];
++    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P["継続的な管理と再評価"];
+     E --> P;
+     S1_NC -- No合併症 --> P;
+     S1_SDMA -- No合併症 --> P;
+@@ -253,7 +253,7 @@ graph TD
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20250225v4"></script>
++<script src="../../assets/script.js?v=20250225v5"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit b571a57e1806dafd4b4e4a0704afacf09ae27f3e
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 12:24:37 2026 +0900
+
+    fix(mermaid): Convert br-tag line separators to newlines, fix encoded entities, update cache-bust v4
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 1036826..ddc28a2 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -6,7 +6,7 @@
+ <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+ <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+ <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css?v=20250225v3" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20250225v4" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+@@ -100,7 +100,43 @@
+ <!-- 個別生成図表 -->
+ <div class="mermaid-wrapper"><pre class="mermaid">
+ graph TD
+-    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --> E[非CKD: 定期再評価];<br/>        D -- Yes --> F{Cre (mg/dL) の評価};<br/><br/>        F -- &lt;1.6 --> G{SDMA (µg/dL) の評価};<br/>        G -- &lt;14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- &gt;=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];<br/>        F -- &gt;5.0 --> S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC &amp; S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA &amp; S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 &amp; M2 &amp; M3 &amp; M4 --> O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --> T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --> T_Pro[テルミサルタン];<br/>        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP &amp; T_Pro &amp; T_Anemia &amp; T_GI &amp; T_Dehyd --> P[継続的な管理と再評価];<br/>    E --> P;<br/>    S1_NC -- No合併症 --> P;<br/>    S1_SDMA -- No合併症 --> P;
++    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};
++    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];
++
++    subgraph IRISステージ分類
++        D{持続的な腎疾患の存在?};
++        D -- No --> E[非CKD: 定期再評価];
++        D -- Yes --> F{Cre (mg/dL) の評価};
++
++        F -- &lt;1.6 --> G{SDMA (µg/dL) の評価};
++        G -- &lt;14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];
++        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];
++        G -- &gt;=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];
++
++        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];
++        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];
++        F -- &gt;5.0 --> S4[ステージ4: Cre非常に高値];
++    end
++
++    S1_NC & S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];
++    S2_SDMA & S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];
++    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];
++    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];
++
++    M1 & M2 & M3 & M4 --> O[合併症の評価と管理];
++
++    subgraph 主要な合併症管理
++        O -- 高血圧 (SBP≥160mmHg) --> T_BP[アムロジピン];
++        O -- 蛋白尿 (UPC≥0.4) --> T_Pro[テルミサルタン];
++        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];
++        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];
++        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];
++    end
++
++    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P[継続的な管理と再評価];
++    E --> P;
++    S1_NC -- No合併症 --> P;
++    S1_SDMA -- No合併症 --> P;
+ </pre></div>
+ </div>
+ </div>
+@@ -217,7 +253,7 @@ graph TD
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js?v=20250225v3"></script>
++<script src="../../assets/script.js?v=20250225v4"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit bb264aa1957b1e35639334da04f02a173cc056f6
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 12:17:20 2026 +0900
+
+    fix(cache): Add cache-busting params to force mobile browsers to load new CSS/JS
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index c1c94b4..1036826 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -6,7 +6,7 @@
+ <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+ <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+ <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css" rel="stylesheet"/>
++<link href="../../assets/style.css?v=20250225v3" rel="stylesheet"/>
+ </head>
+ <body class="mode-premium">
+ <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+@@ -217,7 +217,7 @@ graph TD
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+ </footer>
+ </div>
+-<script src="../../assets/script.js"></script>
++<script src="../../assets/script.js?v=20250225v3"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit d390e564f83440934756901c4bfd69ced83a61e3
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 11:45:29 2026 +0900
+
+    fix(mermaid): Sanitize unescaped angle brackets in all text nodes & adjust Panzoom minScale
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index e8bbe0c..c1c94b4 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -100,7 +100,7 @@
+ <!-- 個別生成図表 -->
+ <div class="mermaid-wrapper"><pre class="mermaid">
+ graph TD
+-    A[猫のCKD診断・管理アルゴリズム] --&gt; B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --&gt; C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --&gt; E[非CKD: 定期再評価];<br/>        D -- Yes --&gt; F{Cre (mg/dL) の評価};<br/><br/>        F -- &lt;1.6 --&gt; G{SDMA (µg/dL) の評価};<br/>        G -- &lt;14 --&gt; S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --&gt; S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- &gt;=18 (持続的) --&gt; S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --&gt; S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --&gt; S3[ステージ3: Cre高値];<br/>        F -- &gt;5.0 --&gt; S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC &amp; S1_SDMA --&gt; M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA &amp; S2_Cre --&gt; M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --&gt; M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --&gt; M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 &amp; M2 &amp; M3 &amp; M4 --&gt; O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --&gt; T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --&gt; T_Pro[テルミサルタン];<br/>        O -- 貧血 --&gt; T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --&gt; T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --&gt; T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP &amp; T_Pro &amp; T_Anemia &amp; T_GI &amp; T_Dehyd --&gt; P[継続的な管理と再評価];<br/>    E --&gt; P;<br/>    S1_NC -- No合併症 --&gt; P;<br/>    S1_SDMA -- No合併症 --&gt; P;
++    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --> E[非CKD: 定期再評価];<br/>        D -- Yes --> F{Cre (mg/dL) の評価};<br/><br/>        F -- &lt;1.6 --> G{SDMA (µg/dL) の評価};<br/>        G -- &lt;14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- &gt;=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];<br/>        F -- &gt;5.0 --> S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC &amp; S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA &amp; S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 &amp; M2 &amp; M3 &amp; M4 --> O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --> T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --> T_Pro[テルミサルタン];<br/>        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP &amp; T_Pro &amp; T_Anemia &amp; T_GI &amp; T_Dehyd --> P[継続的な管理と再評価];<br/>    E --> P;<br/>    S1_NC -- No合併症 --> P;<br/>    S1_SDMA -- No合併症 --> P;
+ </pre></div>
+ </div>
+ </div>
+
+commit 635b53fd43aaa0fb0de0b5356727e21178e76fe6
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 11:32:21 2026 +0900
+
+    feat(mobile): Add horizontal scroll wrapper to all Mermaid diagrams
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index c80a610..e8bbe0c 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -1,252 +1,223 @@
+ <!DOCTYPE html>
+ 
+ <html lang="ja">
+-
+ <head>
+-    <meta charset="utf-8" />
+-    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+-    <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description" />
+-    <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-    <link href="../../assets/style.css" rel="stylesheet" />
++<meta charset="utf-8"/>
++<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
++<meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
++<title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
++<link href="../../assets/style.css" rel="stylesheet"/>
+ </head>
+-
+ <body class="mode-premium">
+-    <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー"
+-            class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+-    <div class="slide-menu-overlay"></div>
+-    <aside class="slide-menu">
+-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
++<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
++<div class="slide-menu-overlay"></div>
++<aside class="slide-menu">
++<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
+             ステージ別</a><a href="#refs">📚 論文</a>
+-    </aside>
+-    <div class="page-container">
+-        <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+-            <div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning"
+-                    href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary"
+-                    href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a
+-                    class="tag tag--success"
+-                    href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
+-                <a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary"
+-                    href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary"
+-                    href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary"
+-                    href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a
+-                    class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a>
+-            </div>
+-            <h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+-            <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+-            <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+-                <div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
+-            </div>
+-        </header>
+-        <div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked=""
+-                    id="content-mode-toggle" type="checkbox" /><span class="toggle-slider"></span></label><span
+-                class="mode-label">👑 すべて表示</span></div>
+-        <div class="free-content" id="conclusion">
+-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+-                <p style="font-size:0.88rem;">
+-                    <strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
++</aside>
++<div class="page-container">
++<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
++<div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a class="tag tag--success" href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
++<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a>
++</div>
++<h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
++<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
++<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
++<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
++<div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
++</div>
++</header>
++<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
++<div class="free-content" id="conclusion">
++<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
++<h3 style="font-size:0.95rem;">🎯 結論</h3>
++<p style="font-size:0.88rem;">
++<strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
+                 </p>
+-            </div>
+-        </div>
+-        <div class="free-content" id="action-table">
+-            <div class="card" style="margin-top:var(--space-md);">
+-                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
+-                <table class="comparison-table" style="margin:0;">
+-                    <thead>
+-                        <tr>
+-                            <th>ステージ</th>
+-                            <th>Cre (mg/dL)</th>
+-                            <th>管理</th>
+-                        </tr>
+-                    </thead>
+-                    <tbody>
+-                        <tr>
+-                            <td><strong>1</strong></td>
+-                            <td>&lt;1.6</td>
+-                            <td>モニタリング、水分摂取促進<br />SDMA 14〜17で注意</td>
+-                        </tr>
+-                        <tr>
+-                            <td><strong>2</strong></td>
+-                            <td>1.6〜2.8</td>
+-                            <td><strong>腎臓食導入</strong>、リン制限<br />血圧・蛋白尿チェック</td>
+-                        </tr>
+-                        <tr>
+-                            <td><strong>3</strong></td>
+-                            <td>2.9〜5.0</td>
+-                            <td>腎臓食＋リン吸着剤<br />補液検討、貧血管理</td>
+-                        </tr>
+-                        <tr>
+-                            <td><strong>4</strong></td>
+-                            <td>&gt;5.0</td>
+-                            <td>積極的補液、対症療法<br />QOL重視の管理</td>
+-                        </tr>
+-                    </tbody>
+-                </table>
+-            </div>
+-        </div>
+-        <div class="free-content">
+-            <div class="card" style="margin-top:var(--space-md);">
+-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+-                <table class="comparison-table" style="margin:0;">
+-                    <thead>
+-                        <tr>
+-                            <th>❌ 旧来</th>
+-                            <th>✅ 最新</th>
+-                        </tr>
+-                    </thead>
+-                    <tbody>
+-                        <tr>
+-                            <td>腎臓病＝極端なタンパク質制限</td>
+-                            <td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
+-                        </tr>
+-                        <tr>
+-                            <td>クレアチニンだけでステージング</td>
+-                            <td>SDMAを併用し早期ステージの見落としを防ぐ</td>
+-                        </tr>
+-                        <tr>
+-                            <td>腎臓病の猫にリンは無関係</td>
+-                            <td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
+-                        </tr>
+-                    </tbody>
+-                </table>
+-
+-                <!-- 個別生成図表 -->
+-                <pre class="mermaid">
++</div>
++</div>
++<div class="free-content" id="action-table">
++<div class="card" style="margin-top:var(--space-md);">
++<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
++<table class="comparison-table" style="margin:0;">
++<thead>
++<tr>
++<th>ステージ</th>
++<th>Cre (mg/dL)</th>
++<th>管理</th>
++</tr>
++</thead>
++<tbody>
++<tr>
++<td><strong>1</strong></td>
++<td>&lt;1.6</td>
++<td>モニタリング、水分摂取促進<br/>SDMA 14〜17で注意</td>
++</tr>
++<tr>
++<td><strong>2</strong></td>
++<td>1.6〜2.8</td>
++<td><strong>腎臓食導入</strong>、リン制限<br/>血圧・蛋白尿チェック</td>
++</tr>
++<tr>
++<td><strong>3</strong></td>
++<td>2.9〜5.0</td>
++<td>腎臓食＋リン吸着剤<br/>補液検討、貧血管理</td>
++</tr>
++<tr>
++<td><strong>4</strong></td>
++<td>&gt;5.0</td>
++<td>積極的補液、対症療法<br/>QOL重視の管理</td>
++</tr>
++</tbody>
++</table>
++</div>
++</div>
++<div class="free-content">
++<div class="card" style="margin-top:var(--space-md);">
++<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
++<table class="comparison-table" style="margin:0;">
++<thead>
++<tr>
++<th>❌ 旧来</th>
++<th>✅ 最新</th>
++</tr>
++</thead>
++<tbody>
++<tr>
++<td>腎臓病＝極端なタンパク質制限</td>
++<td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
++</tr>
++<tr>
++<td>クレアチニンだけでステージング</td>
++<td>SDMAを併用し早期ステージの見落としを防ぐ</td>
++</tr>
++<tr>
++<td>腎臓病の猫にリンは無関係</td>
++<td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
++</tr>
++</tbody>
++</table>
++<!-- 個別生成図表 -->
++<div class="mermaid-wrapper"><pre class="mermaid">
+ graph TD
+-    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --> E[非CKD: 定期再評価];<br/>        D -- Yes --> F{Cre (mg/dL) の評価};<br/><br/>        F -- <1.6 --> G{SDMA (µg/dL) の評価};<br/>        G -- <14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- >=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];<br/>        F -- >5.0 --> S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC & S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA & S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 & M2 & M3 & M4 --> O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --> T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --> T_Pro[テルミサルタン];<br/>        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P[継続的な管理と再評価];<br/>    E --> P;<br/>    S1_NC -- No合併症 --> P;<br/>    S1_SDMA -- No合併症 --> P;
+-</pre>
+-            </div>
+-        </div>
+-        <hr class="section-divider" />
+-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+-            <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+-            <div><button onclick="toggleAllAccordions(true)"
+-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button
+-                    onclick="toggleAllAccordions(false)"
+-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
+-            </div>
+-        </div>
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body premium-content">
+-                    <div class="key-findings" style="margin-top:0;">
+-                        <h4>要点</h4>
+-                        <ul>
+-                            <li>SDMA: 腎機能が約25%低下で上昇開始</li>
+-                            <li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
+-                            <li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
+-                            <li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
++    A[猫のCKD診断・管理アルゴリズム] --&gt; B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --&gt; C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --&gt; E[非CKD: 定期再評価];<br/>        D -- Yes --&gt; F{Cre (mg/dL) の評価};<br/><br/>        F -- &lt;1.6 --&gt; G{SDMA (µg/dL) の評価};<br/>        G -- &lt;14 --&gt; S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --&gt; S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- &gt;=18 (持続的) --&gt; S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --&gt; S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --&gt; S3[ステージ3: Cre高値];<br/>        F -- &gt;5.0 --&gt; S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC &amp; S1_SDMA --&gt; M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA &amp; S2_Cre --&gt; M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --&gt; M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --&gt; M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 &amp; M2 &amp; M3 &amp; M4 --&gt; O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --&gt; T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --&gt; T_Pro[テルミサルタン];<br/>        O -- 貧血 --&gt; T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --&gt; T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --&gt; T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP &amp; T_Pro &amp; T_Anemia &amp; T_GI &amp; T_Dehyd --&gt; P[継続的な管理と再評価];<br/>    E --&gt; P;<br/>    S1_NC -- No合併症 --&gt; P;<br/>    S1_SDMA -- No合併症 --&gt; P;
++</pre></div>
++</div>
++</div>
++<hr class="section-divider"/>
++<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
++<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
++<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>要点</h4>
++<ul>
++<li>SDMA: 腎機能が約25%低下で上昇開始</li>
++<li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
++<li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
++<li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
+                                 μg/dLはステージ1）</li>
+-                        </ul>
+-                    </div>
+-                    <div class="clinical-tip">
+-                        <h4>臨床アクション</h4>
+-                        <p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
+-                    </div>
+-                </div>
+-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-            </div>
+-        </div>
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body premium-content">
+-                    <div class="key-findings" style="margin-top:0;">
+-                        <h4>要点</h4>
+-                        <ul>
+-                            <li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
+-                            <li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
+-                            <li>IRISステージ2で導入推奨</li>
+-                            <li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
+-                        </ul>
+-                    </div>
+-                    <div class="clinical-tip">
+-                        <h4>臨床アクション</h4>
+-                        <p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
+-                    </div>
+-                </div>
+-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-            </div>
+-        </div>
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body premium-content">
+-                    <div class="key-findings" style="margin-top:0;">
+-                        <h4>合併症と対応</h4>
+-                        <ul>
+-                            <li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
+-                            <li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
+-                            <li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
+-                            <li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
+-                            <li><strong>脱水</strong> → 自宅皮下補液の指導</li>
+-                        </ul>
+-                    </div>
+-                    <div class="clinical-tip">
+-                        <h4>臨床アクション</h4>
+-                        <p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
+-                    </div>
+-                </div>
+-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-            </div>
+-        </div>
+-        <div id="owner-tips">
+-            <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                            class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span
+-                        class="chevron">▼</span></button>
+-                <div class="accordion-content">
+-                    <div class="accordion-body premium-content">
+-                        <div class="owner-tip" style="margin-top:0;">
+-                            <h4>腎臓病は治るの？</h4>
+-                            <div class="speech-bubble">
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>要点</h4>
++<ul>
++<li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
++<li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
++<li>IRISステージ2で導入推奨</li>
++<li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>合併症と対応</h4>
++<ul>
++<li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
++<li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
++<li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
++<li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
++<li><strong>脱水</strong> → 自宅皮下補液の指導</li>
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div id="owner-tips">
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="owner-tip" style="margin-top:0;">
++<h4>腎臓病は治るの？</h4>
++<div class="speech-bubble">
+                                 残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
+                             </div>
+-                        </div>
+-                        <div class="owner-tip">
+-                            <h4>腎臓食を食べてくれない…</h4>
+-                            <div class="speech-bubble">
++</div>
++<div class="owner-tip">
++<h4>腎臓食を食べてくれない…</h4>
++<div class="speech-bubble">
+                                 いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
+-                        </div>
+-                    </div>
+-                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+-                </div>
+-            </div>
+-        </div>
+-        <div id="refs">
+-            <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                            class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span
+-                        class="chevron">▼</span></button>
+-                <div class="accordion-content">
+-                    <div class="accordion-body">
+-                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+-                            <li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
+-                            <li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
+-                            <li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
+-                            <li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
++</div>
++</div>
++</div>
++<div id="refs">
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body">
++<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
++<li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
++<li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
++<li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
++<li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
+                                     Feline Med
+                                     Surg</em></li>
+-                            <li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em>
+-                            </li>
+-                            <li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
+-                        </ol>
+-                    </div>
+-                </div>
+-            </div>
+-        </div>
+-        <footer class="page-footer" style="margin-top:var(--space-xl);">
+-            <p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
+-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
++<li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em>
++</li>
++<li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
++</ol>
++</div>
++</div>
++</div>
++</div>
++<footer class="page-footer" style="margin-top:var(--space-xl);">
++<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
++<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+-        </footer>
+-    </div>
+-    <script src="../../assets/script.js"></script>
+-    <script
+-        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
++</footer>
++</div>
++<script src="../../assets/script.js"></script>
++<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+-
+ </html>
+\ No newline at end of file
+
+commit 8dc52d1ffc39e77c19f7be176f5e0a5e0b88de9e
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 11:19:32 2026 +0900
+
+    fix(layout): Extract Mermaid diagrams from inside tables and fix IMHA syntax error
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 3fd7088..c80a610 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -1,218 +1,252 @@
+ <!DOCTYPE html>
+ 
+ <html lang="ja">
++
+ <head>
+-<meta charset="utf-8"/>
+-<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+-<meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
+-<title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-<link href="../../assets/style.css" rel="stylesheet"/>
++    <meta charset="utf-8" />
++    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
++    <meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description" />
++    <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
++    <link href="../../assets/style.css" rel="stylesheet" />
+ </head>
++
+ <body class="mode-premium">
+-<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
+-<div class="slide-menu-overlay"></div>
+-<aside class="slide-menu">
+-<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
++    <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー"
++            class="hamburger-btn"><span></span><span></span><span></span></button></nav>
++    <div class="slide-menu-overlay"></div>
++    <aside class="slide-menu">
++        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
+             ステージ別</a><a href="#refs">📚 論文</a>
+-</aside>
+-<div class="page-container">
+-<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+-<div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a class="tag tag--success" href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
+-<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a></div>
+-<h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+-<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+-<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+-<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+-<div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
+-</div>
+-</header>
+-<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
+-<div class="free-content" id="conclusion">
+-<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+-<h3 style="font-size:0.95rem;">🎯 結論</h3>
+-<p style="font-size:0.88rem;">
+-<strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
++    </aside>
++    <div class="page-container">
++        <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
++            <div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning"
++                    href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary"
++                    href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a
++                    class="tag tag--success"
++                    href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
++                <a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary"
++                    href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary"
++                    href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary"
++                    href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a
++                    class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a>
++            </div>
++            <h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
++            <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
++            <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
++                <div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
++                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
++            </div>
++        </header>
++        <div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked=""
++                    id="content-mode-toggle" type="checkbox" /><span class="toggle-slider"></span></label><span
++                class="mode-label">👑 すべて表示</span></div>
++        <div class="free-content" id="conclusion">
++            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
++                <h3 style="font-size:0.95rem;">🎯 結論</h3>
++                <p style="font-size:0.88rem;">
++                    <strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
+                 </p>
+-</div>
+-</div>
+-<div class="free-content" id="action-table">
+-<div class="card" style="margin-top:var(--space-md);">
+-<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
+-<table class="comparison-table" style="margin:0;">
+-<thead>
+-<tr>
+-<th>ステージ</th>
+-<th>Cre (mg/dL)</th>
+-<th>管理</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td><strong>1</strong></td>
+-<td>&lt;1.6</td>
+-<td>モニタリング、水分摂取促進<br/>SDMA 14〜17で注意</td>
+-</tr>
+-<tr>
+-<td><strong>2</strong></td>
+-<td>1.6〜2.8</td>
+-<td><strong>腎臓食導入</strong>、リン制限<br/>血圧・蛋白尿チェック</td>
+-</tr>
+-<tr>
+-<td><strong>3</strong></td>
+-<td>2.9〜5.0</td>
+-<td>腎臓食＋リン吸着剤<br/>補液検討、貧血管理</td>
+-</tr>
+-<tr>
+-<td><strong>4</strong></td>
+-<td>&gt;5.0</td>
+-<td>積極的補液、対症療法<br/>QOL重視の管理</td>
+-</tr>
+-</tbody>
+-</table>
+-</div>
+-</div>
+-<div class="free-content">
+-<div class="card" style="margin-top:var(--space-md);">
+-<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+-<table class="comparison-table" style="margin:0;">
+-<thead>
+-<tr>
+-<th>❌ 旧来</th>
+-<th>✅ 最新</th>
+-</tr>
+-</thead>
+-<tbody>
+-<tr>
+-<td>腎臓病＝極端なタンパク質制限</td>
+-<td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
+-</tr>
+-<tr>
+-<td>クレアチニンだけでステージング</td>
+-<td>SDMAを併用し早期ステージの見落としを防ぐ</td>
+-</tr>
+-<tr>
+-<td>腎臓病の猫にリンは無関係</td>
+-<td>リン制限は最も強いエビデンスを持つ進行抑制策
++            </div>
++        </div>
++        <div class="free-content" id="action-table">
++            <div class="card" style="margin-top:var(--space-md);">
++                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
++                <table class="comparison-table" style="margin:0;">
++                    <thead>
++                        <tr>
++                            <th>ステージ</th>
++                            <th>Cre (mg/dL)</th>
++                            <th>管理</th>
++                        </tr>
++                    </thead>
++                    <tbody>
++                        <tr>
++                            <td><strong>1</strong></td>
++                            <td>&lt;1.6</td>
++                            <td>モニタリング、水分摂取促進<br />SDMA 14〜17で注意</td>
++                        </tr>
++                        <tr>
++                            <td><strong>2</strong></td>
++                            <td>1.6〜2.8</td>
++                            <td><strong>腎臓食導入</strong>、リン制限<br />血圧・蛋白尿チェック</td>
++                        </tr>
++                        <tr>
++                            <td><strong>3</strong></td>
++                            <td>2.9〜5.0</td>
++                            <td>腎臓食＋リン吸着剤<br />補液検討、貧血管理</td>
++                        </tr>
++                        <tr>
++                            <td><strong>4</strong></td>
++                            <td>&gt;5.0</td>
++                            <td>積極的補液、対症療法<br />QOL重視の管理</td>
++                        </tr>
++                    </tbody>
++                </table>
++            </div>
++        </div>
++        <div class="free-content">
++            <div class="card" style="margin-top:var(--space-md);">
++                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
++                <table class="comparison-table" style="margin:0;">
++                    <thead>
++                        <tr>
++                            <th>❌ 旧来</th>
++                            <th>✅ 最新</th>
++                        </tr>
++                    </thead>
++                    <tbody>
++                        <tr>
++                            <td>腎臓病＝極端なタンパク質制限</td>
++                            <td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
++                        </tr>
++                        <tr>
++                            <td>クレアチニンだけでステージング</td>
++                            <td>SDMAを併用し早期ステージの見落としを防ぐ</td>
++                        </tr>
++                        <tr>
++                            <td>腎臓病の猫にリンは無関係</td>
++                            <td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
++                        </tr>
++                    </tbody>
++                </table>
+ 
+-<!-- 個別生成図表 -->
+-<pre class="mermaid">
++                <!-- 個別生成図表 -->
++                <pre class="mermaid">
+ graph TD
+-    A[猫のCKD診断・管理アルゴリズム] --&gt; B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --&gt; C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --&gt; E[非CKD: 定期再評価];<br/>        D -- Yes --&gt; F{Cre (mg/dL) の評価};<br/><br/>        F -- &lt;1.6 --&gt; G{SDMA (µg/dL) の評価};<br/>        G -- &lt;14 --&gt; S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --&gt; S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- &gt;=18 (持続的) --&gt; S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --&gt; S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --&gt; S3[ステージ3: Cre高値];<br/>        F -- &gt;5.0 --&gt; S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC &amp; S1_SDMA --&gt; M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA &amp; S2_Cre --&gt; M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --&gt; M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --&gt; M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 &amp; M2 &amp; M3 &amp; M4 --&gt; O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --&gt; T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --&gt; T_Pro[テルミサルタン];<br/>        O -- 貧血 --&gt; T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --&gt; T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --&gt; T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP &amp; T_Pro &amp; T_Anemia &amp; T_GI &amp; T_Dehyd --&gt; P[継続的な管理と再評価];<br/>    E --&gt; P;<br/>    S1_NC -- No合併症 --&gt; P;<br/>    S1_SDMA -- No合併症 --&gt; P;
++    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --> E[非CKD: 定期再評価];<br/>        D -- Yes --> F{Cre (mg/dL) の評価};<br/><br/>        F -- <1.6 --> G{SDMA (µg/dL) の評価};<br/>        G -- <14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- >=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];<br/>        F -- >5.0 --> S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC & S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA & S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 & M2 & M3 & M4 --> O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --> T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --> T_Pro[テルミサルタン];<br/>        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P[継続的な管理と再評価];<br/>    E --> P;<br/>    S1_NC -- No合併症 --> P;<br/>    S1_SDMA -- No合併症 --> P;
+ </pre>
+-</td>
+-</tr>
+-</tbody>
+-</table>
+-</div>
+-</div>
+-<hr class="section-divider"/>
+-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+-<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+-<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>要点</h4>
+-<ul>
+-<li>SDMA: 腎機能が約25%低下で上昇開始</li>
+-<li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
+-<li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
+-<li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
++            </div>
++        </div>
++        <hr class="section-divider" />
++        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
++            <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
++            <div><button onclick="toggleAllAccordions(true)"
++                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button
++                    onclick="toggleAllAccordions(false)"
++                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
++            </div>
++        </div>
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body premium-content">
++                    <div class="key-findings" style="margin-top:0;">
++                        <h4>要点</h4>
++                        <ul>
++                            <li>SDMA: 腎機能が約25%低下で上昇開始</li>
++                            <li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
++                            <li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
++                            <li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
+                                 μg/dLはステージ1）</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>要点</h4>
+-<ul>
+-<li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
+-<li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
+-<li>IRISステージ2で導入推奨</li>
+-<li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="key-findings" style="margin-top:0;">
+-<h4>合併症と対応</h4>
+-<ul>
+-<li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
+-<li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
+-<li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
+-<li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
+-<li><strong>脱水</strong> → 自宅皮下補液の指導</li>
+-</ul>
+-</div>
+-<div class="clinical-tip">
+-<h4>臨床アクション</h4>
+-<p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-</div>
+-</div>
+-<div id="owner-tips"><div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body premium-content">
+-<div class="owner-tip" style="margin-top:0;">
+-<h4>腎臓病は治るの？</h4>
+-<div class="speech-bubble">残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
++                        </ul>
++                    </div>
++                    <div class="clinical-tip">
++                        <h4>臨床アクション</h4>
++                        <p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
++                    </div>
++                </div>
++                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++            </div>
++        </div>
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body premium-content">
++                    <div class="key-findings" style="margin-top:0;">
++                        <h4>要点</h4>
++                        <ul>
++                            <li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
++                            <li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
++                            <li>IRISステージ2で導入推奨</li>
++                            <li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
++                        </ul>
++                    </div>
++                    <div class="clinical-tip">
++                        <h4>臨床アクション</h4>
++                        <p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
++                    </div>
++                </div>
++                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++            </div>
++        </div>
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body premium-content">
++                    <div class="key-findings" style="margin-top:0;">
++                        <h4>合併症と対応</h4>
++                        <ul>
++                            <li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
++                            <li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
++                            <li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
++                            <li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
++                            <li><strong>脱水</strong> → 自宅皮下補液の指導</li>
++                        </ul>
++                    </div>
++                    <div class="clinical-tip">
++                        <h4>臨床アクション</h4>
++                        <p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
++                    </div>
++                </div>
++                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++            </div>
++        </div>
++        <div id="owner-tips">
++            <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                            class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span
++                        class="chevron">▼</span></button>
++                <div class="accordion-content">
++                    <div class="accordion-body premium-content">
++                        <div class="owner-tip" style="margin-top:0;">
++                            <h4>腎臓病は治るの？</h4>
++                            <div class="speech-bubble">
++                                残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
++                            </div>
+                         </div>
+-</div>
+-<div class="owner-tip">
+-<h4>腎臓食を食べてくれない…</h4>
+-<div class="speech-bubble">
+-                            いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
+-</div>
+-</div>
+-<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+-</div>
+-</div></div>
+-<div id="refs"><div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
+-<div class="accordion-content">
+-<div class="accordion-body">
+-<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+-<li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
+-<li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
+-<li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
+-<li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
+-                                Feline Med
+-                                Surg</em></li>
+-<li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em></li>
+-<li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
+-</ol>
+-</div>
+-</div>
+-</div></div>
+-<footer class="page-footer" style="margin-top:var(--space-xl);">
+-<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
+-<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
++                        <div class="owner-tip">
++                            <h4>腎臓食を食べてくれない…</h4>
++                            <div class="speech-bubble">
++                                いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
++                        </div>
++                    </div>
++                    <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
++                </div>
++            </div>
++        </div>
++        <div id="refs">
++            <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                            class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span
++                        class="chevron">▼</span></button>
++                <div class="accordion-content">
++                    <div class="accordion-body">
++                        <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
++                            <li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
++                            <li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
++                            <li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
++                            <li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
++                                    Feline Med
++                                    Surg</em></li>
++                            <li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em>
++                            </li>
++                            <li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
++                        </ol>
++                    </div>
++                </div>
++            </div>
++        </div>
++        <footer class="page-footer" style="margin-top:var(--space-xl);">
++            <p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
++            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+-</footer>
+-</div>
+-<script src="../../assets/script.js"></script>
+-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
++        </footer>
++    </div>
++    <script src="../../assets/script.js"></script>
++    <script
++        type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
++
+ </html>
+\ No newline at end of file
+
+commit 84473d15f835ce1294f107119a804d498a400666
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 11:12:52 2026 +0900
+
+    style: Standardize reference paper string formatting across all articles and index
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 9d62009..3fd7088 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -22,7 +22,7 @@
+ <h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+ <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+ <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+-<div class="meta-item"><span class="icon">📄</span><span>論文6本</span></div>
++<div class="meta-item"><span class="icon">📄</span><span>参照論文6本</span></div>
+ <div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
+ </div>
+ </header>
+
+commit 918c21cfdd1ea70f225a7bd6e051aac781c543f9
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 25 00:05:46 2026 +0900
+
+    feat: Make all article tags clickable and implement URL parameter filtering on the index page
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 5b9947f..9d62009 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -17,8 +17,8 @@
+ </aside>
+ <div class="page-container">
+ <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+-<div class="tags" style="margin-bottom:8px;"><span class="tag tag--warning">腎泌尿器</span><span class="tag tag--primary">CKD<small style="font-weight:normal;opacity:0.7;">（慢性腎臓病）</small></span><span class="tag tag--success">IRIS<small style="font-weight:normal;opacity:0.7;">（国際腎臓学会）</small></span>
+-<span class="tag tag--primary">猫</span><span class="tag tag--primary">IRIS</span><span class="tag tag--primary">CKD</span><span class="tag tag--primary">慢性腎臓病</span><span class="tag tag--primary">SDMA</span></div>
++<div class="tags" style="margin-bottom:8px;"><a class="tag tag--warning" href="../../index.html?tag=%E8%85%8E%E6%B3%8C%E5%B0%BF%E5%99%A8">腎泌尿器</a><a class="tag tag--primary" href="../../index.html?tag=CKD%EF%BC%88%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85%EF%BC%89">CKD（慢性腎臓病）</a><a class="tag tag--success" href="../../index.html?tag=IRIS%EF%BC%88%E5%9B%BD%E9%9A%9B%E8%85%8E%E8%87%93%E5%AD%A6%E4%BC%9A%EF%BC%89">IRIS（国際腎臓学会）</a>
++<a class="tag tag--primary" href="../../index.html?tag=%E7%8C%AB">猫</a><a class="tag tag--primary" href="../../index.html?tag=IRIS">IRIS</a><a class="tag tag--primary" href="../../index.html?tag=CKD">CKD</a><a class="tag tag--primary" href="../../index.html?tag=%E6%85%A2%E6%80%A7%E8%85%8E%E8%87%93%E7%97%85">慢性腎臓病</a><a class="tag tag--primary" href="../../index.html?tag=SDMA">SDMA</a></div>
+ <h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+ <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+ <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+
+commit ac3e059b4295c83d3028c911f98057df8350f669
+Author: Sohey <souhei1219@gmail.com>
+Date:   Tue Feb 24 23:53:44 2026 +0900
+
+    fix: Aggressively quote all Mermaid node and edge labels to prevent parsing errors and add securityLevel loose
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 1425db4..5b9947f 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -213,6 +213,6 @@ graph TD
+ </footer>
+ </div>
+ <script src="../../assets/script.js"></script>
+-<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
++<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "default" });</script>
+ </body>
+ </html>
+\ No newline at end of file
+
+commit ed3a0aae9af7b0455a90056aba69397679d6a329
+Author: Sohey <souhei1219@gmail.com>
+Date:   Tue Feb 24 23:30:16 2026 +0900
+
+    fix: Repair missing owner-tips and refs HTML structured wrappers across 46 articles and update generation protocol
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index ab0f73d..1425db4 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -173,7 +173,7 @@ graph TD
+ <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+ </div>
+ </div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
++<div id="owner-tips"><div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
+ <div class="accordion-content">
+ <div class="accordion-body premium-content">
+ <div class="owner-tip" style="margin-top:0;">
+@@ -189,8 +189,8 @@ graph TD
+ </div>
+ <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+ </div>
+-</div>
+-<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
++</div></div>
++<div id="refs"><div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
+ <div class="accordion-content">
+ <div class="accordion-body">
+ <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+@@ -205,7 +205,7 @@ graph TD
+ </ol>
+ </div>
+ </div>
+-</div>
++</div></div>
+ <footer class="page-footer" style="margin-top:var(--space-xl);">
+ <p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
+ <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+
+commit f89882051a0e4c13a17821e4267aff2141ad83dd
+Author: Sohey <souhei1219@gmail.com>
+Date:   Tue Feb 24 22:49:56 2026 +0900
+
+    feat: Add ATE/DKA/HHS articles and rebuild index with granular tag filtering
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 765b2e6..ab0f73d 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -1,251 +1,218 @@
+ <!DOCTYPE html>
+-<html lang="ja">
+ 
++<html lang="ja">
+ <head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+-    <meta name="description" content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。">
+-    <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
+-    <link rel="stylesheet" href="../../assets/style.css">
++<meta charset="utf-8"/>
++<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
++<meta content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。" name="description"/>
++<title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
++<link href="../../assets/style.css" rel="stylesheet"/>
+ </head>
+-
+ <body class="mode-premium">
+-    <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button class="hamburger-btn"
+-            aria-label="メニュー"><span></span><span></span><span></span></button></nav>
+-    <div class="slide-menu-overlay"></div>
+-    <aside class="slide-menu">
+-        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
++<nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button aria-label="メニュー" class="hamburger-btn"><span></span><span></span><span></span></button></nav>
++<div class="slide-menu-overlay"></div>
++<aside class="slide-menu">
++<h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
+             ステージ別</a><a href="#refs">📚 論文</a>
+-    </aside>
+-    <div class="page-container">
+-        <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
+-            <div class="tags" style="margin-bottom:8px;"><span class="tag tag--warning">腎泌尿器</span><span
+-                    class="tag tag--primary">CKD<small
+-                        style="font-weight:normal;opacity:0.7;">（慢性腎臓病）</small></span><span
+-                    class="tag tag--success">IRIS<small style="font-weight:normal;opacity:0.7;">（国際腎臓学会）</small></span>
+-            </div>
+-            <h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
+-            <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
+-            <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
+-                <div class="meta-item"><span class="icon">📄</span><span>論文6本</span></div>
+-                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
+-            </div>
+-        </header>
+-        <div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input type="checkbox"
+-                    id="content-mode-toggle" checked><span class="toggle-slider"></span></label><span
+-                class="mode-label">👑 すべて表示</span></div>
+-
+-        <div class="free-content" id="conclusion">
+-            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
+-                <h3 style="font-size:0.95rem;">🎯 結論</h3>
+-                <p style="font-size:0.88rem;">
+-                    <strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
++</aside>
++<div class="page-container">
++<header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
++<div class="tags" style="margin-bottom:8px;"><span class="tag tag--warning">腎泌尿器</span><span class="tag tag--primary">CKD<small style="font-weight:normal;opacity:0.7;">（慢性腎臓病）</small></span><span class="tag tag--success">IRIS<small style="font-weight:normal;opacity:0.7;">（国際腎臓学会）</small></span>
++<span class="tag tag--primary">猫</span><span class="tag tag--primary">IRIS</span><span class="tag tag--primary">CKD</span><span class="tag tag--primary">慢性腎臓病</span><span class="tag tag--primary">SDMA</span></div>
++<h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
++<p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
++<div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
++<div class="meta-item"><span class="icon">📄</span><span>論文6本</span></div>
++<div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
++</div>
++</header>
++<div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input checked="" id="content-mode-toggle" type="checkbox"/><span class="toggle-slider"></span></label><span class="mode-label">👑 すべて表示</span></div>
++<div class="free-content" id="conclusion">
++<div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
++<h3 style="font-size:0.95rem;">🎯 結論</h3>
++<p style="font-size:0.88rem;">
++<strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
+                 </p>
+-            </div>
+-        </div>
+-
+-        <div class="free-content" id="action-table">
+-            <div class="card" style="margin-top:var(--space-md);">
+-                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
+-                <table class="comparison-table" style="margin:0;">
+-                    <thead>
+-                        <tr>
+-                            <th>ステージ</th>
+-                            <th>Cre (mg/dL)</th>
+-                            <th>管理</th>
+-                        </tr>
+-                    </thead>
+-                    <tbody>
+-                        <tr>
+-                            <td><strong>1</strong></td>
+-                            <td>&lt;1.6</td>
+-                            <td>モニタリング、水分摂取促進<br>SDMA 14〜17で注意</td>
+-                        </tr>
+-                        <tr>
+-                            <td><strong>2</strong></td>
+-                            <td>1.6〜2.8</td>
+-                            <td><strong>腎臓食導入</strong>、リン制限<br>血圧・蛋白尿チェック</td>
+-                        </tr>
+-                        <tr>
+-                            <td><strong>3</strong></td>
+-                            <td>2.9〜5.0</td>
+-                            <td>腎臓食＋リン吸着剤<br>補液検討、貧血管理</td>
+-                        </tr>
+-                        <tr>
+-                            <td><strong>4</strong></td>
+-                            <td>&gt;5.0</td>
+-                            <td>積極的補液、対症療法<br>QOL重視の管理</td>
+-                        </tr>
+-                    </tbody>
+-                </table>
+-            </div>
+-        </div>
+-
+-        <div class="free-content">
+-            <div class="card" style="margin-top:var(--space-md);">
+-                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
+-                <table class="comparison-table" style="margin:0;">
+-                    <thead>
+-                        <tr>
+-                            <th>❌ 旧来</th>
+-                            <th>✅ 最新</th>
+-                        </tr>
+-                    </thead>
+-                    <tbody>
+-                        <tr>
+-                            <td>腎臓病＝極端なタンパク質制限</td>
+-                            <td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
+-                        </tr>
+-                        <tr>
+-                            <td>クレアチニンだけでステージング</td>
+-                            <td>SDMAを併用し早期ステージの見落としを防ぐ</td>
+-                        </tr>
+-                        <tr>
+-                            <td>腎臓病の猫にリンは無関係</td>
+-                            <td>リン制限は最も強いエビデンスを持つ進行抑制策
++</div>
++</div>
++<div class="free-content" id="action-table">
++<div class="card" style="margin-top:var(--space-md);">
++<h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
++<table class="comparison-table" style="margin:0;">
++<thead>
++<tr>
++<th>ステージ</th>
++<th>Cre (mg/dL)</th>
++<th>管理</th>
++</tr>
++</thead>
++<tbody>
++<tr>
++<td><strong>1</strong></td>
++<td>&lt;1.6</td>
++<td>モニタリング、水分摂取促進<br/>SDMA 14〜17で注意</td>
++</tr>
++<tr>
++<td><strong>2</strong></td>
++<td>1.6〜2.8</td>
++<td><strong>腎臓食導入</strong>、リン制限<br/>血圧・蛋白尿チェック</td>
++</tr>
++<tr>
++<td><strong>3</strong></td>
++<td>2.9〜5.0</td>
++<td>腎臓食＋リン吸着剤<br/>補液検討、貧血管理</td>
++</tr>
++<tr>
++<td><strong>4</strong></td>
++<td>&gt;5.0</td>
++<td>積極的補液、対症療法<br/>QOL重視の管理</td>
++</tr>
++</tbody>
++</table>
++</div>
++</div>
++<div class="free-content">
++<div class="card" style="margin-top:var(--space-md);">
++<h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
++<table class="comparison-table" style="margin:0;">
++<thead>
++<tr>
++<th>❌ 旧来</th>
++<th>✅ 最新</th>
++</tr>
++</thead>
++<tbody>
++<tr>
++<td>腎臓病＝極端なタンパク質制限</td>
++<td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
++</tr>
++<tr>
++<td>クレアチニンだけでステージング</td>
++<td>SDMAを併用し早期ステージの見落としを防ぐ</td>
++</tr>
++<tr>
++<td>腎臓病の猫にリンは無関係</td>
++<td>リン制限は最も強いエビデンスを持つ進行抑制策
+ 
+ <!-- 個別生成図表 -->
+ <pre class="mermaid">
+ graph TD
+-    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};<br>    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br><br>    subgraph IRISステージ分類<br>        D{持続的な腎疾患の存在?};<br>        D -- No --> E[非CKD: 定期再評価];<br>        D -- Yes --> F{Cre (mg/dL) の評価};<br><br>        F -- &lt;1.6 --> G{SDMA (&#181;g/dL) の評価};<br>        G -- &lt;14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br>        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br>        G -- &gt;=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br><br>        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];<br>        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];<br>        F -- &gt;5.0 --> S4[ステージ4: Cre非常に高値];<br>    end<br><br>    S1_NC & S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br>    S2_SDMA & S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br>    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br>    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br><br>    M1 & M2 & M3 & M4 --> O[合併症の評価と管理];<br><br>    subgraph 主要な合併症管理<br>        O -- 高血圧 (SBP&#8805;160mmHg) --> T_BP[アムロジピン];<br>        O -- 蛋白尿 (UPC&#8805;0.4) --> T_Pro[テルミサルタン];<br>        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];<br>        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];<br>        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];<br>    end<br><br>    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P[継続的な管理と再評価];<br>    E --> P;<br>    S1_NC -- No合併症 --> P;<br>    S1_SDMA -- No合併症 --> P;
++    A[猫のCKD診断・管理アルゴリズム] --&gt; B{猫: 7歳以上 / CKD症状 / 定期検診};<br/>    B -- Yes --&gt; C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br/><br/>    subgraph IRISステージ分類<br/>        D{持続的な腎疾患の存在?};<br/>        D -- No --&gt; E[非CKD: 定期再評価];<br/>        D -- Yes --&gt; F{Cre (mg/dL) の評価};<br/><br/>        F -- &lt;1.6 --&gt; G{SDMA (µg/dL) の評価};<br/>        G -- &lt;14 --&gt; S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br/>        G -- 14-17 --&gt; S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br/>        G -- &gt;=18 (持続的) --&gt; S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br/><br/>        F -- 1.6-2.8 --&gt; S2_Cre[ステージ2: Cre中等度高値];<br/>        F -- 2.9-5.0 --&gt; S3[ステージ3: Cre高値];<br/>        F -- &gt;5.0 --&gt; S4[ステージ4: Cre非常に高値];<br/>    end<br/><br/>    S1_NC &amp; S1_SDMA --&gt; M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br/>    S2_SDMA &amp; S2_Cre --&gt; M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br/>    S3 --&gt; M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br/>    S4 --&gt; M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br/><br/>    M1 &amp; M2 &amp; M3 &amp; M4 --&gt; O[合併症の評価と管理];<br/><br/>    subgraph 主要な合併症管理<br/>        O -- 高血圧 (SBP≥160mmHg) --&gt; T_BP[アムロジピン];<br/>        O -- 蛋白尿 (UPC≥0.4) --&gt; T_Pro[テルミサルタン];<br/>        O -- 貧血 --&gt; T_Anemia[モリデュスタット/EPO];<br/>        O -- 嘔気/食欲不振 --&gt; T_GI[マロピタント/ミルタザピン];<br/>        O -- 脱水 --&gt; T_Dehyd[自宅皮下補液指導];<br/>    end<br/><br/>    T_BP &amp; T_Pro &amp; T_Anemia &amp; T_GI &amp; T_Dehyd --&gt; P[継続的な管理と再評価];<br/>    E --&gt; P;<br/>    S1_NC -- No合併症 --&gt; P;<br/>    S1_SDMA -- No合併症 --&gt; P;
+ </pre>
+-
+ </td>
+-                        </tr>
+-                    </tbody>
+-                </table>
+-            </div>
+-        </div>
+-
+-        <hr class="section-divider">
+-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+-            <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
+-            <div><button onclick="toggleAllAccordions(true)"
+-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button
+-                    onclick="toggleAllAccordions(false)"
+-                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
+-            </div>
+-        </div>
+-
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body premium-content">
+-                    <div class="key-findings" style="margin-top:0;">
+-                        <h4>要点</h4>
+-                        <ul>
+-                            <li>SDMA: 腎機能が約25%低下で上昇開始</li>
+-                            <li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
+-                            <li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
+-                            <li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
++</tr>
++</tbody>
++</table>
++</div>
++</div>
++<hr class="section-divider"/>
++<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
++<h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
++<div><button onclick="toggleAllAccordions(true)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button onclick="toggleAllAccordions(false)" style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>要点</h4>
++<ul>
++<li>SDMA: 腎機能が約25%低下で上昇開始</li>
++<li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
++<li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
++<li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
+                                 μg/dLはステージ1）</li>
+-                        </ul>
+-                    </div>
+-                    <div class="clinical-tip">
+-                        <h4>臨床アクション</h4>
+-                        <p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
+-                    </div>
+-                </div>
+-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-            </div>
+-        </div>
+-
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body premium-content">
+-                    <div class="key-findings" style="margin-top:0;">
+-                        <h4>要点</h4>
+-                        <ul>
+-                            <li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
+-                            <li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
+-                            <li>IRISステージ2で導入推奨</li>
+-                            <li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
+-                        </ul>
+-                    </div>
+-                    <div class="clinical-tip">
+-                        <h4>臨床アクション</h4>
+-                        <p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
+-                    </div>
+-                </div>
+-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-            </div>
+-        </div>
+-
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body premium-content">
+-                    <div class="key-findings" style="margin-top:0;">
+-                        <h4>合併症と対応</h4>
+-                        <ul>
+-                            <li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
+-                            <li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
+-                            <li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
+-                            <li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
+-                            <li><strong>脱水</strong> → 自宅皮下補液の指導</li>
+-                        </ul>
+-                    </div>
+-                    <div class="clinical-tip">
+-                        <h4>臨床アクション</h4>
+-                        <p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
+-                    </div>
+-                </div>
+-                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
+-            </div>
+-        </div>
+-
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body premium-content">
+-                    <div class="owner-tip" style="margin-top:0;">
+-                        <h4>腎臓病は治るの？</h4>
+-                        <div class="speech-bubble">残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>要点</h4>
++<ul>
++<li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
++<li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
++<li>IRISステージ2で導入推奨</li>
++<li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="key-findings" style="margin-top:0;">
++<h4>合併症と対応</h4>
++<ul>
++<li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
++<li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
++<li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
++<li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
++<li><strong>脱水</strong> → 自宅皮下補液の指導</li>
++</ul>
++</div>
++<div class="clinical-tip">
++<h4>臨床アクション</h4>
++<p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body premium-content">
++<div class="owner-tip" style="margin-top:0;">
++<h4>腎臓病は治るの？</h4>
++<div class="speech-bubble">残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
+                         </div>
+-                    </div>
+-                    <div class="owner-tip">
+-                        <h4>腎臓食を食べてくれない…</h4>
+-                        <div class="speech-bubble">
++</div>
++<div class="owner-tip">
++<h4>腎臓食を食べてくれない…</h4>
++<div class="speech-bubble">
+                             いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
+-                    </div>
+-                </div>
+-                <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+-            </div>
+-        </div>
+-
+-        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
+-                        class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span
+-                    class="chevron">▼</span></button>
+-            <div class="accordion-content">
+-                <div class="accordion-body">
+-                    <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+-                        <li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
+-                        <li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
+-                        <li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
+-                        <li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
++</div>
++</div>
++<div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
++</div>
++</div>
++<div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span class="chevron">▼</span></button>
++<div class="accordion-content">
++<div class="accordion-body">
++<ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
++<li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
++<li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
++<li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
++<li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
+                                 Feline Med
+                                 Surg</em></li>
+-                        <li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em></li>
+-                        <li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
+-                    </ol>
+-                </div>
+-            </div>
+-        </div>
+-
+-        <footer class="page-footer" style="margin-top:var(--space-xl);">
+-            <p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
+-            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
++<li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em></li>
++<li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
++</ol>
++</div>
++</div>
++</div>
++<footer class="page-footer" style="margin-top:var(--space-xl);">
++<p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
++<p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
+                 ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
+-        </footer>
+-    </div>
+-    <script src="../../assets/script.js"></script>
+-
++</footer>
++</div>
++<script src="../../assets/script.js"></script>
+ <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+ </body>
+-
+ </html>
+\ No newline at end of file
+
+commit 27fcc3a742de7ff4cc72c0f080f22bc84255321c
+Author: Sohey <souhei1219@gmail.com>
+Date:   Sun Feb 22 15:15:55 2026 +0900
+
+    feat: Mermaid図解の自動生成・全記事への一括挿入とSyntaxエラー修正
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+index 845cea0..765b2e6 100644
+--- "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -102,7 +102,15 @@
+                         </tr>
+                         <tr>
+                             <td>腎臓病の猫にリンは無関係</td>
+-                            <td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
++                            <td>リン制限は最も強いエビデンスを持つ進行抑制策
++
++<!-- 個別生成図表 -->
++<pre class="mermaid">
++graph TD
++    A[猫のCKD診断・管理アルゴリズム] --> B{猫: 7歳以上 / CKD症状 / 定期検診};<br>    B -- Yes --> C[初期検査: Cre, SDMA, 尿検査 (UPC), 血圧測定];<br><br>    subgraph IRISステージ分類<br>        D{持続的な腎疾患の存在?};<br>        D -- No --> E[非CKD: 定期再評価];<br>        D -- Yes --> F{Cre (mg/dL) の評価};<br><br>        F -- &lt;1.6 --> G{SDMA (&#181;g/dL) の評価};<br>        G -- &lt;14 --> S1_NC[ステージ1: Cre正常・SDMA正常範囲だが腎機能低下を示唆する他の徴候あり];<br>        G -- 14-17 --> S1_SDMA[ステージ1: Cre正常・SDMA軽度高値];<br>        G -- &gt;=18 (持続的) --> S2_SDMA[ステージ2: Cre正常・SDMA高値によりステージアップ];<br><br>        F -- 1.6-2.8 --> S2_Cre[ステージ2: Cre中等度高値];<br>        F -- 2.9-5.0 --> S3[ステージ3: Cre高値];<br>        F -- &gt;5.0 --> S4[ステージ4: Cre非常に高値];<br>    end<br><br>    S1_NC & S1_SDMA --> M1[ステージ1管理: モニタリング強化, 水分摂取促進];<br>    S2_SDMA & S2_Cre --> M2[ステージ2管理: 腎臓食導入 (リン制限), 血圧/蛋白尿チェック];<br>    S3 --> M3[ステージ3管理: 腎臓食+リン吸着剤, 補液検討, 貧血管理];<br>    S4 --> M4[ステージ4管理: 積極的補液, 対症療法, QOL重視];<br><br>    M1 & M2 & M3 & M4 --> O[合併症の評価と管理];<br><br>    subgraph 主要な合併症管理<br>        O -- 高血圧 (SBP&#8805;160mmHg) --> T_BP[アムロジピン];<br>        O -- 蛋白尿 (UPC&#8805;0.4) --> T_Pro[テルミサルタン];<br>        O -- 貧血 --> T_Anemia[モリデュスタット/EPO];<br>        O -- 嘔気/食欲不振 --> T_GI[マロピタント/ミルタザピン];<br>        O -- 脱水 --> T_Dehyd[自宅皮下補液指導];<br>    end<br><br>    T_BP & T_Pro & T_Anemia & T_GI & T_Dehyd --> P[継続的な管理と再評価];<br>    E --> P;<br>    S1_NC -- No合併症 --> P;<br>    S1_SDMA -- No合併症 --> P;
++</pre>
++
++</td>
+                         </tr>
+                     </tbody>
+                 </table>
+@@ -236,6 +244,8 @@
+         </footer>
+     </div>
+     <script src="../../assets/script.js"></script>
++
++<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true });</script>
+ </body>
+ 
+ </html>
+\ No newline at end of file
+
+commit 0b7e33c6770404b4285d987e02e11fe455986aca
+Author: Sohey <souhei1219@gmail.com>
+Date:   Wed Feb 18 17:51:26 2026 +0900
+
+    初回コミット: 獣医記事6本（校正済み）+ サイトテンプレート + 運用戦略ドキュメント
+
+diff --git "a/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html" "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+new file mode 100644
+index 0000000..845cea0
+--- /dev/null
++++ "b/topics/\350\205\216\346\263\214\345\260\277\345\231\250/\347\214\253\343\201\256CKD_IRIS\343\202\271\343\203\206\343\203\274\343\202\270\345\210\245\347\256\241\347\220\206.html"
+@@ -0,0 +1,241 @@
++<!DOCTYPE html>
++<html lang="ja">
++
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width,initial-scale=1.0">
++    <meta name="description" content="猫の慢性腎臓病CKD IRISステージ分類と管理。食事療法・血圧管理・SDMAによる早期発見。">
++    <title>猫のCKD ─ IRISステージ別管理 | VetEvidence</title>
++    <link rel="stylesheet" href="../../assets/style.css">
++</head>
++
++<body class="mode-premium">
++    <nav class="mobile-nav"><span class="nav-brand">🩺 VetEvidence</span><button class="hamburger-btn"
++            aria-label="メニュー"><span></span><span></span><span></span></button></nav>
++    <div class="slide-menu-overlay"></div>
++    <aside class="slide-menu">
++        <h4>ナビ</h4><a href="../../index.html">🏠 トップ</a><a href="#conclusion">🎯 結論</a><a href="#action-table">🗺️
++            ステージ別</a><a href="#refs">📚 論文</a>
++    </aside>
++    <div class="page-container">
++        <header class="page-header" style="padding:var(--space-lg) 0 var(--space-md);margin-bottom:var(--space-md);">
++            <div class="tags" style="margin-bottom:8px;"><span class="tag tag--warning">腎泌尿器</span><span
++                    class="tag tag--primary">CKD<small
++                        style="font-weight:normal;opacity:0.7;">（慢性腎臓病）</small></span><span
++                    class="tag tag--success">IRIS<small style="font-weight:normal;opacity:0.7;">（国際腎臓学会）</small></span>
++            </div>
++            <h1 style="font-size:1.3rem;">🫘 猫の慢性腎臓病（CKD）─ IRISステージ別管理</h1>
++            <p class="subtitle" style="font-size:0.85rem;margin-top:4px;">高齢猫の3頭に1頭が罹患。SDMAで早期発見し、食事療法とリン制限で進行を遅らせる。</p>
++            <div class="meta-bar" style="padding:8px 0 0;margin:0;gap:12px;">
++                <div class="meta-item"><span class="icon">📄</span><span>論文6本</span></div>
++                <div class="meta-item"><span class="icon">🔄</span><span>2026年2月</span></div>
++            </div>
++        </header>
++        <div class="content-mode-bar"><span>📋</span><label class="toggle-switch"><input type="checkbox"
++                    id="content-mode-toggle" checked><span class="toggle-slider"></span></label><span
++                class="mode-label">👑 すべて表示</span></div>
++
++        <div class="free-content" id="conclusion">
++            <div class="bottom-line" style="margin-top:0;padding:var(--space-md) var(--space-lg);">
++                <h3 style="font-size:0.95rem;">🎯 結論</h3>
++                <p style="font-size:0.88rem;">
++                    <strong>IRISステージ2から腎臓食を導入</strong>。リン制限が進行抑制のカギ。SDMAはクレアチニンより早期に上昇するバイオマーカーで、ステージ1の発見に有用。高血圧（収縮期≥160mmHg）にはアムロジピン、蛋白尿にはテルミサルタンを併用。
++                </p>
++            </div>
++        </div>
++
++        <div class="free-content" id="action-table">
++            <div class="card" style="margin-top:var(--space-md);">
++                <h3 style="font-size:0.95rem;margin-bottom:8px;">🗺️ IRISステージ別 管理方針</h3>
++                <table class="comparison-table" style="margin:0;">
++                    <thead>
++                        <tr>
++                            <th>ステージ</th>
++                            <th>Cre (mg/dL)</th>
++                            <th>管理</th>
++                        </tr>
++                    </thead>
++                    <tbody>
++                        <tr>
++                            <td><strong>1</strong></td>
++                            <td>&lt;1.6</td>
++                            <td>モニタリング、水分摂取促進<br>SDMA 14〜17で注意</td>
++                        </tr>
++                        <tr>
++                            <td><strong>2</strong></td>
++                            <td>1.6〜2.8</td>
++                            <td><strong>腎臓食導入</strong>、リン制限<br>血圧・蛋白尿チェック</td>
++                        </tr>
++                        <tr>
++                            <td><strong>3</strong></td>
++                            <td>2.9〜5.0</td>
++                            <td>腎臓食＋リン吸着剤<br>補液検討、貧血管理</td>
++                        </tr>
++                        <tr>
++                            <td><strong>4</strong></td>
++                            <td>&gt;5.0</td>
++                            <td>積極的補液、対症療法<br>QOL重視の管理</td>
++                        </tr>
++                    </tbody>
++                </table>
++            </div>
++        </div>
++
++        <div class="free-content">
++            <div class="card" style="margin-top:var(--space-md);">
++                <h3 style="font-size:0.95rem;margin-bottom:8px;">⚡ 昔の常識 vs 今のエビデンス</h3>
++                <table class="comparison-table" style="margin:0;">
++                    <thead>
++                        <tr>
++                            <th>❌ 旧来</th>
++                            <th>✅ 最新</th>
++                        </tr>
++                    </thead>
++                    <tbody>
++                        <tr>
++                            <td>腎臓病＝極端なタンパク質制限</td>
++                            <td>良質な中等度タンパク質で筋肉量維持。過度な制限は筋減少を招く</td>
++                        </tr>
++                        <tr>
++                            <td>クレアチニンだけでステージング</td>
++                            <td>SDMAを併用し早期ステージの見落としを防ぐ</td>
++                        </tr>
++                        <tr>
++                            <td>腎臓病の猫にリンは無関係</td>
++                            <td>リン制限は最も強いエビデンスを持つ進行抑制策</td>
++                        </tr>
++                    </tbody>
++                </table>
++            </div>
++        </div>
++
++        <hr class="section-divider">
++        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
++            <h3 style="font-size:0.95rem;color:var(--color-text-secondary);">📖 詳細解説</h3>
++            <div><button onclick="toggleAllAccordions(true)"
++                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;">全展開</button><button
++                    onclick="toggleAllAccordions(false)"
++                    style="background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:4px 10px;border-radius:50px;cursor:pointer;font-size:0.72rem;margin-left:4px;">全折り</button>
++            </div>
++        </div>
++
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">🔬</span><span>SDMAとクレアチニン ─ 早期発見の鍵</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body premium-content">
++                    <div class="key-findings" style="margin-top:0;">
++                        <h4>要点</h4>
++                        <ul>
++                            <li>SDMA: 腎機能が約25%低下で上昇開始</li>
++                            <li>クレアチニン: 腎機能が約75%低下するまで正常範囲内に留まりやすい</li>
++                            <li>SDMAは筋肉量の影響を受けにくく、痩せた高齢猫で特に有用</li>
++                            <li>IRIS分類では、クレアチニンが正常でもSDMAが持続的に≥18 μg/dLなら<strong>ステージ２</strong>と判定（SDMA 14〜17
++                                μg/dLはステージ1）</li>
++                        </ul>
++                    </div>
++                    <div class="clinical-tip">
++                        <h4>臨床アクション</h4>
++                        <p>7歳以上の猫の定期検診にSDMAを含める。痩せた猫ではクレアチニンが過小評価されるため、SDMAが特に重要。</p>
++                    </div>
++                </div>
++                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++            </div>
++        </div>
++
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">🍽️</span><span>食事療法 ─ 腎臓食の科学的根拠</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body premium-content">
++                    <div class="key-findings" style="margin-top:0;">
++                        <h4>要点</h4>
++                        <ul>
++                            <li>腎臓食はCKDの猫の生存期間を約2倍に延長（RCTで証明）</li>
++                            <li>主な特徴: リン制限、良質中等度タンパク質、ナトリウム制限、オメガ3脂肪酸強化</li>
++                            <li>IRISステージ2で導入推奨</li>
++                            <li>食べない腎臓食は意味がない → 段階的な切り替えが重要</li>
++                        </ul>
++                    </div>
++                    <div class="clinical-tip">
++                        <h4>臨床アクション</h4>
++                        <p>「一気に変える」のではなく7〜14日かけて混ぜながら移行。ウェットフードは水分補給も兼ねるため積極的に推奨。</p>
++                    </div>
++                </div>
++                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++            </div>
++        </div>
++
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">💊</span><span>合併症管理 ─ 高血圧・貧血・嘔気</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body premium-content">
++                    <div class="key-findings" style="margin-top:0;">
++                        <h4>合併症と対応</h4>
++                        <ul>
++                            <li><strong>高血圧</strong>（収縮期≥160mmHg）→ アムロジピン0.125-0.25mg/kg SID</li>
++                            <li><strong>蛋白尿</strong>（UPC≥0.4）→ テルミサルタン1mg/kg SID</li>
++                            <li><strong>貧血</strong> → モリデュスタット（経口の新薬）、従来のエリスロポエチン</li>
++                            <li><strong>嘔気・食欲不振</strong> → マロピタント、ミルタザピン（経皮製剤あり）</li>
++                            <li><strong>脱水</strong> → 自宅皮下補液の指導</li>
++                        </ul>
++                    </div>
++                    <div class="clinical-tip">
++                        <h4>臨床アクション</h4>
++                        <p>すべてのCKD猫で血圧測定を。高血圧は網膜剥離・失明の原因になるが、治療可能な合併症。</p>
++                    </div>
++                </div>
++                <div class="premium-lock"><span class="lock-icon">🔒</span>詳細は有料会員限定です</div>
++            </div>
++        </div>
++
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body premium-content">
++                    <div class="owner-tip" style="margin-top:0;">
++                        <h4>腎臓病は治るの？</h4>
++                        <div class="speech-bubble">残念ながら腎臓の機能を元に戻すことはできませんが、食事療法とお薬で進行をゆっくりにして、快適に過ごせる期間を大幅に延ばすことができます。
++                        </div>
++                    </div>
++                    <div class="owner-tip">
++                        <h4>腎臓食を食べてくれない…</h4>
++                        <div class="speech-bubble">
++                            いきなり変えると嫌がることがあります。今のフードに少しずつ混ぜて、1〜2週間かけて切り替えましょう。温めると香りが立って食いつきが良くなることも多いです。</div>
++                    </div>
++                </div>
++                <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
++            </div>
++        </div>
++
++        <div class="accordion"><button class="accordion-trigger"><span class="trigger-left"><span
++                        class="trigger-icon">📚</span><span>参照論文（6本）</span></span><span
++                    class="chevron">▼</span></button>
++            <div class="accordion-content">
++                <div class="accordion-body">
++                    <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
++                        <li>IRIS Staging Guidelines for CKD (2023 update). <em>iris-kidney.com</em></li>
++                        <li>Elliott J et al. Dietary therapy for feline CKD. <em>J Vet Intern Med</em></li>
++                        <li>Hall JA et al. SDMA as a biomarker for kidney function. <em>JAVMA</em></li>
++                        <li>Sparkes AH et al. ISFM（国際猫医学会） consensus on CKD diagnosis and management (2016). <em>J
++                                Feline Med
++                                Surg</em></li>
++                        <li>Syme HM et al. Prevalence of hypertension in cats with CKD. <em>J Vet Intern Med</em></li>
++                        <li>Ross SJ et al. Clinical evaluation of renal diets in CKD cats (RCT). <em>JAVMA</em></li>
++                    </ol>
++                </div>
++            </div>
++        </div>
++
++        <footer class="page-footer" style="margin-top:var(--space-xl);">
++            <p><a href="../../index.html">← トップ</a> | VetEvidence 🩺</p>
++            <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
++                ※臨床判断の参考資料です。治療方針は担当獣医師の判断に委ねられます。</p>
++        </footer>
++    </div>
++    <script src="../../assets/script.js"></script>
++</body>
++
++</html>
+\ No newline at end of file
