@@ -1652,29 +1652,31 @@ body.mode-free .premium-lock {
 /* ============================================
    Mermaid Flowchart - Pro Mobile Readability Enhancements
    ============================================ */
-/* Increase line thickness for connector arrows significantly */
-.mermaid svg .edgePath .path {
-  stroke-width: 4px !important;
-  stroke: var(--color-text-primary) !important;
+/* Force extreme line thickness (5px) on ALL paths, lines, and shapes to guarantee visibility */
+.mermaid svg path,
+.mermaid svg line,
+.mermaid svg rect,
+.mermaid svg circle,
+.mermaid svg ellipse,
+.mermaid svg polygon {
+  stroke-width: 5px !important;
 }
-/* Increase border thickness for all node shapes (rectangles, diamonds) */
-.mermaid svg .node rect,
-.mermaid svg .node circle,
-.mermaid svg .node ellipse,
-.mermaid svg .node polygon,
-.mermaid svg .node path {
-  stroke-width: 3.5px !important;
-  stroke: var(--color-primary) !important;
+/* Prevent the 5px stroke from destroying text readability */
+.mermaid svg text,
+.mermaid svg tspan,
+.mermaid svg .edgeLabel {
+  stroke-width: 0 !important;
 }
-/* Make the text on arrows (branch labels) significantly bolder and larger */
+/* Ensure arrows/branch labels remain bold and large */
 .mermaid svg .edgeLabel {
   font-weight: 700 !important;
   font-size: 1.25em !important;
   color: var(--color-text-primary) !important;
   background-color: var(--color-bg-secondary) !important;
 }
-/* Make the text inside the nodes (rectangles, diamonds) much bolder and larger */
-.mermaid svg .node .label {
+/* Make the text inside the nodes (rectangles, diamonds) bolder and larger */
+.mermaid svg .node .label,
+.mermaid svg .node text {
   font-weight: 700 !important;
   font-size: 1.15em !important;
 }
