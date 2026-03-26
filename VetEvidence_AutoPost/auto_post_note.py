@@ -57,6 +57,7 @@ def format_compact_html(md_text, url_suffix):
 
     md_text = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', md_text)
     md_text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', md_text)
+    md_text = md_text.replace('💡 臨床アクション', '臨床アクション').replace('臨床アクション', '💡 臨床アクション')
     
     lines = md_text.split('\n')
     html_out = []
@@ -82,6 +83,16 @@ def format_compact_html(md_text, url_suffix):
             if line_s == '```' or line_s == '</div>':
                 in_mermaid = False
             continue
+            
+        # --- 強力なフローチャート除外フィルター ---
+        if 'graph TD' in line or 'graph LR' in line:
+            line = re.sub(r'graph (TD|LR)', '', line)
+            line_s = line.strip()
+            if not line_s: continue
+        if '-->' in line_s: continue
+        if re.match(r'^[A-Za-z0-9_]+\[".*?"\]', line_s) or re.match(r'^[A-Za-z0-9_]+\{".*?"\}', line_s): continue
+        if line_s.startswith('subgraph ') or line_s == 'end': continue
+        # ----------------------------------------
             
         if line_s.startswith('tags:'): continue
         if line_s.startswith('update:'): continue
