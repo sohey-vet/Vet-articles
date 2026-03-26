@@ -1652,14 +1652,14 @@ body.mode-free .premium-lock {
 /* ============================================
    Mermaid Flowchart - Pro Mobile Readability Enhancements
    ============================================ */
-/* Force extreme line thickness (5px) on ALL paths, lines, and shapes to guarantee visibility */
+/* Force extreme line thickness (12px) on ALL paths, lines, and shapes to guarantee visibility */
 .mermaid svg path,
 .mermaid svg line,
 .mermaid svg rect,
 .mermaid svg circle,
 .mermaid svg ellipse,
 .mermaid svg polygon {
-  stroke-width: 5px !important;
+  stroke-width: 12px !important;
 }
 /* Prevent the 5px stroke from destroying text readability */
 .mermaid svg text,
