@@ -7,19 +7,7 @@
 
 ## 🎯 結論
 
-蘇生には 等張晶質液のボーラス投与 が第一選択（犬15〜20mL/kg、猫10〜15mL/kg）。「ショック量を一気に入れる」時代は終わり、 少量ボーラス→再評価→追加を繰り返す のが現在の標準。晶質液
-                    vs 膠質液のどちらが優れるかのエビデンスは未確立。生理食塩水の大量投与は高クロール性代謝性アシドーシスのリスク → 緩衝晶質液（乳酸リンゲル等）が推奨 。猫は犬より過剰輸液に弱い。 graph TD
-    A["ショック兆候あり"] --> B["等張晶質液ボーラス投与"]
-    B -->|"犬"| C["15-20 mL/kg 15-30分"]
-    B -->|"猫"| D["10-15 mL/kg 15-30分"]
-    C --> E["灌流指標を再評価"]
-    D --> E
-    E --> F{"灌流改善あり"}
-    F -->|"はい"| G["維持輸液へ移行"]
-    F -->|"いいえ"| H{"過剰輸液兆候あり"}
-    H -->|"いいえ"| I["追加ボーラス投与 同量"]
-    H -->|"はい 肺水腫等"| J["昇圧剤検討"]
-    I --> E
+蘇生には 等張晶質液のボーラス投与 が第一選択（犬15〜20mL/kg、猫10〜15mL/kg）。「ショック量を一気に入れる」時代は終わり、 少量ボーラス→再評価→追加を繰り返す のが現在の標準。晶質液vs膠質液のどちらが優れるかのエビデンスは未確立。生理食塩水の大量投与は高クロール性代謝性アシドーシスのリスク → 緩衝晶質液（乳酸リンゲル等）が推奨 。猫は犬より過剰輸液に弱い。
 
 ```mermaid
 graph TD
@@ -40,15 +28,14 @@ graph TD
 
 ## 🗺️ ショック時の輸液ボーラス投与量
 
-|  | 犬 🐕 | 猫 🐱 |
+| | 犬 🐕 | 猫 🐱 |
 |:---|:---|:---|
 | **等張晶質液** | 15〜20 mL/kg <br> 15〜30分で投与 | 10〜15 mL/kg <br> 15〜30分で投与 |
 | **高張食塩水** | 4〜7 mL/kg <br> 約10分 | 3〜4 mL/kg <br> 約10分 |
 | **膠質液（HES（ヒドロキシエチルデンプン: 人工膠質液）等）** | 5 mL/kg <br> 5分で投与、反復可 | 2〜5 mL/kg <br> 5分で投与 |
 | **経験的ショック量（参考値）** | 90 mL/kg <br> （1/4〜1/3ずつ投与） | 50 mL/kg <br> （より少量ずつ） |
 
-※ ショック量を一括投与しない。ボーラス → 灌流評価 →
-                    追加判断を繰り返す
+※ ショック量を一括投与しない。ボーラス → 灌流評価 → 追加判断を繰り返す
 
 ---
 
@@ -99,13 +86,20 @@ graph TD
 
 ---
 
+## 🗣️ 飼い主への説明ガイド
+
+**Q. このテーマについて**
+本記事は専門的な病態・手技に関する内容（ガイドライン・手技比較・薬理等）であるため、飼い主向けの個別ガイドは省略しています。
+
+---
+
 ## 📚 参照論文
 
 1. AAHA Fluid Therapy Guidelines for Dogs and Cats (2024). **JAAHA**
-2. Cazzolli D et al. The crystalloid-colloid debate: Consequences of resuscitation                             fluid selection in veterinary critical care (2015). **JVECC**
+2. Cazzolli D et al. The crystalloid-colloid debate: Consequences of resuscitation fluid selection in veterinary critical care (2015). **JVECC**
 3. Davis H et al. Fluid therapy types and rates in dogs and cats. **Today's Vet Practice**
-4. Silverstein DC et al. Colloids vs crystalloids in small animal resuscitation. **J Vet                                 Emerg Crit Care**
-5. Fluid administration in cats with hypovolemic shock (2024). **AAHA guidelines                                 supplement**
+4. Silverstein DC et al. Colloids vs crystalloids in small animal resuscitation. **J Vet Emerg Crit Care**
+5. Fluid administration in cats with hypovolemic shock (2024). **AAHA guidelines supplement**
 6. Merck Vet Manual: Fluid therapy overview for animals. **merckvetmanual.com**
 7. Mazzaferro EM. Fluid therapy in emergency practice. **Vet Clin North Am**
 

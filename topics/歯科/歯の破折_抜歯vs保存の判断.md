@@ -101,7 +101,7 @@
 
 <div id="refs">
 
-### 📚 参照論文・資料
+## 📚 参照論文
 
 1. Reiter AM, Gracis M. BSAVA Manual of Canine and Feline Dentistry and Oral Surgery. 4th ed. BSAVA. 2018.
 2. Niemiec BA. Veterinary Periodontology. Wiley-Blackwell. 2013.
