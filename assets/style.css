@@ -1652,16 +1652,24 @@ body.mode-free .premium-lock {
 /* ============================================
    Mermaid Flowchart - Pro Mobile Readability Enhancements
    ============================================ */
-/* Standardize connector arrow lines to normal readable thickness */
-.mermaid svg path,
-.mermaid svg line {
-  stroke-width: 2.5px !important;
+/* Force extreme line thickness (12px) on connector arrows/lines */
+.mermaid svg .edgePaths path,
+.mermaid svg .edgePath path,
+.mermaid svg .edgePaths line,
+.mermaid svg .edgePath line {
+  stroke-width: 12px !important;
 }
-/* User Request: Make the border thickness of the frames around the text strictly 8px */
-.mermaid svg rect,
-.mermaid svg circle,
-.mermaid svg ellipse,
-.mermaid svg polygon {
+/* Force thickness (8px) on all node shapes (rectangles, diamonds) */
+.mermaid svg .nodes rect,
+.mermaid svg .nodes circle,
+.mermaid svg .nodes ellipse,
+.mermaid svg .nodes polygon,
+.mermaid svg .nodes path,
+.mermaid svg .node rect,
+.mermaid svg .node circle,
+.mermaid svg .node ellipse,
+.mermaid svg .node polygon,
+.mermaid svg .node path {
   stroke-width: 8px !important;
 }
 /* Prevent the 5px stroke from destroying text readability */
