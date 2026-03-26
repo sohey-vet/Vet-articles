@@ -1627,3 +1627,24 @@ body.mode-free .premium-lock {
 .flowchart-toggle:active {
   transform: scale(0.97);
 }
+/* ============================================
+   Owner Tips Accordion - Purple Theme
+   ============================================ */
+#owner-tips > .accordion {
+  border-color: rgba(168, 85, 247, 0.35);
+  background: rgba(168, 85, 247, 0.04);
+}
+#owner-tips .accordion-trigger {
+  border-left: 4px solid #a855f7;
+  background: rgba(168, 85, 247, 0.06);
+}
+#owner-tips .accordion-trigger:hover {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+}
+#owner-tips .trigger-left {
+  color: #c084fc;
+}
+#owner-tips .accordion-body {
+  border-top: 1px solid rgba(168, 85, 247, 0.15);
+}
