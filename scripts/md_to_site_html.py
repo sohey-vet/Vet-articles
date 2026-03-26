@@ -15,7 +15,7 @@ import html as htmllib
 from pathlib import Path
 
 PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\論文まとめ")
-STYLE_VERSION = "20260326v4"
+STYLE_VERSION = "20260326v5"
 
 
 def extract_tags_from_meta(md_text: str, title: str) -> list[dict]:
