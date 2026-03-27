@@ -57,6 +57,11 @@ def format_compact_html(md_text, url_suffix):
 
     md_text = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', md_text)
     md_text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', md_text)
+    
+    # 単一アスタリスクやアンダースコア（イタリック等）はNoteでは不要なため、記号を除去して修飾なし文字にする
+    md_text = re.sub(r'(?<!\*)\*([^\*]+)\*(?!\*)', r'\1', md_text)
+    md_text = re.sub(r'_(.*?)_', r'\1', md_text)
+    
     md_text = md_text.replace('💡 臨床アクション', '臨床アクション').replace('臨床アクション', '💡 臨床アクション')
     
     lines = md_text.split('\n')
@@ -104,9 +109,12 @@ def format_compact_html(md_text, url_suffix):
         if line_s.startswith('ハッシュタグ'): continue
         if line_s.startswith('※本まとめは'): continue
         
+        if line_s.startswith('#### '):
+            line_s = line_s.replace('#### ', '<strong>') + '</strong>'
+            
         if line_s.startswith('### '):
             flush_p()
-            html_out.append(f"<h3>▼ {line_s.replace('### ', '')}</h3>")
+            html_out.append(f"<h3>▼ {line_s.replace('### ▼ ', '').replace('### ', '')}</h3>")
             continue
         if line_s.startswith('## '):
             flush_p()
@@ -203,9 +211,11 @@ def post_to_note(page, title, html_payload, thumb_path, dry_run=False, draft_mod
             logger.warning(f"⚠️ 見出し画像のアップロード中にエラー: {e}")
         
         # === タイトル入力 ===
-        title_box = page.locator('textarea[placeholder*="タイトル"], textarea').first
-        title_box.fill(title, timeout=15000)
-        time.sleep(1)
+        # 新ルール：タイトルやハッシュタグは手動入力するためスクリプトではスキップ
+        # title_box = page.locator('textarea[placeholder*="タイトル"], textarea').first
+        # title_box.fill(title, timeout=15000)
+        # time.sleep(1)
+
         
         # === クリップボードペースト ===
         body_box = page.locator('[contenteditable="true"]').last
