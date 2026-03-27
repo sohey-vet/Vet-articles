@@ -120,7 +120,10 @@ def format_compact_html(md_text, url_suffix):
             flush_p()
             html_out.append(f"<h2>■ {line_s.replace('## ', '')}</h2>")
             continue
-        if line_s.startswith('# '): continue
+        if line_s.startswith('# '):
+            flush_p()
+            html_out.append(f"<h1>{line_s.replace('# ', '')}</h1>")
+            continue
             
         if line_s.startswith('|') and line_s.endswith('|'):
             in_table = True
