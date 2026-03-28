@@ -42,9 +42,18 @@ def load_schedule():
         return []
 
 def safe_paste(pg, t):
-    pg.evaluate("text => navigator.clipboard.writeText(text)", t)
-    modifier = "Meta" if sys.platform == "darwin" else "Control"
-    pg.keyboard.press(f"{modifier}+V")
+    pg.evaluate("""(text) => {
+        const dataTransfer = new DataTransfer();
+        dataTransfer.setData('text/plain', text);
+        // 現在フォーカスが当たっている要素（textbox.click()後なので入力欄）にペーストイベントを直接発火
+        const el = document.activeElement;
+        const pasteEvent = new ClipboardEvent('paste', {
+            bubbles: true,
+            cancelable: true,
+            clipboardData: dataTransfer
+        });
+        el.dispatchEvent(pasteEvent);
+    }""", t)
     time.sleep(1)
 
 def find_image(source_folder):

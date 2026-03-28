@@ -10,7 +10,7 @@ echo 新仕様：
 echo Xの公式予約機能で「1枚目」をあらかじめ12:00に予約しておき、
 echo その直後（12:01）にこのPCからボットが起動して、
 echo 「2枚目（NoteURL＋写真削除）」を自動でリプライします。
-echo ※PCの電源をつけたままにしておく必要があります。
+echo （※PCがスリープ状態の場合でも、自動でスリープを解除する設定を含みます）
 echo.
 echo ---------------------------------------------------------
 
@@ -34,6 +34,9 @@ set SCRIPT_PATH=%~dp0reply_note_link.py
 schtasks /Create /F /TN %TASK_NAME% /TR "%PYTHON_EXE% \"%SCRIPT_PATH%\"" /SC WEEKLY /D MON,TUE,WED,THU,FRI,SAT /ST 12:01 /RL HIGHEST /IT
 
 if %errorLevel% equ 0 (
+    :: Powershell を使って「タスクを実行するためにスリープを解除する」にチェックを入れる
+    powershell -Command "$task = Get-ScheduledTask -TaskName 'VetEvidence_X_ReplyBot'; $task.Settings.WakeToRun = $true; Set-ScheduledTask -InputObject $task"
+    
     echo.
     echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     echo [OK] 登録が完了しました！！
@@ -41,8 +44,9 @@ if %errorLevel% equ 0 (
     echo 先ほど投稿されたばかりの1枚目の記事を見つけ出し、
     echo 2枚目（Note誘導）を自動でリプライします。
     echo.
-    echo ※注意: 【12:01】にはPCの電源が入り、スリープが
-    echo   解除されている必要があります。（画面を開いておいてください）
+    echo ※スリープ解除(WakeToRun)設定がONになりましたので、
+    echo   PCがスリープしていても12:01に自動復帰して実行されます！
+    echo   (ロック画面のままでも動作するようプログラムは改良されています)
     echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ) else (
     echo.
