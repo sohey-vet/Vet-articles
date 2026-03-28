@@ -15,7 +15,7 @@ print("==================================================")
 
 for i, (d, title) in enumerate(zip(dates, titles), 1):
     print(f"\n▶ 処理中 {i}/3: [{d}] {title}")
-    ret = os.system(f"python auto_post_note.py --date {d}")
+    ret = os.system(f"python auto_post_note.py --date {d} --draft")
     if ret != 0:
         print(f"❌ エラーが発生したため中断しました: {d}")
         sys.exit(1)

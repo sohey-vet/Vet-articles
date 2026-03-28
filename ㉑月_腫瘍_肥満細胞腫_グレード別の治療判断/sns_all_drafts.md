@@ -9,27 +9,17 @@
 
 ### パターン1: 昔の常識 vs 今
 ```text
-⚡ 昔の常識 vs 今のエビデンス
+犬の肥満細胞腫 ─ グレード別治療の常識更新
 
-❌ 昔: MCTは無条件で側方3cmマージンで切除。Patnaik Grade 2は経過観察。
-✅ 今: Kiupel 2段階分類で再評価。Low Grade（長径≤1cm）は側方2cm＋深部筋膜1層で十分。c-kit変異陽性High GradeにはToceranib（Palladia）が著効。
-
-📄 根拠: Kiupel M et al., Vet Pathol, 2011; Fulcher RP et al., JAVMA, 2006
-
-明日の診療から変えられます 💪
-
-#獣医 #獣医師 #エビデンス #肥満細胞腫 #腫瘍外科
+❌ 昔: MCT切除は側方3cmマージンが必須。Patnaik Grade 2は経過観察で良い。
+✅ 今: Kiupel分類でLow Gradeは側方2cm+筋膜1層切除。High GradeはToceranib等全身療法。脱顆粒対策にH1/H2ブロッカー併用。
 ```
 
 ### パターン2: 結論ファースト
 ```text
-🎯 犬の肥満細胞腫（MCT）─ グレード別治療の結論
+犬のMCT治療 ─ 最新情報
 
-現在はKiupel 2段階分類が推奨。Low Grade（MST＞2年）は側方2cm＋筋膜1層の切除＋センチネルリンパ節評価。High Grade（MST＜4ヶ月）は外科切除後にToceranib 2.5-2.75 mg/kg PO MWFまたはVinblastine＋プレドニゾロンのアジュバント療法が必要。脱顆粒対策としてH1＋H2ブロッカーを周術期に併用。
-
-詳しくは Note で（プロフにリンク）
-
-#獣医 #動物病院 #肥満細胞腫 #腫瘍
+犬の肥満細胞腫はKiupel分類で治療判断。Low Gradeは側方2cm+筋膜1層切除。High GradeにはToceranib（c-kit変異）やVinblastine+Prednisolone等の全身療法。脱顆粒対策にH1/H2ブロッカー併用を推奨。
 ```
 
 ### パターン3: 数字で驚かせる

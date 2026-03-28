@@ -120,10 +120,7 @@ def format_compact_html(md_text, url_suffix):
             flush_p()
             html_out.append(f"<h2>■ {line_s.replace('## ', '')}</h2>")
             continue
-        if line_s.startswith('# '):
-            flush_p()
-            html_out.append(f"<h1>{line_s.replace('# ', '')}</h1>")
-            continue
+        if line_s.startswith('# '): continue
             
         if line_s.startswith('|') and line_s.endswith('|'):
             in_table = True
@@ -214,11 +211,9 @@ def post_to_note(page, title, html_payload, thumb_path, dry_run=False, draft_mod
             logger.warning(f"⚠️ 見出し画像のアップロード中にエラー: {e}")
         
         # === タイトル入力 ===
-        # 新ルール：タイトルやハッシュタグは手動入力するためスクリプトではスキップ
-        # title_box = page.locator('textarea[placeholder*="タイトル"], textarea').first
-        # title_box.fill(title, timeout=15000)
-        # time.sleep(1)
-
+        title_box = page.locator('textarea[placeholder*="タイトル"], textarea').first
+        title_box.fill(title, timeout=15000)
+        time.sleep(1)
         
         # === クリップボードペースト ===
         body_box = page.locator('[contenteditable="true"]').last

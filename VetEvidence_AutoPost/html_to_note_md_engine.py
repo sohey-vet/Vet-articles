@@ -41,6 +41,10 @@ def parse_html_to_markdown(html_path):
         if h3:
             h3.extract() # 結論見出し自体をツリーから削除して本文への混入を防止
             
+        # 結論ブロック内にフローチャート等のノードが混入している場合、予め除外することでテキスト化時の混入を防ぐ
+        for mermaid in bottom_line_div.find_all("div", class_="mermaid-wrapper"):
+            mermaid.extract()
+            
         for s in bottom_line_div.find_all("strong"):
             bold_text = s.get_text(separator=" ", strip=True)
             if bold_text and not bold_text.startswith("**"):
@@ -85,9 +89,25 @@ def parse_html_to_markdown(html_path):
             for child in elements:
                 if child.name is None:
                     continue
+                if child.get("id") in ["owner-tips", "refs"]:
+                    continue
                 if child.name == "div" and "mermaid-wrapper" not in child.get("class", []):
-                    # ネストされたdivの内部（key-findingsやclinical-tip）を再帰的に探索
-                    parse_elements(child.children)
+                    # もし内部にブロック要素（p, ul, ol, divなど）が一切ない場合、このdiv自体がpタグの代わり（テキストコンテナ）になっていると判断してテキストを抽出する
+                    if not child.find(["p", "ul", "ol", "div", "h3", "h4", "table"]):
+                        for s in child.find_all("strong"):
+                            text = s.get_text(separator=" ", strip=True)
+                            if text and not text.startswith("**"):
+                                s.replace_with(soup.new_string(f"**{text}**"))
+                        for br in child.find_all("br"):
+                            br.replace_with(soup.new_string("<br/>"))
+                        
+                        div_text = child.get_text(separator=" ", strip=True).replace("\n", "")
+                        if div_text:
+                            content_md.append(div_text)
+                            content_md.append("")
+                    else:
+                        # ネストされたdivの内部（key-findingsやclinical-tip）を再帰的に探索
+                        parse_elements(child.children)
                 elif child.name == "h3" and "card" not in classes:
                     content_md.append(f"### ▼ {child.get_text(separator=' ', strip=True)}")
                 elif child.name == "h4":
@@ -149,7 +169,11 @@ def parse_html_to_markdown(html_path):
         for tip in tips:
             q = tip.find("h4")
             a = tip.find("div", class_="speech-bubble")
-            if q: owner_md.append(f"**Q. {q.get_text(separator=' ', strip=True)}**")
+            if q:
+                q_text = q.get_text(separator=" ", strip=True)
+                if not q_text.startswith("Q.") and not q_text.startswith("Q "):
+                    q_text = f"Q. {q_text}"
+                owner_md.append(f"**{q_text}**")
             if a: owner_md.append(a.get_text(separator=" ", strip=True).replace("\n", " "))
             owner_md.append("")
 
