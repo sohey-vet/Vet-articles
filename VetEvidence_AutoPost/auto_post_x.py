@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import glob
 import argparse
 import logging
 from datetime import datetime
@@ -48,6 +49,15 @@ def load_todays_x_post(target_date):
         logger.error(f"❌ スケジュール読み込みエラー: {e}")
         return None
 
+def find_image(source_folder):
+    """指定されたフォルダからPNG画像を検索する"""
+    DRAFTS_ROOT = r"C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts"
+    folder_path = os.path.join(DRAFTS_ROOT, source_folder)
+    png_files = glob.glob(os.path.join(folder_path, "*.png"))
+    if png_files:
+        return png_files[0]
+    return None
+
 def check_history_duplicate(target_date_str):
     if not os.path.exists(HISTORY_FILE):
         return False
@@ -77,21 +87,43 @@ def save_post_history(post):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
-def post_to_x(page, text, dry_run=False):
+def post_to_x(page, text, dry_run=False, image_path=None):
     logger.info("📝 Xに投稿します...")
     
     try:
+        # Xの表示状態（下書き復元など）を一旦リセットするため、ホームを経由する
+        page.goto("https://x.com/home", wait_until="domcontentloaded", timeout=20000)
+        time.sleep(2)
         page.goto("https://x.com/compose/tweet", wait_until="domcontentloaded", timeout=20000)
         time.sleep(5)
         
-        # メインテキストとリプライ（リンク）の分離
+        # 1. ハッシュタグの完全削除
+        import re
+        text = re.sub(r'#\S+', '', text).strip()
+
+        # 2. メインテキストとリプライ（リンクのみ化）の分離
+        konkyo_marker = "📄 根拠:"
         cta_marker = "詳細・エビデンスはNoteへ"
-        main_text = text
+        
+        main_text = ""
         reply_text = ""
-        if cta_marker in text:
+        
+        if konkyo_marker in text:
+            idx = text.rfind(konkyo_marker)
+            main_text = text[:idx].strip()
+            
+            # リプライにするのは Note誘導のみ（根拠部分は破棄）
+            if cta_marker in text:
+                cta_idx = text.rfind(cta_marker)
+                reply_text = text[cta_idx:].strip()
+        elif cta_marker in text:
+            # フォールバック (根拠がない場合)
             idx = text.rfind(cta_marker)
             main_text = text[:idx].strip()
             reply_text = text[idx:].strip()
+        else:
+            main_text = text
+
 
         def safe_paste(pg, t):
             # Xの特殊なエディタで文字が重複・消失するバグを防ぐため、クリップボード経由でペースト
@@ -101,6 +133,13 @@ def post_to_x(page, text, dry_run=False):
             pg.keyboard.press(f"{modifier}+V")
             time.sleep(1)
 
+        # 1. 画像の添付 (メインツイート)
+        if image_path:
+            file_input = page.locator('input[data-testid="fileInput"]').first
+            file_input.set_input_files(image_path)
+            logger.info("✅ 画像を添付しました")
+            time.sleep(2)
+
         # 最初のボックスにメインテキストを入力（長文制限突破済みのため一括）
         textbox = page.locator('[data-testid="tweetTextarea_0"]').last
         if not textbox.is_visible(timeout=5000):
@@ -109,42 +148,148 @@ def post_to_x(page, text, dry_run=False):
             
         textbox.click(force=True)
         time.sleep(1)
+        
+        # 既存の下書きが残っていた場合は全消去する
+        page.keyboard.press("Control+A")
+        page.keyboard.press("Backspace")
+        time.sleep(1)
+        
+        def safe_paste(pg, t):
+            # Xの特殊なエディタで文字が重複・消失するバグを防ぐため、クリップボード経由でペースト
+            pg.evaluate("text => navigator.clipboard.writeText(text)", t)
+            # macOSの場合はMeta+V、Windowsの場合はControl+V
+            modifier = "Meta" if sys.platform == "darwin" else "Control"
+            pg.keyboard.press(f"{modifier}+V")
+            time.sleep(1)
+
+        # 再度フォーカスを確実にする
+        # 画面に確実に見えているものだけを抽出（バックグラウンドのゴースト要素を無視する）
+        tbs = page.locator('[role="dialog"] [data-testid^="tweetTextarea_"]').all()
+        visible_tbs = [b for b in tbs if b.is_visible()]
+        if not visible_tbs:
+            logger.error("❌ 表示されているテキスト入力欄が見つかりません。")
+            return False
+        textbox = visible_tbs[0]
+        # 背景誤爆を防ぐため確実に画面中央へ
+        textbox.evaluate("el => el.scrollIntoView({block: 'center'})")
+        time.sleep(0.5)
+        textbox.click()
+        time.sleep(0.5)
+        
+        # クリップボード経由で安全にペースト（改行やURLの不具合回避）
         safe_paste(page, main_text)
         time.sleep(2)
         
         # リンク部分をリプライツリー化（アルゴリズム減点回避 ＋ OGP画像削除）
         if reply_text:
-            add_btn = page.locator('[aria-label="ポストを追加"], [aria-label="Add post"]').last
-            if add_btn.is_visible():
-                add_btn.click(force=True)
-                time.sleep(2)
-                textboxes = page.locator('[data-testid="tweetTextarea_0"]').all()
-                textboxes[-1].click(force=True)
-                time.sleep(1)
-                safe_paste(page, reply_text)
+            add_btn_clicked = page.evaluate("""() => {
+                const btn = document.querySelector('[role="dialog"] [aria-label="ポストを追加"]') || document.querySelector('[role="dialog"] [aria-label="Add post"]');
+                if(btn) {
+                    btn.scrollIntoView({block: 'center'});
+                    btn.click();
+                    return true;
+                }
+                return false;
+            }""")
+            
+            if add_btn_clicked:
+                logger.info("➕ ツリー追加ボタンをクリックしました。2つ目の入力欄を待機します。")
+                time.sleep(3) # レンダリングを長めに待機
+                
+                # 新しいテキストボックス群を再度取得
+                tbs_thread = page.locator('[role="dialog"] [data-testid^="tweetTextarea_"]').all()
+                visible_tbs_thread = [b for b in tbs_thread if b.is_visible()]
+                
+                if len(visible_tbs_thread) > 1:
+                    logger.info("✅ 2つ目のテキストボックスを検出しました。ペースト処理へ移行します。")
+                    text_box_2 = visible_tbs_thread[-1]
+                    
+                    # 完全に画面中央にスクロールさせる（これがないと画面外判定で背景をクリックしてしまう）
+                    text_box_2.evaluate("el => el.scrollIntoView({block: 'center'})")
+                    time.sleep(1)
+                    
+                    # ネイティブフォーカス
+                    text_box_2.evaluate("el => el.focus()")
+                    time.sleep(1)
+                    
+                    # 安全なクリック（force=Trueは絶対に使わない。背景誤爆の原因になる）
+                    text_box_2.click()
+                    time.sleep(1)
+                    
+                    safe_paste(page, reply_text)
+                else:
+                    logger.error("❌ 2つ目のテキストボックスが生成されませんでした。")
                 
                 # リンクプレビュー(OGP顔画像)の展開を待ち、確実に削除する
-                logger.info("🔗 リンクプレビュー展開を待機します...")
-                time.sleep(6) # プレビューが描画されるのをしっかり待つ
-                remove_card_btn = page.locator('[data-testid="card.wrapper"] [aria-label="削除"], [aria-label="カードを削除"], [aria-label="Remove card"], [aria-label="リンクプレビューを削除"]').first
-                if remove_card_btn.is_visible():
-                    remove_card_btn.click(force=True)
-                    logger.info("✅ リンクのプレビュー(顔画像)の削除に成功しました！")
-                time.sleep(1)
+                logger.info("🔗 リンクプレビュー（顔写真等）が生成されるのを待機・監視します...")
+                
+                card_removed = False
+                for _ in range(15):
+                    card_removed = page.evaluate("""() => {
+                        const btns = Array.from(document.querySelectorAll('[role="dialog"] [role="button"], [role="dialog"] button'));
+                        for(const b of btns) {
+                            const label = (b.getAttribute('aria-label') || '').toLowerCase();
+                            const testid = (b.getAttribute('data-testid') || '').toLowerCase();
+                            
+                            // 画像添付の削除ボタンには絶対に触らない
+                            if(testid.includes('removephoto') || testid.includes('removemedia') || label.includes('メディア')) {
+                                continue;
+                            }
+                            
+                            // リンクプレビュー用の削除ボタンを検知
+                            if(label.includes('リンクプレビューを削除') || label.includes('プレビューを削除') || label.includes('remove link preview') ||
+                               testid.includes('removelinkpreview') || testid.includes('remove-card') || testid.includes('removecard')) {
+                                b.click();
+                                return true;
+                            }
+                        }
+                        return false;
+                    }""")
+                    
+                    if card_removed:
+                        break
+                    time.sleep(1)
+                
+                if card_removed:
+                    logger.info("✅ リンクのプレビュー（写真カード）の削除に成功しました！")
+                else:
+                    logger.info("⚠️ リンクプレビュー削除ボタンが見つかりませんでした。(プレビューが出ない仕様か、遅延の可能性)")
+                
+                time.sleep(2)
         
         if dry_run:
             logger.info("🔸 ドライラン: 投稿ボタンは押しません")
             return True
 
         # 投稿ボタンをクリック (すべてポスト)
-        post_btn = page.locator('[data-testid="tweetButton"]').last
-        if post_btn.is_visible() and post_btn.get_attribute('aria-disabled') != 'true':
-            post_btn.click(force=True)
+        post_btn_clicked = False
+        logger.info("⏳ 投稿ボタンの有効化（画像アップロード完了）を待機しています...")
+        
+        for _ in range(15):
+            is_active = page.evaluate("""() => {
+                const btns = Array.from(document.querySelectorAll('[data-testid="tweetButton"]'));
+                const activeBtns = btns.filter(b => !b.hasAttribute('disabled') && b.getAttribute('aria-disabled') !== 'true');
+                if(activeBtns.length > 0) {
+                    activeBtns[activeBtns.length - 1].scrollIntoView({block: 'center'});
+                    activeBtns[activeBtns.length - 1].click();
+                    return true;
+                }
+                return false;
+            }""")
+            if is_active:
+                post_btn_clicked = True
+                break
+            time.sleep(1)
+        
+        if post_btn_clicked:
             logger.info("✅ 投稿ボタンをクリックしました")
             time.sleep(8)  # 複数の投稿完了を待つ
             return True
         else:
-            logger.error("❌ 有効な投稿ボタンが見つかりません（文字数オーバーの可能性など）")
+            logger.error("❌ 有効な投稿ボタンが見つかりません（文字数制限エラー、またはネットワーク遅延・画像容量オーバーの疑い）")
+            # デバッグ用にスクリーンショットを保存
+            page.screenshot(path="C:\\Users\\souhe\\Desktop\\VetEvidence_SNS_Drafts\\VetEvidence_AutoPost\\failed_state.png", full_page=True)
+            logger.info("📸 エラー時の画面状態を 'failed_state.png' に保存しました。")
             return False
 
     except Exception as e:
@@ -204,6 +349,11 @@ def main():
 
     logger.info(f"📅 投稿対象: {target_date_str}")
     logger.info(f"📝 ソース: {post['source']}")
+    
+    image_path = find_image(post['source'])
+    if image_path:
+        logger.info(f"📷 添付画像: {os.path.basename(image_path)}")
+        
     logger.info(f"📄 内容プレビュー: {text[:50]}...")
 
     if not os.path.exists(SESSION_DIR):
@@ -222,7 +372,7 @@ def main():
         page = context.pages[0] if context.pages else context.new_page()
         page.evaluate("() => Object.defineProperty(navigator, 'webdriver', { get: () => undefined })")
 
-        success = post_to_x(page, text, dry_run=args.dry_run)
+        success = post_to_x(page, text, dry_run=args.dry_run, image_path=image_path)
         
         if success and not args.dry_run:
             save_post_history(post)
