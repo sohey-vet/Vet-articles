@@ -264,6 +264,17 @@ def main():
     logger.info("📅 VetEvidence X 1週間分一括予約(1枚目のみ) スクリプト")
     logger.info("=" * 50)
 
+    # 先生の「ワンクリックで全部動かす」という要望に応え、スケジュール生成(extract_drafts.py)をここで自動的におこないます。
+    logger.info("🔄 ステップ1: 1週間分の最新スケジュール(JSON)を抽出・生成しています...")
+    import subprocess
+    result = subprocess.run([sys.executable, "extract_drafts.py"], cwd=SCRIPT_DIR, capture_output=True, text=True)
+    if result.returncode != 0:
+        logger.error(f"❌ スケジュール生成(extract_drafts.py)に失敗しました:\n{result.stderr}")
+        sys.exit(1)
+    logger.info("✅ スケジュール生成完了！\n")
+
+    logger.info("▶ ステップ2: Xへの予約投稿処理を開始します...")
+
     if not os.path.exists(SESSION_DIR):
         logger.error("❌ セッションが見つかりません。先にログインを済ませてください。")
         sys.exit(1)

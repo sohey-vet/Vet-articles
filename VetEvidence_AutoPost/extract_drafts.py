@@ -81,8 +81,12 @@ def main():
     print(f"✅ {len(articles)}件の記事ドラフトを抽出しました。")
     
     # スケジュール割り当てロジック
-    # 第1週目のスタートを2026年3月30日月曜日に固定
-    start_monday = date(2026, 3, 30)
+    # 実行日を基準として、直近の（または当日の）月曜日を算出する
+    today = date.today()
+    days_ahead = 0 - today.weekday()
+    if days_ahead < 0:
+        days_ahead += 7 # 火〜日 に実行された場合は「次の月曜日」にする
+    start_monday = today + timedelta(days=days_ahead)
     
     schedule = []
     current_date = start_monday
