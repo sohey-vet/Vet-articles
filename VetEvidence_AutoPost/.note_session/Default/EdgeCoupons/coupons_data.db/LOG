@@ -1,6 +1,0 @@
-2026/03/24-16:44:46.922 f0c Reusing MANIFEST C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts\VetEvidence_AutoPost\.note_session\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
-2026/03/24-16:44:46.923 f0c Recovering log #377
-2026/03/24-16:44:46.923 f0c Reusing old log C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts\VetEvidence_AutoPost\.note_session\Default\EdgeCoupons/coupons_data.db/000377.log 
-2026/03/24-16:44:46.976 77bc Level-0 table #381: started
-2026/03/24-16:44:46.980 77bc Level-0 table #381: 681817 bytes OK
-2026/03/24-16:44:46.981 77bc Delete type=0 #377

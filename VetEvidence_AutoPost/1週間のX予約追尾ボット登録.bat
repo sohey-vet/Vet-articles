@@ -27,11 +27,10 @@ if %errorLevel% neq 0 (
 )
 
 set TASK_NAME="VetEvidence_X_ReplyBot"
-set PYTHON_EXE=python
-set SCRIPT_PATH=%~dp0reply_note_link.py
+set BAT_PATH=%~dp0run_reply_bot.bat
 
 :: 毎週 月,火,水,木,金,土 の 12:01 にボットを起動する
-schtasks /Create /F /TN %TASK_NAME% /TR "%PYTHON_EXE% \"%SCRIPT_PATH%\"" /SC WEEKLY /D MON,TUE,WED,THU,FRI,SAT /ST 12:01 /RL HIGHEST /IT
+schtasks /Create /F /TN %TASK_NAME% /TR "\"%BAT_PATH%\"" /SC WEEKLY /D MON,TUE,WED,THU,FRI,SAT /ST 12:01 /RL HIGHEST /IT
 
 if %errorLevel% equ 0 (
     :: Powershell を使って「タスクを実行するためにスリープを解除する」にチェックを入れる

@@ -13,3 +13,9 @@ VetEvidence_AutoPost/sync_log.txt
 *.jpg
 *.jpeg
 *.svg
+
+VetEvidence_AutoPost/.x_session/
+VetEvidence_AutoPost/.note_session/
+VetEvidence_AutoPost/.threads_session/
+VetEvidence_AutoPost/temp_*.txt
+VetEvidence_AutoPost/*.html
