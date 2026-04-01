@@ -10,13 +10,23 @@ OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 # 正規表現パターン
 PATTERN_1_RE = re.compile(r"### パターン1.*?\n```text\n(.*?)\n```", re.DOTALL)
 PATTERN_2_RE = re.compile(r"### パターン2.*?\n```text\n(.*?)\n```", re.DOTALL)
-THREADS_RE = re.compile(r"## 🧵 Threads用.*?\n```text\n(.*?)\n```", re.DOTALL)
+THREADS_LONG_RE = re.compile(r"## 🧵 Threads用（長文.*?）.*?\n```text\n(.*?)\n```", re.DOTALL)
+THREADS_SHORT_RE = re.compile(r"## 🧵 Threads用（火木土：プラン.*?）.*?\n```text\n(.*?)\n```", re.DOTALL)
 
 def extract_content(text, pattern):
     match = pattern.search(text)
     if match:
         return match.group(1).strip()
     return ""
+
+def extract_sunday_digests():
+    digest_md_path = os.path.join(DRAFTS_ROOT, "all_sunday_digests.md")
+    if not os.path.exists(digest_md_path):
+        return []
+    with open(digest_md_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    matches = re.findall(r"## 第\d+週目.*?\n```text\n(.*?)\n```", content, re.DOTALL)
+    return [m.strip() for m in matches]
 
 def clean_markdown(text):
     if not text: return text
@@ -68,24 +78,27 @@ def main():
             
         pat1 = extract_content(content, PATTERN_1_RE)
         pat2 = extract_content(content, PATTERN_2_RE)
-        threads = extract_content(content, THREADS_RE)
+        threads_long = extract_content(content, THREADS_LONG_RE)
+        threads_short = extract_content(content, THREADS_SHORT_RE)
         
-        if pat1 or pat2 or threads:
+        if pat1 or pat2 or threads_long or threads_short:
             articles.append({
                 "folder": folder_name,
                 "x_pattern1": pat1,
                 "x_pattern2": pat2,
-                "threads": threads
+                "threads_long": threads_long,
+                "threads_short": threads_short
             })
             
     print(f"✅ {len(articles)}件の記事ドラフトを抽出しました。")
+    sunday_digests = extract_sunday_digests()
+    print(f"✅ {len(sunday_digests)}件の日曜ダイジェストを抽出しました。")
     
     # スケジュール割り当てロジック
     # 実行日を基準として、直近の（または当日の）月曜日を算出する
     today = date.today()
     days_ahead = 0 - today.weekday()
-    if days_ahead < 0:
-        days_ahead += 7 # 火〜日 に実行された場合は「次の月曜日」にする
+    # 常に「今週の月曜日」を開始日としてカレンダーを生成する
     start_monday = today + timedelta(days=days_ahead)
     
     schedule = []
@@ -113,22 +126,51 @@ def main():
             "source": article["folder"],
             "type": "Pattern 1"
         })
-        schedule.append({
-            "date": day1_date.isoformat(),
-            "platform": "Threads",
-            "content": append_cta(clean_markdown(article["threads"]), "Threads"),
-            "source": article["folder"],
-            "type": "Threads Long"
-        })
+        if article.get("threads_long"):
+            schedule.append({
+                "date": day1_date.isoformat(),
+                "platform": "Threads",
+                "content": append_cta(clean_markdown(article["threads_long"]), "Threads"),
+                "source": article["folder"],
+                "type": "Threads Long"
+            })
         
-        # Day 2: 火・木・土 -> X(パターン2)
-        schedule.append({
-            "date": day2_date.isoformat(),
-            "platform": "X",
-            "content": append_cta(clean_markdown(article["x_pattern2"]), "X"),
-            "source": article["folder"],
-            "type": "Pattern 2"
-        })
+        # Day 2: 火・木・土 -> X(パターン2) と Threads (Short)
+        if article.get("x_pattern2"):
+            schedule.append({
+                "date": day2_date.isoformat(),
+                "platform": "X",
+                "content": append_cta(clean_markdown(article["x_pattern2"]), "X"),
+                "source": article["folder"],
+                "type": "Pattern 2"
+            })
+        if article.get("threads_short"):
+            schedule.append({
+                "date": day2_date.isoformat(),
+                "platform": "Threads",
+                "content": append_cta(clean_markdown(article["threads_short"]), "Threads"),
+                "source": article["folder"],
+                "type": "Threads Short"
+            })
+            
+        # Day 7 (日曜日) -> 1週間の締めくくりにダイジェスト追加
+        if day_index == 2 and week_offset < len(sunday_digests):
+            sunday_date = start_monday + timedelta(days=week_offset * 7 + 6)
+            digest_text = sunday_digests[week_offset]
+            schedule.append({
+                "date": sunday_date.isoformat(),
+                "platform": "X",
+                "content": digest_text,
+                "source": "all_sunday_digests.md",
+                "type": "Sunday Digest"
+            })
+            schedule.append({
+                "date": sunday_date.isoformat(),
+                "platform": "Threads",
+                "content": digest_text,
+                "source": "all_sunday_digests.md",
+                "type": "Sunday Digest"
+            })
         
     # JSONとして保存
     output_file = os.path.join(OUTPUT_DIR, "sns_schedule.json")

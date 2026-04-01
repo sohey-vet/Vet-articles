@@ -12,6 +12,28 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SESSION_DIR = os.path.join(SCRIPT_DIR, ".threads_session")
 LOG_DIR = os.path.join(SCRIPT_DIR, "logs")
 SCHEDULE_FILE = os.path.join(SCRIPT_DIR, "sns_schedule.json")
+LATEST_URL_FILE = os.path.join(SCRIPT_DIR, "threads_latest_post_url.txt")
+
+def get_latest_post_url_from_profile(page):
+    """プロフィールから最新の投稿URLを取得する"""
+    logger.info("🔍 プロフィールから最新の投稿URLを取得します...")
+    page.goto("https://www.threads.net/@pawmedical_jp", wait_until="domcontentloaded", timeout=15000)
+    time.sleep(4)
+    try:
+        # 投稿リンクを探す (最初のものを取得)
+        link_elems = page.locator('a[href*="/post/"]').all()
+        for link in link_elems:
+            if link.is_visible():
+                href = link.get_attribute("href")
+                if href:
+                    url = f"https://www.threads.net{href}" if href.startswith("/") else href
+                    logger.info(f"✅ 最新の投稿URLを取得しました: {url}")
+                    return url
+    except Exception as e:
+        logger.error(f"❌ プロフィールからのURL取得に失敗しました: {e}")
+    logger.warning("⚠️ 投稿URLが見つかりませんでした。")
+    return None
+
 
 # ----- ログ設定 -----
 os.makedirs(LOG_DIR, exist_ok=True)
@@ -54,47 +76,124 @@ def normalize_text(text):
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     return text
 
-def post_to_threads(page, text, dry_run=False):
+def post_to_threads(page, text, target_date, dry_run=False):
     """PlaywrightでThreadsにテキストを投稿する"""
     logger.info("📝 Threadsに投稿します...")
     
+    is_quote_day = target_date.weekday() in [1, 3, 5]  # 火(1) 木(3) 土(5)
+    quote_mode_active = False
+
     try:
         # 1. 投稿ダイアログを開く (ThreadsのWeb UI構成に依存)
-        # Threads ホーム画面にいる前提
-        page.goto("https://www.threads.net/", wait_until="domcontentloaded", timeout=15000)
-        time.sleep(3)
         
-        # 投稿開始ボタン（「新しいスレッドを開始」などのエリア）を探す
-        compose_trigger = None
-        selectors = [
-            'text="今なにしてる？"',
-            'text="Start a thread..."',
-            '[aria-label="新しいスレッドを開始"]',
-            '[aria-label="Start a thread"]',
-            'svg[aria-label="新しいスレッドを開始"]',
-            'svg[aria-label="Start a thread"]',
-            'div[role="button"]:has-text("スレッドを開始")'
-        ]
-        
-        for selector in selectors:
-            try:
-                elem = page.locator(selector).first
-                if elem.is_visible(timeout=2000):
-                    compose_trigger = elem
-                    break
-            except Exception:
-                pass
-                
-        if not compose_trigger:
-            # フォールバック: テキストエリア自体が最初から見えている場合
-            compose_trigger = page.locator('div[contenteditable="true"]').first
+        if is_quote_day:
+            logger.info("🔄 本日は引用投稿（火・木・土）の日です。引用元のURLを探します...")
+            quote_url = None
+            if os.path.exists(LATEST_URL_FILE):
+                try:
+                    with open(LATEST_URL_FILE, "r", encoding="utf-8") as f:
+                        quote_url = f.read().strip()
+                    logger.info(f"📄 保存されていたURLを使用します: {quote_url}")
+                except Exception as e:
+                    logger.error(f"❌ URLファイルの読み込みに失敗しました: {e}")
             
-        if compose_trigger and compose_trigger.is_visible():
-            compose_trigger.click(force=True)
-            time.sleep(2)
-        else:
-            logger.error("❌ 投稿開始ボタンまたは入力欄が見つかりません")
-            return False
+            if not quote_url:
+                logger.warning("⚠️ 保存されたURLが見つからないため、プロフィールから取得を試みます...")
+                quote_url = get_latest_post_url_from_profile(page)
+                
+            if quote_url:
+                logger.info(f"🔗 引用元URLを開きます: {quote_url}")
+                page.goto(quote_url, wait_until="domcontentloaded", timeout=15000)
+                time.sleep(5)
+                
+                # 再投稿（Repost）ボタンを探す
+                repost_trigger = None
+                repost_selectors = [
+                    'svg[aria-label="再投稿"]',
+                    'svg[aria-label="Repost"]',
+                    '[aria-label="再投稿"]',
+                    '[aria-label="Repost"]'
+                ]
+                for selector in repost_selectors:
+                    try:
+                        elem = page.locator(selector).first
+                        if elem.is_visible(timeout=2000):
+                            repost_trigger = elem
+                            break
+                    except:
+                        pass
+                
+                if repost_trigger:
+                    repost_trigger.click(force=True)
+                    time.sleep(2) # メニュー展開待ち
+                    
+                    # 「引用」メニューを探す
+                    quote_trigger = None
+                    quote_selectors = [
+                        'text="引用"',
+                        'text="Quote"',
+                        '[aria-label="引用"]',
+                        '[aria-label="Quote"]',
+                        'div[role="button"]:has-text("引用")'
+                    ]
+                    for selector in quote_selectors:
+                        try:
+                            elem = page.locator(selector).first
+                            if elem.is_visible(timeout=2000):
+                                quote_trigger = elem
+                                break
+                        except:
+                            pass
+                            
+                    if quote_trigger:
+                        quote_trigger.click(force=True)
+                        time.sleep(2)
+                        logger.info("✅ 引用ダイアログを開きました")
+                        quote_mode_active = True
+                    else:
+                        logger.error("❌ 引用メニューが見つかりませんでした。通常の新規投稿に切り替えます。")
+                else:
+                    logger.error("❌ 再投稿ボタンが見つかりませんでした。通常の新規投稿に切り替えます。")
+            else:
+                logger.error("❌ 引用対象のURLがどうしても取得できなかったため、通常の新規投稿に切り替えます。")
+
+        if not quote_mode_active:
+            # 通常の投稿（月水金、または引用フロー失敗時）
+            page.goto("https://www.threads.net/", wait_until="domcontentloaded", timeout=15000)
+            time.sleep(3)
+        
+        # 通常の投稿ダイアログを開くためのボタン探し
+        if not quote_mode_active:
+            compose_trigger = None
+            selectors = [
+                'text="今なにしてる？"',
+                'text="Start a thread..."',
+                '[aria-label="新しいスレッドを開始"]',
+                '[aria-label="Start a thread"]',
+                'svg[aria-label="新しいスレッドを開始"]',
+                'svg[aria-label="Start a thread"]',
+                'div[role="button"]:has-text("スレッドを開始")'
+            ]
+            
+            for selector in selectors:
+                try:
+                    elem = page.locator(selector).first
+                    if elem.is_visible(timeout=2000):
+                        compose_trigger = elem
+                        break
+                except Exception:
+                    pass
+                    
+            if not compose_trigger:
+                # フォールバック: テキストエリア自体が最初から見えている場合
+                compose_trigger = page.locator('div[contenteditable="true"]').first
+                
+            if compose_trigger and compose_trigger.is_visible():
+                compose_trigger.click(force=True)
+                time.sleep(2)
+            else:
+                logger.error("❌ 投稿開始ボタンまたは入力欄が見つかりません")
+                return False
 
         # 2. テキストを入力
         # テキストを500文字以内のチャンクに分割
@@ -194,7 +293,19 @@ def post_to_threads(page, text, dry_run=False):
         if post_btn:
             post_btn.click(force=True)
             logger.info("✅ 投稿ボタンをクリックしました")
-            time.sleep(5)  # 投稿完了を待つ
+            time.sleep(6)  # 投稿完了を待つ
+
+            # 月水金（通常投稿）の場合はURLを保存して次回（火木土）の引用に備える
+            if not is_quote_day:
+                latest_url = get_latest_post_url_from_profile(page)
+                if latest_url:
+                    try:
+                        with open(LATEST_URL_FILE, "w", encoding="utf-8") as f:
+                            f.write(latest_url)
+                        logger.info(f"💾 次回（火木土）のために投稿URLを保存しました: {latest_url}")
+                    except Exception as e:
+                        logger.error(f"❌ URLファイルの保存に失敗しました: {e}")
+
             return True
         else:
             logger.error("❌ 有効な投稿ボタンが見つかりません")
@@ -273,7 +384,7 @@ def main():
         # Webdriver検知回避
         page.evaluate("() => Object.defineProperty(navigator, 'webdriver', { get: () => undefined })")
 
-        success = post_to_threads(page, text, dry_run=args.dry_run)
+        success = post_to_threads(page, text, target_date, dry_run=args.dry_run)
         
         if success:
             logger.info("🎉 処理が正常に完了しました！")

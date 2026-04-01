@@ -99,10 +99,15 @@ def format_compact_html(md_text, url_suffix):
         if line_s.startswith('subgraph ') or line_s == 'end': continue
         # ----------------------------------------
             
-        if line_s.startswith('tags:'): continue
+        # ----------------------------------------
+            
         if line_s.startswith('update:'): continue
-        
-        if line_s == '---': continue
+
+        if line_s == '---':
+            flush_p()
+            html_out.append("<hr>")
+            continue
+
         if any(j in line_s for j in junk): continue
         if '<details>' in line_s or '</details>' in line_s or '<summary>' in line_s or '</summary>' in line_s: continue
         if line_s.startswith('[!'): continue
@@ -114,11 +119,11 @@ def format_compact_html(md_text, url_suffix):
             
         if line_s.startswith('### '):
             flush_p()
-            html_out.append(f"<h3>▼ {line_s.replace('### ▼ ', '').replace('### ', '')}</h3>")
+            html_out.append(f"<h3>{line_s[4:]}</h3>")
             continue
         if line_s.startswith('## '):
             flush_p()
-            html_out.append(f"<h2>■ {line_s.replace('## ', '')}</h2>")
+            html_out.append(f"<h2>{line_s[3:]}</h2>")
             continue
         if line_s.startswith('# '): continue
             
