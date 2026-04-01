@@ -1,0 +1,52 @@
+# ❤️ ピモベンダンの使い方と最新エビデンス
+
+> ⏱️ **読了時間**: 約5分
+> 📄 **参照論文**: 6本
+
+---
+
+## 🎯 結論
+
+ピモベンダン（ベトメディン®）は PDE
+                        III阻害＋Ca²⁺感受性増強 の二重作用を持つ強心薬。EPIC試験（2016年）により、MMVDステージB2（心拡大あり・無症状）からの投与で CHF（うっ血性心不全）発症/心臓死を約15ヶ月延長 することが証明され、2019年ACVIMコンセンサスで推奨された。用量は 0.25〜0.3mg/kg
+                        PO
+                        BID （12時間間隔・食事の1時間前が理想）。注射薬（ベトメディン注®）は急性CHFの救急で使用されるが、 血管外漏出で一過性の腫脹や軽度の炎症を起こすため確実な静脈留置が必要 。猫のHCMでは LVOTO（左室流出路閉塞）がない場合に限り検討 。
+
+---
+
+## 🗺️ MMVDステージ別 ─ ピモベンダンの推奨
+
+| ステージ | 定義 | ピモベンダン | その他の治療 |
+|:---|:---|:---|:---|
+| **A** | リスク犬種、心疾患なし | ❌ 不要 | 定期検診のみ |
+| **B1** | 心雑音あり、心拡大なし | ❌ 不要 | 6〜12ヶ月ごとの心エコー |
+| **B2** | 心雑音あり、心拡大あり <br> (心雑音≧Ⅳ/Ⅵ, LA/Ao≥1.6, LVIDdN≥1.7, VHS＞10.5) | **✅ 開始** <br> 0.25〜0.3mg/kg BID | 安静時呼吸数の家庭モニタリング |
+| **C** | CHF発症（現在or既往） | **✅ 継続/開始** | フロセミド＋ACE阻害薬＋スピロノラクトン |
+| **D** | 治療抵抗性CHF | **✅ 継続** | 高用量利尿薬＋トラセミド検討＋シルデナフィル |
+
+---
+
+## ⚡ 昔の常識 vs 今のエビデンス
+
+| ❌ 旧来 | ✅ 最新 |
+|:---|:---|
+| ピモベンダンはCHF発症後に開始 | ステージ **B2（心拡大あり・無症状）** から開始。EPIC試験で心不全発症を約15ヶ月延長（2016年） |
+| 強心薬は心筋酸素消費を増やすから注意 | ピモベンダンはCa²⁺感受性増強で収縮力を上げつつ **酸素消費量の増加が少ない** （イノダイレーター） |
+| 猫にはピモベンダンは禁忌 | LVOTO（左室流出路閉塞）がないHCMで収縮能低下がある場合は **検討可** （ACVIM 2020） |
+| 経口薬のみ | 2020年にベトメディン注（IV）が発売。急性CHFでの使用が可能に。2025年に経口液剤も発売 |
+
+---
+
+## 📚 参照論文
+
+1. Boswood A et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve                                 disease and cardiomegaly: the EPIC Study (2016). **J Vet Intern Med** 2016;30(6):1765-1779.
+2. Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous                                 mitral valve disease in dogs (2019). **J Vet Intern Med** 2019;33(3):1127-1140.
+3. Summerfield NJ et al. Efficacy of pimobendan in the prevention of congestive heart                                 failure or sudden death in Doberman Pinschers with preclinical dilated cardiomyopathy                                 (the PROTECT study) (2012). **J Vet Intern Med** 2012;26(6):1337-1349.
+4. Reina-Doreste Y et al. Case-control study of the effects of pimobendan on survival time                                 in cats with hypertrophic cardiomyopathy and congestive heart failure (2014). **J Am                                     Vet Med Assoc** 2014;245(5):534-539.
+5. Häggström J et al. Effect of pimobendan or benazepril hydrochloride on survival times in                                 dogs with congestive heart failure caused by naturally occurring myxomatous mitral valve                                 disease: the QUEST study (2008). **J Vet Intern Med** 2008;22(5):1124-1135.
+6. Boyle KL, Leech E. A review of the pharmacology and clinical uses of pimobendan (2012). **J Vet Emerg Crit Care** 2012;22(4):398-408.
+
+---
+
+tags: [循環器]
+update: 2026-03-24

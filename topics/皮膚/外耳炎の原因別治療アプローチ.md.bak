@@ -1,0 +1,73 @@
+# 🩺 外耳炎の原因別治療アプローチ
+
+> ⏱️ **読了時間**: 約5分
+> 📄 **参照論文**: 5本
+
+---
+
+## 🎯 結論graph TD
+    A["外耳炎症状"] --> B["初期検査 耳鏡 細胞診 鼓膜確認"]
+
+    B --> C{"二次因子 S の治療"}
+    C --> C1["細胞診結果に基づき点耳薬選択"]
+    C1 --> C2{"桿菌陽性?"}
+    C2 -->|"Yes"| C2A["培養 感受性試験"]
+    C2A --> D
+    C2 -->|"No"| D
+
+    D{"原発因子 P の特定と是正"}
+    D --> D1{"アレルギー疑い?"}
+    D1 -->|"Yes"| D1A["アトピー 食物アレルギー検査 全身療法"]
+    D1 -->|"No"| D2{"耳ダニ 異物 腫瘍?"}
+    D2 -->|"Yes"| D2A["除去 治療"]
+    D2 -->|"No"| E
+
+    E{"持続因子 P への対処"}
+    E --> E1{"耳道肥厚 石灰化 中耳炎?"}
+    E1 -->|"Yes"| E1A["CT検査 TECA LBO検討"]
+    E1 -->|"No"| E2{"バイオフィルム疑い?"}
+    E2 -->|"Yes"| E2A["トリスEDTA 洗浄"]
+    E2 -->|"No"| F
+
+    F{"素因 P の改善"}
+    F --> F1["耳毛処理 環境改善 定期洗浄"]
+
+    F1 --> G["治療効果判定 定期モニタリング"]
+
+    D1A --> G
+    D2A --> G
+    E1A --> G
+    E2A --> G
+
+犬の外耳炎の 最多の原発因子はアトピー性皮膚炎（43〜55%） 。
+                    外耳炎を繰り返す犬の多くは 未診断のアトピー であり、点耳薬だけでは解決しない。
+                    治療の3本柱は：① 原発因子の是正 （アトピーならアポキル/サイトポイント等）、
+                    ② 二次感染の制御 （細菌・マラセチアの適切な治療）、
+                    ③ 耳道環境の改善 （適切な耳洗浄）。
+                    鼓膜の状態を確認してから洗浄液・点耳薬を選択する。 慢性的な外耳道の肥厚・石灰化は不可逆的 で、最終手段として外耳道切除術（TECA-LBO）がある。
+
+---
+
+## ⚡ PPSP分類 ─ 外耳炎の因子整理
+
+| 因子 | 定義 | 具体例 |
+|:---|:---|:---|
+| **P** rimary <br> （原発因子） | 外耳炎を直接引き起こす | **アトピー（最多）** 、食物アレルギー、耳ダニ（猫で多い）、異物、扁平上皮癌 |
+| **P** redisposing <br> （素因） | 外耳炎のリスクを高める | 垂れ耳（コッカー、バセット）、多毛な耳道、水泳・入浴後の湿潤、耳道の狭窄 |
+| **S** econdary <br> （二次因子） | 原発因子で起きた炎症に乗じて発生 | **マラセチア** 過増殖、 **ブドウ球菌** 感染、 **緑膿菌** （慢性化で出現） |
+| **P** erpetuating <br> （持続因子） | 原発が治っても外耳炎を維持する | 耳道の **肥厚・石灰化** 、中耳炎の合併、 **バイオフィルム** 形成 |
+
+---
+
+## 📚 参照論文
+
+1. Gotthelf LN. Diagnosis and treatment of otitis media in dogs and cats. **Vet Clin North Am Small Anim Pract** 2004;34(2):469-487.
+2. Nuttall T. Successful management of otitis externa. **In Practice** 2016;38(suppl 2):17-21.
+3. Saridomichelakis MN et al. Aetiology of canine otitis externa: a                                 retrospective study of 100 cases. **Vet Dermatol** 2007;18(5):341-347.
+4. Cole LK. Otoscopic evaluation of the ear canal. **Vet Clin North Am Small Anim Pract** 2004;34(2):397-410.
+5. Griffin CE. Otitis techniques to improve practice. **Clin Tech Small Anim Pract** 2006;21(3):96-105.
+
+---
+
+tags: [皮膚科, 抗菌薬]
+update: 2026-03-24

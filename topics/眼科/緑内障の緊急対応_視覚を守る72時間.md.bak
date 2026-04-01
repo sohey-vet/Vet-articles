@@ -1,0 +1,80 @@
+# 👁️ 緑内障の緊急対応 ─ 視覚を守る72時間
+
+> ⏱️ **読了時間**: 約5分
+> 📄 **参照論文**: 5本
+
+---
+
+## 🎯 結論graph TD
+    A["緑内障診断 高眼圧"] --> B{"緊急降圧"}
+    B --> C["マンニトール 20% IV"]
+    C --> D{"Latanoprost点眼は？"}
+    D -->|"動物種:犬"| E{"原因は？"}
+    D -->|"動物種:猫"| F["Latanoprost 禁忌"]
+    E -->|"原発性PACG"| G["Latanoprost 適用"]
+    E -->|"ぶどう膜炎続発"| F
+    G --> H["維持薬 Dorzolamide Timolol"]
+    F --> H
+    H --> I["健側眼 予防点眼"]
+    I --> J["専門医へ紹介"]
+
+緑内障は 眼圧（IOP）の異常上昇 により網膜神経節細胞が死滅する疾患。正常IOP 15-25 mmHgに対し、発作時は40-70
+                    mmHg以上に達する。 眼圧 >40-50 mmHgが48-72時間以上持続すると非可逆的な視覚喪失 を来す。緊急降圧として マンニトール
+                        20%（1.0-2.0 g/kg IV、20-30分かけて） を投与し15-30分で効果発現。犬の原発性緑内障には Latanoprost 0.005%
+                        点眼 が最も強力な降圧効果を示すが、 猫には無効かつ炎症を悪化させるため禁忌 。維持管理には Dorzolamide 2% +
+                        Timolol 0.5%（コソプト等）1滴
+                        q8-12h が犬猫共通で使用可能。犬の原発性閉塞隅角緑内障（PACG）では、片眼発症後の中央値約8ヶ月で 対側眼も発症 するため、健眼への予防点眼を開始する。
+
+---
+
+## 🚨 緊急降圧プロトコル
+
+| 薬剤 | 用量 | 犬 | 猫 | 備考 |
+|:---|:---|:---|:---|:---|
+| **マンニトール 20%** | 1.0-2.0 g/kg IV <br> （20-30分かけて） | ✅ | ✅ | 効果発現15-30分。脱水・心不全・腎不全は禁忌 |
+| **Latanoprost 0.005%** | **緊急時: 10〜15分間隔で2〜3回点眼** <br> 維持: 1滴 q12h | ✅ **最強の降圧** | **❌ 禁忌** | 犬の原発性緑内障に。1-2時間で効果。ぶどう膜炎時は禁忌 |
+| **Dorzolamide + Timolol** | 1滴 q8-12h | ✅ | ✅ | CAI + β遮断薬。維持管理に。二次性緑内障にも適用可 |
+
+---
+
+## ⚡ 昔の常識 vs 今のエビデンス
+
+| ❌ 旧来 | ✅ 最新 |
+|:---|:---|
+| 緑内障は眼科の専門病院で診る疾患 | **48-72時間で失明する緊急疾患** 。一般病院でまずマンニトール + Latanoprost（犬）の初期降圧を行い、専門医へ紹介 |
+| LatanoprostはIOP上昇ならすべてに有効 | **猫には禁忌（無効＋炎症悪化）** 。ぶどう膜炎続発性（水晶体脱臼など）にも使わない |
+| 片目の緑内障が治まればそれで終わり | 原発性PACGでは対側眼も **中央値約8ヶ月で発症** 。健眼への **予防点眼** が必須 |
+
+---
+
+## 🔍原発性緑内障 vs 二次性緑内障 ─ 治療戦略が変わる
+
+- 日本では柴犬が原発性緑内障の好発犬種。海外文献ではコッカースパニエルが中心だが、日本の患者層は大きく異なる
+- 柴犬の原発性PACGは進行が速く、発症時にはすでに視力がかなり低下していることも多い
+
+---
+
+## 🛡️健側眼の予防的点眼 ─ 対側眼の失明を先延ばしにする
+
+- 原発性PACG（犬）では、片眼発症後の **中央値約8ヶ月（早い例で数週間）** で対側眼も発症する
+- 視覚が残っている健眼に対して予防点眼を開始: **Timolol 0.5% 1滴 q12-24h** （β遮断薬） または **Dorzolamide 2% 1滴 q8-12h** （CAI）
+- 目的は **失明を完全に防ぐことではなく、視覚のある期間をできるだけ延ばす** こと
+- 眼圧を定期的にモニタリング（月1回程度）し、上昇傾向があればさらなる介入を検討
+
+- **Timolol 0.5% 1滴 q12-24h** （β遮断薬）
+- または **Dorzolamide 2% 1滴 q8-12h** （CAI）
+
+---
+
+## 📚 参照論文
+
+1. Gelatt KN, MacKay EO. Prevalence of the breed-related glaucomas in pure-bred dogs in North                             America. **Vet Ophthalmol** 2004;7(2):97-111.
+2. Miller PE et al. The efficacy of topical prophylactic antiglaucoma therapy in primary closed                             angle glaucoma in dogs. **J Am Anim Hosp Assoc** 2000;36(5):431-438.
+3. Pizzirani S, Gong H. Functional anatomy of the outflow facilities. **Vet Clin North Am                                 Small Anim Pract** 2015;45(6):1101-1126.
+4. Gelatt KN. Veterinary Ophthalmology. 6th ed. Wiley-Blackwell; 2021.
+5. Maggio F, Bras D. Surgical treatment of canine glaucoma: filtering and nonfiltering                             procedures. **Vet Clin North Am Small Anim Pract** 2015;45(6):1261-1286.
+
+---
+
+tags: [救急, 眼科, 緑内障]
+update: 2026-03-24

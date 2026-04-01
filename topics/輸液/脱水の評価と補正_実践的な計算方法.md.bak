@@ -1,0 +1,152 @@
+# 脱水の評価と補正 ─ 実践的な計算方法
+
+> ⏱️ **読了時間**: 約9分
+
+
+## 🎯 結論
+
+- 脱水率（%）は皮膚つまみ試験、粘膜の状態、CRT、眼球陥凹などの身体検査所見から推定し、**5%（軽度）〜12%（重度・ショック）**のスケールで評価する。
+- 輸液量の計算式: **不足量（mL）= 体重（kg）× 脱水率（%）× 1000**。これに維持量と進行中の喪失量を加算。
+- 不足量は通常 **12〜24時間かけて** 補正する。ショック状態がある場合は、脱水補正とは別枠でショックボーラスを投与する。
+- 猫の維持輸液量は犬より少なく（犬50-60 mL/kg/day、猫40-50 mL/kg/day）、猫では**体液過負荷のリスク**に常に注意する。
+
+## 本文
+
+### 脱水の評価 ─ 身体検査が出発点
+
+脱水の評価は血液検査よりも身体検査に始まり、その結果を血液データで補完する。
+
+#### 脱水率（%）の臨床的推定
+
+| 脱水率 | 身体検査所見 |
+|:------:|------------|
+| <5% | 臨床的に検出困難。口腔粘膜のわずかな乾燥（tacky mucous membranes）が唯一のサインとなることがある |
+| 5% | 皮膚つまみ試験（skin tent）で軽度の戻り遅延。粘膜のわずかな乾燥 |
+| 6-8% | 明確なskin tent（2〜3秒の戻り遅延）、CRT（毛細血管再充満時間）の延長（2〜3秒）、眼球の軽度陥凹、粘膜の乾燥 |
+| 8-10% | 著明なskin tent（3〜5秒以上）、明らかな眼球陥凹、CRT 3秒以上、頻脈 |
+| 10-12% | ショック状態を伴う。微弱・速い脈拍、冷たい四肢、蒼白な粘膜、虚脱。直ちに循環安定化が必要 |
+
+**注意点:**
+- **高齢猫や痩せた動物**: 皮膚弾力の低下が生理的に存在するため、脱水がないのにskin tentが遅延する（偽陽性）
+- **肥満動物**: 皮下脂肪が豊富なため、実際に脱水していてもskin tentが正常に見える（偽陰性）
+- **高蛋白血症（脱水による血液濃縮）**: PCV/TP（packed cell volume / total protein）の上昇は脱水の客観的指標として有用
+
+#### 血液検査による補完
+
+- **PCV/TP**: 両方が上昇 → 血液濃縮（脱水を示唆）、PCVのみ上昇 → 赤血球増多（脱水以外の原因）
+- **BUN/Cre**: 腎前性高窒素血症（BUN/Cre比が高い）は脱水の間接的指標
+- **尿比重**: 脱水時に腎機能が正常であれば尿比重は上昇する（犬 >1.045、猫 >1.040）
+- **電解質**: 脱水の型（等張性・低張性・高張性）の鑑別に
+
+### 輸液量の計算 ─ 3つの構成要素
+
+1日の総輸液量は以下の3要素の合計である：
+
+#### 1. 不足量（Deficit）─ 既に失われた体液の補正
+
+**不足量（mL）= 体重（kg）× 脱水率（%/100）× 1000**
+
+例: 10kgの犬が8%脱水の場合
+→ 10 × 0.08 × 1000 = **800 mL**
+
+#### 2. 維持量（Maintenance）─ 1日の生理的必要量
+
+正常な動物が24時間に必要とする水分量：
+
+| 動物種 | 維持輸液量 |
+|:------:|:---------:|
+| 犬 | 50-60 mL/kg/day |
+| 猫 | 40-50 mL/kg/day |
+
+例: 10kgの犬の維持量 → 10 × 55 = **550 mL/day**
+
+#### 3. 進行中の喪失量（Ongoing Losses）
+
+嘔吐、下痢、ドレーンからの排液、多尿など、継続的に失われている体液の推定量を加算する。正確な定量が困難な場合が多いため、体重の連続測定（急性の体重減少 = 体液喪失）でモニタリングする。
+
+#### 計算例
+
+10kgの犬、8%脱水、下痢による進行中の喪失が推定200 mL/dayの場合：
+
+| 構成要素 | 計算 | 量 |
+|---------|------|:--:|
+| 不足量 | 10 × 0.08 × 1000 | 800 mL |
+| 維持量 | 10 × 55 | 550 mL |
+| 進行喪失量 | 推定 | 200 mL |
+| **24時間の総輸液量** | | **1,550 mL** |
+| **投与速度** | 1550 ÷ 24 | **約65 mL/hr** |
+
+### 補正のスピードと注意点
+
+#### 不足量の補正速度
+- 心疾患がなければ、計算された不足量は通常 **12〜24時間かけて** 補正する
+- 急速すぎる補正は体液過負荷（肺水腫）のリスクがあり、特に猫では致命的
+
+#### ショック状態の併存
+- 脱水 + ショック（10-12%以上の脱水でしばしば併発）がある場合、**脱水補正の前にショックボーラスによる循環安定化が最優先**
+- ショックボーラス: 犬 20 mL/kg × 15-20分で投与して再評価、猫 5-10 mL/kg × 10-15分で慎重投与
+- ボーラス投与による改善がない場合は昇圧剤の適応を検討
+
+#### モニタリング指標
+- **体重**: 1日2回の測定。体重増加は過剰輸液、体重減少の継続は不足を示唆
+- **尿量**: 最低 1-2 mL/kg/hr を目標。乏尿は腎灌流不良を示唆
+- **PCV/TP**: 連続測定で希釈傾向を確認
+- **呼吸数・呼吸様式**: 頻呼吸は体液過負荷の最初のサイン
+- **皮膚弾力・粘膜の状態**: 改善度の身体的確認
+
+### 猫の輸液における特殊な配慮
+
+猫は犬と比較して**体液過負荷に極めて陥りやすい**ため、以下の点に留意する：
+
+- 猫の循環血液量は犬の約半分（猫 50-55 mL/kg vs 犬 80-90 mL/kg）
+- 維持輸液速度は 2-3 mL/kg/hr を超えないようにする
+- 輸液ポンプの使用を強く推奨（重力点滴ではflow rate管理が不正確）
+- 呼吸数の変化に常に注意を払い、頻呼吸が出現したら投与速度を直ちに減速
+
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>「点滴はどのくらいの時間するのですか？」</h4>
+                <div class="speech-bubble">失われた水分の量をまず計算し、それを12〜24時間かけてゆっくり補います。急に大量の点滴を入れると、かえって体に負担がかかります。嘔吐や下痢が続いている場合はその分も加算しますので、状態が安定するまでは入院での点滴管理が必要になります。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>「家でお水を飲んでもらえれば大丈夫ですか？」</h4>
+                <div class="speech-bubble">軽い脱水であればそうですが、嘔吐が続いている場合は飲んだ水も吐いてしまうため、口からの水分補給では間に合いません。また中等度以上の脱水では、腸管からの水分吸収自体が低下しているため、静脈点滴で直接血管に水分を入れる必要があります。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+
+<div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（6本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>DiBartola SP. Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice, 4th ed. Elsevier, 2012.</li>
+                <li>Davis H, et al. 2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. JAAHA, 2013.</li>
+                <li>Wellman ML, DiBartola SP, Kohn CW. Applied physiology of body fluid composition and volume. In: DiBartola SP, ed. Fluid, Electrolyte, and Acid-Base Disorders, 4th ed. Elsevier, 2012.</li>
+                <li>Cavanagh AA, et al. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. JAAHA, 2024.</li>
+                <li>Hansen BD. Technical aspects of fluid therapy. In: DiBartola SP, ed. Fluid Therapy in Small Animal Practice, 4th ed. Elsevier, 2012.</li>
+                <li>Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+</div>
+
+## メタデータ
+- ジャンル: 輸液
+- ターゲット: 獣医師
+- 更新日: 2026-03-03

@@ -1,0 +1,119 @@
+# 膝蓋骨脱臼 ─ グレード別判断
+
+> ⏱️ **読了時間**: 約8分
+
+
+## 🎯 結論
+
+- 膝蓋骨脱臼は犬の約**7%**に発生し、**内方脱臼（MPL）が75〜90%**を占める。トイ・プードル、ポメラニアン、チワワなどの小型犬種に多発する
+- Grade I〜IIIの外科治療成功率は**90%以上**。Grade IVでは**70〜80%**に低下し、複数回の手術を要することがある
+- 膝蓋骨脱臼を有する犬の**15〜25%でCCL（前十字靭帯）断裂を併発**する。持続的な膝関節不安定性が原因であり、術前に必ず評価すること
+
+## 本文
+
+### 疫学
+
+- **有病率**: 犬全体の約**7%**。猫では約1%未満
+- **脱臼方向**: 内方脱臼（MPL）が**75〜90%**。外方脱臼（LPL）は大型犬・超大型犬に多いが、近年小型犬でも報告が増加
+- **両側性**: 約**50%**で両側性
+- **好発犬種**: トイ・プードル、ポメラニアン、チワワ、ヨークシャー・テリア、フレンチ・ブルドッグ
+- **CCL断裂の併発**: **15〜25%**。持続的な膝関節不安定性がCCLへの生体力学的ストレスを増大させる
+
+### グレーディングシステム（Putnam/Singleton分類）
+
+| グレード | 用手評価 | 臨床徴候 | 治療方針 |
+|----------|----------|----------|----------|
+| **I** | 通常は溝内。用手的に脱臼可能。手を離すと即座に整復 | ほぼ無症状 | 保存療法 |
+| **II** | 膝の屈伸により脱臼するが、自然に、または用手的に整復されるまで脱臼位をとる | 間欠的跛行（スキップ歩行） | 頻回なら手術推奨 |
+| **III** | 常時脱臼。用手的に一時整復可能 | 持続的跛行、大腿四頭筋変位 | **速やかに手術** |
+| **IV** | 常時脱臼。用手的整復不可能。滑車溝の平坦化・凸状化 | 重度骨変形、屈曲拘縮 | **手術必須** |
+
+### 画像診断
+
+- **X線検査**: 正面・側面・スカイラインビューで骨関節炎（OA）の評価
+- **CTスキャン**: Grade III/IVの重度症例に推奨。**大腿骨前捻角（FAA）**や**遠位大腿骨外反角（aLDFA）**の精密計測により矯正骨切りの術前プランニングに不可欠
+
+### 治療
+
+#### Grade I
+- 保存的治療: 体重管理、環境整備（滑る床を避ける）、リハビリテーション
+
+#### Grade II
+- 症状がまれであれば保存療法も選択肢
+- **頻繁な跛行、軟骨損傷所見、またはCCL断裂予防**の観点から早期手術を推奨
+
+#### Grade III・IV
+- 骨格変形とOAの進行防止のため、**確定診断後の速やかな外科的整復が強く推奨**
+
+#### 外科的術式（通常は複数を組み合わせる）
+
+**骨組織の再建**
+- **滑車溝造深術（Trochleoplasty）**: Block recession（ブロック状）またはWedge recession（楔状）。軟骨温存手技が推奨
+- **脛骨粗面転位術（TTT）**: 大腿四頭筋〜膝蓋骨〜脛骨粗面のアライメント直線化。K-wireとテンションバンドワイヤー法で固定
+- **大腿骨遠位矯正骨切り術（DFO）**: Grade III/IVで三次元的骨変形が重度な場合。CTデータをもとにした**3Dプリンター製の患者適合型ガイド（PSI）**による精密骨切りが最新技術
+
+**軟部組織の再建**
+- 内側支帯のリリース
+- 外側関節包の縫縮
+- 抗回転縫合
+
+#### 薬物療法（周術期・保存療法）
+- NSAIDs: メロキシカム **0.1 mg/kg/day**、ロベナコキシブ **1〜2 mg/kg/day**
+- 抗NGFモノクローナル抗体（ベディンベトマブ等）: OAの疼痛管理に有用
+
+### 予後と合併症
+
+- **Grade I〜III**: 外科治療の成功率**90%以上**
+- **Grade IV**: 成功率**70〜80%**。重度骨変形・筋拘縮のため正常歩様の完全回復が困難な場合あり
+- **全体の合併症率**: **10〜18%**
+  - **再脱臼（8〜11%）**: 多くは元のグレードより低グレードに留まる
+  - **インプラント関連（約5%）**: K-wireの移動、漿液腫、感染
+  - **脛骨粗面の裂離骨折（1〜2%）**
+- 体重が大きいほど、術前グレードが高いほど合併症リスクは有意に上昇する
+
+<div id="owner-tips">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">🗣️</span><span>飼い主への説明ガイド</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body premium-content">
+            <div class="owner-tip" style="margin-top:0;">
+                <h4>Q. 「たまにスキップするだけなので様子を見ていいですか？」</h4>
+                <div class="speech-bubble">時々後ろ足をピョンと上げる「スキップ歩行」は膝蓋骨脱臼のグレード2に多い典型的な症状です。今すぐ命に関わるものではありませんが、放置すると関節の軟骨がすり減ったり、別の靭帯（前十字靭帯）を傷めたりすることがあります。頻繁にスキップが見られる場合は、早めの手術が長い目で見ると良い結果につながることが多いです。</div>
+            </div>
+            <div class="owner-tip">
+                <h4>Q. 「手術のあとは普通に歩けるようになりますか？」</h4>
+                <div class="speech-bubble">グレード1〜3であれば、手術後に90%以上の子がしっかり歩けるようになります。グレード4（最重度）の場合は骨の変形が強いため完全に元通りにはならないこともありますが、それでも手術前よりはずっと楽に歩けるようになります。術後のリハビリと体重管理もとても大切です。</div>
+            </div>
+        </div>
+        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>
+    </div>
+  </div>
+</div>
+
+<div id="refs">
+  <div class="accordion">
+    <button class="accordion-trigger">
+        <span class="trigger-left"><span class="trigger-icon">📚</span><span>参照論文（5本）</span></span>
+        <span class="chevron">▼</span>
+    </button>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ol style="padding-left:20px;font-size:0.82rem;color:var(--color-text-secondary);">
+                <li>Di Dona F, et al. Patellar luxation in dogs. <em>Vet Med (Auckl)</em>. 2018;9:23-32.</li>
+                <li>Campbell CA, et al. Severity of patellar luxation and frequency of concomitant cranial cruciate ligament rupture in dogs: 162 cases (2004-2007). <em>J Am Vet Med Assoc</em>. 2010;236(8):887-891.</li>
+                <li>Arthurs GI, Langley-Hobbs SJ. Complications associated with corrective surgery for patellar luxation in 109 dogs. <em>Vet Surg</em>. 2006;35(6):559-566.</li>
+                <li>Bosio F, et al. Prevalence, treatment and outcome of patellar luxation in dogs in Italy: a retrospective multicentric study (2009-2014). <em>Vet Comp Orthop Traumatol</em>. 2017;30(5):364-370.</li>
+                <li>Singleton WB. The surgical correction of stifle deformities in the dog. <em>J Small Anim Pract</em>. 1969;10(2):59-69.</li>
+            </ol>
+        </div>
+    </div>
+  </div>
+</div>
+
+---
+tags: [その他, 整形外科, 外科]
+description: 膝蓋骨脱臼のPutnam/Singleton 4段階グレーディング、Grade別の治療判断、外科合併症率10〜18%とCCL併発リスクを解説。
+update: 2026-03-10

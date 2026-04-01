@@ -1,0 +1,106 @@
+# 🔬 肥満細胞腫 ─ グレード別の治療判断
+
+> ⏱️ **読了時間**: 約5分
+> 📄 **参照論文**: 6本
+
+---
+
+## 🎯 結論graph TD
+        A["皮膚腫瘤 MCT疑い"] --> B{"診断: FNA 細胞診"}
+        B --> C{"MCT確定?"}
+        C -->|"Yes"| D["組織生検: Kiupelグレーディング"]
+        C -->|"No"| Z["他疾患鑑別へ"]
+
+        D --> D1{"Kiupel Low Grade"}
+        D --> D2{"Kiupel High Grade"}
+
+        D1 --> E["治療: 外科切除"]
+        E -->|"マージン: 側方2cm 筋膜1層"| E_margin["切除範囲"]
+        E --> F{"センチネルリンパ節評価"}
+        F -->|"転移なし"| G["術後経過観察"]
+        F -->|"転移あり"| H["全身療法へ移行"]
+
+        D2 --> I["治療: 外科切除"]
+        I --> J["術後全身療法"]
+        J -->|"c-kit変異陽性考慮"| K["Toceranib"]
+        J -->|"他の選択肢"| L["Vinblastine Prednisolone"]
+
+        H --> J
+
+        A --> M
+        E --> M
+        I --> M
+
+        M -->|"H1ブロッカー"| M1["ジフェンヒドラミン"]
+        M -->|"H2ブロッカー"| M2["ファモチジン"]
+
+犬の肥満細胞腫（MCT）は皮膚腫瘍の中で最も頻度が高く、グレーディングシステムの選択が予後予測と治療方針を左右する。現在は Kiupel
+                        2段階分類 が推奨： Low Grade （中央生存期間 > 2年）と High Grade （中央生存期間
+                    < 4ヶ月）。外科的切除では、長径1cm以下のLow Gradeに対し 側方マージン2cm +
+                        深層マージン筋膜1層分 が標準（従来の「3cm」は縮小傾向）。センチネルリンパ節の 評価（第一選択はFNAによる細胞診） がステージングの鍵。High
+                    Grade例や切除不完全例には Toceranib（Palladia）2.5-2.75 mg/kg PO
+                        月・水・金 （c-kit変異陽性例で著効）、または Vinblastine 2.0 mg/m² IV +
+                        Prednisolone のアジュバント化学療法。脱顆粒による消化器潰瘍・アナフィラキシー予防として H1ブロッカー（ジフェンヒドラミン 2-4 mg/kg
+                        q12h）＋ H2ブロッカー（ファモチジン 0.5-1.0 mg/kg q12-24h） を周術期に開始する。
+
+---
+
+## 🔬 グレーディングの比較
+
+| 分類 | グレード | 予後 | 治療方針 |
+|:---|:---|:---|:---|
+| **Patnaik(3段階)** | Grade 1（高分化） | 転移率 <10% | 手術のみで治癒可能 |
+| Grade 2（中分化） | 予後のばらつき大 | → Kiupelで再評価 |
+| Grade 3（低分化） | 転移率高・予後不良 | 手術 + 全身療法 |
+| **Kiupel(2段階)** | **Low Grade** | MST > 2年 | 適切な切除で良好 |
+| **High Grade** | MST < 4ヶ月 | 手術 + 化学療法/TKI |
+
+MST = Median Survival Time（中央生存期間）。TKI = Tyrosine Kinase Inhibitor。
+
+---
+
+## ⚡ 昔の常識 vs 今のエビデンス
+
+| ❌ 旧来 | ✅ 最新 |
+|:---|:---|
+| MCTは無条件で側方3cmマージンで切除 | Low Grade（長径1cm以下）は **側方2cm + 深部筋膜1層** で十分なエビデンスあり |
+| PatnaikのGrade 2は「様子見」で良い | **Kiupelの2段階分類で再評価** し、High Gradeならアジュバント療法が必要 |
+| 化学療法はMCTには効かない | c-kit変異陽性例に **Toceranib（分子標的薬）** が著効。標的のある時代へ |
+
+---
+
+## 💊全身療法 ─ 分子標的薬と化学療法
+
+- **c-kit遺伝子変異** （特にExon 11 ITD）を持つHigh Grade MCTで著効が報告されている
+- 投与開始後2週間ごとにCBC + 尿検査 + 体重チェック
+- 蛋白尿（UPC上昇）が進行する場合はACE阻害薬の追加または用量調整
+
+- High Grade例の術後アジュバント療法として
+- **Vinblastine 2.0 mg/m² IV** （1〜4週目は毎週、以後は隔週 × 4回）
+- Prednisolone 2 mg/kg/day → 漸減
+- 骨髄抑制（好中球減少）のモニタリングが必須
+
+---
+
+## ⚠️脱顆粒対策 ─ ヒスタミン放出を制御する
+
+MCTはヒスタミン・ヘパリン・プロテアーゼなどを含む顆粒を大量に保持しており、 **触診や手術操作で脱顆粒** が起きると局所の浮腫・潰瘍、消化器潰瘍、さらには低血圧ショック（ダリエ徴候）を引き起こす。
+
+- 手術前から **H1 + H2ブロッカーの併用を開始** しておくことが望ましい
+- MCTは「触るたびに腫れたり縮んだりする」（ダリエ徴候）── これはFNA前に飼い主に説明しておくこと
+
+---
+
+## 📚 参照論文
+
+1. Kiupel M et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast                             cell tumors to more accurately predict biological behavior. **Vet Pathol** 2011;48(1):147-155.
+2. Fulcher RP et al. Evaluation of a 2-centimeter lateral surgical margin for excision of                             grade I and grade II cutaneous mast cell tumors in dogs. **J Am Vet Med Assoc** 2006;228(2):210-215.
+3. London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral                             toceranib phosphate (SU11654), a receptor tyrosine kinase inhibitor, for the treatment of                             dogs with recurrent (either local or distant) mast cell tumor following surgical excision. **Clin Cancer Res** 2009;15(11):3856-3865.
+4. Thamm DH et al. Outcome and prognostic factors following adjuvant prednisone/vinblastine                             chemotherapy for high-risk canine mast cell tumour. **J Vet Intern Med** 2006;20(4):922-928.
+5. Withrow SJ, Vail DM, Page RL. Mast cell tumors. In: **Withrow and MacEwen's Small Animal                                 Clinical Oncology** . 6th ed. 2020.
+6. Patnaik AK et al. Canine cutaneous mast cell tumor: morphologic grading and survival time                             in 83 dogs. **Vet Pathol** 1984;21(5):469-474.
+
+---
+
+tags: [腫瘍, 外科]
+update: 2026-03-24

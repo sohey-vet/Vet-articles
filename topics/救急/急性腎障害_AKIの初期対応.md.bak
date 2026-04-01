@@ -1,0 +1,88 @@
+# 🫘 急性腎障害（AKI）の初期対応
+
+> ⏱️ **読了時間**: 約5分
+> 📄 **参照論文**: 7本
+
+---
+
+## 🎯 結論
+
+急性腎障害（AKI）は 腎機能が数時間〜数日で急激に低下する病態 であり、CKDと異なり 可逆的な可能性がある のが最大のポイント。AKIの原因は ①腎前性（脱水・ショック
+                        →
+                        腎灌流↓）②腎性（腎毒性物質・感染・虚血）③腎後性（尿路閉塞） に分類され、原因によって治療が根本的に異なる。初期対応の核は ①原因の特定と除去（腎毒性物質の中止、尿路閉塞の解除）②積極的な輸液療法で腎灌流を回復
+                        ③尿量モニタリング（目標: 1-2mL/kg/h）④高カリウム血症の緊急管理 。IRIS AKIグレーディング（I-V）による重症度評価を行い、 Grade
+                        III以上・乏尿/無尿・高カリウム（> 6.5mEq/L）が持続する場合は透析（血液透析 or 腹膜透析）のある施設への紹介を検討 。
+
+---
+
+## 📊 IRIS AKIグレーディング
+
+| グレード | クレアチニン | 臨床所見 | 対応 |
+|:---|:---|:---|:---|
+| **I** | < 1.6mg/dL（犬） <br> < 1.6mg/dL（猫） | AKIの既知のリスク因子（腎毒性薬・虚血イベント等）があり、Creはまだ正常範囲だが上昇傾向 | リスク因子の除去、輸液開始 |
+| **II** | 犬猫共通: Cre 1.7-2.5mg/dL | 軽度〜中等度の高窒素血症 | 積極的輸液、原因精査 |
+| **III** | 犬猫共通: Cre 2.6-5.0mg/dL | 中等度高窒素血症、嘔吐・食欲不振 | 入院管理、尿量モニタ |
+| **IV** | 5.1-10.0mg/dL | 重度高窒素血症、乏尿リスク | ICU管理、透析の検討 |
+| **V** | > 10.0mg/dL | 生命を脅かす高窒素血症、無尿 | 透析が理想。一般病院では最大限の輸液＋支持療法 |
+
+※サブグレード: 尿産生能（O = 乏尿/無尿、NO = 非乏尿）で追加分類。例: Grade III-O = Grade III + 乏尿
+
+---
+
+## ⚡ AKIの原因分類と治療方針
+
+| 分類 | 原因 | 治療の核 |
+|:---|:---|:---|
+| **腎前性** | 脱水、ショック、心不全、麻酔中低血圧 | **輸液蘇生** 。腎灌流が回復すればCre改善（可逆性高い） |
+| **腎性** | 腎毒性物質（エチレングリコール・ユリ・NSAIDs・アミノグリコシド）、レプトスピラ、虚血後 | 毒性物質の中止・解毒、抗菌薬（レプトスピラ）、輸液で腎灌流維持 |
+| **腎後性** | 尿道閉塞（猫の尿道閉塞）、尿管結石、膀胱破裂 | **閉塞の解除が最優先** 。尿量が回復すれば急速に改善 |
+
+---
+
+## 💧輸液療法の実際 ─ 「攻めの輸液」と尿量モニタリング
+
+- **Phase 1: 脱水補正** （最初の4-6時間）: 推定脱水量を計算し補正。例: 10kgの犬で8%脱水（800mL）→ **⚠️
+                                    全量を4-6時間で投与するのは過剰輸液（肺水腫）のリスク。通常は最初の4-6時間で灌流を回復させ、残りの脱水量は12-24時間かけて安全に補正する**
+- **Phase 2: 維持＋追加** : 維持量（犬: 2-3mL/kg/h）＋ 進行中の喪失（嘔吐・下痢など）を加算
+- **尿量モニタリング** : 留置尿道カテーテル＋閉鎖式採尿バッグ。 **目標: 1-2mL/kg/h**
+- 脱水補正後も **尿量 < 1mL/kg/h →「乏尿」** : 利尿薬を検討
+- 尿量 < 0.5mL/kg/h →「無尿」: 緊急対応（後述）
+
+- **まず脱水が完全に補正されていることを確認** （これが最も重要！）
+- フロセミド 2-4mg/kg IV → 30分で反応を見る
+- 反応あり → フロセミドCRI 0.5-1mg/kg/h を検討
+- 反応なし → マンニトール 0.5-1g/kg IV over 20min（⚠️ 無尿が確定している場合はマンニトールは禁忌 → 体液過剰を悪化）
+- どちらにも反応なし → **本質的な乏尿/無尿（intrinsic AKI）** → 透析施設への紹介
+
+---
+
+## ⚡高カリウム血症の緊急管理
+
+- AKIによる乏尿/無尿 → カリウム排泄↓ → **高カリウム血症** → 徐脈、心停止リスク
+- **K > 6.5mEq/L** : 心電図変化が出始める（テントT波、QRS幅延長、P波消失）
+- **K > 8.0mEq/L** : 心停止リスクが切迫
+
+- **10%グルコン酸カルシウム 0.5-1mL/kg IV
+                                    緩徐投与** （心筋保護。K自体は下げないが不整脈を防ぐ。心電図モニタリング下で **10-20分** かけて。急速投与は心停止リスク）
+- **レギュラーインスリン 0.1-0.25 IU/kg IV + 50%ブドウ糖 1.5-2g/インスリン1単位（IU）あたり
+                                    IV** （Kを細胞内に移行させる。1-2時間で効果。⚠️ 致死的低血糖防止のため必ずブドウ糖を十分量同時投与）
+- **輸液の選択** :
+                                「高K時に生食を優先」は古い概念。 **生食の大量投与はアシドーシスを招き、細胞内からKを引き出して高K血症を悪化させる** ため、現代では **乳酸リンゲルなどの緩衝晶質液が推奨される** （乳酸リンゲル中のK含有量は4mEq/Lと臨床的に無視できるレベル）
+- 根本的に尿からKを排泄させる → 尿量の確保が根本治療
+
+---
+
+## 📚 参照論文
+
+1. Cowgill LD, Langston C. Acute kidney injury. In: Bartges J, Polzin DJ, eds. **Nephrology                                 and Urology of Small Animals** . Wiley-Blackwell, 2011:472-523.
+2. IRIS Grading of Acute Kidney Injury. International Renal Interest Society. **iris-kidney.com** (accessed 2026).
+3. Segev G et al. A novel clinical scoring system for outcome prediction in dogs with acute                             kidney injury managed by hemodialysis. **J Vet Intern Med** 2008;22(4):1000-1005.
+4. Vaden SL et al. Urinary biomarkers of acute kidney injury in dogs. **J Vet Intern Med** 2010;24(3):587-593.
+5. Behrend EN et al. Acute kidney injury in dogs: etiology, clinical and clinicopathological                             findings, prognostic markers, and outcome. **J Vet Intern Med** 2020;34(1):218-225.
+6. Langston C. Acute uremia. In: Ettinger SJ, Feldman EC, eds. **Textbook of Veterinary                                 Internal Medicine** , 8th ed. Elsevier, 2017:1969-1985.
+7. Pantaleo V et al. Outcome of dogs and cats with acute kidney injury treated with                             intermittent hemodialysis: 135 cases (1997-2010). **J Am Vet Med Assoc** 2013;242(11):1556-1563.
+
+---
+
+tags: [救急, 腎泌尿器, 急性, AKI, 急性腎障害, 輸液]
+update: 2026-03-24

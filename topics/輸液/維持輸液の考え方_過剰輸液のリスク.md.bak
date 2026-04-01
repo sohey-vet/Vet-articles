@@ -1,0 +1,51 @@
+# 💧 維持輸液の考え方 ─ 過剰輸液のリスク
+
+> ⏱️ **読了時間**: 約5分
+> 📄 **参照論文**: 5本
+
+---
+
+## 🎯 結論
+
+維持輸液の目的は 「飲食できない間の正常な水分・電解質バランスの維持」 であり、脱水の補正やショック蘇生とは目的が異なる。2024
+                    AAHAガイドラインでは、維持輸液速度の出発点を犬で 約2〜3mL/kg/h 、猫で 約2mL/kg/h とし、個々の患者に合わせて調整することを推奨。従来の「1日の維持量＝体表面積から60mL/kg/日」をルーチンで使うと、 特に小型犬・猫・心疾患のある患者で過剰輸液 になるリスクがある。過剰輸液は肺水腫・胸水・消化管浮腫を引き起こし、 死亡率を上昇 させる。「入れたら入れた分だけ良い」のではなく、 少なめに始めてこまめに再評価 する姿勢が現在の標準。
+
+---
+
+## 🗺️ 維持輸液速度 ─ クイックリファレンス
+
+| 体重 | 🐶 犬（2〜3mL/kg/h） | 🐱 猫（約2mL/kg/h） | 注意点 |
+|:---|:---|:---|:---|
+| 3kg | 6〜9 mL/h | 6 mL/h | チワワ・猫 → 少量で十分 |
+| 5kg | 10〜15 mL/h | 10 mL/h | 小型犬・猫 |
+| 10kg | 20〜30 mL/h | ─ | 中型犬 |
+| 20kg | 40〜60 mL/h | ─ | 中〜大型犬 |
+| 30kg | 60〜90 mL/h | ─ | 大型犬 |
+
+⚠️ 上記はあくまで出発点。心疾患・腎疾患・高齢の患者ではさらに低速から開始し、再評価しながら調整する。
+
+---
+
+## ⚡ 昔の常識 vs 今のエビデンス
+
+| ❌ 旧来 | ✅ 最新 |
+|:---|:---|
+| 維持量＝60mL/kg/日をルーチンで設定 | 60mL/kg/日は中〜大型犬での概算。 **小型犬・猫では過剰になりやすい** 。体重ベースで2〜3mL/kg/hから開始 |
+| 入院したらとりあえず点滴で安心 | 不必要な輸液は体液過剰の原因になり、 **肺水腫・創傷治癒遅延・消化管浮腫** を引き起こす可能性 |
+| 犬も猫も同じ速度で良い | 猫は循環血液量が少なく（約55〜60mL/kg）、 **過剰輸液に極めて脆弱** 。犬より低速で管理 |
+| 輸液の再評価は1日1回 | **4〜6時間ごとの再評価** が推奨。体重変化、呼吸数、尿量、浮腫の有無を確認 |
+
+---
+
+## 📚 参照論文
+
+1. Pardo M et al. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. **J Am Anim Hosp                                     Assoc** 2024;60(4):131-163.
+2. Davis H et al. 2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. **J Am Anim                                     Hosp Assoc** 2013;49(3):149-159.
+3. Cavanagh AA et al. Retrospective evaluation of fluid overload and relationship to                                 outcome in critically ill dogs. **J Vet Emerg Crit Care** 2016;26(4):578-586.
+4. Byers CG. Fluid therapy — current trends. In: **Small Animal Critical Care                                     Medicine** , 3rd ed. Silverstein DC, Hopper K, eds. Elsevier, 2023:373-380.
+5. Hansen B. Technical aspects of fluid therapy. In: DiBartola SP, ed. **Fluid,                                     Electrolyte, and Acid-Base Disorders in Small Animal Practice** , 4th ed.                                 Elsevier, 2012:351-385.
+
+---
+
+tags: [輸液]
+update: 2026-03-24

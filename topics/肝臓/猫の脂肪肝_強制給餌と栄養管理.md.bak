@@ -1,0 +1,74 @@
+# 🐱 猫の脂肪肝 ─ 強制給餌と栄養管理
+
+> ⏱️ **読了時間**: 約5分
+> 📄 **参照論文**: 6本
+
+---
+
+## 🎯 結論graph TD
+    A["食欲不振 3-7日 HL疑い"] --> B["入院評価"]
+    B --> B1["輸液 電解質補正"]
+    B --> B2["血液検査 K P Mg"]
+    B2 --> C{"低K P Mg あり？"}
+    C -->|"Yes"| C1["電解質補正"]
+    C -->|"No"| D{"嘔吐あり？"}
+    D -->|"Yes"| D1["嘔吐制御"]
+    D -->|"No"| E["E-tube設置"]
+    C1 --> E
+    D1 --> E
+    E --> F["栄養開始 Day1"]
+    F --> F1["RER 1/3給餌"]
+    F1 --> G["栄養増量 Day2"]
+    G --> G1["RER 2/3給餌"]
+    G1 --> H["栄養維持 Day3"]
+    H --> H1["RER 100%給餌"]
+    H1 --> I{"電解質 嘔吐Moni"}
+    I -->|"安定"| J["退院 E-tube指導"]
+    J --> K["在宅経管栄養 4-8W"]
+    K --> L{"3日自力摂食？"}
+    L -->|"Yes"| M["E-tube抜去"]
+    B --> N["原疾患検索 治療"]
+    N --> K
+
+猫の肝リピドーシス（HL: Hepatic
+                    Lipidosis）は 食欲不振が3〜7日以上続くことで発症 し、特に肥満猫でリスクが高い。猫特有の脂質代謝（VLDL生合成のボトルネック）により、絶食時に肝臓に中性脂肪が蓄積し肝機能障害を引き起こす。治療の柱は 十分なカロリーの栄養補給 であり、最も確実な方法は 経食道チューブ（E-tube） の設置。適切な栄養支持を行えば 生存率は約60〜80% 。ただし原発性HLは 約20〜40% で、残りは 二次性（膵炎・IBD・リンパ腫・糖尿病などが原疾患） であるため、基礎疾患の検索と治療が同時に必要。栄養回復には 4〜8週間 を要することが多い。
+
+---
+
+## 🗺️ 肝リピドーシス ─ 治療フロー
+
+| ステップ | 行動 | ポイント |
+|:---|:---|:---|
+| **① 初日** | 輸液で脱水・電解質補正。血液検査（肝酵素・ビリルビン・K・Mg・P） | 低K・低P・低Mgを必ずチェック |
+| **② 12〜24h** | 嘔吐制御 → 経食道チューブ設置（E-tube） | E-tubeは短時間麻酔で設置可能 |
+| **③ Day 1〜3** | RER（安静時エネルギー要求量）の1/3から開始 → 3日かけて全量へ | 急な全量投与は **再給餌症候群** のリスク |
+| **④ Day 3〜7** | RERの100%を分割給餌（1日4〜6回） | 電解質モニタリング継続。嘔吐対策 |
+| **⑤ 退院** | E-tube管理を飼い主に指導し退院 | 在宅での給餌は多くの飼い主が習得可能 |
+| **⑥ 長期** | 自力摂食が回復したらチューブ抜去 | 通常4〜8週間。自力で3日連続食べたらOK |
+
+---
+
+## ⚡ 昔の常識 vs 今のエビデンス
+
+| ❌ 旧来 | ✅ 最新 |
+|:---|:---|
+| シリンジで口から強制給餌する | シリンジによる経口強制給餌は **ストレス・誤嚥性肺炎のリスク** が高い。 **経食道チューブ** がゴールドスタンダード |
+| 食べるまで待つ | 「食べるのを待つ」は致命的。猫は **3〜7日間の絶食で脂肪肝に進展** しうる |
+| 脂肪肝＝太った猫だけの病気 | 肥満猫はリスク因子だが、 **正常体重の猫でも発症** する。二次的原因（膵炎・IBD等）を検索することが重要 |
+| 肝臓が悪いので脂肪（高脂肪食）を制限する | 高蛋白食が基本。猫のHLの回復には **十分な蛋白質（30〜35%以上）** が必要。脂肪制限は不要 |
+
+---
+
+## 📚 参照論文
+
+1. Center SA. Feline hepatic lipidosis. **Vet Clin North Am Small Anim Pract** 2005;35(1):225-269.
+2. Valtolina C, Favier RP. Feline hepatic lipidosis. **Vet Clin North Am Small Anim                                     Pract** 2017;47(3):683-702.
+3. Kuzi S et al. Prognostic markers in feline hepatic lipidosis: a retrospective study of                                 71 cats (2017). **Vet Rec** 2017;181(19):512.
+4. Justin RB, Hohenhaus AE. Hypophosphatemia associated with enteral alimentation in cats                                 (1995). **J Vet Intern Med** 1995;9(4):228-233.
+5. Pyle DS et al. Evaluation of complications and prognostic factors associated with                                 administration of parenteral nutrition in cats: 75 cases (1997-2001) (2004). **J Am                                     Vet Med Assoc** 2004;225(2):242-250.
+6. Webb CB. Hepatic lipidosis: clinical review drawn from collective effort (2018). **J                                     Feline Med Surg** 2018;20(3):217-228.
+
+---
+
+tags: [肝臓, 栄養, 猫]
+update: 2026-03-24

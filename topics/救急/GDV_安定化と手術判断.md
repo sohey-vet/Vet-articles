@@ -1,22 +1,15 @@
 # 🚨 GDV（胃拡張-捻転症候群）─ 安定化と手術判断
 
 > ⏱️ **読了時間**: 約5分
-> 📄 **参照論文**: 7本
 
----
+#救急 #外科 #大型犬 #消化器 #ショック
 
 ## 🎯 結論
-
-GDV（Gastric Dilatation-Volvulus:
-                    胃拡張-捻転症候群）は 手術以外に根治法がない 外科救急疾患。到着後の優先順位は ①輸液蘇生 ②胃減圧
-                        ③手術（捻転整復＋胃固定術） 。安定化なしの手術は死亡率を上昇させる。レントゲンで 「ダブルバブル」サイン と脾臓の変位を確認したら、GDVとして迅速に行動する。全体の生存退院率は 約85% （胃壊死なし）〜 約50〜66% （胃壊死・切除あり）。 予防的胃固定術 （避妊・去勢手術時の同時実施）はハイリスク犬種で推奨される。
-
----
+GDV（Gastric Dilatation-Volvulus:                    胃拡張-捻転症候群）は **手術以外に根治法がない** 外科救急疾患。到着後の優先順位は **①輸液蘇生 ②胃減圧                        ③手術（捻転整復＋胃固定術）** 。安定化なしの手術は死亡率を上昇させる。レントゲンで **「ダブルバブル」サイン** と脾臓の変位を確認したら、GDVとして迅速に行動する。全体の生存退院率は **約85%** （胃壊死なし）〜 **約50〜66%** （胃壊死・切除あり）。 **予防的胃固定術** （避妊・去勢手術時の同時実施）はハイリスク犬種で推奨される。
 
 ## 🗺️ GDV到着後の治療フロー
-
 | ステップ | 行動 | ポイント |
-|:---|:---|:---|
+|---|---|---|
 | **① 即座** | 両側頸静脈に大口径（18G以上）留置針 | 末梢は虚脱で確保困難なことが多い |
 | **② 0〜15分** | 等張晶質液ボーラス（犬: 10〜20mL/kg） | 後大静脈圧迫 → 静脈還流↓ → 2ルートで急速投与 |
 | **③ 同時進行** | X線（右側臥位）でGDV確認 | ダブルバブルサイン、脾臓変位 |
@@ -24,72 +17,131 @@ GDV（Gastric Dilatation-Volvulus:
 | **⑤ 安定化後** | 手術（捻転整復 + 胃固定術 ± 脾摘） | 初期安定化後 **直ちに（遅くとも1〜2時間以内）** 緊急手術へ |
 | **⑥ 術後** | 不整脈モニタリング（48〜72時間） | 心室性不整脈が術後12〜36時間にピーク |
 
-```mermaid
-graph TD
-    start(("来院: GDV疑い")) --> triage{"ショック徴候あり？"}
-    triage -->|"Yes"| IV_resuscitation["① 輸液蘇生: 2ルート確保、急速輸液 (LRS 10-20mL/kgボーラス)"]
-    triage -->|"No"| IV_resuscitation
-    IV_resuscitation --> diagnosis["② 診断: 右側臥位X線 (ダブルバブル, 脾臓変位)"]
-    diagnosis --> confirmed_gdv{"GDVと確定診断？"}
-    confirmed_gdv -->|"No"| other_dx["他疾患の評価"]
-    confirmed_gdv -->|"Yes"| decompression_method["③ 胃減圧: 経口胃チューブ試行"]
-    decompression_method --> oral_tube_success{"経口チューブ挿入可？"}
-    oral_tube_success -->|"Yes"| gastric_wash["ガス/内容物排出 + 温生食で胃洗浄"]
-    oral_tube_success -->|"No"| percutaneous_decompression["経皮的胃穿刺による減圧"]
-    percutaneous_decompression --> retry_oral_tube{"減圧後、経口チューブ挿入可？"}
-    retry_oral_tube -->|"Yes"| gastric_wash
-    retry_oral_tube -->|"No"| proceed_surgery_path
-
-    gastric_wash --> hemodynamic_eval["血行動態評価 (MAP≥65, CRT＜2, 心拍安定化)"]
-    hemodynamic_eval --> stabilization_achieved{"初期安定化達成？"}
-    stabilization_achieved -->|"No"| IV_resuscitation
-    stabilization_achieved -->|"Yes"| surgery_prep["④ 手術準備: 血液検査, 心電図"]
-    surgery_prep --> proceed_surgery_path["⑤ 緊急手術 (捻転整復 + 胃固定術)"]
-
-    proceed_surgery_path --> stomach_eval{"術中の胃壁評価: 壊死組織あり？"}
-    stomach_eval -->|"Yes"| partial_gastrectomy["胃部分切除"]
-    stomach_eval -->|"No"| spleen_eval{"脾臓評価: 巻き込み/損傷あり？"}
-    partial_gastrectomy --> spleen_eval
-    spleen_eval -->|"Yes"| splenectomy["脾臓摘出"]
-    spleen_eval -->|"No"| surgery_complete["手術完了"]
-    splenectomy --> surgery_complete
-
-    surgery_complete --> post_op_care["⑥ 術後管理: 心電図モニタリング (48-72h)"]
-    post_op_care --> arrhythmia{"術後心室性不整脈あり？"}
-    arrhythmia -->|"Yes"| sustained_vt{"持続性心室頻拍 (HR＞180bpm, 灌流低下)？"}
-    sustained_vt -->|"Yes"| lidocaine_tx["リドカイン投与 (ボーラス→CRI)"]
-    sustained_vt -->|"No"| observe_arrhythmia["経過観察 (散発性VPC)"]
-    arrhythmia -->|"No"| discharge_criteria["退院基準満たすまで入院"]
-    lidocaine_tx --> discharge_criteria
-    observe_arrhythmia --> discharge_criteria
-
-    discharge_criteria --> endNode(("退院 + 飼い主説明"))
-```
-
----
-
 ## ⚡ 昔の常識 vs 今のエビデンス
-
 | ❌ 旧来 | ✅ 最新 |
-|:---|:---|
+|---|---|
 | GDVは大型犬だけの病気 | フレンチブルドッグ・ダックスフンド等の中小型犬でも報告あり。日本ではフレブルの症例が増加 |
 | 減圧してから安定を待って手術 | 安定化しつつ **直ちに（遅くとも1〜2時間以内に）緊急手術** へ。手術を数時間〜24時間遅らせると胃・脾臓の不可逆的壊死を招き致死率が激増する |
 | 術後の不整脈にはリドカインをルーチン投与 | 血行動態に影響のない心室性期外収縮は治療不要。 **持続性心室頻拍** （HR＞180 bpm かつ灌流低下）のみリドカイン適応 |
 | 予防的胃固定術のエビデンスは不十分 | ハイリスク犬種に対する **予防的胃固定術** はGDV発症を効果的に予防。腹腔鏡補助下で低侵襲に実施可能 |
 
----
+## 📖 詳細解説
+### ▼ 🚑 初期安定化 ─ 輸液と血行動態
+**GDVの病態生理**
+- 胃が時計回りに180〜360°捻転 → 胃の流入路（噴門）・流出路（幽門）の両方が閉塞
+- 拡張した胃が後大静脈と門脈を圧迫 → **静脈還流の急激な低下** → 閉塞性ショック
+- 脾臓も胃と共に変位し、脾血管が捻転・断裂 → 脾腫・血腹
+- 胃壁の虚血 → 再灌流障害 → DIC（播種性血管内凝固）
+- 心筋虚血 → 術後の心室性不整脈
+
+**輸液蘇生**
+- **2ルート** の静脈確保が必須（前肢の橈側皮静脈 or 頸静脈）
+- 後肢からの輸液は後大静脈圧迫により効果が著しく低下 → **前肢または頸静脈から投与**
+- 等張晶質液（LRS）10〜20mL/kgのボーラスを繰り返し
+- 目標: MAP≥65mmHg、CRT＜2秒、心拍数の安定化
+
+**好発犬種**
+- グレート・デーン（生涯リスク最大約37%）、ジャーマン・シェパード、スタンダード・プードル、セッター系、セント・バーナード、ワイマラナー
+- リスク因子: 胸郭が深い体型、高齢、食後の激しい運動、1日1食の大量給餌、ストレス
+- 日本の注意: ゴールデン・レトリーバー、ラブラドール、秋田犬にも発症。フレンチブルドッグでも報告例増加中
+
+**💊 臨床Tips**
+- 来院時に **乳酸≥6mmol/L** は胃壊死の可能性が高く、予後不良因子
+- 初期乳酸が高くても、蘇生後に **50%以上低下** すれば予後は比較的良好
+- 抗不整脈薬（リドカイン）は予防投与しない。心電図モニター下で心室頻拍が出たら使用
+
+### ▼ 🫧 胃減圧 ─ チューブ挿入と穿刺
+**経口胃チューブ（OGT）による減圧**
+- 最も効果的な減圧法。可能であれば第一選択
+- 適切なサイズのチューブを選択（大型犬: 内径16〜22mm）
+- 鼻先〜最後肋骨までの長さを事前にマーキング
+- 口を開け、チューブに潤滑剤を塗布して食道に挿入
+- 抵抗がある場合 → 愛護的に回転させるか、軽い圧を加える（無理は禁物）
+- 挿入できない場合 = 捻転が高度 → 穿刺減圧に切り替え
+- ガスと胃内容物の排出 → **温生食で胃洗浄** （壊死組織・血液の有無を確認）
+
+**経皮的胃穿刺による減圧**
+- OGTが挿入できない場合の代替法
+- 右側腹部（最も鼓音を認める部位）を剃毛・消毒
+- 14〜16Gの針またはオーバーニードルカテーテルで穿刺
+- ガスの排出を確認 → ガス排出後にOGTの再挿入を試みる
+- 胃穿刺は一時的な処置であり、根治にはならない
+
+**💊 臨床Tips**
+- 胃チューブから **暗赤色〜コーヒー残渣様の液体** が回収される場合、胃壁壊死の可能性
+- 減圧により後大静脈の圧迫が解除され、 **血行動態が劇的に改善** することが多い
+- 減圧後に再膨張するなら捻転が持続 → 手術を急ぐ
+
+### ▼ 🔪 手術判断 ─
+                            胃壊死の評価と胃固定術
+**手術の適応**
+- GDVと診断された全症例が手術適応（捻転は自然整復しない）
+- GD（単純拡張）のみでも再発リスクが高いため、胃固定術は推奨
+- 初期安定化（太い静脈路からの輸液蘇生や減圧）を行ったら **直ちに（遅くとも1〜2時間以内に）緊急手術** を実施する
+- 安定化を待って数時間〜24時間も手術を遅らせることは、胃や脾臓の不可逆的な壊死を招き致死率が激増するため **絶対に避ける**
+
+**術中の胃壁評価**
+| 所見 | 解釈 | 判断 |
+|---|---|---|
+| 漿膜面ピンク・正常な脈管 | 生存組織 | 温存 |
+| 暗赤色だが触ると出血あり | 虚血だが回復の可能性あり | 温存 + 再評価 |
+| 灰緑色・黒色、触っても出血なし、薄い | 壊死 | 部分切除 |
+
+**インシジョナル胃固定術（incisional gastropexy）**
+- 幽門洞の漿膜筋層と右腹壁の腹横筋を切開し、縫合して癒着させる
+- 再捻転を防ぐ唯一の方法（胃固定なしの再発率は最大80%）
+- 胃固定術後のGDV再発率は **約5%以下**
+
+**脾臓の評価**
+- 脾臓が捻転に巻き込まれ血管断裂 → 脾摘が必要な場合あり
+- 脾臓の色・サイズ・出血の有無を確認
+- 部分的うっ血のみなら温存可能
+
+**💊 臨床Tips**
+- 胃部分切除を行った場合の死亡率は **約35〜50%** （壊死なしの約10〜15%と比較して著しく高い）
+- 術中に判断に迷った胃壁は、温生食ガーゼで10分間温め再評価する方法もある
+- 術前の乳酸値と術中の胃壊死の程度が最も重要な予後因子
+
+### ▼ 🏥 術後管理 ─ 不整脈と合併症
+**術後心室性不整脈**
+- GDV術後の犬の **約40〜70%** に心室性不整脈が発生
+- 多くは術後 **12〜36時間** でピーク
+- 原因: 心筋虚血・再灌流障害・電解質異常・酸塩基平衡異常
+- 持続性心電図モニタリングを **少なくとも48時間** 推奨
+
+**リドカインの適応**
+- 心室性期外収縮（VPC）が散発 → 経過観察のみ
+- **持続性心室頻拍** （VT: HR＞160〜180 bpmかつ血行動態に影響）→ リドカイン投与
+- リドカイン: **2mg/kg IVボーラス** （ゆっくり2分以上かけて投与）→ 効果あれば **25〜80μg/kg/min                                    CRI**
+- リドカインCRI中も改善しなければ: ソタロール 1〜2mg/kg PO q12h を追加検討
+
+**その他の術後合併症**
+- **DIC** : 虚血再灌流障害による凝固系の活性化。PT/aPTT/Dダイマーをモニター
+- **急性腎障害** : ショックによる腎臓の低灌流。尿量モニター
+- **吻合部リーク** （胃切除を行った場合）: 術後2〜5日に腹膜炎の徴候に注意
+- 術後の給餌は嘔吐がなければ12〜24時間後から少量ずつ開始
+
+**💊 臨床Tips**
+- 術後の心電図モニターがない一般病院では、パルスオキシメーターの波形変動と聴診で不整脈を疑い、心電図の確認を行う
+- 退院基準: 自力摂食可能、不整脈コントロール、電解質正常、疼痛管理良好
+
+⚠️ 日本の臨床実情:                            GDV手術の経験がある一般病院は限られる。来院時にGDVが疑われた場合、安定化＋減圧を行いながら **速やかに二次診療施設（大学病院・夜間救急）への転院を手配** するのも重要な判断。予防的胃固定術は腹腔鏡手術に対応する施設が増加中。
+
+## 🗣️ 飼い主への説明ガイド
+**Q. 胃捻転って何ですか？**
+胃がガスで大きく膨れ上がったうえに、ねじれてしまう病気です。ねじれると胃の中のものが出せなくなり、さらに血流も止まるため、放っておくと数時間で命に関わります。 手術でねじれを戻し、再発しないように胃を固定する 必要があります。
+
+**Q. 手術すれば治りますか？**
+多くのケースでは手術で回復しますが、胃の壁がダメージを受けている程度によって予後が変わります。胃が壊死してしまっている部分があると、そこを切除する必要があり、その場合はリスクが高くなります。また、術後2〜3日は不整脈（心臓のリズムの乱れ）が出やすいため、入院して経過を見る必要があります。
+
+**Q. 再発を防ぐ方法はありますか？**
+手術の際に「胃固定術」を行い、胃がねじれないように壁に固定します。これにより再発率は大幅に下がります。日常生活では、 1日の食事を2〜3回に分ける、食後すぐの激しい運動を避ける ことも大切です。
 
 ## 📚 参照論文
-
-1. Brockman DJ et al. Canine gastric dilatation/volvulus syndrome in a veterinary critical                                 care unit: 295 cases (1986-1992) (1995). **J Am Vet Med Assoc** 1995;207(4):460-464.
-2. Glickman LT et al. Non-dietary risk factors for gastric dilatation-volvulus in large and                                 giant breed dogs (2000). **J Am Vet Med Assoc** 2000;217(10):1492-1499.
-3. Mackenzie G et al. A retrospective study of factors influencing survival following                                 surgery for gastric dilatation-volvulus syndrome in 306 dogs (2010). **J Am Anim Hosp                                     Assoc** 2010;46(2):97-102.
-4. Sharp CR, Rozanski EA. Cardiovascular and systemic effects of gastric dilatation and                                 volvulus in dogs (2014). **Top Companion Anim Med** 2014;29(2):39-44.
-5. Ward MP et al. Benefits of prophylactic gastropexy for dogs at risk of GDV: a decision                                 analytic model (2003). **Prev Vet Med** 2003;60(4):319-329.
-6. Rawlings CA et al. Laparoscopic-assisted gastropexy in 20 dogs (2002). **J Am Anim                                     Hosp Assoc** 2002;38(6):589-599.
-7. Beer KAS et al. Use of plasma lactate concentration as a prognostic indicator in dogs                                 with gastric dilatation-volvulus: 102 cases (1997-2003) (2013). **J Am Vet Med                                     Assoc** 2013;242(2):235-240.
-
----
-
-tags: [救急, 外科, 大型犬, 消化器, ショック]
-update: 2026-03-24
+1. Brockman DJ et al. Canine gastric dilatation/volvulus syndrome in a veterinary critical care unit: 295 cases (1986-1992) (1995). J Am Vet Med Assoc 1995;207(4):460-464.
+2. Glickman LT et al. Non-dietary risk factors for gastric dilatation-volvulus in large and giant breed dogs (2000). J Am Vet Med Assoc 2000;217(10):1492-1499.
+3. Mackenzie G et al. A retrospective study of factors influencing survival following surgery for gastric dilatation-volvulus syndrome in 306 dogs (2010). J Am Anim Hosp Assoc 2010;46(2):97-102.
+4. Sharp CR, Rozanski EA. Cardiovascular and systemic effects of gastric dilatation and volvulus in dogs (2014). Top Companion Anim Med 2014;29(2):39-44.
+5. Ward MP et al. Benefits of prophylactic gastropexy for dogs at risk of GDV: a decision analytic model (2003). Prev Vet Med 2003;60(4):319-329.
+6. Rawlings CA et al. Laparoscopic-assisted gastropexy in 20 dogs (2002). J Am Anim Hosp Assoc 2002;38(6):589-599.
+7. Beer KAS et al. Use of plasma lactate concentration as a prognostic indicator in dogs with gastric dilatation-volvulus: 102 cases (1997-2003) (2013). J Am Vet Med Assoc 2013;242(2):235-240.
