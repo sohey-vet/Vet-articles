@@ -78,7 +78,7 @@ def main():
         if papers_span:
             displayed_count = int(papers_span.group(1))
             
-        if displayed_count > 0 and displayed_count != actual_count:
+        if displayed_count != actual_count:
             # Fix HTML
             new_card = full_card.replace(
                 f'<span class="card-papers">📄 参照論文{displayed_count}本</span>',
