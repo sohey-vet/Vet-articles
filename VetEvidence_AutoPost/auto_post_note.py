@@ -65,8 +65,23 @@ def format_compact_html(md_text, url_suffix):
     md_text = md_text.replace('💡 臨床アクション', '臨床アクション').replace('臨床アクション', '💡 臨床アクション')
     
     lines = md_text.split('\n')
+    
+    # 参照文献数の算出
+    ref_count = 0
+    in_refs = False
+    for line in lines:
+        if line.startswith('## 📚 参照論文') or line.startswith('## 📚 参照文献'):
+            in_refs = True
+            continue
+        if in_refs:
+            if line.startswith('#'):
+                in_refs = False
+            elif re.match(r'^\d+\.', line.strip()):
+                ref_count += 1
+
     html_out = []
-    junk = ['この記事の対象', 'ナビゲーション', 'トップ', '飼い主説明', '情報ソース', '全展開', '全折り', 'すべて表示', '有料会員限定']
+    # 安全な junk フィルター
+    junk = ['ナビゲーション', 'トップに戻る', '全展開', '全折り', 'すべて表示', '有料会員限定']
     in_table = False
     in_mermaid = False
     table_lines = []
@@ -108,11 +123,18 @@ def format_compact_html(md_text, url_suffix):
             html_out.append("<hr>")
             continue
 
-        if any(j in line_s for j in junk): continue
+        if any(j in line_s for j in junk) and len(line_s) < 20: continue
         if '<details>' in line_s or '</details>' in line_s or '<summary>' in line_s or '</summary>' in line_s: continue
         if line_s.startswith('[!'): continue
         if line_s.startswith('ハッシュタグ'): continue
         if line_s.startswith('※本まとめは'): continue
+        
+        # 引用記号の除去
+        line_s = re.sub(r'^>\s*', '', line_s)
+        
+        # 参照文献数の挿入
+        if '⏱️ <strong>読了時間</strong>' in line_s or '⏱️ 読了時間' in line_s or '読了時間' in line_s:
+            line_s = line_s + f"<br><br>📚 <strong>参照文献</strong>: {ref_count}本"
         
         if line_s.startswith('#### '):
             line_s = line_s.replace('#### ', '<strong>') + '</strong>'
@@ -219,10 +241,14 @@ def post_to_note(page, title, html_payload, thumb_path, dry_run=False, draft_mod
         title_box = page.locator('textarea[placeholder*="タイトル"], textarea').first
         title_box.fill(title, timeout=15000)
         time.sleep(1)
+        # 追記: UIサジェスト等を消すためエスケープを押す
+        page.keyboard.press("Escape")
+        time.sleep(1)
         
         # === クリップボードペースト ===
         body_box = page.locator('[contenteditable="true"]').last
         body_box.click(force=True, timeout=15000)
+        time.sleep(2) # 本文領域へのフォーカス遷移を確実に待つ
         
         page.evaluate('''([html]) => {
             const item = new ClipboardItem({
