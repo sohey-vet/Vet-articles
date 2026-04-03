@@ -126,11 +126,17 @@ def post_to_x(page, text, dry_run=False, image_path=None):
 
 
         def safe_paste(pg, t):
-            # Xの特殊なエディタで文字が重複・消失するバグを防ぐため、クリップボード経由でペースト
-            pg.evaluate("text => navigator.clipboard.writeText(text)", t)
-            # macOSの場合はMeta+V、Windowsの場合はControl+V
-            modifier = "Meta" if sys.platform == "darwin" else "Control"
-            pg.keyboard.press(f"{modifier}+V")
+            pg.evaluate("""(text) => {
+                const dataTransfer = new DataTransfer();
+                dataTransfer.setData('text/plain', text);
+                const el = document.activeElement;
+                const pasteEvent = new ClipboardEvent('paste', {
+                    bubbles: true,
+                    cancelable: true,
+                    clipboardData: dataTransfer
+                });
+                el.dispatchEvent(pasteEvent);
+            }""", t)
             time.sleep(1)
 
         # 1. 画像の添付 (メインツイート)
@@ -155,11 +161,17 @@ def post_to_x(page, text, dry_run=False, image_path=None):
         time.sleep(1)
         
         def safe_paste(pg, t):
-            # Xの特殊なエディタで文字が重複・消失するバグを防ぐため、クリップボード経由でペースト
-            pg.evaluate("text => navigator.clipboard.writeText(text)", t)
-            # macOSの場合はMeta+V、Windowsの場合はControl+V
-            modifier = "Meta" if sys.platform == "darwin" else "Control"
-            pg.keyboard.press(f"{modifier}+V")
+            pg.evaluate("""(text) => {
+                const dataTransfer = new DataTransfer();
+                dataTransfer.setData('text/plain', text);
+                const el = document.activeElement;
+                const pasteEvent = new ClipboardEvent('paste', {
+                    bubbles: true,
+                    cancelable: true,
+                    clipboardData: dataTransfer
+                });
+                el.dispatchEvent(pasteEvent);
+            }""", t)
             time.sleep(1)
 
         # 再度フォーカスを確実にする
