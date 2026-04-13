@@ -87,7 +87,93 @@ def save_post_history(post):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
-def post_to_x(page, text, dry_run=False, image_path=None):
+def assassinate_ghost_tweets(page, main_text):
+    logger.info("🕵️‍♂️ 二重投稿バグ（同じ記事が2回連続で投稿される現象）がないかパトロールします...")
+    try:
+        # 今投稿した記事の最初の1行（見出し）をシグネチャとする
+        lines = main_text.strip().split('\n')
+        signature = lines[0].strip()
+        if not signature or len(signature) < 5:
+            return
+
+        # プロフィールへアクセス
+        page.goto("https://x.com/pawmedical_jp", wait_until="domcontentloaded", timeout=20000)
+        time.sleep(5)
+        
+        for _ in range(3):
+            tweets = page.locator('article[data-testid="tweet"]').all()
+            ghost_assassinated = False
+            matching_tweets = []
+            
+            for tweet in tweets:
+                try:
+                    tweet_text = tweet.locator('[data-testid="tweetText"]').inner_text()
+                    
+                    # 直近の投稿のみに絞る
+                    time_elem = tweet.locator('time').first
+                    if not time_elem.is_visible():
+                        continue
+                    time_txt = time_elem.inner_text()
+                    is_recent = ("秒" in time_txt) or ("分" in time_txt) or ("時間" in time_txt and int(time_txt.replace("時間", "").strip()) <= 2)
+                    
+                    if not is_recent:
+                        continue
+                        
+                    # サイン（見出し）が含まれているか？
+                    if signature in tweet_text:
+                        matching_tweets.append({"element": tweet, "text": tweet_text})
+                except Exception:
+                    continue
+                    
+            # もし同じ見出しのツイートが2個以上あった場合、二重投稿バグが発生している！
+            if len(matching_tweets) >= 2:
+                logger.warning(f"🚨 同じ記事の二重投稿バグを発見しました！（検出数: {len(matching_tweets)}）不要な方を暗殺します...")
+                
+                # 削除すべきゴーストを特定する
+                protected = False
+                for item in matching_tweets:
+                    # 本物（完全一致に近いもの）をまだ保護していない場合は保護
+                    # （Xの改行の違いを吸収するために適度に判定）
+                    if not protected and main_text[:30].strip() in item["text"]:
+                        protected = True
+                        logger.info("🛡️ 直近の正しい投稿を保護対象としてマークしました。")
+                        continue
+                        
+                    # それ以外は削除対象（古いゴースト）
+                    logger.info(f"🗑️ ゴーストを削除します: {item['text'][:30]}...")
+                    more_btn = item["element"].locator('[data-testid="caret"]').first
+                    if more_btn.is_visible():
+                        more_btn.click()
+                        time.sleep(1)
+                        
+                        delete_menu = page.locator('[role="menuitem"]').filter(has_text="削除").first
+                        if delete_menu.is_visible():
+                            delete_menu.click()
+                            time.sleep(1)
+                            
+                            confirm_btn = page.locator('[data-testid="confirmationSheetConfirm"]').first
+                            if confirm_btn.is_visible():
+                                confirm_btn.click()
+                                logger.info("✅ ゴースト二重投稿を自動削除（暗殺）しました！")
+                                ghost_assassinated = True
+                                time.sleep(3)
+                                break  # 1つ消したら一旦終了
+                        else:
+                            page.mouse.click(0, 0)
+            else:
+                logger.info("ℹ️ 二重投稿は検出されませんでした（健全です）。")
+                break
+                
+            if ghost_assassinated:
+                break
+                
+            page.evaluate("window.scrollBy(0, 500)")
+            time.sleep(1)
+            
+    except Exception as e:
+        logger.error(f"⚠️ ゴースト投稿パトロール中にエラーが発生しました: {e}")
+
+def post_to_x(page, text, dry_run=False, image_path=None, target_date_str=None):
     logger.info("📝 Xに投稿します...")
     
     try:
@@ -103,26 +189,46 @@ def post_to_x(page, text, dry_run=False, image_path=None):
 
         # 2. メインテキストとリプライ（リンクのみ化）の分離
         konkyo_marker = "📄 根拠:"
-        cta_marker = "詳細・エビデンスはNoteへ"
-        
-        main_text = ""
-        reply_text = ""
-        
         if konkyo_marker in text:
-            idx = text.rfind(konkyo_marker)
-            main_text = text[:idx].strip()
-            
-            # リプライにするのは Note誘導のみ（根拠部分は破棄）
+            # 根拠部分は破棄
+            text = text[:text.rfind(konkyo_marker)].strip()
+
+        # インプレッション低下を防ぐため、外部リンクやNote誘導を完全に分離してツリーへ回す
+        blocks = re.split(r'\n\s*\n', text)
+        split_index = len(blocks)
+        
+        for i in range(len(blocks) - 1, -1, -1):
+            block = blocks[i]
+            # 外部リンク文字が含まれるブロックを見つける
+            if "http:" in block or "https:" in block or "note.com" in block:
+                split_index = i
+                # その直前のブロックが誘導文なら遡ってツリーに含める
+                while split_index > 0:
+                    prev_block = blocks[split_index - 1]
+                    if any(k in prev_block for k in ["詳細", "Note", "プロフ", "リンク", "💡", "🔗", "👇", "こちら"]):
+                        split_index -= 1
+                    else:
+                        break
+                break
+                
+        # リンクが見つからなかった場合のフォールバック（旧形式対応）
+        if split_index == len(blocks):
+            cta_marker = "詳細・エビデンスはNoteへ"
             if cta_marker in text:
-                cta_idx = text.rfind(cta_marker)
-                reply_text = text[cta_idx:].strip()
-        elif cta_marker in text:
-            # フォールバック (根拠がない場合)
-            idx = text.rfind(cta_marker)
-            main_text = text[:idx].strip()
-            reply_text = text[idx:].strip()
+                idx = text.rfind(cta_marker)
+                main_text = text[:idx].strip()
+                reply_text = text[idx:].strip()
+            else:
+                main_text = text
+                reply_text = ""
         else:
+            main_text = "\n\n".join(blocks[:split_index]).strip()
+            reply_text = "\n\n".join(blocks[split_index:]).strip()
+            
+        # 安全策：すべてがツリーに行ってしまった場合は元に戻す
+        if not main_text:
             main_text = text
+            reply_text = ""
 
 
         def safe_paste(pg, t):
@@ -296,6 +402,11 @@ def post_to_x(page, text, dry_run=False, image_path=None):
         if post_btn_clicked:
             logger.info("✅ 投稿ボタンをクリックしました")
             time.sleep(8)  # 複数の投稿完了を待つ
+
+            # ゴーストパトロールを実行（※二重投稿解消のため main_text を渡す）
+            if main_text:
+                assassinate_ghost_tweets(page, main_text)
+
             return True
         else:
             logger.error("❌ 有効な投稿ボタンが見つかりません（文字数制限エラー、またはネットワーク遅延・画像容量オーバーの疑い）")
@@ -384,7 +495,7 @@ def main():
         page = context.pages[0] if context.pages else context.new_page()
         page.evaluate("() => Object.defineProperty(navigator, 'webdriver', { get: () => undefined })")
 
-        success = post_to_x(page, text, dry_run=args.dry_run, image_path=image_path)
+        success = post_to_x(page, text, dry_run=args.dry_run, image_path=image_path, target_date_str=target_date_str)
         
         if success and not args.dry_run:
             save_post_history(post)

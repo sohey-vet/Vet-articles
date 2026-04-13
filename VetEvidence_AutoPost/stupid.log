@@ -1,0 +1,144 @@
+STARTING 2
+--- BATCH 0 ---
+Clicking Edit...
+Found 5 rows to click.
+Error clicking row: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[data-testid=\"cellInnerDiv\"]").first
+    - locator resolved to <div class="css-175oi2r" data-testid="cellInnerDiv">…</div>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+Error clicking row: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[data-testid=\"cellInnerDiv\"]").nth(1)
+    - locator resolved to <div class="css-175oi2r" data-testid="cellInnerDiv">…</div>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+
+Error clicking row: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[data-testid=\"cellInnerDiv\"]").nth(2)
+    - locator resolved to <div class="css-175oi2r" data-testid="cellInnerDiv">…</div>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+Error clicking row: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[data-testid=\"cellInnerDiv\"]").nth(3)
+    - locator resolved to <div class="css-175oi2r" data-testid="cellInnerDiv">…</div>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+Error clicking row: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[data-testid=\"cellInnerDiv\"]").nth(4)
+    - locator resolved to <div class="css-175oi2r" data-testid="cellInnerDiv">…</div>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-testid="mask" class="css-175oi2r r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1ffj0ar"></div> from <div id="layers" class="r-zchlnj r-1d2f490 r-u8s1d r-ipm5af">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+Delete disabled attr: true
+Clicking Delete...

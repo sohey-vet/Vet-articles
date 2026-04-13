@@ -1,0 +1,9 @@
+=== X SCHEDULE DELETE START ===
+Navigating to scheduled posts page...
+
+--- Batch 1 ---
+Clicking '編集'
+Clicking 'すべて選択'
+Clicking '削除' (bottom-right)
+No confirmation dialog appeared!
+=== X SCHEDULE DELETE END ===

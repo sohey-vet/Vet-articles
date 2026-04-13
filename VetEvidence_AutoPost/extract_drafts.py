@@ -36,6 +36,11 @@ def clean_markdown(text):
 
 def append_cta(text, platform):
     if not text: return text
+    
+    # 既にNoteのリンクが含まれている場合は重複を避けるために追加しない
+    if "note.com/paw" in text.lower() or "Noteで詳しく" in text:
+        return text
+
     if platform == "X":
         cta = "\n\n詳細・エビデンスはNoteへ👇\nhttps://note.com/pawmedical_jp"
     elif platform == "Threads":
@@ -95,11 +100,8 @@ def main():
     print(f"✅ {len(sunday_digests)}件の日曜ダイジェストを抽出しました。")
     
     # スケジュール割り当てロジック
-    # 実行日を基準として、直近の（または当日の）月曜日を算出する
-    today = date.today()
-    days_ahead = 0 - today.weekday()
-    # 常に「今週の月曜日」を開始日としてカレンダーを生成する
-    start_monday = today + timedelta(days=days_ahead)
+    # 常に固定の開始日（2026年3月30日月曜日）を基準としてカレンダーを生成する
+    start_monday = date(2026, 3, 30)
     
     schedule = []
     current_date = start_monday

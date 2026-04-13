@@ -196,7 +196,44 @@ def post_to_threads(page, text, target_date, dry_run=False):
                 return False
 
         # 2. テキストを入力
-        # テキストを500文字以内のチャンクに分割
+        import re
+        
+        # リンク部分と誘導部分を強制分離するロジック（インプ低下防止用）
+        def extract_link_reply(t):
+            konkyo_marker = "📄 根拠:"
+            if konkyo_marker in t:
+                t = t[:t.rfind(konkyo_marker)].strip()
+                
+            blocks = re.split(r'\n\s*\n', t)
+            split_index = len(blocks)
+            for i in range(len(blocks) - 1, -1, -1):
+                block = blocks[i]
+                if "http:" in block or "https:" in block or "note.com" in block:
+                    split_index = i
+                    while split_index > 0:
+                        prev_block = blocks[split_index - 1]
+                        if any(k in prev_block for k in ["詳細", "Note", "プロフ", "リンク", "💡", "🔗", "👇", "こちら"]):
+                            split_index -= 1
+                        else:
+                            break
+                    break
+                    
+            if split_index == len(blocks):
+                cta_marker = "詳細・エビデンスはNoteへ"
+                if cta_marker in t:
+                    idx = t.rfind(cta_marker)
+                    return t[:idx].strip(), t[idx:].strip()
+                return t, ""
+                
+            main_t = "\n\n".join(blocks[:split_index]).strip()
+            reply_t = "\n\n".join(blocks[split_index:]).strip()
+            if not main_t:
+                return t, ""
+            return main_t, reply_t
+
+        main_text, reply_text = extract_link_reply(text)
+
+        # テキストを500文字以内のチャンクに分割 (Threadsの文字数制限対応)
         def split_text(t, limit=480):
             chunks = []
             while len(t) > limit:
@@ -226,7 +263,10 @@ def post_to_threads(page, text, target_date, dry_run=False):
                 chunks.append(t)
             return chunks
 
-        chunks = split_text(text, 480)
+        chunks = split_text(main_text, 480)
+        # リンクや誘導文があれば、スレッドの「次のチャンク」として強制的に分ける
+        if reply_text:
+            chunks.extend(split_text(reply_text, 480))
 
         # 最初のボックス
         text_areas = page.locator('div[contenteditable="true"]').all()

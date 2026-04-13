@@ -1,0 +1,8 @@
+STARTING HEADLESS DELETE 2
+
+--- BATCH 0 ---
+Found 10 rows to click.
+CRASH: Locator.get_attribute: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("button, [role=\"button\"]").filter(has_text="削除").last
+

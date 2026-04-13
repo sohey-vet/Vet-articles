@@ -1,0 +1,3 @@
+=== STARTING NETWORK TRACE ===
+No checkboxes found.
+=== END TRACE ===
