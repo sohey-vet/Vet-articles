@@ -4,6 +4,8 @@ import json
 import time
 import argparse
 import logging
+import glob
+import random
 from datetime import datetime
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 
@@ -71,12 +73,59 @@ def load_todays_threads_post(target_date):
         logger.error(f"❌ スケジュール読み込みエラー: {e}")
         return None
 
+def find_image(source_folder):
+    """指定されたフォルダからPNG画像を検索する"""
+    DRAFTS_ROOT = r"C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts"
+    folder_path = os.path.join(DRAFTS_ROOT, source_folder)
+    png_files = glob.glob(os.path.join(folder_path, "*.png"))
+    if png_files:
+        return png_files[0]
+    return None
+
+def generate_quote_text(text):
+    """記事の内容からキーワードを抽出し、適切なニュアンスのリマインド文を10パターンから選択・生成する"""
+    categories = []
+    if any(k in text for k in ["救急", "緊急", "ショック", "重症", "ICU", "心肺蘇生", "呼吸困難", "出血"]):
+        categories.append('emergency')
+    if any(k in text for k in ["猫", "ねこ", "Feline", "キャット"]):
+        categories.append('cat')
+    if any(k in text for k in ["犬", "いぬ", "Canine", "ドッグ"]):
+        categories.append('dog')
+    if any(k in text for k in ["ガイドライン", "エビデンス", "最新", "JCVIM", "ACVIM", "WSAVA", "論文"]):
+        categories.append('evidence')
+
+    # 基本の10バリエーション
+    texts = [
+        "この記事、臨床現場で非常に遭遇しやすいケースなので再掲します。詳細は下の引用元からNoteへ飛べます👇",
+        "診断や治療方針で迷った際に役立つエビデンスです。日々の臨床のヒントになれば幸いです💡詳細は引用元のNoteから👇",
+        "知っているか知らないかで予後が変わる重要なトピックなので再シェアします。具体的な実践法は下の引用リンクからNoteですぐ読めます👇",
+        "教科書的な知識から一歩踏み込んだ、臨床向けのリアルな解説です。おさらいとして再掲します。詳細はNoteリンクにて👇",
+        "この疾患の管理において、特に注意すべきポイントをまとめた記事です。詳細なエビデンスシートは引用元のNoteからどうぞ👇",
+        "ご家族への説明や、スタッフ間の知識共有にも役立つ内容なので再投稿します📝実践的なアプローチはNoteへ👇",
+        "このケース、実際に直面した時に焦らないように再シェアしておきます。初期対応と専門的な解説は引用元のNoteから👇",
+        "よくある主訴ですが、意外と落とし穴が多い疾患です。見逃し防止のためのチェックリストとして再掲します👇",
+        "治療の引き出しを増やすための実践的なアプローチです。明日の診療からすぐ使えるエビデンスは下の引用元から👇",
+        "忙しい診察の合間にサクッと復習できる内容です。より深い病態生理と推奨薬は引用しているNote記事にて解説しています👇"
+    ]
+    
+    # 記事内容に合わせた特化バージョンの優先適用
+    if 'emergency' in categories:
+        return "救急対応や初期診療で絶対に迷いたくない知識なので、振り返りとしてシェアします🚑エビデンスの詳細は引用元のNoteへ👇"
+    if 'cat' in categories and 'dog' not in categories:
+        return "猫の特異的な病態について、非常に重要なポイントなので再シェアします🐈具体的な管理法は引用元のNoteにて解説しています👇"
+    if 'dog' in categories and 'cat' not in categories:
+        return "犬の診療で知っておくべき最新の知見です🐕アップデートのために再掲します。詳しい解説は引用元のNoteリンクから👇"
+    if 'evidence' in categories:
+        return "一次診療でも知っておきたい重要なガイドライン・最新知見のおさらいです📚治療水準のアップデートに役立ててください👇"
+        
+    return random.choice(texts)
+
 def normalize_text(text):
     """テキストの改行を正規化する"""
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     return text
 
-def post_to_threads(page, text, target_date, dry_run=False):
+def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
     """PlaywrightでThreadsにテキストを投稿する"""
     logger.info("📝 Threadsに投稿します...")
     
@@ -195,11 +244,12 @@ def post_to_threads(page, text, target_date, dry_run=False):
                 logger.error("❌ 投稿開始ボタンまたは入力欄が見つかりません")
                 return False
 
-        # 2. テキストを入力
+        # 2. テキストを入力・処理
         import re
         
-        # リンク部分と誘導部分を強制分離するロジック（インプ低下防止用）
+        # リンク部分と誘導部分を分離する内部関数
         def extract_link_reply(t):
+            import random
             konkyo_marker = "📄 根拠:"
             if konkyo_marker in t:
                 t = t[:t.rfind(konkyo_marker)].strip()
@@ -222,16 +272,46 @@ def post_to_threads(page, text, target_date, dry_run=False):
                 cta_marker = "詳細・エビデンスはNoteへ"
                 if cta_marker in t:
                     idx = t.rfind(cta_marker)
-                    return t[:idx].strip(), t[idx:].strip()
-                return t, ""
-                
-            main_t = "\n\n".join(blocks[:split_index]).strip()
-            reply_t = "\n\n".join(blocks[split_index:]).strip()
+                    main_t = t[:idx].strip()
+                else:
+                    main_t = t
+            else:
+                main_t = "\n\n".join(blocks[:split_index]).strip()
+            
             if not main_t:
                 return t, ""
+                
+            # メイン投稿側の余計な誘導文(CTA)を完全に削除（これがあると長文時にツリーが2重分割されるため）
+            if main_t.endswith("👇") or main_t.endswith("💡"):
+                main_t = main_t[:-1].strip()
+                
+            # ツリー部分のプロフ誘導文（4パターンをご指定通りに修正）
+            pattern_general = "💡 疾患の詳細や、明日から使える最新エビデンスは、プロフィール欄のNoteリンクから解説記事をチェックしてみてください🐾"
+            pattern_paper = "📚 今回のトピックの完全版（論文リファレンス付き）は、プロフィールのURLからNote記事を参照してください"
+            pattern_clinic = "🏥 診療で使えるガイドラインや推奨薬の詳細は、プロフのリンク先にある記事の中でさらに深堀りしています"
+            pattern_pathology = "📝 「さらに掘り下げた細かい病態生理や鑑別も知りたい！」という方は、プロフィールにあるリンクからNote全編をぜひご覧ください"
+            
+            check_text = main_t.lower()
+            if any(k in check_text for k in ["論文", "リファレンス", "文献", "ガイドライン", "aaha", "wsava", "jvim"]):
+                reply_t = pattern_paper
+            elif any(k in check_text for k in ["薬", "投与", "用量", "救急", "ショック", "治療", "麻酔", "初期対応"]):
+                reply_t = pattern_clinic
+            elif any(k in check_text for k in ["病態", "生理", "機序", "メカニズム", "ホルモン", "鑑別", "原因"]):
+                reply_t = pattern_pathology
+            else:
+                reply_t = pattern_general
+            
             return main_t, reply_t
 
-        main_text, reply_text = extract_link_reply(text)
+        if quote_mode_active:
+            # 引用投稿の場合は、本文に基づいてダイナミックな10パターンのテキストを生成
+            text = generate_quote_text(text)
+            main_text = text
+            reply_text = ""
+            # 引用ポストの場合、元投稿がカード化するので画像は不要
+            image_path = None
+        else:
+            main_text, reply_text = extract_link_reply(text)
 
         # テキストを500文字以内のチャンクに分割 (Threadsの文字数制限対応)
         def split_text(t, limit=480):
@@ -280,27 +360,68 @@ def post_to_threads(page, text, target_date, dry_run=False):
         def remove_link_preview_if_needed(chunk_text):
             if "http" in chunk_text:
                 logger.info("🔗 URLが含まれているため、リンクプレビュー展開を待機します...")
-                time.sleep(5)
-                remove_selectors = [
-                    'div[role="button"]:has(svg[aria-label="削除情報を追加"])',
-                    'div[role="button"]:has(svg[aria-label="Remove attachment"])',
-                    'div[role="button"]:has(svg[aria-label="削除"])'
-                ]
-                removed = False
-                for s in remove_selectors:
-                    btn = page.locator(s).first
-                    if btn.is_visible(timeout=1000):
-                        btn.click(force=True)
+                time.sleep(6)
+                try:
+                    # OGPプレビューの削除ボタンをクリック
+                    removed = page.evaluate("""() => {
+                        const svgs = Array.from(document.querySelectorAll('svg'));
+                        for (let i = svgs.length - 1; i >= 0; i--) {
+                            const svg = svgs[i];
+                            const label = (svg.getAttribute('aria-label') || '');
+                            // Threadsのリンクプレビュー削除や一般的な削除ボタンを探す
+                            // OGPは最後の方のDOMに生成されるため後ろから探す
+                            if (label.includes('添付ファイルを削除') || label.includes('Remove attachment') || label === '削除' || label === 'Remove') {
+                                const btn = svg.closest('div[role="button"]') || svg.closest('button');
+                                if (btn) {
+                                    btn.click();
+                                    return true;
+                                }
+                            }
+                        }
+                        return false;
+                    }""")
+                    if removed:
                         logger.info("✅ 巨大なリンクプレビュー(OGP画像)の削除に成功しました！")
-                        removed = True
-                        time.sleep(1)
-                        break
-                if not removed:
-                    logger.warning("⚠️ プレビュー削除ボタンが見つかりませんでした。プレビューが残る可能性があります。")
+                    else:
+                        logger.warning("⚠️ プレビュー削除ボタンが見つかりませんでした。プレビューが残る可能性があります。")
+                except Exception as e:
+                    logger.warning(f"⚠️ OGPプレビュー削除処理でエラー: {e}")
 
         text_areas[0].focus()
         page.keyboard.insert_text(chunks[0].strip())
         time.sleep(2)
+        
+        # 初回のメイン投稿ボックスに画像アップロードを追加（通常投稿時のみ）
+        if image_path and os.path.exists(image_path) and not quote_mode_active:
+            try:
+                import base64
+                with open(image_path, "rb") as f:
+                    img_data = base64.b64encode(f.read()).decode("utf-8")
+                
+                # JavaScriptを通じてClipboardEvent(paste)をシミュレートし、画像をアタッチする（UIに確実に反映させる最強の手法）
+                page.evaluate("""([imgData, filename]) => {
+                    const byteChars = atob(imgData);
+                    const byteArr = new Uint8Array(byteChars.length);
+                    for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
+                    const blob = new Blob([byteArr], {type: 'image/png'});
+                    const file = new File([blob], filename, {type: 'image/png'});
+                    
+                    const dt = new DataTransfer();
+                    dt.items.add(file);
+                    
+                    const el = document.activeElement;
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData: dt
+                    });
+                    el.dispatchEvent(pasteEvent);
+                }""", [img_data, os.path.basename(image_path)])
+                logger.info(f"📸 画像をクリップボード経由でアタッチしました: {os.path.basename(image_path)}")
+                time.sleep(5) # 画像のレンダリングを長めに待つ
+            except Exception as e:
+                logger.warning(f"⚠️ 画像の添付(Paste)に失敗しました: {e}")
+                
         remove_link_preview_if_needed(chunks[0])
 
         # 2つ目以降のブロックがあれば「スレッドに追加」
@@ -318,7 +439,18 @@ def post_to_threads(page, text, target_date, dry_run=False):
                 remove_link_preview_if_needed(chunks[i])
         
         if dry_run:
-            logger.info("🔸 ドライラン: 投稿ボタンは押しません")
+            logger.info("🔸 ドライラン: 投稿ボタンは押しません。プレビュー用のスクリーンショットを保存します。")
+            try:
+                page.evaluate("""() => {
+                    const firstTextbox = document.querySelectorAll('div[contenteditable="true"]')[0];
+                    if (firstTextbox) firstTextbox.scrollIntoView({block: 'center'});
+                }""")
+            except:
+                pass
+            time.sleep(3) # レンダリング待機
+            screenshot_name = f"threads_preview_{int(time.time())}.png"
+            page.screenshot(path=screenshot_name, full_page=True)
+            logger.info(f"✅ スクリーンショットを保存しました: {screenshot_name}")
             return True
 
         # 3. 投稿ボタンをクリック
@@ -409,6 +541,10 @@ def main():
     if not os.path.exists(SESSION_DIR):
         logger.error("❌ セッションが見つかりません。先に --setup オプションでログインしてください。")
         sys.exit(1)
+        
+    image_path = find_image(post['source'])
+    if image_path:
+        logger.info(f"📷 添付候補のサムネイル画像: {os.path.basename(image_path)}")
 
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
@@ -424,7 +560,7 @@ def main():
         # Webdriver検知回避
         page.evaluate("() => Object.defineProperty(navigator, 'webdriver', { get: () => undefined })")
 
-        success = post_to_threads(page, text, target_date, dry_run=args.dry_run)
+        success = post_to_threads(page, text, target_date, dry_run=args.dry_run, image_path=image_path)
         
         if success:
             logger.info("🎉 処理が正常に完了しました！")
