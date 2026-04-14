@@ -230,6 +230,11 @@ def post_to_x(page, text, dry_run=False, image_path=None, target_date_str=None):
             main_text = text
             reply_text = ""
 
+        # 4月中はリンクの投稿をストップする（リプライ部分を破棄）
+        if target_date_str and target_date_str.startswith("2026-04"):
+            logger.info("🚫 4月中はNoteリンク設定が無効になっているため、リンク誘導リプライを削除します。")
+            reply_text = ""
+
 
         def safe_paste(pg, t):
             pg.evaluate("""(text) => {
@@ -403,9 +408,7 @@ def post_to_x(page, text, dry_run=False, image_path=None, target_date_str=None):
             logger.info("✅ 投稿ボタンをクリックしました")
             time.sleep(8)  # 複数の投稿完了を待つ
 
-            # ゴーストパトロールを実行（※二重投稿解消のため main_text を渡す）
-            if main_text:
-                assassinate_ghost_tweets(page, main_text)
+            # 注: assassinate_ghost_tweets()は正常な親ツイートを削除してしまう重大なバグ（リプだけ孤立する原因）があったため機能を停止しました。
 
             return True
         else:
@@ -457,6 +460,11 @@ def main():
     target_date = datetime.strptime(args.date, "%Y-%m-%d").date() if args.date else datetime.now().date()
     target_date_str = target_date.strftime("%Y-%m-%d")
     
+    # 4月13日〜19日まではXの投稿をストップする（20日から再開）
+    if "2026-04-13" <= target_date_str <= "2026-04-19":
+        logger.info(f"⏸️ シャドウバン回復期間のため、{target_date_str} のX自動投稿をスキップします。")
+        sys.exit(0)
+
     if check_history_duplicate(target_date_str) and not args.dry_run and not args.date:
         logger.info(f"⏭️ {target_date_str} のX投稿は既に完了しているためスキップします。")
         sys.exit(0)
