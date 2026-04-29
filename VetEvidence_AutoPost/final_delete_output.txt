@@ -1,9 +1,0 @@
-=== X SCHEDULE DELETE START ===
-
---- JS DO BATCH 1 ---
-Result: DELETED
-
---- JS DO BATCH 2 ---
-Result: NO_EDIT_BUTTON
-All scheduled posts seem to be deleted or none found!
-=== X SCHEDULE DELETE END ===

@@ -2,6 +2,7 @@ import os
 import re
 import json
 from datetime import datetime, timedelta, date
+import sys
 
 # ----- 設定 -----
 DRAFTS_ROOT = r"C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts"
@@ -44,13 +45,16 @@ def append_cta(text, platform):
     if platform == "X":
         cta = "\n\n詳細・エビデンスはNoteへ👇\nhttps://note.com/pawmedical_jp"
     elif platform == "Threads":
-        cta = "\n\n💡疾患の詳細や最新エビデンスはNoteで詳しく解説！\n🔗 https://note.com/pawmedical_jp"
+        # Threadsはシャドウバン対策の「URL完全排除絶対ルール」に従い、本文にはURLを一切付加しない
+        # (プロフ誘導CTAはauto_post_threads.pyのロジックで自動的にリプライツリーに生成・付加されます)
+        return text
     else:
         cta = "\n\n🔗 https://note.com/pawmedical_jp"
     return text + cta
 
 
 def main():
+    sys.stdout.reconfigure(encoding='utf-8')
     print("🐾 VetEvidence SNS Draft エクストラクター")
     
     if not os.path.exists(DRAFTS_ROOT):

@@ -207,6 +207,18 @@ def main():
     logger.info("=" * 50)
 
     target_date = datetime.strptime(args.date, "%Y-%m-%d") if args.date else datetime.now()
+    target_date_str = target_date.strftime("%Y-%m-%d")
+    
+    # 4月13日〜19日まではXの投稿（およびリプライ）を完全にストップする
+    if "2026-04-13" <= target_date_str <= "2026-04-19":
+        logger.info(f"⏸️ シャドウバン回復期間のため、{target_date_str} のX追尾自動リプライをスキップします。")
+        sys.exit(0)
+        
+    # 4月中はリンクの投稿をストップする
+    if target_date_str.startswith("2026-04"):
+        logger.info("🚫 4月中はNoteリンク設定が無効になっているため、リプライ投稿をスキップします。")
+        sys.exit(0)
+
     post = load_todays_post(target_date)
     
     if not post:
