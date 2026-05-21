@@ -50,6 +50,73 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+def find_quote_url_by_content(page, target_source, schedule_file, current_date):
+    """スケジュールから過去の同ソース記事を取得し、その内容が含まれる投稿のURLをプロフィールから探す"""
+    logger.info(f"🔍 '{target_source}' の内容に一致する過去の投稿を探します...")
+    
+    try:
+        with open(schedule_file, "r", encoding="utf-8") as f:
+            schedule = json.load(f)
+            
+        current_date_str = current_date.strftime("%Y-%m-%d")
+        past_posts = [p for p in schedule if p["platform"] == "Threads" and p["source"] == target_source and p["date"] < current_date_str]
+        
+        if not past_posts:
+            logger.error("❌ スケジュールに過去の元記事が見つかりません。")
+            return None
+            
+        past_posts.sort(key=lambda x: x["date"], reverse=True)
+        original_post = past_posts[0]
+        
+        import re
+        plain_text = re.sub(r'[【】\n\r]', ' ', original_post["content"])
+        plain_text = re.sub(r'\s+', ' ', plain_text).strip()
+        search_snippet = plain_text[:25]
+        logger.info(f"📄 検索キーワード: {search_snippet}")
+        
+    except Exception as e:
+        logger.error(f"❌ 元記事の取得に失敗しました: {e}")
+        return None
+
+    page.goto("https://www.threads.net/@pawmedical_jp", wait_until="domcontentloaded", timeout=15000)
+    time.sleep(5)
+    page.evaluate("window.scrollBy(0, 500)")
+    time.sleep(2)
+    
+    try:
+        url = page.evaluate("""(searchText) => {
+            const links = Array.from(document.querySelectorAll('a[href*="/post/"]'));
+            for (const link of links) {
+                let el = link.parentElement;
+                let found = false;
+                for (let i = 0; i < 15; i++) {
+                    if (!el) break;
+                    let text = el.innerText || '';
+                    text = text.replace(/\\n/g, ' ').replace(/\\r/g, ' ');
+                    if (text.includes(searchText)) {
+                        found = true;
+                        break;
+                    }
+                    el = el.parentElement;
+                }
+                if (found) {
+                    return link.href;
+                }
+            }
+            return null;
+        }""", search_snippet)
+        
+        if url:
+            logger.info(f"✅ 内容に一致する投稿URLを見つけました: {url}")
+            return url
+        else:
+            logger.warning("⚠️ 一致する投稿が見つかりませんでした。")
+            return None
+            
+    except Exception as e:
+        logger.error(f"❌ プロフィールからの内容検索に失敗しました: {e}")
+        return None
+
 def load_todays_threads_post(target_date):
     """スケジュールから今日のThreads投稿を取得"""
     if not os.path.exists(SCHEDULE_FILE):
@@ -125,7 +192,7 @@ def normalize_text(text):
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     return text
 
-def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
+def post_to_threads(page, text, target_date, target_source=None, dry_run=False, image_path=None):
     """PlaywrightでThreadsにテキストを投稿する"""
     logger.info("📝 Threadsに投稿します...")
     
@@ -138,17 +205,23 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
         if is_quote_day:
             logger.info("🔄 本日は引用投稿（火・木・土）の日です。引用元のURLを探します...")
             quote_url = None
-            if os.path.exists(LATEST_URL_FILE):
-                try:
-                    with open(LATEST_URL_FILE, "r", encoding="utf-8") as f:
-                        quote_url = f.read().strip()
-                    logger.info(f"📄 保存されていたURLを使用します: {quote_url}")
-                except Exception as e:
-                    logger.error(f"❌ URLファイルの読み込みに失敗しました: {e}")
             
+            if target_source:
+                quote_url = find_quote_url_by_content(page, target_source, SCHEDULE_FILE, target_date)
+                
             if not quote_url:
-                logger.warning("⚠️ 保存されたURLが見つからないため、プロフィールから取得を試みます...")
-                quote_url = get_latest_post_url_from_profile(page)
+                logger.warning("⚠️ 内容からの検索で見つからなかったため、従来のフォールバック（保存URLまたは最新URL）を試みます...")
+                if os.path.exists(LATEST_URL_FILE):
+                    try:
+                        with open(LATEST_URL_FILE, "r", encoding="utf-8") as f:
+                            quote_url = f.read().strip()
+                        logger.info(f"📄 保存されていたURLを使用します: {quote_url}")
+                    except Exception as e:
+                        logger.error(f"❌ URLファイルの読み込みに失敗しました: {e}")
+                
+                if not quote_url:
+                    logger.warning("⚠️ 保存されたURLも見つからないため、プロフィールから取得を試みます...")
+                    quote_url = get_latest_post_url_from_profile(page)
                 
             if quote_url:
                 logger.info(f"🔗 引用元URLを開きます: {quote_url}")
@@ -161,7 +234,9 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
                     'svg[aria-label="再投稿"]',
                     'svg[aria-label="Repost"]',
                     '[aria-label="再投稿"]',
-                    '[aria-label="Repost"]'
+                    '[aria-label="Repost"]',
+                    'svg[aria-label="再投稿する"]',
+                    '[aria-label="再投稿する"]'
                 ]
                 for selector in repost_selectors:
                     try:
@@ -215,8 +290,12 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
         if not quote_mode_active:
             compose_trigger = None
             selectors = [
+                'text="最新情報"',
+                'text="なにか考えてる？"',
+                '[aria-label*="テキストフィールドが空です"]',
                 'text="今なにしてる？"',
                 'text="Start a thread..."',
+                'text="スレッドを開始..."',
                 '[aria-label="新しいスレッドを開始"]',
                 '[aria-label="Start a thread"]',
                 'svg[aria-label="新しいスレッドを開始"]',
@@ -247,9 +326,8 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
         # 2. テキストを入力・処理
         import re
         
-        # リンク部分と誘導部分を分離する内部関数
-        def extract_link_reply(t):
-            import random
+        # リンクや余計な誘導文(CTA)を完全に分離・削除する内部関数
+        def clean_cta_and_links(t):
             konkyo_marker = "📄 根拠:"
             if konkyo_marker in t:
                 t = t[:t.rfind(konkyo_marker)].strip()
@@ -279,32 +357,16 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
                 main_t = "\n\n".join(blocks[:split_index]).strip()
             
             if not main_t:
-                return t, ""
+                return ""
                 
-            # メイン投稿側の余計な誘導文(CTA)を完全に削除（これがあると長文時にツリーが2重分割されるため）
             if main_t.endswith("👇") or main_t.endswith("💡"):
                 main_t = main_t[:-1].strip()
                 
-            # ツリー部分のプロフ誘導文（4パターンをご指定通りに修正）
-            pattern_general = "💡 疾患の詳細や、明日から使える最新エビデンスは、プロフィール欄のNoteリンクから解説記事をチェックしてみてください🐾"
-            pattern_paper = "📚 今回のトピックの完全版（論文リファレンス付き）は、プロフィールのURLからNote記事を参照してください"
-            pattern_clinic = "🏥 診療で使えるガイドラインや推奨薬の詳細は、プロフのリンク先にある記事の中でさらに深堀りしています"
-            pattern_pathology = "📝 「さらに掘り下げた細かい病態生理や鑑別も知りたい！」という方は、プロフィールにあるリンクからNote全編をぜひご覧ください"
-            
-            check_text = main_t.lower()
-            if any(k in check_text for k in ["論文", "リファレンス", "文献", "ガイドライン", "aaha", "wsava", "jvim"]):
-                reply_t = pattern_paper
-            elif any(k in check_text for k in ["薬", "投与", "用量", "救急", "ショック", "治療", "麻酔", "初期対応"]):
-                reply_t = pattern_clinic
-            elif any(k in check_text for k in ["病態", "生理", "機序", "メカニズム", "ホルモン", "鑑別", "原因"]):
-                reply_t = pattern_pathology
-            else:
-                reply_t = pattern_general
-            
-            return main_t, reply_t
+            return main_t
 
-        # メインテキストとプロフ誘導(ツリー)を抽出
-        main_text, reply_text = extract_link_reply(text)
+        # メインテキストを抽出（CTAやツリーのリンク誘導は全廃止）
+        main_text = clean_cta_and_links(text)
+        reply_text = ""
         
         if quote_mode_active:
             # 引用ポストの場合、元投稿がカード化するので画像は不要
@@ -340,10 +402,19 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
                 chunks.append(t)
             return chunks
 
+        # 引用投稿の際、本文が空欄になってしまう場合は、そもそも引用投稿自体を中止する
+        if quote_mode_active and not main_text.strip():
+            logger.error("❌ 引用投稿の本文が空欄になってしまうため、引用投稿自体を中止します。")
+            return False
+
         chunks = split_text(main_text, 480)
         # リンクや誘導文があれば、スレッドの「次のチャンク」として強制的に分ける
         if reply_text:
             chunks.extend(split_text(reply_text, 480))
+
+        if quote_mode_active and len(chunks) > 1:
+            logger.warning("⚠️ 引用投稿では複数スレッドを作成できないため、テキストを短縮します。")
+            chunks = [chunks[0] + "…(省略)"]
 
         # 最初のボックス
         text_areas = page.locator('div[contenteditable="true"]').all()
@@ -351,7 +422,9 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
             logger.error("❌ テキスト入力欄が見つかりません")
             return False
             
-        text_areas[0].click(force=True)
+        # 引用ダイアログが開いている場合は、背景の入力欄(0番目)ではなくダイアログ内の入力欄(-1番目)をターゲットにする
+        target_index = -1 if quote_mode_active else 0
+        text_areas[target_index].click(force=True)
         time.sleep(1)
         # プレビューカードを削除する内部関数
         def remove_link_preview_if_needed(chunk_text):
@@ -384,7 +457,7 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
                 except Exception as e:
                     logger.warning(f"⚠️ OGPプレビュー削除処理でエラー: {e}")
 
-        text_areas[0].focus()
+        text_areas[target_index].focus()
         page.keyboard.insert_text(chunks[0].strip())
         time.sleep(2)
         
@@ -423,17 +496,18 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
 
         # 2つ目以降のブロックがあれば「スレッドに追加」
         for i in range(1, len(chunks)):
-            add_thread_btn = page.locator('text="スレッドに追加"').last
-            if add_thread_btn.is_visible():
-                add_thread_btn.click(force=True)
-                time.sleep(1)
-            
-            text_areas = page.locator('div[contenteditable="true"]').all()
-            if text_areas:
-                text_areas[-1].focus()
+            try:
+                # Playwrightの自動待機と堅牢なセレクタを利用してシンプルにクリック
+                page.locator('[aria-label="スレッドに追加"], [aria-label="Add to thread"], text="スレッドに追加"').last.click(timeout=3000)
+                
+                # 新しく追加されたテキストボックス（最後の要素）に入力
+                page.locator('div[contenteditable="true"]').last.focus()
                 page.keyboard.insert_text(chunks[i].strip())
                 time.sleep(1)
                 remove_link_preview_if_needed(chunks[i])
+            except Exception as e:
+                logger.error(f"❌ スレッド追加に失敗しました。文字数超過を防ぐため、チャンク {i} の入力をスキップします。")
+                break
         
         if dry_run:
             logger.info("🔸 ドライラン: 投稿ボタンは押しません。プレビュー用のスクリーンショットを保存します。")
@@ -451,34 +525,33 @@ def post_to_threads(page, text, target_date, dry_run=False, image_path=None):
             return True
 
         # 3. 投稿ボタンをクリック
-        # 3. 投稿ボタンをクリック (最後のものを優先)
-        post_btn = None
-        btns = page.locator('div[role="button"]:has-text("投稿")').all()
-        for b in reversed(btns):
-            if b.is_visible() and b.get_attribute('aria-disabled') != 'true':
-                post_btn = b
-                break
-                
-        if post_btn:
-            post_btn.click(force=True)
+        try:
+            # aria-disabledがtrueでない有効な「投稿」ボタンを検索してクリック
+            post_btn = page.locator('div[role="button"]:not([aria-disabled="true"])').filter(has_text=re.compile(r"^(投稿|Post|投稿する)$")).last
+            post_btn.click(timeout=3000, force=True)
             logger.info("✅ 投稿ボタンをクリックしました")
             time.sleep(6)  # 投稿完了を待つ
-
-            # 月水金（通常投稿）の場合はURLを保存して次回（火木土）の引用に備える
-            if not is_quote_day:
-                latest_url = get_latest_post_url_from_profile(page)
-                if latest_url:
-                    try:
-                        with open(LATEST_URL_FILE, "w", encoding="utf-8") as f:
-                            f.write(latest_url)
-                        logger.info(f"💾 次回（火木土）のために投稿URLを保存しました: {latest_url}")
-                    except Exception as e:
-                        logger.error(f"❌ URLファイルの保存に失敗しました: {e}")
-
-            return True
-        else:
-            logger.error("❌ 有効な投稿ボタンが見つかりません")
+        except Exception as e:
+            logger.error("❌ 有効な投稿ボタンが見つかりませんでした。文字数オーバー等の可能性があります。")
             return False
+
+        # 月水金（通常投稿）の場合はURLを保存して次回（火木土）の引用に備える
+        if not is_quote_day:
+            latest_url = get_latest_post_url_from_profile(page)
+            previous_url = None
+            if os.path.exists(LATEST_URL_FILE):
+                previous_url = open(LATEST_URL_FILE, "r", encoding="utf-8").read().strip()
+
+            if latest_url:
+                if latest_url == previous_url:
+                    logger.error(f"❌ 最新URLが前回保存されたURLと同じです。実際の投稿に失敗した可能性があります。")
+                    return False
+
+                with open(LATEST_URL_FILE, "w", encoding="utf-8") as f:
+                    f.write(latest_url)
+                logger.info(f"💾 次回（火木土）のために投稿URLを保存しました: {latest_url}")
+
+        return True
 
     except PlaywrightTimeout as e:
         logger.error(f"❌ タイムアウト: {e}")
@@ -557,7 +630,7 @@ def main():
         # Webdriver検知回避
         page.evaluate("() => Object.defineProperty(navigator, 'webdriver', { get: () => undefined })")
 
-        success = post_to_threads(page, text, target_date, dry_run=args.dry_run, image_path=image_path)
+        success = post_to_threads(page, text, target_date, target_source=post['source'], dry_run=args.dry_run, image_path=image_path)
         
         if success:
             logger.info("🎉 処理が正常に完了しました！")

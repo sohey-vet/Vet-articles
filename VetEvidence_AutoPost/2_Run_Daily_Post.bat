@@ -27,7 +27,7 @@ echo.
 
 :: Note の投稿処理
 echo [Note] 投稿処理を開始します...
-python auto_post_note.py
+python publish_note_daily_draft.py
 if %errorlevel% neq 0 (
     echo [Note] 投稿処理でエラーが発生しました。ログを確認してください。
 )

@@ -44,7 +44,26 @@ BASE_PROMPT = """
 """
 
 def generate_rewrite(original_text, folder_name, retry=3):
-    prompt = BASE_PROMPT + original_text
+    prompt = BASE_PROMPT
+    
+    # Load Feedback (Few-Shot Learning)
+    feedback_file = os.path.join(os.path.dirname(SCHEDULE_FILE), "threads_feedback.json")
+    if os.path.exists(feedback_file):
+        try:
+            with open(feedback_file, 'r', encoding='utf-8') as f:
+                feedbacks = json.load(f)
+            if feedbacks:
+                # Get up to 3 most recent
+                recent = feedbacks[-3:]
+                prompt += "\n\n【過去の修正事例（Few-Shot Learning）】\n"
+                prompt += "AIが過去に生成した文章に対して、獣医師（ユーザー）は以下のような修正を行いました。これらを参考に、同じ文体・トーンで出力してください。\n"
+                for idx, fb in enumerate(recent):
+                    prompt += f"\n<事例{idx+1}>\n[AIの元の出力]:\n{fb.get('original_text', '')}\n"
+                    prompt += f"[獣医師の修正後]:\n{fb.get('edited_text', '')}\n"
+        except Exception as e:
+            print(f"[{folder_name}] Feedback loading failed: {e}")
+            
+    prompt += "\n-----------------------------------\n【元のテキスト（ドラフト全体）】:\n" + original_text
 
     for i in range(retry):
         try:

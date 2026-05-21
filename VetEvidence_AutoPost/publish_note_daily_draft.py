@@ -21,13 +21,26 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 def load_todays_post_source(target_date):
+    # Noteは月・水・金のみ投稿 (0: 月, 2: 水, 4: 金)
+    if target_date.weekday() not in [0, 2, 4]:
+        logger.info(f"📭 今日 ({target_date.strftime('%Y-%m-%d')}) は月・水・金ではないため、Note投稿をスキップします。")
+        return None
+
     if not os.path.exists(SCHEDULE_FILE): return None
     try:
         with open(SCHEDULE_FILE, "r", encoding="utf-8") as f:
             schedule = json.load(f)
         date_str = target_date.strftime("%Y-%m-%d")
-        todays_posts = [p for p in schedule if p["date"] == date_str]
-        if not todays_posts: return None
+        
+        # Note用の予約はスケジュールに独立して存在しないため、同日のX（Pattern 1）のソースを取得する
+        todays_posts = [p for p in schedule if p.get("date") == date_str and p.get("platform") == "X" and p.get("type") == "Pattern 1"]
+        
+        if not todays_posts:
+            # フォールバック: その日の何らかの投稿を拾う
+            todays_posts = [p for p in schedule if p.get("date") == date_str]
+            if not todays_posts:
+                return None
+                
         return todays_posts[0]["source"]
     except Exception as e:
         logger.error(f"❌ スケジュール読み込みエラー: {e}")
