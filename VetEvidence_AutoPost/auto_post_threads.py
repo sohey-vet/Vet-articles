@@ -142,7 +142,7 @@ def load_todays_threads_post(target_date):
 
 def find_image(source_folder):
     """指定されたフォルダからPNG画像を検索する"""
-    DRAFTS_ROOT = r"C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts"
+    DRAFTS_ROOT = os.path.dirname(SCRIPT_DIR)
     folder_path = os.path.join(DRAFTS_ROOT, source_folder)
     png_files = glob.glob(os.path.join(folder_path, "*.png"))
     if png_files:
@@ -192,11 +192,16 @@ def normalize_text(text):
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     return text
 
-def post_to_threads(page, text, target_date, target_source=None, dry_run=False, image_path=None):
-    """PlaywrightでThreadsにテキストを投稿する"""
+def post_to_threads(page, text, target_date, target_source=None, dry_run=False, image_path=None, is_adhoc=False):
+    """PlaywrightでThreadsにテキストを投稿する
+
+    is_adhoc=True のときは、スケジュール非依存の単発テキスト投稿（日曜「診察室裏トーク」等）として扱い、
+    引用フローを使わず通常投稿に固定し、火木土の引用用URL保存も行わない。
+    """
     logger.info("📝 Threadsに投稿します...")
-    
-    is_quote_day = target_date.weekday() in [1, 3, 5]  # 火(1) 木(3) 土(5)
+
+    # 単発投稿（日曜裏トーク等）は常に通常投稿。引用日判定からも除外する。
+    is_quote_day = (not is_adhoc) and target_date.weekday() in [1, 3, 5]  # 火(1) 木(3) 土(5)
     quote_mode_active = False
 
     try:
@@ -226,7 +231,7 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
             if quote_url:
                 logger.info(f"🔗 引用元URLを開きます: {quote_url}")
                 page.goto(quote_url, wait_until="domcontentloaded", timeout=15000)
-                time.sleep(5)
+                time.sleep(3)
                 
                 # 再投稿（Repost）ボタンを探す
                 repost_trigger = None
@@ -238,20 +243,29 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
                     'svg[aria-label="再投稿する"]',
                     '[aria-label="再投稿する"]'
                 ]
-                for selector in repost_selectors:
-                    try:
-                        elem = page.locator(selector).first
-                        if elem.is_visible(timeout=2000):
-                            repost_trigger = elem
-                            break
-                    except:
-                        pass
+                
+                start_time = time.time()
+                while time.time() - start_time < 5:
+                    for selector in repost_selectors:
+                        try:
+                            elems = page.locator(selector).all()
+                            for elem in elems:
+                                if elem.is_visible():
+                                    repost_trigger = elem
+                                    break
+                            if repost_trigger:
+                                break
+                        except:
+                            pass
+                    if repost_trigger:
+                        break
+                    time.sleep(0.5)
+                
+                if not repost_trigger:
+                    logger.warning("⚠️ 再投稿ボタンが見つかりませんでした。デバッグ画像を保存します。")
+                    page.screenshot(path=os.path.join(LOG_DIR, "debug_repost_not_found.png"), full_page=True)
                 
                 if repost_trigger:
-                    repost_trigger.click(force=True)
-                    time.sleep(2) # メニュー展開待ち
-                    
-                    # 「引用」メニューを探す
                     quote_trigger = None
                     quote_selectors = [
                         'text="引用"',
@@ -260,20 +274,60 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
                         '[aria-label="Quote"]',
                         'div[role="button"]:has-text("引用")'
                     ]
-                    for selector in quote_selectors:
+                    
+                    # ポップアップメニューが表示されるまでクリックを最大3回リトライする
+                    click_success = False
+                    for attempt in range(3):
+                        logger.info(f"👉 再投稿ボタンをクリックします (試行 {attempt + 1}/3)...")
                         try:
-                            elem = page.locator(selector).first
-                            if elem.is_visible(timeout=2000):
-                                quote_trigger = elem
+                            repost_trigger.click(force=True)
+                        except Exception as e:
+                            logger.warning(f"⚠️ 再投稿ボタンのクリックで例外発生: {e}")
+                        
+                        # 引用メニューが表示されるか待機確認
+                        start_time = time.time()
+                        while time.time() - start_time < 3:
+                            for selector in quote_selectors:
+                                try:
+                                    elems = page.locator(selector).all()
+                                    for elem in elems:
+                                        if elem.is_visible():
+                                            quote_trigger = elem
+                                            click_success = True
+                                            break
+                                    if quote_trigger:
+                                        break
+                                except:
+                                    pass
+                            if quote_trigger:
                                 break
-                        except:
-                            pass
+                            time.sleep(0.3)
+                        
+                        if click_success:
+                            break
+                        logger.warning("⚠️ メニューが表示されなかったため、再クリックを試みます...")
+                        time.sleep(1)
+                    
+                    if not quote_trigger:
+                        logger.warning("⚠️ 引用メニューが見つかりませんでした。デバッグ画像を保存します。")
+                        page.screenshot(path=os.path.join(LOG_DIR, "debug_quote_menu_not_found.png"), full_page=True)
                             
                     if quote_trigger:
                         quote_trigger.click(force=True)
-                        time.sleep(2)
-                        logger.info("✅ 引用ダイアログを開きました")
-                        quote_mode_active = True
+                        # 引用ダイアログの入力欄が表示されるのを待つ (要素数が2以上になるのを待つ)
+                        try:
+                            start_wait = time.time()
+                            while time.time() - start_wait < 5:
+                                if page.locator('div[contenteditable="true"]').count() >= 2:
+                                    break
+                                time.sleep(0.3)
+                            
+                            page.locator('div[contenteditable="true"]').last.wait_for(state="visible", timeout=2000)
+                            logger.info("✅ 引用ダイアログを開きました")
+                            quote_mode_active = True
+                        except Exception as e:
+                            logger.error(f"❌ 引用ダイアログの入力欄が表示されませんでした: {e}")
+                            page.screenshot(path=os.path.join(LOG_DIR, "debug_quote_dialog_error.png"), full_page=True)
                     else:
                         logger.error("❌ 引用メニューが見つかりませんでした。通常の新規投稿に切り替えます。")
                 else:
@@ -303,14 +357,22 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
                 'div[role="button"]:has-text("スレッドを開始")'
             ]
             
-            for selector in selectors:
-                try:
-                    elem = page.locator(selector).first
-                    if elem.is_visible(timeout=2000):
-                        compose_trigger = elem
-                        break
-                except Exception:
-                    pass
+            start_time = time.time()
+            while time.time() - start_time < 5:
+                for selector in selectors:
+                    try:
+                        elems = page.locator(selector).all()
+                        for elem in elems:
+                            if elem.is_visible():
+                                compose_trigger = elem
+                                break
+                        if compose_trigger:
+                            break
+                    except:
+                        pass
+                if compose_trigger:
+                    break
+                time.sleep(0.5)
                     
             if not compose_trigger:
                 # フォールバック: テキストエリア自体が最初から見えている場合
@@ -318,9 +380,13 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
                 
             if compose_trigger and compose_trigger.is_visible():
                 compose_trigger.click(force=True)
-                time.sleep(2)
+                try:
+                    page.locator('div[contenteditable="true"]').first.wait_for(state="visible", timeout=3000)
+                except:
+                    pass
             else:
                 logger.error("❌ 投稿開始ボタンまたは入力欄が見つかりません")
+                page.screenshot(path=os.path.join(LOG_DIR, "debug_compose_trigger_not_found.png"), full_page=True)
                 return False
 
         # 2. テキストを入力・処理
@@ -373,7 +439,7 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
             image_path = None
 
         # テキストを500文字以内のチャンクに分割 (Threadsの文字数制限対応)
-        def split_text(t, limit=480):
+        def split_text(t, limit=500):
             chunks = []
             while len(t) > limit:
                 # 1. 見出し（【）の前での分割を最優先
@@ -407,14 +473,11 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
             logger.error("❌ 引用投稿の本文が空欄になってしまうため、引用投稿自体を中止します。")
             return False
 
-        chunks = split_text(main_text, 480)
-        # リンクや誘導文があれば、スレッドの「次のチャンク」として強制的に分ける
+        # ツリー表示は絶対にさせないため、分割処理は行わず単一の投稿とする
         if reply_text:
-            chunks.extend(split_text(reply_text, 480))
-
-        if quote_mode_active and len(chunks) > 1:
-            logger.warning("⚠️ 引用投稿では複数スレッドを作成できないため、テキストを短縮します。")
-            chunks = [chunks[0] + "…(省略)"]
+            chunks = [main_text + "\n\n" + reply_text]
+        else:
+            chunks = [main_text]
 
         # 最初のボックス
         text_areas = page.locator('div[contenteditable="true"]').all()
@@ -533,10 +596,12 @@ def post_to_threads(page, text, target_date, target_source=None, dry_run=False, 
             time.sleep(6)  # 投稿完了を待つ
         except Exception as e:
             logger.error("❌ 有効な投稿ボタンが見つかりませんでした。文字数オーバー等の可能性があります。")
+            page.screenshot(path=os.path.join(LOG_DIR, "debug_post_button_error.png"), full_page=True)
             return False
 
         # 月水金（通常投稿）の場合はURLを保存して次回（火木土）の引用に備える
-        if not is_quote_day:
+        # ※ 日曜の単発投稿(is_adhoc)は引用ローテに無関係なので保存しない
+        if not is_quote_day and not is_adhoc:
             latest_url = get_latest_post_url_from_profile(page)
             previous_url = None
             if os.path.exists(LATEST_URL_FILE):
@@ -566,6 +631,8 @@ def main():
     parser.add_argument("--headless", action="store_true", help="ヘッドレスモードで実行")
     parser.add_argument("--setup", action="store_true", help="初回ログイン用のブラウザを起動")
     parser.add_argument("--date", type=str, help="YYYY-MM-DD (指定日をテストしたい場合)")
+    parser.add_argument("--text-file", type=str, dest="text_file",
+                        help="指定ファイルの本文をスケジュール非依存で単発投稿（日曜『診察室裏トーク』用）")
     args = parser.parse_args()
 
     logger.info("=" * 50)
@@ -594,11 +661,53 @@ def main():
 
     # 2. 投稿モード
     target_date = datetime.strptime(args.date, "%Y-%m-%d").date() if args.date else datetime.now().date()
-    
+
+    # --- 単発テキスト投稿モード（日曜「診察室裏トーク」など。スケジュール非依存） ---
+    if args.text_file:
+        if not os.path.exists(args.text_file):
+            logger.error(f"❌ 指定された本文ファイルが見つかりません: {args.text_file}")
+            sys.exit(1)
+        with open(args.text_file, "r", encoding="utf-8") as f:
+            text = normalize_text(f.read())
+        if not text.strip():
+            logger.error("❌ 投稿テキストが空です。")
+            sys.exit(1)
+        if not os.path.exists(SESSION_DIR):
+            logger.error("❌ セッションが見つかりません。先に --setup オプションでログインしてください。")
+            sys.exit(1)
+
+        logger.info(f"📅 単発投稿（{target_date.isoformat()}）")
+        logger.info(f"📄 内容プレビュー: {text[:50]}...")
+
+        with sync_playwright() as p:
+            context = p.chromium.launch_persistent_context(
+                user_data_dir=SESSION_DIR,
+                headless=False,  # ThreadsはヘッドレスをBANするため必ずヘッド付き
+                locale="ja-JP",
+                timezone_id="Asia/Tokyo",
+                viewport={"width": 1280, "height": 900},
+                args=["--disable-blink-features=AutomationControlled"]
+            )
+            page = context.pages[0] if context.pages else context.new_page()
+            page.evaluate("() => Object.defineProperty(navigator, 'webdriver', { get: () => undefined })")
+            success = post_to_threads(page, text, target_date, target_source=None,
+                                      dry_run=args.dry_run, image_path=None, is_adhoc=True)
+            if success:
+                logger.info("🎉 単発投稿が正常に完了しました！")
+            else:
+                logger.error("❌ 単発投稿に失敗しました。")
+            context.close()
+            sys.exit(0 if success else 1)
+
     post = load_todays_threads_post(target_date)
     if not post:
         sys.exit(0)
-        
+
+    # 日曜は「診察室裏トーク」(ThreadsBot) に一本化したため、ダイジェストはThreadsへ投稿しない
+    if post.get("type") == "Sunday Digest":
+        logger.info("📭 日曜ダイジェストはThreadsでは投稿しません（診察室裏トークに一本化済み）。スキップします。")
+        sys.exit(0)
+
     text = normalize_text(post["content"])
     if not text.strip():
         logger.error("❌ 投稿テキストが空です。")
@@ -611,7 +720,7 @@ def main():
     if not os.path.exists(SESSION_DIR):
         logger.error("❌ セッションが見つかりません。先に --setup オプションでログインしてください。")
         sys.exit(1)
-        
+
     image_path = find_image(post['source'])
     if image_path:
         logger.info(f"📷 添付候補のサムネイル画像: {os.path.basename(image_path)}")

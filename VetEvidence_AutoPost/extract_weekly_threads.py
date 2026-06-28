@@ -3,6 +3,24 @@ import os
 import datetime
 import re
 
+# 日曜「診察室裏トーク」(ThreadsBot) の設定 -----------------------------------
+# 投稿システムは C:\Users\souhe\Documents\ThreadsBot に分離している。
+# ローテは日付基準: 2026-07-05(日) を post1 のアンカーとし、以降4週ローテ。
+# schedule_today.ps1 の投稿選択ロジックと完全に同じ式にすること（編集＝実投稿の保証）。
+THREADSBOT_DIR = r"C:\Users\souhe\Documents\ThreadsBot"
+SUNDAY_ANCHOR = datetime.date(2026, 7, 5)  # post1
+SUNDAY_NAMES = {
+    1: "第1週 日曜カルテ（共感）",
+    2: "第2週 あるある翻訳（実用）",
+    3: "第3週 先輩の独白（人柄）",
+    4: "第4週 季節の注意（保存）",
+}
+
+def sunday_talk_index(sunday_date):
+    """その日曜にあたる post 番号(1-4)を日付から算出する。"""
+    weeks = (sunday_date - SUNDAY_ANCHOR).days // 7  # Pythonの//は負でも床関数
+    return (weeks % 4) + 1  # Pythonの%は常に非負
+
 def extract_block(content, header_regex):
     """Finds the header matching header_regex, then extracts the first ```text block after it."""
     # Find header
@@ -28,7 +46,7 @@ def extract_block(content, header_regex):
     return content[actual_start:actual_end].strip()
 
 def main():
-    base_dir = r"C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts"
+    base_dir = r"C:\Users\souhe\Desktop\PawMedical\VetEvidence_SNS"
     auto_post_dir = os.path.join(base_dir, "VetEvidence_AutoPost")
     schedule_file = os.path.join(auto_post_dir, "sns_schedule.json")
     
@@ -70,8 +88,12 @@ def main():
         
         post_type = item.get("type", "Unknown")
         src = item.get("source")
-        
-        display_type = "メイン記事" if post_type == "Threads Long" else "引用投稿" if post_type == "Threads Short" else "ダイジェスト" if post_type == "Sunday Digest" else post_type
+
+        # 日曜は「診察室裏トーク」(ThreadsBot) に一本化済み。古いダイジェスト枠はループ後に専用ブロックで差し込むのでここでは飛ばす。
+        if post_type == "Sunday Digest":
+            continue
+
+        display_type = "メイン記事" if post_type == "Threads Long" else "引用投稿" if post_type == "Threads Short" else post_type
         
         md_path = os.path.join(base_dir, src, "sns_all_drafts.md")
         if src == "all_sunday_digests.md":
@@ -135,7 +157,26 @@ def main():
         output_lines.append("---")
         output_lines.append("")
 
-    desktop_file = r"C:\Users\souhe\Desktop\今週のThreads修正用.md"
+    # --- 週末の日曜「診察室裏トーク」(ThreadsBot) を月〜土の続きに差し込む ---
+    sunday_date = datetime.datetime.strptime(dates_this_week[-1], "%Y-%m-%d").date()
+    s_idx = sunday_talk_index(sunday_date)
+    s_file = os.path.join(THREADSBOT_DIR, f"post{s_idx}.txt")
+    if os.path.exists(s_file):
+        with open(s_file, 'r', encoding='utf-8') as f:
+            s_text = f.read().strip()
+        s_name = SUNDAY_NAMES.get(s_idx, f"post{s_idx}")
+        output_lines.append(f"## [{dates_this_week[-1]} 日曜日] 診察室裏トーク（{s_name}）")
+        output_lines.append(f"<!-- SUNDAY_TALK: post{s_idx} | FILE: {s_file} -->")
+        output_lines.append("```text")
+        output_lines.append(s_text)
+        output_lines.append("```")
+        output_lines.append("")
+        output_lines.append("---")
+        output_lines.append("")
+    else:
+        print(f"Warning: 日曜裏トークの元ファイルが見つかりません: {s_file}")
+
+    desktop_file = os.path.join(auto_post_dir, "今週のThreads修正用.md")
     with open(desktop_file, 'w', encoding='utf-8') as f:
         f.write("\n".join(output_lines))
         

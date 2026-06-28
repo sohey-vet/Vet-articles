@@ -3,6 +3,7 @@ import re
 import subprocess
 import json
 import datetime
+import sys
 
 def replace_block(content, header_regex, new_text):
     """Finds the header matching header_regex, then replaces the first ```text block after it with new_text."""
@@ -33,9 +34,9 @@ def replace_block(content, header_regex, new_text):
     return new_content, old_text, True
 
 def main():
-    desktop_file = r"C:\Users\souhe\Desktop\今週のThreads修正用.md"
-    base_dir = r"C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts"
+    base_dir = r"C:\Users\souhe\Desktop\PawMedical\VetEvidence_SNS"
     auto_post_dir = os.path.join(base_dir, "VetEvidence_AutoPost")
+    desktop_file = os.path.join(auto_post_dir, "今週のThreads修正用.md")
     
     if not os.path.exists(desktop_file):
         print(f"Error: 修正用ファイルが見つかりません。先に抽出を実行してください。 ({desktop_file})")
@@ -55,7 +56,36 @@ def main():
         block = block.strip()
         if not block:
             continue
-            
+
+        # --- 日曜「診察室裏トーク」(ThreadsBot) ブロックの書き戻し ---
+        sunday_meta = re.search(r'<!-- SUNDAY_TALK: (.*?) \| FILE: (.*?) -->', block)
+        if sunday_meta:
+            s_label = sunday_meta.group(1).strip()
+            s_file = sunday_meta.group(2).strip()
+            s_text_match = re.search(r'```text\n(.*?)\n```', block, re.DOTALL)
+            if not s_text_match:
+                print(f"Warning: 日曜裏トークの本文ブロックが見つかりません ({s_label})")
+                continue
+            s_new = s_text_match.group(1).strip()
+            s_old = ""
+            if os.path.exists(s_file):
+                with open(s_file, 'r', encoding='utf-8') as f:
+                    s_old = f.read().strip()
+            if s_new and s_new != s_old:
+                with open(s_file, 'w', encoding='utf-8', newline='') as f:
+                    f.write(s_new)
+                print(f"Successfully updated (日曜裏トーク): {s_label} -> {s_file}")
+                success_count += 1
+                feedback_entries.append({
+                    "date": datetime.datetime.now().isoformat(),
+                    "post_type": f"Sunday Talk ({s_label})",
+                    "original_text": s_old,
+                    "edited_text": s_new
+                })
+            else:
+                print(f"日曜裏トーク: 変更なし ({s_label})")
+            continue
+
         # Parse metadata
         meta_match = re.search(r'<!-- SOURCE: (.*?) \| TYPE: (.*?) \| HEADER: (.*?) -->', block)
         if not meta_match:
@@ -72,6 +102,21 @@ def main():
             continue
             
         new_text = text_match.group(1).strip()
+        
+        # 500文字制限のチェック (すべてのThreads投稿)
+        normalized_text = new_text.replace("\r\n", "\n").replace("\r", "\n")
+        text_len = len(normalized_text)
+        if text_len > 500:
+            print("\n" + "!" * 60)
+            print(f"【警告】{src} ({post_type}) の Threads 投稿が 500文字を超えています！ ({text_len}文字)")
+            print("このまま反映すると、投稿時にエラーが発生します。")
+            print("!" * 60 + "\n")
+            ans = input("このまま元のファイルに反映しますか？ (y/N): ").strip().lower()
+            if ans != 'y':
+                print("反映を中止しました。修正用ファイルを編集してから再度実行してください。")
+                import time
+                time.sleep(3)
+                sys.exit(1)
         
         # Open source file
         md_path = os.path.join(base_dir, src, "sns_all_drafts.md")
