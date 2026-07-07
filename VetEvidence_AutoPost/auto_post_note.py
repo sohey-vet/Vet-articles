@@ -61,6 +61,14 @@ def find_original_md_file_and_url(source_folder):
                     path = os.path.join(r_root, path) if path.startswith("topics") else os.path.join(r_root, "topics", path)
                 md_path = path.replace(".html", ".md")
                 if os.path.exists(md_path): return md_path, url_suffix
+                # フォールバック: 旧パス(論文まとめ)を現プロジェクト(PawMedical\VetEvidence_Website)へ再マップ
+                norm = md_path.replace("\\", "/")
+                idx = norm.lower().find("topics/")
+                if idx != -1:
+                    rel = norm[idx:].replace("/", os.sep)
+                    new_root = r"C:\Users\souhe\Desktop\PawMedical\VetEvidence_Website"
+                    remapped = os.path.join(new_root, rel)
+                    if os.path.exists(remapped): return remapped, url_suffix
     except Exception as e:
         logger.error(f"❌ drafts.mdの読取エラー: {e}")
     return None, None
@@ -77,7 +85,21 @@ def format_compact_html(md_text, url_suffix):
     
     md_text = md_text.replace('💡 臨床アクション', '臨床アクション').replace('臨床アクション', '💡 臨床アクション')
     
-    lines = md_text.split('\n')
+    raw_lines = md_text.split('\n')
+    lines = []
+    i = 0
+    while i < len(raw_lines):
+        line = raw_lines[i]
+        line_s = line.strip()
+        if (line_s.startswith('### ') or line_s.startswith('## ')) and i + 1 < len(raw_lines):
+            next_line = raw_lines[i+1]
+            if next_line.startswith(' ') and next_line.strip():
+                next_strip = next_line.strip()
+                if not (next_strip.startswith('-') or next_strip.startswith('*') or next_strip.startswith('|') or next_strip.startswith('#') or next_strip.startswith('>')):
+                    line = line.rstrip() + " " + next_strip
+                    i += 1
+        lines.append(line)
+        i += 1
     
     # 参照文献数の算出
     ref_count = 0
@@ -105,6 +127,76 @@ def format_compact_html(md_text, url_suffix):
         if current_p:
             html_out.append("<p>" + "<br>".join(current_p) + "</p>")
             current_p = []
+
+    def flush_table_data():
+        nonlocal in_table, table_lines, current_p
+        if len(table_lines) >= 3:
+            headers = [h.strip() for h in table_lines[0].split('|')[1:-1]]
+            
+            GENERIC_HEADERS = ["ステップ", "項目", "パターン", "Step", "No", "項", "行動", "内容", "概要", "値", "数値"]
+            
+            def clean_header_name(h):
+                return re.sub(r'[\*\s_：:]', '', h)
+                
+            def get_full_width_len(s):
+                length = 0
+                for char in s:
+                    if ord(char) < 128:
+                        length += 0.5
+                    else:
+                        length += 1
+                return length
+
+            for tr in table_lines[2:]:
+                cells = [c.strip() for c in tr.split('|')[1:-1]]
+                if not cells: continue
+                
+                cells_clean = [c.strip() for c in cells]
+                
+                if len(cells_clean) > 0 and cells_clean[0]:
+                    h0 = headers[0] if len(headers) > 0 else ""
+                    h0_clean = clean_header_name(h0)
+                    cell0_val = re.sub(r'^\*\*|^\*|\*\*$|\*$', '', cells_clean[0]).strip()
+                    
+                    if h0_clean in GENERIC_HEADERS or not h0_clean:
+                        current_p.append(f"<strong>【{cell0_val}】</strong>")
+                    else:
+                        current_p.append(f"<strong>【{h0}：{cell0_val}】</strong>")
+                
+                for i in range(1, len(cells_clean)):
+                    val = cells_clean[i]
+                    if not val:
+                        continue
+                    
+                    hn = headers[i] if i < len(headers) else ""
+                    hn_clean = clean_header_name(hn)
+                    
+                    parts = re.split(r'<br\s*/?>|\n', val)
+                    parts = [p.strip() for p in parts if p.strip()]
+                    if not parts:
+                        continue
+                        
+                    has_internal_labels = any(re.match(r'^(犬|猫|・)\s*[:：\s]', p) or re.match(r'^-\s+', p) for p in parts)
+                    is_generic = hn_clean in GENERIC_HEADERS or not hn_clean or has_internal_labels
+                    
+                    if parts[0].startswith('・') or parts[0].startswith('- ') or parts[0].startswith('-\t'):
+                        prefix = ""
+                        current_p.append(parts[0])
+                        prefix_len = 1
+                    else:
+                        prefix = "・" if is_generic else f"・{hn}："
+                        current_p.append(f"{prefix}{parts[0]}")
+                        prefix_len = get_full_width_len(prefix)
+                        
+                    if len(parts) > 1:
+                        indent = "　" * int(round(prefix_len))
+                        for part in parts[1:]:
+                            current_p.append(f"{indent}{part}")
+                            
+                current_p.append("") 
+        in_table = False
+        table_lines = []
+        flush_p()
 
     for line in lines:
         line_s = line.strip()
@@ -169,30 +261,17 @@ def format_compact_html(md_text, url_suffix):
         else:
             if in_table:
                 flush_p()
-                if len(table_lines) >= 3:
-                    headers = [h.strip() for h in table_lines[0].split('|')[1:-1]]
-                    for tr in table_lines[2:]:
-                        cells = [c.strip() for c in tr.split('|')[1:-1]]
-                        if not cells: continue
-                        h0 = headers[0] if len(headers) > 0 else "項目"
-                        if h0 and cells[0]:
-                            current_p.append(f"<strong>【{h0}：{cells[0]}】</strong>")
-                        else:
-                            current_p.append(f"<strong>【{cells[0]}】</strong>")
-                            
-                        for i in range(1, len(cells)):
-                            hn = headers[i] if i < len(headers) else ""
-                            current_p.append(f"・{hn}：{cells[i]}")
-                        current_p.append("") 
-                in_table = False
-                table_lines = []
-                flush_p()
+                flush_table_data()
                 
             if not line_s:
                 flush_p()
             else:
                 current_p.append(line_s)
                 
+    if in_table:
+        flush_p()
+        flush_table_data()
+        
     flush_p()
     return "\n".join(html_out)
 
@@ -251,10 +330,19 @@ def post_to_note(page, title, html_payload, thumb_path, dry_run=False, draft_mod
             logger.warning(f"⚠️ 見出し画像のアップロード中にエラー: {e}")
         
         # === タイトル入力 ===
-        title_box = page.locator('textarea[placeholder*="タイトル"], textarea').first
-        title_box.fill(title, timeout=15000)
+        # 注意: エディタ左にAIアシスタント用textareaが追加され、素の`textarea`指定だと
+        # DOM順でそちらが先に拾われタイトルが消える(2026-07-07事故)。placeholderで限定する。
+        # また fill() だとNote側のautosaveがタイトルを保存しないため、実キーボード入力にする。
+        title_box = page.locator('textarea[placeholder*="タイトル"]').first
+        title_box.wait_for(state="visible", timeout=15000)
+        title_box.click()
+        page.keyboard.insert_text(title)
         time.sleep(1)
-        # 追記: UIサジェスト等を消すためエスケープを押す
+        typed = title_box.input_value()
+        if typed.strip() != title.strip():
+            logger.error(f"❌ タイトルが入力できていません（入力後の値: {typed!r}）。処理を中断します。")
+            return False
+        # UIサジェスト等を消すためエスケープを押す
         page.keyboard.press("Escape")
         time.sleep(1)
         
@@ -276,9 +364,22 @@ def post_to_note(page, title, html_payload, thumb_path, dry_run=False, draft_mod
         logger.info("✅ 完璧なレイアウトのHTMLペーストに成功しました！表・太字が完全にコントロールされています。")
         
         if dry_run or draft_mode:
-            logger.info("⏳ Note.comの自動保存(Autosave)を確実に行うため15秒待機します...")
-            time.sleep(15)
-            logger.info("✅ 下書きとして完全に保存されました（--draft モードのため公開は行いません）")
+            # autosave任せだとタイトルが保存されないことがあるため「下書き保存」を明示的に押す
+            save_btn = page.locator('button:has-text("下書き保存")').first
+            save_btn.click(timeout=10000)
+            logger.info("💾 「下書き保存」をクリックしました。保存完了を待機します...")
+            time.sleep(8)
+            # 保存検証: エディタを再読み込みしてタイトルが実際に残っているか確認する
+            if "/new" not in page.url:
+                page.reload(wait_until="networkidle", timeout=30000)
+                time.sleep(3)
+                saved = page.locator('textarea[placeholder*="タイトル"]').first.input_value()
+                if saved.strip() != title.strip():
+                    logger.error(f"❌ 保存後のタイトル検証に失敗（再読込後の値: {saved!r}）")
+                    return False
+                logger.info("✅ 下書き保存を確認しました（再読込後もタイトルが残存。--draftのため公開しません）")
+            else:
+                logger.warning("⚠️ 保存後もURLが/newのままのため再読込検証をスキップしました。下書き一覧で確認してください。")
             return True
 
         time.sleep(5)
