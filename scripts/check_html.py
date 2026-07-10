@@ -1,11 +1,8 @@
 import glob
 
-files = [
-    r'c:\Users\souhe\Desktop\論文まとめ\topics\救急\高カリウム血症_致死的不整脈の回避と治療.html',
-    r'c:\Users\souhe\Desktop\論文まとめ\topics\救急\難産と帝王切開_救急対応フロー.html',
-    r'c:\Users\souhe\Desktop\論文まとめ\topics\救急\高ナトリウム血症_原因と水脱水アプローチ.html',
-]
+files = sorted(glob.glob(r'c:\Users\souhe\Desktop\PawMedical\VetEvidence_Website\topics\**\*.html', recursive=True))
 
+ng_count = 0
 for path in files:
     with open(path, encoding='utf-8') as fp:
         content = fp.read()
@@ -17,11 +14,13 @@ for path in files:
         'owner-tips': 'owner-tips' in content,
         'refs': 'id="refs"' in content,
         'nav': 'slide-menu' in content,
+        'body-mode-free': '<body class="mode-free">' in content,
+        'premium-lock': 'premium-lock' in content,
     }
-    name = path.split('\\')[-1]
-    size = len(content)
-    print(f'{name} ({size:,} bytes)')
-    for k, v in checks.items():
-        status = 'OK' if v else 'MISSING'
-        print(f'  {k}: {status}')
-    print()
+    failed = [k for k, v in checks.items() if not v]
+    if failed:
+        ng_count += 1
+        name = path.split('\\')[-1]
+        print(f'NG {name}: missing {", ".join(failed)}')
+
+print(f'checked {len(files)} files / NG: {ng_count}')

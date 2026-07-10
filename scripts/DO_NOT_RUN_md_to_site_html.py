@@ -478,7 +478,7 @@ def convert_md_to_html(md_path: Path) -> Path:
 <div class="accordion-body premium-content">
 {sec['body']}
 </div>
-<div class="premium-lock"><span class="lock-icon">🔒</span>{htmllib.escape(sec['heading'])}の詳細は有料会員限定です</div>
+<div class="premium-lock"><span class="lock-icon">🔒</span>この先の詳細解説は <a href="https://note.com/pawmedical_jp" target="_blank" rel="noopener">PawMedicalのNote</a> で発信しています</div>
 </div>
 </div>
 </div>'''
@@ -493,7 +493,7 @@ def convert_md_to_html(md_path: Path) -> Path:
 <title>{htmllib.escape(title)} | VetEvidence</title>
 <link href="../../assets/style.css?v={STYLE_VERSION}" rel="stylesheet"/>
 </head>
-<body class="mode-premium">
+<body class="mode-free">
 <nav class="mobile-nav">
 <span class="nav-brand">🩺 VetEvidence</span>
 <button aria-label="メニュー" class="hamburger-btn">

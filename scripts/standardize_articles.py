@@ -13,8 +13,8 @@ import re
 import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\論文まとめ")
-LATEST_VERSION = "20260304v5"
+PROJECT_ROOT = Path(r"c:\Users\souhe\Desktop\PawMedical\VetEvidence_Website")
+LATEST_VERSION = "20260710v1"
 
 
 def update_css_js_version(html: str) -> str:
@@ -136,7 +136,7 @@ def fix_owner_tips_premium(html: str) -> str:
             html, re.DOTALL
         )
         if ot_match and 'premium-lock' not in ot_match.group(2):
-            replacement = ot_match.group(1) + '\n        <div class="premium-lock"><span class="lock-icon">🔒</span>飼い主説明ガイドは有料会員限定です</div>\n    ' + ot_match.group(3)
+            replacement = ot_match.group(1) + '\n        <div class="premium-lock"><span class="lock-icon">🔒</span>この先の詳細解説は <a href="https://note.com/pawmedical_jp" target="_blank" rel="noopener">PawMedicalのNote</a> で発信しています</div>\n    ' + ot_match.group(3)
             html = html.replace(ot_match.group(0), replacement)
     
     return html
@@ -183,6 +183,9 @@ def ensure_ref_count(html: str) -> str:
     refs_match = re.search(r'<div\s+id="refs">.*?</div>\s*</div>\s*</div>\s*</div>', html, re.DOTALL)
     if refs_match:
         count = refs_match.group(0).count('<li>')
+        # 特殊構造のrefsで<li>が拾えない記事があり、0本で上書きすると誤表記になる
+        if count == 0:
+            return html
         # Update meta-bar count
         html = re.sub(r'参照論文\d+本', f'参照論文{count}本', html)
         # Update refs accordion trigger count

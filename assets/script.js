@@ -128,16 +128,16 @@ function initContentModeToggle() {
   const toggle = document.getElementById('content-mode-toggle');
   if (!toggle) return;
 
-  // Default to premium mode
+  // Default to free mode
   const saved = localStorage.getItem('vetevidence-mode');
-  if (saved === 'free') {
-    document.body.classList.add('mode-free');
-    document.body.classList.remove('mode-premium');
-    toggle.checked = false;
-  } else {
+  if (saved === 'premium') {
     document.body.classList.add('mode-premium');
     document.body.classList.remove('mode-free');
     toggle.checked = true;
+  } else {
+    document.body.classList.add('mode-free');
+    document.body.classList.remove('mode-premium');
+    toggle.checked = false;
   }
 
   toggle.addEventListener('change', () => {
