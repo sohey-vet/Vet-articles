@@ -8,7 +8,7 @@
 ## 📌 プロジェクト概要
 
 - **サイト名**: VetEvidence（獣医学エビデンスまとめサイト）
-- **ホスティング**: GitHub Pages (`sohey-vet/Vet-articles`)
+- **ホスティング**: GitHub Pages (`sohey-vet/Vet-articles`) → **独自ドメイン `https://pawmedicaljp.com` で公開**（2026-07-12・Cloudflare Registrarで取得、リポジトリ直下に `CNAME` 設置、HTTPS(Let's Encrypt)＋Enforce HTTPS有効）
 - **現在の記事数**: 85件（2026-03-05時点）
 - **CSS/JSバージョン**: `20260304v5`
 - **変換スクリプト**: `scripts/md_to_site_html.py`

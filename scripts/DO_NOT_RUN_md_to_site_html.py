@@ -226,7 +226,7 @@ def extract_refs_html(md_text: str) -> str:
 
 def generate_nav_links(sections: list[tuple[str, str]]) -> str:
     """サイドバーナビリンクを生成"""
-    links = ['<a href="../../index.html">🏠 トップ</a>']
+    links = ['<a href="/articles/">🏠 トップ</a>']
     for anchor, label in sections:
         links.append(f'<a href="#{anchor}">{label}</a>')
     links.append('<h4>情報ソース</h4>')
@@ -300,7 +300,7 @@ def convert_md_to_html(md_path: Path) -> Path:
         # Use JS-friendly URL encoding
         import urllib.parse
         encoded_q = urllib.parse.quote(tag['query'])
-        tags_html += f'<a class="tag {tag["class"]}" href="../../index.html?tag={encoded_q}">{tag["label"]}</a>'
+        tags_html += f'<a class="tag {tag["class"]}" href="/articles/?tag={encoded_q}">{tag["label"]}</a>'
 
     # Owner tips & refs — support both HTML blocks and Markdown sections
     owner_tips_raw = extract_owner_tips_html(md_text)
@@ -549,7 +549,7 @@ def convert_md_to_html(md_path: Path) -> Path:
 {owner_tips_raw}
 {refs_raw}
 <footer class="page-footer" style="margin-top: var(--space-xl);">
-<p><a href="../../index.html">← トップに戻る</a> | VetEvidence 🩺</p>
+<p><a href="/articles/">← トップに戻る</a> | VetEvidence 🩺</p>
 <p style="margin-top:4px;font-size:0.68rem;color:var(--color-text-muted);">
 ※本まとめは臨床判断の参考資料です。個々の症例の治療方針は担当獣医師の判断に委ねられます。</p>
 </footer>
