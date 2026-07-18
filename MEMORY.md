@@ -11,7 +11,7 @@
 - **ホスティング**: GitHub Pages (`sohey-vet/Vet-articles`) → **独自ドメイン `https://pawmedicaljp.com` で公開**（2026-07-12・Cloudflare Registrarで取得、リポジトリ直下に `CNAME` 設置、HTTPS(Let's Encrypt)＋Enforce HTTPS有効）
 - **現在の記事数**: 85件（2026-03-05時点）
 - **CSS/JSバージョン**: `20260304v5`
-- **変換スクリプト**: `scripts/md_to_site_html.py`
+- **MD→HTML化**: 既存記事HTMLの構造を踏襲して手動/AI生成（`/html-structure` 準拠）→ `standardize_articles.py` で標準化 → `check_html.py` で検証。※旧変換スクリプト `md_to_site_html.py` は `scripts/DO_NOT_RUN_md_to_site_html.py` に退避済み・実行/復元禁止（2026-07-12）。
 
 ---
 
@@ -40,13 +40,13 @@
 - 有効なジャンル名: `救急`, `循環器`, `輸液`, `腎泌尿器`, `猫`, `皮膚`, `免疫`, `血液`, `消化器・肝臓`, `腫瘍`, `神経`, `内分泌`, `麻酔`, `眼科`, `歯科`, `その他`
 - 「抗菌薬の適正使用」のような**サイドバーに存在しないタグをdata-tagsに入れてはならない**。検索できなくなる。
 
-### 5. 変換スクリプト実行時の注意
-- `python scripts/md_to_site_html.py --file <path>` で個別変換。
-- Windows環境では `$env:PYTHONIOENCODING="utf-8"` を設定してから実行。
-- 変換後は必ずHTMLの以下を確認:
+### 5. HTML生成時の注意
+- 変換スクリプトは廃止。`md_to_site_html.py` は `scripts/DO_NOT_RUN_md_to_site_html.py` に退避済み・**実行/リネーム/復元禁止**（2026-07-12）。
+- 新記事HTMLは **既存記事HTMLの構造を踏襲して手動/AI生成**（`/html-structure` 準拠）。生成後は `standardize_articles.py`（Windowsでは `$env:PYTHONIOENCODING="utf-8"` を設定）→ `check_html.py` を実行。
+- 生成後は必ずHTMLの以下を確認:
   - 結論が箇条書きで正しく出力されているか
   - `<li>--</li>` のようなゴミがないか
-  - `</em>*` のような壊れた変換がないか
+  - `</em>*` のような壊れた表記がないか
   - 詳細解説のアコーディオンが空でないか
 
 ### 6. 記事の重複防止
@@ -138,7 +138,7 @@ SNS（X, Threads, Instagram）向け自動生成スクリプト（`generate_all_
 | 編集情報セクション削除 | 4記事（中毒, CE, CPR, ショック） |
 | MD結論ヘッダー統一 (`## 🎯 結論`) | 17件 |
 | 壊れた結論の修正（箇条書き化） | 中毒, CPR, ショック, CE, 手作り食 |
-| HTML再変換（md_to_site_html.py） | 合計20件以上 |
+| HTML再変換（当時は md_to_site_html.py 使用。※現在は退避済み・実行禁止） | 合計20件以上 |
 | `<li>--</li>` ゴミ削除 | 3件 |
 | 膀胱炎のタグ修正 | `腎泌尿器,膀胱炎,抗菌薬,犬猫共通` |
 | 11記事のindexカード説明文追加 | 11件 |

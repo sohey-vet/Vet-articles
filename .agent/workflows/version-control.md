@@ -67,4 +67,5 @@ python /tmp/audit_articles.py   # 結果は /tmp/audit_results.txt
 - ❌ ユーザー確認なしでCSSバージョンを変更する
 - ❌ Gitコミットせずに一括変更スクリプトを実行する
 - ❌ HTMLファイルの中身を空にする修正を行う
-- ❌ `md_to_site_html.py` のテンプレート構造を無断で変更する
+- ❌ 退避済みの `scripts/DO_NOT_RUN_md_to_site_html.py`（旧 `md_to_site_html.py`）を実行・リネーム・復元・改変する（2026-07-12退避・恒久禁止）
+- ❌ 既存記事HTMLの構造（`/html-structure` 準拠のテンプレート構造）を無断で変更する

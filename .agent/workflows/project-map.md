@@ -32,7 +32,7 @@ c:\Users\souhe\Desktop\論文まとめ\
 │   └── カテゴリ/ → Note用に整形されたMD/HTMLファイル
 │
 ├── scripts/
-│   ├── md_to_site_html.py     ← MD→HTML変換スクリプト（メイン）
+│   ├── DO_NOT_RUN_md_to_site_html.py ← 旧MD→HTML変換スクリプト（退避済み・実行/復元禁止・2026-07-12）
 │   ├── standardize_articles.py ← 全記事の一括標準化
 │   ├── format_articles_for_note.py ← Note用記事のフォーマット
 │   ├── note_auto_post.py      ← Note自動投稿（Playwright）
@@ -66,9 +66,9 @@ c:\Users\souhe\Desktop\論文まとめ\
 ## ファイルの関係性
 
 ```
-[MDファイル] → md_to_site_html.py → [HTMLファイル]
+[MDファイル] → 既存HTML構造を踏襲して手動/AI生成（/html-structure準拠） → [HTMLファイル]
                                         ↓
-                              standardize_articles.py
+                              standardize_articles.py → check_html.py
                                         ↓
                               [標準化されたHTML]
                                         ↓
