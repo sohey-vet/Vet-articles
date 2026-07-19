@@ -333,7 +333,7 @@
                     <div class="stat-label">論文</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">2026.3</div>
+                    <div class="stat-value" id="stat-last-updated">2026.7</div>
                     <div class="stat-label">最終更新</div>
                 </div>
             </div>
@@ -1724,6 +1724,15 @@
             document.getElementById('count-all').textContent = totalCount;
             const statTheme = document.getElementById('stat-theme-count');
             if (statTheme) statTheme.textContent = totalCount;
+
+            // 最終更新: ページのLast-Modified（デプロイ日）から自動表示。失敗時はハードコード値を維持
+            try {
+                const statUpdated = document.getElementById('stat-last-updated');
+                const lm = new Date(document.lastModified);
+                if (statUpdated && !isNaN(lm.getTime()) && lm.getFullYear() >= 2000) {
+                    statUpdated.textContent = lm.getFullYear() + '.' + (lm.getMonth() + 1);
+                }
+            } catch (e) { /* フォールバック値のまま */ }
 
             // Calculate per-genre counts
             buttons.forEach(btn => {
