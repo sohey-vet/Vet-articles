@@ -19,3 +19,9 @@ VetEvidence_AutoPost/.note_session/
 VetEvidence_AutoPost/.threads_session/
 VetEvidence_AutoPost/temp_*.txt
 VetEvidence_AutoPost/*.html
+
+# --- ブラウザセッション（ログイン認証情報を含むため絶対にコミットしない） ---
+VetEvidence_AutoPost/.substack_session/
+
+# --- バックアップファイル（手動退避コピー・追跡不要） ---
+VetEvidence_AutoPost/*.bak_*
