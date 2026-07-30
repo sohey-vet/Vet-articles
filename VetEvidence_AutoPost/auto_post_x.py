@@ -51,7 +51,7 @@ def load_todays_x_post(target_date):
 
 def find_image(source_folder):
     """指定されたフォルダからPNG画像を検索する"""
-    DRAFTS_ROOT = r"C:\Users\souhe\Desktop\VetEvidence_SNS_Drafts"
+    DRAFTS_ROOT = os.path.dirname(SCRIPT_DIR)
     folder_path = os.path.join(DRAFTS_ROOT, source_folder)
     png_files = glob.glob(os.path.join(folder_path, "*.png"))
     if png_files:
@@ -414,7 +414,7 @@ def post_to_x(page, text, dry_run=False, image_path=None, target_date_str=None):
         else:
             logger.error("❌ 有効な投稿ボタンが見つかりません（文字数制限エラー、またはネットワーク遅延・画像容量オーバーの疑い）")
             # デバッグ用にスクリーンショットを保存
-            page.screenshot(path="C:\\Users\\souhe\\Desktop\\VetEvidence_SNS_Drafts\\VetEvidence_AutoPost\\failed_state.png", full_page=True)
+            page.screenshot(path=os.path.join(SCRIPT_DIR, "failed_state.png"), full_page=True)
             logger.info("📸 エラー時の画面状態を 'failed_state.png' に保存しました。")
             return False
 
@@ -427,6 +427,8 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="テスト実行（投稿ボタンを押さない）")
     parser.add_argument("--setup", action="store_true", help="初回ログイン用のブラウザを起動")
     parser.add_argument("--date", type=str, help="YYYY-MM-DD (指定日をテストしたい場合)")
+    parser.add_argument("--force", action="store_true",
+                        help="重複チェックを無視して強制投稿する（通常は使わない）")
     args = parser.parse_args()
 
     logger.info("=" * 50)
@@ -465,7 +467,9 @@ def main():
         logger.info(f"⏸️ シャドウバン回復期間のため、{target_date_str} のX自動投稿をスキップします。")
         sys.exit(0)
 
-    if check_history_duplicate(target_date_str) and not args.dry_run and not args.date:
+    # 重複チェックは --date の有無ではなく明示的な --force のみで無効化する。
+    # （run_daily.py が毎日 --date を渡すため、--date で切ると二重投稿防止が常時オフになる）
+    if check_history_duplicate(target_date_str) and not args.dry_run and not args.force:
         logger.info(f"⏭️ {target_date_str} のX投稿は既に完了しているためスキップします。")
         sys.exit(0)
         

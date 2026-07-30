@@ -157,14 +157,21 @@ def due_steps(now):
 
     # --- 12:00 デイリー（旧 2_Run_Daily_Post.bat と同一内容・同一順序） ---
     if now.time() >= dtime(12, 0):
-        steps.append(("x", [PY, "auto_post_x.py"], "X 12:00"))
+        # --date を明示的に渡し、子スクリプトが実行時刻ではなく
+        # ディスパッチ対象日の原稿を確実に対象にできるようにする。
+        # 通常運転では date_str == 当日なので子側のデフォルト(datetime.now().date())と
+        # 同値であり挙動は変わらない。--now で過去日を復旧実行する場合のみ効く。
+        # （渡さないと復旧コマンドが「今日」を投稿しつつ過去日をOK記録してしまう）
+        steps.append(("x", [PY, "auto_post_x.py", "--date", date_str], "X 12:00"))
         if wd != 6:  # 日曜のThreadsは裏トークに一本化済み
-            steps.append(("threads", [PY, "auto_post_threads.py"], "Threads 12:00"))
+            steps.append(("threads", [PY, "auto_post_threads.py", "--date", date_str],
+                          "Threads 12:00"))
         # Note下書き在庫の維持（曜日を問わず毎日・不足分のみ作成される冪等ツール）
         steps.append(("note_stock", [PY, "make_note_drafts.py", "--upcoming", "6"],
                       "Note在庫確保（翌週末まで）"))
         if wd in (0, 2, 4):
-            steps.append(("note", [PY, "publish_note_daily_draft.py"], "Note 12:00"))
+            steps.append(("note", [PY, "publish_note_daily_draft.py", "--date", date_str],
+                          "Note 12:00"))
         # note.com実照合キャッシュ(logs/note_draft_check.json)の更新。読み取り専用。
         # 月水金だけにすると日曜〜火曜でキャッシュが24時間の有効期限を超えて失効し、
         # AI Office側が全枠を「未照合」と誤判定して誤報を出す（7/29誤報事故）。毎日更新する。
