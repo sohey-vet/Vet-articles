@@ -3,3 +3,11 @@
 __pycache__/
 *.pyc
 playwright_chrome_profile/
+
+# --- 原稿・内部ドキュメントは公開リポジトリに載せない（2026-08-04）---
+# GitHub Pages はリポジトリ内のファイルをそのままURLで配信するため、
+# .md 原稿を追跡すると有料記事の全文が誰でもダウンロードできてしまう。
+# 原稿はローカルにのみ保持し、公開するのは HTML/CSS/JS のみとする。
+*.md
+*.md.bak
+.agent/proofreading/updated_10_articles_dump.txt
