@@ -121,24 +121,46 @@ function initMobileNav() {
 }
 
 /**
+ * 表示モードの適用（Free / Premium）
+ * 既定は free（概要のみ）。URLに ?view=full が付いていたら、その端末に
+ * 全文表示を保存する（運営者が自分の端末で全文を読むための入口）。
+ * ?view=summary で概要のみに戻す。パラメータは適用後にURLから取り除く。
+ */
+function applyContentMode() {
+  let mode = null;
+
+  try {
+    const view = new URLSearchParams(window.location.search).get('view');
+    if (view === 'full' || view === 'summary') {
+      mode = (view === 'full') ? 'premium' : 'free';
+      localStorage.setItem('vetevidence-mode', mode);
+      // 共有時に設定が付いて回らないよう、URLからパラメータを消す
+      const url = new URL(window.location.href);
+      url.searchParams.delete('view');
+      window.history.replaceState({}, '', url.toString());
+    } else {
+      mode = localStorage.getItem('vetevidence-mode');
+    }
+  } catch (e) {
+    // プライベートブラウズ等でlocalStorageが使えない場合は既定（概要のみ）
+  }
+
+  const isPremium = (mode === 'premium');
+  document.body.classList.toggle('mode-premium', isPremium);
+  document.body.classList.toggle('mode-free', !isPremium);
+  return isPremium;
+}
+
+/**
  * Content Mode Toggle (Free / Premium)
  * Noteでの有料化を見据えた切り替え機能
  */
 function initContentModeToggle() {
+  const isPremium = applyContentMode();
+
   const toggle = document.getElementById('content-mode-toggle');
   if (!toggle) return;
-
-  // Default to free mode
-  const saved = localStorage.getItem('vetevidence-mode');
-  if (saved === 'premium') {
-    document.body.classList.add('mode-premium');
-    document.body.classList.remove('mode-free');
-    toggle.checked = true;
-  } else {
-    document.body.classList.add('mode-free');
-    document.body.classList.remove('mode-premium');
-    toggle.checked = false;
-  }
+  toggle.checked = isPremium;
 
   toggle.addEventListener('change', () => {
     if (toggle.checked) {
