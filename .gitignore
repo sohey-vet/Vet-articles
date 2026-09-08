@@ -11,3 +11,14 @@ playwright_chrome_profile/
 *.md
 *.md.bak
 .agent/proofreading/updated_10_articles_dump.txt
+
+# --- バックアップ／検証キャッシュ全般は追跡しない（2026-09-08）---
+# .md.bak_YYYYMMDD 等のバックアップファイルは記事全文を含むため、
+# 公開リポジトリに載ると .md 同様の漏洩経路になる。
+*.bak
+*.bak_*
+*.md.bak*
+.refcache*.json
+.verify_*.log
+.verify_*
+refs_report*.csv
