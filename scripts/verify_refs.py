@@ -30,6 +30,13 @@ verify_refs.py — 参照文献のPubMed照合ゲート
     - JAAHA/JSAP 等の略誌名は [Journal] 検索で引けない → JOURNAL_ALIASES で正式TAへ展開する
     - 団体著者（ACVIM/AAHA等）は著者検索から漏れる
     - PubMed非収載誌（Today's Veterinary Practice / dvm360 等）は「対象外」に落ちる
+    - JAVMA/AJVR は2023年以降どの論文も頁が「1-N」＝巻＋頁1 のスロットは一意でない
+      （2026-09-09: 号[IP]を含めて照合し、占有者が複数なら「★最重症」を立てない）
+    - 長いタイトルの引用句検索 "…"[Title] は PubMed が 0件を返す（2026-09-09: 単語ANDへ変更）
+    - 姓が複数語の著者は索引側で結合される（記事 Del Prete G → PubMed Prete GD）
+    - Web資料・団体資料・和書は「対象外」。記事に残すなら発行元・URL・閲覧日を書誌に書く
+
+判定ロジックを変えたら CACHE_VERSION を +1 すること（--pmid-cache が旧判定を返さないように）。
 """
 
 import argparse
@@ -74,6 +81,10 @@ V_MISSING = "不在"
 V_OUT = "対象外"
 V_RETRY = "要再照合"   # E-utilities 障害で照合できなかった＝未検証。通信失敗を「合成疑い」に化けさせない
 FAIL_VERDICTS = (V_SYNTH, V_MISSING, V_RETRY)
+
+# 判定ロジックを変えたら必ず +1 する。--pmid-cache は版数が違えば読み捨てて空から始める。
+# （2026-09-09: 版数を入れないと、ロジックを直しても旧判定がキャッシュから返って回帰が無意味になる）
+CACHE_VERSION = 2
 
 
 class EutilsError(RuntimeError):
@@ -133,6 +144,16 @@ OUT_OF_SCOPE_PATTERNS = (
     r"\bAccessed\b",
     r"https?://",
 )
+
+# Web資料・団体資料・和書の指標（2026-09-09 追加）
+# 「cornell.edu」のようなドメイン様トークン。https:// 付きは OUT_OF_SCOPE_PATTERNS 側で既に拾う
+DOMAINISH_RE = re.compile(r"\b[a-z0-9][a-z0-9-]*\.(?:edu|com|org|gov|net|int)\b", re.IGNORECASE)
+# 団体名。年も巻も無い文献に限って「Web資料」と見なす（論文タイトル中の University 等で誤爆させない）
+ORGANIZATION_RE = re.compile(
+    r"\b(?:University|College|Center|Centre|Institute|Society|Association|Foundation|"
+    r"Manual|Merck|IRIS|International Renal Interest Society)\b", re.IGNORECASE)
+JP_CHAR_RE = re.compile(r"[ぁ-んァ-ヶ一-龥]")
+JP_YEAR_RE = re.compile(r"\d{4}\s*年")
 
 STOPWORDS = {
     "a", "an", "and", "the", "of", "in", "on", "for", "with", "to", "from",
@@ -379,6 +400,20 @@ def is_out_of_scope(r: Ref) -> str:
     for bad in NON_PUBMED_JOURNALS:
         if jn and (jn == norm_journal(bad) or norm_journal(bad) in jn):
             return f"PubMed非収載誌: {r.journal}"
+
+    # --- 2026-09-09 追加: Web資料・団体資料・和書 ---
+    m = DOMAINISH_RE.search(r.raw)
+    if m:
+        return (f"Web資料（PubMed対象外）: 「{squash(m.group(0))}」"
+                "— 発行元・URL・閲覧日を書誌に添えること")
+    no_bib = not r.year and not r.volume
+    if no_bib:
+        m = ORGANIZATION_RE.search(r.raw)
+        if m:
+            return (f"Web資料/団体資料（PubMed対象外）: 「{squash(m.group(0))}」"
+                    "— 発行元・URL・閲覧日を書誌に添えること")
+    if JP_YEAR_RE.search(r.raw) or (JP_CHAR_RE.search(r.title or "") and not r.journal):
+        return "和書/国内資料（PubMed対象外・手動確認要）"
     return ""
 
 
@@ -487,24 +522,62 @@ def title_keywords(title, n=4):
     return out
 
 
+def author_variants(first_author):
+    """PubMed の著者索引ゆれに対応した検索候補を返す。
+
+    姓が複数語の著者は索引側で結合される。PubMed は姓の前半を名のイニシャルの「後ろ」に付ける:
+      記事『Del Prete G』→ PubMed『Prete GD』／記事『Scott Weese J』→ PubMed『Weese JS』
+    "Del Prete G" -> ["Del Prete G", "Prete GD", "Prete DG", "Prete G"]
+    （3番目は逆順の索引に当たった場合の保険。順に試して最初にヒットしたものを使う）
+    """
+    if not first_author:
+        return []
+    m = FIRST_AUTHOR_RE.match(first_author)
+    if not m:
+        return [first_author]
+    surname, ini = m.group(1), m.group(2)
+    toks = surname.split()
+    v = [f"{surname} {ini}"]
+    if len(toks) >= 2:
+        pre = "".join(t[0].upper() for t in toks[:-1])
+        v.append(f"{toks[-1]} {ini}{pre}")
+        v.append(f"{toks[-1]} {pre}{ini}")
+        v.append(f"{toks[-1]} {ini}")
+    seen, out = set(), []
+    for a in v:
+        if a not in seen:
+            seen.add(a)
+            out.append(a)
+    return out
+
+
 def compare_bib(r: Ref, s: dict):
     """記事側 vs PubMed の書誌差分リストを返す。"""
     diffs = []
     if r.journal and s.get("journal") and not journal_equal(r.journal, s["journal"]) \
             and not journal_equal(r.journal, s.get("fulljournal", "")):
         diffs.append(f"誌名: 記事『{r.journal}』 / 実際『{s['journal']}』")
+    vol_same = bool(r.volume) and r.volume == s.get("volume", "")
+    pg_same = bool(r.pages) and bool(s.get("pages")) and pages_equal(r.pages, s["pages"])
     if r.year and s.get("year") and r.year != s["year"]:
-        diffs.append(f"年: 記事{r.year} / 実際{s['year']}")
+        # Epub先行と冊子年で1年ズレることがある（巻・頁が一致しているなら同一論文）
+        try:
+            year_gap = abs(int(r.year) - int(s["year"]))
+        except ValueError:
+            year_gap = 99
+        if not (year_gap == 1 and vol_same and pg_same):
+            diffs.append(f"年: 記事{r.year} / 実際{s['year']}")
     if r.volume and s.get("volume") and r.volume != s["volume"]:
         diffs.append(f"巻: 記事{r.volume} / 実際{s['volume']}")
     if r.pages and s.get("pages") and not pages_equal(r.pages, s["pages"]):
         diffs.append(f"頁: 記事{r.pages} / 実際{s['pages']}")
     if r.first_author and s.get("first_author"):
-        # PubMed は "Scott Weese J" のように姓の分割が記事側と異なることがあるため、
-        # 姓トークンが全著者名のどこかに現れるかで判定する（誤検出を避ける）
-        surname = norm_title(r.first_author).split()[0]
-        pool = " ".join(norm_title(a) for a in (s.get("authors") or [s["first_author"]]))
-        if len(surname) >= 3 and surname not in pool.split():
+        # PubMed は "Scott Weese J" / "Prete GD" のように姓の分割・結合が記事側と異なる。
+        # 姓トークンの「いずれか」（3文字以上）が全著者名のどこかに現れれば一致とみなす。
+        parts = norm_title(r.first_author).split()
+        surnames = [w for w in parts[:-1] if len(w) >= 3] or [w for w in parts if len(w) >= 3]
+        pool = " ".join(norm_title(a) for a in (s.get("authors") or [s["first_author"]])).split()
+        if surnames and not any(w in pool for w in surnames):
             diffs.append(f"第一著者: 記事『{r.first_author}』 / 実際『{s['first_author']}』")
     return diffs
 
@@ -542,14 +615,24 @@ def verify_ref(r: Ref, pm: Pubmed):
     slot_conflict = None  # 巻号頁のスロットを占有する「別タイトルの実在論文」
 
     # ① 書誌スロット照合 ── 巻号頁が一致するのにタイトルが別物＝合成捏造の最重症
+    #    JAVMA/AJVR は2023年以降どの論文も頁が「1-N」なので、巻＋頁1 だけでは
+    #    別号の別論文を100件超つかむ。号を含めて段階的に絞り、
+    #    スロットが一意に決まるときだけ「★最重症」を立てる（2026-09-09 修正）。
     fp = first_page(r.pages)
     if has_slot:
         ta = expand_journal(r.journal)
-        term = f'"{q(ta)}"[Journal] AND {r.year}[DP] AND {r.volume}[VI] AND {fp}[PG]'
-        slot_ids = pm.esearch(term, retmax=5)
-        if not slot_ids:
-            # 略誌名が [Journal] で引けない場合の保険（誌名条件を外して巻・頁で絞る）
-            slot_ids = pm.esearch(f"{r.year}[DP] AND {r.volume}[VI] AND {fp}[PG]", retmax=20)
+        terms = []
+        if r.issue and r.issue.isdigit():
+            terms.append(f'"{q(ta)}"[Journal] AND {r.year}[DP] AND {r.volume}[VI] '
+                         f'AND {r.issue}[IP] AND {fp}[PG]')
+        terms.append(f'"{q(ta)}"[Journal] AND {r.year}[DP] AND {r.volume}[VI] AND {fp}[PG]')
+        # 略誌名が [Journal] で引けない場合の保険（誌名条件を外して巻・頁で絞る）
+        terms.append(f"{r.year}[DP] AND {r.volume}[VI] AND {fp}[PG]")
+        slot_ids = []
+        for t in terms:
+            slot_ids = pm.esearch(t, retmax=30)
+            if slot_ids:
+                break
         if slot_ids:
             occupants = [s for s in pm.esummary(slot_ids)
                          if journal_equal(r.journal, s.get("journal", ""))
@@ -565,10 +648,21 @@ def verify_ref(r: Ref, pm: Pubmed):
                                 "evidence": fmt_hit(best), "note": "書誌スロット一致"}
                     return {"verdict": V_BIB, "pmid": best["pmid"],
                             "evidence": fmt_hit(best), "note": " / ".join(diffs)}
-                slot_conflict = (best, score)
+                # スロットが一意（占有者1件）か、頁レンジが文字列ごと一致するときだけ
+                # 「そのスロットは別論文が占有している」と言い切れる
+                pages_exact = bool(r.pages) and bool(best.get("pages")) and \
+                    squash(nfkc(r.pages)).lower() == squash(nfkc(best["pages"])).lower()
+                if len(occupants) == 1 or pages_exact:
+                    slot_conflict = (best, score)
 
-    # ② タイトル完全一致検索
-    ids = pm.esearch(f'"{q(r.title)}"[Title]', retmax=5)
+    # ② タイトル一致検索
+    #    長いタイトルの引用句検索 "…"[Title] は PubMed が 0件を返す（句索引に無い）。
+    #    STOPWORDS を抜いた単語の AND 検索にする（2026-09-09 修正）。
+    tw = title_keywords(r.title, n=12)
+    ids = pm.esearch(" AND ".join(f"{w}[Title]" for w in tw), retmax=10) if len(tw) >= 3 else []
+    if not ids and len(tw) > 6:
+        # 語が多すぎて 0件になった場合の緩和
+        ids = pm.esearch(" AND ".join(f"{w}[Title]" for w in tw[:6]), retmax=10)
     if ids:
         hits = pm.esummary(ids)
         candidates.extend(hits)
@@ -593,16 +687,24 @@ def verify_ref(r: Ref, pm: Pubmed):
 
     # ③ 第一著者 + 年 + タイトル主要語
     kws = title_keywords(r.title, 3)
+    ids3 = []
     if r.first_author and len(kws) >= 2:
-        au = r.first_author.replace(".", "")
-        term = f'"{q(au)}"[Author]'
-        if r.year:
-            term += f" AND {r.year}[DP]"
-        term += " AND (" + " OR ".join(f"{k}[Title]" for k in kws) + ")"
-        ids3 = pm.esearch(term, retmax=10)
+        # 姓が複数語の著者は PubMed 索引で結合される（Del Prete G → Prete GD）ので変種で試す
+        variants = [a.replace(".", "") for a in author_variants(r.first_author)]
+        for au in variants:
+            term = f'"{q(au)}"[Author]'
+            if r.year:
+                term += f" AND {r.year}[DP]"
+            term += " AND (" + " OR ".join(f"{k}[Title]" for k in kws) + ")"
+            ids3 = pm.esearch(term, retmax=10)
+            if ids3:
+                break
         if not ids3 and r.year:
-            ids3 = pm.esearch(f'"{q(au)}"[Author] AND (' +
-                              " AND ".join(f"{k}[Title]" for k in kws[:2]) + ")", retmax=10)
+            for au in variants:
+                ids3 = pm.esearch(f'"{q(au)}"[Author] AND (' +
+                                  " AND ".join(f"{k}[Title]" for k in kws[:2]) + ")", retmax=10)
+                if ids3:
+                    break
         if ids3:
             hits = pm.esummary(ids3)
             candidates.extend(hits)
@@ -612,11 +714,20 @@ def verify_ref(r: Ref, pm: Pubmed):
                 return {"verdict": V_BIB, "pmid": best["pmid"], "evidence": fmt_hit(best),
                         "note": " / ".join(diffs)}
 
+    # 年も巻も無い文献は④に進まない。「合成疑い＝実在書誌に架空タイトル」の意味を守るため、
+    #  照合の土台が無いものは『不在』に振り分ける（2026-09-09 修正）
+    if not r.year and not r.volume:
+        return {"verdict": V_MISSING, "pmid": "", "evidence": "",
+                "note": "書誌が無く照合不能。論文なら誌名・年・巻・頁を補う／"
+                        "Web資料なら対象外の書式（発行元・URL・閲覧日）に直す"}
+
     # ④ タイトル主要語のみで広域検索
     kws4 = title_keywords(r.title, 4)
     if len(kws4) >= 2:
         ids4 = pm.esearch(" AND ".join(f"{k}[Title]" for k in kws4), retmax=10)
-        if not ids4:
+        # 2語フォールバックはノイズ源（例: Cornell AND University で86件）。
+        # 書誌が揃っている文献に限って使う
+        if not ids4 and r.journal and r.year:
             ids4 = pm.esearch(" AND ".join(f"{k}[Title]" for k in kws4[:2]), retmax=10)
         if ids4:
             candidates.extend(pm.esummary(ids4[:5]))
@@ -688,9 +799,15 @@ def main():
     cache_path = Path(args.pmid_cache) if args.pmid_cache else None
     if cache_path and cache_path.exists():
         try:
-            cache = json.loads(cache_path.read_text(encoding="utf-8"))
+            loaded = json.loads(cache_path.read_text(encoding="utf-8"))
         except Exception:
-            cache = {}
+            loaded = {}
+        if loaded.get("_version") == CACHE_VERSION:
+            cache = loaded
+        elif loaded:
+            print(f"[cache] 判定ロジック版数が違うため破棄して再照合します "
+                  f"(cache={loaded.get('_version')} / script={CACHE_VERSION}): {cache_path}",
+                  file=sys.stderr)
 
     pm = None if args.dry_run else Pubmed(sleep=args.sleep, api_key=args.api_key)
     rows = []
@@ -766,6 +883,7 @@ def main():
     finally:
         if cache_path:
             cache_path.parent.mkdir(parents=True, exist_ok=True)
+            cache["_version"] = CACHE_VERSION
             cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
 
     if args.out:
